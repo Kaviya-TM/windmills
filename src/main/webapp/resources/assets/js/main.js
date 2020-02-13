@@ -1,0 +1,1 @@
+$('.dashboard .sub-header').text('Dashboard');

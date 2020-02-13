@@ -1,0 +1,139 @@
+.valbtn {
+	width: 14%;
+	float: left;
+	padding: 6px;
+	margin-top: 0px;
+	margin-right: 30px;
+	background: #000080;
+	cursor: pointer;
+}
+
+.vrholder {
+	width: 50%;
+	float: left;
+	height: 34px;
+}
+
+#valinstrdate, #insdate, #valdate {
+	cursor: pointer !important;
+}
+
+.fa-calendar:before {
+	color: #000080;
+}
+
+.fa-clock:before {
+	color: #000080;
+}
+
+.fa-fire:before {
+	color: #000080;
+}
+
+.form-control {
+	background: #fff !important;
+}
+
+.rholder {
+	width: 35%;
+	float: left;
+	line-height: 32px;
+	font-size: 12px !important;
+	font-family: sans-serif
+}
+
+.viholder {
+	width: 33%;
+	float: left;
+	height: 34px;
+}
+
+.ilholder {
+	width: 15%;
+	float: left;
+	line-height: 32px;
+	font-size: 12px !important;
+	font-family: sans-serif
+}
+
+.itholder {
+	width: 33% !important;
+	float: left;
+	font-size: 12px !important;
+	font-family: sans-serif
+}
+
+.labelholder {
+	width: 20%;
+	float: left;
+	line-height: 32px;
+	font-size: 12px !important;
+	font-family: sans-serif
+}
+
+.textholder {
+	width: 60% !important;
+	float: left;
+	font-size: 12px !important;
+	font-family: sans-serif
+}
+
+.valuationholder {
+	width: 100%;
+	float: left;
+	height: 34px;
+}
+
+.adjustTop {
+	margin-top: 10px;
+}
+
+.chang::placeholder {
+	color: red;
+}
+
+.chang::-webkit-input-placeholder {
+	color: #b2cde0
+}
+
+.savebtn {
+	width: 10%;
+	/*     background: #DF0101; */
+	background-image: linear-gradient(to right, #DF0101, #000080);
+	color: white;
+	padding: 5px;
+	text-align: center;
+	border-radius: 5px;
+	float: left;
+}
+
+#valuationform {
+	margin-top: 50px;
+}
+
+#inspectprv {
+	float: left;
+	background-image: linear-gradient(to right, #DF0101, #000080);
+}
+
+#inspectnxt {
+	margin-left: 10px;
+	background-image: linear-gradient(to right, #DF0101, #000080);
+}
+
+#schedulenxt {
+	margin-left: 10px;
+	background-image: linear-gradient(to right, #DF0101, #000080);
+}
+
+#submitprv {
+	float: left;
+	background-image: linear-gradient(to right, #DF0101, #000080);
+}
+
+#submitnxt {
+	margin-left: 10px;
+	background-image: linear-gradient(to right, #DF0101, #000080);
+	padding: 7px;
+	margin-top: 0px;
+}

@@ -26,6 +26,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.ClientDetails;
+import model.Community;
+import model.Property;
 import model.ServiceOfficer;
 import model.ValuationReport;
 import service.ClientService;
@@ -48,26 +50,60 @@ public class ValuationController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("addvaluation");
 		List<ClientDetails> clientlist = valuationService.getClients();
+		List<Property> propertylist = valuationService.getPropertyValued();
+		List<Community> communitylist = valuationService.getCommunity();
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String email = authentication.getName();
 		List<ServiceOfficer> serviceofficerlist = valuationService.getServiceOfficer(email);
 		List<ServiceOfficer>  list= valuationService.getDefaultServicer(email);
 		int row = valuationService.getNumberOfRows();;
 		mv.addObject("clientlist", clientlist);
+		mv.addObject("propertylist", propertylist);
+		mv.addObject("communitylist", communitylist);
 		mv.addObject("noofrows", row);
 		mv.addObject("serviceofficerlist", serviceofficerlist);
 		mv.addObject("dfservicer",list);
 		return mv;
 	}
 	
+//	@RequestMapping(value = "/getValuationInstructingPerson", method = RequestMethod.POST)
+//	@ResponseBody
+//	public String getValuationInstructingPerson(@RequestParam("clientName") String clientName) {
+//		String name = valuationService.getValuationInstructingPerson(clientName);
+//		System.out.println("name" + name);
+//		return name;
+//
+//	}
 	@RequestMapping(value = "/getValuationInstructingPerson", method = RequestMethod.POST)
 	@ResponseBody
-	public String getValuationInstructingPerson(@RequestParam("clientName") String clientName) {
-		String name = valuationService.getValuationInstructingPerson(clientName);
-		System.out.println("name" + name);
-		return name;
+	public List<ClientDetails> getValuationInstructingPerson(@RequestParam("clientName") String clientName) {
+		List<ClientDetails> list = valuationService.getValuationInstructingPerson(clientName);
+		System.out.println("size" + list.size());
+		return list;
 
 	}
+	
+//	@RequestMapping(value = "/getValuationApproach", method = RequestMethod.POST)
+//	@ResponseBody
+//	public String getValuationApproach(@RequestParam("propertyValued") String propertyValued) {
+//		String valApproach = valuationService.getValuationApproach(propertyValued);
+//		System.out.println("valApproach-->" + valApproach);
+//		return valApproach;
+//
+//	}
+	@RequestMapping(value = "/getValuationApproach", method = RequestMethod.POST)
+	@ResponseBody
+	public JSONObject getCurrencyTimezonebyCountry(@RequestParam("propertyValued") String propertyValued) {
+		String valApproach = valuationService.getValuationApproach(propertyValued);
+		String appReasoning = valuationService.getApproachReasoning(propertyValued);
+		JSONObject json = new JSONObject();
+		json.put("valApproach", valApproach);
+		json.put("appReasoning", appReasoning);
+		System.out.println("json"+json);
+		return json;
+
+	}
+
 	
 	@RequestMapping(value = "/saveValuation", method = RequestMethod.POST)
 	public ModelAndView addProduct(@ModelAttribute("valuationreport") ValuationReport valuationreport,HttpSession session) throws IllegalStateException, IOException {

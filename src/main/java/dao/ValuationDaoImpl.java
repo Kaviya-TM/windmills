@@ -12,6 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import javassist.convert.Transformer;
 import model.ClientDetails;
+import model.Community;
+import model.Property;
 import model.ServiceOfficer;
 import model.ValuationReport;
 
@@ -26,8 +28,8 @@ public class ValuationDaoImpl {
 
 	public List<ClientDetails> getClient() {
 		log.info("valuation dao to get clients");
-		Query query = sessionFactory.getCurrentSession().createQuery("from  ClientDetails");
-		
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct clientName from  ClientDetails");
+		log.info("testing");
 		List<ClientDetails> rows=query.list();
 		
 		return rows;
@@ -53,7 +55,7 @@ public class ValuationDaoImpl {
 
 	public List<ClientDetails> getValuationInstructingPerson(String clientName) {
 		log.info("valuation dao to get contact person");
-    	Query query=sessionFactory.getCurrentSession().createQuery("from ClientDetails s where s.clientName=:clientName");
+    	Query query=sessionFactory.getCurrentSession().createQuery("select contactPerson from ClientDetails s where s.clientName=:clientName");
 		query.setParameter("clientName",clientName);
 		List<ClientDetails> rows=query.list();
 		
@@ -61,7 +63,6 @@ public class ValuationDaoImpl {
 	}
 
 	public void saveValuationReport(ValuationReport valuationreport) {
-		log.info("valuation dao to save valuation report");
 		sessionFactory.getCurrentSession().saveOrUpdate(valuationreport);
 	}
 
@@ -69,8 +70,26 @@ public class ValuationDaoImpl {
 		Query query=sessionFactory.getCurrentSession().createQuery("from ValuationReport");
 		List<ValuationReport> rows=query.list();
 		int row = rows.size() + 1;
-		log.info("rows"+row);
 		return row;
+	}
+
+	public List<Property> getValuationApproach(String propertyValued) {
+    	Query query=sessionFactory.getCurrentSession().createQuery("from Property s where s.propertyValued=:propertyValued");
+		query.setParameter("propertyValued",propertyValued);
+		List<Property> rows=query.list();
+		return rows;
+	}
+
+	public List<Property> getPropertyValued() {
+		Query query = sessionFactory.getCurrentSession().createQuery("from  Property");
+		List<Property> rows=query.list();
+		return rows;
+	}
+
+	public List<Community> getCommunity() {
+		Query query = sessionFactory.getCurrentSession().createQuery("from  Community");
+		List<Community> rows=query.list();
+		return rows;
 	}
 	
 	

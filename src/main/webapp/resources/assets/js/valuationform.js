@@ -34,14 +34,38 @@ function stringToDate(_date,_format,_delimiter)
 $("#clientname").change(function() {
 	console.log("clientName",$(this).val());
 	var clientName = $('#clientname').val();
+	var dropdown = $('#contactPerson');
+	$(dropdown).find("option").remove();
 	$.ajax({
 		url : 'getValuationInstructingPerson',
 		data : {clientName : clientName},
 		method : 'POST',
 		success : function(response) {	
-			 $('#contactPerson').val(response);
+// 			 dropdown.append($('<option></option>').attr("hidden", "").text("Valuation Instructing Person"));
+				$.each(response, function (key, entry) {
+				    dropdown.append($('<option></option>').attr('value', entry).text(entry));
+				})
 			 return;
 		},
+	});	
+});
+$("#propertyvalued").change(function() {
+	var propertyValued = $('#propertyvalued').val();
+	$.ajax({
+		url : 'getValuationApproach',
+		dataType: "text",
+		data : {propertyValued : propertyValued},
+		method : 'POST',
+		success : function(response) {	
+			var obj = $.parseJSON(response);
+			var valApproach = obj.valApproach;
+			var apprreason = obj.appReasoning;
+			 $('#valApproach').val(valApproach);
+			 $("#valApproach option[value='+valApproach+']").attr("selected",true);
+			$('#apprreason').val(apprreason);
+			 $("#apprreason option[value='+apprreason+']").attr("selected",true);
+			return;
+			},
 	});	
 });
 $("#insdate").change(function() {

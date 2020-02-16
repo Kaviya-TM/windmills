@@ -45,7 +45,7 @@
 						id="clientname">
 						<c:forEach items="${clientlist}" var="item">
 							<option value="" hidden>-- Select Client Name ---</option>
-							<option value="${item.clientName}">${item.clientName}</option>
+							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -97,41 +97,48 @@
 					</div>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Property Valued</label> <select
-						class="form-control form-control-sm textholder"
-						name="propertyValued" id="">
-						<option value="Commercial Land">Commercial Land</option>
-						<option value="Commercial Building">Commercial Building</option>
-						<option value="Commercial Office">Commercial Office</option>
-						<option value="Commercial Shop">Commercial Shop</option>
-						<option value="Industrial Land">Industrial Land</option>
-						<option value="Industrial Factory">Industrial Factory</option>
-						<option value="Industrial Labour Camp">Industrial Labour
-							Camp</option>
-						<option value="Industrial Warehouse">Industrial Warehouse</option>
-						<option value="Agricultural Farm">Agricultural Farm</option>
-						<option value="Agricultural Land">Agricultural Land</option>
-						<option value="Mixed Use Land">Mixed Use Land</option>
-						<option value="Mixed Use Building">Mixed Use Building</option>
-						<option value="Residential Land">Residential Land</option>
-						<option value="Residential Apartment">Residential
-							Apartment</option>
-						<option value="Residential Building">Residential Building</option>
-						<option value="Residential Villa" selected>Residential
-							Villa</option>
-						<option value="Residential Villa Compound">Residential
-							Villa Compound</option>
-						<option value="Residential Townhouse">Residential
-							Townhouse</option>
-						<option value="Trading Propery Mall">Trading Propery Mall</option>
-						<option value="Trading Propery Shopping Complex">Trading
-							Propery Shopping Complex</option>
-						<option value="Trading Propery School">Trading Propery
-							School</option>
-						<option value="Trading Propery Hotel">Trading Propery
-							Hotel</option>
-						<option value="Trading Propery Hospital">Trading Propery
-							Hospital</option>
+					<label class="rholder">Property Valued</label>
+					<!-- 					 <select -->
+					<!-- 						class="form-control form-control-sm textholder" -->
+					<!-- 						name="propertyValued" id="propertyvalued"> -->
+					<!-- 						<option value="Commercial Land">Commercial Land</option> -->
+					<!-- 						<option value="Commercial Building">Commercial Building</option> -->
+					<!-- 						<option value="Commercial Office">Commercial Office</option> -->
+					<!-- 						<option value="Commercial Shop">Commercial Shop</option> -->
+					<!-- 						<option value="Industrial Land">Industrial Land</option> -->
+					<!-- 						<option value="Industrial Factory">Industrial Factory</option> -->
+					<!-- 						<option value="Industrial Labour Camp">Industrial Labour -->
+					<!-- 							Camp</option> -->
+					<!-- 						<option value="Industrial Warehouse">Industrial Warehouse</option> -->
+					<!-- 						<option value="Agricultural Farm">Agricultural Farm</option> -->
+					<!-- 						<option value="Agricultural Land">Agricultural Land</option> -->
+					<!-- 						<option value="Mixed Use Land">Mixed Use Land</option> -->
+					<!-- 						<option value="Mixed Use Building">Mixed Use Building</option> -->
+					<!-- 						<option value="Residential Land">Residential Land</option> -->
+					<!-- 						<option value="Residential Apartment">Residential -->
+					<!-- 							Apartment</option> -->
+					<!-- 						<option value="Residential Building">Residential Building</option> -->
+					<!-- 						<option value="Residential Villa" selected>Residential -->
+					<!-- 				Valuation Instructing Person			Villa</option> -->
+					<!-- 						<option value="Residential Villa Compound">Residential -->
+					<!-- 							Villa Compound</option> -->
+					<!-- 						<option value="Residential Townhouse">Residential -->
+					<!-- 							Townhouse</option> -->
+					<!-- 						<option value="Trading Propery Mall">Trading Propery Mall</option> -->
+					<!-- 						<option value="Trading Propery Shopping Complex">Trading -->
+					<!-- 							Propery Shopping Complex</option> -->
+					<!-- 						<option value="Trading Propery School">Trading Propery -->
+					<!-- 							School</option> -->
+					<!-- 						<option value="Trading Propery Hotel">Trading Propery -->
+					<!-- 							Hotel</option> -->
+					<!-- 						<option value="Trading Propery Hospital">Trading Propery -->
+					<!-- 							Hospital</option> -->
+					<!-- 					</select> -->
+					<select class="form-control form-control-sm textholder"
+						name="propertyValued" id="propertyvalued">
+						<c:forEach items="${propertylist}" var="item">
+							<option value="${item.propertyValued}">${item.propertyValued}</option>
+						</c:forEach>
 					</select>
 				</div>
 				<div class="vrholder">
@@ -280,9 +287,13 @@
 						autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Community Name</label> <input type="text"
+					<label class="rholder">Community Name</label> <select
 						class="form-control form-control-sm textholder" name="community"
-						id="community" placeholder="Community Name" autocomplete="on">
+						id="community">
+						<c:forEach items="${communitylist}" var="item">
+							<option value="${item.community}">${item.community}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Sub Community Name</label> <input
@@ -319,10 +330,14 @@
 						id="country" placeholder="Country" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Valuation Instructing Person</label> <input
-						type="text" class="form-control form-control-sm textholder"
-						name="valuationInstrPerson" id="contactPerson"
-						placeholder="Valuation Instructing Person" autocomplete="on">
+					<label class="rholder">Valuation Instructing Person</label> 
+<!-- 					<input -->
+<!-- 						type="text" class="form-control form-control-sm textholder" -->
+<!-- 						name="valuationInstrPerson" id="contactPerson" -->
+<!-- 						placeholder="Valuation Instructing Person" autocomplete="on"> -->
+						<select class="form-control form-control-sm textholder" name="valuationInstrPerson" id="contactPerson">								
+						<option value="" hidden>Valuation Instructing  Person</option>
+		    										</select>
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Plot Size[Square Feet]</label> <input
@@ -345,7 +360,7 @@
 				<div class="vrholder">
 					<label class="rholder">Valuation Approach</label> <select
 						class="form-control form-control-sm textholder" name="valApproach"
-						id="">
+						id="valApproach">
 						<option value="Market Approach" selected>Market Approach</option>
 						<option value="Income Approach">Income Approach</option>
 						<option value="Profit Approach">Profit Approach</option>
@@ -370,7 +385,7 @@
 				<div class="vrholder">
 					<label class="rholder">Approach Reasoning</label> <select
 						class="form-control form-control-sm textholder"
-						name="approachReasoning" id="">
+						name="approachReasoning" id="apprreason">
 						<option value="Comparable Sold Transaction & Listing Available"
 							selected>Comparable Sold Transaction & Listing Available</option>
 						<option value="Income Generating Property">Income

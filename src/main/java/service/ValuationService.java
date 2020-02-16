@@ -36,6 +36,8 @@ import org.springframework.web.multipart.MultipartFile;
 import dao.ClientDaoImpl;
 import dao.ValuationDaoImpl;
 import model.ClientDetails;
+import model.Community;
+import model.Property;
 import model.ServiceOfficer;
 import model.ValuationReport;
 
@@ -68,15 +70,10 @@ public class ValuationService {
 	}
 	
 	@Transactional
-	public String getValuationInstructingPerson(String clientName) {
+	public List<ClientDetails> getValuationInstructingPerson(String clientName) {
 		log.info("valuation service to get contact person");
-		List<ClientDetails> rows=valuationDaoImpl.getValuationInstructingPerson(clientName);
-		String name = null;
-		for(ClientDetails r1 : rows){
-			name = r1.getContactPerson();
-		}
-		log.info("name--"+name);
-		return name;
+		List<ClientDetails> list=valuationDaoImpl.getValuationInstructingPerson(clientName);
+		return list;
 	}
 	@Transactional
 	public void saveValuationReport(ValuationReport valuationreport) {
@@ -89,6 +86,40 @@ public class ValuationService {
 		int count = 0;
 		count = valuationDaoImpl.getNumberOfRows();
 		return count;
+	}
+	@Transactional
+	public String getValuationApproach(String propertyValued) {
+		log.info("valuation service to get valuation approach");
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String valApproach = null;
+		for(Property r1 : rows){
+			valApproach = r1.getValuationApproach();
+		}
+		log.info("valApproach--"+valApproach);
+		return valApproach;
+	}
+	@Transactional
+	public List<Property> getPropertyValued() {
+		log.info("valuation service to get property valued");
+		List<Property> list = valuationDaoImpl.getPropertyValued();
+		return list;
+	}
+	@Transactional
+	public List<Community> getCommunity() {
+		log.info("valuation service to get community");
+		List<Community> list = valuationDaoImpl.getCommunity();
+		return list;
+	}
+	@Transactional
+	public String getApproachReasoning(String propertyValued) {
+		log.info("valuation service to get approach reasoning");
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String appReasoning = null;
+		for(Property r1 : rows){
+			appReasoning = r1.getApproachReasoning();
+		}
+		log.info("appReasoning--"+appReasoning);
+		return appReasoning;
 	}
 
 }

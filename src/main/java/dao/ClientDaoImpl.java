@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import javassist.convert.Transformer;
 import model.ClientDetails;
+import model.ServiceOfficer;
 
 
 @Repository
@@ -29,6 +30,28 @@ public class ClientDaoImpl {
 	
 	public void updateClient(ClientDetails clientdetails) {
 			sessionFactory.getCurrentSession().update(clientdetails);
+	}
+
+
+	public List<Object[]> getClients() {
+		Query query = sessionFactory.getCurrentSession().createQuery(" from ClientDetails");
+		List<Object[]> rows=query.list();
+		return rows;
+		
+	}
+
+
+	public List<ClientDetails> getClient(int clientId) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from ClientDetails s where s.clientId=:clientId");
+		query.setParameter("clientId",clientId);
+		List<ClientDetails> rows=query.list();
+		return rows;
+	}
+
+
+	public void updateClientDetails(ClientDetails clientdetails) {
+		sessionFactory.getCurrentSession().update(clientdetails);
+		
 	}
 	
 

@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -25,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.ClientDetails;
+import model.ServiceOfficer;
 import service.ClientService;
 
 
@@ -46,8 +48,30 @@ public class ClientController {
 
 		return mv;
 	}
+	@RequestMapping(value = {"/client-list" }, method = RequestMethod.GET)
+	public ModelAndView serviceOfficerPage() {
+
+		ModelAndView mv = new ModelAndView();
+		List<Object[]> list=clientService.getClients();
+		mv.addObject("clientlist",list);
+		mv.setViewName("clientlist");
+		return mv;
+	}
+	@RequestMapping(value="/getClient",method=RequestMethod.POST)
+	public ModelAndView getSupplier(@RequestParam("clientId")int clientId)
+	{
+	
+		ClientDetails clientdetails=clientService.getClient(clientId);
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("clienteditform");
+		mv.addObject("clientform",clientdetails);
+		return mv;
+		
+	
+		
+	}
 	@RequestMapping(value = "/addClientDetails", method = RequestMethod.POST)
-	public ModelAndView addProduct(@ModelAttribute("clientdetails") ClientDetails clientdetails,HttpSession session) throws IllegalStateException, IOException {
+	public ModelAndView addClientDetails(@ModelAttribute("clientdetails") ClientDetails clientdetails,HttpSession session) throws IllegalStateException, IOException {
    
     clientService.addClient(clientdetails);
     ModelAndView mv = new ModelAndView();
@@ -55,5 +79,14 @@ public class ClientController {
 
 	return mv;
 
+	}
+	@RequestMapping(value="/editClientDetails",method=RequestMethod.POST)
+	public ModelAndView editClientDetails(@ModelAttribute("clientdetails")ClientDetails clientdetails,HttpSession session) throws IllegalStateException, IOException {
+	
+		clientService.editClientDetails(clientdetails);
+		 ModelAndView mv = new ModelAndView();
+		    mv.setViewName("main");
+			return mv;
+		
 	}
 }

@@ -58,9 +58,29 @@ public class ClientDetails implements java.io.Serializable {
 	private int dbfee_Ajman;
 	private int dbfee_RasAlKhaima;
 	private int dbfee_UmmAlQuwain;
+	private int pitat_Dubai;
+	private int pitat_AbuDhabi;
+	private int pitat_Sharjah;
+	private int pitat_Fujairah;
+	private int pitat_Ajman;
+	private int pitat_RasAlKhaima;
+	private int pitat_UmmAlQuwain;
+	private int dttat_Dubai;
+	private int dttat_AbuDhabi;
+	private int dttat_Sharjah;
+	private int dttat_Fujairah;
+	private int dttat_Ajman;
+	private int dttat_RasAlKhaima;
+	private int dttat_UmmAlQuwain;
+	private int dbtat_Dubai;
+	private int dbtat_AbuDhabi;
+	private int dbtat_Sharjah;
+	private int dbtat_Fujairah;
+	private int dbtat_Ajman;
+	private int dbtat_RasAlKhaima;
+	private int dbtat_UmmAlQuwain;
 	private Date createDate;
 	private Date modifiedDate;
-	private Set<ClientContact> clientContacts = new HashSet<ClientContact>(0);
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -301,7 +321,174 @@ public class ClientDetails implements java.io.Serializable {
 	public void setDbfee_UmmAlQuwain(int dbfee_UmmAlQuwain) {
 		this.dbfee_UmmAlQuwain = dbfee_UmmAlQuwain;
 	}
+	@Column(name = "pitat_Dubai")
+	public int getPitat_Dubai() {
+		return pitat_Dubai;
+	}
 
+	public void setPitat_Dubai(int pitat_Dubai) {
+		this.pitat_Dubai = pitat_Dubai;
+	}
+	@Column(name = "pitat_AbuDhabi")
+	public int getPitat_AbuDhabi() {
+		return pitat_AbuDhabi;
+	}
+
+	public void setPitat_AbuDhabi(int pitat_AbuDhabi) {
+		this.pitat_AbuDhabi = pitat_AbuDhabi;
+	}
+	@Column(name = "pitat_Sharjah")
+	public int getPitat_Sharjah() {
+		return pitat_Sharjah;
+	}
+
+	public void setPitat_Sharjah(int pitat_Sharjah) {
+		this.pitat_Sharjah = pitat_Sharjah;
+	}
+	@Column(name = "pitat_Fujairah")
+	public int getPitat_Fujairah() {
+		return pitat_Fujairah;
+	}
+
+	public void setPitat_Fujairah(int pitat_Fujairah) {
+		this.pitat_Fujairah = pitat_Fujairah;
+	}
+	@Column(name = "pitat_Ajman")
+	public int getPitat_Ajman() {
+		return pitat_Ajman;
+	}
+
+	public void setPitat_Ajman(int pitat_Ajman) {
+		this.pitat_Ajman = pitat_Ajman;
+	}
+	@Column(name = "pitat_RasAlKhaima")
+	public int getPitat_RasAlKhaima() {
+		return pitat_RasAlKhaima;
+	}
+
+	public void setPitat_RasAlKhaima(int pitat_RasAlKhaima) {
+		this.pitat_RasAlKhaima = pitat_RasAlKhaima;
+	}
+	@Column(name = "pitat_UmmAlQuwain")
+	public int getPitat_UmmAlQuwain() {
+		return pitat_UmmAlQuwain;
+	}
+
+	public void setPitat_UmmAlQuwain(int pitat_UmmAlQuwain) {
+		this.pitat_UmmAlQuwain = pitat_UmmAlQuwain;
+	}
+	@Column(name = "dttat_Dubai")
+	public int getDttat_Dubai() {
+		return dttat_Dubai;
+	}
+
+	public void setDttat_Dubai(int dttat_Dubai) {
+		this.dttat_Dubai = dttat_Dubai;
+	}
+	@Column(name = "dttat_AbuDhabi")
+	public int getDttat_AbuDhabi() {
+		return dttat_AbuDhabi;
+	}
+
+	public void setDttat_AbuDhabi(int dttat_AbuDhabi) {
+		this.dttat_AbuDhabi = dttat_AbuDhabi;
+	}
+	@Column(name = "dttat_Sharjah")
+	public int getDttat_Sharjah() {
+		return dttat_Sharjah;
+	}
+
+	public void setDttat_Sharjah(int dttat_Sharjah) {
+		this.dttat_Sharjah = dttat_Sharjah;
+	}
+	@Column(name = "dttat_Fujairah")
+	public int getDttat_Fujairah() {
+		return dttat_Fujairah;
+	}
+
+	public void setDttat_Fujairah(int dttat_Fujairah) {
+		this.dttat_Fujairah = dttat_Fujairah;
+	}
+	@Column(name = "dttat_Ajman")
+	public int getDttat_Ajman() {
+		return dttat_Ajman;
+	}
+	
+	public void setDttat_Ajman(int dttat_Ajman) {
+		this.dttat_Ajman = dttat_Ajman;
+	}
+	@Column(name = "dttat_RasAlKhaima")
+	public int getDttat_RasAlKhaima() {
+		return dttat_RasAlKhaima;
+	}
+
+	public void setDttat_RasAlKhaima(int dttat_RasAlKhaima) {
+		this.dttat_RasAlKhaima = dttat_RasAlKhaima;
+	}
+	@Column(name = "dttat_UmmAlQuwain")
+	public int getDttat_UmmAlQuwain() {
+		return dttat_UmmAlQuwain;
+	}
+
+	public void setDttat_UmmAlQuwain(int dttat_UmmAlQuwain) {
+		this.dttat_UmmAlQuwain = dttat_UmmAlQuwain;
+	}
+	@Column(name = "dbtat_Dubai")
+	public int getDbtat_Dubai() {
+		return dbtat_Dubai;
+	}
+
+	public void setDbtat_Dubai(int dbtat_Dubai) {
+		this.dbtat_Dubai = dbtat_Dubai;
+	}
+	@Column(name = "dbtat_AbuDhabi")
+	public int getDbtat_AbuDhabi() {
+		return dbtat_AbuDhabi;
+	}
+
+	public void setDbtat_AbuDhabi(int dbtat_AbuDhabi) {
+		this.dbtat_AbuDhabi = dbtat_AbuDhabi;
+	}
+	@Column(name = "dbtat_Sharjah")
+	public int getDbtat_Sharjah() {
+		return dbtat_Sharjah;
+	}
+
+	public void setDbtat_Sharjah(int dbtat_Sharjah) {
+		this.dbtat_Sharjah = dbtat_Sharjah;
+	}
+	@Column(name = "dbtat_Fujairah")
+	public int getDbtat_Fujairah() {
+		return dbtat_Fujairah;
+	}
+
+	public void setDbtat_Fujairah(int dbtat_Fujairah) {
+		this.dbtat_Fujairah = dbtat_Fujairah;
+	}
+	@Column(name = "dbtat_Ajman")
+	public int getDbtat_Ajman() {
+		return dbtat_Ajman;
+	}
+
+	public void setDbtat_Ajman(int dbtat_Ajman) {
+		this.dbtat_Ajman = dbtat_Ajman;
+	}
+	@Column(name = "dbtat_RasAlKhaima")
+	public int getDbtat_RasAlKhaima() {
+		return dbtat_RasAlKhaima;
+	}
+
+	public void setDbtat_RasAlKhaima(int dbtat_RasAlKhaima) {
+		this.dbtat_RasAlKhaima = dbtat_RasAlKhaima;
+	}
+	@Column(name = "dbtat_UmmAlQuwain")
+	public int getDbtat_UmmAlQuwain() {
+		return dbtat_UmmAlQuwain;
+	}
+
+	public void setDbtat_UmmAlQuwain(int dbtat_UmmAlQuwain) {
+		this.dbtat_UmmAlQuwain = dbtat_UmmAlQuwain;
+	}
 
 	    
 	@Temporal(TemporalType.TIMESTAMP)
@@ -323,15 +510,5 @@ public class ClientDetails implements java.io.Serializable {
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
-	
-	@OneToMany(fetch = FetchType.LAZY,mappedBy = "clientdetails",cascade= CascadeType.ALL)
-	public Set<ClientContact> getClientContacts() {
-		return clientContacts;
-	}
-
-	public void setClientContacts(Set<ClientContact> clientContacts) {
-		this.clientContacts = clientContacts;
-	}
-	
 	
 }

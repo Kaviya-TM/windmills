@@ -78,7 +78,7 @@ public class ValuationController {
 	@ResponseBody
 	public List<ClientDetails> getValuationInstructingPerson(@RequestParam("clientName") String clientName) {
 		List<ClientDetails> list = valuationService.getValuationInstructingPerson(clientName);
-		System.out.println("size" + list.size());
+		log.info("list");
 		return list;
 
 	}
@@ -93,12 +93,25 @@ public class ValuationController {
 //	}
 	@RequestMapping(value = "/getValuationApproach", method = RequestMethod.POST)
 	@ResponseBody
-	public JSONObject getCurrencyTimezonebyCountry(@RequestParam("propertyValued") String propertyValued) {
+	public JSONObject getValuationApproach(@RequestParam("propertyValued") String propertyValued) {
 		String valApproach = valuationService.getValuationApproach(propertyValued);
 		String appReasoning = valuationService.getApproachReasoning(propertyValued);
 		JSONObject json = new JSONObject();
 		json.put("valApproach", valApproach);
 		json.put("appReasoning", appReasoning);
+		System.out.println("json"+json);
+		return json;
+
+	}
+	
+	@RequestMapping(value = "/getCity", method = RequestMethod.POST)
+	@ResponseBody
+	public JSONObject getCity(@RequestParam("community") String community) {
+		String subcommunity = valuationService.getSubCommunity(community);
+		String city = valuationService.getCity(community);
+		JSONObject json = new JSONObject();
+		json.put("subcommunity", subcommunity);
+		json.put("city", city);
 		System.out.println("json"+json);
 		return json;
 

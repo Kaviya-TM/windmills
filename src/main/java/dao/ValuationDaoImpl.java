@@ -56,7 +56,8 @@ public class ValuationDaoImpl {
 	public List<ClientDetails> getValuationInstructingPerson(String clientName) {
 		log.info("valuation dao to get contact person");
     	Query query=sessionFactory.getCurrentSession().createQuery("select contactPerson from ClientDetails s where s.clientName=:clientName");
-		query.setParameter("clientName",clientName);
+    	log.info("done");
+    	query.setParameter("clientName",clientName);
 		List<ClientDetails> rows=query.list();
 		
 		return rows;
@@ -91,6 +92,14 @@ public class ValuationDaoImpl {
 		List<Community> rows=query.list();
 		return rows;
 	}
+
+	public List<Community> getSubCommunity(String community) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from Community s where s.community=:community");
+		query.setParameter("community",community);
+		List<Community> rows=query.list();
+		return rows;
+	}
+
 	
 	
 }

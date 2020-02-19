@@ -281,10 +281,21 @@
 						id="buildingno" placeholder="Building Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Building Name</label> <input type="text"
+					<label class="rholder">Building/Project Name</label> <input type="text"
 						class="form-control form-control-sm textholder"
-						name="buildingName" id="buildingname" placeholder="Building Name"
+						name="buildingName" id="buildingname" placeholder="Building/Project Name"
 						autocomplete="on">
+				</div>
+				<div class="vrholder">
+					<label class="rholder">Plot Number</label> <input type="text"
+						class="form-control form-control-sm textholder" name="plotNo"
+						id="plotno" placeholder="Plot Number" autocomplete="on">
+				</div>
+				<div class="vrholder">
+					<label class="rholder">Sub Community Name</label> <input
+						type="text" class="form-control form-control-sm textholder"
+						name="subCommunity" id="subcommunity"
+						placeholder="Sub Community Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Community Name</label> <select
@@ -296,17 +307,6 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Sub Community Name</label> <input
-						type="text" class="form-control form-control-sm textholder"
-						name="subCommunity" id="subcommunity"
-						placeholder="Sub Community Name" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Plot Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="plotNo"
-						id="plotno" placeholder="Plot Number" autocomplete="on">
-				</div>
-				<div class="vrholder">
 					<label class="rholder">Town</label> <input type="text"
 						class="form-control form-control-sm textholder" name="town"
 						id="town" placeholder="Town" autocomplete="on">
@@ -315,12 +315,12 @@
 					<label class="rholder">City</label> <select
 						class="form-control form-control-sm textholder" name="city"
 						id="city">
-						<option value="Dubai" selected>Dubai</option>
-						<option value="Abu Dubai">Abu Dubai</option>
+						<option value="Dubai">Dubai</option>
+						<option value="AbuDubai">AbuDubai</option>
 						<option value="Sharjah">Sharjah</option>
 						<option value="Ajman">Ajman</option>
 						<option value="Fujairah">Fujairah</option>
-						<option value="Ras Al Khaima">Ras Al Khaima</option>
+						<option value="Ras-Al-Khaimah">Ras-Al-Khaimah</option>
 						<option value="Umm Al Quwain">Umm Al Quwain</option>
 					</select>
 				</div>
@@ -428,6 +428,11 @@
 						id="cstreetno" placeholder="Street Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
+					<label class="rholder">Plot Number</label> <input type="text"
+						class="form-control form-control-sm textholder" name=""
+						id="cplotno" placeholder="Plot Number" autocomplete="on">
+				</div>
+				<div class="vrholder">
 					<label class="rholder">Street Name</label> <input type="text"
 						class="form-control form-control-sm textholder" name=""
 						id="cstreetname" placeholder="Street Name" autocomplete="on">
@@ -442,11 +447,6 @@
 						type="text" class="form-control form-control-sm textholder"
 						name="" id="csubcommunity" placeholder="Sub Community Name"
 						autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Plot Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="cplotno" placeholder="Plot Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Town</label> <input type="text"
@@ -468,6 +468,18 @@
 				</div>
 			</div>
 			<div class="form-group scheduling">
+				<div class="valuationholder">
+					<label class="ilholder">Valuation Date</label>
+					<div class="input-group itholder">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker"
+							name="" id="" placeholder="" autocomplete="on">
+					</div>
+				</div>
 				<div class="valuationholder">
 					<label class="ilholder">Inspection Date</label>
 					<div class="input-group itholder">
@@ -505,6 +517,18 @@
 					</div>
 				</div>
 				<div class="valuationholder">
+					<label class="ilholder">Client's Deadline</label>
+					<div class="input-group itholder">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker"
+							name="" id="" placeholder="" autocomplete="on">
+					</div>
+				</div>
+				<div class="valuationholder">
 					<label class="ilholder">Inspection Type</label> <select
 						class="form-control form-control-sm itholder" name="insType" id="">
 						<option value="Physical Inspection" selected>Physical
@@ -525,7 +549,26 @@
 						</c:forEach>
 					</select>
 				</div>
-
+				<div class="valuationholder">
+					<label class="ilholder">Mode Of Transport</label> 
+					<select class="form-control form-control-sm itholder" name="" id="mode">
+						<option value="Company Car">Company Car</option>
+						<option value="Personal Car">Personal Car</option>
+						<option value="External Transport">External Transport</option>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="ilholder"> Start Kilometres</label>
+					 <input type="text"
+						class="form-control form-control-sm itholder" name=""
+						id="" placeholder="Start Kilometres" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="ilholder"> End Kilometres</label>
+					 <input type="text"
+						class="form-control form-control-sm itholder" name=""
+						id="" placeholder="End Kilometres" autocomplete="on">
+				</div>
 				<div class="valuationholder adjustTop">
 					<div class="savebtn" id="scheduleprv">Previous</div>
 					<div class="savebtn" id="schedulenxt">Next</div>
@@ -557,7 +600,7 @@
 						class="form-control form-control-sm textholder"
 						name="propertyPlacement" id="">
 						<option value="Middle" selected>Middle</option>
-						<option value="Center">Center</option>
+						<option value="Corner">Corner</option>
 						<option value="Not Applicable">Not Applicable</option>
 					</select>
 				</div>

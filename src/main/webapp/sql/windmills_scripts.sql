@@ -42,48 +42,6 @@ DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
 
 
--- -----------------------------------------------------
--- Table `windmills`.`clientdetails`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `windmills`.`clientdetails` (
-  `client_id` INT(11) NOT NULL AUTO_INCREMENT,
-  `clientName` VARCHAR(255) NULL DEFAULT NULL,
-  `contactPerson` VARCHAR(255) NULL DEFAULT NULL,
-  `contactPosition` VARCHAR(255) NULL DEFAULT NULL,
-  `contactNumber` VARCHAR(255) NULL DEFAULT NULL,
-  `contactMail` VARCHAR(255) NULL DEFAULT NULL,
-  `relStartDate` VARCHAR(255) NULL DEFAULT NULL,
-  `pifee-Dubai` INT(255) NULL DEFAULT NULL,
-  `pifee-AbuDubai` INT(255) NULL DEFAULT NULL,
-  `pifee-Sharjah` INT(255) NULL DEFAULT NULL,
-  `pifee-Fujairah` INT(255) NULL DEFAULT NULL,
-  `pifee-Ajman` INT(255) NULL DEFAULT NULL,
-  `pifee-RasAlKhaima` INT(255) NULL DEFAULT NULL,
-  `pifee-UmmAlQuwain` INT(255) NULL DEFAULT NULL,
-  `dtfee-Dubai` INT(255) NULL DEFAULT NULL,
-  `dtfee-AbuDubai` INT(255) NULL DEFAULT NULL,
-  `dtfee-Sharjah` INT(255) NULL DEFAULT NULL,
-  `dtfee-Fujairah` INT(255) NULL DEFAULT NULL,
-  `dtfee-Ajman` INT(255) NULL DEFAULT NULL,
-  `dtfee-RasAlKhaima` INT(255) NULL DEFAULT NULL,
-  `dtfee-UmmAlQuwain` INT(255) NULL DEFAULT NULL,
-  `dbfee-Dubai` INT(255) NULL DEFAULT NULL,
-  `dbfee-AbuDubai` INT(255) NULL DEFAULT NULL,
-  `dbfee-Sharjah` INT(255) NULL DEFAULT NULL,
-  `dbfee-Fujairah` INT(255) NULL DEFAULT NULL,
-  `dbfee-Ajman` INT(255) NULL DEFAULT NULL,
-  `dbfee-RasAlKhaima` INT(255) NULL DEFAULT NULL,
-  `dbfee-UmmAlQuwain` INT(255) NULL DEFAULT NULL,
-  `create_date` DATETIME NULL DEFAULT NULL,
-  `modified_date` DATETIME NULL DEFAULT NULL, 
-  PRIMARY KEY (`client_id`),
-  UNIQUE INDEX `client_id_UNIQUE` (`client_id` ASC) VISIBLE)
-ENGINE = InnoDB
-AUTO_INCREMENT = 54
-DEFAULT CHARACTER SET = utf8mb4
-COLLATE = utf8mb4_0900_ai_ci;
-
-
 
 -- -----------------------------------------------------
 -- Table `windmills`.`client_contact`

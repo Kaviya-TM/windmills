@@ -35,12 +35,15 @@ import org.springframework.web.multipart.MultipartFile;
 
 import dao.ClientDaoImpl;
 import model.ClientDetails;
+import model.ServiceOfficer;
 import utils.Constants;
 
 @Service
 public class ClientService {
 	@Autowired
 	private ClientDaoImpl clientDaoImpl;
+	@Autowired
+	private ClientDetails clientdetails;
 	@Autowired
 	private SessionFactory sessionFactory;
 
@@ -53,6 +56,30 @@ public class ClientService {
 		clientdetails.setCreateDate(new Date());
 		clientdetails.setModifiedDate(new Date());
 		clientDaoImpl.addClient(clientdetails);
+	}
+
+	@Transactional
+	public List<Object[]> getClients() {
+		log.info("beginning of getclient");
+		List<Object[]> list=clientDaoImpl.getClients();
+		log.info("list"+list);
+		return list;
+	}
+	@Transactional
+	public ClientDetails getClient(int clientId) {
+		log.info("beginning of edit client");
+		List<ClientDetails> list=clientDaoImpl.getClient(clientId);
+		if(list!=null && !list.isEmpty())
+		{
+			clientdetails=list.get(0);
+		}
+		return clientdetails;
+	}
+	@Transactional
+	public void editClientDetails(ClientDetails clientdetails) {
+		clientdetails.setCreateDate(new Date());
+		clientdetails.setModifiedDate(new Date());
+		clientDaoImpl.updateClientDetails(clientdetails);
 	}
 
 	

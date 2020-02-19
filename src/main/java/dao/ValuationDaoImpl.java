@@ -93,9 +93,15 @@ public class ValuationDaoImpl {
 		return rows;
 	}
 
-	public List<Community> getSubCommunity(String community) {
+	public List<Community> getCommunityList(String community) {
 		Query query=sessionFactory.getCurrentSession().createQuery("from Community s where s.community=:community");
 		query.setParameter("community",community);
+		List<Community> rows=query.list();
+		return rows;
+	}
+
+	public List<Community> getCity() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct city from  Community");
 		List<Community> rows=query.list();
 		return rows;
 	}

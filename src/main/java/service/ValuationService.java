@@ -122,21 +122,11 @@ public class ValuationService {
 		log.info("appReasoning--"+appReasoning);
 		return appReasoning;
 	}
-	@Transactional
-	public String getSubCommunity(String community) {
-		log.info("valuation service to get community");
-		List<Community> rows=valuationDaoImpl.getSubCommunity(community);
-		String subcommunity = null;
-		for(Community r1 : rows){
-			subcommunity = r1.getSubCommunity();
-		}
-		log.info("subcommunity--"+subcommunity);
-		return subcommunity;
-	}
+
 	@Transactional
 	public String getCity(String community) {
 		log.info("valuation service to get community");
-		List<Community> rows=valuationDaoImpl.getSubCommunity(community);
+		List<Community> rows=valuationDaoImpl.getCommunityList(community);
 		String city = null;
 		for(Community r1 : rows){
 			city = r1.getCity();
@@ -144,5 +134,11 @@ public class ValuationService {
 		log.info("city--"+city);
 		return city;
 	}
+	@Transactional
+	public List<Community> getCity() {
+		List<Community> list = valuationDaoImpl.getCity();
+		return list;
+	}
+
 
 }

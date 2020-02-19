@@ -50,7 +50,8 @@ import utils.Constants;
 public class PropertyService {
 	@Autowired
 	private PropertyDaoImpl propertyDaoImpl;
-	
+	@Autowired
+	private Property property;
 	@Autowired
 	private SessionFactory status;
 
@@ -60,6 +61,28 @@ public class PropertyService {
 	public void addPropertyValued(Property property) {
 		log.info("beginning of add property");
 		propertyDaoImpl.addPropertyValued(property);
+	}
+	@Transactional
+	public List<Object[]> getPropertyValued() {
+		log.info("beginning of get property valued");
+		List<Object[]> list=propertyDaoImpl.getPropertyValued();
+		log.info("list"+list);
+		return list;
+	}
+	@Transactional
+	public Property getPropertyValued(int propertyId) {
+		log.info("beginning of property valued");
+		List<Property> list=propertyDaoImpl.getPropertyValued(propertyId);
+		if(list!=null && !list.isEmpty())
+		{
+			property=list.get(0);
+		}
+		return property;
+	}
+	@Transactional
+	public void editPropertyValued(Property property) {
+		log.info("beginning of update property valued");
+		propertyDaoImpl.updatePropertyValued(property);
 	}
 	
 }

@@ -32,7 +32,6 @@ public class Community  implements java.io.Serializable {
 
 	private int communityId;
 	private String community;
-	private String subCommunity;
 	private String city;
 	
 	@Id
@@ -45,6 +44,7 @@ public class Community  implements java.io.Serializable {
 	public void setCommunityId(int communityId) {
 		this.communityId = communityId;
 	}
+	
 	@Column(name = "community")
 	public String getCommunity() {
 		return community;
@@ -53,14 +53,7 @@ public class Community  implements java.io.Serializable {
 	public void setCommunity(String community) {
 		this.community = community;
 	}
-	@Column(name = "subCommunity")
-	public String getSubCommunity() {
-		return subCommunity;
-	}
-
-	public void setSubCommunity(String subCommunity) {
-		this.subCommunity = subCommunity;
-	}
+	
 	@Column(name = "city")
 	public String getCity() {
 		return city;

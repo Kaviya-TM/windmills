@@ -30,6 +30,27 @@ public class PropertyDaoImpl {
 	}
 
 
+	public List<Object[]> getPropertyValued() {
+		Query query = sessionFactory.getCurrentSession().createQuery(" from Property");
+		List<Object[]> rows=query.list();
+		return rows;
+	}
+
+
+	public List<Property> getPropertyValued(int propertyId) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from Property s where s.propertyId=:propertyId");
+		query.setParameter("propertyId",propertyId);
+		List<Property> rows=query.list();
+		return rows;
+	}
+
+
+	public void updatePropertyValued(Property property) {
+		sessionFactory.getCurrentSession().update(property);
+		log.info("success");
+	}
+
+
 	
 	
 }

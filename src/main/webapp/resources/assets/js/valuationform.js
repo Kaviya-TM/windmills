@@ -72,20 +72,14 @@ $("#community").change(function() {
 	var community = $('#community').val();
 	$.ajax({
 		url : 'getCity',
-		dataType: "text",
 		data : {community : community},
 		method : 'POST',
 		success : function(response) {	
-			var obj = $.parseJSON(response);
-			var subcommunity = obj.subcommunity;
-			var city = obj.city;
-			console.log(city);
-			 $('#subcommunity').val(subcommunity);
-//			 $("#valApproach option[value='+subcommunity+']").attr("selected",true);
-			$('#city').val(city);
-			 $("#city option[value='+city+']").attr("selected",true);
+			console.log(response);
+			$('#city').val(response);
+			 $("#city option[value='+response+']").attr("selected",true);
 			return;
-			},
+		},
 	});	
 });
 $("#insdate").change(function() {

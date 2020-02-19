@@ -52,7 +52,8 @@ import utils.Constants;
 public class CommunityService {
 	@Autowired
 	private CommunityDaoImpl communityDaoImpl;
-	
+	@Autowired
+	private Community community;
 	@Autowired
 	private SessionFactory status;
 
@@ -62,6 +63,27 @@ public class CommunityService {
 	public void addCommunity(Community community) {
 		log.info("beginning of add community");
 		communityDaoImpl.addCommunity(community);
+	}
+	@Transactional
+	public List<Object[]> getCommunity() {
+		List<Object[]> list=communityDaoImpl.getCommunity();
+		log.info("list"+list);
+		return list;
+	}
+	@Transactional
+	public Community getCommunity(int communityId) {
+		log.info("beginning of get community");
+		List<Community> list=communityDaoImpl.getCommunity(communityId);
+		if(list!=null && !list.isEmpty())
+		{
+			community=list.get(0);
+		}
+		return community;
+	}
+	@Transactional
+	public void editCommunity(Community community) {
+		log.info("beginning of update community");
+		communityDaoImpl.updateCommunity(community);
 	}
 	
 }

@@ -58,7 +58,7 @@ public class ClientController {
 		return mv;
 	}
 	@RequestMapping(value="/getClient",method=RequestMethod.POST)
-	public ModelAndView getSupplier(@RequestParam("clientId")int clientId)
+	public ModelAndView getClient(@RequestParam("clientId")int clientId)
 	{
 	
 		ClientDetails clientdetails=clientService.getClient(clientId);

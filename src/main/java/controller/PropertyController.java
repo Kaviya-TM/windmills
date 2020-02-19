@@ -42,22 +42,45 @@ public class PropertyController {
 	static Logger log = Logger.getLogger(PropertyController.class);
 
 	@RequestMapping(value = {"/property-valued" }, method = RequestMethod.GET)
-	public ModelAndView servicePage() {
+	public ModelAndView propertyValuedPage() {
 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("property");
 
 		return mv;
 	}
+	@RequestMapping(value = {"/property-valued-list" }, method = RequestMethod.GET)
+	public ModelAndView propertyValuedListPage() {
+
+		ModelAndView mv = new ModelAndView();
+		List<Object[]> list=propertyService.getPropertyValued();
+		mv.addObject("propertylist",list);
+		mv.setViewName("propertylist");
+		return mv;
+	}
+	@RequestMapping(value="/getPropertyValued",method=RequestMethod.POST)
+	public ModelAndView getPropertyValued(@RequestParam("propertyId")int propertyId)
+	{
+		Property property=propertyService.getPropertyValued(propertyId);
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("propertyeditform");
+		mv.addObject("propertyform",property);
+		return mv;
+	}
 	@RequestMapping(value = "/addPropertyValued", method = RequestMethod.POST)
 	public ModelAndView addPropertyValued(@ModelAttribute("property") Property property,HttpSession session) throws IllegalStateException, IOException {
-   
-	propertyService.addPropertyValued(property);
-    ModelAndView mv = new ModelAndView();
-    mv.setViewName("main");
-
-	return mv;
-
+		propertyService.addPropertyValued(property);
+	    ModelAndView mv = new ModelAndView();
+	    mv.setViewName("main");
+		return mv;
+	}
+	@RequestMapping(value="/editPropertyValued",method=RequestMethod.POST)
+	public ModelAndView editPropertyValued(@ModelAttribute("property")Property property,HttpSession session) throws IllegalStateException, IOException {
+		propertyService.editPropertyValued(property);
+		 ModelAndView mv = new ModelAndView();
+		 mv.setViewName("main");
+	     return mv;
+		
 	}
 	
 }

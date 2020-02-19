@@ -292,7 +292,8 @@
 						id="plotno" placeholder="Plot Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Sub Community Name</label> <input
+					<label class="rholder">Sub Community Name</label>
+					 <input
 						type="text" class="form-control form-control-sm textholder"
 						name="subCommunity" id="subcommunity"
 						placeholder="Sub Community Name" autocomplete="on">
@@ -302,6 +303,7 @@
 						class="form-control form-control-sm textholder" name="community"
 						id="community">
 						<c:forEach items="${communitylist}" var="item">
+							<option value="" hidden>Select Community</option>
 							<option value="${item.community}">${item.community}</option>
 						</c:forEach>
 					</select>
@@ -312,16 +314,14 @@
 						id="town" placeholder="Town" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">City</label> <select
+					<label class="rholder">City</label>
+					 <select
 						class="form-control form-control-sm textholder" name="city"
 						id="city">
-						<option value="Dubai">Dubai</option>
-						<option value="AbuDubai">AbuDubai</option>
-						<option value="Sharjah">Sharjah</option>
-						<option value="Ajman">Ajman</option>
-						<option value="Fujairah">Fujairah</option>
-						<option value="Ras-Al-Khaimah">Ras-Al-Khaimah</option>
-						<option value="Umm Al Quwain">Umm Al Quwain</option>
+						<c:forEach items="${citylist}" var="item">
+							<option value="" hidden>Select City</option>
+							<option value="${item}">${item}</option>
+						</c:forEach>
 					</select>
 				</div>
 				<div class="vrholder">

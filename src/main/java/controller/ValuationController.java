@@ -52,12 +52,14 @@ public class ValuationController {
 		List<ClientDetails> clientlist = valuationService.getClients();
 		List<Property> propertylist = valuationService.getPropertyValued();
 		List<Community> communitylist = valuationService.getCommunity();
+		List<Community> citylist = valuationService.getCity();
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String email = authentication.getName();
 		List<ServiceOfficer> serviceofficerlist = valuationService.getServiceOfficer(email);
 		List<ServiceOfficer>  list= valuationService.getDefaultServicer(email);
 		int row = valuationService.getNumberOfRows();;
 		mv.addObject("clientlist", clientlist);
+		mv.addObject("citylist", citylist);
 		mv.addObject("propertylist", propertylist);
 		mv.addObject("communitylist", communitylist);
 		mv.addObject("noofrows", row);
@@ -65,15 +67,7 @@ public class ValuationController {
 		mv.addObject("dfservicer",list);
 		return mv;
 	}
-	
-//	@RequestMapping(value = "/getValuationInstructingPerson", method = RequestMethod.POST)
-//	@ResponseBody
-//	public String getValuationInstructingPerson(@RequestParam("clientName") String clientName) {
-//		String name = valuationService.getValuationInstructingPerson(clientName);
-//		System.out.println("name" + name);
-//		return name;
-//
-//	}
+
 	@RequestMapping(value = "/getValuationInstructingPerson", method = RequestMethod.POST)
 	@ResponseBody
 	public List<ClientDetails> getValuationInstructingPerson(@RequestParam("clientName") String clientName) {
@@ -82,15 +76,6 @@ public class ValuationController {
 		return list;
 
 	}
-	
-//	@RequestMapping(value = "/getValuationApproach", method = RequestMethod.POST)
-//	@ResponseBody
-//	public String getValuationApproach(@RequestParam("propertyValued") String propertyValued) {
-//		String valApproach = valuationService.getValuationApproach(propertyValued);
-//		System.out.println("valApproach-->" + valApproach);
-//		return valApproach;
-//
-//	}
 	@RequestMapping(value = "/getValuationApproach", method = RequestMethod.POST)
 	@ResponseBody
 	public JSONObject getValuationApproach(@RequestParam("propertyValued") String propertyValued) {
@@ -106,14 +91,10 @@ public class ValuationController {
 	
 	@RequestMapping(value = "/getCity", method = RequestMethod.POST)
 	@ResponseBody
-	public JSONObject getCity(@RequestParam("community") String community) {
-		String subcommunity = valuationService.getSubCommunity(community);
+	public String getCity(@RequestParam("community") String community) {
 		String city = valuationService.getCity(community);
-		JSONObject json = new JSONObject();
-		json.put("subcommunity", subcommunity);
-		json.put("city", city);
-		System.out.println("json"+json);
-		return json;
+		System.err.println(city);
+		return city;
 
 	}
 

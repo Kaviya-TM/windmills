@@ -48,22 +48,37 @@
 						href="<c:url value="service-officer-list"/>">View Service
 							Officer</a></li>
 				</ul></li>
-			<li class="dropdown"><a href="<c:url value="property-valued"/>"
-				class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
+				<li class="dropdown"><a href="#"
+				class="menu-toggle nav-link has-dropdown"><svg xmlns="http://www.w3.org/2000/svg"
 						width="24" height="24" viewBox="0 0 24 24" fill="none"
 						stroke="currentColor" stroke-width="2" stroke-linecap="round"
 						stroke-linejoin="round" class="feather feather-command">
 						<path
-							d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg><span>Property
-						Valued</span></a></li>
-			<li class="dropdown"><a href="<c:url value="community"/>"
-				class="nav-link"><svg xmlns="http://www.w3.org/2000/svg"
+							d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg><span>Property Valued</span></a>
+				<ul class="dropdown-menu">
+					<li><a class="nav-link"
+						href="<c:url value="property-valued"/>">Add Property Valued
+							</a></li>
+					<li><a class="nav-link" style="letter-spacing: 0.1px;"
+						href="<c:url value="property-valued-list"/>">View Property Valued
+							</a></li>
+				</ul></li>
+				<li class="dropdown"><a href="#"
+				class="menu-toggle nav-link has-dropdown"><svg xmlns="http://www.w3.org/2000/svg"
 						width="24" height="24" viewBox="0 0 24 24" fill="none"
 						stroke="currentColor" stroke-width="2" stroke-linecap="round"
 						stroke-linejoin="round" class="feather feather-command">
 						<rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
 						<line x1="3" y1="9" x2="21" y2="9"></line>
-						<line x1="9" y1="21" x2="9" y2="9"></line></svg><span>Community</span></a></li>
+						<line x1="9" y1="21" x2="9" y2="9"></line></svg><span>Community</span></a>
+				<ul class="dropdown-menu">
+					<li><a class="nav-link"
+						href="<c:url value="community"/>">Add Community
+							</a></li>
+					<li><a class="nav-link" style="letter-spacing: 0.1px;"
+						href="<c:url value="community-list"/>">View Community
+							</a></li>
+				</ul></li>
 			<li class="dropdown"><a href="#"
 				class="menu-toggle nav-link has-dropdown"><svg
 						xmlns="http://www.w3.org/2000/svg" width="24" height="24"

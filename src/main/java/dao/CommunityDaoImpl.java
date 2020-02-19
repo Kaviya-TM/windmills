@@ -31,6 +31,27 @@ public class CommunityDaoImpl {
 	}
 
 
+	public List<Object[]> getCommunity() {
+		Query query = sessionFactory.getCurrentSession().createQuery(" from Community");
+		List<Object[]> rows=query.list();
+		return rows;
+	}
+
+
+	public List<Community> getCommunity(int communityId) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from Community s where s.communityId=:communityId");
+		query.setParameter("communityId",communityId);
+		List<Community> rows=query.list();
+		return rows;
+	}
+
+
+	public void updateCommunity(Community community) {
+		sessionFactory.getCurrentSession().update(community);
+		
+	}
+
+
 	
 	
 }

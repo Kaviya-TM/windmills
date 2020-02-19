@@ -12,12 +12,12 @@
 <link
 	href="resources/assets/bundles/vendor/datepicker/daterangepicker.css"
 	rel="stylesheet" media="all">
-<div class="communityform">
+<div class="communityeditform">
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
 		style="background: rgb(229, 231, 233) !important; margin-top: 70px; width: 100%; min-height: 530px !important">
-		<form:form action="addCommunity" id="" modelAttribute="community">
+		<form:form action="editCommunity" id="" modelAttribute="community">
 			<div class="form-group"
 				style="color: #000080; width: 100%; height: unset; margin-bottom: 20px !important;">
 				<div class="client header">Community Details</div>
@@ -26,16 +26,19 @@
 				<div class="communityholder">
 					<label class="communitylabel">Community</label> <input type="text"
 						class="form-control form-control-sm communitytext"
-						name="community" id="" placeholder="Community">
+						name="community" value="${communityform.community}" id="" placeholder="Community">
 				</div>
 				<div class="communityholder">
 					<label class="communitylabel">City</label> <input type="text"
-						class="form-control form-control-sm communitytext" name="city"
+						class="form-control form-control-sm communitytext" name="city" value="${communityform.city}"
 						id="" placeholder="City">
 				</div>
-				<div class="form-group" style="width: 100%">
-					<button type="submit">Save</button>
-				</div>
+				<input type="hidden" id="communityId"" name="communityId"
+				value="${communityform.communityId}"/>
+			<div class="form-group" style="width: 100%">
+				<button type="submit" style="background: #000080">Update</button>
+				<button type="none" id="cancel" style="background: #DF0101">Cancel</button>
+			</div>
 			</div>
 		</form:form>
 	</div>
@@ -43,4 +46,4 @@
 <%@include file="footer.jsp"%>
 <script
 	src="resources/assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script src="resources/assets/js/community.js"></script>
+<script src="resources/assets/js/communityedit.js"></script>

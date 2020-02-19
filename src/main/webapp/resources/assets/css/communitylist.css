@@ -1,0 +1,60 @@
+.addWidth {
+	width: 9% !important;
+}
+
+#btnContainer {
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.contentPart {
+	width: 100%;
+	float: left;
+}
+
+.contentPart .sec {
+	width: 50%;
+    float: left;
+}
+.column:hover {
+	background: rgba(163, 163, 163, 0.2);
+}
+
+.column {
+	loat: left;
+    padding: 5px;
+    margin: 26px;
+    height: fit-content;
+    font-size: 11px;
+    font-family: sans-serif;
+    cursor: pointer;
+    background: #fff;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* Style the buttons */
+.btnhold {
+	border: none;
+	outline: none;
+	background: #000080 !important;
+	cursor: pointer;
+	background: tan;
+	padding-left: 10px;
+	width: 3%;
+}
+
+.btnhold:hover {
+	background-color: #ddd;
+}
+
+.btnhold.active {
+	background-color: #666;
+	color: white;
+}

@@ -44,22 +44,46 @@ public class CommunityController {
 	static Logger log = Logger.getLogger(PropertyController.class);
 
 	@RequestMapping(value = {"/community" }, method = RequestMethod.GET)
-	public ModelAndView servicePage() {
+	public ModelAndView communityPage() {
 
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("community");
 
 		return mv;
 	}
+	@RequestMapping(value = {"/community-list" }, method = RequestMethod.GET)
+	public ModelAndView communityListPage() {
+
+		ModelAndView mv = new ModelAndView();
+		List<Object[]> list=communityService.getCommunity();
+		mv.addObject("communitylist",list);
+		mv.setViewName("communitylist");
+		return mv;
+	}
+	@RequestMapping(value="/getCommunity",method=RequestMethod.POST)
+	public ModelAndView getCommunity(@RequestParam("communityId")int communityId)
+	{
+		Community community=communityService.getCommunity(communityId);
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("communityeditform");
+		mv.addObject("communityform",community);
+		return mv;
+	}
 	@RequestMapping(value = "/addCommunity", method = RequestMethod.POST)
 	public ModelAndView addPropertyValued(@ModelAttribute("community") Community community,HttpSession session) throws IllegalStateException, IOException {
-   
-	communityService.addCommunity(community);
-    ModelAndView mv = new ModelAndView();
-    mv.setViewName("main");
-
-	return mv;
-
+		communityService.addCommunity(community);
+	    ModelAndView mv = new ModelAndView();
+	    mv.setViewName("main");
+		return mv;
 	}
+	@RequestMapping(value="/editCommunity",method=RequestMethod.POST)
+	public ModelAndView editCommunity(@ModelAttribute("community")Community community,HttpSession session) throws IllegalStateException, IOException {
+		 communityService.editCommunity(community);
+		 ModelAndView mv = new ModelAndView();
+		 mv.setViewName("main");
+	     return mv;
+		
+	}
+	
 	
 }

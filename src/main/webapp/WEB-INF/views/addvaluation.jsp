@@ -22,7 +22,8 @@
 			<button class="valbtn" id="receive">Receive Valuation</button>
 			<!-- 		            	<button class="valbtn" id="conflict">Check Conflict Of Interest</button> -->
 			<button class="valbtn" id="schedule">Schedule Inspection</button>
-			<button class="valbtn" id="inspect">Inspect Property</button>
+			<button class="valbtn" id="inspect1">Inspect Property A</button>
+			<button class="valbtn" id="inspect2">Inspect Property B</button>
 			<button class="valbtn" id="submit">Submit Valuation</button>
 		</div>
 		<form:form action="saveValuation" id="valuationform"
@@ -401,72 +402,6 @@
 					<div class="savebtn" id="receivenxt">Next</div>
 				</div>
 			</div>
-			<div class="form-group checkconflict">
-				<div class="vrholder">
-					<label class="rholder">Owner Name</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="cownername" placeholder="Owner Name" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Buyer Name</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="ccusname" placeholder="Buyer Name" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Unit Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="cunitno" placeholder="Unit Number" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Floor Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="cfloorno" placeholder="Floor Number" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Street Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="cstreetno" placeholder="Street Number" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Plot Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="cplotno" placeholder="Plot Number" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Street Name</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="cstreetname" placeholder="Street Name" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Community Name</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="ccommunity" placeholder="Community Name" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Sub Community Name</label> <input
-						type="text" class="form-control form-control-sm textholder"
-						name="" id="csubcommunity" placeholder="Sub Community Name"
-						autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Town</label> <input type="text"
-						class="form-control form-control-sm textholder" name="" id="ctown"
-						placeholder="Town" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">City</label> <input type="text"
-						class="form-control form-control-sm textholder" name="" id="ccity"
-						placeholder="City" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Country</label> <input type="text"
-						class="form-control form-control-sm textholder" name=""
-						id="ccountry" placeholder="Country" autocomplete="on">
-				</div>
-				<div class="valuationholder adjustTop">
-					<div class="savebtn" id="conflictbutton">Check Conflict</div>
-				</div>
-			</div>
 			<div class="form-group scheduling">
 				<div class="valuationholder">
 					<label class="ilholder">Valuation Date</label>
@@ -574,7 +509,7 @@
 					<div class="savebtn" id="schedulenxt">Next</div>
 				</div>
 			</div>
-			<div class="form-group inspecting">
+			<div class="form-group inspecting1">
 				<div class="viholder">
 					<label class="rholder">Makani Number</label> <input type="text"
 						class="form-control form-control-sm textholder" name="makaniNo"
@@ -584,15 +519,17 @@
 					<label class="rholder">Location</label> <select
 						class="form-control form-control-sm textholder" name="location"
 						id="">
+						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average" selected>Average</option>
+						<option value="Substanced">Substanced</option>
 						<option value="Poor">Poor</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">Location Coordinates</label> <input
 						type="text" class="form-control form-control-sm textholder"
-						name="locationCoord" id="" placeholder="Location Coordinates"
+						name="locationCoord" id="locationCoord" placeholder="Location Coordinates"
 						autocomplete="on">
 				</div>
 				<div class="viholder">
@@ -601,6 +538,7 @@
 						name="propertyPlacement" id="">
 						<option value="Middle" selected>Middle</option>
 						<option value="Corner">Corner</option>
+						<option value="Semi-Corner">Semi-Corner</option>
 						<option value="Not Applicable">Not Applicable</option>
 					</select>
 				</div>
@@ -623,8 +561,10 @@
 					<label class="rholder">Property Condition</label> <select
 						class="form-control form-control-sm textholder"
 						name="propertyCondition" id="">
+						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average" selected>Average</option>
+						<option value="Substanced">Substanced</option>
 						<option value="Poor">Poor</option>
 					</select>
 				</div>
@@ -637,9 +577,84 @@
 					</select>
 				</div>
 				<div class="viholder">
-					<label class="rholder">Developer</label> <input type="text"
-						class="form-control form-control-sm textholder" name="developer"
-						id="" placeholder="Developer" autocomplete="on">
+					<label class="rholder">Developer</label>
+						 <select
+						class="form-control form-control-sm textholder"
+						name="developer" id="">
+						
+						<option value="Akshara Global Real Estate Development LLC">Akshara Global Real Estate Development LLC</option>
+						<option value="Al Ain Holding">Al Ain Holding</option>
+						<option value="Al Mada Marble">Al Mada Marble</option>
+						<option value="Al Masarat Real Estate">Al Masarat Real Estate</option>
+						<option value="Al Mazaya Real Estate FZ LLC">Al Mazaya Real Estate FZ LLC</option>
+						<option value="Al Mizan Group">Al Mizan Group</option>
+						<option value="Al Shafar Development">Al Shafar Development</option>
+						<option value="Arabian Gulf Properties">Arabian Gulf Properties</option>
+						<option value="Aurora Real Estate Development">Aurora Real Estate Development</option>
+						<option value="AYS Developments Limited">AYS Developments Limited</option>
+						<option value="Azizi">Azizi</option>
+						<option value="B&M Riviera Properties Development">B&M Riviera Properties Development</option>
+						<option value="Binghatti">Binghatti</option>
+						<option value="Bloom Properties">Bloom Properties</option>
+						<option value="Bolton Real Estate Development LLC">Bolton Real Estate Development LLC</option>
+						<option value="Cayan Group">Cayan Group</option>
+						<option value="Chapal">Chapal</option>
+						<option value="Damac Properties">Damac Properties</option>
+						<option value="Danube Properties">Danube Properties</option>
+						<option value="Dar Al Arkan">Dar Al Arkan</option>
+						<option value="Deyaar">Deyaar</option>
+						<option value="Dubai Investments Park Development Company">Dubai Investments Park Development Company</option>
+						<option value="Dubai Investments Real Estate Company">Dubai Investments Real Estate Company</option>
+						<option value="Dubai Properties">Dubai Properties</option>
+						<option value="Dubai South">Dubai South</option>
+						<option value="Dubai Sports City LLC">Dubai Sports City LLC</option>
+						<option value="Ellington Properties">Ellington Properties</option>
+						<option value="Emaar">Emaar</option>
+						<option value="Emaar/DP World">Emaar/DP World</option>
+						<option value="Empire Arabia Real Estate Developers LLC">Empire Arabia Real Estate Developers LLC</option>
+						<option value="Five Holdings">Five Holdings</option>
+						<option value="GGICO">GGICO</option>
+						<option value="HMG Properties">HMG Properties</option>
+						<option value="IFA">IFA</option>
+						<option value="Iman Developers">Iman Developers</option>
+						<option value="Innovation SEZ Developer LTD">Innovation SEZ Developer LTD</option>
+						<option value="Jumeirah Golf Estates LLC">Jumeirah Golf Estates LLC</option>
+						<option value="Kerzer International">Kerzer International</option>
+						<option value="Kleindienst Group">Kleindienst Group</option>
+						<option value="Liv Developers">Liv Developers</option>
+						<option value="Lokhandwala Builders">Lokhandwala Builders</option>
+						<option value="Lootah Group">Lootah Group</option>
+						<option value="MAG Group">MAG Group</option>
+						<option value="Meraas">Meraas</option>
+						<option value="Meraki">Meraki</option>
+						<option value="Meydan Group">Meydan Group</option>
+						<option value="Nakheel">Nakheel</option>
+						<option value="Naseria Contracting">Naseria Contracting</option>
+						<option value="Nshama">Nshama</option>
+						<option value="Omniyat">Omniyat</option>	
+						<option value="Pacific Investment">Pacific Investment</option>
+						<option value="Pal Developments L.L.C.">Pal Developments L.L.C.</option>
+						<option value="Pantheon Properties Limited">Pantheon Properties Limited</option>
+						<option value="Private Developer">Private Developer</option>
+						<option value="Realty One">Realty One</option>
+						<option value="RKMDurar Properties">RKMDurar Properties</option>
+						<option value="Samana Developers">Samana Developers</option>
+						<option value="Select Group">Select Group</option>
+						<option value="Seven Tides">Seven Tides</option>
+						<option value="Shapoorji Pallonji Group">Shapoorji Pallonji Group</option>
+						<option value="Sobha Group">Sobha Group</option>
+						<option value="Tanmiyat">Tanmiyat</option>
+						<option value="Texture Holdings">Texture Holdings</option>
+						<option value="The First Group">The First Group</option>
+						<option value="Tiger Properties">Tiger Properties</option>
+						<option value="Time Properties">Time Properties</option>
+						<option value="Titan Developers">Titan Developers</option>
+						<option value="Trident">Trident</option>
+						<option value="Vascon Trading Ltd.">Vascon Trading Ltd.</option>
+						<option value="Vincitore Real Estate Development LLC">Vincitore Real Estate Development LLC</option>
+						<option value="Wasl">Wasl</option>
+						<option value="Zaya Real Estate Development">Zaya Real Estate Development</option>
+					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">Estimated Age(Years)</label> <input
@@ -661,11 +676,35 @@
 						autocomplete="on">
 				</div>
 				<div class="viholder">
-					<label class="rholder" style="line-height: 16px">Building/Community
+					<label class="rholder">Pool</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="">
+						<option value="Yes" >Yes</option>
+						<option value="No" selected>No</option>
+					</select>
+				</div>
+				<div class="viholder">
+					<label class="rholder">Gym</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="">
+						<option value="Yes" >Yes</option>
+						<option value="No" selected>No</option>
+					</select>
+				</div>
+				<div class="viholder">
+					<label class="rholder">Play Area</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="">
+						<option value="Yes" >Yes</option>
+						<option value="No" selected>No</option>
+					</select>
+				</div>
+				<div class="viholder">
+					<label class="rholder" style="line-height: 16px">Other Community
 						Facilities</label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="bulComFacilities" id=""
-						placeholder="Building/Community Facilities" autocomplete="on">
+						placeholder="Other Community Facilities" autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder">Completion Status</label> <select
@@ -702,48 +741,7 @@
 						<option value="10 Bedroom">10 Bedrooms</option>
 					</select>
 				</div>
-				<div class="viholder">
-					<label class="rholder">Ground Floor</label> <input type="text"
-						class="form-control form-control-sm textholder" name="groundFloor"
-						id="" placeholder="Ground Floor" autocomplete="on">
-				</div>
-				<div class="viholder">
-					<label class="rholder">First Floor</label> <input type="text"
-						class="form-control form-control-sm textholder" name="firstFloor"
-						id="" placeholder="First Floor" autocomplete="on">
-				</div>
-				<div class="viholder">
-					<label class="rholder">Second Floor</label> <input type="text"
-						class="form-control form-control-sm textholder" name=secondFloor
-						id="" placeholder="Second Floor" autocomplete="on">
-				</div>
-				<div class="viholder">
-					<label class=rholder>Full Building Floors</label> <select
-						class="form-control form-control-sm textholder"
-						name="fullBulFloors" id="">
-						<option value="" hidden>--- Select ---</option>
-						<option value="Ground + 1 Floor">Ground + 1 Floor</option>
-						<option value="Ground + 2 Floor">Ground + 2 Floor</option>
-						<option value="Ground + 3 Floor">Ground + 3 Floor</option>
-						<option value="Ground + 4 Floor">Ground + 4 Floor</option>
-						<option value="Ground + 5 Floor">Ground + 5 Floor</option>
-						<option value="Ground + 6 Floor">Ground + 6 Floor</option>
-						<option value="Ground + 7 Floor">Ground + 7 Floor</option>
-						<option value="Ground + 8 Floor">Ground + 8 Floor</option>
-						<option value="Ground + 9 Floor">Ground + 9 Floor</option>
-						<option value="Ground + 10 Floor">Ground + 10 Floor</option>
-						<option value="Ground + 11 Floor">Ground + 11 Floor</option>
-						<option value="Ground + 12 Floor">Ground + 12 Floor</option>
-						<option value="Ground + 13 Floor">Ground + 13 Floor</option>
-						<option value="Ground + 14 Floor">Ground + 14 Floor</option>
-						<option value="Ground + 15 Floor">Ground + 15 Floor</option>
-					</select>
-				</div>
-				<div class="viholder">
-					<label class="rholder">Upgrades</label> <input type="text"
-						class="form-control form-control-sm textholder" name="upgrades"
-						id="" placeholder="Upgrades" autocomplete="on">
-				</div>
+				
 				<div class="viholder">
 					<label class="rholder">View</label> <select
 						class="form-control form-control-sm textholder" name="view" id="">
@@ -866,8 +864,60 @@
 				</div>
 
 				<div class="valuationholder adjustTop">
-					<div class="savebtn" id="inspectprv">Previous</div>
-					<div class="savebtn" id="inspectnxt">Next</div>
+					<div class="savebtn" id="inspect1prv">Previous</div>
+					<div class="savebtn" id="inspect1nxt">Next</div>
+				</div>
+			</div>
+			<div class="form-group inspecting2">
+				<div class="valuationholder">
+					<label class="labelholder" style="width:14%" >Ground Floor</label> <input type="text"
+						class="form-control form-control-sm textholder" data-role="tagsinput" name="groundFloor"
+						id="" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:14%">First Floor</label> <input type="text"
+						class="form-control form-control-sm textholder" data-role="tagsinput" name="firstFloor"
+						id="" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:14%">Second Floor</label> <input type="text"
+						class="form-control form-control-sm textholder" data-role="tagsinput" name=secondFloor
+						id="" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:14%">Full Building Floors</label> 
+					<input type="text"
+						class="form-control form-control-sm textholder" data-role="tagsinput" name=fullBulFloors
+						id="" placeholder="" autocomplete="on">
+<!-- <select --> 
+<!-- 						class="form-control form-control-sm textholder" -->
+<!-- 						name="fullBulFloors" id=""> -->
+<!-- 						<option value="" hidden>--- Select ---</option> -->
+<!-- 						<option value="Ground + 1 Floor">Ground + 1 Floor</option> -->
+<!-- 						<option value="Ground + 2 Floor">Ground + 2 Floor</option> -->
+<!-- 						<option value="Ground + 3 Floor">Ground + 3 Floor</option> -->
+<!-- 						<option value="Ground + 4 Floor">Ground + 4 Floor</option> -->
+<!-- 						<option value="Ground + 5 Floor">Ground + 5 Floor</option> -->
+<!-- 						<option value="Ground + 6 Floor">Ground + 6 Floor</option> -->
+<!-- 						<option value="Ground + 7 Floor">Ground + 7 Floor</option> -->
+<!-- 						<option value="Ground + 8 Floor">Ground + 8 Floor</option> -->
+<!-- 						<option value="Ground + 9 Floor">Ground + 9 Floor</option> -->
+<!-- 						<option value="Ground + 10 Floor">Ground + 10 Floor</option> -->
+<!-- 						<option value="Ground + 11 Floor">Ground + 11 Floor</option> -->
+<!-- 						<option value="Ground + 12 Floor">Ground + 12 Floor</option> -->
+<!-- 						<option value="Ground + 13 Floor">Ground + 13 Floor</option> -->
+<!-- 						<option value="Ground + 14 Floor">Ground + 14 Floor</option> -->
+<!-- 						<option value="Ground + 15 Floor">Ground + 15 Floor</option> -->
+<!-- 					</select> -->
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:14%">Upgrades</label> <input type="text"
+						class="form-control form-control-sm textholder" data-role="tagsinput" name="upgrades"
+						id="" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder adjustTop">
+					<div class="savebtn" id="inspect2prv">Previous</div>
+					<div class="savebtn" id="inspect2nxt">Next</div>
 				</div>
 			</div>
 			<div class="form-group submitting">

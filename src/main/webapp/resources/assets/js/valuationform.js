@@ -1,8 +1,8 @@
 $('.valuationform .sub-header').text('Valuation Form');
-$('.inspecting').hide();
+$('.inspecting1').hide();
+$('.inspecting2').hide();
 $('.scheduling').hide();
 $('.submitting').hide();
-$('.checkconflict').hide();
 var j=$('#row').val();
 $('#reference').val("REV-2020-"+j+"");
 $('#country').val("United Arab Emirates");
@@ -17,7 +17,23 @@ $('#age').keyup(function(){
 		$('#remlife').val(40);
 	}
 });
-
+$(document).on("keypress", ":input:not(:submit)", function(event) {
+	if (event.key == "Enter") {
+        event.preventDefault();
+    }
+});
+if ("geolocation" in navigator){ 
+	navigator.geolocation.getCurrentPosition(function(position){ 
+		var latitude=  position.coords.latitude; 
+		latitude = latitude.toString();
+		var la = latitude.substring(0,9);
+		var longitude = position.coords.longitude;
+		longitude = longitude.toString();
+		var lo = longitude.substring(0,9);
+		var locationCoord = la +","+ lo;
+		$('#locationCoord').val(locationCoord);
+	});
+}
 function stringToDate(_date,_format,_delimiter)
 {
             var formatLowerCase=_format.toLowerCase();
@@ -135,181 +151,172 @@ $("#insdate").change(function() {
 });
 $("#receive").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
 $("#receive").click(function(){
-	$('.inspecting').hide();
+	$('.inspecting1').hide();
 	$('.submitting').hide();
 	$('.receiving').show();
 	$('.scheduling').hide();
-	$('.checkconflict').hide();
-	$("#receive").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#inspect").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
+	$('.inspecting2').hide();
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#DF0101");
+	$("#schedule").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
 $("#schedule").click(function(){
-	$('.inspecting').hide();
+	$('.inspecting1').hide();
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').show();
-	$('.checkconflict').hide();
-	$("#inspect").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #000080 , #000080)");
+	$('.inspecting2').hide();
+	$("#inspect2").css("background", "#000080");
+	$("#schedule").css("background", "#DF0101");
+	$("#receive").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
-$("#inspect").click(function(){
-	$('.inspecting').show();
+$("#inspect1").click(function(){
+	$('.inspecting1').show();
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
-	$('.checkconflict').hide();
-	$("#inspect").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #000080 , #000080)");
+	$('.inspecting2').hide();
+	$("#inspect2").css("background", "#000080");
+	$("#inspect1").css("background", "#DF0101");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
-function conflictcheck(){
-	var name = $('#ownername').val();
-	if(name !=''){
-		$('#cownername').val(name)
-	}
-	var cname = $('#cusname').val();
-	if(cname !=''){
-		$('#ccusname').val(cname)
-	}
-	var unitno = $('#unitno').val();
-	if(unitno !=''){
-		$('#cunitno').val(unitno)
-	}
-	var floorno = $('#floorno').val();
-	if(floorno !=''){
-		$('#cfloorno').val(floorno)
-	}
-	var streetno = $('#streetno').val();
-	if(streetno !=''){
-		$('#cstreetno').val(streetno)
-	}
-	var plotno = $('#plotno').val();
-	if(plotno !=''){
-		$('#cplotno').val(plotno)
-	}
-	var streetname = $('#streetname').val();
-	if(streetname !=''){
-		$('#cstreetname').val(streetname)
-	}
-	var community = $('#community').val();
-	if(community !=''){
-		$('#ccommunity').val(community)
-	}
-	var subcommunity = $('#subcommunity').val();
-	if(community !=''){
-		$('#csubcommunity').val(subcommunity)
-	}
-	var town = $('#town').val();
-	if(town !=''){
-		$('#ctown').val(town)
-	}
-	var city = $('#city').val();
-	if(city !=''){
-		$('#ccity').val(city)
-	}
-	var country = $('#country').val();
-	if(country !=''){
-		$('#ccountry').val(country)
-	}
-}
-//$("#conflict").click(function(){
-//	$('.inspecting').hide();
-//	$('.submitting').hide();
-//	$('.receiving').hide();
-//	$('.scheduling').hide();
-//	$('.checkconflict').show();
-//	conflictcheck();
-//	$("#conflict").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-//	$("#inspect").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-//	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-//	$("#schedule").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-//	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-//});
+$("#inspect2").click(function(){
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.inspecting2').show();
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#DF0101");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
 $("#submit").click(function(){
-	$('.inspecting').hide();
+	$('.inspecting1').hide();
 	$('.submitting').show();
 	$('.receiving').hide();
 	$('.scheduling').hide();
-	$('.checkconflict').hide();
-	$("#submit").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#inspect").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #000080 , #000080)");
+	$('.inspecting2').hide();
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#DF0101");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
+
 $("#receivenxt").click(function(){
-	$('.inspecting').hide();
+	$('.inspecting1').hide();
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').show();
-	$('.checkconflict').hide();
-	conflictcheck();
-	$("#inspect").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
+	$('.inspecting2').hide();
+	$("#inspect1").css("background", "#000080");
+	$("#schedule").css("background", "#DF0101");
+	$("#receive").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
 $("#schedulenxt").click(function(){
-	$('.inspecting').show();
+	$('.inspecting1').show();
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
-	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#inspect").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #000080 , #000080)");
+	$('.inspecting2').hide();
+	$("#schedule").css("background", "#000080");
+	$("#inspect1").css("background", "#DF0101");
+	$("#receive").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
 $("#scheduleprv").click(function(){
-	$('.inspecting').hide();
+	$('.inspecting1').hide();
 	$('.submitting').hide();
 	$('.receiving').show();
 	$('.scheduling').hide();
-	$("#receive").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#inspect").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #000080 , #000080)");
+	$('.inspecting2').hide();
+	$("#schedule").css("background", "#000080");
+	$("#receive").css("background", "#DF0101");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
-$("#inspectnxt").click(function(){
-	$('.inspecting').hide();
-	$('.submitting').show();
+$("#inspect1nxt").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').show();
+	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
-	$("#submit").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#inspect").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #000080 , #000080)");
+	$("#schedule").css("background", "#000080");
+	$("#inspect2").css("background", "#DF0101");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
-$("#inspectprv").click(function(){
-	$('.inspecting').hide();
+$("#inspect1prv").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').hide();
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').show();
-	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#inspect").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
+	$("#inspect2").css("background", "#000080");
+	$("#schedule").css("background", "#DF0101");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });
-$("#submitprv").click(function(){
-	$('.inspecting').show();
+$("#inspect2nxt").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').hide();
+	$('.submitting').show();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#DF0101");
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#inspect2prv").click(function(){
+	$('.inspecting1').show();
+	$('.inspecting2').hide();
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
-	$("#receive").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#inspect").css("background-image", "linear-gradient(to right, #DF0101 , #DF0101)");
-	$("#submit").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#schedule").css("background-image", "linear-gradient(to right, #000080 , #000080)");
-	$("#conflict").css("background-image", "linear-gradient(to right, #000080 , #000080)");
+	$("#inspect2").css("background", "#000080");
+	$("#inspect1").css("background", "#DF0101");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#submitprv").click(function(){
+	$('.inspecting2').show();
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#DF0101");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
 });

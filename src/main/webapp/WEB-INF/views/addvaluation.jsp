@@ -99,42 +99,6 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Property Valued</label>
-					<!-- 					 <select -->
-					<!-- 						class="form-control form-control-sm textholder" -->
-					<!-- 						name="propertyValued" id="propertyvalued"> -->
-					<!-- 						<option value="Commercial Land">Commercial Land</option> -->
-					<!-- 						<option value="Commercial Building">Commercial Building</option> -->
-					<!-- 						<option value="Commercial Office">Commercial Office</option> -->
-					<!-- 						<option value="Commercial Shop">Commercial Shop</option> -->
-					<!-- 						<option value="Industrial Land">Industrial Land</option> -->
-					<!-- 						<option value="Industrial Factory">Industrial Factory</option> -->
-					<!-- 						<option value="Industrial Labour Camp">Industrial Labour -->
-					<!-- 							Camp</option> -->
-					<!-- 						<option value="Industrial Warehouse">Industrial Warehouse</option> -->
-					<!-- 						<option value="Agricultural Farm">Agricultural Farm</option> -->
-					<!-- 						<option value="Agricultural Land">Agricultural Land</option> -->
-					<!-- 						<option value="Mixed Use Land">Mixed Use Land</option> -->
-					<!-- 						<option value="Mixed Use Building">Mixed Use Building</option> -->
-					<!-- 						<option value="Residential Land">Residential Land</option> -->
-					<!-- 						<option value="Residential Apartment">Residential -->
-					<!-- 							Apartment</option> -->
-					<!-- 						<option value="Residential Building">Residential Building</option> -->
-					<!-- 						<option value="Residential Villa" selected>Residential -->
-					<!-- 				Valuation Instructing Person			Villa</option> -->
-					<!-- 						<option value="Residential Villa Compound">Residential -->
-					<!-- 							Villa Compound</option> -->
-					<!-- 						<option value="Residential Townhouse">Residential -->
-					<!-- 							Townhouse</option> -->
-					<!-- 						<option value="Trading Propery Mall">Trading Propery Mall</option> -->
-					<!-- 						<option value="Trading Propery Shopping Complex">Trading -->
-					<!-- 							Propery Shopping Complex</option> -->
-					<!-- 						<option value="Trading Propery School">Trading Propery -->
-					<!-- 							School</option> -->
-					<!-- 						<option value="Trading Propery Hotel">Trading Propery -->
-					<!-- 							Hotel</option> -->
-					<!-- 						<option value="Trading Propery Hospital">Trading Propery -->
-					<!-- 							Hospital</option> -->
-					<!-- 					</select> -->
 					<select class="form-control form-control-sm textholder"
 						name="propertyValued" id="propertyvalued">
 						<c:forEach items="${propertylist}" var="item">
@@ -320,7 +284,6 @@
 						class="form-control form-control-sm textholder" name="city"
 						id="city">
 						<c:forEach items="${citylist}" var="item">
-							<option value="" hidden>Select City</option>
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -359,15 +322,13 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Valuation Approach</label> <select
+					<label class="rholder">Valuation Approach</label>
+					<select
 						class="form-control form-control-sm textholder" name="valApproach"
 						id="valApproach">
-						<option value="Market Approach" selected>Market Approach</option>
-						<option value="Income Approach">Income Approach</option>
-						<option value="Profit Approach">Profit Approach</option>
-						<option value="Cost Approach">Cost Approach</option>
-						<option value="Residential Value Of Land Approach">Residential
-							Value Of Land Approach</option>
+						<c:forEach items="${valapproachlist}" var="item">
+							<option value="${item}">${item}</option>
+						</c:forEach>
 					</select>
 				</div>
 				<div class="vrholder">
@@ -381,21 +342,17 @@
 						<option value="Synergistic Value">Synergistic Value</option>
 						<option value="Liquidable Value">Liquidable Value</option>
 					</select>
+					
 				</div>
 
 				<div class="vrholder">
-					<label class="rholder">Approach Reasoning</label> <select
-						class="form-control form-control-sm textholder"
-						name="approachReasoning" id="apprreason">
-						<option value="Comparable Sold Transaction & Listing Available"
-							selected>Comparable Sold Transaction & Listing Available</option>
-						<option value="Income Generating Property">Income
-							Generating Property</option>
-						<option value="Trading Property">Trading Property</option>
-						<option value="No Secondary Market Available">No
-							Secondary Market Available</option>
-						<option value="No Comparable Land Available">No
-							Comparable Land Available</option>
+					<label class="rholder">Approach Reasoning</label>
+					<select
+						class="form-control form-control-sm textholder" name="approachReasoning"
+						id="apprreason">
+						<c:forEach items="${appreasonlist}" var="item">
+							<option value="${item}">${item}</option>
+						</c:forEach>
 					</select>
 				</div>
 				<div class="valuationholder" style="margin-top: 5px">
@@ -582,8 +539,8 @@
 						class="form-control form-control-sm textholder"
 						name="developer" id="">
 						
-						<option value="Akshara Global Real Estate Development LLC">Akshara Global Real Estate Development LLC</option>
 						<option value="Al Ain Holding">Al Ain Holding</option>
+						<option value="Akshara Global Real Estate Development LLC">Akshara Global Real Estate Development LLC</option>
 						<option value="Al Mada Marble">Al Mada Marble</option>
 						<option value="Al Masarat Real Estate">Al Masarat Real Estate</option>
 						<option value="Al Mazaya Real Estate FZ LLC">Al Mazaya Real Estate FZ LLC</option>
@@ -876,12 +833,12 @@
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder" style="width:14%">First Floor</label> <input type="text"
-						class="form-control form-control-sm textholder" data-role="tagsinput" name="firstFloor"
+						class="form-control form-control-sm textholder" data-role="tagsinput" value="Not Applicable" name="firstFloor"
 						id="" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder" style="width:14%">Second Floor</label> <input type="text"
-						class="form-control form-control-sm textholder" data-role="tagsinput" name=secondFloor
+						class="form-control form-control-sm textholder" data-role="tagsinput" value="Not Applicable" name=secondFloor
 						id="" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder">
@@ -922,10 +879,11 @@
 			</div>
 			<div class="form-group submitting">
 				<div class="valuationholder">
-					<label class="labelholder">Valuation Adjustments</label> <input
+					<label class="labelholder">Valuation Adjustments</label>
+					 <input
 						type="text" class="form-control form-control-sm textholder"
-						name="valAdjustment" id="" placeholder="Valuation Adjustments"
-						autocomplete="on">
+						name="valadjustments" id="valadjustments"
+						placeholder="Valuation Adjustments" autocomplete="on">
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder">Document Provided by Client</label> <input
@@ -984,4 +942,5 @@
 	src="resources/assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script
 	src="resources/assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 <script src="resources/assets/js/valuationform.js"></script>

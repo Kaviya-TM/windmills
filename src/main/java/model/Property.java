@@ -34,8 +34,7 @@ public class Property  implements java.io.Serializable {
 	private String propertyValued;
 	private String valuationApproach;
 	private String approachReasoning;
-	
-	
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	@Column(name = "property_id", unique = true, nullable = false)

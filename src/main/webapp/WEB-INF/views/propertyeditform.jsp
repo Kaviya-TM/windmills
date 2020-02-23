@@ -38,6 +38,11 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="approachReasoning" value="${propertyform.approachReasoning}" id="" placeholder="Approach Reasoning">
 				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Valuation Adjustments</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="valuationAdjustments" value="${propertyform.valuationAdjustments}" id="" placeholder="Valuation Adjustments">
+				</div>
 				<input type="hidden" id="propertyId"" name="propertyId"
 				value="${propertyform.propertyId}"/>
 				<div class="form-group" style="width: 100%">

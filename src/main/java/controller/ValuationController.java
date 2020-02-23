@@ -53,6 +53,8 @@ public class ValuationController {
 		List<Property> propertylist = valuationService.getPropertyValued();
 		List<Community> communitylist = valuationService.getCommunity();
 		List<Community> citylist = valuationService.getCity();
+		List<Property> appreasonlist = valuationService.getApproachReasoningList();
+		List<Property> valapproachlist = valuationService.getValuationApproachList();
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String email = authentication.getName();
 		List<ServiceOfficer> serviceofficerlist = valuationService.getServiceOfficer(email);
@@ -61,6 +63,8 @@ public class ValuationController {
 		mv.addObject("clientlist", clientlist);
 		mv.addObject("citylist", citylist);
 		mv.addObject("propertylist", propertylist);
+		mv.addObject("appreasonlist", appreasonlist);
+		mv.addObject("valapproachlist", valapproachlist);
 		mv.addObject("communitylist", communitylist);
 		mv.addObject("noofrows", row);
 		mv.addObject("serviceofficerlist", serviceofficerlist);
@@ -72,7 +76,6 @@ public class ValuationController {
 	@ResponseBody
 	public List<ClientDetails> getValuationInstructingPerson(@RequestParam("clientName") String clientName) {
 		List<ClientDetails> list = valuationService.getValuationInstructingPerson(clientName);
-		log.info("list");
 		return list;
 
 	}
@@ -84,7 +87,6 @@ public class ValuationController {
 		JSONObject json = new JSONObject();
 		json.put("valApproach", valApproach);
 		json.put("appReasoning", appReasoning);
-		System.out.println("json"+json);
 		return json;
 
 	}
@@ -93,7 +95,6 @@ public class ValuationController {
 	@ResponseBody
 	public String getCity(@RequestParam("community") String community) {
 		String city = valuationService.getCity(community);
-		System.err.println(city);
 		return city;
 
 	}
@@ -101,13 +102,10 @@ public class ValuationController {
 	
 	@RequestMapping(value = "/saveValuation", method = RequestMethod.POST)
 	public ModelAndView addProduct(@ModelAttribute("valuationreport") ValuationReport valuationreport,HttpSession session) throws IllegalStateException, IOException {
-   
-	valuationService.saveValuationReport(valuationreport);
-    ModelAndView mv = new ModelAndView();
-    mv.setViewName("main");
-
-	return mv;
-
+		valuationService.saveValuationReport(valuationreport);
+	    ModelAndView mv = new ModelAndView();
+	    mv.setViewName("main");
+		return mv;
 	}
 	
 }

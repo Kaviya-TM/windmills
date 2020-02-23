@@ -1,5 +1,5 @@
 .theme-white .bootstrap-tagsinput .tag{
-	background-color: #000080 !important;
+	background-color: forestgreen !important;
 }
 .bootstrap-tagsinput .tag{
 	padding: 0px 2px !important;
@@ -116,6 +116,7 @@
 	text-align: center;
 	border-radius: 5px;
 	float: left;
+	cursor:pointer;
 }
 
 #valuationform {

@@ -49,94 +49,87 @@ public class ValuationService {
 	
 	@Transactional
 	public List<ClientDetails> getClients() {
-		log.info("valuation service to get clients");
 		List<ClientDetails> list = valuationDaoImpl.getClient();
 		return list;
 
 	}
 	@Transactional
 	public List<ServiceOfficer> getServiceOfficer(String email) {
-		log.info("valuation service to get service officer");
 		List<ServiceOfficer> list = valuationDaoImpl.getServiceOfficer(email);
 		return list;
 	}
 	@Transactional
 	public List<ServiceOfficer> getDefaultServicer(String email) {
-		log.info("valuation service to get default service officer");
 		List<ServiceOfficer> rows=valuationDaoImpl.getDefaultServicer(email);
-		log.info(rows);
-		
 		return rows;
 	}
 	
 	@Transactional
 	public List<ClientDetails> getValuationInstructingPerson(String clientName) {
-		log.info("valuation service to get contact person");
 		List<ClientDetails> list=valuationDaoImpl.getValuationInstructingPerson(clientName);
-		log.info(list.size());
 		return list;
 	}
 	@Transactional
 	public void saveValuationReport(ValuationReport valuationreport) {
-		log.info("beginning of save valuation report");
 		valuationDaoImpl.saveValuationReport(valuationreport);
 	}
 	@Transactional
 	public int getNumberOfRows() {
-		log.info("beginning of get number of rows");
 		int count = 0;
 		count = valuationDaoImpl.getNumberOfRows();
 		return count;
 	}
 	@Transactional
 	public String getValuationApproach(String propertyValued) {
-		log.info("valuation service to get valuation approach");
 		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
 		String valApproach = null;
 		for(Property r1 : rows){
 			valApproach = r1.getValuationApproach();
 		}
-		log.info("valApproach--"+valApproach);
 		return valApproach;
 	}
 	@Transactional
 	public List<Property> getPropertyValued() {
-		log.info("valuation service to get property valued");
 		List<Property> list = valuationDaoImpl.getPropertyValued();
 		return list;
 	}
 	@Transactional
 	public List<Community> getCommunity() {
-		log.info("valuation service to get community");
 		List<Community> list = valuationDaoImpl.getCommunity();
 		return list;
 	}
 	@Transactional
 	public String getApproachReasoning(String propertyValued) {
-		log.info("valuation service to get approach reasoning");
 		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
 		String appReasoning = null;
 		for(Property r1 : rows){
 			appReasoning = r1.getApproachReasoning();
 		}
-		log.info("appReasoning--"+appReasoning);
 		return appReasoning;
 	}
-
+	
 	@Transactional
 	public String getCity(String community) {
-		log.info("valuation service to get community");
 		List<Community> rows=valuationDaoImpl.getCommunityList(community);
 		String city = null;
 		for(Community r1 : rows){
 			city = r1.getCity();
 		}
-		log.info("city--"+city);
 		return city;
 	}
 	@Transactional
 	public List<Community> getCity() {
 		List<Community> list = valuationDaoImpl.getCity();
+		return list;
+	}
+	@Transactional
+	public List<Property> getApproachReasoningList() {
+		List<Property> list = valuationDaoImpl.getApproachReasoningList();
+		return list;
+	}
+	@Transactional
+	public List<Property> getValuationApproachList() {
+		List<Property> list = valuationDaoImpl.getValuationApproachList();
 		return list;
 	}
 

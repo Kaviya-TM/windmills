@@ -27,16 +27,12 @@ public class ValuationDaoImpl {
 	static Logger log = Logger.getLogger(ValuationDaoImpl.class);
 
 	public List<ClientDetails> getClient() {
-		log.info("valuation dao to get clients");
 		Query query = sessionFactory.getCurrentSession().createQuery("select distinct clientName from  ClientDetails");
-		log.info("testing");
 		List<ClientDetails> rows=query.list();
-		
 		return rows;
 	}
 
 	public List<ServiceOfficer> getServiceOfficer(String email) {
-		log.info("valuation dao to get service officer");
 		Query query = sessionFactory.getCurrentSession().createQuery("from  ServiceOfficer s where s.email!=:email");
 		query.setParameter("email",email);
 		List<ServiceOfficer> rows=query.list();
@@ -45,7 +41,6 @@ public class ValuationDaoImpl {
 	}
 
     public List<ServiceOfficer> getDefaultServicer(String email) {
-    	log.info("valuation dao to get default service officer");
     	Query query=sessionFactory.getCurrentSession().createQuery("from ServiceOfficer s where s.email=:email");
 		query.setParameter("email",email);
 		List<ServiceOfficer> rows=query.list();
@@ -54,12 +49,9 @@ public class ValuationDaoImpl {
 	}
 
 	public List<ClientDetails> getValuationInstructingPerson(String clientName) {
-		log.info("valuation dao to get contact person");
     	Query query=sessionFactory.getCurrentSession().createQuery("select contactPerson from ClientDetails s where s.clientName=:clientName");
-    	log.info("done");
     	query.setParameter("clientName",clientName);
 		List<ClientDetails> rows=query.list();
-		
 		return rows;
 	}
 
@@ -105,6 +97,19 @@ public class ValuationDaoImpl {
 		List<Community> rows=query.list();
 		return rows;
 	}
+
+	public List<Property> getApproachReasoningList() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct approachReasoning from  Property");
+		List<Property> rows=query.list();
+		return rows;
+	}
+
+	public List<Property> getValuationApproachList() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct valuationApproach from  Property");
+		List<Property> rows=query.list();
+		return rows;
+	}
+
 
 	
 	

@@ -22,33 +22,33 @@ $(document).on("keypress", ":input:not(:submit)", function(event) {
         event.preventDefault();
     }
 });
-if ("geolocation" in navigator){ 
-	navigator.geolocation.getCurrentPosition(function(position){ 
-		var latitude=  position.coords.latitude; 
-		latitude = latitude.toString();
-		var la = latitude.substring(0,9);
-		var longitude = position.coords.longitude;
-		longitude = longitude.toString();
-		var lo = longitude.substring(0,9);
-		var locationCoord = la +","+ lo;
-		$('#locationCoord').val(locationCoord);
-	});
-}
+//if ("geolocation" in navigator){ 
+//	navigator.geolocation.getCurrentPosition(function(position){ 
+//		var latitude=  position.coords.latitude; 
+//		latitude = latitude.toString();
+//		var la = latitude.substring(0,9);
+//		var longitude = position.coords.longitude;
+//		longitude = longitude.toString();
+//		var lo = longitude.substring(0,9);
+//		var locationCoord = la +","+ lo;
+//		$('#locationCoord').val(locationCoord);
+//		console.log(locationCoord);
+//	});
+//}
 function stringToDate(_date,_format,_delimiter)
 {
-            var formatLowerCase=_format.toLowerCase();
-            var formatItems=formatLowerCase.split(_delimiter);
-            var dateItems=_date.split(_delimiter);
-            var monthIndex=formatItems.indexOf("mmm");
-            var dayIndex=formatItems.indexOf("dd");
-            var yearIndex=formatItems.indexOf("yyyy");
-            var month=parseInt(dateItems[monthIndex]);
-            month-=1;
-            var formatedDate = new Date(dateItems[yearIndex],month,dateItems[dayIndex]);
-            return formatedDate;
+    var formatLowerCase=_format.toLowerCase();
+    var formatItems=formatLowerCase.split(_delimiter);
+    var dateItems=_date.split(_delimiter);
+    var monthIndex=formatItems.indexOf("mmm");
+    var dayIndex=formatItems.indexOf("dd");
+    var yearIndex=formatItems.indexOf("yyyy");
+    var month=parseInt(dateItems[monthIndex]);
+    month-=1;
+    var formatedDate = new Date(dateItems[yearIndex],month,dateItems[dayIndex]);
+    return formatedDate;
 }
 $("#clientname").change(function() {
-	console.log("clientName",$(this).val());
 	var clientName = $('#clientname').val();
 	var dropdown = $('#contactPerson');
 	$(dropdown).find("option").remove();
@@ -57,7 +57,6 @@ $("#clientname").change(function() {
 		data : {clientName : clientName},
 		method : 'POST',
 		success : function(response) {	
-// 			 dropdown.append($('<option></option>').attr("hidden", "").text("Valuation Instructing Person"));
 				$.each(response, function (key, entry) {
 				    dropdown.append($('<option></option>').attr('value', entry).text(entry));
 				})
@@ -65,6 +64,11 @@ $("#clientname").change(function() {
 		},
 	});	
 });
+var latitude = geoplugin_latitude();
+var longitude = geoplugin_longitude()
+$('#locationCoord').val(latitude+","+longitude);
+console.log(latitude+","+longitude);
+
 $("#propertyvalued").change(function() {
 	var propertyValued = $('#propertyvalued').val();
 	$.ajax({
@@ -91,7 +95,6 @@ $("#community").change(function() {
 		data : {community : community},
 		method : 'POST',
 		success : function(response) {	
-			console.log(response);
 			$('#city').val(response);
 			 $("#city option[value='+response+']").attr("selected",true);
 			return;

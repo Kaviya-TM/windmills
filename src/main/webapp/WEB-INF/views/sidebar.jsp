@@ -90,7 +90,7 @@
 						<line x1="9" y1="21" x2="9" y2="9"></line></svg>
 					<rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
 					<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-					</svg><span>Valuation Form</span></a>
+					</svg><span style="letter-spacing:-0.2px">Standard Valuation</span></a>
 				<ul class="dropdown-menu">
 					<li><a class="nav-link" href="<c:url value="addValuation"/>">Add
 							Valuation</a></li>

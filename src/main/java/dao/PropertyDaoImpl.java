@@ -47,9 +47,13 @@ public class PropertyDaoImpl {
 
 	public void updatePropertyValued(Property property) {
 		sessionFactory.getCurrentSession().update(property);
+	}
+	public void deletePropertyValued(int propertyId) {
+		Query query=sessionFactory.getCurrentSession().createQuery("delete from Property s where s.propertyId=:propertyId");
+		query.setParameter("propertyId",propertyId);
+		query.executeUpdate();
 		log.info("success");
 	}
-
 
 	
 	

@@ -84,5 +84,10 @@ public class PropertyService {
 		log.info("beginning of update property valued");
 		propertyDaoImpl.updatePropertyValued(property);
 	}
+	@Transactional
+	public void deletePropertyValued(int propertyId) {
+		log.info("beginning of delete property valued");
+		propertyDaoImpl.deletePropertyValued(propertyId);
+	}
 	
 }

@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name = "valuationreport")
+@Table(name = "valuation")
 @Component
 public class ValuationReport implements java.io.Serializable {
 
@@ -37,8 +37,8 @@ public class ValuationReport implements java.io.Serializable {
 	private String clientCustomerName;
 	private String ownerName;
 	private String serviceOffName;
-	private String valInstrDate;
-	private String valDate;
+	private Date valInstrDate;
+	private Date intTargetDate;
 	private String propertyValued;
 	private String tenure;
 	private String unitNo;
@@ -47,21 +47,28 @@ public class ValuationReport implements java.io.Serializable {
 	private String streetName;
 	private String buildingNo;
 	private String buildingName;
-	private String community;
-	private String subCommunity;
 	private String plotNo;
+	private String subCommunity;
+	private String community;
 	private String town;
 	private String city;
 	private String country;
 	private String valuationInstrPerson;
-	private String plotSize;
+	private float plotSize;
 	private String propOfVal;
 	private String valApproach;
 	private String basesOfValue;
 	private String approachReasoning;
-	private String insDate;
+	private Date valDate;
+	private Date insDate;
+	private String insDay;
+	private String insTime;
+	private String clientDeadline;
 	private String insType;
 	private String insOfficer;
+	private String modeOfTransport;
+	private float startkms;
+	private float endkms;
 	private String makaniNo;
 	private String location;
 	private String locationCoord;
@@ -71,22 +78,21 @@ public class ValuationReport implements java.io.Serializable {
 	private String propertyCondition;
 	private String devType;
 	private String developer;
-	private String estAge;
-	private String estemLife;
+	private int estAge;
+	private int estemLife;
+	private String buitUpAreaSize;
+	private String bulComFacilities;
 	private String completionStatus;
 	private String occupancyStatus;
-	private String bulComFacilities;
-	private String buitUpAreaSize;
 	private String accomodation;
+	private String fullBulFloors;
+	private String parkingBays;
 	private String groundFloor;
 	private String firstFloor;
 	private String secondFloor;
-	private String fullBulFloors;
-	private String upgrades;
 	private String view;
 	private boolean swimmingFool;
 	private boolean landScaping;
-	private String parkingBays;
 	private boolean windowAC;
 	private boolean splitUnitsAC;
 	private boolean centralChiller;
@@ -96,6 +102,7 @@ public class ValuationReport implements java.io.Serializable {
 	private boolean washingMachine;
 	private boolean furnished;
 	private boolean utilityConnected;
+	private String upgrades;
 	private String valAdjustment;
 	private String docProvByClients;
 	private String docNotProvided;
@@ -165,19 +172,19 @@ public class ValuationReport implements java.io.Serializable {
 		this.serviceOffName = serviceOffName;
 	}
 	@Column(name = "valInstrDate")
-	public String getValInstrDate() {
+	public Date getValInstrDate() {
 		return valInstrDate;
 	}
 
-	public void setValInstrDate(String valInstrDate) {
+	public void setValInstrDate(Date valInstrDate) {
 		this.valInstrDate = valInstrDate;
 	}
 	@Column(name = "valDate")
-	public String getValDate() {
+	public Date getValDate() {
 		return valDate;
 	}
 
-	public void setValDate(String valDate) {
+	public void setValDate(Date valDate) {
 		this.valDate = valDate;
 	}
 	@Column(name = "propertyValued")
@@ -302,11 +309,11 @@ public class ValuationReport implements java.io.Serializable {
 		this.valuationInstrPerson = valuationInstrPerson;
 	}
 	@Column(name = "plotSize")
-	public String getPlotSize() {
+	public float getPlotSize() {
 		return plotSize;
 	}
 
-	public void setPlotSize(String plotSize) {
+	public void setPlotSize(float plotSize) {
 		this.plotSize = plotSize;
 	}
 	@Column(name = "propOfVal")
@@ -342,11 +349,11 @@ public class ValuationReport implements java.io.Serializable {
 		this.approachReasoning = approachReasoning;
 	}
 	@Column(name = "insDate")
-	public String getInsDate() {
+	public Date getInsDate() {
 		return insDate;
 	}
 
-	public void setInsDate(String insDate) {
+	public void setInsDate(Date insDate) {
 		this.insDate = insDate;
 	}
 	@Column(name = "insType")
@@ -438,19 +445,19 @@ public class ValuationReport implements java.io.Serializable {
 		this.developer = developer;
 	}
 	@Column(name = "estAge")
-	public String getEstAge() {
+	public int getEstAge() {
 		return estAge;
 	}
 
-	public void setEstAge(String estAge) {
+	public void setEstAge(int estAge) {
 		this.estAge = estAge;
 	}
 	@Column(name = "estemLife")
-	public String getEstemLife() {
+	public int getEstemLife() {
 		return estemLife;
 	}
 
-	public void setEstemLife(String estemLife) {
+	public void setEstemLife(int estemLife) {
 		this.estemLife = estemLife;
 	}
 	@Column(name = "completionStatus")
@@ -701,5 +708,60 @@ public class ValuationReport implements java.io.Serializable {
 	public void setSpecialAssumption(String specialAssumption) {
 		this.specialAssumption = specialAssumption;
 	}
+	@Column(name = "intTargetDate")
+	public Date getIntTargetDate() {
+		return intTargetDate;
+	}
 
+	public void setIntTargetDate(Date intTargetDate) {
+		this.intTargetDate = intTargetDate;
+	}
+	@Column(name = "insDay")
+	public String getInsDay() {
+		return insDay;
+	}
+
+	public void setInsDay(String insDay) {
+		this.insDay = insDay;
+	}
+	@Column(name = "insTime")
+	public String getInsTime() {
+		return insTime;
+	}
+
+	public void setInsTime(String insTime) {
+		this.insTime = insTime;
+	}
+	@Column(name = "clientDeadline")
+	public String getClientDeadline() {
+		return clientDeadline;
+	}
+
+	public void setClientDeadline(String clientDeadline) {
+		this.clientDeadline = clientDeadline;
+	}
+	@Column(name = "modeOfTransport")
+	public String getModeOfTransport() {
+		return modeOfTransport;
+	}
+
+	public void setModeOfTransport(String modeOfTransport) {
+		this.modeOfTransport = modeOfTransport;
+	}
+	@Column(name = "startkms")
+	public float getStartkms() {
+		return startkms;
+	}
+
+	public void setStartkms(float startkms) {
+		this.startkms = startkms;
+	}
+	@Column(name = "endkms")
+	public float getEndkms() {
+		return endkms;
+	}
+
+	public void setEndkms(float endkms) {
+		this.endkms = endkms;
+	}
 }

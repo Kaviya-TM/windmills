@@ -17,11 +17,21 @@ $('#age').keyup(function(){
 		$('#remlife').val(40);
 	}
 });
+//var date = $('#valinsdate').val();
+//var newdate = new Date(date);
+//newdate.setDate(newdate.getDate() + 2);
+//var nd = new Date(newdate);
+//var months=["Jan","Feb","Mar","Apr","May","Jun","Jul",
+//"Aug","Sep","Oct","Nov","Dec"];
+//var val=nd.getDate()+"-"+months[nd.getMonth()]+"-"+nd.getFullYear()
+//$('#valinsdate').val(val);
+//console.log(val);
 $(document).on("keypress", ":input:not(:submit)", function(event) {
 	if (event.key == "Enter") {
         event.preventDefault();
     }
 });
+
 //if ("geolocation" in navigator){ 
 //	navigator.geolocation.getCurrentPosition(function(position){ 
 //		var latitude=  position.coords.latitude; 
@@ -64,6 +74,100 @@ $("#clientname").change(function() {
 		},
 	});	
 });
+$("#bedroom").change(function() {
+	var value = $(this).val();
+	if(value.includes("1")){
+		$('#1').show();
+		$('#2,#3,#4,#5,#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("2")){
+		$('#1,#2').show();
+		$('#3,#4,#5,#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("3")){
+		$('#1,#2,#3').show();
+		$('#4,#5,#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("4")){
+		$('#1,#2,#3,#4').show();
+		$('#5,#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("5")){
+		$('#1,#2,#3,#4,#5').show();
+		$('#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("6")){
+		$('#1,#2,#3,#4,#5,#6').show();
+		$('#7,#8,#9,#10').hide();
+	}
+	if(value.includes("7")){
+		$('#1,#2,#3,#4,#5,#6,#7').show();
+		$('#8,#9,#10').hide();
+	}
+	if(value.includes("8")){
+		$('#1,#2,#3,#4,#5,#6,#7,#8').show();
+		$('#9,#10').hide();
+	}
+	if(value.includes("9")){
+		$('#10').hide();
+		$('#1,#2,#3,#4,#5,#6,#7,#8,#9').show();
+	}
+	if(value.includes("10")){
+		$('#1,#2,#3,#4,#5,#6,#7,#8,#9,#10').show();
+	}
+});
+$("#bathroom").change(function() {
+	var value = $(this).val();
+	if(value.includes("1")){
+		$('#1').show();
+		$('#2,#3,#4,#5,#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("2")){
+		$('#1,#2').show();
+		$('#3,#4,#5,#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("3")){
+		$('#1,#2,#3').show();
+		$('#4,#5,#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("4")){
+		$('#1,#2,#3,#4').show();
+		$('#5,#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("5")){
+		$('#1,#2,#3,#4,#5').show();
+		$('#6,#7,#8,#9,#10').hide();
+	}
+	if(value.includes("6")){
+		$('#1,#2,#3,#4,#5,#6').show();
+		$('#7,#8,#9,#10').hide();
+	}
+	if(value.includes("7")){
+		$('#1,#2,#3,#4,#5,#6,#7').show();
+		$('#8,#9,#10').hide();
+	}
+	if(value.includes("8")){
+		$('#1,#2,#3,#4,#5,#6,#7,#8').show();
+		$('#9,#10').hide();
+	}
+	if(value.includes("9")){
+		$('#10').hide();
+		$('#1,#2,#3,#4,#5,#6,#7,#8,#9').show();
+	}
+	if(value.includes("10")){
+		$('#1,#2,#3,#4,#5,#6,#7,#8,#9,#10').show();
+	}
+});
+$("#insType").change(function() {
+	var value = $(this).val();
+	if(value === "Desktop"){
+		$('.insdate,.insday,.instime,.insOfficer,.mode,.startkms,.endkms').hide();
+	}
+	else{
+		$('.insdate,.insday,.instime,.insOfficer,.mode,.startkms,.endkms').show();
+	}
+});
+
 var latitude = geoplugin_latitude();
 var longitude = geoplugin_longitude()
 $('#locationCoord').val(latitude+","+longitude);

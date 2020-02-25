@@ -71,16 +71,31 @@ public class PropertyController {
 	public ModelAndView addPropertyValued(@ModelAttribute("property") Property property,HttpSession session) throws IllegalStateException, IOException {
 		propertyService.addPropertyValued(property);
 	    ModelAndView mv = new ModelAndView();
-	    mv.setViewName("main");
+	    List<Object[]> list=propertyService.getPropertyValued();
+	    mv.addObject("propertylist",list);
+	    mv.setViewName("propertylist");
 		return mv;
 	}
 	@RequestMapping(value="/editPropertyValued",method=RequestMethod.POST)
 	public ModelAndView editPropertyValued(@ModelAttribute("property")Property property,HttpSession session) throws IllegalStateException, IOException {
 		propertyService.editPropertyValued(property);
 		 ModelAndView mv = new ModelAndView();
-		 mv.setViewName("main");
+		 List<Object[]> list=propertyService.getPropertyValued();
+		 mv.addObject("propertylist",list);
+		 mv.setViewName("propertylist");
 	     return mv;
 		
 	}
+	@RequestMapping(value = "/delete-property-valued")
+	public ModelAndView deletePropertyValued(@RequestParam("propertyId") int propertyId, HttpServletRequest request) throws Exception {
+		propertyService.deletePropertyValued(propertyId);
+		ModelAndView mv = new ModelAndView();
+		List<Object[]> list=propertyService.getPropertyValued();
+		mv.addObject("propertylist",list);
+	    mv.setViewName("propertylist");
+	    return mv;
+
+	}
+
 	
 }

@@ -9,6 +9,8 @@
 	href="resources/assets/bundles/pretty-checkbox/pretty-checkbox.min.css">
 <link rel="stylesheet"
 	href="resources/assets/bundles/bootstrap-daterangepicker/daterangepicker.css">
+<link rel="stylesheet"
+	href="resources\assets\fonts\material\material-icons.css">
 <link
 	href="resources/assets/bundles/vendor/datepicker/daterangepicker.css"
 	rel="stylesheet" media="all">
@@ -38,16 +40,17 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="approachReasoning" value="${propertyform.approachReasoning}" id="" placeholder="Approach Reasoning">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Valuation Adjustments</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="valuationAdjustments" value="${propertyform.valuationAdjustments}" id="" placeholder="Valuation Adjustments">
-				</div>
 				<input type="hidden" id="propertyId"" name="propertyId"
 				value="${propertyform.propertyId}"/>
 				<div class="form-group" style="width: 100%">
-					<button type="submit" style="background: #000080">Update</button>
-					<button type="none" id="cancel" style="background: #DF0101">Cancel</button>
+					<button type="submit" style="width: 7% !important;background: forestgreen;margin-right:5px;float:left">Update</button>
+					<button type="none" id="cancel" style="width: 7% !important;background: orange;margin-right:5px;float:left">Cancel</button>
+					<div type="none" style="cursor:pointer;border-radius: 5px;width: 7% !important;top: 10px;background: #DF0101;float:left; padding: 1px;position: relative;">
+						<i class="material-icons" style="color: #fff;font-size: 20px;">delete</i>
+						<a id="delete" class="icon-name" style="color:#fff;top: -4px;position: relative;">Delete</a>
+					</div>
+					
+					
 				</div>
 			</div>
 		</form:form>

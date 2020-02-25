@@ -38,11 +38,6 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="approachReasoning" id="" placeholder="Approach Reasoning">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Valuation Adjustments</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="valuationAdjustments" id="" placeholder="Valuation Adjustments">
-				</div>
 				<div class="errMsg">Property Valued Already Exists</div>
 				<div class="form-group" style="width: 100%">
 					<button type="submit">Save</button>

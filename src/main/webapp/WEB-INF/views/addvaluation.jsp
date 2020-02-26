@@ -20,11 +20,13 @@
 		style="background: rgb(229, 231, 233) !important; overflow: scroll; overflow-x: hidden; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
 			<button class="valbtn" id="receive">Receive Valuation</button>
-			<!-- 		            	<button class="valbtn" id="conflict">Check Conflict Of Interest</button> -->
+			<button class="valbtn" id="documents">Receive Documents</button>
 			<button class="valbtn" id="schedule">Schedule Inspection</button>
 			<button class="valbtn" id="inspect1">Inspect Property A</button>
 			<button class="valbtn" id="inspect2">Inspect Property B</button>
-			<button class="valbtn" id="submit">Submit Valuation</button>
+			<button class="valbtn" id="splAssumption">Special Assumption</button>
+			<button class="valbtn" id="marketsum">Market Summary</button>
+			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
 		<form:form action="saveValuation" id="valuationform"
 			modelAttribute="valuationreport">
@@ -295,12 +297,8 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Valuation Instructing Person</label> 
-<!-- 					<input -->
-<!-- 						type="text" class="form-control form-control-sm textholder" -->
-<!-- 						name="valuationInstrPerson" id="contactPerson" -->
-<!-- 						placeholder="Valuation Instructing Person" autocomplete="on"> -->
 						<select class="form-control form-control-sm textholder" name="valuationInstrPerson" id="contactPerson">								
-						<option value="" hidden>Valuation Instructing  Person</option>
+						<option value="" hidden>--- Select ---</option>
 		    										</select>
 				</div>
 				<div class="vrholder">
@@ -621,8 +619,8 @@
 						autocomplete="on">
 				</div>
 				<div class="viholder">
-					<label class="rholder">Built Up Area Size</label>
-					 <input type="text" class="form-control form-control-sm textholder" name="buitUpAreaSize" id="" placeholder="Built Up Area Size" autocomplete="on">
+					<label class="rholder" style="line-height: 16px">Built Up Area Size(sq.ft)</label>
+					 <input type="text" class="form-control form-control-sm textholder" name="buitUpAreaSize" id="buitUpAreaSize" placeholder="Built Up Area Size(sq.ft)" autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder">Pool</label>
@@ -1014,7 +1012,7 @@
 					</div>
 				</div>
 				<div class="bath"  style="width:30%;float:left;margin-right:2%">
-					<div class="valuationholder">
+					<div class="valuationholder" id="1ba">
 						<label class="labelholder" style="width:22%;color:forestgreen;text-align:center"><b>Bathroom</b></label>
 						<label class="labelholder" style="width:30%;color:forestgreen;text-align:center" ><b>Floors</b></label>
 						<label class="labelholder" style="width:30%;color:forestgreen;text-align:right" ><b>Upgrades</b></label>
@@ -1031,7 +1029,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="2ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="2" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
@@ -1043,7 +1041,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="3ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="3" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
@@ -1055,7 +1053,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="4ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="4" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
@@ -1069,7 +1067,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="5ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="5" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
@@ -1081,7 +1079,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="6ba">
 						<input
 							type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder"
 							name="" id="" value="6" readonly autocomplete="on">
@@ -1095,7 +1093,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="7ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="7" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
@@ -1107,7 +1105,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="8ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="8" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
@@ -1119,7 +1117,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="9ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="9" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
@@ -1131,7 +1129,7 @@
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
-					<div class="valuationholder">
+					<div class="valuationholder" id="10ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="10" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
@@ -1210,6 +1208,70 @@
 					<div class="savebtn" id="inspect2nxt">Next</div>
 				</div>
 			</div>
+			<div class="form-group documents">
+				<div class="valuationholder" >
+					<label class="labelholder" style="width: 160px !important">Title Deed</label>
+				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
+					name="" id="titledeed" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder" style="margin-top: 10px">
+					<label class="labelholder" style="width: 160px !important">Floor Plan</label>
+				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
+					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder" style="margin-top: 10px">
+					<label class="labelholder" style="width: 160px !important">Affection Plan</label>
+				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
+					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder" style="margin-top: 10px">
+					<label class="labelholder" style="width: 160px !important">Land Lease Agreement</label>
+				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
+					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder" style="margin-top: 10px">
+					<label class="labelholder" style="width: 160px !important;line-height: 16px;">Building Permission Certificate</label>
+				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
+					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder" style="margin-top: 10px">
+					<label class="labelholder" style="width: 160px !important;line-height: 16px;">Building Completion Certificate</label>
+				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
+					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder" style="margin-top: 10px">
+					<label class="labelholder" style="width: 160px !important">SPA</label>
+				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
+					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+				</div>
+				<div class="valuationholder adjustTop" style="margin-top: 20px">
+					<div class="savebtn" id="docprv">Previous</div>
+					<div class="savebtn" id="docnxt">Next</div>
+				</div>
+				<div class="valuationholder" style="margin-top: 20px">
+					<div style="color:red">(Note: If neccessary documents are not received , please ask the client formally by email)</div>
+				</div>
+			</div>
+			<div class="form-group spl-assumption">
+				<div class="valuationholder">
+					<label class="labelholder" style="width: 120px !important">Special Assumption</label>
+					<textarea type="text" style="height: 385px !important;width:88% !important" class="form-control form-control-sm textholder" name="specialAssumption" id="assump" autocomplete="on"></textarea>
+				</div>
+				<div class="valuationholder adjustTop" style="margin-top: 371px">
+					<div class="savebtn" id="splprv">Previous</div>
+					<div class="savebtn" id="splnxt">Next</div>
+				</div>
+			</div>
+			<div class="form-group market-summary">
+				<div class="valuationholder">
+					<label class="labelholder" style="width: 115px !important">Market Summary</label>
+				    <textarea type="text" style="height: 385px !important;width:88% !important" class="form-control form-control-sm textholder" name="marketSummary" id=""  autocomplete="on"></textarea>
+				</div>
+				<div class="valuationholder adjustTop" style="margin-top:371px">
+					<div class="savebtn" id="mrtprv">Previous</div>
+					<div class="savebtn" id="mrtnxt">Next</div>
+				</div>
+			</div>
 			<div class="form-group submitting">
 				<div class="valuationholder">
 					<label class="labelholder">Valuation Adjustments</label>
@@ -1225,25 +1287,20 @@
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder">Market Value</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="marketValue" id="" placeholder="Market Value" autocomplete="on">
+				    <input type="text" class="form-control form-control-sm textholder" name="marketValue" id="marketValue" placeholder="Market Value" autocomplete="off">
+				</div>
+				<div class="valuationholder wordsec" style="height:17px">
+					<div class="word" style="position: relative;left: 221px;font-weight: 800;letter-spacing: 0.6px;font-size:11px;color: #6BB245;text-transform: capitalize;top: -2px;"></div>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder">Market Value Rate</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="marketValueRate" id="" placeholder="Market Value Rate" autocomplete="on">
+					<label class="labelholder">Market Value Rate(Per Square Feet)</label>
+				    <input type="text" class="form-control form-control-sm textholder" name="marketValueRate" id="marketValueRate" placeholder="Market Value Rate" autocomplete="off">
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder">Market Rent</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="marketRent" id="" placeholder="Market Rent" autocomplete="on">
+				    <input type="text" class="form-control form-control-sm textholder" name="marketRent" id="" placeholder="Market Rent" autocomplete="off">
 				</div>
-				<div class="valuationholder">
-					<label class="labelholder">Market Summary</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="marketSummary" id="" placeholder="Market Summary" autocomplete="on">
-				</div>
-				<div class="valuationholder">
-					<label class="labelholder">Special Assumption</label>
-					<textarea type="text" class="form-control form-control-sm textholder" name="specialAssumption" id="assump" placeholder="Special Assumption" autocomplete="on"></textarea>
-				</div>
-				<div class="valuationholder" style="margin-top: 55px">
+				<div class="valuationholder" style="margin-top: 20px">
 					<div class="savebtn" id="submitprv">Previous</div>
 					<button type="submit" id="submitnxt" class="savebtn">Save</button>
 				</div>
@@ -1258,4 +1315,5 @@
 <script src="resources/assets/bundles/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script src="resources/assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
 <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="resources/assets/js/numbertoword.js"></script>
 <script src="resources/assets/js/valuationform.js"></script>

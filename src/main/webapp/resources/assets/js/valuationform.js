@@ -3,6 +3,9 @@ $('.inspecting1').hide();
 $('.inspecting2').hide();
 $('.scheduling').hide();
 $('.submitting').hide();
+$('.documents').hide();
+$('.market-summary').hide();
+$('.spl-assumption').hide();
 var j=$('#row').val();
 $('#reference').val("REV-2020-"+j+"");
 $('#country').val("United Arab Emirates");
@@ -118,44 +121,91 @@ $("#bedroom").change(function() {
 });
 $("#bathroom").change(function() {
 	var value = $(this).val();
-	if(value.includes("1")){
-		$('#1').show();
-		$('#2,#3,#4,#5,#6,#7,#8,#9,#10').hide();
+	if(value === "1 Bathroom"){
+		$('#1ba').show();
+		$('#2ba,#3ba,#4ba,#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value.includes("2")){
-		$('#1,#2').show();
-		$('#3,#4,#5,#6,#7,#8,#9,#10').hide();
+	if(value === "2 Bathrooms"){
+		$('#1ba,#2ba').show();
+		$('#3ba,#4ba,#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value.includes("3")){
-		$('#1,#2,#3').show();
-		$('#4,#5,#6,#7,#8,#9,#10').hide();
+	if(value === "3 Bathrooms"){
+		$('#1ba,#2ba,#3ba').show();
+		$('#4ba,#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value.includes("4")){
-		$('#1,#2,#3,#4').show();
-		$('#5,#6,#7,#8,#9,#10').hide();
+	if(value === "4 Bathrooms"){
+		$('#1ba,#2ba,#3ba,#4ba').show();
+		$('#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value.includes("5")){
-		$('#1,#2,#3,#4,#5').show();
-		$('#6,#7,#8,#9,#10').hide();
+	if(value === "5 Bathrooms"){
+		$('#1ba,#2ba,#3ba,#4ba,#5ba').show();
+		$('#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value.includes("6")){
-		$('#1,#2,#3,#4,#5,#6').show();
-		$('#7,#8,#9,#10').hide();
+	if(value === "6 Bathrooms"){
+		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba').show();
+		$('#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value.includes("7")){
-		$('#1,#2,#3,#4,#5,#6,#7').show();
-		$('#8,#9,#10').hide();
+	if(value === "7 Bathrooms"){
+		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba,#7ba').show();
+		$('#8ba,#9ba,#10ba').hide();
 	}
-	if(value.includes("8")){
-		$('#1,#2,#3,#4,#5,#6,#7,#8').show();
-		$('#9,#10').hide();
+	if(value === "8 Bathrooms"){
+		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba,#7ba,#8ba').show();
+		$('#9ba,#10ba').hide();
 	}
-	if(value.includes("9")){
-		$('#10').hide();
-		$('#1,#2,#3,#4,#5,#6,#7,#8,#9').show();
+	if(value === "9 Bathrooms"){
+		$('#10ba').hide();
+		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba,#7ba,#8ba,#9ba').show();
 	}
-	if(value.includes("10")){
-		$('#1,#2,#3,#4,#5,#6,#7,#8,#9,#10').show();
+	if(value === "10 Bathrooms"){
+		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').show();
+	}
+});
+$('.wordsec').hide();
+$("#marketValue").keyup(function() {
+	var get_num = $(this).val();
+	if(get_num != '')
+	{
+		var num_to_words = toWords(get_num);
+		var numword =num_to_words.replace(/,/g , '')
+		$('.word').text("("+numword+" Dirhams Only)");
+		$('.wordsec').show();
+	}
+	else{
+		$('.word').text("");
+		$('.wordsec').hide();
+	}
+	var bulitupsize = $('#buitUpAreaSize').val();
+	if(bulitupsize != '' && get_num != ''){
+		var finalvalue = parseInt(get_num)/parseInt(bulitupsize);
+		var rent = finalvalue.toFixed();
+		$('#marketValueRate').val(rent);
+	}
+	else{
+		$('#marketValueRate').val("");
+	}
+});
+$("#buitUpAreaSize").keyup(function() {
+	var get_num = $('#marketValue').val();
+	if(get_num != '')
+	{
+		var num_to_words = toWords(get_num);
+		var numword =num_to_words.replace(/,/g , '')
+		$('.word').text("("+numword+" Dirhams Only)");
+		$('.wordsec').show();
+	}
+	else{
+		$('.word').text("");
+		$('.wordsec').hide();
+	}
+	var bulitupsize = $(this).val();
+	if(bulitupsize != '' && get_num != ''){
+		var finalvalue = parseInt(get_num)/parseInt(bulitupsize);
+		var rent = finalvalue.toFixed();
+		$('#marketValueRate').val(rent);
+	}
+	else{
+		$('#marketValueRate').val("");
 	}
 });
 $("#insType").change(function() {
@@ -263,6 +313,12 @@ $("#receive").click(function(){
 	$('.receiving').show();
 	$('.scheduling').hide();
 	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
 	$("#receive").css("background", "#DF0101");
 	$("#schedule").css("background", "#000080");
@@ -276,6 +332,12 @@ $("#schedule").click(function(){
 	$('.receiving').hide();
 	$('.scheduling').show();
 	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
 	$("#schedule").css("background", "#DF0101");
 	$("#receive").css("background", "#000080");
@@ -289,8 +351,33 @@ $("#inspect1").click(function(){
 	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
 	$("#inspect1").css("background", "#DF0101");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#documents").click(function(){
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').show();
+	$("#documents").css("background", "#DF0101");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
 	$("#receive").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
 	$("#submit").css("background", "#000080");
@@ -302,11 +389,55 @@ $("#inspect2").click(function(){
 	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.inspecting2').show();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
 	$("#inspect2").css("background", "#DF0101");
 	$("#receive").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
 	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#marketsum").click(function(){
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.inspecting2').hide();
+	$('.market-summary').show();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#DF0101");
+	$("#splAssumption").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#splAssumption").click(function(){
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').show();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#splAssumption").css("background", "#DF0101");
+	$("#marketsum").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
 });
 $("#submit").click(function(){
@@ -315,6 +446,12 @@ $("#submit").click(function(){
 	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
 	$("#submit").css("background", "#DF0101");
 	$("#receive").css("background", "#000080");
@@ -327,10 +464,16 @@ $("#receivenxt").click(function(){
 	$('.inspecting1').hide();
 	$('.submitting').hide();
 	$('.receiving').hide();
-	$('.scheduling').show();
+	$('.scheduling').hide();
 	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').show();
+	$("#documents").css("background", "#DF0101");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
-	$("#schedule").css("background", "#DF0101");
+	$("#schedule").css("background", "#000080");
 	$("#receive").css("background", "#000080");
 	$("#submit").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
@@ -342,6 +485,12 @@ $("#schedulenxt").click(function(){
 	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
 	$("#inspect1").css("background", "#DF0101");
 	$("#receive").css("background", "#000080");
@@ -352,11 +501,17 @@ $("#schedulenxt").click(function(){
 $("#scheduleprv").click(function(){
 	$('.inspecting1').hide();
 	$('.submitting').hide();
-	$('.receiving').show();
+	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').show();
+	$("#documents").css("background", "#DF0101");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
-	$("#receive").css("background", "#DF0101");
+	$("#receive").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
 	$("#submit").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
@@ -368,6 +523,12 @@ $("#inspect1nxt").click(function(){
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
 	$("#inspect2").css("background", "#DF0101");
 	$("#inspect1").css("background", "#000080");
@@ -381,6 +542,12 @@ $("#inspect1prv").click(function(){
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').show();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
 	$("#schedule").css("background", "#DF0101");
 	$("#inspect1").css("background", "#000080");
@@ -388,14 +555,135 @@ $("#inspect1prv").click(function(){
 	$("#receive").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
 });
-$("#inspect2nxt").click(function(){
+$("#splnxt").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.market-summary').show();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#DF0101");
+	$("#splAssumption").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#splprv").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').show();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#DF0101");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#mrtnxt").click(function(){
 	$('.inspecting1').hide();
 	$('.inspecting2').hide();
 	$('.submitting').show();
 	$('.receiving').hide();
 	$('.scheduling').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
 	$("#submit").css("background", "#DF0101");
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#mrtprv").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').show();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#DF0101");
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#docnxt").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').show();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
+	$("#schedule").css("background", "#DF0101");
+	$("#submit").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#docprv").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').hide();
+	$('.submitting').hide();
+	$('.receiving').show();
+	$('.scheduling').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#receive").css("background", "#DF0101");
+	$("#conflict").css("background", "#000080");
+});
+$("#inspect2nxt").click(function(){
+	$('.inspecting1').hide();
+	$('.inspecting2').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').show();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#DF0101");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
 	$("#receive").css("background", "#000080");
@@ -407,6 +695,12 @@ $("#inspect2prv").click(function(){
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
 	$("#inspect1").css("background", "#DF0101");
 	$("#schedule").css("background", "#000080");
@@ -415,13 +709,19 @@ $("#inspect2prv").click(function(){
 	$("#conflict").css("background", "#000080");
 });
 $("#submitprv").click(function(){
-	$('.inspecting2').show();
+	$('.inspecting2').hide();
 	$('.inspecting1').hide();
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
+	$('.market-summary').show();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#DF0101");
+	$("#splAssumption").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#DF0101");
+	$("#inspect2").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
 	$("#submit").css("background", "#000080");
 	$("#receive").css("background", "#000080");

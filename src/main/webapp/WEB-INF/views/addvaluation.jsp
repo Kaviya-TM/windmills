@@ -99,7 +99,7 @@
 							name="" id="">
 					</div>
 				</div>
-				<div class="vrholder">
+					<div class="vrholder">
 					<label class="rholder">Property Valued</label>
 					<select class="form-control form-control-sm textholder"
 						name="propertyValued" id="propertyvalued">
@@ -831,8 +831,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="1" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -848,8 +848,8 @@
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -867,8 +867,8 @@
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -886,8 +886,8 @@
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -905,8 +905,8 @@
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -924,8 +924,8 @@
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -942,9 +942,9 @@
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
-							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+						<option value="Ground">Ground</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -962,8 +962,8 @@
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -981,8 +981,8 @@
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -1000,8 +1000,8 @@
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
 							name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -1021,8 +1021,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="1" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -1033,8 +1033,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="2" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -1045,8 +1045,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="3" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -1057,8 +1057,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="4" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px"
@@ -1071,8 +1071,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="5" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -1085,8 +1085,8 @@
 							name="" id="" value="6" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -1097,8 +1097,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="7" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -1109,8 +1109,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="8" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -1121,8 +1121,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="9" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
 							<option value="Standard">Standard</option>
@@ -1133,8 +1133,8 @@
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="10" readonly autocomplete="on">
 		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:21px" name="" id="">
@@ -1152,52 +1152,52 @@
 					</div>
 					<div class="valuationholder">
 						<label class="labelholder" style="width:22%;"><b>Kitchen</b></label>
-						<input type="number" style="width:16% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="" autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:25% !important;margin-left:10px" name="" id="">
+						<input type="number" style="width:16% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="kitcount" value="" autocomplete="on">
+		 				<select class="form-control form-control-sm textholder" style="width:25% !important;margin-left:10px" name="" id="kitfloor">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
-		 				<select class="form-control form-control-sm textholder" style="width:29% !important;margin-left:13px" name="" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:29% !important;margin-left:13px" name="" id="kitupg">
 							<option value="Standard">Standard</option>
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
 					<div class="valuationholder">
 						<label class="labelholder" style="width:22%;"><b>Living Area</b></label>
-						<input type="number" style="width:16% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="" autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:25% !important;margin-left:10px" name="" id="">
+						<input type="number" style="width:16% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="la" value="" autocomplete="on">
+		 				<select class="form-control form-control-sm textholder" style="width:25% !important;margin-left:10px" name="" id="laf">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
-		 				<select class="form-control form-control-sm textholder" style="width:29% !important;margin-left:13px" name="" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:29% !important;margin-left:13px" name="" id="lau">
 							<option value="Standard">Standard</option>
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
 					<div class="valuationholder">
 						<label class="labelholder" style="width:22%;"><b>Dining Area</b></label>
-						<input type="number" style="width:16% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="" autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:25% !important;margin-left:10px" name="" id="">
+						<input type="number" style="width:16% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="da" value="" autocomplete="on">
+		 				<select class="form-control form-control-sm textholder" style="width:25% !important;margin-left:10px" name="" id="daf">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
-		 				<select class="form-control form-control-sm textholder" style="width:29% !important;margin-left:13px" name="" id="">
-							<option value="Standard">Standard</option>
+		 				<select class="form-control form-control-sm textholder" style="width:29% !important;margin-left:13px" name="" id="dau">
+							<option value="Standard">Standard</option>	
 							<option value="Upgraded">Upgraded</option>
 		 				</select>
 					</div>
 					<div class="valuationholder">
 						<label class="labelholder" style="width:22%;"><b>Balcony</b></label>
-						<input type="number" style="width:16% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="" autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:25% !important;margin-left:10px" name="" id="">
+						<input type="number" style="width:16% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="ba" value="" autocomplete="on">
+		 				<select class="form-control form-control-sm textholder" style="width:25% !important;margin-left:10px" name="" id="baf">
 							<option value="Ground">Ground</option>
-							<option value="Standard">First</option>
-							<option value="Upgraded">Second</option>
+							<option value="First">First</option>
+							<option value="Second">Second</option>
 		 				</select>
-		 				<select class="form-control form-control-sm textholder" style="width:29% !important;margin-left:13px" name="" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:29% !important;margin-left:13px" name="" id="bau">
 							<option value="Standard">Standard</option>
 							<option value="Upgraded">Upgraded</option>
 		 				</select>

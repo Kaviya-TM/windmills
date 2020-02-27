@@ -20,7 +20,298 @@ $('#age').keyup(function(){
 		$('#remlife').val(40);
 	}
 });
-//var date = $('#valinsdate').val();
+function bedroom(){
+	var i=0;j=0;k=0;m=0;n=0;o=0;
+	var a=0;b=0;c=0;d=0;e=0;f=0;
+	var ground = null;
+	var first = null;
+	var second = null;
+	var upgrades = null;
+	$( ".bed select:visible" ).each(function( index ) {
+	  if($(this).val() === "Ground"){
+	       i++;
+	  }
+	if($(this).val() === "First"){
+	       j++;
+	  }
+	if($(this).val() === "Second"){
+	       k++;
+	  }
+	if($(this).val() === "Upgraded"){    
+	   if($(this).prev().val() === "Ground"){
+	       m++;
+	   }
+	   if($(this).prev().val() === "First"){
+	       n++;
+	   }
+	     if($(this).prev().val() === "Second"){
+	       o++;
+	   }
+	  }
+	});
+	$( ".bath select:visible" ).each(function( index ) {
+		  if($(this).val() === "Ground"){
+		       a++;
+		  }
+		if($(this).val() === "First"){
+		       b++;
+		  }
+		if($(this).val() === "Second"){
+		       c++;
+		  }
+		if($(this).val() === "Upgraded"){    
+		   if($(this).prev().val() === "Ground"){
+		       d++;
+		   }
+		   if($(this).prev().val() === "First"){
+		       e++;
+		   }
+		     if($(this).prev().val() === "Second"){
+		       f++;
+		   }
+		  }
+		});
+	
+	if(i>0){
+		ground = i+" Bedrooms";
+	}
+	if(a >0 && i === 0){
+		ground = a+" Bathrooms";
+	}
+	if(a >0 && i != 0){
+		ground = ground+','+a+" Bathrooms";
+	}
+	if(ground != null && parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "Ground"){
+		ground =ground +','+$('#kitcount').val()+" Kitchen";
+	}
+	else if(parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "Ground" && ground == null){
+		ground = $('#kitcount').val()+" Kitchen";
+	}
+	if(ground != null && parseInt($('#la').val()) > 0 && $('#laf').val() === "Ground"){
+		ground =ground +','+$('#la').val()+" Living Area";
+	}
+	else if(parseInt($('#la').val()) > 0 && $('#laf').val() === "Ground" && ground == null){
+		ground = $('#la').val()+" Living Area";
+	}
+	if(ground != null && parseInt($('#da').val()) > 0 && $('#daf').val() === "Ground"){
+		ground =ground +','+$('#da').val()+" Dining Area";
+	}
+	else if(parseInt($('#da').val()) > 0 && $('#daf').val() === "Ground" && ground == null){
+		ground = $('#da').val()+" Dining Area";
+	}
+	if(ground != null && parseInt($('#ba').val()) > 0 && $('#baf').val() === "Ground"){
+		ground =ground +','+$('#ba').val()+" Balcony";
+	}
+	else if(parseInt($('#ba').val()) > 0 && $('#baf').val() === "Ground" && ground == null){
+		ground = $('#ba').val()+" Balcony";
+	}
+	if(ground === null){
+		ground = "Not Applicable";
+	}
+	if(j>0){
+		first = j+" Bedrooms";
+	}
+	if(b >0 && j === 0){
+		first = b+" Bathrooms";
+	}
+	if(b >0 && j != 0){
+		first = first+','+b+" Bathrooms";
+	}
+	if(first != null && parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "First"){
+		first =first +','+$('#kitcount').val()+" Kitchen";
+	}
+	else if(parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "First" && first == null){
+		first = $('#kitcount').val()+" Kitchen";
+	}
+	if(first != null && parseInt($('#la').val()) > 0 && $('#laf').val() === "First"){
+		first =first +','+$('#la').val()+" Living Area";
+	}
+	else if(parseInt($('#la').val()) > 0 && $('#laf').val() === "First" && first == null){
+		first = $('#la').val()+" Living Area";
+	}
+	if(first != null && parseInt($('#da').val()) > 0 && $('#daf').val() === "First"){
+		first =first +','+$('#da').val()+" Dining Area";
+	}
+	else if(parseInt($('#da').val()) > 0 && $('#daf').val() === "First" && first == null){
+		first = $('#da').val()+" Dining Area";
+	}
+	if(first != null && parseInt($('#ba').val()) > 0 && $('#baf').val() === "First"){
+		first =first +','+$('#ba').val()+" Balcony";
+	}
+	else if(parseInt($('#ba').val()) > 0 && $('#daf').val() === "First" && first == null){
+		first = $('#ba').val()+" Balcony";
+	}
+	if(first === null){
+		first = "Not Applicable";
+	}
+	
+	if(k>0){
+		second = k+" Bedrooms";
+	}
+	if(c >0 && k != 0){
+		second = second+','+c+" Bathrooms";
+	}
+	if(c >0 && k === 0){
+		second = c+" Bathrooms";
+	}
+	if(second != null && parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "Second"){
+		second =second +','+$('#kitcount').val()+" Kitchen";
+	}
+	else if(parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "Second" && second == null){
+		second = $('#kitcount').val()+" Kitchen";
+	}
+	if(second != null && parseInt($('#la').val()) > 0 && $('#laf').val() === "Second"){
+		second =second +','+$('#la').val()+" Living Area";
+	}
+	else if(parseInt($('#la').val()) > 0 && $('#laf').val() === "Second" && second == null){
+		second = $('#la').val()+" Living Area";
+	}
+	if(second != null && parseInt($('#da').val()) > 0 && $('#daf').val() === "Second"){
+		second =second +','+$('#da').val()+" Dining Area";
+	}
+	else if(parseInt($('#da').val()) > 0 && $('#daf').val() === "Second" && second == null){
+		second = $('#da').val()+" Dining Area";
+	}
+	if(second != null && parseInt($('#ba').val()) > 0 && $('#baf').val() === "Second"){
+		second =second +','+$('#ba').val()+" Balcony";
+	}
+	else if(parseInt($('#ba').val()) > 0 && $('#baf').val() === "Second" && second == null){
+		second = $('#ba').val()+" Balcony";
+	}
+	if(second === null){
+		second = "Not Applicable";
+	}
+	if(m>0){
+		upgrades = m +" Bedrooms in Ground Floor";
+	}
+	if(n>0 && upgrades != null){
+		upgrades =upgrades+','+ n +" Bedrooms in First Floor";
+	}
+	if(n>0 && upgrades === null){
+		upgrades =  n +" Bedrooms in First Floor";
+	}
+	if(o>0 && upgrades != null){
+		upgrades =upgrades+','+ o +" Bedrooms in Second Floor";
+	}
+	if(o>0 && upgrades === null){
+		upgrades = o +" Bedrooms in Second Floor";
+	}
+	if(d>0 && upgrades != null){
+		upgrades =upgrades+','+ d +" Bathrooms in Ground Floor";
+	}
+	if(d>0 && upgrades === null){
+		upgrades = d +" Bathrooms in Ground Floor";
+	}
+	if(e>0 && upgrades != null){
+		upgrades =upgrades+','+ e +" Bathrooms in Second Floor";
+	}
+	if(e>0 && upgrades === null){
+		upgrades = e +" Bathrooms in First Floor";
+	}
+	if(f>0 && upgrades != null){
+		upgrades =upgrades+','+ f +" Bathrooms in Second Floor";
+	}
+	if(f>0 && upgrades === null){
+		upgrades = f +" Bathrooms in First Floor";
+	}
+	if(upgrades != null && parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "Ground" && $('#kitupg').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#kitcount').val()+" Kitchen in Ground Floor";
+	}
+	else if(parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "Ground" && upgrades == null && $('#kitupg').val() === "Upgraded"){
+		upgrades = $('#kitcount').val()+" Kitchen in Ground Floor";
+	}
+	if(upgrades != null && parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "First" && $('#kitupg').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#kitcount').val()+" Kitchen in First Floor";
+	}
+	else if(parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "First" && $('#kitupg').val() === "Upgraded"  && upgrades == null){
+		upgrades = $('#kitcount').val()+" Kitchen in First Floor";
+	}
+	if(upgrades != null && parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "Second" && $('#kitupg').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#kitcount').val()+" Kitchen in Second Floor";
+	}
+	else if(parseInt($('#kitcount').val()) > 0 && $('#kitfloor').val() === "Second" && $('#kitupg').val() === "Upgraded" && upgrades == null){
+		upgrades = $('#kitcount').val()+" Kitchen in Second Floor";
+	}
+
+
+	if(upgrades != null && parseInt($('#la').val()) > 0 && $('#laf').val() === "Ground" && $('#lau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#la').val()+" Living Area in Ground Floor";
+	}
+	else if(parseInt($('#la').val()) > 0 && $('#laf').val() === "Ground" && upgrades == null && $('#lau').val() === "Upgraded"){
+		upgrades = $('#la').val()+" Living Area in Ground Floor";
+	}
+	if(upgrades != null && parseInt($('#la').val()) > 0 && $('#laf').val() === "First" && $('#lau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#la').val()+" Living Area in First Floor";
+	}
+	else if(parseInt($('#la').val()) > 0 && $('#laf').val() === "First" && $('#lau').val() === "Upgraded"  && upgrades == null){
+		upgrades = $('#la').val()+" Living Area in First Floor";
+	}
+	if(upgrades != null && parseInt($('#la').val()) > 0 && $('#laf').val() === "Second" && $('#lau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#la').val()+" Living Area in Second Floor";
+	}
+	else if(parseInt($('#la').val()) > 0 && $('#laf').val() === "Second" && $('#lau').val() === "Upgraded" && upgrades == null){
+		upgrades = $('#la').val()+" Living Area in Second Floor";
+	}
+	
+	
+	if(upgrades != null && parseInt($('#da').val()) > 0 && $('#daf').val() === "Ground" && $('#dau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#da').val()+" Dining Area in Ground Floor";
+	}
+	else if(parseInt($('#da').val()) > 0 && $('#daf').val() === "Ground" && upgrades == null && $('#dau').val() === "Upgraded"){
+		upgrades = $('#da').val()+" Dining Area in Ground Floor";
+	}
+	if(upgrades != null && parseInt($('#da').val()) > 0 && $('#daf').val() === "First" && $('#dau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#da').val()+" Dining Area in First Floor";
+	}
+	else if(parseInt($('#da').val()) > 0 && $('#daf').val() === "First" && $('#dau').val() === "Upgraded"  && upgrades == null){
+		upgrades = $('#da').val()+" Dining Area in First Floor";
+	}
+	if(upgrades != null && parseInt($('#da').val()) > 0 && $('#daf').val() === "Second" && $('#dau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#da').val()+" Dining Area in Second Floor";
+	}
+	else if(parseInt($('#da').val()) > 0 && $('#daf').val() === "Second" && $('#dau').val() === "Upgraded" && upgrades == null){
+		upgrades = $('#da').val()+" Dining Area in Second Floor";
+	}
+	
+	if(upgrades != null && parseInt($('#ba').val()) > 0 && $('#baf').val() === "Ground" && $('#bau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#ba').val()+" Balcony in Ground Floor";
+	}
+	else if(parseInt($('#ba').val()) > 0 && $('#baf').val() === "Ground" && upgrades == null && $('#bau').val() === "Upgraded"){
+		upgrades = $('#ba').val()+" Balcony in Ground Floor";
+	}
+	if(upgrades != null && parseInt($('#ba').val()) > 0 && $('#baf').val() === "First" && $('#bau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#ba').val()+" Balcony in First Floor";
+	}
+	else if(parseInt($('#ba').val()) > 0 && $('#baf').val() === "First" && $('#bau').val() === "Upgraded"  && upgrades == null){
+		upgrades = $('#ba').val()+" Balcony in First Floor";
+	}
+	if(upgrades != null && parseInt($('#ba').val()) > 0 && $('#baf').val() === "Second" && $('#bau').val() === "Upgraded"){
+		upgrades =upgrades +','+$('#ba').val()+" Balcony in Second Floor";
+	}
+	else if(parseInt($('#ba').val()) > 0 && $('#baf').val() === "Second" && $('#bau').val() === "Upgraded" && upgrades == null){
+		upgrades = $('#ba').val()+" Balconyin Second Floor";
+	}
+	
+	
+	if(upgrades === null){
+		upgrades = "None"
+	}
+	alert("Ground Floor-->"+ground);
+	alert("First Floor-->"+first);
+	alert("Second Floor-->"+second);
+	alert("Upgrades-->"+upgrades);
+	console.log("Ground Floor-->",ground);
+	console.log("First Floor-->",first);
+	console.log("Second Floor-->",second);
+	console.log("upgrades-->",upgrades);
+}
+$("#inspect2nxt").click(function() {
+	bedroom();
+});
+$("#splAssumption").click(function() {
+	bedroom();
+});
+	//var date = $('#valinsdate').val();
 //var newdate = new Date(date);
 //newdate.setDate(newdate.getDate() + 2);
 //var nd = new Date(newdate);

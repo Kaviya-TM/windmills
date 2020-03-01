@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import javassist.convert.Transformer;
 import model.ClientDetails;
 import model.Community;
+import model.Documents;
 import model.Property;
 import model.ServiceOfficer;
 import model.ValuationReport;
@@ -39,7 +40,9 @@ public class ValuationDaoImpl {
 		
 		return rows;
 	}
-
+	public void uploaddocuments(Documents document) {
+		sessionFactory.getCurrentSession().save(document);
+	}
     public List<ServiceOfficer> getDefaultServicer(String email) {
     	Query query=sessionFactory.getCurrentSession().createQuery("from ServiceOfficer s where s.email=:email");
 		query.setParameter("email",email);

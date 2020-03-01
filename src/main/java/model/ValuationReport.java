@@ -2,8 +2,10 @@ package model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -41,20 +43,21 @@ public class ValuationReport implements java.io.Serializable {
 	private Date intTargetDate;
 	private String propertyValued;
 	private String tenure;
-	private String unitNo;
-	private String floorNo;
-	private String streetNo;
-	private String streetName;
-	private String buildingNo;
-	private String buildingName;
+//	private String unitNo;
+//	private String floorNo;
+//	private String streetNo;
+//	private String streetName;
+//	private String buildingNo;
+//	private String buildingName;
+	private String propertyAddress;
 	private String plotNo;
-	private String subCommunity;
-	private String community;
-	private String town;
-	private String city;
-	private String country;
+//	private String subCommunity;
+//	private String community;
+//	private String town;
+//	private String city;
+//	private String country;
 	private String valuationInstrPerson;
-	private float plotSize;
+	private String plotSize;
 	private String propOfVal;
 	private String valApproach;
 	private String basesOfValue;
@@ -84,23 +87,24 @@ public class ValuationReport implements java.io.Serializable {
 	private String bulComFacilities;
 	private String completionStatus;
 	private String occupancyStatus;
-	private String accomodation;
+//	private String accomodation;
 	private String fullBulFloors;
-	private String parkingBays;
+	private int parkingBays;
 	private String groundFloor;
 	private String firstFloor;
 	private String secondFloor;
 	private String view;
 	private boolean swimmingFool;
-	private boolean landScaping;
-	private boolean windowAC;
-	private boolean splitUnitsAC;
-	private boolean centralChiller;
+	private String landScaping;
+//	private boolean windowAC;
+//	private boolean splitUnitsAC;
+//	private boolean centralChiller;
+	private String acType;
 	private boolean fridge;
 	private boolean oven;
 	private boolean cooker;
 	private boolean washingMachine;
-	private boolean furnished;
+	private String furnished;
 	private boolean utilityConnected;
 	private String upgrades;
 	private String valAdjustment;
@@ -111,7 +115,7 @@ public class ValuationReport implements java.io.Serializable {
 	private String marketRent;
 	private String marketSummary;
 	private String specialAssumption;
-		
+	private Set<Documents> documents = new HashSet<Documents>(0);
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -203,71 +207,71 @@ public class ValuationReport implements java.io.Serializable {
 	public void setTenure(String tenure) {
 		this.tenure = tenure;
 	}
-	@Column(name = "unitNo")
-	public String getUnitNo() {
-		return unitNo;
-	}
-
-	public void setUnitNo(String unitNo) {
-		this.unitNo = unitNo;
-	}
-	@Column(name = "floorNo")
-	public String getFloorNo() {
-		return floorNo;
-	}
-
-	public void setFloorNo(String floorNo) {
-		this.floorNo = floorNo;
-	}
-	@Column(name = "streetNo")
-	public String getStreetNo() {
-		return streetNo;
-	}
-
-	public void setStreetNo(String streetNo) {
-		this.streetNo = streetNo;
-	}
-	@Column(name = "streetName")
-	public String getStreetName() {
-		return streetName;
-	}
-
-	public void setStreetName(String streetName) {
-		this.streetName = streetName;
-	}
-	@Column(name = "buildingNo")
-	public String getBuildingNo() {
-		return buildingNo;
-	}
-
-	public void setBuildingNo(String buildingNo) {
-		this.buildingNo = buildingNo;
-	}
-	@Column(name = "buildingName")
-	public String getBuildingName() {
-		return buildingName;
-	}
-
-	public void setBuildingName(String buildingName) {
-		this.buildingName = buildingName;
-	}
-
-	@Column(name = "community")
-	public String getCommunity() {
-		return community;
-	}
-
-	public void setCommunity(String community) {
-		this.community = community;
-	}
-	@Column(name = "subCommunity")
-	public String getSubCommunity() {
-		return subCommunity;
-	}
-
-	public void setSubCommunity(String subCommunity) {
-		this.subCommunity = subCommunity;
-	}
+//	@Column(name = "unitNo")
+//	public String getUnitNo() {
+//		return unitNo;
+//	}
+//
+//	public void setUnitNo(String unitNo) {
+//		this.unitNo = unitNo;
+//	}
+//	@Column(name = "floorNo")
+//	public String getFloorNo() {
+//		return floorNo;
+//	}
+//
+//	public void setFloorNo(String floorNo) {
+//		this.floorNo = floorNo;
+//	}
+//	@Column(name = "streetNo")
+//	public String getStreetNo() {
+//		return streetNo;
+//	}
+//
+//	public void setStreetNo(String streetNo) {
+//		this.streetNo = streetNo;
+//	}
+//	@Column(name = "streetName")
+//	public String getStreetName() {
+//		return streetName;
+//	}
+//
+//	public void setStreetName(String streetName) {
+//		this.streetName = streetName;
+//	}
+//	@Column(name = "buildingNo")
+//	public String getBuildingNo() {
+//		return buildingNo;
+//	}
+//
+//	public void setBuildingNo(String buildingNo) {
+//		this.buildingNo = buildingNo;
+//	}
+//	@Column(name = "buildingName")
+//	public String getBuildingName() {
+//		return buildingName;
+//	}
+//
+//	public void setBuildingName(String buildingName) {
+//		this.buildingName = buildingName;
+//	}
+//
+//	@Column(name = "community")
+//	public String getCommunity() {
+//		return community;
+//	}
+//
+//	public void setCommunity(String community) {
+//		this.community = community;
+//	}
+//	@Column(name = "subCommunity")
+//	public String getSubCommunity() {
+//		return subCommunity;
+//	}
+//
+//	public void setSubCommunity(String subCommunity) {
+//		this.subCommunity = subCommunity;
+//	}
 	@Column(name = "plotNo")
 	public String getPlotNo() {
 		return plotNo;
@@ -276,30 +280,30 @@ public class ValuationReport implements java.io.Serializable {
 	public void setPlotNo(String plotNo) {
 		this.plotNo = plotNo;
 	}
-	@Column(name = "town")
-	public String getTown() {
-		return town;
-	}
-
-	public void setTown(String town) {
-		this.town = town;
-	}
-	@Column(name = "city")
-	public String getCity() {
-		return city;
-	}
-	
-	public void setCity(String city) {
-		this.city = city;
-	}
-	@Column(name = "country")
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
-	}
+//	@Column(name = "town")
+//	public String getTown() {
+//		return town;
+//	}
+//
+//	public void setTown(String town) {
+//		this.town = town;
+//	}
+//	@Column(name = "city")
+//	public String getCity() {
+//		return city;
+//	}
+//	
+//	public void setCity(String city) {
+//		this.city = city;
+//	}
+//	@Column(name = "country")
+//	public String getCountry() {
+//		return country;
+//	}
+//
+//	public void setCountry(String country) {
+//		this.country = country;
+//	}
 	@Column(name = "valuationInstrPerson")
 	public String getValuationInstrPerson() {
 		return valuationInstrPerson;
@@ -309,11 +313,11 @@ public class ValuationReport implements java.io.Serializable {
 		this.valuationInstrPerson = valuationInstrPerson;
 	}
 	@Column(name = "plotSize")
-	public float getPlotSize() {
+	public String getPlotSize() {
 		return plotSize;
 	}
 
-	public void setPlotSize(float plotSize) {
+	public void setPlotSize(String plotSize) {
 		this.plotSize = plotSize;
 	}
 	@Column(name = "propOfVal")
@@ -388,6 +392,23 @@ public class ValuationReport implements java.io.Serializable {
 	public void setLocation(String location) {
 		this.location = location;
 	}
+	@Column(name = "propertyAddress")
+	public String getPropertyAddress() {
+		return propertyAddress;
+	}
+
+	public void setPropertyAddress(String propertyAddress) {
+		this.propertyAddress = propertyAddress;
+	}
+	@Column(name = "acType")
+	public String getAcType() {
+		return acType;
+	}
+
+	public void setAcType(String acType) {
+		this.acType = acType;
+	}
+
 	@Column(name = "locationCoord")
 	public String getLocationCoord() {
 		return locationCoord;
@@ -492,14 +513,14 @@ public class ValuationReport implements java.io.Serializable {
 	public void setBuitUpAreaSize(String buitUpAreaSize) {
 		this.buitUpAreaSize = buitUpAreaSize;
 	}
-	@Column(name = "accomodation")
-	public String getAccomodation() {
-		return accomodation;
-	}
-
-	public void setAccomodation(String accomodation) {
-		this.accomodation = accomodation;
-	}
+//	@Column(name = "accomodation")
+//	public String getAccomodation() {
+//		return accomodation;
+//	}
+//
+//	public void setAccomodation(String accomodation) {
+//		this.accomodation = accomodation;
+//	}
 	@Column(name = "groundFloor")
 	public String getGroundFloor() {
 		return groundFloor;
@@ -557,45 +578,45 @@ public class ValuationReport implements java.io.Serializable {
 		this.swimmingFool = swimmingFool;
 	}
 	@Column(name = "landScaping")
-	public boolean getLandScaping() {
+	public String getLandScaping() {
 		return landScaping;
 	}
 
-	public void setLandScaping(boolean landScaping) {
+	public void setLandScaping(String landScaping) {
 		this.landScaping = landScaping;
 	}
 	@Column(name = "parkingBays")
-	public String getParkingBays() {
+	public int getParkingBays() {
 		return parkingBays;
 	}
 
-	public void setParkingBays(String parkingBays) {
+	public void setParkingBays(int parkingBays) {
 		this.parkingBays = parkingBays;
 	}
-	@Column(name = "windowAC")
-	public boolean getWindowAC() {
-		return windowAC;
-	}
-
-	public void setWindowAC(boolean windowAC) {
-		this.windowAC = windowAC;
-	}
-	@Column(name = "splitUnitsAC")
-	public boolean getSplitUnitsAC() {
-		return splitUnitsAC;
-	}
-
-	public void setSplitUnitsAC(boolean splitUnitsAC) {
-		this.splitUnitsAC = splitUnitsAC;
-	}
-	@Column(name = "centralChiller")
-	public boolean getCentralChiller() {
-		return centralChiller;
-	}
-
-	public void setCentralChiller(boolean centralChiller) {
-		this.centralChiller = centralChiller;
-	}
+//	@Column(name = "windowAC")
+//	public boolean getWindowAC() {
+//		return windowAC;
+//	}
+//
+//	public void setWindowAC(boolean windowAC) {
+//		this.windowAC = windowAC;
+//	}
+//	@Column(name = "splitUnitsAC")
+//	public boolean getSplitUnitsAC() {
+//		return splitUnitsAC;
+//	}
+//
+//	public void setSplitUnitsAC(boolean splitUnitsAC) {
+//		this.splitUnitsAC = splitUnitsAC;
+//	}
+//	@Column(name = "centralChiller")
+//	public boolean getCentralChiller() {
+//		return centralChiller;
+//	}
+//
+//	public void setCentralChiller(boolean centralChiller) {
+//		this.centralChiller = centralChiller;
+//	}
 	@Column(name = "fridge")
 	public boolean getFridge() {
 		return fridge;
@@ -629,11 +650,11 @@ public class ValuationReport implements java.io.Serializable {
 		this.washingMachine = washingMachine;
 	}
 	@Column(name = "furnished")
-	public boolean getFurnished() {
+	public String getFurnished() {
 		return furnished;
 	}
 
-	public void setFurnished(boolean furnished) {
+	public void setFurnished(String furnished) {
 		this.furnished = furnished;
 	}
 	@Column(name = "utilityConnected")
@@ -763,5 +784,14 @@ public class ValuationReport implements java.io.Serializable {
 
 	public void setEndkms(float endkms) {
 		this.endkms = endkms;
+	}
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "valuation",cascade= CascadeType.ALL)
+	public Set<Documents> getDocuments() {
+		return documents;
+	}
+
+	public void setDocuments(Set<Documents> documents) {
+		this.documents = documents;
 	}
 }

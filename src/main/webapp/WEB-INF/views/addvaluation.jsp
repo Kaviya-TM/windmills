@@ -28,23 +28,22 @@
 			<button class="valbtn" id="marketsum">Market Summary</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
-		<form:form action="saveValuation" id="valuationform"
-			modelAttribute="valuationreport">
+		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
 			<div class="form-group receiving">
 				<div class="vrholder">
 					<label class="rholder">Windmills Reference</label> <input
 						type="text" class="form-control form-control-sm textholder"
-						name="windmillsRef" id="reference"
+						name="valuationReport.windmillsRef" id="reference"
 						placeholder="Windmills Reference" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Client Reference</label> <input type="text"
-						class="form-control form-control-sm textholder" name="clientRef"
+						class="form-control form-control-sm textholder" name="valuationReport.clientRef"
 						id="" placeholder="Client Reference" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Client's Name</label> <select
-						class="form-control form-control-sm textholder" name="clientName"
+						class="form-control form-control-sm textholder" name="valuationReport.clientName"
 						id="clientname">
 						<c:forEach items="${clientlist}" var="item">
 							<option value="" hidden>-- Select Client Name ---</option>
@@ -55,18 +54,18 @@
 				<div class="vrholder">
 					<label class="rholder">Client Customer Name</label> <input
 						type="text" class="form-control form-control-sm textholder"
-						name="clientCustomerName" id="cusname"
+						name="valuationReport.clientCustomerName" id="cusname"
 						placeholder="Client Customer Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Owner Name</label> <input type="text"
-						class="form-control form-control-sm textholder" name="ownerName"
+						class="form-control form-control-sm textholder" name="valuationReport.ownerName"
 						id="ownername" placeholder="Owner Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Service Officer Name</label> <select
 						class="form-control form-control-sm textholder"
-						name="serviceOffName" id="">
+						name="valuationReport.serviceOffName" id="">
 						<c:forEach items="${serviceofficerlist}" var="item">
 							<option value="${item.name}">${item.name}</option>
 						</c:forEach>
@@ -84,7 +83,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="valInstrDate" id="valinsdate">
+							name="valuationReport.valInstrDate" id="valinsdate">
 					</div>
 				</div>
 				<div class="vrholder">
@@ -96,13 +95,13 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="" id="">
+							name="valuationReport.intTargetDate" id="">
 					</div>
 				</div>
 					<div class="vrholder">
 					<label class="rholder">Property Valued</label>
 					<select class="form-control form-control-sm textholder"
-						name="propertyValued" id="propertyvalued">
+						name="valuationReport.propertyValued" id="propertyvalued">
 						<c:forEach items="${propertylist}" var="item">
 							<option value="${item.propertyValued}">${item.propertyValued}</option>
 						</c:forEach>
@@ -110,7 +109,7 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Tenure</label> <select
-						class="form-control form-control-sm textholder" name="tenure"
+						class="form-control form-control-sm textholder" name="valuationReport.tenure"
 						id="">
 						<option value="" selected>Freehold</option>
 						<option value="">Freehold(Emiratis)</option>
@@ -121,12 +120,12 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Unit Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="unitNo"
+						class="form-control form-control-sm textholder" name="valuationReport.unitNo"
 						id="unitno" placeholder="Unit Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Floor Number</label> <select
-						class="form-control form-control-sm textholder" name="floorNo"
+						class="form-control form-control-sm textholder" name="valuationReport.floorNo"
 						id="floorno">
 						<option value="" hidden>--- Select Floor Number---</option>
 						<option value="0.5">Mezzanine</option>
@@ -234,40 +233,40 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Street Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="streetNo"
+						class="form-control form-control-sm textholder" name="valuationReport.streetNo"
 						id="streetno" placeholder="Street Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Street Name</label> <input type="text"
-						class="form-control form-control-sm textholder" name="streetName"
+						class="form-control form-control-sm textholder" name="valuationReport.streetName"
 						id="streetname" placeholder="Street Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Building Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="buildingNo"
+						class="form-control form-control-sm textholder" name="valuationReport.buildingNo"
 						id="buildingno" placeholder="Building Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Building/Project Name</label> <input type="text"
 						class="form-control form-control-sm textholder"
-						name="buildingName" id="buildingname" placeholder="Building/Project Name"
+						name="valuationReport.buildingName" id="buildingname" placeholder="Building/Project Name"
 						autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Plot Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="plotNo"
+						class="form-control form-control-sm textholder" name="valuationReport.plotNo"
 						id="plotno" placeholder="Plot Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Sub Community Name</label>
 					 <input
 						type="text" class="form-control form-control-sm textholder"
-						name="subCommunity" id="subcommunity"
+						name="valuationReport.subCommunity" id="subcommunity"
 						placeholder="Sub Community Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Community Name</label> <select
-						class="form-control form-control-sm textholder" name="community"
+						class="form-control form-control-sm textholder" name="valuationReport.community"
 						id="community">
 						<c:forEach items="${communitylist}" var="item">
 							<option value="" hidden>Select Community</option>
@@ -277,13 +276,13 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Town</label> <input type="text"
-						class="form-control form-control-sm textholder" name="town"
+						class="form-control form-control-sm textholder" name="valuationReport.town"
 						id="town" placeholder="Town" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">City</label>
 					 <select
-						class="form-control form-control-sm textholder" name="city"
+						class="form-control form-control-sm textholder" name="valuationReport.city"
 						id="city">
 						<c:forEach items="${citylist}" var="item">
 							<option value="${item}">${item}</option>
@@ -292,24 +291,24 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Country</label> <input type="text"
-						class="form-control form-control-sm textholder" name="country"
+						class="form-control form-control-sm textholder" name="valuationReport.country"
 						id="country" placeholder="Country" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Valuation Instructing Person</label> 
-						<select class="form-control form-control-sm textholder" name="valuationInstrPerson" id="contactPerson">								
+						<select class="form-control form-control-sm textholder" name="valuationReport.valuationInstrPerson" id="contactPerson">								
 						<option value="" hidden>--- Select ---</option>
 		    										</select>
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Plot Size[Square Feet]</label> <input
 						type="number" class="form-control form-control-sm textholder"
-						name="plotSize" id="" placeholder="Plot Size[Square Feet]"
+						name="valuationReport.plotSize" id="" placeholder="Plot Size[Square Feet]"
 						autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Purpose Of Valuation</label> <select
-						class="form-control form-control-sm textholder" name="propOfVal"
+						class="form-control form-control-sm textholder" name="valuationReport.propOfVal"
 						id="">
 						<option value="Buying">Buying</option>
 						<option value="Selling">Selling</option>
@@ -322,7 +321,7 @@
 				<div class="vrholder">
 					<label class="rholder">Valuation Approach</label>
 					<select
-						class="form-control form-control-sm textholder" name="valApproach"
+						class="form-control form-control-sm textholder" name="valuationReport.valApproach"
 						id="valApproach">
 						<c:forEach items="${valapproachlist}" var="item">
 							<option value="${item}">${item}</option>
@@ -332,7 +331,7 @@
 				<div class="vrholder">
 					<label class="rholder">Bases Of Value</label> <select
 						class="form-control form-control-sm textholder"
-						name="basesOfValue" id="">
+						name="valuationReport.basesOfValue" id="">
 						<option value="Market Value" selected>Market Value</option>
 						<option value="Market Rent">Market Rent</option>
 						<option value="Investment Value">Investment Value</option>
@@ -346,7 +345,7 @@
 				<div class="vrholder">
 					<label class="rholder">Approach Reasoning</label>
 					<select
-						class="form-control form-control-sm textholder" name="approachReasoning"
+						class="form-control form-control-sm textholder" name="valuationReport.approachReasoning"
 						id="apprreason">
 						<c:forEach items="${appreasonlist}" var="item">
 							<option value="${item}">${item}</option>
@@ -360,7 +359,7 @@
 			<div class="form-group scheduling">
 				<div class="valuationholder">
 					<label class="ilholder">Inspection Type</label> <select
-						class="form-control form-control-sm itholder" name="insType" id="insType">
+						class="form-control form-control-sm itholder" name="valuationReport.insType" id="insType">
 						<option value="Physical Inspection" selected>Physical
 							Inspection</option>
 						<option value="Desktop">Desktop</option>
@@ -376,7 +375,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="" id="" placeholder="" autocomplete="on">
+							name="valuationReport.valDate" id="" placeholder="" autocomplete="on">
 					</div>
 				</div>
 				<div class="valuationholder insDate">
@@ -388,7 +387,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="insDate" id="insdate" placeholder="" autocomplete="on">
+							name="valuationReport.insDate" id="insdate" placeholder="" autocomplete="on">
 					</div>
 				</div>
 				<div class="valuationholder insday">
@@ -399,7 +398,7 @@
 								<i class="fas fa-fire"></i>
 							</div>
 						</div>
-						<input type="text" class="form-control form-control-sm " name=""
+						<input type="text" class="form-control form-control-sm " name="valuationReport.insDay"
 							id="insday" placeholder="" readonly autocomplete="on">
 					</div>
 				</div>
@@ -412,7 +411,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm timepicker"
-							name="" id="instime" placeholder="Inspection Time" autocomplete="on">
+							name="valuationReport.insTime" id="instime" placeholder="Inspection Time" autocomplete="on">
 					</div>
 				</div>
 				<div class="valuationholder">
@@ -424,12 +423,12 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="" id="" placeholder="" autocomplete="on">
+							name="valuationReport.clientDeadline" id="" placeholder="" autocomplete="on">
 					</div>
 				</div>
 				<div class="valuationholder insOfficer">
 					<label class="ilholder">Inspection Officer</label> <select
-						class="form-control form-control-sm itholder" name="insOfficer"
+						class="form-control form-control-sm itholder" name="valuationReport.insOfficer"
 						id="insOfficer">
 						<c:forEach items="${serviceofficerlist}" var="item">
 							<option value="${item.name}">${item.name}</option>
@@ -441,7 +440,7 @@
 				</div>
 				<div class="valuationholder mode">
 					<label class="ilholder">Mode Of Transport</label> 
-					<select class="form-control form-control-sm itholder" name="" id="mode">
+					<select class="form-control form-control-sm itholder" name="valuationReport.modeOfTransport" id="mode">
 						<option value="Company Car">Company Car</option>
 						<option value="Personal Car">Personal Car</option>
 						<option value="External Transport">External Transport</option>
@@ -450,13 +449,13 @@
 				<div class="valuationholder startkms">
 					<label class="ilholder"> Start Kilometres</label>
 					 <input type="text"
-						class="form-control form-control-sm itholder" name=""
+						class="form-control form-control-sm itholder" name="valuationReport.startkms"
 						id="startkms" placeholder="Start Kilometres" autocomplete="on">
 				</div>
 				<div class="valuationholder endkms">
 					<label class="ilholder"> End Kilometres</label>
 					 <input type="text"
-						class="form-control form-control-sm itholder" name=""
+						class="form-control form-control-sm itholder" name="valuationReport.endkms"
 						id="endkms" placeholder="End Kilometres" autocomplete="on">
 				</div>
 				<div class="valuationholder adjustTop">
@@ -467,12 +466,12 @@
 			<div class="form-group inspecting1">
 				<div class="viholder">
 					<label class="rholder">Makani Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="makaniNo"
+						class="form-control form-control-sm textholder" name="valuationReport.makaniNo"
 						id="" placeholder="Makani Number" autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder">Location</label>
-					 <select class="form-control form-control-sm textholder" name="location" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.location" id="">
 						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average" selected>Average</option>
@@ -483,13 +482,13 @@
 				<div class="viholder">
 					<label class="rholder">Location Coordinates</label> <input
 						type="text" class="form-control form-control-sm textholder"
-						name="locationCoord" id="locationCoord" placeholder="Location Coordinates"
+						name="valuationReport.locationCoord" id="locationCoord" placeholder="Location Coordinates"
 						autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder">Property Placement</label> <select
 						class="form-control form-control-sm textholder"
-						name="propertyPlacement" id="">
+						name="valuationReport.propertyPlacement" id="">
 						<option value="Middle" selected>Middle</option>
 						<option value="Corner">Corner</option>
 						<option value="Semi-Corner">Semi-Corner</option>
@@ -499,7 +498,7 @@
 				<div class="viholder">
 					<label class="rholder">Property Exposure</label> <select
 						class="form-control form-control-sm textholder"
-						name="propertyExposure" id="">
+						name="valuationReport.propertyExposure" id="">
 						<option value="Single Row">Single Row</option>
 						<option value="Back To Back" selected>Back To Back</option>
 						<option value="Not Applicable">Not Applicable</option>
@@ -508,12 +507,12 @@
 				<div class="viholder">
 					<label class="rholder">Property Type</label> <input type="text"
 						class="form-control form-control-sm textholder"
-						name="propertyType" id="" placeholder="Property Type"
+						name="valuationReport.propertyType" id="" placeholder="Property Type"
 						autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder">Property Condition</label>
-					 <select class="form-control form-control-sm textholder" name="propertyCondition" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.propertyCondition" id="">
 						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average" selected>Average</option>
@@ -523,14 +522,14 @@
 				</div>
 				<div class="viholder">
 					<label class="rholder">Development Type</label>
-					 <select class="form-control form-control-sm textholder" name="devType" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.devType" id="">
 						<option value="Standard" standard>Standard</option>
 						<option value="Non-Standard">Non-Standard</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">Developer</label>
-					<select class="form-control form-control-sm textholder" name="developer" id="">
+					<select class="form-control form-control-sm textholder" name="valuationReport.developer" id="">
 						<option value="Al Ain Holding">Al Ain Holding</option>
 						<option value="Akshara Global Real Estate Development LLC">Akshara Global Real Estate Development LLC</option>
 						<option value="Al Mada Marble">Al Mada Marble</option>
@@ -608,55 +607,55 @@
 				<div class="viholder">
 					<label class="rholder">Estimated Age(Years)</label> <input
 						type="number" class="form-control form-control-sm textholder"
-						name="estAge" id="age" placeholder="Estimation Age(Years)"
+						name="valuationReport.estAge" id="age" placeholder="Estimation Age(Years)"
 						autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder" style="line-height: 16px">Estimated
 						Remaining Life(Years)</label> <input type="number"
-						class="form-control form-control-sm textholder" name="estemLife"
+						class="form-control form-control-sm textholder" name="valuationReport.estemLife"
 						id="remlife" placeholder="Estimated Remaining Life"
 						autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder" style="line-height: 16px">Built Up Area Size(sq.ft)</label>
-					 <input type="text" class="form-control form-control-sm textholder" name="buitUpAreaSize" id="buitUpAreaSize" placeholder="Built Up Area Size(sq.ft)" autocomplete="on">
+					 <input type="text" class="form-control form-control-sm textholder" name="valuationReport.buitUpAreaSize" id="buitUpAreaSize" placeholder="Built Up Area Size(sq.ft)" autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder">Pool</label>
-					 <select class="form-control form-control-sm textholder" name="" id="">
+					 <select class="form-control form-control-sm textholder" name="" id="pool">
 						<option value="Yes" >Yes</option>
 						<option value="No" selected>No</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">Gym</label>
-					 <select class="form-control form-control-sm textholder" name="" id="">
+					 <select class="form-control form-control-sm textholder" name="" id="gym">
 						<option value="Yes" >Yes</option>
 						<option value="No" selected>No</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">Play Area</label>
-					 <select class="form-control form-control-sm textholder" name="" id="">
+					 <select class="form-control form-control-sm textholder" name="" id="playarea">
 						<option value="Yes" >Yes</option>
 						<option value="No" selected>No</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder" style="line-height: 16px">Other Community Facilities</label>
-					 <input type="text" class="form-control form-control-sm textholder" name="bulComFacilities" id="" placeholder="Other Community Facilities" autocomplete="on">
+					 <input type="text" class="form-control form-control-sm textholder" name="" id="otherfac" placeholder="Other Community Facilities" autocomplete="on">
 				</div>
 				<div class="viholder">
 					<label class="rholder">Completion Status</label>
-					 <select class="form-control form-control-sm textholder" name="completionStatus" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.completionStatus" id="">
 						<option value="Ready" selected>Ready</option>
 						<option value="Not Ready">Not Ready</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">Occupancy Status</label>
-					 <select class="form-control form-control-sm textholder" name="occupancyStatus" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.occupancyStatus" id="">
 						<option value="" hidden>--- Select ---</option>
 						<option value="Occupied">Owner Occupied</option>
 						<option value="Rented" selected>Rented</option>
@@ -697,7 +696,7 @@
 				</div>
 				<div class="viholder">
 					<label class="rholder">Full Building Floors</label> 
-					<select class="form-control form-control-sm textholder" name="fullBulFloors" id="">
+					<select class="form-control form-control-sm textholder" name="valuationReport.fullBulFloors" id="">
 						<option value="" hidden>--- Select ---</option>
 						<option value="Ground + 1 Floor">Ground + 1 Floor</option>
 						<option value="Ground + 2 Floor">Ground + 2 Floor</option>
@@ -718,7 +717,7 @@
 				</div>
 				<div class="viholder">
 					<label class="rholder">Parking Bays</label>
-					 <select class="form-control form-control-sm textholder" name="parkingBays" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.parkingBays" id="">
 						<option value="" hidden>--- Select ---</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -734,7 +733,7 @@
 				</div>
 				<div class="viholder">
 					<label class="rholder">View</label> 
-					<select class="form-control form-control-sm textholder" name="view" id="">
+					<select class="form-control form-control-sm textholder" name="valuationReport.view" id="">
 						<option value="Park View">Park View</option>
 						<option value="Sea View">Sea View</option>
 						<option value="Marina View">Marina View</option>
@@ -754,15 +753,15 @@
 				</div>
 				<div class="viholder">
 					<label class="rholder">Landscaping</label>
-					 <select class="form-control form-control-sm textholder" name="landScaping" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.landScaping" id="">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
-						<option value="Semi-Landscape" selected>Semi-Landscape</option>
+						<option value="Semi-Landscape">Semi-Landscape</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">Fridge</label>
-					 <select class="form-control form-control-sm textholder" name="fridge" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.fridge" id="">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
 					</select>
@@ -770,7 +769,7 @@
 
 				<div class="viholder">
 					<label class="rholder">Oven</label>
-					 <select class="form-control form-control-sm textholder" name="oven" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.oven" id="">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
 					</select>
@@ -778,14 +777,14 @@
 				<div class="viholder">
 					<label class="rholder">Cooker</label>
 					 <select
-						class="form-control form-control-sm textholder" name="cooker" id="">
+						class="form-control form-control-sm textholder" name="valuationReport.cooker" id="">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">AC Type</label>
-					 <select class="form-control form-control-sm textholder" name="actype" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.acType" id="">
 						<option value="Window AC">Window AC</option>
 						<option value="Split Units AC">Split Units AC</option>
 						<option value="Central Chiller">Central Chiller</option>
@@ -793,14 +792,14 @@
 				</div>
 				<div class="viholder">
 					<label class="rholder">Washing Machine</label>
-					 <select class="form-control form-control-sm textholder" name="washingMachine" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.washingMachine" id="">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
 					</select>
 				</div>
 				<div class="viholder">
 					<label class="rholder">Furnished</label> 
-					<select class="form-control form-control-sm textholder" name="furnished" id="">
+					<select class="form-control form-control-sm textholder" name="valuationReport.furnished" id="">
 						<option value="Yes" selected>Yes</option>
 						<option value="No">No</option>
 						<option value="Semi-Furnished">Semi-Furnished</option>
@@ -809,7 +808,7 @@
 
 				<div class="viholder">
 					<label class="rholder">Utilities Connected</label>
-					 <select class="form-control form-control-sm textholder" name="utilityConnected" id="">
+					 <select class="form-control form-control-sm textholder" name="valuationReport.utilityConnected" id="">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
 					</select>
@@ -829,7 +828,7 @@
 					</div>
 					<div class="valuationholder" id="1">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="1" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -846,7 +845,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -865,7 +864,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -884,7 +883,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -903,7 +902,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -922,7 +921,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -941,7 +940,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 						<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -960,7 +959,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -979,7 +978,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -998,7 +997,7 @@
 							autocomplete="on">
 		 				<select
 							class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px"
-							name="upgrades" id="">
+							name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1019,7 +1018,7 @@
 					</div>
 					<div class="valuationholder">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="1" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1031,7 +1030,7 @@
 					</div>
 					<div class="valuationholder" id="2ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="2" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1043,7 +1042,7 @@
 					</div>
 					<div class="valuationholder" id="3ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="3" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1055,7 +1054,7 @@
 					</div>
 					<div class="valuationholder" id="4ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="4" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1069,7 +1068,7 @@
 					</div>
 					<div class="valuationholder" id="5ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="5" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1083,7 +1082,7 @@
 						<input
 							type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder"
 							name="" id="" value="6" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1095,7 +1094,7 @@
 					</div>
 					<div class="valuationholder" id="7ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="7" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1107,7 +1106,7 @@
 					</div>
 					<div class="valuationholder" id="8ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="8" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1119,7 +1118,7 @@
 					</div>
 					<div class="valuationholder" id="9ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="9" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1131,7 +1130,7 @@
 					</div>
 					<div class="valuationholder" id="10ba">
 						<input type="number" style="width:22% !important;text-align:center;" class="form-control form-control-sm textholder" name="" id="" value="10" readonly autocomplete="on">
-		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="upgrades" id="">
+		 				<select class="form-control form-control-sm textholder" style="width:30% !important;margin-left:16px" name="" id="">
 							<option value="Ground">Ground</option>
 							<option value="First">First</option>
 							<option value="Second">Second</option>
@@ -1210,39 +1209,34 @@
 			</div>
 			<div class="form-group documents">
 				<div class="valuationholder" >
-					<label class="labelholder" style="width: 160px !important">Title Deed</label>
+					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
+					id="tdl" name="documents[0].description" value="Title Deed">
 				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="" id="titledeed" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+					name="files[0]" id="titledeed" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
-					<label class="labelholder" style="width: 160px !important">Floor Plan</label>
+					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
+					id="fpl" name="documents[1].description" value="Floor Plan">
 				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+					name="files[1]" id="floorplan" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
-					<label class="labelholder" style="width: 160px !important">Affection Plan</label>
+					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
+					id="apl" name="documents[2].description" value="Affection Plan">
 				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+					name="files[2]" id="affectionplan" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
-					<label class="labelholder" style="width: 160px !important">Land Lease Agreement</label>
+					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
+					id="lll" name="documents[3].description" value="Land Lease Agreement" >
 				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+					name=files[3] id="landleaseag" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
-					<label class="labelholder" style="width: 160px !important;line-height: 16px;">Building Permission Certificate</label>
+					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
+					id="sl" name="documents[4].description" value="SPA">
 				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
-				</div>
-				<div class="valuationholder" style="margin-top: 10px">
-					<label class="labelholder" style="width: 160px !important;line-height: 16px;">Building Completion Certificate</label>
-				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
-				</div>
-				<div class="valuationholder" style="margin-top: 10px">
-					<label class="labelholder" style="width: 160px !important">SPA</label>
-				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="" id="" accept=".png,.jpg,.txt,.csv,.xlxs,.pdf" placeholder="" autocomplete="on">
+					name="files[4]" id="spa" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder adjustTop" style="margin-top: 20px">
 					<div class="savebtn" id="docprv">Previous</div>
@@ -1275,30 +1269,30 @@
 			<div class="form-group submitting">
 				<div class="valuationholder">
 					<label class="labelholder">Valuation Adjustments</label>
-					 <input type="text" class="form-control form-control-sm textholder" name="valadjustments" id="valadjustments" placeholder="Valuation Adjustments" autocomplete="on">
+					 <input type="text" class="form-control form-control-sm textholder" name="valuationReport.valadjustments" id="valadjustments" placeholder="Valuation Adjustments" autocomplete="on">
 				</div>
-				<div class="valuationholder">
-					<label class="labelholder">Document Provided by Client</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="docProvByClients" id="" placeholder="Document Provided by Client" autocomplete="on">
-				</div>
-				<div class="valuationholder">
-					<label class="labelholder">Documents not Provided</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="docNotProvided" id="" placeholder="Documents not Provided" autocomplete="on">
-				</div>
+<!-- 				<div class="valuationholder"> -->
+<!-- 					<label class="labelholder">Document Provided by Client</label> -->
+<!-- 				    <input type="text" class="form-control form-control-sm textholder" name="valuationReport.docProvByClients" id="doc-prov" placeholder="Document Provided by Client" autocomplete="on"> -->
+<!-- 				</div> -->
+<!-- 				<div class="valuationholder"> -->
+<!-- 					<label class="labelholder">Documents not Provided</label> -->
+<!-- 				    <input type="text" class="form-control form-control-sm textholder" name="valuationReport.docNotProvided" id="doc-not" placeholder="Documents not Provided" autocomplete="on"> -->
+<!-- 				</div> -->
 				<div class="valuationholder">
 					<label class="labelholder">Market Value</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="marketValue" id="marketValue" placeholder="Market Value" autocomplete="off">
+				    <input type="text" class="form-control form-control-sm textholder" name="valuationReport.marketValue" id="marketValue" placeholder="Market Value" autocomplete="off">
 				</div>
 				<div class="valuationholder wordsec" style="height:17px">
 					<div class="word" style="position: relative;left: 221px;font-weight: 800;letter-spacing: 0.6px;font-size:11px;color: #6BB245;text-transform: capitalize;top: -2px;"></div>
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder">Market Value Rate(Per Square Feet)</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="marketValueRate" id="marketValueRate" placeholder="Market Value Rate" autocomplete="off">
+				    <input type="text" class="form-control form-control-sm textholder" name="valuationReport.marketValueRate" id="marketValueRate" placeholder="Market Value Rate" autocomplete="off">
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder">Market Rent</label>
-				    <input type="text" class="form-control form-control-sm textholder" name="marketRent" id="" placeholder="Market Rent" autocomplete="off">
+				    <input type="text" class="form-control form-control-sm textholder" name="valuationReport.marketRent" id="marketrent" placeholder="Market Rent" autocomplete="off">
 				</div>
 				<div class="valuationholder" style="margin-top: 20px">
 					<div class="savebtn" id="submitprv">Previous</div>
@@ -1307,6 +1301,13 @@
 			</div>
 			<br>
 			<input type="hidden" id="row" name="" value="${noofrows}" />
+			<input type="hidden" id="propertyAddress" name="valuationReport.propertyAddress" value="" />
+			<input type="hidden" id="bulComFacilities" name="valuationReport.bulComFacilities" value="" />
+			<input type="hidden" id="groundFloor" name="valuationReport.groundFloor" value="" />
+			<input type="hidden" id="firstFloor" name="valuationReport.firstFloor" value="" />
+			<input type="hidden" id="secondFloor" name="valuationReport.secondFloor" value="" />
+			<input type="hidden" id="upgrades" name="valuationReport.upgrades" value="" />
+			
 		</form:form>
 
 	</div>

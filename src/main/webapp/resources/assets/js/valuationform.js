@@ -296,10 +296,10 @@ function bedroom(){
 	if(upgrades === null){
 		upgrades = "None"
 	}
-	alert("Ground Floor-->"+ground);
-	alert("First Floor-->"+first);
-	alert("Second Floor-->"+second);
-	alert("Upgrades-->"+upgrades);
+	$('#groundFloor').val(ground);
+	$('#firstFloor').val(first);
+	$('#secondFloor').val(second);
+	$('#upgrades').val(upgrades);
 	console.log("Ground Floor-->",ground);
 	console.log("First Floor-->",first);
 	console.log("Second Floor-->",second);
@@ -310,6 +310,15 @@ $("#inspect2nxt").click(function() {
 });
 $("#splAssumption").click(function() {
 	bedroom();
+});
+$("#documents").click(function() {
+	propertyAddress();
+});
+$("#inspect1").click(function() {
+	propertyAddress();
+});
+$("#receivenxt").click(function() {
+	propertyAddress();
 });
 	//var date = $('#valinsdate').val();
 //var newdate = new Date(date);
@@ -339,6 +348,108 @@ $(document).on("keypress", ":input:not(:submit)", function(event) {
 //		console.log(locationCoord);
 //	});
 //}
+$("#inspect2").click(function() {
+	bulidingFac();
+});
+$("#inspect1nxt").click(function() {
+	bulidingFac();
+});
+$('#valuationform').submit(function(e) {
+	 $(':input', this).each(function() {
+		 var value = $(this).val();
+		 if(value == "" ){
+			 $(this).attr("disabled","true");
+		 }
+	 });
+	if($('#titledeed').val() === ''){
+		$('#tdl').attr("disabled","true");
+	}
+	if($('#floorplan').val() === ''){
+		$('#fpl').attr("disabled","true");
+	}
+	if($('#affectionplan').val() === ''){
+		$('#apl').attr("disabled","true");
+	}
+	if($('#landleaseag').val() === ''){
+		$('#lll').attr("disabled","true");
+	}
+	if($('#spa').val() === ''){
+		$('#sl').attr("disabled","true");
+	}
+});
+function bulidingFac(){
+	var pool = $("#pool").val();
+	var gym = $("#gym").val();
+	var playArea = $("#playarea").val();
+	var otherFac = $('#otherfac').val();
+	var bulComFacilities = null;
+	if(pool === "Yes"){
+		bulComFacilities = "Pool";
+	}
+	if(gym === "Yes" && bulComFacilities != null){
+		bulComFacilities = bulComFacilities + ",Gym";
+	}
+	else{
+		bulComFacilities = "Gym";
+	}
+	if(playArea === "Yes" && bulComFacilities != null){
+		bulComFacilities = bulComFacilities + ",Play Area";
+	}
+	else if(playArea === "No" && bulComFacilities != null){
+		bulComFacilities = bulComFacilities;
+	}
+	if(otherFac != '' && bulComFacilities != null){
+		bulComFacilities = bulComFacilities +","+ otherFac;
+	}
+	else{
+		bulComFacilities = otherFac;
+	}
+	$('#bulComFacilities').val(bulComFacilities);
+}
+function propertyAddress(){
+	var unit = $('#unitno').val();
+	var streetNo = $('#streetno').val();
+	var streetName = $('#streetname').val();
+	var buildingNo = $('#buildingno').val();
+	var buildingName = $('#buildingname').val();
+	var subCommunity = $('#subcommunity').val();
+	var community = $('#community').val();
+	var town = $('#town').val();
+	var city = $('#city').val();
+	var country = $('#country').val();
+	var propertyAddress = null;
+	if(unit != null){
+		propertyAddress = "Unit "+unit;
+	}
+	if(streetNo != null){
+		propertyAddress = propertyAddress+","+streetNo;
+	}
+	if(streetName != null){
+		propertyAddress = propertyAddress +" "+ streetName;
+	}
+	if(buildingNo != null){
+		propertyAddress = propertyAddress+",Building "+buildingNo;
+	}
+	if(buildingName != null){
+		propertyAddress = propertyAddress+","+buildingName;
+	}
+	if(subCommunity != null){
+		propertyAddress = propertyAddress+","+subCommunity;
+	}
+	if(community != null){
+		propertyAddress = propertyAddress+","+community;
+	}
+	if(town != null){
+		propertyAddress = propertyAddress+","+town;
+	}
+	if(city != null){
+		propertyAddress = propertyAddress+","+city;
+	}
+	if(country != null){
+		propertyAddress = propertyAddress+","+country;
+	}
+	$('#propertyAddress').val(propertyAddress);
+}
 function stringToDate(_date,_format,_delimiter)
 {
     var formatLowerCase=_format.toLowerCase();
@@ -453,8 +564,19 @@ $("#bathroom").change(function() {
 	}
 });
 $('.wordsec').hide();
+
+$('#marketValue').keydown(function(e) {
+	if (e.which == 9) { 
+		var get_num = $('#marketValue').val();
+		var a = parseInt(get_num);
+		a = a.toLocaleString();
+		$('#marketValue').val(a);
+		
+	}
+});
 $("#marketValue").keyup(function() {
 	var get_num = $(this).val();
+	get_num =get_num.replace(/,/g , '');
 	if(get_num != '')
 	{
 		var num_to_words = toWords(get_num);
@@ -475,9 +597,18 @@ $("#marketValue").keyup(function() {
 	else{
 		$('#marketValueRate').val("");
 	}
+	if(get_num != ''){
+		var finalrent = parseInt(get_num) * (6 / 100);
+		finalrent = finalrent.toLocaleString();
+		$('#marketrent').val(finalrent);
+	}
+	else{
+		$('#marketrent').val("");
+	}
 });
 $("#buitUpAreaSize").keyup(function() {
 	var get_num = $('#marketValue').val();
+	get_num =get_num.replace(/,/g , '');
 	if(get_num != '')
 	{
 		var num_to_words = toWords(get_num);

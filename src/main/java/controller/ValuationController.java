@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +31,7 @@ import model.Community;
 import model.Property;
 import model.ServiceOfficer;
 import model.ValuationReport;
+import model.ValuationReportForm;
 import service.ClientService;
 import service.ServiceOfficerService;
 import service.ValuationService;
@@ -101,8 +103,8 @@ public class ValuationController {
 
 	
 	@RequestMapping(value = "/saveValuation", method = RequestMethod.POST)
-	public ModelAndView addProduct(@ModelAttribute("valuationreport") ValuationReport valuationreport,HttpSession session) throws IllegalStateException, IOException {
-		valuationService.saveValuationReport(valuationreport);
+	public ModelAndView saveValuation(@ModelAttribute("valuationreportform") ValuationReportForm valuationreportform,HttpServletRequest request,HttpSession session)throws SQLException, Exception {
+		valuationService.saveValuationReport(request,valuationreportform);
 	    ModelAndView mv = new ModelAndView();
 	    mv.setViewName("main");
 		return mv;

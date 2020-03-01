@@ -3,6 +3,7 @@ package service;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,7 +17,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
-
+import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 import org.apache.poi.EncryptedDocumentException;
@@ -37,9 +38,12 @@ import dao.ClientDaoImpl;
 import dao.ValuationDaoImpl;
 import model.ClientDetails;
 import model.Community;
+import model.Documents;
 import model.Property;
 import model.ServiceOfficer;
 import model.ValuationReport;
+import model.ValuationReportForm;
+import utils.WindmillsUtils;
 
 @Service
 public class ValuationService {
@@ -70,8 +74,36 @@ public class ValuationService {
 		return list;
 	}
 	@Transactional
-	public void saveValuationReport(ValuationReport valuationreport) {
+	public void saveValuationReport(HttpServletRequest request, ValuationReportForm valuationreportform)
+			throws SQLException, Exception {
+		int reportId=0;
+		Map<String, String> docmap = new HashMap<>();
+		ValuationReport valuationreport = valuationreportform.getValuationReport();
+		List<Documents> documentList = valuationreportform.getDocuments();
+		List<MultipartFile> files = valuationreportform.getFiles();
+		if (!files.isEmpty()) {
+			for (int i = 0; i < files.size(); i++) {
+				documentList.get(i).setFileName(files.get(i).getOriginalFilename());
+				System.out.println("check" + files.get(i).getName());
+			}
+		}
+		log.info("beginning of save report");
 		valuationDaoImpl.saveValuationReport(valuationreport);
+		reportId=valuationreportform.getValuationReport().getReportId();
+		if (documentList.size() != 0) {
+			for (Documents doc : documentList) {
+				doc.setValuation(valuationreport);
+				String code = WindmillsUtils.generateDocumentCode(reportId);
+				doc.setDocumentCode(code);
+				docmap.put(doc.getFileName(), code);
+				valuationDaoImpl.uploaddocuments(doc);
+
+			}
+		}
+		
+		WindmillsUtils.fileupload(files, docmap);
+		
+		log.info("End of save report");
 	}
 	@Transactional
 	public int getNumberOfRows() {

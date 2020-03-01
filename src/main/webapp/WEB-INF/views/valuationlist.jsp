@@ -4,26 +4,26 @@
 <link rel='shortcut icon' type='image/x-icon'
 	href='resources/assets/img/favicon.ico' />
 <link rel="stylesheet" href="resources/assets/css/servicelist.css">
-<div class="servicelist">
+<div class="valuationlist">
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
 		style="background: rgb(229, 231, 233) !important; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="row">
-			<c:forEach items="${officerlist}" var="officers">
-				<form:form action="getServiceOfficer" id="${officers.serviceId}"
-					class="column" style="border:1px solid #000080;">
-					<div id="${officers.serviceId}">
-						<div class="imgPart">
+			<c:forEach items="${valuationlist}" var="valuations">
+				<form:form action="getValuation" id="${valuations.reportId}"
+					class="column" style="border:1px solid #000080;width:11%;padding:2px">
+					<div id="${valuations.reportId}">
+						<div class="imgPart" style="width:26%">
 							<img style="margin-top: 3px;"
-								src="resources\assets\img\icon1.jpg">
+								src="resources\assets\img\icon3.png">
 						</div>
 						<div class="contentPart">
 							<div class="name">
-								<b style="color: #000080">${officers.name}</b>
+								<b style="color: #000080">${valuations.windmillsRef}</b>
 							</div>
-							<input type="hidden" id="serviceId" name="serviceId"
-								value="${officers.serviceId}" />
+							<input type="hidden" id="clientId" name="clientId"
+								value="${valuations.reportId}" />
 						</div>
 					</div>
 				</form:form>
@@ -32,4 +32,4 @@
 	</div>
 </div>
 <%@include file="footer.jsp"%>
-<script src="resources/assets/js/servicelist.js"></script>
+<script src="resources/assets/js/valuationlist.js"></script>

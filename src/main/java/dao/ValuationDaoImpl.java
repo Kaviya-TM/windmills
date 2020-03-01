@@ -113,6 +113,12 @@ public class ValuationDaoImpl {
 		return rows;
 	}
 
+	public List<ValuationReport> getValuationReportList() {
+		Query query=sessionFactory.getCurrentSession().createQuery("from ValuationReport");
+		List<ValuationReport> rows = query.list();
+		return rows;
+	}
+
 
 	
 	

@@ -93,6 +93,17 @@ public class ValuationController {
 
 	}
 	
+	@RequestMapping(value = {"/valuation-list" }, method = RequestMethod.GET)
+	public ModelAndView serviceOfficerPage() {
+
+		ModelAndView mv = new ModelAndView();
+		List<ValuationReport> list=valuationService.getValuationList();
+		mv.addObject("valuationlist",list);
+		mv.setViewName("valuationlist");
+		return mv;
+	}
+
+	
 	@RequestMapping(value = "/getCity", method = RequestMethod.POST)
 	@ResponseBody
 	public String getCity(@RequestParam("community") String community) {

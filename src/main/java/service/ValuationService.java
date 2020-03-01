@@ -164,6 +164,13 @@ public class ValuationService {
 		List<Property> list = valuationDaoImpl.getValuationApproachList();
 		return list;
 	}
+	@Transactional
+	public List<ValuationReport> getValuationList() {
+		log.info("beginning of get list of  valuation");
+		List<ValuationReport> list=valuationDaoImpl.getValuationReportList();
+		log.info("list"+list);
+		return list;
+	}
 
 
 }

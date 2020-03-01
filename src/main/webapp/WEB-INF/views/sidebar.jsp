@@ -94,7 +94,7 @@
 				<ul class="dropdown-menu">
 					<li><a class="nav-link" href="<c:url value="addValuation"/>">Add
 							Valuation</a></li>
-					<li><a class="nav-link" href="<c:url value="valuationList"/>">Valuation
+					<li><a class="nav-link" href="<c:url value="valuation-list"/>">Valuation
 							List</a></li>
 				</ul></li>
 

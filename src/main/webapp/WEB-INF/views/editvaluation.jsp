@@ -13,12 +13,12 @@
 	href="resources/assets/bundles/vendor/datepicker/daterangepicker.css"
 	rel="stylesheet" media="all">
 
-<div class="valuationform">
+<div class="editvaluationform">
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
 		style="background: rgb(229, 231, 233) !important; overflow: scroll; overflow-x: hidden; margin-top: 70px; width: 100%; min-height: 530px !important">
-		<div class="form-group">
+		<div class="form-group" style="margin-bottom:37px">
 			<button class="valbtn" id="receive">Receive Valuation</button>
 			<button class="valbtn" id="documents">Receive Documents</button>
 			<button class="valbtn" id="schedule">Schedule Inspection</button>
@@ -28,25 +28,26 @@
 			<button class="valbtn" id="marketsum">Market Summary</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
-		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
+		<form:form action="editValuation" id="valuationeditform" enctype="multipart/form-data" modelAttribute="valuationreport">
 			<div class="form-group receiving">
 				<div class="vrholder">
 					<label class="rholder">Windmills Reference</label> <input
 						type="text" class="form-control form-control-sm textholder"
 						name="valuationReport.windmillsRef" id="reference"
-						placeholder="Windmills Reference" autocomplete="on">
+						placeholder="Windmills Reference" value="${valuationreport.windmillsRef}" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Client Reference</label> <input type="text"
 						class="form-control form-control-sm textholder" name="valuationReport.clientRef"
-						id="" placeholder="Client Reference" autocomplete="on">
+						id="" placeholder="Client Reference" value="${valuationreport.clientRef}" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Client's Name</label> <select
+					<label class="rholder">Client's Name</label>
+					 <select
 						class="form-control form-control-sm textholder" name="valuationReport.clientName"
 						id="clientname">
 						<c:forEach items="${clientlist}" var="item">
-							<option value="" hidden>-- Select Client Name ---</option>
+							<option selected="true" value="${valuationreport.clientName}" hidden>${valuationreport.clientName}</option>
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -54,13 +55,13 @@
 				<div class="vrholder">
 					<label class="rholder">Client Customer Name</label> <input
 						type="text" class="form-control form-control-sm textholder"
-						name="valuationReport.clientCustomerName" id="cusname"
+						name="valuationReport.clientCustomerName" value="${valuationreport.clientCustomerName}" id="cusname"
 						placeholder="Client Customer Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Owner Name</label> <input type="text"
 						class="form-control form-control-sm textholder" name="valuationReport.ownerName"
-						id="ownername" placeholder="Owner Name" autocomplete="on">
+						id="ownername" value="${valuationreport.ownerName}" placeholder="Owner Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Service Officer Name</label> <select
@@ -70,7 +71,7 @@
 							<option value="${item.name}">${item.name}</option>
 						</c:forEach>
 						<c:forEach items="${dfservicer}" var="item1">
-							<option selected="true" value="${item1.name}">${item1.name}</option>
+							<option selected="true" value="${valuationreport.serviceOffName}">${valuationreport.serviceOffName}</option>
 						</c:forEach>
 					</select>
 				</div>
@@ -83,7 +84,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="valuationReport.valInstrDate" id="valinsdate">
+							name="valuationReport.valInstrDate" id="valinsdate" value="${valuationreport.valInstrDate}">
 					</div>
 				</div>
 				<div class="vrholder">
@@ -95,7 +96,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="valuationReport.intTargetDate" id="">
+							name="valuationReport.intTargetDate" id="" value="${valuationreport.intTargetDate}">
 					</div>
 				</div>
 					<div class="vrholder">
@@ -103,6 +104,7 @@
 					<select class="form-control form-control-sm textholder"
 						name="valuationReport.propertyValued" id="propertyvalued">
 						<c:forEach items="${propertylist}" var="item">
+							<option selected="true" value="${valuationreport.propertyValued}" hidden>${valuationreport.propertyValued}</option>
 							<option value="${item.propertyValued}">${item.propertyValued}</option>
 						</c:forEach>
 					</select>
@@ -111,23 +113,29 @@
 					<label class="rholder">Tenure</label> <select
 						class="form-control form-control-sm textholder" name="valuationReport.tenure"
 						id="">
-						<option value="Freehold" selected>Freehold</option>
+						<option value="${valuationreport.tenure}" selected hidden>${valuationreport.tenure}</option>
+						<option value="Freehold" >Freehold</option>
 						<option value="Freehold(Emiratis)">Freehold(Emiratis)</option>
-						<option value="Freehold(Emiratis & GCC Citizens)">Freehold(Emiratis & GCC Citizens)</option>
+						<option value="Freehold(Emiratis)">Freehold(Emiratis & GCC Citizens)</option>
 						<option value="Leasehold">Leasehold</option>
 
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Unit Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="valuationReport.unitNo"
-						id="unitno" placeholder="Unit Number" autocomplete="on">
+					<label class="rholder">Property Address</label> <input type="text"
+						class="form-control form-control-sm textholder" name="valuationReport.propertyAddress"
+						id="" value="${valuationreport.propertyAddress}" placeholder="Property Address" autocomplete="on">
 				</div>
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Unit Number</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.unitNo" -->
+<%-- 						id="unitno" value="${valuationreport.propertyAddress}" placeholder="Unit Number" autocomplete="on"> --%>
+<!-- 				</div> -->
 				<div class="vrholder">
 					<label class="rholder">Floor Number</label> <select
 						class="form-control form-control-sm textholder" name="valuationReport.floorNo"
 						id="floorno">
-						<option value="" hidden>--- Select Floor Number---</option>
+						<option value="${valuationreport.floorNo}" selected hidden>${valuationreport.floorNo}</option>
 						<option value="0.5">Mezzanine</option>
 						<option value="1">1 Floor</option>
 						<option value="2">2 Floor</option>
@@ -231,85 +239,86 @@
 						<option value="100">100 Floor</option>
 					</select>
 				</div>
-				<div class="vrholder">
-					<label class="rholder">Street Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="valuationReport.streetNo"
-						id="streetno" placeholder="Street Number" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Street Name</label> <input type="text"
-						class="form-control form-control-sm textholder" name="valuationReport.streetName"
-						id="streetname" placeholder="Street Name" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Building Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="valuationReport.buildingNo"
-						id="buildingno" placeholder="Building Number" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Building/Project Name</label> <input type="text"
-						class="form-control form-control-sm textholder"
-						name="valuationReport.buildingName" id="buildingname" placeholder="Building/Project Name"
-						autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Plot Number</label> <input type="text"
-						class="form-control form-control-sm textholder" name="valuationReport.plotNo"
-						id="plotno" placeholder="Plot Number" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Sub Community Name</label>
-					 <input
-						type="text" class="form-control form-control-sm textholder"
-						name="valuationReport.subCommunity" id="subcommunity"
-						placeholder="Sub Community Name" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Community Name</label> <select
-						class="form-control form-control-sm textholder" name="valuationReport.community"
-						id="community">
-						<c:forEach items="${communitylist}" var="item">
-							<option value="" hidden>Select Community</option>
-							<option value="${item.community}">${item.community}</option>
-						</c:forEach>
-					</select>
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Town</label> <input type="text"
-						class="form-control form-control-sm textholder" name="valuationReport.town"
-						id="town" placeholder="Town" autocomplete="on">
-				</div>
-				<div class="vrholder">
-					<label class="rholder">City</label>
-					 <select
-						class="form-control form-control-sm textholder" name="valuationReport.city"
-						id="city">
-						<c:forEach items="${citylist}" var="item">
-							<option value="${item}">${item}</option>
-						</c:forEach>
-					</select>
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Country</label> <input type="text"
-						class="form-control form-control-sm textholder" name="valuationReport.country"
-						id="country" placeholder="Country" autocomplete="on">
-				</div>
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Street Number</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.streetNo" -->
+<!-- 						id="streetno" placeholder="Street Number" autocomplete="on"> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Street Name</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.streetName" -->
+<!-- 						id="streetname" placeholder="Street Name" autocomplete="on"> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Building Number</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.buildingNo" -->
+<!-- 						id="buildingno" placeholder="Building Number" autocomplete="on"> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Building/Project Name</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" -->
+<!-- 						name="valuationReport.buildingName" id="buildingname" placeholder="Building/Project Name" -->
+<!-- 						autocomplete="on"> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Plot Number</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.plotNo" -->
+<!-- 						id="plotno" placeholder="Plot Number" autocomplete="on"> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Sub Community Name</label> -->
+<!-- 					 <input -->
+<!-- 						type="text" class="form-control form-control-sm textholder" -->
+<!-- 						name="valuationReport.subCommunity" id="subcommunity" -->
+<!-- 						placeholder="Sub Community Name" autocomplete="on"> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Community Name</label> <select -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.community" -->
+<!-- 						id="community"> -->
+<%-- 						<c:forEach items="${communitylist}" var="item"> --%>
+<!-- 							<option value="" hidden>Select Community</option> -->
+<%-- 							<option value="${item.community}">${item.community}</option> --%>
+<%-- 						</c:forEach> --%>
+<!-- 					</select> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Town</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.town" -->
+<!-- 						id="town" placeholder="Town" autocomplete="on"> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">City</label> -->
+<!-- 					 <select -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.city" -->
+<!-- 						id="city"> -->
+<%-- 						<c:forEach items="${citylist}" var="item"> --%>
+<%-- 							<option value="${item}">${item}</option> --%>
+<%-- 						</c:forEach> --%>
+<!-- 					</select> -->
+<!-- 				</div> -->
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Country</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" name="valuationReport.country" -->
+<!-- 						id="country" placeholder="Country" autocomplete="on"> -->
+<!-- 				</div> -->
 				<div class="vrholder">
 					<label class="rholder">Valuation Instructing Person</label> 
 						<select class="form-control form-control-sm textholder" name="valuationReport.valuationInstrPerson" id="contactPerson">								
-						<option value="" hidden>--- Select ---</option>
+						<option value="${valuationreport.valuationInstrPerson}" hidden>${valuationreport.valuationInstrPerson}</option>
 		    										</select>
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Plot Size[Square Feet]</label> <input
 						type="number" class="form-control form-control-sm textholder"
-						name="valuationReport.plotSize" id="" placeholder="Plot Size[Square Feet]"
+						name="valuationReport.plotSize" value="${valuationreport.plotSize}" id="" placeholder="Plot Size[Square Feet]"
 						autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Purpose Of Valuation</label> <select
 						class="form-control form-control-sm textholder" name="valuationReport.propOfVal"
 						id="">
+						<option value="${valuationreport.propOfVal}" hidden>${valuationreport.propOfVal}</option>
 						<option value="Buying">Buying</option>
 						<option value="Selling">Selling</option>
 						<option value="Court Proceeding">Court Proceeding</option>
@@ -324,6 +333,7 @@
 						class="form-control form-control-sm textholder" name="valuationReport.valApproach"
 						id="valApproach">
 						<c:forEach items="${valapproachlist}" var="item">
+							<option value="${valuationreport.valApproach}" hidden>${valuationreport.valApproach}</option>
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -332,6 +342,7 @@
 					<label class="rholder">Bases Of Value</label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.basesOfValue" id="">
+						<option value="${valuationreport.basesOfValue}" hidden>${valuationreport.basesOfValue}</option>
 						<option value="Market Value" selected>Market Value</option>
 						<option value="Market Rent">Market Rent</option>
 						<option value="Investment Value">Investment Value</option>
@@ -348,6 +359,7 @@
 						class="form-control form-control-sm textholder" name="valuationReport.approachReasoning"
 						id="apprreason">
 						<c:forEach items="${appreasonlist}" var="item">
+							<option value="${valuationreport.approachReasoning}" hidden>${valuationreport.approachReasoning}</option>
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -423,7 +435,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="valuationReport.clientDeadline" id="" placeholder="" autocomplete="on">
+							name="valuationReport.clientDeadline" value="${valuationreport.clientDeadline}" id="" placeholder="" autocomplete="on">
 					</div>
 				</div>
 				<div class="valuationholder insOfficer">
@@ -1212,7 +1224,7 @@
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="tdl" name="documents[0].description" value="Title Deed">
 				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="files[0]" id="titledeed" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
+					name="files[0]"  value="${documents[0].fileName}"id="titledeed" accept=".jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
@@ -1317,4 +1329,5 @@
 <script src="resources/assets/bundles/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
 <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 <script src="resources/assets/js/numbertoword.js"></script>
-<script src="resources/assets/js/valuationform.js"></script>
+<script src="resources/assets/js/valuationform2.js"></script>
+<script src="resources/assets/js/editvaluationlist.js"></script>

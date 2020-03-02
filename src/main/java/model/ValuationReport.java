@@ -24,6 +24,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -39,12 +40,12 @@ public class ValuationReport implements java.io.Serializable {
 	private String clientCustomerName;
 	private String ownerName;
 	private String serviceOffName;
-	private Date valInstrDate;
-	private Date intTargetDate;
+	private String valInstrDate;
+	private String intTargetDate;
 	private String propertyValued;
 	private String tenure;
 //	private String unitNo;
-//	private String floorNo;
+	private String floorNo;
 //	private String streetNo;
 //	private String streetName;
 //	private String buildingNo;
@@ -62,8 +63,8 @@ public class ValuationReport implements java.io.Serializable {
 	private String valApproach;
 	private String basesOfValue;
 	private String approachReasoning;
-	private Date valDate;
-	private Date insDate;
+	private String valDate;
+	private String insDate;
 	private String insDay;
 	private String insTime;
 	private String clientDeadline;
@@ -176,19 +177,19 @@ public class ValuationReport implements java.io.Serializable {
 		this.serviceOffName = serviceOffName;
 	}
 	@Column(name = "valInstrDate")
-	public Date getValInstrDate() {
+	public String getValInstrDate() {
 		return valInstrDate;
 	}
 
-	public void setValInstrDate(Date valInstrDate) {
+	public void setValInstrDate(String valInstrDate) {
 		this.valInstrDate = valInstrDate;
 	}
 	@Column(name = "valDate")
-	public Date getValDate() {
+	public String getValDate() {
 		return valDate;
 	}
 
-	public void setValDate(Date valDate) {
+	public void setValDate(String valDate) {
 		this.valDate = valDate;
 	}
 	@Column(name = "propertyValued")
@@ -215,14 +216,14 @@ public class ValuationReport implements java.io.Serializable {
 //	public void setUnitNo(String unitNo) {
 //		this.unitNo = unitNo;
 //	}
-//	@Column(name = "floorNo")
-//	public String getFloorNo() {
-//		return floorNo;
-//	}
-//
-//	public void setFloorNo(String floorNo) {
-//		this.floorNo = floorNo;
-//	}
+	@Column(name = "floorNo")
+	public String getFloorNo() {
+		return floorNo;
+	}
+
+	public void setFloorNo(String floorNo) {
+		this.floorNo = floorNo;
+	}
 //	@Column(name = "streetNo")
 //	public String getStreetNo() {
 //		return streetNo;
@@ -353,11 +354,11 @@ public class ValuationReport implements java.io.Serializable {
 		this.approachReasoning = approachReasoning;
 	}
 	@Column(name = "insDate")
-	public Date getInsDate() {
+	public String getInsDate() {
 		return insDate;
 	}
 
-	public void setInsDate(Date insDate) {
+	public void setInsDate(String insDate) {
 		this.insDate = insDate;
 	}
 	@Column(name = "insType")
@@ -730,11 +731,11 @@ public class ValuationReport implements java.io.Serializable {
 		this.specialAssumption = specialAssumption;
 	}
 	@Column(name = "intTargetDate")
-	public Date getIntTargetDate() {
+	public String getIntTargetDate() {
 		return intTargetDate;
 	}
 
-	public void setIntTargetDate(Date intTargetDate) {
+	public void setIntTargetDate(String intTargetDate) {
 		this.intTargetDate = intTargetDate;
 	}
 	@Column(name = "insDay")

@@ -28,6 +28,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import model.ClientDetails;
 import model.Community;
+import model.Documents;
 import model.Property;
 import model.ServiceOfficer;
 import model.ValuationReport;
@@ -103,6 +104,32 @@ public class ValuationController {
 		return mv;
 	}
 
+	@RequestMapping(value="/getValuation",method=RequestMethod.POST)
+	public ModelAndView getValuation(@RequestParam("reportId")int reportId)
+	{
+		ValuationReport valuationreport=valuationService.getValuation(reportId);
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("editvaluation");
+		List<ClientDetails> clientlist = valuationService.getClients();
+		List<Property> propertylist = valuationService.getPropertyValued();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String email = authentication.getName();
+		List<ServiceOfficer> serviceofficerlist = valuationService.getServiceOfficer(email);
+		List<ServiceOfficer>  list= valuationService.getDefaultServicer(email);
+		List<Property> appreasonlist = valuationService.getApproachReasoningList();
+		List<Property> valapproachlist = valuationService.getValuationApproachList();
+		List<Documents> documents = valuationService.getDocuments(reportId);
+		mv.addObject("serviceofficerlist", serviceofficerlist);
+		mv.addObject("clientlist", clientlist);
+		mv.addObject("propertylist", propertylist);
+		mv.addObject("appreasonlist", appreasonlist);
+		mv.addObject("valapproachlist", valapproachlist);
+		mv.addObject("valuationreport",valuationreport);
+		mv.addObject("dfservicer",list);
+		mv.addObject("documents", documents);
+		return mv;
+		
+	}
 	
 	@RequestMapping(value = "/getCity", method = RequestMethod.POST)
 	@ResponseBody

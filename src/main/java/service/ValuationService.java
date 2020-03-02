@@ -49,6 +49,9 @@ import utils.WindmillsUtils;
 public class ValuationService {
 	@Autowired
 	private ValuationDaoImpl valuationDaoImpl;
+	@Autowired
+	private ValuationReport valuationReport;
+	
 	static Logger log = Logger.getLogger(ValuationService.class);
 	
 	@Transactional
@@ -166,9 +169,21 @@ public class ValuationService {
 	}
 	@Transactional
 	public List<ValuationReport> getValuationList() {
-		log.info("beginning of get list of  valuation");
 		List<ValuationReport> list=valuationDaoImpl.getValuationReportList();
-		log.info("list"+list);
+		return list;
+	}
+	@Transactional
+	public ValuationReport getValuation(int reportId) {
+		List<ValuationReport> list=valuationDaoImpl.getValuation(reportId);
+		if(list!=null && !list.isEmpty())
+		{
+			valuationReport=list.get(0);
+		}
+		return valuationReport;
+	}
+	@Transactional
+	public List<Documents> getDocuments(int reportId) {
+		List<Documents> list =  valuationDaoImpl.getDocuments(reportId);
 		return list;
 	}
 

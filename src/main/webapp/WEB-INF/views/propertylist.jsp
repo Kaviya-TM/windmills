@@ -16,19 +16,12 @@
 					<div id="${property.propertyId}">
 						<div class="imgPart">
 							<img style="margin-top: 3px;"
-								src="resources\assets\img\Windmills-Group-Logo-Small.png">
+								src="resources\assets\img\icon2.jpg">
 						</div>
 						<div class="contentPart">
 							<div class="name">
 								<b style="color: #000080">${property.propertyValued}</b>
 							</div>
-<%-- 							<div class="email">${clients.contactPerson}</div> --%>
-							<%-- 											    	<div class="phone"><b>Phone:</b> ${officers.phone} </div> --%>
-							<%-- 											    	<div class="position"><b>Position:</b> ${officers.position} </div> --%>
-							<%-- 											    	<div class="position"><b>Join Date:</b> ${officers.joinDate} </div> --%>
-							<%-- 											    	<c:if test="${not empty officers.separationDate}"> --%>
-							<%-- 											    		<div class="position"><b>Separation Date:</b> ${officers.separationDate} </div> --%>
-							<%-- 											    	</c:if> --%>
 							<input type="hidden" id="propertyId" name="propertyId"
 								value="${property.propertyId}" />
 						</div>

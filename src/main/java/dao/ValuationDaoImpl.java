@@ -119,6 +119,28 @@ public class ValuationDaoImpl {
 		return rows;
 	}
 
+	public List<ValuationReport> getValuation(int reportId) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from ValuationReport s where s.reportId=:reportId");
+		query.setParameter("reportId",reportId);
+		List<ValuationReport> rows=query.list();
+		return rows;
+	}
+
+	public List<Documents> getDocuments(int reportId) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from Documents d where d.valuation.reportId=:reportId");
+		query.setParameter("reportId",reportId);
+		List<Documents> rows= query.list();
+		return rows;
+	}
+
+//	public List<Documents> getDocuments(int reportId) {
+	
+//		Query query=sessionFactory.getCurrentSession().createQuery("from Documents s where s.reportId=:reportId");
+//		query.setParameter("reportId",reportId);
+//		List<Documents> rows=query.list();
+//		return rows;
+//	}
+
 
 	
 	

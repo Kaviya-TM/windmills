@@ -22,7 +22,7 @@
 							<div class="name">
 								<b style="color: #000080">${valuations.windmillsRef}</b>
 							</div>
-							<input type="hidden" id="clientId" name="clientId"
+							<input type="hidden" id="reportId" name="reportId"
 								value="${valuations.reportId}" />
 						</div>
 					</div>

@@ -19,6 +19,36 @@ $('#age').keyup(function(){
 		$('#remlife').val(40);
 	}
 });
+$("#titledeed").change(function() {	
+	  var i = $(this).prev('label').clone();	
+	  var file = $("#titledeed")[0].files[0].name;	
+	  var filename = file.split(".");
+	  $(this).prev('label').text(file);	
+});
+$("#floorplan").change(function() {	
+	  var i = $(this).prev('label').clone();	
+	  var file = $("#floorplan")[0].files[0].name;	
+	  var filename = file.split(".");
+	  $(this).prev('label').text(file);	
+});
+$("#affectionplan").change(function() {	
+	  var i = $(this).prev('label').clone();	
+	  var file = $("#affectionplan")[0].files[0].name;	
+	  var filename = file.split(".");
+	  $(this).prev('label').text(file);	
+});
+$("#landleaseag").change(function() {	
+	  var i = $(this).prev('label').clone();	
+	  var file = $("#landleaseag")[0].files[0].name;	
+	  var filename = file.split(".");
+	  $(this).prev('label').text(file);	landleaseag
+});
+$("#spa").change(function() {	
+	  var i = $(this).prev('label').clone();	
+	  var file = $("#spa")[0].files[0].name;	
+	  var filename = file.split(".");
+	  $(this).prev('label').text(file);	landleaseag
+});
 function bedroom(){
 	var i=0;j=0;k=0;m=0;n=0;o=0;
 	var a=0;b=0;c=0;d=0;e=0;f=0;

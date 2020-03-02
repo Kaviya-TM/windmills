@@ -1211,32 +1211,43 @@
 				<div class="valuationholder" >
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="tdl" name="documents[0].description" value="Title Deed">
-				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="files[0]" id="titledeed" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
+					<label for="titledeed" class="custom-file-upload">
+    					<i class="fa fa-cloud-upload"></i>Upload
+  					</label>
+  					<input id="titledeed" name='files[0]' type="file" style="display:none;">
+					
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="fpl" name="documents[1].description" value="Floor Plan">
-				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="files[1]" id="floorplan" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
+					<label for="floorplan" class="custom-file-upload1">
+    					<i class="fa fa-cloud-upload"></i>Upload
+  					</label>
+  					<input id="floorplan" name='files[1]' type="file" style="display:none;">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="apl" name="documents[2].description" value="Affection Plan">
-				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="files[2]" id="affectionplan" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
+					<label for="affectionplan" class="custom-file-upload">
+    					<i class="fa fa-cloud-upload"></i>Upload
+  					</label>
+  					<input id="affectionplan" name='files[2]' type="file" style="display:none;">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="lll" name="documents[3].description" value="Land Lease Agreement" >
-				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name=files[3] id="landleaseag" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
+					<label for="landleaseag" class="custom-file-upload1">
+    					<i class="fa fa-cloud-upload"></i>Upload
+  					</label>
+  					<input id="landleaseag" name='files[3]' type="file" style="display:none;">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="sl" name="documents[4].description" value="SPA">
-				    <input type="file" class="textholder" style="line-height: 25px !important;color: forestgreen;"
-					name="files[4]" id="spa" accept=".png,.jpg,.txt,.csv,.xlsx,.pdf" placeholder="" autocomplete="on">
+					<label for="spa" class="custom-file-upload">
+    					<i class="fa fa-cloud-upload"></i>Upload
+  					</label>
+  					<input id="spa" name='files[4]' type="file" style="display:none;">
 				</div>
 				<div class="valuationholder adjustTop" style="margin-top: 20px">
 					<div class="savebtn" id="docprv">Previous</div>

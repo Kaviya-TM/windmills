@@ -553,43 +553,43 @@ $("#bedroom").change(function() {
 });
 $("#bathroom").change(function() {
 	var value = $(this).val();
-	if(value === "1 Bathroom"){
+	if(value === "1"){
 		$('#1ba').show();
 		$('#2ba,#3ba,#4ba,#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value === "2 Bathrooms"){
+	if(value === "2"){
 		$('#1ba,#2ba').show();
 		$('#3ba,#4ba,#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value === "3 Bathrooms"){
+	if(value === "3"){
 		$('#1ba,#2ba,#3ba').show();
 		$('#4ba,#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value === "4 Bathrooms"){
+	if(value === "4"){
 		$('#1ba,#2ba,#3ba,#4ba').show();
 		$('#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value === "5 Bathrooms"){
+	if(value === "5"){
 		$('#1ba,#2ba,#3ba,#4ba,#5ba').show();
 		$('#6ba,#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value === "6 Bathrooms"){
+	if(value === "6"){
 		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba').show();
 		$('#7ba,#8ba,#9ba,#10ba').hide();
 	}
-	if(value === "7 Bathrooms"){
+	if(value === "7"){
 		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba,#7ba').show();
 		$('#8ba,#9ba,#10ba').hide();
 	}
-	if(value === "8 Bathrooms"){
+	if(value === "8"){
 		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba,#7ba,#8ba').show();
 		$('#9ba,#10ba').hide();
 	}
-	if(value === "9 Bathrooms"){
+	if(value === "9"){
 		$('#10ba').hide();
 		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba,#7ba,#8ba,#9ba').show();
 	}
-	if(value === "10 Bathrooms"){
+	if(value === "10"){
 		$('#1ba,#2ba,#3ba,#4ba,#5ba,#6ba,#7ba,#8ba,#9ba,#10ba').show();
 	}
 });
@@ -634,10 +634,11 @@ $("#marketValue").keyup(function() {
 	}
 	else{
 		$('#marketrent').val("");
+		
 	}
 });
 $("#buitUpAreaSize").keyup(function() {
-	var get_num = $('#marketValue').val();
+	var get_num = $('#marketValue').val();	
 	get_num =get_num.replace(/,/g , '');
 	if(get_num != '')
 	{

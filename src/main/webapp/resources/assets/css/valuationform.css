@@ -109,8 +109,8 @@
 
 .savebtn {
 	width: 10%;
-	/*     background: #DF0101; */
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	/*     background: #ff6600; */
+	background-image: linear-gradient(to right, #ff6600, #000080);
 	color: white;
 	padding: 5px;
 	text-align: center;
@@ -125,16 +125,16 @@
 
 #inspect1prv {
 	float: left;
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	background-image: linear-gradient(to right, #ff6600, #000080);
 }
 
 #inspect1nxt {
 	margin-left: 10px;
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	background-image: linear-gradient(to right, #ff6600, #000080);
 }
 #inspect2prv {
 	float: left;
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	background-image: linear-gradient(to right, #ff6600, #000080);
 }
 
 #inspect2nxt,
@@ -142,21 +142,21 @@
 #splnxt,
 #docnxt {
 	margin-left: 10px;
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	background-image: linear-gradient(to right, #ff6600, #000080);
 }
 #schedulenxt {
 	margin-left: 10px;
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	background-image: linear-gradient(to right, #ff6600, #000080);
 }
 
 #submitprv {
 	float: left;
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	background-image: linear-gradient(to right, #ff6600, #000080);
 }
 
 #submitnxt {
 	margin-left: 10px;
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	background-image: linear-gradient(to right, #ff6600, #000080);
 	padding: 7px;
 	margin-top: 0px;
 }

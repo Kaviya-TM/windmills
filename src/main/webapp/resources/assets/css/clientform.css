@@ -66,7 +66,7 @@
 
 
 .othercontactadd {
-	color: #DF0101;
+	color: #ff6600;
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -84,7 +84,7 @@
 }
 
 .contactadd:hover {
-	background: #DF0101;
+	background: #ff6600;
 }
 
 .clientholder {
@@ -93,7 +93,7 @@
 }
 
 button {
-	background-image: linear-gradient(to right, #DF0101, #000080);
+	background-image: linear-gradient(to right, #ff6600, #000080);
 	width: 10% !important;
 	margin-bottom: 20px !important;
 	margin-top: 0px !important;

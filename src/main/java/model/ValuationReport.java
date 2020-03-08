@@ -839,7 +839,7 @@ public class ValuationReport implements java.io.Serializable {
 		this.endkms = endkms;
 	}
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "valuation",cascade= CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "valuation",cascade= CascadeType.ALL,orphanRemoval=true)
 	public Set<Documents> getDocuments() {
 		return documents;
 	}

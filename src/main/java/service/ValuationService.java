@@ -181,11 +181,113 @@ public class ValuationService {
 		}
 		return valuationReport;
 	}
+//	@Transactional
+//	public List<Documents> getDocuments(int reportId) {
+//		List<Documents> list =  valuationDaoImpl.getDocuments(reportId);
+//		return list;
+//	}
 	@Transactional
-	public List<Documents> getDocuments(int reportId) {
-		List<Documents> list =  valuationDaoImpl.getDocuments(reportId);
-		return list;
+	public void editValuation(ValuationReportForm valuationreportform) {
+		int reportId=0;
+		Map<String, String> docmap = new HashMap<>();
+		ValuationReport valuationreport = valuationreportform.getValuationReport();
+		List<Documents> documentList = valuationreportform.getDocuments();
+//		List<MultipartFile> files = valuationreportform.getFiles();
+//		if (!files.isEmpty()) {
+//			for (int i = 0; i < files.size(); i++) {
+//				documentList.get(i).setFileName(files.get(i).getOriginalFilename());
+//				System.out.println("check-->" + files.get(i).getName());
+//			}
+//		}
+//		log.info("beginning of update report");
+//		reportId = valuationreportform.getValuationReport().getReportId();
+//		log.info("sizebefore-->"+documentList.size());
+//		if (documentList.size() != 0) {
+//			for (Documents doc : documentList) {
+//				valuationDaoImpl.deletedocuments(doc);
+//			}
+//		}
+//		log.info("size-->"+documentList.size());
+//		if (documentList.size() != 0) {
+//			for (Documents doc : documentList) {
+//				doc.setValuation(valuationreport);
+//				String code = WindmillsUtils.generateDocumentCode(reportId);
+//				doc.setDocumentCode(code);
+//				docmap.put(doc.getFileName(), code);
+//				valuationDaoImpl.uploaddocuments(doc);
+//			}
+//		}
+//		
+//		WindmillsUtils.fileupload(files, docmap);
+		if (documentList.size() != 0) {
+			for (Documents doc : documentList) {
+				doc.setValuation(valuationreport);
+				String code = WindmillsUtils.generateDocumentCode(reportId);
+				doc.setDocumentCode(code);
+				docmap.put(doc.getFileName(), code);
+				valuationDaoImpl.updatedocuments(doc);
+			}
+		}
+		valuationDaoImpl.editValuation(valuationreport);
+		log.info("End of update report");
 	}
+	@Transactional
+	public void editValuationReport(ValuationReportForm valuationreportform) {
+		
+//		log.info("*****ref-->"+valuationreportform.getValuationReport().getClientRef());
+//		ValuationReport valuationreport = valuationreportform.getValuationReport();
+//		List<Documents> documentList = valuationreportform.getDocuments();
+//		valuationDaoImpl.editValuationReport(valuationreport);
+//		int reportId = valuationreportform.getValuationReport().getReportId();
+//				if (documentList.size() != 0) {
+//			for (Documents doc : documentList) {
+//				valuationDaoImpl.updatedocuments(doc);
+//			}
+//		}
+		ValuationReport valuationreport = valuationreportform.getValuationReport();
+		List<Documents> documents = valuationreportform.getDocuments();
+		Map<String, String> docmap = new HashMap<>();
+		System.err.println("reportId-->"+valuationreport.getReportId());
+		System.err.println("docsize-->"+documents.size());
+		System.err.println("Documents"+valuationreport.getDocuments());
+		int reportId=valuationreportform.getValuationReport().getReportId();
+		List<MultipartFile> files = valuationreportform.getFiles();
+		if (!files.isEmpty()) {
+			for (int i = 0; i < files.size(); i++) {
+				documents.get(i).setFileName(files.get(i).getOriginalFilename());
+				System.out.println("check" + files.get(i).getName());
+			}
+		}
+		if(documents!=null && !documents.isEmpty())
+		{
+				valuationDaoImpl.deleteDocuments(reportId);
+		}
+		if(documents!=null && !documents.isEmpty())
+		{
+			for(Documents doc:documents)
+			{
+				doc.setValuation(valuationreport);
+				String code = WindmillsUtils.generateDocumentCode(reportId);
+				doc.setDocumentCode(code);
+				docmap.put(doc.getFileName(), code);
+				valuationDaoImpl.updatedocuments(doc);
+			}
+		}
+		valuationDaoImpl.editValuationReport(valuationreportform.getValuationReport(),valuationreportform.getValuationReport().getReportId());
+//		if(valuationreport.getDocuments()!=null && !valuationreport.getDocuments().isEmpty())
+//		{
+//			Set<Documents> doclist = valuationreport.getDocuments();
+//			for(Documents doc:doclist)
+//			{
+//				valuationDaoImpl.deletedocuments(doc);
+//				doclist.remove(doc);
+//			}
+//			valuationDaoImpl.editValuationReport(valuationreport);
+//		}
+
+
+	}
+	
 
 
 }

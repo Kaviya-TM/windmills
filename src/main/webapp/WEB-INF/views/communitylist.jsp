@@ -20,7 +20,7 @@
 								<b style="color: #000080">${community.community}</b>
 							</div>
 							<div class="sec">
-								<b style="color: #DF0101">${community.city}</b>
+								<b style="color: #ff6600">${community.city}</b>
 							</div>
 							<input type="hidden" id="communityId" name="communityId"
 								value="${community.communityId}" />

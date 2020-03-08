@@ -28,7 +28,7 @@
 			<button class="valbtn" id="marketsum">Market Summary</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
-		<form:form action="editValuation" id="valuationeditform" enctype="multipart/form-data" modelAttribute="valuationreport">
+		<form:form action="editValuationReport" id="valuationeditform" enctype="multipart/form-data" modelAttribute="valuationreport">
 			<div class="form-group receiving">
 				<div class="vrholder">
 					<label class="rholder">Windmills Reference</label> <input
@@ -120,11 +120,6 @@
 						<option value="Leasehold">Leasehold</option>
 
 					</select>
-				</div>
-				<div class="vrholder">
-					<label class="rholder">Property Address</label> <input type="text"
-						class="form-control form-control-sm textholder" name="valuationReport.propertyAddress"
-						id="" value="${valuationreport.propertyAddress}" placeholder="Property Address" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Unit Number</label> <input type="text"
@@ -1292,38 +1287,23 @@
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="tdl" name="documents[0].description" value="Title Deed">
 					<label for="titledeed" class="custom-file-upload">
-						<c:if test="${empty documents[0].fileName}">
     						<i class="fa fa-cloud-upload"></i>Upload
-    					</c:if>
-				   		<c:if test="${not empty documents[0].fileName}">
-    						<i class="fa fa-cloud-upload"></i>${documents[0].fileName}
-    					</c:if>
   					</label>
-  					<input id="titledeed" name='files[0]' type="file" style="display:none;">
+  					<input id="titledeed" name='files[0]' value="${files[0]}" type="file" style="display:none;">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="fpl" name="documents[1].description" value="Floor Plan">
 				   <label for="floorplan" class="custom-file-upload1">
-				   		<c:if test="${empty documents[1].fileName}">
     						<i class="fa fa-cloud-upload"></i>Upload
-    					</c:if>
-				   		<c:if test="${not empty documents[1].fileName}">
-    						<i class="fa fa-cloud-upload"></i>${documents[1].fileName}
-    					</c:if>
   					</label>
-  					<input id="floorplan" name='files[1]' type="file" style="display:none;">
+  					<input id="floorplan" value="${files[1]}" name='files[1]' type="file" style="display:none;">
 				</div>
 				<div class="valuationholder" style="margin-top: 10px">
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="apl" name="documents[2].description" value="Affection Plan">
 				     <label for="affectionplan" class="custom-file-upload">
-				   		<c:if test="${empty documents[2].fileName}">
     						<i class="fa fa-cloud-upload"></i>Upload
-    					</c:if>
-				   		<c:if test="${not empty documents[2].fileName}">
-    						<i class="fa fa-cloud-upload"></i>${documents[2].fileName}
-    					</c:if>
   					</label>
   					<input id="affectionplan" name='files[2]' type="file" style="display:none;">
 				</div>
@@ -1331,12 +1311,7 @@
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="lll" name="documents[3].description" value="Land Lease Agreement" >
 				    <label for="landleaseag" class="custom-file-upload1">
-				   		<c:if test="${empty documents[3].fileName}">
     						<i class="fa fa-cloud-upload"></i>Upload
-    					</c:if>
-				   		<c:if test="${not empty documents[3].fileName}">
-    						<i class="fa fa-cloud-upload"></i>${documents[3].fileName}
-    					</c:if>
   					</label>
   					<input id="landleaseag" name='files[3]' type="file" style="display:none;">
 				</div>
@@ -1344,12 +1319,7 @@
 					<input type="text" class="labelholder" style="line-height: 25px !important;width:15%;border:none;background:none"
 					id="sl" name="documents[4].description" value="SPA">
 				   <label for="spa" class="custom-file-upload">
-				   		<c:if test="${empty documents[4].fileName}">
     						<i class="fa fa-cloud-upload"></i>Upload
-    					</c:if>
-				   		<c:if test="${not empty documents[4].fileName}">
-    						<i class="fa fa-cloud-upload"></i>${documents[4].fileName}
-    					</c:if>
   					</label>
   					<input id="spa" name='files[4]' type="file" style="display:none;">
 				</div>
@@ -1422,7 +1392,8 @@
 			<input type="hidden" id="firstFloor" name="valuationReport.firstFloor" value="" />
 			<input type="hidden" id="secondFloor" name="valuationReport.secondFloor" value="" />
 			<input type="hidden" id="upgrades" name="valuationReport.upgrades" value="" />
-			
+			<input type="hidden" id="reportId" name="valuationReport.reportId"
+				value="${valuationreport.reportId}"/>
 		</form:form>
 
 	</div>

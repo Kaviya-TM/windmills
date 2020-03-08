@@ -112,21 +112,25 @@ public class ValuationController {
 		mv.setViewName("editvaluation");
 		List<ClientDetails> clientlist = valuationService.getClients();
 		List<Property> propertylist = valuationService.getPropertyValued();
+		List<Community> communitylist = valuationService.getCommunity();
+		List<Community> citylist = valuationService.getCity();
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String email = authentication.getName();
 		List<ServiceOfficer> serviceofficerlist = valuationService.getServiceOfficer(email);
 		List<ServiceOfficer>  list= valuationService.getDefaultServicer(email);
 		List<Property> appreasonlist = valuationService.getApproachReasoningList();
 		List<Property> valapproachlist = valuationService.getValuationApproachList();
-		List<Documents> documents = valuationService.getDocuments(reportId);
+	//	List<Documents> documents = valuationService.getDocuments(reportId);
 		mv.addObject("serviceofficerlist", serviceofficerlist);
 		mv.addObject("clientlist", clientlist);
+		mv.addObject("communitylist", communitylist);
+		mv.addObject("citylist", citylist);
 		mv.addObject("propertylist", propertylist);
 		mv.addObject("appreasonlist", appreasonlist);
 		mv.addObject("valapproachlist", valapproachlist);
 		mv.addObject("valuationreport",valuationreport);
 		mv.addObject("dfservicer",list);
-		mv.addObject("documents", documents);
+	//	mv.addObject("documents", documents);
 		return mv;
 		
 	}
@@ -138,7 +142,6 @@ public class ValuationController {
 		return city;
 
 	}
-
 	
 	@RequestMapping(value = "/saveValuation", method = RequestMethod.POST)
 	public ModelAndView saveValuation(@ModelAttribute("valuationreportform") ValuationReportForm valuationreportform,HttpServletRequest request,HttpSession session)throws SQLException, Exception {
@@ -146,6 +149,27 @@ public class ValuationController {
 	    ModelAndView mv = new ModelAndView();
 	    mv.setViewName("main");
 		return mv;
+	}
+//	
+//	@RequestMapping(value="/editValuation",method=RequestMethod.POST)
+//	public ModelAndView editValuation(@ModelAttribute("valuationreportform")ValuationReportForm valuationreportform,HttpSession session) throws IllegalStateException, IOException {
+//	
+//		valuationService.editValuation(valuationreportform);
+//		log.info("***");
+//		 ModelAndView mv = new ModelAndView();
+//		    mv.setViewName("main");
+//			return mv;
+//		
+//	}
+	@RequestMapping(value="/editValuationReport",method=RequestMethod.POST)
+	public ModelAndView editValuation(@ModelAttribute("valuationreportform")ValuationReportForm  valuationreportform,HttpSession session) throws IllegalStateException, IOException {
+	
+		valuationService.editValuationReport(valuationreportform);
+		log.info("**AAAAAACCCCCCCCCCCC*+"+valuationreportform.getValuationReport().getAcType());
+		 ModelAndView mv = new ModelAndView();
+		    mv.setViewName("main");
+			return mv;
+		
 	}
 	
 }

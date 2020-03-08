@@ -155,7 +155,7 @@
 				value="${clientform.clientId}"/>
 			<div class="form-group" style="width: 100%">
 				<button type="submit" style="background: #000080">Update</button>
-				<button type="none" id="cancel" style="background: #DF0101">Cancel</button>
+				<button type="none" id="cancel" style="background: #ff6600">Cancel</button>
 			</div>
 		</form:form>
 	</div>

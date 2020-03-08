@@ -45,7 +45,7 @@
 				<div class="form-group" style="width: 100%">
 					<button type="submit" style="width: 7% !important;background: forestgreen;margin-right:5px;float:left">Update</button>
 					<button type="none" id="cancel" style="width: 7% !important;background: orange;margin-right:5px;float:left">Cancel</button>
-					<div type="none" style="cursor:pointer;border-radius: 5px;width: 7% !important;top: 10px;background: #DF0101;float:left; padding: 1px;position: relative;">
+					<div type="none" style="cursor:pointer;border-radius: 5px;width: 7% !important;top: 10px;background: #ff6600;float:left; padding: 1px;position: relative;">
 						<i class="material-icons" style="color: #fff;font-size: 20px;">delete</i>
 						<a id="delete" class="icon-name" style="color:#fff;top: -4px;position: relative;">Delete</a>
 					</div>

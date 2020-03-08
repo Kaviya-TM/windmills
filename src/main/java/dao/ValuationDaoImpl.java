@@ -17,6 +17,7 @@ import model.Documents;
 import model.Property;
 import model.ServiceOfficer;
 import model.ValuationReport;
+import model.ValuationReportForm;
 
 
 @Repository
@@ -43,6 +44,21 @@ public class ValuationDaoImpl {
 	public void uploaddocuments(Documents document) {
 		sessionFactory.getCurrentSession().save(document);
 	}
+	public void updatedocuments(Documents document) {
+		log.info("update");
+		sessionFactory.getCurrentSession().save(document);
+	}
+	public void deletedocuments(Documents document) {
+		log.info("delete");
+		sessionFactory.getCurrentSession().delete(document);
+	}
+	public List<Object[]> getDocumentCount(List<Integer> reportId)
+	{
+		Query query=sessionFactory.getCurrentSession().createQuery("select doc.reportId,count(doc.reportId),doc.valuation.reportId from Document doc where doc.reportId IN :reportId group by doc.reportId");
+		query.setParameterList("reportId", reportId);
+		List<Object[]> rows=query.list();
+		return rows;
+	}
     public List<ServiceOfficer> getDefaultServicer(String email) {
     	Query query=sessionFactory.getCurrentSession().createQuery("from ServiceOfficer s where s.email=:email");
 		query.setParameter("email",email);
@@ -59,7 +75,7 @@ public class ValuationDaoImpl {
 	}
 
 	public void saveValuationReport(ValuationReport valuationreport) {
-		sessionFactory.getCurrentSession().saveOrUpdate(valuationreport);
+		sessionFactory.getCurrentSession().save(valuationreport);
 	}
 
 	public int getNumberOfRows() {
@@ -118,14 +134,21 @@ public class ValuationDaoImpl {
 		List<ValuationReport> rows = query.list();
 		return rows;
 	}
-
+	
 	public List<ValuationReport> getValuation(int reportId) {
+		System.err.println("delete");
 		Query query=sessionFactory.getCurrentSession().createQuery("from ValuationReport s where s.reportId=:reportId");
 		query.setParameter("reportId",reportId);
 		List<ValuationReport> rows=query.list();
 		return rows;
 	}
-
+	public List<Documents> deleteDocuments(int reportId) {
+		
+		Query query=sessionFactory.getCurrentSession().createQuery("delete from Documents d where d.valuation.reportId=:reportId");
+		query.setParameter("reportId",reportId);
+		List<Documents> rows= query.list();
+		return rows;
+	}
 	public List<Documents> getDocuments(int reportId) {
 		Query query=sessionFactory.getCurrentSession().createQuery("from Documents d where d.valuation.reportId=:reportId");
 		query.setParameter("reportId",reportId);
@@ -133,15 +156,23 @@ public class ValuationDaoImpl {
 		return rows;
 	}
 
-//	public List<Documents> getDocuments(int reportId) {
-	
-//		Query query=sessionFactory.getCurrentSession().createQuery("from Documents s where s.reportId=:reportId");
-//		query.setParameter("reportId",reportId);
-//		List<Documents> rows=query.list();
-//		return rows;
-//	}
+	public void editValuation(ValuationReport valuationreport) {
+		 sessionFactory.getCurrentSession().update(valuationreport);
+	}
 
+	public void editValuationReport(ValuationReport valuationreport,int reportId) {
+		System.err.println("Enter");
+		System.err.println("ac0"+valuationreport.getAcType());
+		System.err.println("reportId"+reportId);
+		 sessionFactory.getCurrentSession().update(valuationreport);
+//			String hql = "UPDATE ValuationReport SET acType = :acType WHERE reportId = :reportId";
+//			Query query=sessionFactory.getCurrentSession().createQuery(hql);
+//			query.setParameter("reportId", valuationreport.getReportId());
+//			query.setParameter("acType", valuationreport.getAcType());
+//			query.executeUpdate();
+			System.err.println("Success");
+			
+	}
 
-	
 	
 }

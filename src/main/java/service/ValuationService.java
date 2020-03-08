@@ -251,6 +251,7 @@ public class ValuationService {
 		System.err.println("docsize-->"+documents.size());
 		System.err.println("Documents"+valuationreport.getDocuments());
 		int reportId=valuationreportform.getValuationReport().getReportId();
+		List<Documents> deletedoc =  valuationDaoImpl.getDocuments(reportId);
 		List<MultipartFile> files = valuationreportform.getFiles();
 		if (!files.isEmpty()) {
 			for (int i = 0; i < files.size(); i++) {
@@ -258,9 +259,12 @@ public class ValuationService {
 				System.out.println("check" + files.get(i).getName());
 			}
 		}
-		if(documents!=null && !documents.isEmpty())
+		if(deletedoc!=null && !deletedoc.isEmpty())
 		{
-				valuationDaoImpl.deleteDocuments(reportId);
+			for(Documents doc:deletedoc)
+			{
+				valuationDaoImpl.deletedocuments(doc);
+			}
 		}
 		if(documents!=null && !documents.isEmpty())
 		{

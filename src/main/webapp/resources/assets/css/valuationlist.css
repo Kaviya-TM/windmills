@@ -1,0 +1,37 @@
+
+.addWidth {
+	width: 9% !important;
+}
+
+#btnContainer {
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.column:hover {
+	background: rgba(163, 163, 163, 0.2);
+}
+.head{
+	width:12%;
+	float:left;
+	margin-right:5px;
+	border-right: 2px solid lightgray;
+	padding: 5px;
+	border:1px solid transparent;
+	border-radius:5px;
+}
+.column {
+	width: 100%;
+	height: fit-content;
+	font-size: 11px;
+	font-family: sans-serif;
+	cursor: pointer;
+	background: #fff;
+	border: 1px solid lightgray;
+}
+.color {
+	background:#ff6600;
+}
+.color1 {
+	background: #000080;
+}

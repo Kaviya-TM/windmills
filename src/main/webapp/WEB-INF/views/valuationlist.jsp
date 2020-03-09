@@ -1,6 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
+<title>Windmills | Valuation List</title>
 <link rel='shortcut icon' type='image/x-icon'
 	href='resources/assets/img/favicon.ico' />
 <link rel="stylesheet" href="resources/assets/css/valuationlist.css">
@@ -14,25 +15,25 @@
 							<div class="head color" style="width: 8%; color:#fff;">
 								<b>Windmills Ref</b>
 							</div>
-							<div class="head color1" style="width: 8%;color:#fff;">
+							<div class="head color" style="width: 8%;color:#fff;">
 								<b>Client Ref</b>
 							</div>
 							<div class="head color" style="width: 8%;color:#fff;">
 								<b>Client Name</b>
 							</div>
-							<div class="head color1" style="width: 10%;color:#fff;">
+							<div class="head color" style="width: 10%;color:#fff;">
 								<b>Property Valued</b>
 							</div>
 							<div class="head color" style="width: 27%;color:#fff;">
 								<b>Property Address</b>
 							</div>
-							<div class="head color1" style="width: 9%;color:#fff;">
+							<div class="head color" style="width: 9%;color:#fff;">
 								<b>Valuation Date</b>
 							</div>
 							<div class="head color" style="width: 9%;color:#fff;">
 								<b>Service Officer</b>
 							</div>
-							<div class="head color1" style="width: 8%;color:#fff;">
+							<div class="head color" style="width: 8%;color:#fff;">
 								<b>MV Rate</b>
 							</div>
 							<div class="head color" style="border-right:none;width: 8%;color:#fff;">

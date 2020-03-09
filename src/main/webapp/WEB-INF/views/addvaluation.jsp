@@ -2,6 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
+<title>Windmills | Valuation</title>
 <link rel='shortcut icon' type='image/x-icon'
 	href='resources/assets/img/favicon.ico' />
 <link rel="stylesheet" href="resources/assets/css/valuationform.css">

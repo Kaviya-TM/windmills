@@ -1,6 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page isELIgnored="false"%>
+<title>Windmills | Client</title>
 <link rel='shortcut icon' type='image/x-icon'
 	href='resources/assets/img/favicon.ico' />
 <link rel="stylesheet" href="resources/assets/css/servicelist.css">

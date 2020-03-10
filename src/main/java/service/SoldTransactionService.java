@@ -28,6 +28,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,6 +63,27 @@ public class SoldTransactionService {
 		return list;
 
 	}
+	@Transactional
+	public List<SoldTransactions> getCity() {
+		List<SoldTransactions> list = soldTransactionDaoImpl.getCity();
+		return list;
+	}
+	@Transactional
+	public List<SoldTransactions> getArea() {
+		List<SoldTransactions> list = soldTransactionDaoImpl.getArea();
+		return list;
+	}
+	@Transactional
+	public List<SoldTransactions> getNeighbourhood() {
+		List<SoldTransactions> list = soldTransactionDaoImpl.getNeighbourhood();
+		return list;
+	}
+	@Transactional
+	public List<SoldTransactions> getBuildings() {
+		List<SoldTransactions> list = soldTransactionDaoImpl.getBuildings();
+		return list;
+	}
+	
 
 
 }

@@ -53,5 +53,20 @@ public class SoldTransactionController {
 		mv.setViewName("soldTransaction");
 		return mv;
 	}
+	@RequestMapping(value = {"/enquiry" }, method = RequestMethod.GET)
+	public ModelAndView enquiry() {
+
+		ModelAndView mv = new ModelAndView();
+		List<SoldTransactions> citylist=soldTransactionService.getCity();
+		List<SoldTransactions> arealist=soldTransactionService.getArea();
+		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
+		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
+		mv.addObject("citylist",citylist);
+		mv.addObject("arealist",arealist);
+		mv.addObject("hoodlist",hoodlist);
+		mv.addObject("bullist",bullist);
+		mv.setViewName("enquiry");
+		return mv;
+	}
 	
 }

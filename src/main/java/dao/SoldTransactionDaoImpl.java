@@ -31,5 +31,29 @@ public class SoldTransactionDaoImpl {
 		return rows;
 	}
 
+	public List<SoldTransactions> getCity() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct city from  SoldTransactions");
+		List<SoldTransactions> rows=query.list();
+		return rows;
+	}
+	
+	public List<SoldTransactions> getArea() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct area from  SoldTransactions");
+		List<SoldTransactions> rows=query.list();
+		return rows;
+	}
+
+	public List<SoldTransactions> getNeighbourhood() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct neighbourhood from  SoldTransactions");
+		List<SoldTransactions> rows=query.list();
+		return rows;
+	}
+
+	public List<SoldTransactions> getBuildings() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct buildingName from  SoldTransactions");
+		List<SoldTransactions> rows=query.list();
+		return rows;
+	}
+
 
 }

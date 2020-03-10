@@ -43,7 +43,7 @@
 					<b>Date</b>
 				</div>
 				<div class="head" style="width:5%">
-					<b>TYpe</b>
+					<b>Type</b>
 				</div>
 				<div class="head">
 					<b>Price AED</b>

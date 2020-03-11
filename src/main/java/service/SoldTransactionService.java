@@ -83,6 +83,11 @@ public class SoldTransactionService {
 		List<SoldTransactions> list = soldTransactionDaoImpl.getBuildings();
 		return list;
 	}
+	@Transactional
+	public List<SoldTransactions> getFilter(String city, String area, String neighbourhood, String buildingName) {
+		List<SoldTransactions> list = soldTransactionDaoImpl.getFilter(city,area,neighbourhood,buildingName);
+		return list;
+	}
 	
 
 

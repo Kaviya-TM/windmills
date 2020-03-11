@@ -46,7 +46,6 @@ public class SoldTransactionController {
 
 	@RequestMapping(value = {"/sold-transactions" }, method = RequestMethod.GET)
 	public ModelAndView soldTransactions() {
-
 		ModelAndView mv = new ModelAndView();
 		List<SoldTransactions> list=soldTransactionService.getSoldTransactions();
 		mv.addObject("soldTransaction",list);
@@ -55,7 +54,6 @@ public class SoldTransactionController {
 	}
 	@RequestMapping(value = {"/enquiry" }, method = RequestMethod.GET)
 	public ModelAndView enquiry() {
-
 		ModelAndView mv = new ModelAndView();
 		List<SoldTransactions> citylist=soldTransactionService.getCity();
 		List<SoldTransactions> arealist=soldTransactionService.getArea();
@@ -67,6 +65,17 @@ public class SoldTransactionController {
 		mv.addObject("bullist",bullist);
 		mv.setViewName("enquiry");
 		return mv;
+	}
+	@RequestMapping(value="/filter",method=RequestMethod.POST)
+	public ModelAndView filter(@RequestParam("city")String city,@RequestParam("area")String area,
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName){
+		
+		ModelAndView mv = new ModelAndView();
+		List<SoldTransactions> filterTransaction=soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
+		mv.addObject("filterTransaction",filterTransaction);
+		mv.setViewName("filterTransaction");
+		return mv;
+	
 	}
 	
 }

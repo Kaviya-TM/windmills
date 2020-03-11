@@ -55,5 +55,15 @@ public class SoldTransactionDaoImpl {
 		return rows;
 	}
 
+	public List<SoldTransactions> getFilter(String city, String area, String neighbourhood, String buildingName) {
+		Query query = sessionFactory.getCurrentSession().createQuery("from SoldTransactions s where s.city=:city and s.area=:area and s.neighbourhood=:neighbourhood and s.buildingName=:buildingName");
+		query.setParameter("city",city);
+		query.setParameter("area",area);
+		query.setParameter("neighbourhood",neighbourhood);
+		query.setParameter("buildingName",buildingName);
+		List<SoldTransactions> rows= query.list();
+		return rows;
+	}
+
 
 }

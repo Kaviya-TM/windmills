@@ -21,15 +21,23 @@
 		style="background: rgb(229, 231, 233) !important; overflow: scroll; overflow-x: hidden; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
 			<button class="valbtn" id="receive">Receive Valuation</button>
+			<button class="valbtn" id="receive" style="width: 8.5%;">Check Conflict Of Interest</button>
 			<button class="valbtn" id="documents">Receive Documents</button>
 			<button class="valbtn" id="schedule">Schedule Inspection</button>
 			<button class="valbtn" id="inspect1">Inspect Property A</button>
 			<button class="valbtn" id="inspect2">Inspect Property B</button>
 			<button class="valbtn" id="splAssumption">Special Assumption</button>
+			<button class="valbtn" id="receive">Extent Of Investigation</button>
 			<button class="valbtn" id="marketsum">Market Summary</button>
+			<button class="valbtn" id="filter">Filter Transaction</button>
+			<button class="valbtn" id="marketsum">View Average </button>
+			<button class="valbtn" id="marketsum">Calculation Sheet</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
 		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
+			<div class="form-group filter">
+				
+			</div>
 			<div class="form-group receiving">
 				<div class="vrholder">
 					<label class="rholder">Windmills Reference</label> <input

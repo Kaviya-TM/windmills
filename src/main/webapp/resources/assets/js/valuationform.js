@@ -836,6 +836,27 @@ $("#documents").click(function(){
 	$("#submit").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
 });
+$("#filter").click(function(){
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$('.filter').show();
+	$("#documents").css("background", "#ff6600");
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
 $("#inspect2").click(function(){
 	$('.inspecting1').hide();
 	$('.submitting').hide();

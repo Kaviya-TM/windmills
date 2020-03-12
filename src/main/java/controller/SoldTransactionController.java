@@ -66,12 +66,20 @@ public class SoldTransactionController {
 		mv.setViewName("enquiry");
 		return mv;
 	}
-	@RequestMapping(value="/filter",method=RequestMethod.POST)
+	@RequestMapping(value="/filter-transactions",method=RequestMethod.POST)
 	public ModelAndView filter(@RequestParam("city")String city,@RequestParam("area")String area,
 			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName){
 		
 		ModelAndView mv = new ModelAndView();
 		List<SoldTransactions> filterTransaction=soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
+		String dateAvg = soldTransactionService.getDateAvg(filterTransaction);
+		String priceAvg = soldTransactionService.getpriceAvg(filterTransaction);
+		String sizeAvg = soldTransactionService.getSizeAvg(filterTransaction);
+		String pricePerAvg = soldTransactionService.getpricePerAvg(filterTransaction);
+		mv.addObject("pricePerAvg",pricePerAvg);
+		mv.addObject("sizeAvg",sizeAvg);
+		mv.addObject("priceAvg",priceAvg);
+		mv.addObject("dateAvg",dateAvg);
 		mv.addObject("filterTransaction",filterTransaction);
 		mv.setViewName("filterTransaction");
 		return mv;

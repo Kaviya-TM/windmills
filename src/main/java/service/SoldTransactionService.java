@@ -4,6 +4,15 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -55,6 +64,7 @@ public class SoldTransactionService {
 	@Autowired
 	private SoldTransactions soldTransaction;
 	
+	private static DecimalFormat df = new DecimalFormat("0");
 	static Logger log = Logger.getLogger(ValuationService.class);
 	
 	@Transactional
@@ -88,7 +98,84 @@ public class SoldTransactionService {
 		List<SoldTransactions> list = soldTransactionDaoImpl.getFilter(city,area,neighbourhood,buildingName);
 		return list;
 	}
+	private double calculateAverage(List <Integer> marks) {
+		  Integer sum = 0;
+		  if(!marks.isEmpty()) {
+		    for (Integer mark : marks) {
+		        sum += mark;
+		    }
+		    return sum.doubleValue() / marks.size();
+		  }
+		  return sum;
+	}
+	public String getpricePerAvg(List<SoldTransactions> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(SoldTransactions st : filterTransaction){
+				String aed = st.getPricePerSqFt();
+				String newStr = aed.replaceAll(",", "");
+				int finaed = Integer.parseInt(newStr);
+				avglist.add(finaed);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
 	
-
-
+	public String getpriceAvg(List<SoldTransactions> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(SoldTransactions st : filterTransaction){
+				String aed = st.getPrice();
+				String newStr = aed.replaceAll(",", "");
+				int finaed = Integer.parseInt(newStr);
+				avglist.add(finaed);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getSizeAvg(List<SoldTransactions> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(SoldTransactions st : filterTransaction){
+				String aed = st.getSizeSqf();
+				String newStr = aed.replaceAll(",", "");
+				int finaed = Integer.parseInt(newStr);
+				avglist.add(finaed);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getDateAvg(List<SoldTransactions> filterTransaction) {
+		String avg = null;
+		List<LocalDate> myList = new ArrayList<>();
+		System.err.println("Entering");
+		if(!filterTransaction.isEmpty()){
+			for(SoldTransactions st : filterTransaction){
+				String aed = st.getDate();
+				int a = Integer.parseInt(aed.substring(0,4));
+				int b = Integer.parseInt(aed.substring(5,7));
+				int c = Integer.parseInt(aed.substring(8));
+				System.err.println(LocalDate.of(a, b, c));
+				myList.add(LocalDate.of(a, b, c));
+			}
+		}
+		myList.forEach(System.out::println);
+		long ave = (long) myList.stream()
+		            .mapToLong(x -> x.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()).average()
+		            .getAsDouble();
+		new Date(ave);
+		SimpleDateFormat date = new SimpleDateFormat("yyyy.MM.dd");
+		String dd = date.format(ave);
+		avg = dd.toString();
+		return avg;
+	}	
 }

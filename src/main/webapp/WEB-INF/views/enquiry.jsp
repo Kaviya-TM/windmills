@@ -18,15 +18,13 @@
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
 		style="background: rgb(229, 231, 233) !important; margin-top: 70px; width: 100%; min-height: 530px !important">
-		<form:form action="filter" id="enquiry" modelAttribute="">
+		<form:form action="filter-transactions" id="enquiry" modelAttribute="">
 			<div class="form-group">
 				<div class="enquiryholder">
 					<label class="enquirylabel">City<b style="color:red"> *</b></label>
 					<select class="form-control form-control-sm enquirytext" name="city" id="ecity">
 						<c:forEach items="${citylist}" var="item">
-							<option value="" hidden>---  Select City ---</option>
-							
-							
+							<option value="" hidden>-- Select City ---</option>
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -35,7 +33,7 @@
 					<label class="enquirylabel">Area<b style="color:red"> *</b></label> 
 					<select class="form-control form-control-sm enquirytext" name="area" id="earea">
 						<c:forEach items="${arealist}" var="item">
-							<option value="" hidden>---  Select Area---</option>
+							<option value="" hidden>-- Select Area---</option>
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -44,7 +42,7 @@
 					<label class="enquirylabel">NeighbourHood<b style="color:red"> *</b></label> 
 					<select class="form-control form-control-sm enquirytext" name="neighbourhood" id="eneighbourhood">
 						<c:forEach items="${hoodlist}" var="item">
-							<option value="" hidden>---  Select NeighbourHood ---</option>
+							<option value="" hidden>-- Select NeighbourHood ---</option>
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -53,7 +51,7 @@
 					<label class="enquirylabel">Building Name<b style="color:red"> *</b></label>
 					<select class="form-control form-control-sm enquirytext" name="buildingName" id="ebuildingName">
 						<c:forEach items="${bullist}" var="item">
-							<option value="" hidden>---  Select Building Name ---</option>
+							<option value="" hidden>---  Select Building Name - - -</option>
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>

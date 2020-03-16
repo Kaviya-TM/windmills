@@ -4,6 +4,7 @@ $('.inspecting2').hide();
 $('.scheduling').hide();
 $('.submitting').hide();
 $('.documents').hide();
+$('.average').hide();
 $('.market-summary').hide();
 $('.spl-assumption').hide();
 var j=$('#row').val();
@@ -11,6 +12,7 @@ $('#reference').val("REV-2020-"+j+"");
 $('#country').val("United Arab Emirates");
 $('#age').val(0);
 $('#remlife').val(40);
+$('.error').hide();
 $('#age').keyup(function(){
 	if($('#age').val() != ''){
 		var life = 40 - $('#age').val();
@@ -20,6 +22,8 @@ $('#age').keyup(function(){
 		$('#remlife').val(40);
 	}
 });
+
+
 $("#titledeed").change(function() {	
 	  var i = $(this).prev('label').clone();	
 	  var file = $("#titledeed")[0].files[0].name;	
@@ -509,6 +513,113 @@ $("#clientname").change(function() {
 		},
 	});	
 });
+function calView(value){
+	var final = null;
+	if(value == "Park View" || value == "Pool View" || value == "Mountain View"){
+		final = "5";
+	}
+	if(value == "Sea View" || value == "Marina View" || value == "Lake View"){
+		final = "5";
+	}
+	if(value == "Partial Park View" || value == "Partial Pool View" || value == "Partial Mountain View"){
+		final = "4";
+	}
+	if(value == "Partial Sea View" || value == "Partial Marina View" || value == "Partial Lake View"){
+		final = "4";
+	}
+	if(value == "Community View"){
+		final = "3";
+	}
+	return final;
+}
+function calAvg(value){
+	var final = null;
+	if(value == "Very Good"){
+		final = "5";
+	}
+	if(value == "Good"){
+		final = "4";
+	}
+	if(value == "Average"){
+		final = "3";
+	}
+	if(value == "Substandard"){
+		final = "2";
+	}
+	if(value == "Poor"){
+		final = "1";
+	}
+	return final;
+}
+$("#average").click(function(){
+	   var city=$('#city').val(); 
+	   var area=$('#community').val(); 
+	   $('#ecommunity').val(area);
+	   var neighbourhood=$('#subcommunity').val(); 
+	   var buildingName=$('#buildingname').val(); 
+	   $('#ebuidingName').val(buildingName);
+	   var bau = $('#buitUpAreaSize').val();
+	   var location = $('#location').val();
+	   var final = calAvg(location);
+	   $('#subloc').val(final);
+	   var quality = $('#quality').val();
+	   var finall = calAvg(quality);
+	   $('#subqua').val(finall);
+	   var view = $('#view').val();
+	   var finalll = calView(view);
+	   $('#subview').val(finalll);
+	   $('#ebau').val(bau);
+	   $.ajax({
+			url : 'filter-transac',
+			dataType: "text",
+			asyn: true,
+			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName},
+			method : 'POST',
+			success : function(response) {	
+				var obj = $.parseJSON(response);
+				var priceAvg = obj.priceAvg;
+				var sizeAvg = obj.sizeAvg;
+				var dateAvg = obj.dateAvg;
+				var bedAvg = obj.bedAvg;
+				var pricePerAvg = obj.pricePerAvg;
+				var fullBulFloors =  $('#fullBulFloors').val();
+				var floorNo =  $('#floorno').val();
+				$('#subfloor').val(floorNo);
+				var suffix = fullBulFloors.match(/\d+/);
+				suffix = parseInt(suffix[0]) / 2;
+				suffix = suffix.toString();
+				$('#avgfloor').val(suffix);
+				 $('#esizeavg').val(sizeAvg);
+				 $('#edate').val(dateAvg);
+				 $('#ebed').val(bedAvg);
+				 $('#epriceavg').val(priceAvg);
+				 $('#epriceavgper').val(pricePerAvg);
+				 var final = parseInt($('#esizeavg').val()) - parseInt($('#buitUpAreaSize').val());
+				   final = final.toString();
+				   $('#ediff').val(final);
+				   $('#avgbua').val(sizeAvg);
+				   $('#avgdate').val(dateAvg);
+				   $('#subdate').val($('#insdate').val());
+				   $('#subbua').val($('#buitUpAreaSize').val());
+				},
+		});	
+	   $('.average').show();
+	   var floorNo =  $('#floorno').val();
+		$('#subfloor').val(floorNo);
+	   var final = parseInt($('#esizeavg').val()) - parseInt($('#buitUpAreaSize').val());
+	   final = final.toString();
+	   $('#ediff').val(final);	
+	   var fullBulFloors =  $('#fullBulFloors').val();
+		var suffix = fullBulFloors.match(/\d+/);
+		suffix = parseInt(suffix[0]) / 2;
+		suffix = suffix.toString();
+		$('#avgfloor').val(suffix);
+	   $('#subdate').val($('#insdate').val());
+	   $('#subbua').val($('#buitUpAreaSize').val());
+	   $('#avgbua').val($('#esizeavg').val());
+	   $('#avgdate').val($('#edate').val());
+	   $("#average").css("background", "#ff6600");
+});
 $("#bedroom").change(function() {
 	var value = $(this).val();
 	if(value.includes("1")){
@@ -779,6 +890,27 @@ $("#receive").click(function(){
 	$("#submit").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
 });
+$("#average").click(function(){
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$('.average').show();
+	$("#average").css("background", "#ff6600");
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
 $("#schedule").click(function(){
 	$('.inspecting1').hide();
 	$('.submitting').hide();
@@ -827,27 +959,6 @@ $("#documents").click(function(){
 	$('.spl-assumption').hide();
 	$('.documents').show();
 	$("#documents").css("background", "#ff6600");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#filter").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').show();
-	$("#documents").css("background", "#ff6600");
-	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
@@ -943,6 +1054,7 @@ $("#receivenxt").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').show();
+	$('.average').hide();
 	$("#documents").css("background", "#ff6600");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -958,6 +1070,7 @@ $("#schedulenxt").click(function(){
 	$('.submitting').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
+	$('.average').hide();
 	$('.inspecting2').hide();
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
@@ -981,6 +1094,7 @@ $("#scheduleprv").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').show();
+	$('.average').hide();
 	$("#documents").css("background", "#ff6600");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -996,6 +1110,7 @@ $("#inspect1nxt").click(function(){
 	$('.inspecting2').show();
 	$('.submitting').hide();
 	$('.receiving').hide();
+	$('.average').hide();
 	$('.scheduling').hide();
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();

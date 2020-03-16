@@ -31,10 +31,12 @@ import model.Community;
 import model.Documents;
 import model.Property;
 import model.ServiceOfficer;
+import model.SoldTransactions;
 import model.ValuationReport;
 import model.ValuationReportForm;
 import service.ClientService;
 import service.ServiceOfficerService;
+import service.SoldTransactionService;
 import service.ValuationService;
 
 
@@ -44,12 +46,14 @@ public class ValuationController {
 	@Autowired
 	private ValuationService valuationService;
 	
+	@Autowired
+	private SoldTransactionService soldTransactionService;
+	
 	
 	static Logger log = Logger.getLogger(ValuationController.class);
 
 	@RequestMapping(value = {"/addValuation" }, method = RequestMethod.GET)
 	public ModelAndView valuationPage() {
-	
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("addvaluation");
 		List<ClientDetails> clientlist = valuationService.getClients();
@@ -62,7 +66,19 @@ public class ValuationController {
 		String email = authentication.getName();
 		List<ServiceOfficer> serviceofficerlist = valuationService.getServiceOfficer(email);
 		List<ServiceOfficer>  list= valuationService.getDefaultServicer(email);
-		int row = valuationService.getNumberOfRows();;
+		int row = valuationService.getNumberOfRows();
+		List<SoldTransactions> cityylist=soldTransactionService.getCity();
+		List<SoldTransactions> arealist=soldTransactionService.getArea();
+		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
+		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
+		mv.addObject("cityylist",cityylist);
+		mv.addObject("arealist",arealist);
+		mv.addObject("hoodlist",hoodlist);
+		mv.addObject("bullist",bullist);
+		mv.addObject("citylist",citylist);
+		mv.addObject("arealist",arealist);
+		mv.addObject("hoodlist",hoodlist);
+		mv.addObject("bullist",bullist);
 		mv.addObject("clientlist", clientlist);
 		mv.addObject("citylist", citylist);
 		mv.addObject("propertylist", propertylist);
@@ -93,7 +109,27 @@ public class ValuationController {
 		return json;
 
 	}
-	
+	@RequestMapping(value = "/filter-transac", method = RequestMethod.POST)
+	@ResponseBody
+	public JSONObject getFilterTransac(@RequestParam("city")String city,@RequestParam("area")String area,
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName){
+		
+		ModelAndView mv = new ModelAndView();
+		List<SoldTransactions> filterTransaction=soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
+		String dateAvg = soldTransactionService.getDateAvg(filterTransaction);
+		String priceAvg = soldTransactionService.getpriceAvg(filterTransaction);
+		String sizeAvg = soldTransactionService.getSizeAvg(filterTransaction);
+		String pricePerAvg = soldTransactionService.getpricePerAvg(filterTransaction);
+		String bedAvg = soldTransactionService.getBedAvg(filterTransaction);
+		JSONObject json = new JSONObject();
+		json.put("dateAvg", dateAvg);
+		json.put("priceAvg", priceAvg);
+		json.put("sizeAvg", sizeAvg);
+		json.put("bedAvg", bedAvg);
+		json.put("pricePerAvg", pricePerAvg);
+		return json;
+
+	}
 	@RequestMapping(value = {"/valuation-list" }, method = RequestMethod.GET)
 	public ModelAndView serviceOfficerPage() {
 

@@ -154,6 +154,44 @@ public class SoldTransactionService {
 		avg = String.valueOf(df.format(finalValue));
 		return avg;
 	}
+	public String getBedAvg(List<SoldTransactions> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(SoldTransactions st : filterTransaction){
+				String room = st.getRoomNoEstimated();
+				String bed = null;
+				System.err.println("room=="+room);
+				if(room.equals("Studio")){
+					bed = "0";
+				}
+				if(room.equals("1-Bedroom")){
+					bed = "1";
+				}
+				if(room.equals("2-Bedroom")){
+					bed = "2";
+				}
+				if(room.equals("3-Bedroom")){
+					bed = "3";
+				}
+				if(room.equals("4-Bedroom")){
+					bed = "4";
+				}
+				if(room.equals("5-Bedroom")){
+					bed = "5";
+				}
+				if(room == "Unknown"){
+					bed = "0";
+				}
+				System.err.println("bed-->"+bed);
+				int finaed = Integer.parseInt(bed);
+				avglist.add(finaed);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
 	public String getDateAvg(List<SoldTransactions> filterTransaction) {
 		String avg = null;
 		List<LocalDate> myList = new ArrayList<>();
@@ -161,9 +199,9 @@ public class SoldTransactionService {
 		if(!filterTransaction.isEmpty()){
 			for(SoldTransactions st : filterTransaction){
 				String aed = st.getDate();
-				int a = Integer.parseInt(aed.substring(0,4));
-				int b = Integer.parseInt(aed.substring(5,7));
-				int c = Integer.parseInt(aed.substring(8));
+				int a = Integer.parseInt(aed.substring(6));
+				int b = Integer.parseInt(aed.substring(3,5));
+				int c = Integer.parseInt(aed.substring(0,2));
 				System.err.println(LocalDate.of(a, b, c));
 				myList.add(LocalDate.of(a, b, c));
 			}
@@ -173,7 +211,7 @@ public class SoldTransactionService {
 		            .mapToLong(x -> x.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli()).average()
 		            .getAsDouble();
 		new Date(ave);
-		SimpleDateFormat date = new SimpleDateFormat("yyyy.MM.dd");
+		SimpleDateFormat date = new SimpleDateFormat("dd-MMM-yyyy");
 		String dd = date.format(ave);
 		avg = dd.toString();
 		return avg;

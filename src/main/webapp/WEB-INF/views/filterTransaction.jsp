@@ -56,7 +56,7 @@
 						<div class="head stylename" style="width:12%;color:darkseagreen !important;font-weight:700">Bulding Name</div>
 						<div class="head stylename" style="width:12%;color:darkseagreen !important;font-weight:700">Developer</div>
 						<div class="head stylename" style="width:11%;color:darkseagreen !important;font-weight:700">Property SubType</div>
-						<div class="head stylename" style="width:8%;color:darkseagreen !important;font-weight:700">Room No Est</div>
+						<div class="head stylename" style="width:8%;color:darkseagreen !important;font-weight:700">${bedAvg}</div>
 						<div class="head stylename" style="width:6%;color:darkseagreen !important;font-weight:700">LA-sqf</div>
 						<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">${sizeAvg}</div>
 						<div class="head stylename" style="color:#fff !important;font-weight:700">${priceAvg}</div>

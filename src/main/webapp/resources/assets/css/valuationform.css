@@ -10,11 +10,11 @@
 	font-size: 11px;
 }
 .valbtn {
-	    width: 7%;
+	width: 7.5%;
     float: left;
     padding: 4px;
     margin-top: 0px;
-    margin-right: 3px;
+    margin-right: 6.2px;
     background: #000080;
     cursor: pointer;
 }
@@ -122,7 +122,25 @@
 #valuationform {
 	margin-top: 50px;
 }
-
+.avgholder{
+	width:100% !important;
+	height:20px;
+}
+.sectionTT{
+	font-size:12px !important;
+	margin-right:1% !important;
+	width:9% !important;
+	float:left;
+	font-family:sans-serif;
+	text-align:center;
+}
+.sectionT{
+	font-weight:800 !important;
+	font-size:12px !important;
+	margin-right:2% !important;
+	width:9% !important;
+	font-family:sans-serif;
+}
 #inspect1prv {
 	float: left;
 	background-image: linear-gradient(to right, #ff6600, #000080);

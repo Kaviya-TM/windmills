@@ -5,6 +5,8 @@ $('.scheduling').hide();
 $('.submitting').hide();
 $('.documents').hide();
 $('.average').hide();
+$('.filter').hide();
+$('.errfilter').hide();
 $('.market-summary').hide();
 $('.spl-assumption').hide();
 var j=$('#row').val();
@@ -513,6 +515,18 @@ $("#clientname").change(function() {
 		},
 	});	
 });
+function calDate(startD,endD){
+	    
+	  var startDate = new Date(startD);
+	  var endDate   = new Date(endD);
+	      
+	  var endMoment   = moment(endDate);
+	  var startMoment = moment(startDate);
+	  
+	  var finalDate = endMoment.diff(startMoment, 'days');
+
+	  return finalDate;
+}
 function calView(value){
 	var final = null;
 	if(value == "Park View" || value == "Pool View" || value == "Mountain View"){
@@ -551,6 +565,50 @@ function calAvg(value){
 	}
 	return final;
 }
+$("#filter").click(function(){
+	 var city=$('#city').val(); 
+	 var area=$('#community').val(); 
+	 var neighbourhood=$('#subcommunity').val(); 
+	 var buildingName=$('#buildingname').val(); 
+	 $.ajax({
+			url : 'filtered-transaction-list',
+			dataType: "text",
+			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName},
+			method : 'POST',
+			success : function(response) {
+				var obj = $.parseJSON(response);
+				if((Object.keys(obj).length) === 0){
+					$('.errfilter').show();
+					$('.filter').hide();
+				}
+				else{
+					$('.errfilter').hide();
+					$('.filter').show();
+					for (x in obj) {
+						console.log(obj[x].transactionId);
+						$('.filter').append("" +
+								"<div id="+obj[x].transactionId+" class='column' style='margin-bottom:5px;height:40px'>" +
+									" <div id="+ obj[x].transactionId +">" +
+									  	" <div class='head stylename' style='width:5.6%'>" + obj[x].date + "</div>" +
+									  	" <div class='head stylename' style='width:5%'>" + obj[x].type + "</div>" +
+									  	" <div class='head stylename' style='width:6%'>" + obj[x].city + "</div>" +
+									  	" <div class='head stylename' >" + obj[x].area + "</div>" +
+									  	" <div class='head stylename' style='width:9%'>" + obj[x].neighbourhood + "</div>" +
+									  	" <div class='head stylename' style='width:12%'>" + obj[x].buildingName + "</div>" +
+									  	" <div class='head stylename' style='width:12%'>" + obj[x].developer + "</div>" +
+									  	" <div class='head stylename' style='width:12%'>" + obj[x].propertySubType + "</div>" +
+									  	" <div class='head stylename' style='width:7%'>" + obj[x].roomNoEstimated + "</div>" +
+									  	" <div class='head stylename' style='width:6%'>" + obj[x].landAreaSqf + "</div>" +
+									  	" <div class='head stylename' style='width:5%'>" + obj[x].sizeSqf + "</div>" +
+									  	" <div class='head stylename' style='width:8%'>" + obj[x].price + "</div>" +
+									  	" <div class='head stylename' style='width:0%'>" + obj[x].pricePerSqFt + "</div>" +
+									  "</div>" +
+							    "</div>");
+					}
+				}
+			}
+	 });	
+});
 $("#average").click(function(){
 	   var city=$('#city').val(); 
 	   var area=$('#community').val(); 
@@ -562,12 +620,21 @@ $("#average").click(function(){
 	   var location = $('#location').val();
 	   var final = calAvg(location);
 	   $('#subloc').val(final);
+	   var diffloc = parseInt($('#subloc').val()) - parseInt($('#avgloc').val());
+	   diffloc = diffloc.toString();
+	   $('#diffloc').val(diffloc);
 	   var quality = $('#quality').val();
 	   var finall = calAvg(quality);
 	   $('#subqua').val(finall);
+	   var diffqua = parseInt($('#subqua').val()) - parseInt($('#avgqua').val());
+	   diffqua = diffqua.toString();
+	   $('#diffqua').val(diffqua);
 	   var view = $('#view').val();
 	   var finalll = calView(view);
 	   $('#subview').val(finalll);
+	   var diffview = parseInt($('#subview').val()) - parseInt($('#avgview').val());
+	   diffview = diffview.toString();
+	   $('#diffview').val(diffview);
 	   $('#ebau').val(bau);
 	   $.ajax({
 			url : 'filter-transac',
@@ -581,44 +648,109 @@ $("#average").click(function(){
 				var sizeAvg = obj.sizeAvg;
 				var dateAvg = obj.dateAvg;
 				var bedAvg = obj.bedAvg;
+				var weil = $('#weiloc').val();
+				weil = weil.replace(/%/g , '');
+				var finalloc = parseInt($('#diffloc').val()) * parseFloat(weil) * parseInt(priceAvg) / 100;
+				finalloc =parseInt(finalloc);
+				finalloc = finalloc.toLocaleString();
+				$('#adjloc').val(finalloc);
+				var weiv = $('#weiview').val();
+				weiv = weiv.replace(/%/g , '');
+				var finalview = parseInt($('#diffloc').val()) * parseFloat(weiv) * parseInt(priceAvg) / 100;
+				finalview =parseInt(finalview);
+				finalview = finalloc.toLocaleString();
+				$('#adjview').val(finalview);
+				var weif = $('#weifloor').val();
+				weif = weif.replace(/%/g , '');
+				var finalfloor = parseInt($('#difffloor').val()) * parseFloat(weif) * parseInt(priceAvg) / 100;
+				finalfloor =parseInt(finalfloor);
+				finalfloor = finalfloor.toLocaleString();
+				$('#adjfloor').val(finalfloor);
+				var weiq = $('#weiqua').val();
+				weiq = weiq.replace(/%/g , '');
+				var finalqua = parseInt($('#diffqua').val()) * parseFloat(weiq) * parseInt(priceAvg) / 100;
+				finalqua =parseInt(finalqua);
+				finalqua = finalqua.toLocaleString();
+				$('#adjqua').val(finalqua);
 				var pricePerAvg = obj.pricePerAvg;
 				var fullBulFloors =  $('#fullBulFloors').val();
 				var floorNo =  $('#floorno').val();
 				$('#subfloor').val(floorNo);
 				var suffix = fullBulFloors.match(/\d+/);
-				suffix = parseInt(suffix[0]) / 2;
-				suffix = suffix.toString();
-				$('#avgfloor').val(suffix);
-				 $('#esizeavg').val(sizeAvg);
+				if(suffix){
+					suffix = parseInt(suffix[0]) / 2;
+					suffix = suffix.toString();
+					$('#avgfloor').val(suffix);
+				}
+				var difffloor = parseInt($('#subfloor').val()) - parseFloat($('#avgfloor').val());
+				difffloor = difffloor.toString();
+				$('#difffloor').val(difffloor);
+				var esizeAvg = parseInt(sizeAvg);
+				esizeAvg = esizeAvg.toLocaleString();
+				 $('#esizeavg').val(esizeAvg);
 				 $('#edate').val(dateAvg);
 				 $('#ebed').val(bedAvg);
-				 $('#epriceavg').val(priceAvg);
-				 $('#epriceavgper').val(pricePerAvg);
-				 var final = parseInt($('#esizeavg').val()) - parseInt($('#buitUpAreaSize').val());
+				 var epriceAvg = parseInt(priceAvg);
+				 epriceAvg = epriceAvg.toLocaleString();
+				 $('#epriceavg').val(epriceAvg);
+				 var epricePerAvg = parseInt(pricePerAvg);
+				 epricePerAvg = epricePerAvg.toLocaleString();
+				 $('#epriceavgper').val(epricePerAvg);
+				 var final =  parseInt($('#buitUpAreaSize').val()) - parseInt(sizeAvg);
 				   final = final.toString();
 				   $('#ediff').val(final);
+				   $('#diffbua').val(final);	
 				   $('#avgbua').val(sizeAvg);
 				   $('#avgdate').val(dateAvg);
 				   $('#subdate').val($('#insdate').val());
+				   var finalDate = calDate($('#avgdate').val(),$('#subdate').val());
+				   $('#diffdate').val(finalDate);
 				   $('#subbua').val($('#buitUpAreaSize').val());
+				   var weib = $('#weibua').val();
+				   weib = weib.replace(/%/g , '');
+				   var finalbua = parseInt($('#diffbua').val()) * parseFloat(weib) * parseInt(pricePerAvg) / 100;
+				   finalbua =parseInt(finalbua);
+				   finalbua = finalbua.toLocaleString();
+				   $('#adjbua').val(finalbua);
+				   var weid = $('#weidate').val();
+				   weid = weid.replace(/%/g , '');
+				   var finaldate = parseFloat(weid) * parseInt(priceAvg) * (16 / 30) / 100;
+				   finaldate =parseInt(finaldate);
+				   finaldate = finaldate.toLocaleString();
+				   $('#adjdate').val(finaldate);
+				   
+				   var marketValue = parseInt(priceAvg) + parseInt(finaldate.replace(/,/g , '')) +parseInt(finalbua.replace(/,/g , '')) +parseInt(finalqua.replace(/,/g , '')) +parseInt(finalfloor.replace(/,/g , ''))+
+				   					parseInt(finalloc.replace(/,/g , '')) + parseInt(finalview.replace(/,/g , ''));
+				   marketValue = marketValue.toLocaleString();
+				   $('#marketvalue').val(marketValue);
 				},
 		});	
 	   $('.average').show();
 	   var floorNo =  $('#floorno').val();
 		$('#subfloor').val(floorNo);
-	   var final = parseInt($('#esizeavg').val()) - parseInt($('#buitUpAreaSize').val());
-	   final = final.toString();
-	   $('#ediff').val(final);	
+//	   var final = parseInt($('#buitUpAreaSize').val()) - parseInt(sizeAvg);
+//	   final = final.toString();
+//	   $('#ediff').val(final);	
+//	   $('#diffbua').val(final);
+	   var finalDate = calDate($('#subdate').val(),$('#avgdate').val());
+	   $('#diffdate').val(finalDate);
 	   var fullBulFloors =  $('#fullBulFloors').val();
 		var suffix = fullBulFloors.match(/\d+/);
-		suffix = parseInt(suffix[0]) / 2;
-		suffix = suffix.toString();
-		$('#avgfloor').val(suffix);
+		if(suffix){
+			suffix = parseInt(suffix[0]) / 2;
+			suffix = suffix.toString();
+			$('#avgfloor').val(suffix);
+		}
+		var difffloor = parseInt($('#subfloor').val()) - parseInt($('#avgfloor').val());
+		difffloor = difffloor.toString();
+		$('#difffloor').val(difffloor);
 	   $('#subdate').val($('#insdate').val());
 	   $('#subbua').val($('#buitUpAreaSize').val());
 	   $('#avgbua').val($('#esizeavg').val());
 	   $('#avgdate').val($('#edate').val());
 	   $("#average").css("background", "#ff6600");
+	   
+	   
 });
 $("#bedroom").change(function() {
 	var value = $(this).val();
@@ -879,12 +1011,41 @@ $("#receive").click(function(){
 	$('.inspecting2').hide();
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
+	$('.errfilter').hide();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
 	$("#receive").css("background", "#ff6600");
+	$("#schedule").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#filter").click(function(){
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.documents').hide();
+	$('.average').hide();
+	$('.errfilter').hide();
+	$('.filter').show();
+	$("#filter").css("background", "#ff6600");
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
+	$("#average").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
 	$("#submit").css("background", "#000080");
@@ -900,6 +1061,9 @@ $("#average").click(function(){
 	$('.spl-assumption').hide();
 	$('.documents').hide();
 	$('.average').show();
+	$('.filter').hide();
+	$('.errfilter').hide();
+	$("#filter").css("background", "#000080");
 	$("#average").css("background", "#ff6600");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
@@ -920,6 +1084,8 @@ $("#schedule").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -939,6 +1105,11 @@ $("#inspect1").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.filter').hide();
+	$('.errfilter').hide();
+	$("#filter").css("background", "#000080");
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -958,6 +1129,11 @@ $("#documents").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').show();
+	$('.average').hide();
+	$('.filter').hide();
+	$('.errfilter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#ff6600");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -977,6 +1153,11 @@ $("#inspect2").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.filter').hide();
+	$('.errfilter').hide();
+	$("#filter").css("background", "#000080");
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -993,9 +1174,14 @@ $("#marketsum").click(function(){
 	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.inspecting2').hide();
+	$('.errfilter').hide();
 	$('.market-summary').show();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#ff6600");
 	$("#splAssumption").css("background", "#000080");
@@ -1015,6 +1201,11 @@ $("#splAssumption").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').show();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.filter').hide();
+	$('.errfilter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
 	$("#splAssumption").css("background", "#ff6600");
@@ -1034,6 +1225,11 @@ $("#submit").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.filter').hide();
+	$('.errfilter').hide();
+	$("#filter").css("background", "#000080");
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1055,6 +1251,10 @@ $("#receivenxt").click(function(){
 	$('.spl-assumption').hide();
 	$('.documents').show();
 	$('.average').hide();
+	$('.errfilter').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#ff6600");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1075,6 +1275,9 @@ $("#schedulenxt").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.errfilter').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1094,7 +1297,11 @@ $("#scheduleprv").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').show();
+	$('.filter').hide();
+	$('.errfilter').hide();
+	$("#filter").css("background", "#000080");
 	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#ff6600");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1115,6 +1322,11 @@ $("#inspect1nxt").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.filter').hide();
+	$('.errfilter').hide();
+	$("#filter").css("background", "#000080");
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1134,6 +1346,9 @@ $("#inspect1prv").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.errfilter').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1153,6 +1368,10 @@ $("#splnxt").click(function(){
 	$('.market-summary').show();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#ff6600");
 	$("#splAssumption").css("background", "#000080");
@@ -1160,6 +1379,7 @@ $("#splnxt").click(function(){
 	$("#submit").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
+	$('.errfilter').hide();
 	$("#receive").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
 });
@@ -1172,10 +1392,15 @@ $("#splprv").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
 	$("#inspect1").css("background", "#000080");
+	$('.errfilter').hide();
 	$("#inspect2").css("background", "#ff6600");
 	$("#schedule").css("background", "#000080");
 	$("#submit").css("background", "#000080");
@@ -1191,12 +1416,15 @@ $("#mrtnxt").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
 	$("#schedule").css("background", "#000080");
 	$("#submit").css("background", "#ff6600");
 	$("#inspect1").css("background", "#000080");
+	$('.errfilter').hide();
 	$("#inspect2").css("background", "#000080");
 	$("#receive").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
@@ -1210,6 +1438,10 @@ $("#mrtprv").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').show();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#ff6600");
@@ -1219,6 +1451,7 @@ $("#mrtprv").click(function(){
 	$("#schedule").css("background", "#000080");
 	$("#submit").css("background", "#000080");
 	$("#receive").css("background", "#000080");
+	$('.errfilter').hide();
 	$("#conflict").css("background", "#000080");
 });
 $("#docnxt").click(function(){
@@ -1230,6 +1463,10 @@ $("#docnxt").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1238,6 +1475,7 @@ $("#docnxt").click(function(){
 	$("#inspect1").css("background", "#000080");
 	$("#inspect2").css("background", "#000080");
 	$("#receive").css("background", "#000080");
+	$('.errfilter').hide();
 	$("#conflict").css("background", "#000080");
 });
 $("#docprv").click(function(){
@@ -1249,6 +1487,10 @@ $("#docprv").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1258,6 +1500,7 @@ $("#docprv").click(function(){
 	$("#submit").css("background", "#000080");
 	$("#receive").css("background", "#ff6600");
 	$("#conflict").css("background", "#000080");
+	$('.errfilter').hide();
 });
 $("#inspect2nxt").click(function(){
 	$('.inspecting1').hide();
@@ -1268,6 +1511,10 @@ $("#inspect2nxt").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').show();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#ff6600");
@@ -1277,6 +1524,7 @@ $("#inspect2nxt").click(function(){
 	$("#inspect2").css("background", "#000080");
 	$("#receive").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
+	$('.errfilter').hide();
 });
 $("#inspect2prv").click(function(){
 	$('.inspecting1').show();
@@ -1287,6 +1535,10 @@ $("#inspect2prv").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$('.average').hide();
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
 	$("#splAssumption").css("background", "#000080");
@@ -1296,6 +1548,7 @@ $("#inspect2prv").click(function(){
 	$("#submit").css("background", "#000080");
 	$("#receive").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
+	$('.errfilter').hide();
 });
 $("#submitprv").click(function(){
 	$('.inspecting2').hide();
@@ -1306,6 +1559,10 @@ $("#submitprv").click(function(){
 	$('.market-summary').show();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.average').hide();
+	$('.filter').hide();
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#ff6600");
 	$("#splAssumption").css("background", "#000080");
@@ -1315,4 +1572,5 @@ $("#submitprv").click(function(){
 	$("#submit").css("background", "#000080");
 	$("#receive").css("background", "#000080");
 	$("#conflict").css("background", "#000080");
+	$('.errfilter').hide();
 });

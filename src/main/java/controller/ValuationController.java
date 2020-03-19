@@ -98,6 +98,16 @@ public class ValuationController {
 		return list;
 
 	}
+	@RequestMapping(value = "/filtered-transaction-list", method = RequestMethod.POST)
+	@ResponseBody
+	public List<SoldTransactions> getFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName){
+		System.err.println("**"+neighbourhood);
+		List<SoldTransactions> list = soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
+		return list;
+
+	}
+	
 	@RequestMapping(value = "/getValuationApproach", method = RequestMethod.POST)
 	@ResponseBody
 	public JSONObject getValuationApproach(@RequestParam("propertyValued") String propertyValued) {

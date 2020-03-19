@@ -77,11 +77,13 @@ public class SoldTransactionController {
 		String sizeAvg = soldTransactionService.getSizeAvg(filterTransaction);
 		String pricePerAvg = soldTransactionService.getpricePerAvg(filterTransaction);
 		String bedAvg = soldTransactionService.getBedAvg(filterTransaction);
+		String landAvg = soldTransactionService.getlandAvg(filterTransaction);
 		mv.addObject("pricePerAvg",pricePerAvg);
 		mv.addObject("sizeAvg",sizeAvg);
 		mv.addObject("bedAvg",bedAvg);
 		mv.addObject("priceAvg",priceAvg);
 		mv.addObject("dateAvg",dateAvg);
+		mv.addObject("landAvg",landAvg);
 		mv.addObject("filterTransaction",filterTransaction);
 		mv.setViewName("filterTransaction");
 		return mv;

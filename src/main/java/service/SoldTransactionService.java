@@ -215,5 +215,28 @@ public class SoldTransactionService {
 		String dd = date.format(ave);
 		avg = dd.toString();
 		return avg;
+	}
+	public String getlandAvg(List<SoldTransactions> filterTransaction) {
+		String avg = "";
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(SoldTransactions st : filterTransaction){
+				String aed = st.getLandAreaSqf();
+				if(aed.equals("-")){
+					//
+				}
+				else{
+					int finaed = Integer.parseInt(aed);
+					avglist.add(finaed);
+				}
+			}
+			System.err.println(avglist.size());
+			if(!avglist.isEmpty()){
+				double finalValue =  calculateAverage(avglist);
+				avg = String.valueOf(df.format(finalValue));
+				System.err.println(avg);
+			}
+		}
+		return avg;
 	}	
 }

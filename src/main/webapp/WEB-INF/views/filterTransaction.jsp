@@ -47,17 +47,16 @@
 				   </div>
 				</div>
 			</c:forEach>
-			<div class="column" style="background:darkseagreen;color:#fff !important;margin-top:10px;margin-bottom:5px;border: 1px solid darkseagreen;border-radius:5px;">
-						<div class="head stylename" style="width:5.6%;color:#fff !important;font-weight:700">${dateAvg}</div>
-						<div class="head stylename" style="width:5%;color:darkseagreen !important;font-weight:700">Type</div>
-						<div class="head stylename" style="width:6%;color:darkseagreen !important;font-weight:700">City</div>
-						<div class="head stylename" style="color:darkseagreen !important;font-weight:700">Area</div>
-						<div class="head stylename" style="width:9%;color:darkseagreen !important;font-weight:700">Neighbourhood</div>
-						<div class="head stylename" style="width:12%;color:darkseagreen !important;font-weight:700">Bulding Name</div>
-						<div class="head stylename" style="width:12%;color:darkseagreen !important;font-weight:700">Developer</div>
-						<div class="head stylename" style="width:11%;color:darkseagreen !important;font-weight:700">Property SubType</div>
-						<div class="head stylename" style="width:8%;color:darkseagreen !important;font-weight:700">${bedAvg}</div>
-						<div class="head stylename" style="width:6%;color:darkseagreen !important;font-weight:700">LA-sqf</div>
+			<div class="column" style="background:limegreen;color:#fff !important;margin-top:10px;margin-bottom:5px;border: 1px solid limegreen;border-radius:5px;">
+						<div class="head stylename" style="width:11%;text-align:left;color:#fff !important;font-weight:700">${dateAvg}</div>
+						<div class="head stylename" style="width:6%;color:limegreen !important;font-weight:700">City</div>
+						<div class="head stylename" style="color:limegreen !important;font-weight:700">Area</div>
+						<div class="head stylename" style="width:9%;color:limegreen !important;font-weight:700">Neighbourhood</div>
+						<div class="head stylename" style="width:12%;color:limegreen !important;font-weight:700">Bulding Name</div>
+						<div class="head stylename" style="width:12%;color:limegreen !important;font-weight:700">Developer</div>
+						<div class="head stylename" style="width:11%;color:limegreen !important;font-weight:700">Property SubType</div>
+						<div class="head stylename" style="width:8%;color:limegreen !important;font-weight:700">${bedAvg}</div>
+						<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">${landAvg}</div>
 						<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">${sizeAvg}</div>
 						<div class="head stylename" style="color:#fff !important;font-weight:700">${priceAvg}</div>
 						<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">${pricePerAvg}</div>

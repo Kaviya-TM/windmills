@@ -51,6 +51,11 @@
 						name="location" value="${weightageeditform.location}" id="" placeholder="Location">
 				</div>
 				<div class="propertyholder">
+					<label class="propertylabel">Age</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="age" value="${weightageeditform.age}" id="" placeholder="ex:1%">
+				</div>
+				<div class="propertyholder">
 					<label class="propertylabel">View</label> <input
 						type="text" class="form-control form-control-sm propertytext"
 						name="view" id="" value="${weightageeditform.view}" placeholder="View">

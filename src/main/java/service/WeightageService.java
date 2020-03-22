@@ -45,6 +45,7 @@ import dao.WeightageDaoImpl;
 import model.ClientDetails;
 import model.Property;
 import model.ServiceOfficer;
+import model.SoldTransactions;
 import model.Weightage;
 import utils.Constants;
 
@@ -84,6 +85,81 @@ public class WeightageService {
 	@Transactional
 	public void deleteWeightage(int weightId) {
 		weightageDaoImpl.deleteWeightage(weightId);
+	}
+	@Transactional
+	public List<Weightage> getWeightage(String city, String propertyType) {
+		List<Weightage> list=weightageDaoImpl.getWeightage(city,propertyType);
+		return list;
+	}
+	public String getLocWeight(List<Weightage> weightage) {
+		String locweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				locweight = wg.getLocation();
+				break;
+			}
+		}
+		return locweight;
+	}
+	public String getViewWeight(List<Weightage> weightage) {
+		String viewweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				viewweight = wg.getView();
+				break;
+			}
+		}
+		return viewweight;
+	}
+	public String getQuaWeight(List<Weightage> weightage) {
+		String quaweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				quaweight = wg.getQuality();
+				break;
+			}
+		}
+		return quaweight;
+	}
+	public String getFloorWeight(List<Weightage> weightage) {
+		String floorweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				floorweight = wg.getFloor();
+				break;
+			}
+		}
+		return floorweight;
+	}
+	public String getLandWeight(List<Weightage> weightage) {
+		String landweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				landweight = wg.getLandSize();
+				break;
+			}
+		}
+		return landweight;
+	}
+	public String getBuaWeight(List<Weightage> weightage) {
+		String buaweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				buaweight = wg.getLandSize();
+				break;
+			}
+		}
+		return buaweight;
+	}
+	public String getDateWeight(List<Weightage> weightage) {
+		String dateweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				dateweight = wg.getAge();
+				break;
+			}
+		}
+		return dateweight;
 	}
 	
 }

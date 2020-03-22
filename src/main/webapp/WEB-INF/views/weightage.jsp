@@ -46,32 +46,37 @@
 				<div class="propertyholder">
 					<label class="propertylabel">Location</label> <input
 						type="text" class="form-control form-control-sm propertytext"
-						name="location" id="" placeholder="Location">
+						name="location" id="" placeholder="ex:10%">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Age</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="age" id="" placeholder="ex:1%">
 				</div>
 				<div class="propertyholder">
 					<label class="propertylabel">View</label> <input
 						type="text" class="form-control form-control-sm propertytext"
-						name="view" id="" placeholder="View">
+						name="view" id="" placeholder="ex:10%">
 				</div>
 				<div class="propertyholder">
 					<label class="propertylabel">Quality</label> <input
 						type="text" class="form-control form-control-sm propertytext"
-						name="quality" id="" placeholder="Quality">
+						name="quality" id="" placeholder="ex:10%">
 				</div>
 				<div class="propertyholder">
 					<label class="propertylabel">Floor</label> <input
 						type="text" class="form-control form-control-sm propertytext"
-						name="floor" id="" placeholder="Floor">
+						name="floor" id="" placeholder="ex:0.5%">
 				</div>
 				<div class="propertyholder">
 					<label class="propertylabel">Land Size</label> <input
 						type="text" class="form-control form-control-sm propertytext"
-						name="landSize" id="" placeholder="Land Size">
+						name="landSize" id="" placeholder="ex:10%">
 				</div>
 				<div class="propertyholder">
 					<label class="propertylabel">BUA</label> <input
 						type="text" class="form-control form-control-sm propertytext"
-						name="bua" id="" placeholder="BUA">
+						name="bua" id="" placeholder="ex:10%">
 				</div>
 
 				<div class="form-group" style="width: 100%">

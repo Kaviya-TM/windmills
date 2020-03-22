@@ -34,10 +34,12 @@ import model.ServiceOfficer;
 import model.SoldTransactions;
 import model.ValuationReport;
 import model.ValuationReportForm;
+import model.Weightage;
 import service.ClientService;
 import service.ServiceOfficerService;
 import service.SoldTransactionService;
 import service.ValuationService;
+import service.WeightageService;
 
 
 @Controller
@@ -45,6 +47,9 @@ public class ValuationController {
 	
 	@Autowired
 	private ValuationService valuationService;
+	
+	@Autowired
+	private WeightageService weightageService;
 	
 	@Autowired
 	private SoldTransactionService soldTransactionService;
@@ -122,17 +127,34 @@ public class ValuationController {
 	@RequestMapping(value = "/filter-transac", method = RequestMethod.POST)
 	@ResponseBody
 	public JSONObject getFilterTransac(@RequestParam("city")String city,@RequestParam("area")String area,
-			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName){
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName, @RequestParam("propertyType")String propertyType){
 		
 		ModelAndView mv = new ModelAndView();
 		List<SoldTransactions> filterTransaction=soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
+		List<Weightage> weightage = weightageService.getWeightage(city,propertyType);
+		String locWeight = weightageService.getLocWeight(weightage);
+		String viewWeight = weightageService.getViewWeight(weightage);
+		String dateWeight = weightageService.getDateWeight(weightage);
+		String quaWeight = weightageService.getQuaWeight(weightage);
+		String floorWeight = weightageService.getFloorWeight(weightage);
+		String landWeight = weightageService.getLandWeight(weightage);
+		String buaWeight = weightageService.getBuaWeight(weightage);
 		String dateAvg = soldTransactionService.getDateAvg(filterTransaction);
+		String landAvg = soldTransactionService.getlandAvg(filterTransaction);
 		String priceAvg = soldTransactionService.getpriceAvg(filterTransaction);
 		String sizeAvg = soldTransactionService.getSizeAvg(filterTransaction);
 		String pricePerAvg = soldTransactionService.getpricePerAvg(filterTransaction);
 		String bedAvg = soldTransactionService.getBedAvg(filterTransaction);
 		JSONObject json = new JSONObject();
+		json.put("locWeight", locWeight);
+		json.put("viewWeight", viewWeight);
+		json.put("quaWeight", quaWeight);
+		json.put("dateWeight", dateWeight);
+		json.put("floorWeight", floorWeight);
+		json.put("landWeight", landWeight);
+		json.put("buaWeight", buaWeight);
 		json.put("dateAvg", dateAvg);
+		json.put("landAvg", landAvg);
 		json.put("priceAvg", priceAvg);
 		json.put("sizeAvg", sizeAvg);
 		json.put("bedAvg", bedAvg);
@@ -181,12 +203,25 @@ public class ValuationController {
 		
 	}
 	
-	@RequestMapping(value = "/getCity", method = RequestMethod.POST)
+//	@RequestMapping(value = "/getCity", method = RequestMethod.POST)
+//	@ResponseBody
+//	public String getCity(@RequestParam("community") String community) {
+//		String city = valuationService.getCity(community);
+//		return city;
+//
+//	}
+	@RequestMapping(value = "/getEverything", method = RequestMethod.POST)
 	@ResponseBody
-	public String getCity(@RequestParam("community") String community) {
-		String city = valuationService.getCity(community);
-		return city;
-
+	public JSONObject getEverything(@RequestParam("buildingName") String buildingName) {
+		System.err.println("buildingName"+buildingName);
+			String community = valuationService.getCommunity(buildingName);
+			String subcommunity = valuationService.getSubCommunity(buildingName);
+			String city = valuationService.getCityy(buildingName);
+			JSONObject json = new JSONObject();
+			json.put("city", city);
+			json.put("subcommunity", subcommunity);
+			json.put("community", community);
+			return json;
 	}
 	
 	@RequestMapping(value = "/saveValuation", method = RequestMethod.POST)

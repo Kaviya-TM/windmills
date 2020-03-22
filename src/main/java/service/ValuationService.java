@@ -41,6 +41,7 @@ import model.Community;
 import model.Documents;
 import model.Property;
 import model.ServiceOfficer;
+import model.SoldTransactions;
 import model.ValuationReport;
 import model.ValuationReportForm;
 import utils.WindmillsUtils;
@@ -291,7 +292,38 @@ public class ValuationService {
 
 
 	}
+	@Transactional
+	public String getCommunity(String buildingName) {
+		List<SoldTransactions> list = valuationDaoImpl.getEverything(buildingName);
+		String community = null;
+		for(SoldTransactions r1 : list){
+			community = r1.getArea();
+			break;
+		}
+		return community;
+	}
 	
+	@Transactional
+	public String getSubCommunity(String buildingName) {
+		List<SoldTransactions> list = valuationDaoImpl.getEverything(buildingName);
+		String subcommunity = null;
+		for(SoldTransactions r1 : list){
+			subcommunity = r1.getNeighbourhood();
+			break;
+		}
+		return subcommunity;
+	}
+	
+	@Transactional
+	public String getCityy(String buildingName) {
+		List<SoldTransactions> list = valuationDaoImpl.getEverything(buildingName);
+		String city = null;
+		for(SoldTransactions r1 : list){
+			city = r1.getCity();
+			break;
+		}
+		return city;
+	}
 
 
 }

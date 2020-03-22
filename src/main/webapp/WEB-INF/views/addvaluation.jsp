@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="resources/assets/css/valuationform.css">
 <link rel="stylesheet"
 	href="resources/assets/bundles/bootstrap-daterangepicker/daterangepicker.css">
+	<link rel="stylesheet"
+	href="resources/assets/bundles/pretty-checkbox/pretty-checkbox.min.css">
 <link rel="stylesheet"
 	href="resources/assets/bundles/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
 <link rel="stylesheet" href="resources/assets/css/soldtransaction.css">
@@ -22,38 +24,110 @@
 		style="background: rgb(229, 231, 233) !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
 			<button class="valbtn" id="receive">Receive Valuation</button>
-			<button class="valbtn" id="receive" style="width: 8.5%;">Check Conflict Of Interest</button>
+			<button class="valbtn" id="conflict" style="width: 8.5%;">Check Conflict Of Interest</button>
 			<button class="valbtn" id="documents">Receive Documents</button>
 			<button class="valbtn" id="schedule">Schedule Inspection</button>
 			<button class="valbtn" id="inspect1">Inspect Property A</button>
 			<button class="valbtn" id="inspect2">Inspect Property B</button>
 			<button class="valbtn" id="splAssumption">Special Assumption</button>
-			<button class="valbtn" id="receive">Extent Of Investigation</button>
+			<button class="valbtn" id="extent">Extent Of Investigation</button>
 			<button class="valbtn" id="marketsum">Market Summary</button>
-			<button class="valbtn" id="filter">Filter Transaction</button>
+			<button class="valbtn" id="filter">Sold Transaction</button>
 			<button class="valbtn" id="average">Sold-Trans Calculation</button>
+			<button class="valbtn" id="filter">Listing Transaction</button>
 			<button class="valbtn" id="marketsum">Listing Calculation</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
 		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
 			<div class="errfilter">No Matching Found !!!</div>
 			<div class="form-group filter">	
-			<div class="column" style="height:27px;background:limegreen;color:#fff !important;margin-bottom:5px;border: 1px solid #ff6600;border-radius:5px;">
-				<div class="head stylename" style="width:5.6%;color:#fff !important;font-weight:700">Date</div>
-				<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Type</div>
-				<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">City</div>
-				<div class="head stylename" style="color:#fff !important;font-weight:700">Area</div>
-				<div class="head stylename" style="width:9%;color:#fff !important;font-weight:700">Neighbourhood</div>
-				<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Bulding Name</div>
-				<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Developer</div>
-				<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700">Property SubType</div>
-				<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">Room No Est</div>
-				<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">LA-sqf</div>
-				<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
-				<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
-				<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
+				<div class="column" style="height:27px;background:limegreen;color:#fff !important;margin-bottom:5px;border: 1px solid limegreen;border-radius:5px;">
+					<div class="head stylename" style="width:5.6%;color:#fff !important;font-weight:700">Date</div>
+					<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Type</div>
+					<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">City</div>
+					<div class="head stylename" style="color:#fff !important;font-weight:700">Area</div>
+					<div class="head stylename" style="width:9%;color:#fff !important;font-weight:700">Neighbourhood</div>
+					<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Bulding Name</div>
+					<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Developer</div>
+					<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700">Property SubType</div>
+					<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">Room No Est</div>
+					<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">LA-sqf</div>
+					<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
+					<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
+					<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
+				</div>
 			</div>
-			</div>
+			<div class="form-group conflict">
+				<div class="coholder" style="color:black !important;margin-top:65px !important">
+	                  <div class="" style="float:left;margin-right:20px;color: black;">Do we have any conflict related to Buyer?</div>  
+	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px">
+							<input type="checkbox" id="" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;">
+							<input type="checkbox" id="" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>   
+				  </div><br>
+				  	<div class="coholder" style="color:balck !important">
+	                  <div class="" style="float:left;margin-right:20px;color: black;">Do we have any conflict related to Seller?</div>  
+	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px">
+							<input type="checkbox" id="" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;">
+							<input type="checkbox" id="" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>   
+				  </div><br>
+				  	<div class="coholder" style="color:balck !important">
+	                  <div class="" style="float:left;margin-right:20px;color: black;">Do we have any conflict related to Client?</div>  
+	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px">
+							<input type="checkbox" id="" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;">
+							<input type="checkbox" id="" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>   
+				  </div>
+            </div> 
 			<div class="form-group receiving">
 				<div class="vrholder">
 					<label class="rholder">Windmills Reference</label> <input
@@ -358,10 +432,10 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Plot Size[Square Feet]</label> <input
+					<label class="rholder">Land Size[Square Feet]</label> <input
 						type="number" class="form-control form-control-sm textholder"
-						name="valuationReport.plotSize" id=""
-						placeholder="Plot Size[Square Feet]" autocomplete="on">
+						name="valuationReport.plotSize" id="landSize"
+						placeholder="Land Size[Square Feet]" autocomplete="on">
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Purpose Of Valuation</label> <select
@@ -594,6 +668,15 @@
 					</select>
 				</div>
 				<div class="viholder">
+					<label class="rholder">Finishing Status</label> <select
+						class="form-control form-control-sm textholder"
+						name="valuationReport.devType" id="">
+						<option value="" hidden>--Select Status--</option>
+						<option value="Shell & Core">Shell & Core</option>
+						<option value="Fitted">Fitted</option>
+					</select>
+				</div>
+				<div class="viholder">
 					<label class="rholder">Developer</label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.developer" id="">
@@ -705,6 +788,12 @@
 						placeholder="Estimated Remaining Life" autocomplete="on">
 				</div>
 				<div class="viholder">
+					<label class="rholder">Balcony / Terrace Size</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id=""
+						placeholder="Balcony/Terrace Size" autocomplete="on">
+				</div>
+				<div class="viholder"> 
 					<label class="rholder" style="line-height: 16px">Built Up
 						Area Size (sq.ft)</label> <input type="text"
 						class="form-control form-control-sm textholder"
@@ -850,14 +939,6 @@
 						<option value="Partial Pool View">Partial Pool View</option>
 						<option value="Partial Mountain View">Partial Mountain View</option>
 						<option value="Partial Lake View">Partial Lake View</option>
-					</select>
-				</div>
-				<div class="viholder">
-					<label class="rholder">Swimming Pool</label> <select
-						class="form-control form-control-sm textholder"
-						name="swimmingFool" id="">
-						<option value="Yes">Yes</option>
-						<option value="No" selected>No</option>
 					</select>
 				</div>
 				<div class="viholder">
@@ -1378,7 +1459,7 @@
 					<input type="text" class="labelholder"
 						style="line-height: 25px !important; width: 15%; border: none; background: none"
 						id="fpl" name="documents[1].description" value="Floor Plan">
-					<label for="floorplan" class="custom-file-upload1"> <i
+					<label for="floorplan" class="custom-file-upload"> <i
 						class="fa fa-cloud-upload"></i>Upload
 					</label> <input id="floorplan" name='files[1]' type="file"
 						style="display: none;">
@@ -1397,7 +1478,7 @@
 						style="line-height: 25px !important; width: 15%; border: none; background: none"
 						id="lll" name="documents[3].description"
 						value="Land Lease Agreement"> <label for="landleaseag"
-						class="custom-file-upload1"> <i class="fa fa-cloud-upload"></i>Upload
+						class="custom-file-upload"> <i class="fa fa-cloud-upload"></i>Upload
 					</label> <input id="landleaseag" name='files[3]' type="file"
 						style="display: none;">
 				</div>
@@ -1433,6 +1514,19 @@
 					<div class="savebtn" id="splnxt">Next</div>
 				</div>
 			</div>
+			<div class="form-group extent">
+				<div class="valuationholder">
+					<label class="labelholder" style="width: 134px !important">Extent Of Investigation</label>
+					<textarea type="text"
+						style="height: 385px !important; width: 86% !important"
+						class="form-control form-control-sm textholder"
+						name="" id="" autocomplete="on"></textarea>
+				</div>
+				<div class="valuationholder adjustTop" style="margin-top: 371px">
+					<div class="savebtn" id="extprv">Previous</div>
+					<div class="savebtn" id="extnxt">Next</div>
+				</div>
+			</div>
 			<div class="form-group market-summary">
 				<div class="valuationholder">
 					<label class="labelholder" style="width: 115px !important">Market
@@ -1452,89 +1546,98 @@
 					<div class="mainhead"
 						style="width: 11%; color: transparent; float: left;">test</div>
 						<div class="sectionT" style="float: left;padding-left:15px">Date</div>
-						<div class="sectionT" style="float: left;width: 10% !important">Community</div>
-						<div class="sectionT" style="float: left;width: 15% !important;padding-left:15px">Building Name</div>
-						<div class="sectionT" style="float: left;width: 7% !important;padding-left:5px">Beds</div>
-						<div class="sectionT" style="float: left;width: 10% !important;padding-left:25px">BUA</div>
-						<div class="sectionT" style="float: left;width: 15% !important;padding-left:25px">Sales Price</div>
-						<div class="sectionT" style="float: left;padding-left:10px">PSF</div>
+						<div class="sectionT" style="float: left;width: 12% !important;padding-left:9px">Community</div>
+						<div class="sectionT" style="float: left;width: 9% !important;">Building Name</div>
+						<div class="sectionT" style="float: left;width: 9% !important;padding-left:62px">Beds</div>
+						<div class="sectionT" style="float: left;width: 10% !important;padding-left:30px">Land Size</div>
+						<div class="sectionT" style="float: left;width: 5% !important;padding-left:14px">BUA</div>
+						<div class="sectionT" style="float: left;width: 10% !important;padding-left:35px">Sales Price</div>
+						<div class="sectionT" style="float: left;padding-left:49px">PSF</div>
 				</div>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 10%; font-weight: 800; float: left; line-height: 24px">Average</div>
 					<input type="text" class="form-control form-control-sm sectionTT" name="" id="edate">
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:12% !important" name="" id="ecommunity">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:13% !important" name="" id="ecommunity">
 					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" id="ebuidingName">
 					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center" name="" id="ebed">
-					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:11% !important"  name="" id="esizeavg">
-				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:14% !important"  name="" id="epriceavg">
-				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:11% !important"  name="" id="epriceavgper">
+					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:8% !important"  name="" id="elandavg">
+					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:8% !important"  name="" id="esizeavg">
+				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12% !important"  name="" id="epriceavg">
+				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:8% !important"  name="" id="epriceavgper">
 				</div>
 				<br><br>
 				<div class="avgholder" style="height: 18px;color:limegreen !important">
 					<div class="mainhead"
 						style="width: 11%; color: transparent; float: left;">test</div>
-						<div class="sectionT" style="float: left;padding-left:15px;width: 17% !important">Average</div>
-						<div class="sectionT" style="float: left;width: 12% !important">Subject</div>
+						<div class="sectionT" style="float: left;padding-left:47px;width: 20% !important">Average</div>
+						<div class="sectionT" style="float: left;width: 14% !important">Subject</div>
 						<div class="sectionT" style="float: left;width: 13% !important;">Difference</div>
 						<div class="sectionT" style="float: left;width: 13% !important;">Weightage</div>
-						<div class="sectionT" style="float: left;width: 8% !important;">Adjustments</div>
+						<div class="sectionT" style="float: left;width: 8% !important;padding-left:14px;">Adjustments</div>
 				</div>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 10%; font-weight: 800; float: left; line-height: 24px">Location</div>
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" value ="3" id="avgloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="subloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="diffloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" value ="10%" id="weiloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="adjloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" value ="3" id="avgloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="subloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="diffloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" readonly  id="weiloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjloc">
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 10%; font-weight: 800; float: left; line-height: 24px">View</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:14% !important" name="" value ="3"  id="avgview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="subview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="diffview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" value ="10%" id="weiview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="adjview">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:16% !important" name="" value ="3"  id="avgview">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="subview">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="diffview">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" readonly id="weiview">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjview">
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 10%; font-weight: 800; float: left; line-height: 24px">Quality</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:14% !important" name="" value ="3" id="avgqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="subqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="diffqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" value ="10%" id="weiqua">
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:14% !important"  name="" id="adjqua">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:16% !important" name="" value ="3" id="avgqua">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="subqua">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="diffqua">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" readonly id="weiqua">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:12% !important"  name="" id="adjqua">
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 10%; font-weight: 800; float: left; line-height: 24px">Floor</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:14% !important" name="" id="avgfloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="subfloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="difffloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" value ="0.5%" id="weifloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:14% !important" name="" id="adjfloor">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:16% !important" name="" id="avgfloor">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="subfloor">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="difffloor">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" readonly  id="weifloor">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjfloor">
+				</div><br>
+				<div class="avgholder">
+					<div class="mainhead" style="width: 10%; font-weight: 800; float: left; line-height: 24px">Land Size</div>
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:16% !important" name="" id="avgland">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="subland">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" id="diffland">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:16% !important" name="" readonly  id="weiland">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjland">
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 10%; font-weight: 800; float: left; line-height: 24px">BUA</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:14% !important" id="avgbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:14% !important" id="subbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:14% !important" id="diffbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" value ="100%" id="weibua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:14% !important" id="adjbua">
+					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:16% !important" id="avgbua">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:16% !important" id="subbua">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:16% !important" id="diffbua">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:16% !important"  readonly id="weibua">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:12% !important" id="adjbua">
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 10%; font-weight: 800; float: left; line-height: 24px">Date</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:14% !important" id="avgdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:14% !important" id="subdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:14% !important" id="diffdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" value ="1%" id="weidate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:14% !important" id="adjdate">
+					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:16% !important" id="avgdate">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:16% !important" id="subdate">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:16% !important" id="diffdate">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:16% !important" id="weidate">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:12% !important" id="adjdate">
 				</div><br><br>
 				<div class="avgholder">
-					<div class="mainhead" style="width: 30%; font-weight: 800; float: left; line-height: 24px;color:#ff6600">Estimated Market Value as per Sold Transactions			
-</div>
+					<div class="mainhead" style="width: 30%; font-weight: 800; float: left; line-height: 24px;color:#ff6600">Estimated Market Value as per Sold Transactions</div>
 					<input type="text" class="form-control form-control-sm sectionTT" name="" style="background:none !important" id="edate">
 					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important;background:none !important" name="" id="">
 					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;background:none !important" name="" id="">
-					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:4% !important;background:none !important"  name="" id="">
-				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:14% !important"  name="" id="marketvalue">
+					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:11% !important;background:none !important"  name="" id="">
+				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12% !important"  name="" id="marketvalue">
 				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;background:none !important"  name="" id="">
 				</div>
 			</div>
@@ -1601,3 +1704,4 @@
 	src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 <script src="resources/assets/js/numbertoword.js"></script>
 <script src="resources/assets/js/valuationform.js"></script>
+<script src="resources/assets/js/hideshow.js"></script>

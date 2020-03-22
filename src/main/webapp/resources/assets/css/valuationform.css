@@ -16,11 +16,12 @@
 	color: limegreen;
 }
 .valbtn {
-	width: 7%;
+	width: 6.5%;
+    font-size: 12px;
     float: left;
     padding: 4px;
     margin-top: 0px;
-    margin-right: 6.2px;
+    margin-right: 4.2px;
     background: #000080;
     cursor: pointer;
 }
@@ -160,8 +161,16 @@
 	float: left;
 	background-image: linear-gradient(to right, #ff6600, #000080);
 }
-
+.pretty.p-svg .state .svg {
+    top: -0.5px !important;
+    font-size: 13px !important;
+}
+.coholder{
+	    width: 100% !important;
+    margin-top: 20px !important;
+}
 #inspect2nxt,
+#extnxt,
 #mrtnxt,
 #splnxt,
 #docnxt {

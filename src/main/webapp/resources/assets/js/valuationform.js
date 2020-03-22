@@ -1,14 +1,4 @@
-$('.valuationform .sub-header').text('Valuation Form');
-$('.inspecting1').hide();
-$('.inspecting2').hide();
-$('.scheduling').hide();
-$('.submitting').hide();
-$('.documents').hide();
-$('.average').hide();
-$('.filter').hide();
-$('.errfilter').hide();
-$('.market-summary').hide();
-$('.spl-assumption').hide();
+
 var j=$('#row').val();
 $('#reference').val("REV-2020-"+j+"");
 $('#country').val("United Arab Emirates");
@@ -24,7 +14,26 @@ $('#age').keyup(function(){
 		$('#remlife').val(40);
 	}
 });
-
+$("#buildingname").change(function() {
+	var buildingName = $('#buildingname').val();
+	$.ajax({
+		url : 'getEverything',
+		dataType: "text",
+		data : {buildingName : buildingName},
+		method : 'POST',
+		success : function(response) {	
+			var obj = $.parseJSON(response);
+			var community = obj.city;
+			var subcommunity = obj.subcommunity;
+			var city = obj.community;
+			console.log("communitty",community);
+			 $('#city').val(community);
+			 $('#community').val(city);
+			 $('#subcommunity').val(subcommunity);
+			return;
+			},
+	});	
+});
 
 $("#titledeed").change(function() {	
 	  var i = $(this).prev('label').clone();	
@@ -584,10 +593,11 @@ $("#filter").click(function(){
 				else{
 					$('.errfilter').hide();
 					$('.filter').show();
+					$('div.boxlist').remove();
 					for (x in obj) {
 						console.log(obj[x].transactionId);
 						$('.filter').append("" +
-								"<div id="+obj[x].transactionId+" class='column' style='margin-bottom:5px;height:40px'>" +
+								"<div id="+obj[x].transactionId+" class='column boxlist' style='margin-bottom:5px;height:40px'>" +
 									" <div id="+ obj[x].transactionId +">" +
 									  	" <div class='head stylename' style='width:5.6%'>" + obj[x].date + "</div>" +
 									  	" <div class='head stylename' style='width:5%'>" + obj[x].type + "</div>" +
@@ -609,148 +619,140 @@ $("#filter").click(function(){
 			}
 	 });	
 });
+function toComma(value){
+	var result = parseInt(value);
+	result = result.toLocaleString();
+	return result;
+}
 $("#average").click(function(){
 	   var city=$('#city').val(); 
-	   var area=$('#community').val(); 
-	   $('#ecommunity').val(area);
-	   var neighbourhood=$('#subcommunity').val(); 
+	   var area=$('#community').val();
 	   var buildingName=$('#buildingname').val(); 
+	   var neighbourhood=$('#subcommunity').val(); 
+	   var propertyType=$('#propertyvalued').val();
+	   $('#ecommunity').val(area);
 	   $('#ebuidingName').val(buildingName);
-	   var bau = $('#buitUpAreaSize').val();
-	   var location = $('#location').val();
-	   var final = calAvg(location);
-	   $('#subloc').val(final);
-	   var diffloc = parseInt($('#subloc').val()) - parseInt($('#avgloc').val());
-	   diffloc = diffloc.toString();
-	   $('#diffloc').val(diffloc);
-	   var quality = $('#quality').val();
-	   var finall = calAvg(quality);
-	   $('#subqua').val(finall);
-	   var diffqua = parseInt($('#subqua').val()) - parseInt($('#avgqua').val());
-	   diffqua = diffqua.toString();
-	   $('#diffqua').val(diffqua);
-	   var view = $('#view').val();
-	   var finalll = calView(view);
-	   $('#subview').val(finalll);
-	   var diffview = parseInt($('#subview').val()) - parseInt($('#avgview').val());
-	   diffview = diffview.toString();
-	   $('#diffview').val(diffview);
-	   $('#ebau').val(bau);
 	   $.ajax({
 			url : 'filter-transac',
 			dataType: "text",
 			asyn: true,
-			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName},
+			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName,propertyType:propertyType},
 			method : 'POST',
 			success : function(response) {	
 				var obj = $.parseJSON(response);
 				var priceAvg = obj.priceAvg;
+				var pricePerAvg = obj.pricePerAvg;
 				var sizeAvg = obj.sizeAvg;
 				var dateAvg = obj.dateAvg;
 				var bedAvg = obj.bedAvg;
-				var weil = $('#weiloc').val();
-				weil = weil.replace(/%/g , '');
-				var finalloc = parseInt($('#diffloc').val()) * parseFloat(weil) * parseInt(priceAvg) / 100;
-				finalloc =parseInt(finalloc);
-				finalloc = finalloc.toLocaleString();
-				$('#adjloc').val(finalloc);
-				var weiv = $('#weiview').val();
-				weiv = weiv.replace(/%/g , '');
-				var finalview = parseInt($('#diffloc').val()) * parseFloat(weiv) * parseInt(priceAvg) / 100;
-				finalview =parseInt(finalview);
-				finalview = finalloc.toLocaleString();
-				$('#adjview').val(finalview);
-				var weif = $('#weifloor').val();
-				weif = weif.replace(/%/g , '');
-				var finalfloor = parseInt($('#difffloor').val()) * parseFloat(weif) * parseInt(priceAvg) / 100;
-				finalfloor =parseInt(finalfloor);
-				finalfloor = finalfloor.toLocaleString();
-				$('#adjfloor').val(finalfloor);
-				var weiq = $('#weiqua').val();
-				weiq = weiq.replace(/%/g , '');
-				var finalqua = parseInt($('#diffqua').val()) * parseFloat(weiq) * parseInt(priceAvg) / 100;
-				finalqua =parseInt(finalqua);
-				finalqua = finalqua.toLocaleString();
-				$('#adjqua').val(finalqua);
-				var pricePerAvg = obj.pricePerAvg;
-				var fullBulFloors =  $('#fullBulFloors').val();
+				var landAvg = obj.landAvg;
+				var locWeight = obj.locWeight;
+				var viewWeight = obj.viewWeight;
+				var quaWeight = obj.quaWeight;
+				var floorWeight = obj.floorWeight;
+				var landWeight = obj.landWeight;
+				var buaWeight = obj.buaWeight;
+				var dateWeight = obj.dateWeight;
+				var bau = $('#buitUpAreaSize').val();
+				var location = $('#location').val();
+				var quality = $('#quality').val();
+				var view = $('#view').val();
 				var floorNo =  $('#floorno').val();
-				$('#subfloor').val(floorNo);
+				var fullBulFloors =  $('#fullBulFloors').val();
+				$('#edate').val(dateAvg);
+				$('#ebed').val(bedAvg);
+				$('#esizeavg').val(toComma(sizeAvg));
+				$('#epriceavg').val(toComma(priceAvg));
+				$('#epriceavg').val(toComma(priceAvg));
+				$('#epriceavgper').val(toComma(pricePerAvg));
+				if(landAvg != "-"){
+					 $('#elandavg').val(toComma(landAvg));
+				}
+				$('#weiloc').val(locWeight);
+				$('#weiview').val(viewWeight);
+				$('#weiqua').val(quaWeight);
+				$('#weifloor').val(floorWeight);
+				$('#weiland').val(landWeight);
+				$('#weibua').val(buaWeight);
+				$('#weidate').val(dateWeight);
+				// location//
+				var subloc = calAvg(location);
+				$('#subloc').val(subloc);
+			    var diffloc = parseInt($('#subloc').val()) - parseInt($('#avgloc').val());
+			    $('#diffloc').val(toComma(diffloc));
+			    var adjloc = parseInt(($('#diffloc').val()).replace(/,/g , '')) * parseFloat(locWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+			    $('#adjloc').val(toComma(adjloc));
+			    // quality//
+			    var subqua = calAvg(quality);
+			    $('#subqua').val(subqua);
+			    var diffqua = parseInt($('#subqua').val()) - parseInt($('#avgqua').val());
+			    $('#diffqua').val(toComma(diffqua));
+			    var adjqua = parseInt(($('#diffqua').val()).replace(/,/g , ''))  * parseFloat(quaWeight.replace(/%/g , ''))  * parseInt(priceAvg) / 100;
+			    $('#adjqua').val(toComma(adjqua));
+			    // view//
+			    var subview = calView(view);
+			    $('#subview').val(subview);
+			    var diffview = parseInt($('#subview').val()) - parseInt($('#avgview').val());
+			    $('#diffview').val(toComma(diffview));
+			    var adjview = parseInt(($('#diffview').val()).replace(/,/g , ''))  * parseFloat(viewWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+			    $('#adjview').val(toComma(adjview));
+			    //floor//
 				var suffix = fullBulFloors.match(/\d+/);
 				if(suffix){
 					suffix = parseInt(suffix[0]) / 2;
 					suffix = suffix.toString();
 					$('#avgfloor').val(suffix);
 				}
-				var difffloor = parseInt($('#subfloor').val()) - parseFloat($('#avgfloor').val());
-				difffloor = difffloor.toString();
-				$('#difffloor').val(difffloor);
-				var esizeAvg = parseInt(sizeAvg);
-				esizeAvg = esizeAvg.toLocaleString();
-				 $('#esizeavg').val(esizeAvg);
-				 $('#edate').val(dateAvg);
-				 $('#ebed').val(bedAvg);
-				 var epriceAvg = parseInt(priceAvg);
-				 epriceAvg = epriceAvg.toLocaleString();
-				 $('#epriceavg').val(epriceAvg);
-				 var epricePerAvg = parseInt(pricePerAvg);
-				 epricePerAvg = epricePerAvg.toLocaleString();
-				 $('#epriceavgper').val(epricePerAvg);
-				 var final =  parseInt($('#buitUpAreaSize').val()) - parseInt(sizeAvg);
-				   final = final.toString();
-				   $('#ediff').val(final);
-				   $('#diffbua').val(final);	
-				   $('#avgbua').val(sizeAvg);
-				   $('#avgdate').val(dateAvg);
-				   $('#subdate').val($('#insdate').val());
-				   var finalDate = calDate($('#avgdate').val(),$('#subdate').val());
-				   $('#diffdate').val(finalDate);
-				   $('#subbua').val($('#buitUpAreaSize').val());
-				   var weib = $('#weibua').val();
-				   weib = weib.replace(/%/g , '');
-				   var finalbua = parseInt($('#diffbua').val()) * parseFloat(weib) * parseInt(pricePerAvg) / 100;
-				   finalbua =parseInt(finalbua);
-				   finalbua = finalbua.toLocaleString();
-				   $('#adjbua').val(finalbua);
-				   var weid = $('#weidate').val();
-				   weid = weid.replace(/%/g , '');
-				   var finaldate = parseFloat(weid) * parseInt(priceAvg) * (16 / 30) / 100;
-				   finaldate =parseInt(finaldate);
-				   finaldate = finaldate.toLocaleString();
-				   $('#adjdate').val(finaldate);
-				   
-				   var marketValue = parseInt(priceAvg) + parseInt(finaldate.replace(/,/g , '')) +parseInt(finalbua.replace(/,/g , '')) +parseInt(finalqua.replace(/,/g , '')) +parseInt(finalfloor.replace(/,/g , ''))+
-				   					parseInt(finalloc.replace(/,/g , '')) + parseInt(finalview.replace(/,/g , ''));
-				   marketValue = marketValue.toLocaleString();
-				   $('#marketvalue').val(marketValue);
-				},
+				$('#subfloor').val(floorNo);
+				var difffloor = parseInt($('#subfloor').val()) - parseInt($('#avgfloor').val());
+				$('#difffloor').val(toComma(difffloor));
+				var adjfloor = parseInt(($('#difffloor').val()).replace(/,/g , ''))  * parseFloat(floorWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+				$('#adjfloor').val(toComma(adjfloor));
+				//LandSize//
+				if(landAvg != "-"){
+					 $('#avgland').val(toComma(landAvg));
+					 $('#subland').val(toComma($('#landSize').val()));
+					 var diffland = parseInt($('#landSize').val()) - parseInt(landAvg);
+					 $('#diffland').val(toComma(diffland));
+					 var adjland = parseInt(($('#diffland').val()).replace(/,/g , ''))  * parseFloat(landWeight.replace(/%/g , '')) * parseInt(pricePerAvg) / 100;
+					 $('#adjland').val(toComma(adjland));
+				}else{
+					$('#avgland').val(landAvg);
+					$('#subland').val(landAvg);
+					$('#diffland').val(landAvg);
+					$('#adjland').val(landAvg);
+					$('#elandavg').val(landAvg);
+					$('#weiland').val(landAvg);
+					
+				}
+				//bua//
+				 $('#avgbua').val(toComma(sizeAvg));
+				 $('#subbua').val(toComma($('#buitUpAreaSize').val()));
+				 var diffbua =  parseInt($('#buitUpAreaSize').val()) - parseInt(sizeAvg);
+				 $('#diffbua').val(toComma(diffbua));
+				 var adjbua =  parseInt(($('#diffbua').val()).replace(/,/g , ''))  * parseFloat(buaWeight.replace(/%/g , '')) * parseInt(pricePerAvg) / 100;
+				 $('#adjbua').val(toComma(adjbua));
+				 //date//
+				 $('#avgdate').val(dateAvg);
+				 $('#subdate').val($('#insdate').val());
+				 var diffdate = calDate($('#avgdate').val(),$('#subdate').val());
+				 $('#diffdate').val(toComma(diffdate));
+				 var adjdate = parseFloat(dateWeight.replace(/%/g , '')) * parseInt(priceAvg) * (16 / 30) / 100;
+				 $('#adjdate').val(toComma(adjdate));
+			     //Market Value//
+				 if(landAvg == "-"){
+					   var marketValue = parseInt(priceAvg) + parseInt(adjdate.toString().replace(/,/g , '')) +parseInt(adjbua.toString().replace(/,/g , '')) +parseInt(adjqua.toString().replace(/,/g , '')) +parseInt(adjfloor.toString().replace(/,/g , ''))+
+	   					parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjview.toString().replace(/,/g , ''));
+					   $('#marketvalue').val(toComma(marketValue));
+				 }
+				 else{
+					   var marketValue = parseInt(priceAvg) + parseInt(adjdate.toString().replace(/,/g , '')) +parseInt(adjbua.toString().replace(/,/g , '')) +parseInt(adjqua.toString().replace(/,/g , '')) +parseInt(adjfloor.toString().replace(/,/g , ''))+
+	   					parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , ''));
+					   $('#marketvalue').val(toComma(marketValue));
+				 }
+			},
+
 		});	
-	   $('.average').show();
-	   var floorNo =  $('#floorno').val();
-		$('#subfloor').val(floorNo);
-//	   var final = parseInt($('#buitUpAreaSize').val()) - parseInt(sizeAvg);
-//	   final = final.toString();
-//	   $('#ediff').val(final);	
-//	   $('#diffbua').val(final);
-	   var finalDate = calDate($('#subdate').val(),$('#avgdate').val());
-	   $('#diffdate').val(finalDate);
-	   var fullBulFloors =  $('#fullBulFloors').val();
-		var suffix = fullBulFloors.match(/\d+/);
-		if(suffix){
-			suffix = parseInt(suffix[0]) / 2;
-			suffix = suffix.toString();
-			$('#avgfloor').val(suffix);
-		}
-		var difffloor = parseInt($('#subfloor').val()) - parseInt($('#avgfloor').val());
-		difffloor = difffloor.toString();
-		$('#difffloor').val(difffloor);
-	   $('#subdate').val($('#insdate').val());
-	   $('#subbua').val($('#buitUpAreaSize').val());
-	   $('#avgbua').val($('#esizeavg').val());
-	   $('#avgdate').val($('#edate').val());
-	   $("#average").css("background", "#ff6600");
-	   
-	   
 });
 $("#bedroom").change(function() {
 	var value = $(this).val();
@@ -938,19 +940,20 @@ $("#propertyvalued").change(function() {
 			},
 	});	
 });
-$("#community").change(function() {
-	var community = $('#community').val();
-	$.ajax({
-		url : 'getCity',
-		data : {community : community},
-		method : 'POST',
-		success : function(response) {	
-			$('#city').val(response);
-			 $("#city option[value='+response+']").attr("selected",true);
-			return;
-		},
-	});	
-});
+//$("#community").change(function() {
+//	var community = $('#community').val();
+//	$.ajax({
+//		url : 'getCity',
+//		data : {community : community},
+//		method : 'POST',
+//		success : function(response) {	
+//			$('#city').val(response);
+//			 $("#city option[value='+response+']").attr("selected",true);
+//			return;
+//		},
+//	});	
+//});
+
 $("#insdate").change(function() {
 	var weekday = new Array(7);
 	weekday[0] = "Sunday";
@@ -1001,576 +1004,4 @@ $("#insdate").change(function() {
 	}
 	var fdate = stringToDate(date,"dd-mmm-yyyy","-");
 	$('#insday').val(weekday[fdate.getDay()]);
-});
-$("#receive").css("background-image", "linear-gradient(to right, #ff6600 , #ff6600)");
-$("#receive").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').show();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.errfilter').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#receive").css("background", "#ff6600");
-	$("#schedule").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#filter").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.errfilter').hide();
-	$('.filter').show();
-	$("#filter").css("background", "#ff6600");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#average").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').show();
-	$('.filter').hide();
-	$('.errfilter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#ff6600");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#schedule").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').show();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#schedule").css("background", "#ff6600");
-	$("#receive").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#inspect1").click(function(){
-	$('.inspecting1').show();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').hide();
-	$('.errfilter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#inspect1").css("background", "#ff6600");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#documents").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').show();
-	$('.average').hide();
-	$('.filter').hide();
-	$('.errfilter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#ff6600");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#inspect2").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').show();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').hide();
-	$('.errfilter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#ff6600");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#marketsum").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.errfilter').hide();
-	$('.market-summary').show();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#ff6600");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#splAssumption").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').show();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.filter').hide();
-	$('.errfilter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#splAssumption").css("background", "#ff6600");
-	$("#marketsum").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#submit").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').show();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').hide();
-	$('.errfilter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#ff6600");
-	$("#receive").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-
-$("#receivenxt").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').show();
-	$('.average').hide();
-	$('.errfilter').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#ff6600");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#schedulenxt").click(function(){
-	$('.inspecting1').show();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.average').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.errfilter').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#inspect1").css("background", "#ff6600");
-	$("#receive").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#scheduleprv").click(function(){
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.inspecting2').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').show();
-	$('.filter').hide();
-	$('.errfilter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#ff6600");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#inspect1nxt").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').show();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.average').hide();
-	$('.scheduling').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').hide();
-	$('.errfilter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#inspect2").css("background", "#ff6600");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#inspect1prv").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').show();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.errfilter').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#schedule").css("background", "#ff6600");
-	$("#inspect1").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#splnxt").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.market-summary').show();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#ff6600");
-	$("#splAssumption").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$('.errfilter').hide();
-	$("#receive").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#splprv").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').show();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$('.errfilter').hide();
-	$("#inspect2").css("background", "#ff6600");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#mrtnxt").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').hide();
-	$('.submitting').show();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#ff6600");
-	$("#inspect1").css("background", "#000080");
-	$('.errfilter').hide();
-	$("#inspect2").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-});
-$("#mrtprv").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').show();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#ff6600");
-	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$('.errfilter').hide();
-	$("#conflict").css("background", "#000080");
-});
-$("#docnxt").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').show();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#schedule").css("background", "#ff6600");
-	$("#submit").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$('.errfilter').hide();
-	$("#conflict").css("background", "#000080");
-});
-$("#docprv").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').hide();
-	$('.submitting').hide();
-	$('.receiving').show();
-	$('.scheduling').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#ff6600");
-	$("#conflict").css("background", "#000080");
-	$('.errfilter').hide();
-});
-$("#inspect2nxt").click(function(){
-	$('.inspecting1').hide();
-	$('.inspecting2').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').show();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#ff6600");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-	$('.errfilter').hide();
-});
-$("#inspect2prv").click(function(){
-	$('.inspecting1').show();
-	$('.inspecting2').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.market-summary').hide();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$('.average').hide();
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#000080");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#inspect1").css("background", "#ff6600");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-	$('.errfilter').hide();
-});
-$("#submitprv").click(function(){
-	$('.inspecting2').hide();
-	$('.inspecting1').hide();
-	$('.submitting').hide();
-	$('.receiving').hide();
-	$('.scheduling').hide();
-	$('.market-summary').show();
-	$('.spl-assumption').hide();
-	$('.documents').hide();
-	$('.average').hide();
-	$('.filter').hide();
-	$("#filter").css("background", "#000080");
-	$("#average").css("background", "#000080");
-	$("#documents").css("background", "#000080");
-	$("#marketsum").css("background", "#ff6600");
-	$("#splAssumption").css("background", "#000080");
-	$("#inspect1").css("background", "#000080");
-	$("#inspect2").css("background", "#000080");
-	$("#schedule").css("background", "#000080");
-	$("#submit").css("background", "#000080");
-	$("#receive").css("background", "#000080");
-	$("#conflict").css("background", "#000080");
-	$('.errfilter').hide();
 });

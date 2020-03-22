@@ -54,6 +54,16 @@ public class WeightageDaoImpl {
 		query.executeUpdate();
 	}
 
+
+	public List<Weightage> getWeightage(String city, String propertyType) {
+		String emirates = city;
+		Query query=sessionFactory.getCurrentSession().createQuery("from Weightage s where s.emirates=:emirates and s.propertyType=:propertyType");
+		query.setParameter("emirates",emirates);
+		query.setParameter("propertyType",propertyType);
+		List<Weightage> rows=query.list();
+		return rows;
+	}
+
 	
 	
 }

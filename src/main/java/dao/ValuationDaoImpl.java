@@ -16,6 +16,7 @@ import model.Community;
 import model.Documents;
 import model.Property;
 import model.ServiceOfficer;
+import model.SoldTransactions;
 import model.ValuationReport;
 import model.ValuationReportForm;
 
@@ -172,6 +173,13 @@ public class ValuationDaoImpl {
 //			query.executeUpdate();
 			System.err.println("Success");
 			
+	}
+
+	public List<SoldTransactions> getEverything(String buildingName) {
+		Query query=sessionFactory.getCurrentSession().createQuery("from SoldTransactions s where s.buildingName=:buildingName");
+		query.setParameter("buildingName",buildingName);
+		List<SoldTransactions> rows=query.list();
+		return rows;
 	}
 
 	

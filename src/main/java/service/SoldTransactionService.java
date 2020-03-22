@@ -217,7 +217,7 @@ public class SoldTransactionService {
 		return avg;
 	}
 	public String getlandAvg(List<SoldTransactions> filterTransaction) {
-		String avg = "";
+		String avg = "-";
 		ArrayList<Integer> avglist = new ArrayList<Integer>();
 		if(!filterTransaction.isEmpty()){
 			for(SoldTransactions st : filterTransaction){

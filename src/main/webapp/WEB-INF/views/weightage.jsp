@@ -17,7 +17,7 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important; margin-top: 70px; width: 100%; min-height: 530px !important">
+		style="background: rgb(229, 231, 233) !important;overflow: scroll; overflow-x: hidden; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<form:form action="addWeightage" id="weightageform" modelAttribute="weightage">
 			<div class="form-group">
 				<div class="propertyholder">
@@ -52,6 +52,26 @@
 					<label class="propertylabel">Age</label> <input
 						type="text" class="form-control form-control-sm propertytext"
 						name="age" id="" placeholder="ex:1%">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Property Exposure</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="propertyExposure" id="" placeholder="ex:1%">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Property Placement</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="propertyPlacement" id="" placeholder="ex:1%">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Finishing Status</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="finishingStatus" id="" placeholder="ex:1%">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Bedrooom</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="bedroom" id="" placeholder="ex:1%">
 				</div>
 				<div class="propertyholder">
 					<label class="propertylabel">View</label> <input

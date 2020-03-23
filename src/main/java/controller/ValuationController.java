@@ -139,6 +139,10 @@ public class ValuationController {
 		String floorWeight = weightageService.getFloorWeight(weightage);
 		String landWeight = weightageService.getLandWeight(weightage);
 		String buaWeight = weightageService.getBuaWeight(weightage);
+		String expWeight = weightageService.getExpWeight(weightage);
+		String plaWeight = weightageService.getPlaWeight(weightage);
+		String staWeight = weightageService.getStaWeight(weightage);
+		String bedWeight = weightageService.getBedWeight(weightage);
 		String dateAvg = soldTransactionService.getDateAvg(filterTransaction);
 		String landAvg = soldTransactionService.getlandAvg(filterTransaction);
 		String priceAvg = soldTransactionService.getpriceAvg(filterTransaction);
@@ -146,6 +150,10 @@ public class ValuationController {
 		String pricePerAvg = soldTransactionService.getpricePerAvg(filterTransaction);
 		String bedAvg = soldTransactionService.getBedAvg(filterTransaction);
 		JSONObject json = new JSONObject();
+		json.put("expWeight", expWeight);
+		json.put("plaWeight", plaWeight);
+		json.put("staWeight", staWeight);
+		json.put("bedWeight", bedWeight);
 		json.put("locWeight", locWeight);
 		json.put("viewWeight", viewWeight);
 		json.put("quaWeight", quaWeight);

@@ -33,6 +33,10 @@ public class Weightage  implements java.io.Serializable {
 	private int weightId;
 	private String emirates;
 	private String propertyType;
+	private String propertyExposure;
+	private String propertyPlacement;
+	private String finishingStatus;
+	private String bedroom;
 	private String location;
 	private String view;
 	private String quality;
@@ -49,6 +53,34 @@ public class Weightage  implements java.io.Serializable {
 	}
 	public void setWeightId(int weightId) {
 		this.weightId = weightId;
+	}
+	@Column(name = "propertyExposure")
+	public String getPropertyExposure() {
+		return propertyExposure;
+	}
+	public void setPropertyExposure(String propertyExposure) {
+		this.propertyExposure = propertyExposure;
+	}
+	@Column(name = "propertyPlacement")
+	public String getPropertyPlacement() {
+		return propertyPlacement;
+	}
+	public void setPropertyPlacement(String propertyPlacement) {
+		this.propertyPlacement = propertyPlacement;
+	}
+	@Column(name = "finishingStatus")
+	public String getFinishingStatus() {
+		return finishingStatus;
+	}
+	public void setFinishingStatus(String finishingStatus) {
+		this.finishingStatus = finishingStatus;
+	}
+	@Column(name = "bedroom")
+	public String getBedroom() {
+		return bedroom;
+	}
+	public void setBedroom(String bedroom) {
+		this.bedroom = bedroom;
 	}
 	@Column(name = "emirates")
 	public String getEmirates() {

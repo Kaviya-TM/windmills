@@ -19,7 +19,7 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important; margin-top: 70px; width: 100%; min-height: 530px !important">
+		style="background: rgb(229, 231, 233) !important;overflow: scroll; overflow-x: hidden; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<form:form action="editWeightage" id="" modelAttribute="weightage">
 			<div class="form-group">
 				<div class="propertyholder">
@@ -69,6 +69,26 @@
 					<label class="propertylabel">Floor</label> <input
 						type="text" class="form-control form-control-sm propertytext"
 						name="floor" id="" value="${weightageeditform.floor}" placeholder="Floor">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Property Exposure</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="propertyExposure" value="${weightageeditform.propertyExposure}" id="" placeholder="ex:1%">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Property Placement</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="propertyPlacement" value="${weightageeditform.propertyPlacement}" id="" placeholder="ex:1%">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Finishing Status</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="finishingStatus" value="${weightageeditform.finishingStatus}" id="" placeholder="ex:1%">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Bedrooom</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="bedroom" id="" value="${weightageeditform.bedroom}" placeholder="ex:1%">
 				</div>
 				<div class="propertyholder">
 					<label class="propertylabel">Land Size</label> <input

@@ -123,9 +123,9 @@
 						<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Sales Listing</span></a>
 				<ul class="dropdown-menu">
 					<li><a class="nav-link"
-						href="<c:url value="sold-transactions"/>">View</a></li>
+						href="<c:url value="listing-transactions"/>">View</a></li>
 					<li><a class="nav-link"
-						href="<c:url value="enquiry"/>">Enquiry
+						href="<c:url value=""/>">Enquiry
 							</a></li>
 				</ul></li>
 				

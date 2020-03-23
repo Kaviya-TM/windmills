@@ -161,5 +161,45 @@ public class WeightageService {
 		}
 		return dateweight;
 	}
+	public String getExpWeight(List<Weightage> weightage) {
+		String expweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				expweight = wg.getPropertyExposure();
+				break;
+			}
+		}
+		return expweight;
+	}
+	public String getPlaWeight(List<Weightage> weightage) {
+		String plaweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				plaweight = wg.getPropertyPlacement();
+				break;
+			}
+		}
+		return plaweight;
+	}
+	public String getStaWeight(List<Weightage> weightage) {
+		String staweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				staweight = wg.getFinishingStatus();
+				break;
+			}
+		}
+		return staweight;
+	}
+	public String getBedWeight(List<Weightage> weightage) {
+		String bedweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				bedweight = wg.getBedroom();
+				break;
+			}
+		}
+		return bedweight;
+	}
 	
 }

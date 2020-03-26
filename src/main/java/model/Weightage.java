@@ -44,6 +44,18 @@ public class Weightage  implements java.io.Serializable {
 	private String bua;
 	private String age;
 	private String landSize;
+	private String lessThan1Month;
+	private String lessThan2Month;
+	private String lessThan3Month;
+	private String lessThan4Month;
+	private String lessThan5Month;
+	private String lessThan6Month;
+	private String lessThan7Month;
+	private String lessThan8Month;
+	private String lessThan9Month;
+	private String lessThan10Month;
+	private String lessThan11Month;
+	private String lessThan12Month;
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -53,6 +65,90 @@ public class Weightage  implements java.io.Serializable {
 	}
 	public void setWeightId(int weightId) {
 		this.weightId = weightId;
+	}
+	@Column(name = "lessThan1Month")
+	public String getLessThan1Month() {
+		return lessThan1Month;
+	}
+	public void setLessThan1Month(String lessThan1Month) {
+		this.lessThan1Month = lessThan1Month;
+	}
+	@Column(name = "lessThan2Month")
+	public String getLessThan2Month() {
+		return lessThan2Month;
+	}
+	public void setLessThan2Month(String lessThan2Month) {
+		this.lessThan2Month = lessThan2Month;
+	}
+	@Column(name = "lessThan3Month")
+	public String getLessThan3Month() {
+		return lessThan3Month;
+	}
+	public void setLessThan3Month(String lessThan3Month) {
+		this.lessThan3Month = lessThan3Month;
+	}
+	@Column(name = "lessThan4Month")
+	public String getLessThan4Month() {
+		return lessThan4Month;
+	}
+	public void setLessThan4Month(String lessThan4Month) {
+		this.lessThan4Month = lessThan4Month;
+	}
+	@Column(name = "lessThan5Month")
+	public String getLessThan5Month() {
+		return lessThan5Month;
+	}
+	public void setLessThan5Month(String lessThan5Month) {
+		this.lessThan5Month = lessThan5Month;
+	}
+	@Column(name = "lessThan6Month")
+	public String getLessThan6Month() {
+		return lessThan6Month;
+	}
+	public void setLessThan6Month(String lessThan6Month) {
+		this.lessThan6Month = lessThan6Month;
+	}
+	@Column(name = "lessThan7Month")
+	public String getLessThan7Month() {
+		return lessThan7Month;
+	}
+	public void setLessThan7Month(String lessThan7Month) {
+		this.lessThan7Month = lessThan7Month;
+	}
+	@Column(name = "lessThan8Month")
+	public String getLessThan8Month() {
+		return lessThan8Month;
+	}
+	public void setLessThan8Month(String lessThan8Month) {
+		this.lessThan8Month = lessThan8Month;
+	}
+	@Column(name = "lessThan9Month")
+	public String getLessThan9Month() {
+		return lessThan9Month;
+	}
+	public void setLessThan9Month(String lessThan9Month) {
+		this.lessThan9Month = lessThan9Month;
+	}
+	@Column(name = "lessThan10Month")
+	public String getLessThan10Month() {
+		return lessThan10Month;
+	}
+	public void setLessThan10Month(String lessThan10Month) {
+		this.lessThan10Month = lessThan10Month;
+	}
+	@Column(name = "lessThan11Month")
+	public String getLessThan11Month() {
+		return lessThan11Month;
+	}
+	public void setLessThan11Month(String lessThan11Month) {
+		this.lessThan11Month = lessThan11Month;
+	}
+	@Column(name = "lessThan12Month")
+	public String getLessThan12Month() {
+		return lessThan12Month;
+	}
+	public void setLessThan12Month(String lessThan12Month) {
+		this.lessThan12Month = lessThan12Month;
 	}
 	@Column(name = "propertyExposure")
 	public String getPropertyExposure() {

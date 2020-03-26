@@ -1,0 +1,42 @@
+.weightagelabel {
+	width: 40%;
+	float: left;
+	line-height: 32px;
+	font-size: 12px !important;
+	font-family: sans-serif
+}
+
+.weightagetext {
+	width: 50% !important;
+	float: left;
+	font-size: 12px !important;
+	font-family: sans-serif
+}
+
+.weightageholder {
+	width: 50%;
+	float: left;
+	height: 36px;
+}
+
+button {
+	background-image: linear-gradient(to right, #ff6600, #000080);
+	width: 10% !important;
+	margin-bottom: 20px !important;
+}
+
+.errMsg {
+	font-size: 12px;
+	color: red;
+	position: relative;
+	top: -3px;
+	left: 111px;
+}
+
+.errcolor {
+	border-color: red;
+}
+
+.none {
+	display: none !important;
+}

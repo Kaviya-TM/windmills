@@ -1543,11 +1543,14 @@
 			</div>
 			<div class="form-group average">
 				<div class="avgholder" style="height: 17px">
-					<div class="sectionT"
-						style="width: 11% !important;float: left;">Building Name</div>
-						<input type="text" style="width: 15% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebuidingName">
-						<div class="sectionT" style="float: left;width: 14% !important;padding-left:36px">Community</div>
-						<input type="text" style="width: 15% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ecommunity">
+				<div class="sectionT" style="width: 11% !important;float: left;">Property Type</div>
+				<input type="text" style="width: 15% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="epropertyType">
+				<div class="sectionT" style="width: 5% !important;float: left;">Bedrooms</div>
+				<input type="text" style="width: 8% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebed">
+					<div class="sectionT" style="width: 9% !important;margin-right: 1% !important;float: left;">Building Name</div>
+						<input type="text" style="width: 14% !important;position: relative;padding-left: 18px;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebuidingName">
+						<div class="sectionT" style="float: left;width: 6% !important">Community</div>
+						<input type="text" style="width: 11% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ecommunity">
 <!-- 						<div class="sectionT" style="float: left;padding-left:54px" id="ecommunity"></div> -->
 <!-- 						<div class="sectionT" style="float: left;width:20% !important;padding-left:100px;margin-right: 0px !important;" id="ebuidingName">Building Name</div> -->
 <!-- 						<div class="sectionT" style="float: left;width: 6% !important;padding-left:62px">Beds</div> -->
@@ -1579,102 +1582,116 @@
 				</div>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Location</div>
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" value ="3" id="avgloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="subloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="diffloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly  id="weiloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly value ="3" id="avgloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weiloc">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjloc">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaloc"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">View</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" value ="3"  id="avgview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="subview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="diffview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly id="weiview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjview">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly value ="3"  id="avgview">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subview">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffview">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""  id="weiview">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjview">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaview"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Quality</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" value ="3" id="avgqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="subqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="diffqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly id="weiqua">
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:12% !important"  name="" id="adjqua">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly value ="3" id="avgqua">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subqua">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffqua">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""  id="weiqua">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:12% !important"  name="" readonly id="adjqua">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaqua"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Floor</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" id="avgfloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="subfloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="difffloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly  id="weifloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjfloor">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly id="avgfloor">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subfloor">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="difffloor">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weifloor">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjfloor">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chafloor"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Property Exposure</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3"  name="" id="avgexp">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="subexp">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="diffexp">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly  id="weiexp">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjexp">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3"  readonly name="" id="avgexp">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subexp">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffexp">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weiexp">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjexp">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaexp"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Property Placement</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3"  name="" id="avgpla">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="subpla">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="diffpla">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly  id="weipla">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjpla">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3" readonly name="" id="avgpla">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subpla">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffpla">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weipla">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjpla">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chapla"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Finishing Status</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3"  name="" id="avgsta">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="substa">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="diffsta">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly  id="weista">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjsta">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3" readonly name="" id="avgsta">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="substa">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffsta">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weista">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjsta">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chasta"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Beds</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" id="avgbed">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="subbed">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="diffbed">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly  id="weibed">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjbed">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly id="avgbed">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subbed">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffbed">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weibed">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjbed">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chabed"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Land Size</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" id="avgland">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="subland">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" id="diffland">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly  id="weiland">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" id="adjland">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly id="avgland">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonlyname="" id="subland">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffland">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weiland">
+					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjland">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaland"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">BUA</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" id="avgbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" id="subbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" id="diffbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important"  readonly id="weibua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:12% !important" id="adjbua">
+					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" readonly id="avgbua">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" readonly id="subbua">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" readonly id="diffbua">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important"   id="weibua">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:12% !important" readonly id="adjbua">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chabua"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Date</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" id="avgdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" id="subdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" id="diffdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" id="weidate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:12% !important" id="adjdate">
+					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" readonly id="avgdate">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" readonly id="subdate">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" readonly id="diffdate">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important"  id="weidate">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:12% !important" readonly id="adjdate">
+					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chadate"></div>
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Sales Price</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" id="epriceavg">
+					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" readonly  id="epriceavg">
+					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:17% !important;background:none !important" id="">
+					<div class="mainhead" style="width: 30%; font-weight: 800; float: left; line-height: 28px;color:#ff6600">Estimated Market Value as per Sold Transactions</div>
+					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12% !important"  name="" readonly id="marketvalue">
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">PSF</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" id="epriceavgper">
+					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" readonly id="epriceavgper">
 					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:17% !important;background:none !important" id="">
-					<div class="mainhead" style="width: 30%; font-weight: 800; float: left; line-height: 28px;color:#ff6600">Estimated Market Value as per Sold Transactions</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12% !important"  name="" id="marketvalue">
+					<div class="mainhead" style="width: 30%; font-weight: 800; float: left; line-height: 28px;color:#ff6600;text-align:right;padding-right:10px">PSF</div>
+					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12% !important"  readonly name="" id="finalvalue">
 				</div><br>
 			</div>
 			<div class="form-group submitting">

@@ -4,7 +4,7 @@
 <title>Windmills | Weightage</title>
 <link rel='shortcut icon' type='image/x-icon'
 	href='resources/assets/img/favicon.ico' />
-<link rel="stylesheet" href="resources/assets/css/property.css">
+<link rel="stylesheet" href="resources/assets/css/weightage.css">
 <link rel="stylesheet" href="resources/assets/css/main.css">
 <link rel="stylesheet"
 	href="resources/assets/bundles/pretty-checkbox/pretty-checkbox.min.css">
@@ -22,9 +22,9 @@
 		style="background: rgb(229, 231, 233) !important;overflow: scroll; overflow-x: hidden; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<form:form action="editWeightage" id="" modelAttribute="weightage">
 			<div class="form-group">
-				<div class="propertyholder">
-					<label class="propertylabel">Emirates</label>
-					 <select class="form-control form-control-sm propertytext" name="emirates">
+				<div class="weightageholder">
+					<label class="weightagelabel">Emirates</label>
+					 <select class="form-control form-control-sm weightagetext" name="emirates">
 						    <option value="${weightageeditform.emirates}" selected hidden>${weightageeditform.emirates}</option>
 							<option value="Dubai">Dubai</option>
 							<option value="Abu Dhabi">Abu Dhabi</option>
@@ -36,69 +36,134 @@
 							<option value="Umm Al Quwain">Umm Al Quwain</option>
 					 </select>
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Property Type</label> 
-					<select class="form-control form-control-sm propertytext" name="propertyType" id="">
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 1 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan1Month" value="${weightageeditform.lessThan1Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Property Type</label> 
+					<select class="form-control form-control-sm weightagetext" name="propertyType" id="">
 						<option value="${weightageeditform.propertyType}" selected hidden>${weightageeditform.propertyType}</option>  
 						<c:forEach items="${propertylist}" var="item">
 							<option value="${item.propertyValued}">${item.propertyValued}</option>
 						</c:forEach>
 					</select>
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Location</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 2 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan2Month" value="${weightageeditform.lessThan2Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Location</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="location" value="${weightageeditform.location}" id="" placeholder="Location">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Age</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 3 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan3Month" value="${weightageeditform.lessThan3Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Age</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="age" value="${weightageeditform.age}" id="" placeholder="ex:1%">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">View</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 4 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan4Month" value="${weightageeditform.lessThan4Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">View</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="view" id="" value="${weightageeditform.view}" placeholder="View">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Quality</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 5 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan5Month" value="${weightageeditform.lessThan5Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Quality</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="quality" id="" value="${weightageeditform.quality}" placeholder="Quality">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Floor</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 6 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan6Month" value="${weightageeditform.lessThan6Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Floor</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="floor" id="" value="${weightageeditform.floor}" placeholder="Floor">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Property Exposure</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 7 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan7Month" value="${weightageeditform.lessThan7Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Property Exposure</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="propertyExposure" value="${weightageeditform.propertyExposure}" id="" placeholder="ex:1%">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Property Placement</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 8 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan8Month" value="${weightageeditform.lessThan8Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Property Placement</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="propertyPlacement" value="${weightageeditform.propertyPlacement}" id="" placeholder="ex:1%">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Finishing Status</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 9 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan9Month" value="${weightageeditform.lessThan9Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Finishing Status</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="finishingStatus" value="${weightageeditform.finishingStatus}" id="" placeholder="ex:1%">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Bedrooom</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 10 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan10Month" value="${weightageeditform.lessThan10Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Bedrooom</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="bedroom" id="" value="${weightageeditform.bedroom}" placeholder="ex:1%">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">Land Size</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 11 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan11Month" value="${weightageeditform.lessThan11Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Land Size</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="landSize" id="" value="${weightageeditform.landSize}" placeholder="Land Size">
 				</div>
-				<div class="propertyholder">
-					<label class="propertylabel">BUA</label> <input
-						type="text" class="form-control form-control-sm propertytext"
+				<div class="weightageholder">
+					<label class="weightagelabel">Less than 12 Month</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="lessThan12Month" value="${weightageeditform.lessThan12Month}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">BUA</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
 						name="bua" value="${weightageeditform.bua}" id="" placeholder="BUA">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel"></label> <input
+						type="text" style="display:none" class="form-control form-control-sm weightagetext"
+						name="" id="" placeholder="ex:10%">
 				</div>
 				<input type="hidden" id="weightId"" name="weightId"
 				value="${weightageeditform.weightId}"/>

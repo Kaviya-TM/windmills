@@ -46,7 +46,6 @@ public class ListingTransactionController {
 
 	@RequestMapping(value = {"/listing-transactions" }, method = RequestMethod.GET)
 	public ModelAndView soldTransactions() {
-		System.err.println("listings");
 		ModelAndView mv = new ModelAndView();
 //		List<SoldTransactions> list=soldTransactionService.getSoldTransactions();
 //		mv.addObject("soldTransaction",list);

@@ -201,5 +201,126 @@ public class WeightageService {
 		}
 		return bedweight;
 	}
+	public String getLessThan1Month(List<Weightage> weightage) {
+		String lessThan1Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan1Month = wg.getLessThan1Month();
+				break;
+			}
+		}
+		return lessThan1Month;
+	}
+	public String getLessThan2Month(List<Weightage> weightage) {
+		String lessThan2Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan2Month = wg.getLessThan2Month();
+				break;
+			}
+		}
+		return lessThan2Month;
+	}
+	public String getLessThan4Month(List<Weightage> weightage) {
+		String lessThan4Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan4Month = wg.getLessThan4Month();
+				break;
+			}
+		}
+		return lessThan4Month;
+		
+	}
+	public String getLessThan3Month(List<Weightage> weightage) {
+		String lessThan3Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan3Month = wg.getLessThan3Month();
+				break;
+			}
+		}
+		return lessThan3Month;
+	}
+	public String getLessThan5Month(List<Weightage> weightage) {
+		String lessThan5Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan5Month = wg.getLessThan5Month();
+				break;
+			}
+		}
+		return lessThan5Month;
+	}
+	public String getLessThan6Month(List<Weightage> weightage) {
+		String lessThan6Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan6Month = wg.getLessThan6Month();
+				break;
+			}
+		}
+		return lessThan6Month;
+	}
+	public String getLessThan7Month(List<Weightage> weightage) {
+		String lessThan7Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan7Month = wg.getLessThan7Month();
+				break;
+			}
+		}
+		return lessThan7Month;
+	}
+	public String getLessThan8Month(List<Weightage> weightage) {
+		String lessThan8Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan8Month = wg.getLessThan8Month();
+				break;
+			}
+		}
+		return lessThan8Month;
+	}
+	public String getLessThan9Month(List<Weightage> weightage) {
+		String lessThan9Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan9Month = wg.getLessThan9Month();
+				break;
+			}
+		}
+		return lessThan9Month;
+	}
+	public String getLessThan10Month(List<Weightage> weightage) {
+		String lessThan10Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan10Month = wg.getLessThan10Month();
+				break;
+			}
+		}
+		return lessThan10Month;
+	}
+	public String getLessThan11Month(List<Weightage> weightage) {
+		String lessThan11Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan11Month = wg.getLessThan11Month();
+				break;
+			}
+		}
+		return lessThan11Month;
+	}
+	public String getLessThan12Month(List<Weightage> weightage) {
+		String lessThan12Month = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				lessThan12Month = wg.getLessThan12Month();
+				break;
+			}
+		}
+		return lessThan12Month;
+	}
 	
 }

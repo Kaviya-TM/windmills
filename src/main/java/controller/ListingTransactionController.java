@@ -39,19 +39,26 @@ import service.SoldTransactionService;
 @Controller
 public class ListingTransactionController {
 
-//	@Autowired
-//	private SoldTransactionService soldTransactionService;
+	@Autowired
+	private SoldTransactionService soldTransactionService;
 	
 	static Logger log = Logger.getLogger(ListingTransactionController.class);
 
 	@RequestMapping(value = {"/listing-transactions" }, method = RequestMethod.GET)
 	public ModelAndView soldTransactions() {
 		ModelAndView mv = new ModelAndView();
-//		List<SoldTransactions> list=soldTransactionService.getSoldTransactions();
-//		mv.addObject("soldTransaction",list);
+		List<SoldTransactions> cityylist=soldTransactionService.getCity();
+		List<SoldTransactions> arealist=soldTransactionService.getArea();
+		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
+		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
 		mv.setViewName("listingTransactions");
+		mv.addObject("cityylist",cityylist);
+		mv.addObject("arealist",arealist);
+		mv.addObject("hoodlist",hoodlist);
+		mv.addObject("bullist",bullist);
 		return mv;
 	}
+	
 //	@RequestMapping(value = {"/enquiry" }, method = RequestMethod.GET)
 //	public ModelAndView enquiry() {
 //		ModelAndView mv = new ModelAndView();

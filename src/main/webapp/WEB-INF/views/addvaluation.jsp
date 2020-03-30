@@ -21,7 +21,7 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
+		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
 			<button class="valbtn" id="receive">Receive Valuation</button>
 			<button class="valbtn" id="conflict" style="width: 8.5%;">Check Conflict Of Interest</button>
@@ -32,14 +32,82 @@
 			<button class="valbtn" id="splAssumption">Special Assumption</button>
 			<button class="valbtn" id="extent">Extent Of Investigation</button>
 			<button class="valbtn" id="marketsum">Market Summary</button>
-			<button class="valbtn" id="filter">Sold Transaction</button>
+			<button class="valbtn" id="senquiry">Sold-Trans Enquiry</button>
+			<button class="valbtn" id="filter">Sold-Trans List</button>
 			<button class="valbtn" id="average">Sold-Trans Calculation</button>
+			<button class="valbtn" id="filter">Listings Enquiry</button>
 			<button class="valbtn" id="filter">Listing Transaction</button>
 			<button class="valbtn" id="marketsum">Listing Calculation</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
 		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
 			<div class="errfilter">No Matching Found !!!</div>
+			<div class="form-group senquiry">
+				<div class="valuationholder">
+					<label class="labelholder">Building Name</label> 
+					<select
+							class="form-control form-control-sm textholder"  
+							name="valuationReport.buildingName" id="s-buildingName">  
+							<c:forEach items="${bullist}" var="item"> 
+								<option value="" hidden>-- Select Building/Project Name ---</option> 
+								<option value="${item}">${item}</option>
+ 							</c:forEach> 
+					</select> 
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Property Listing</label>
+					<select class="form-control form-control-sm textholder"
+						name="valuationReport.propertyValued" id="s-propList">
+						<c:forEach items="${propertylist}" var="item">
+							<option value="${item.propertyValued}">${item.propertyValued}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Bedroom From</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="bedfrom">
+						<option value="" hidden>-- Select--</option>
+						<option value="1-Bedroom">1-Bedroom	</option>
+						<option value="2-Bedroom">2-Bedroom</option>
+						<option value="3-Bedroom">3-Bedroom</option>
+						<option value="4-Bedroom">4-Bedroom</option>
+						<option value="5-Bedroom">5-Bedroom</option>
+						<option value="6-Bedroom">6-Bedroom</option>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Bedroom To</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="bedto">
+						<option value="" hidden>-- Select--</option>
+						<option value="1-Bedroom">1-Bedroom	</option>
+						<option value="2-Bedroom">2-Bedroom</option>
+						<option value="3-Bedroom">3-Bedroom</option>
+						<option value="4-Bedroom">4-Bedroom</option>
+						<option value="5-Bedroom">5-Bedroom</option>
+						<option value="6-Bedroom">6-Bedroom</option>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Sub-Community Name</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="s-subcommunity" placeholder="Sub-Community Name" autocomplete="off">
+				</div>	
+				<div class="valuationholder">
+					<label class="labelholder">Community Name</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="s-community" placeholder="Community Name" autocomplete="off">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">City</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="s-city" placeholder="City" autocomplete="off">
+				</div>
+				<div class="valuationholder" style="margin-top: 20px">
+					<div class="savebtn" id="sfilter">Filter</div>
+				</div>
+			</div>
 			<div class="form-group filter">	
 				<div class="column" style="height:27px;background:limegreen;color:#fff !important;margin-bottom:5px;border: 1px solid limegreen;border-radius:5px;">
 					<div class="head stylename" style="width:5.6%;color:#fff !important;font-weight:700">Date</div>

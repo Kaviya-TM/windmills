@@ -17,14 +17,14 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important; margin-top: 70px;padding-top:7px !important;width: 100%; min-height: 530px !important">
+		style="background: rgb(229, 231, 233) !important;padding-right: 0px !important; margin-top: 70px;padding-top:7px !important;width: 100%; min-height: 530px !important">
 		<form:form action="addlisitings" id="addlisitings" modelAttribute="">
 				<div class="listholder">
-					<label class="listlabel">Windmills Ref</label>
+					<label class="listlabel">Windmills Reference</label>
 				    <input type="text" class="form-control form-control-sm listtext" name="" id="" placeholder="Windmills Reference" autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Listings Ref</label>
+					<label class="listlabel">Listings Reference</label>
 				    <input type="text" class="form-control form-control-sm listtext" name="" id="" placeholder="Listings Reference" autocomplete="on">
 				</div>
 				<div class="listholder">
@@ -64,6 +64,19 @@
 				    <input type="text" class="form-control form-control-sm listtext" name="" id="" placeholder="Floor Number" autocomplete="on">
 				</div>
 				<div class="listholder">
+					<label class="listlabel">Building Number</label>
+				    <input type="text" class="form-control form-control-sm listtext" name="" id="" placeholder="Building Number" autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Building Name</label>
+					<select class="form-control form-control-sm listtext" name="" id="list-buildingname">  
+						<c:forEach items="${bullist}" var="item"> 
+							<option value="" hidden>-- Select Building/Project Name ---</option> 
+							<option value="${item}">${item}</option>
+						</c:forEach> 
+					</select> 
+				</div>
+				<div class="listholder">
 					<label class="listlabel">Street Number</label>
 				    <input type="text" class="form-control form-control-sm listtext" name="" id="" placeholder="Street Number" autocomplete="on">
 				</div>
@@ -72,21 +85,8 @@
 				    <input type="text" class="form-control form-control-sm listtext" name="" id="" placeholder="Street Name" autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Building Number</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="" id="" placeholder="Building Number" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel">Building Name</label>
-					<select class="form-control form-control-sm listtext" name="" id="">  
-						<c:forEach items="${bullist}" var="item"> 
-							<option value="" hidden>-- Select Building/Project Name ---</option> 
-							<option value="${item}">${item}</option>
-						</c:forEach> 
-					</select> 
-				</div>
-				<div class="listholder">
-					<label class="listlabel" style="line-height:16px">Sub Community Name</label> 
-						 <select class="form-control form-control-sm listtext" name="" id=""> 
+					<label class="listlabel">Sub Community Name</label> 
+						 <select class="form-control form-control-sm listtext" name="" id="list-subcommunity"> 
  							<c:forEach items="${hoodlist}" var="item">
  								<option value="" hidden>-- Select Sub Community ---</option>
 							<option value="${item}">${item}</option> 
@@ -95,7 +95,7 @@
 				</div>
 				<div class="listholder">
 					<label class="listlabel" style="line-height:16px;margin-bottom: 0px;">Community/Area Name</label>
-				 	<select class="form-control form-control-sm listtext" name="" id="">
+				 	<select class="form-control form-control-sm listtext" name="" id="list-community">
 						<c:forEach items="${arealist}" var="item"> 
 							<option value="" hidden>-- Select Community/Area---</option>
 							<option value="${item}">${item}</option>
@@ -104,8 +104,8 @@
 				</div>
 				<div class="listholder">
 					<label class="listlabel">City</label>
-					 <select class="form-control form-control-sm listtext" name="" id="">
-						<c:forEach items="${citylist}" var="item">
+					 <select class="form-control form-control-sm listtext" name="" id="list-city">
+						<c:forEach items="${cityylist}" var="item">
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -441,18 +441,6 @@
 					</select>
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Agent Name</label> <input type="text"
-						class="form-control form-control-sm listtext"
-						name="" id=""
-						placeholder="Agent " autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel">Agent </label> <input type="text"
-						class="form-control form-control-sm listtext"
-						name="" id=""
-						placeholder="Agent " autocomplete="on">
-				</div>
-				<div class="listholder">
 					<label class="listlabel">Price </label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="" id=""
@@ -465,16 +453,25 @@
 						placeholder="Rent " autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Rent/Price </label> <input type="text"
+					<label class="listlabel">Final Rent </label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="" id=""
-						placeholder="Rent/Price" autocomplete="on">
+						placeholder="Final Rent " autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel" style="display:none">Rent/Price </label> <input type="text"
-						class="form-control form-control-sm listtext" style="display:none"
-						name="" id=""
-						placeholder="Rent/Price" autocomplete="on">
+					<label class="listlabel">Agent Name</label> <input type="text"
+						class="form-control form-control-sm listtext"
+						name="" id="" placeholder="Agent " autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Agent PhoneNo</label> <input type="text"
+						class="form-control form-control-sm listtext"
+						name="" id="" placeholder="Agent PhoneNo " autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Agent Company</label> <input type="text"
+						class="form-control form-control-sm listtext"
+						name="" id="" placeholder="Agent Company" autocomplete="on">
 				</div>
 				<div class="listholder" style="margin-top: -4px">
 					<button type="submit" id="" class="savebtn">Save</button>

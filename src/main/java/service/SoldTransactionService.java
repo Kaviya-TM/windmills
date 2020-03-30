@@ -107,6 +107,7 @@ public class SoldTransactionService {
 		    return sum.doubleValue() / marks.size();
 		  }
 		  return sum;
+		  
 	}
 	public String getpricePerAvg(List<SoldTransactions> filterTransaction) {
 		String avg = null;
@@ -238,5 +239,31 @@ public class SoldTransactionService {
 			}
 		}
 		return avg;
+	}
+	public List<SoldTransactions> getList(List<SoldTransactions> list,String bedfrom, String bedto) {
+		ArrayList<SoldTransactions> filterlist = new ArrayList<SoldTransactions>();
+		String bedfromno= bedfrom.replaceAll("[^0-9]", "");
+	    String bedtono= bedto.replaceAll("[^0-9]", "");
+	    int min, max;
+	    min = Integer.parseInt(bedfromno);
+	    max = Integer.parseInt(bedtono);
+    	for(SoldTransactions trans : list){
+    		String roomNo = trans.getRoomNoEstimated();
+    		String roomno= roomNo.replaceAll("[^0-9]", "");
+    		int room = Integer.parseInt(roomno);
+    		if(room >= min && room<= max){
+    			System.err.println("***"+trans.getRoomNoEstimated());
+    			filterlist.add(trans);
+    			System.err.println(filterlist.size());
+    		}
+    	}
+		return filterlist;
+	}
+	@Transactional
+	public List<SoldTransactions> getFilterList(String city, String area, String neighbourhood, String buildingName,
+			String bedfrom, String bedto) {
+		List<SoldTransactions> list = soldTransactionDaoImpl.getFilter(city,area,neighbourhood,buildingName);
+		List<SoldTransactions> filterlist = getList(list,bedfrom,bedto);
+		return filterlist;
 	}	
 }

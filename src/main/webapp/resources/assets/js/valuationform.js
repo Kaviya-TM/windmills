@@ -34,7 +34,34 @@ $("#buildingname").change(function() {
 			},
 	});	
 });
+$("#senquiry").click(function() {
+	$('#s-buildingName').val($('#buildingname').val());
+	$('#s-city').val($('#city').val());
+	$('#s-community').val($('#community').val());
+	$('#s-subcommunity').val($('#subcommunity').val());
+	$('#s-propList').val($('#propertyvalued').val());
+});
 
+$("#s-buildingName").change(function() {	
+	var buildingName = $('#s-buildingName').val();
+	$.ajax({
+		url : 'getEverything',
+		dataType: "text",
+		data : {buildingName : buildingName},
+		method : 'POST',
+		success : function(response) {	
+			var obj = $.parseJSON(response);
+			var community = obj.city;
+			var subcommunity = obj.subcommunity;
+			var city = obj.community;
+			console.log("communitty",community);
+			 $('#s-city').val(community);
+			 $('#s-community').val(city);
+			 $('#s-subcommunity').val(subcommunity);
+			return;
+			},
+	});
+});
 $("#titledeed").change(function() {	
 	  var i = $(this).prev('label').clone();	
 	  var file = $("#titledeed")[0].files[0].name;	
@@ -616,26 +643,34 @@ function calSta(value){
 	}
 	return final;
 }
-$("#filter").click(function(){
-	 var city=$('#city').val(); 
-	 var area=$('#community').val(); 
-	 var neighbourhood=$('#subcommunity').val(); 
-	 var buildingName=$('#buildingname').val(); 
+$("#sfilter").click(function(){
+	 var city=$('#s-city').val(); 
+	 var area=$('#s-community').val(); 
+	 var neighbourhood=$('#s-subcommunity').val(); 
+	 var buildingName=$('#s-buildingName').val(); 
+	 var bedfrom=$('#bedfrom').val(); 
+	 var bedto=$('#bedto').val(); 
 	 $.ajax({
 			url : 'filtered-transaction-list',
 			dataType: "text",
-			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName},
+			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName,bedfrom:bedfrom,bedto:bedto},
 			method : 'POST',
 			success : function(response) {
 				var obj = $.parseJSON(response);
 				if((Object.keys(obj).length) === 0){
 					$('.errfilter').show();
 					$('.filter').hide();
+					$('#filter').css("background","#ff6600");
+					$('#senquiry').css("background","#000080");
+					$('.senquiry').hide();
 				}
 				else{
 					$('.errfilter').hide();
+					$('.senquiry').hide();
 					$('.filter').show();
 					$('div.boxlist').remove();
+					$('#filter').css("background","#ff6600");
+					$('#senquiry').css("background","#000080");
 					for (x in obj) {
 						console.log(obj[x].transactionId);
 						$('.filter').append("" +

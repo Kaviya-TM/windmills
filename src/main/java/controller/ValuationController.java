@@ -107,7 +107,6 @@ public class ValuationController {
 	@ResponseBody
 	public List<SoldTransactions> getFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,
 			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName,@RequestParam("bedfrom")String bedfrom,@RequestParam("bedto")String bedto){
-		System.err.println("**"+neighbourhood);
 		List<SoldTransactions> list = soldTransactionService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto);
 		return list;
 

@@ -90,19 +90,36 @@
 					</select>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder">Sub-Community Name</label> <input type="text"
-						class="form-control form-control-sm textholder"
-						name="" id="s-subcommunity" placeholder="Sub-Community Name" autocomplete="off">
+					<label class="labelholder">Sub-Community Name</label>
+						<select
+ 							class="form-control form-control-sm textholder" 
+ 							name="" id="s-subcommunity"> 
+ 							<c:forEach items="${hoodlist}" var="item">
+ 								<option value="" hidden>-- Select Sub Community ---</option>
+							<option value="${item}">${item}</option> 
+ 							</c:forEach> 
+ 						</select>
 				</div>	
 				<div class="valuationholder">
-					<label class="labelholder">Community Name</label> <input type="text"
+					<label class="labelholder">Community Name</label>
+					<select
 						class="form-control form-control-sm textholder"
-						name="" id="s-community" placeholder="Community Name" autocomplete="off">
+						name="" id="s-community">
+							<c:forEach items="${arealist}" var="item"> 
+								<option value="" hidden>-- Select Community/Area---</option>
+								<option value="${item}">${item}</option>
+ 							</c:forEach>
+					</select>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder">City</label> <input type="text"
+					<label class="labelholder">City</label> 
+					<select
 						class="form-control form-control-sm textholder"
-						name="" id="s-city" placeholder="City" autocomplete="off">
+						name="" id="s-city">
+						<c:forEach items="${citylist}" var="item">
+							<option value="${item}">${item}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="valuationholder" style="margin-top: 20px">
 					<div class="savebtn" id="sfilter">Filter</div>

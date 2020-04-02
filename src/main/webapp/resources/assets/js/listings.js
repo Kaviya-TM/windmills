@@ -21,6 +21,15 @@ $("#list-buildingname").change(function() {
 });
 
 $('#addlisitings').submit(function(e) {
+	var price = $('#price').val();
+	price = price.toLocaleString();
+	$('#price').val(price);
+	var rent = $('#rent').val();
+	rent = rent.toLocaleString();
+	$('#rent').val(rent);
+	var finalRent = $('#finalRent').val();
+	finalRent = finalRent.toLocaleString();
+	$('#finalRent').val(finalRent);
 	if($('.err').is(':visible')){
 		  e.preventDefault();
 		  $(':input', this).each(function() {

@@ -26,14 +26,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.ClientDetails;
+import model.Listings;
 import model.Property;
 import model.ServiceOfficer;
 import model.SoldTransactions;
 import model.ValuationReport;
+import model.Weightage;
 import service.ClientService;
-import service.PropertyService;
+import service.ListingsService;
 import service.ServiceOfficerService;
 import service.SoldTransactionService;
+import service.ValuationService;
 
 
 @Controller
@@ -42,59 +45,81 @@ public class ListingTransactionController {
 	@Autowired
 	private SoldTransactionService soldTransactionService;
 	
+	@Autowired
+	private ValuationService valuationService;
+	
+	@Autowired
+	private ListingsService listingsService;
+	
 	static Logger log = Logger.getLogger(ListingTransactionController.class);
 
 	@RequestMapping(value = {"/listing-transactions" }, method = RequestMethod.GET)
-	public ModelAndView soldTransactions() {
+	public ModelAndView listings() {
 		ModelAndView mv = new ModelAndView();
+		List<Property> propertylist = valuationService.getPropertyValued();
 		List<SoldTransactions> cityylist=soldTransactionService.getCity();
 		List<SoldTransactions> arealist=soldTransactionService.getArea();
 		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
 		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
 		mv.setViewName("listingTransactions");
+		mv.addObject("propertylist",propertylist);
 		mv.addObject("cityylist",cityylist);
 		mv.addObject("arealist",arealist);
 		mv.addObject("hoodlist",hoodlist);
 		mv.addObject("bullist",bullist);
 		return mv;
 	}
+	@RequestMapping(value = {"/addlisitings" }, method = RequestMethod.POST)
+	public ModelAndView addListings(@ModelAttribute("listings") Listings listings,HttpSession session) throws IllegalStateException, IOException {
+		listingsService.addListings(listings);
+	    ModelAndView mv = new ModelAndView();
+	    List<Object[]> list=listingsService.getListings();
+	    mv.addObject("listingslist",list);
+	    mv.setViewName("listingslist");
+		return mv;
+
+	}
 	
-//	@RequestMapping(value = {"/enquiry" }, method = RequestMethod.GET)
-//	public ModelAndView enquiry() {
-//		ModelAndView mv = new ModelAndView();
-//		List<SoldTransactions> citylist=soldTransactionService.getCity();
-//		List<SoldTransactions> arealist=soldTransactionService.getArea();
-//		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
-//		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
-//		mv.addObject("citylist",citylist);
-//		mv.addObject("arealist",arealist);
-//		mv.addObject("hoodlist",hoodlist);
-//		mv.addObject("bullist",bullist);
-//		mv.setViewName("enquiry");
-//		return mv;
-//	}
-//	@RequestMapping(value="/filter-transactions",method=RequestMethod.POST)
-//	public ModelAndView filter(@RequestParam("city")String city,@RequestParam("area")String area,
-//			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName){
-//		
-//		ModelAndView mv = new ModelAndView();
-//		List<SoldTransactions> filterTransaction=soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
-//		String dateAvg = soldTransactionService.getDateAvg(filterTransaction);
-//		String priceAvg = soldTransactionService.getpriceAvg(filterTransaction);
-//		String sizeAvg = soldTransactionService.getSizeAvg(filterTransaction);
-//		String pricePerAvg = soldTransactionService.getpricePerAvg(filterTransaction);
-//		String bedAvg = soldTransactionService.getBedAvg(filterTransaction);
-//		String landAvg = soldTransactionService.getlandAvg(filterTransaction);
-//		mv.addObject("pricePerAvg",pricePerAvg);
-//		mv.addObject("sizeAvg",sizeAvg);
-//		mv.addObject("bedAvg",bedAvg);
-//		mv.addObject("priceAvg",priceAvg);
-//		mv.addObject("dateAvg",dateAvg);
-//		mv.addObject("landAvg",landAvg);
-//		mv.addObject("filterTransaction",filterTransaction);
-//		mv.setViewName("filterTransaction");
-//		return mv;
-//	
-//	}
+	@RequestMapping(value = {"/listings-list" }, method = RequestMethod.GET)
+	public ModelAndView listingPage() {
+
+		ModelAndView mv = new ModelAndView();
+		List<Object[]> list=listingsService.getListings();
+		mv.addObject("listingslist",list);
+		System.err.println("listings-list");
+		mv.setViewName("listingslist");
+		return mv;
+	}
+	@RequestMapping(value="/getListings",method=RequestMethod.POST)
+	public ModelAndView getListings(@RequestParam("listingsId")int listingsId)
+	{
+		Listings listings=listingsService.getListings(listingsId);
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("listingseditform");
+		mv.addObject("listingsform",listings);
+		return mv;
+	}
+	
+	@RequestMapping(value="/editListings",method=RequestMethod.POST)
+	public ModelAndView editListings(@ModelAttribute("listings")Listings listings,HttpSession session) throws IllegalStateException, IOException {
+		listingsService.editListings(listings);
+		 ModelAndView mv = new ModelAndView();
+		 List<Object[]> list=listingsService.getListings();
+		 mv.addObject("listinglist",list);
+		 mv.setViewName("listinglist");
+	     return mv;
+		
+	}
+	@RequestMapping(value = "/delete-listings")
+	public ModelAndView deleteListings(@RequestParam("listingsId") int listingsId, HttpServletRequest request) throws Exception {
+		listingsService.deleteListings(listingsId);
+		ModelAndView mv = new ModelAndView();
+		List<Object[]> list=listingsService.getListings();
+		mv.addObject("listinglist",list);
+	    mv.setViewName("listinglist");
+	    return mv;
+
+	}
+
 	
 }

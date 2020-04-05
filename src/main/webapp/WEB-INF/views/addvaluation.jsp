@@ -35,7 +35,7 @@
 			<button class="valbtn" id="senquiry">Sold-Trans Enquiry</button>
 			<button class="valbtn" id="filter">Sold-Trans List</button>
 			<button class="valbtn" id="average">Sold-Trans Calculation</button>
-			<button class="valbtn" id="filter">Listings Enquiry</button>
+			<button class="valbtn" id="lenquiry">Listings Enquiry</button>
 			<button class="valbtn" id="filter">Listing Transaction</button>
 			<button class="valbtn" id="marketsum">Listing Calculation</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
@@ -140,6 +140,28 @@
 					<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
 					<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
 					<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
+				</div>
+			</div>
+			<div class="form-group lenquiry">	
+				<div class="valuationholder">
+					<label class="labelholder">Building Name</label> 
+					<select
+							class="form-control form-control-sm textholder"  
+							name="valuationReport.buildingName" id="l-buildingName">  
+							<c:forEach items="${bullist}" var="item"> 
+								<option value="" hidden>-- Select Building/Project Name ---</option> 
+								<option value="${item}">${item}</option>
+ 							</c:forEach> 
+					</select> 
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Property Listing</label>
+					<select class="form-control form-control-sm textholder"
+						name="valuationReport.propertyValued" id="l-propList">
+						<c:forEach items="${propertylist}" var="item">
+							<option value="${item.propertyValued}">${item.propertyValued}</option>
+						</c:forEach>
+					</select>
 				</div>
 			</div>
 			<div class="form-group conflict">

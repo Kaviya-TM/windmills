@@ -13,6 +13,7 @@ $('.errfilter').hide();
 $('.market-summary').hide();
 $('.spl-assumption').hide();
 $('.senquiry').hide();
+$('.lenquiry').hide();
 $("#receive").css("background-image", "linear-gradient(to right, #ff6600 , #ff6600)");
 $("#receive").click(function(){
 	$('.inspecting1').hide();
@@ -29,6 +30,8 @@ $("#receive").click(function(){
 	$('.filter').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080");
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
@@ -58,7 +61,40 @@ $("#senquiry").click(function(){
 	$('.filter').hide();
 	$('.extent').hide();
 	$('.senquiry').show();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#ff6600");
+	$("#extent").css("background", "#000080");
+	$("#filter").css("background", "#000080");
+	$("#average").css("background", "#000080");
+	$("#documents").css("background", "#000080");
+	$("#marketsum").css("background", "#000080");
+	$("#splAssumption").css("background", "#000080");
+	$("#inspect2").css("background", "#000080");
+	$("#receive").css("background", "#000080");
+	$("#schedule").css("background", "#000080");
+	$("#inspect1").css("background", "#000080");
+	$("#submit").css("background", "#000080");
+	$("#conflict").css("background", "#000080");
+});
+$("#lenquiry").click(function(){
+	$('.inspecting1').hide();
+	$('.submitting').hide();
+	$('.receiving').hide();
+	$('.scheduling').hide();
+	$('.inspecting2').hide();
+	$('.market-summary').hide();
+	$('.spl-assumption').hide();
+	$('.errfilter').hide();
+	$('.conflict').hide();
+	$('.documents').hide();
+	$('.average').hide();
+	$('.filter').hide();
+	$('.extent').hide();
+	$('.senquiry').hide();
+	$('.lenquiry').show();
+	$("#lenquiry").css("background", "#ff6600");
+	$("#senquiry").css("background", "#000080");
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
 	$("#average").css("background", "#000080");
@@ -87,6 +123,8 @@ $("#extent").click(function(){
 	$('.filter').hide();
 	$('.extent').show();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#ff6600");
 	$("#filter").css("background", "#000080");
@@ -116,6 +154,8 @@ $("#filter").click(function(){
 	$('.filter').show();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#ff6600");
@@ -145,6 +185,8 @@ $("#conflict").click(function(){
 	$('.conflict').show()
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
@@ -174,6 +216,8 @@ $("#average").click(function(){
 	$('.errfilter').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
@@ -201,6 +245,8 @@ $("#schedule").click(function(){
 	$('.average').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#average").css("background", "#000080");
@@ -226,6 +272,8 @@ $("#inspect1").click(function(){
 	$('.filter').hide();
 	$('.conflict').hide();
 	$('.extent').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$('.senquiry').hide();
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
@@ -257,6 +305,8 @@ $("#documents").click(function(){
 	$('.filter').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$('.errfilter').hide();
@@ -285,6 +335,8 @@ $("#inspect2").click(function(){
 	$('.extent').hide();
 	$('.conflict').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$('.errfilter').hide();
@@ -314,6 +366,8 @@ $("#marketsum").click(function(){
 	$('.documents').hide();
 	$('.filter').hide();
 	$('.extent').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$('.senquiry').hide();
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
@@ -344,6 +398,8 @@ $("#splAssumption").click(function(){
 	$('.filter').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$('.errfilter').hide();
@@ -375,6 +431,8 @@ $("#submit").click(function(){
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
 	$('.average').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
 	$("#marketsum").css("background", "#000080");
@@ -404,6 +462,8 @@ $("#receivenxt").click(function(){
 	$('.conflict').hide();
 	$("#extent").css("background", "#000080");
 	$('.filter').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#filter").css("background", "#000080");
 	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#ff6600");
@@ -431,7 +491,9 @@ $("#schedulenxt").click(function(){
 	$('.errfilter').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
-	$("#senquiry").css("background", "#000080")
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
+	$("#senquiry").css("background", "#000080");
 	$("#extent").css("background", "#000080");
 	$("#average").css("background", "#000080");
 	$("#documents").css("background", "#000080");
@@ -458,7 +520,9 @@ $("#scheduleprv").click(function(){
 	$('.extent').hide();
 	$('.conflict').hide();
 	$('.senquiry').hide();
-	$("#senquiry").css("background", "#000080")
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
+	$("#senquiry").css("background", "#000080");
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
 	$('.average').hide();
@@ -483,11 +547,13 @@ $("#inspect1nxt").click(function(){
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$('.filter').hide();$('.conflict').hide();
 	$('.errfilter').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
-	$("#senquiry").css("background", "#000080")
+	$("#senquiry").css("background", "#000080");
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
 	$('.average').hide();
@@ -515,7 +581,9 @@ $("#inspect1prv").click(function(){
 	$('.extent').hide();
 	$('.conflict').hide();
 	$('.senquiry').hide();
-	$("#senquiry").css("background", "#000080")
+	$("#senquiry").css("background", "#000080");
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#extent").css("background", "#000080");
 	$('.errfilter').hide();
 	$("#average").css("background", "#000080");
@@ -536,12 +604,14 @@ $("#splnxt").click(function(){
 	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.market-summary').show();
-	$('.spl-assumption').hide();
+	$('.spl-assumption').hide();;
 	$('.documents').hide();
 	$('.filter').hide();
 	$('.conflict').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
@@ -571,6 +641,8 @@ $("#splprv").click(function(){
 	$('.conflict').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
@@ -600,6 +672,8 @@ $("#mrtnxt").click(function(){
 	$('.extent').hide();
 	$('.conflict').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#average").css("background", "#000080");
@@ -628,6 +702,8 @@ $("#mrtprv").click(function(){
 	$('.extent').hide();
 	$('.conflict').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#filter").css("background", "#000080");
@@ -657,6 +733,8 @@ $("#docnxt").click(function(){
 	$('.conflict').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$('.filter').hide();
@@ -686,6 +764,8 @@ $("#docprv").click(function(){
 	$('.extent').hide();
 	$('.conflict').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$('.filter').hide();
@@ -715,6 +795,8 @@ $("#inspect2nxt").click(function(){
 	$('.filter').hide();
 	$('.extent').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$('.conflict').hide();
 	$("#extent").css("background", "#000080");
@@ -746,6 +828,8 @@ $("#inspect2prv").click(function(){
 	$('.extent').hide();
 	$('.conflict').hide();
 	$('.senquiry').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$("#senquiry").css("background", "#000080")
 	$("#extent").css("background", "#000080");
 	$("#average").css("background", "#000080");
@@ -771,6 +855,8 @@ $("#submitprv").click(function(){
 	$('.documents').hide();
 	$('.average').hide();
 	$('.filter').hide();
+	$('.lenquiry').hide();
+	$("#lenquiry").css("background", "#000080");
 	$('.senquiry').hide();
 	$("#senquiry").css("background", "#000080")
 	$('.extent').hide();

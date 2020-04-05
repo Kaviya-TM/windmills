@@ -20,12 +20,18 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important; margin-top: 70px; padding-top:5px !important; padding-right:0px !important;
-		width: 100%; min-height: 530px !important">
-		<form:form action="editListings" style="margin-top:-18px !important;" id="" modelAttribute="listings">
+		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important;padding-top: 10px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
+		<form:form action="editListings" style="margin-top:-18px !important;" id="listingseditform" modelAttribute="listings">
 				<div class="listholder">
 					<label class="listlabel">Windmills Reference</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="windmillsRef" value="${listingsform.windmillsRef}" id="" placeholder="Windmills Reference" autocomplete="on">
+					<select
+						class="form-control form-control-sm listtext"
+						name="windmillsRef" id="">
+					<option value="${listingsform.windmillsRef}" selected hidden>${listingsform.windmillsRef}</option>
+						<c:forEach items="${referencelist}" var="item">
+							<option value="${item.windmillsRef}">${item.windmillsRef}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Listings Reference</label>
@@ -33,7 +39,23 @@
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Source</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="source" value="${listingsform.source}"  id="" placeholder="Source" autocomplete="on">
+					<select class="form-control form-control-sm listtext" name="source" id="">
+						<option value="${listingsform.source}" selected hidden>${listingsform.source}</option>
+						<option value="Property Finder">Property Finder</option>
+						<option value="Dubizzle">Dubizzle</option>
+						<option value="Bayut">Bayut</option>
+						<option value="Waseet">Waseet</option>
+						<option value="Dubai-Rest">Dubai-Rest</option>
+						<option value="Simsari">Simsari</option>
+						<option value="Real Estate Agency">Real Estate Agency</option>
+						<option value="Reidin">Reidin</option>
+						<option value="Zoom Property">Zoom Property</option>
+						<option value="Property ePortal">Property ePortal</option>
+						<option value="Driven Properties">Driven Properties</option>
+						<option value="Just Property">Just Property</option>
+						<option value="Property Price">Property Price</option>
+						<option value="Index">Index</option>
+					</select>
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Listing Website Link</label>
@@ -197,6 +219,14 @@
 					</select> 
 				</div>
 				<div class="listholder">
+					<label class="listlabel">Plot Number</label>
+				    <input type="text" class="form-control form-control-sm listtext" value="${listingsform.plotNo}"  name="plotNo" id="" placeholder="Plot Number" autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Makani</label>
+				    <input type="text" class="form-control form-control-sm listtext" value="${listingsform.makani}"  name="makani" id="" placeholder="Makani" autocomplete="on">
+				</div>
+				<div class="listholder">
 					<label class="listlabel">Street Number</label>
 				    <input type="text" class="form-control form-control-sm listtext" value="${listingsform.streetNo}" name="streetNo" id="" placeholder="Street Number" autocomplete="on">
 				</div>
@@ -231,14 +261,6 @@
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
-				</div>
-				<div class="listholder">
-					<label class="listlabel">Plot Number</label>
-				    <input type="text" class="form-control form-control-sm listtext" value="${listingsform.plotNo}"  name="plotNo" id="" placeholder="Plot Number" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel">Makani</label>
-				    <input type="text" class="form-control form-control-sm listtext" value="${listingsform.makani}"  name="makani" id="" placeholder="Makani" autocomplete="on">
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Location</label> 
@@ -288,10 +310,17 @@
 					</select>
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Property Type</label> <input type="text"
+					<label class="listlabel">Property Type</label> 
+					<select
 						class="form-control form-control-sm listtext"
-						name="propType" value="${listingsform.propType}" id=""
-						placeholder="Property Type" autocomplete="on">
+						name="propType" id="">
+						<option value="${listingsform.propType}" hidden selected>${listingsform.propType}</option>
+						<option value="2M">2M</option>
+						<option value="3M">3M</option>
+						<option value="1E">1E</option>
+						<option value="2E">2E</option>
+						<option value="3E">3E</option>
+					</select>
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Property Condition</label> <select
@@ -577,22 +606,28 @@
 					</select>
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Price </label> <input type="text"
+					<label class="listlabel">Listings Price </label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="price" value="${listingsform.price}" id="price"
-						placeholder="Price " autocomplete="on">
+						placeholder="Listings Price " autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Rent </label> <input type="text"
+					<label class="listlabel">Listings Rent </label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="rent" id="rent" value="${listingsform.rent}"
-						placeholder="Rent" autocomplete="on">
+						placeholder="Listings Rent" autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Final Rent </label> <input type="text"
+					<label class="listlabel">Price/Sqt </label> <input type="text"
+						class="form-control form-control-sm listtext"
+						name="priceSqt" value="${listingsform.priceSqt}"id="priceSqt"
+						placeholder="Price/Sqt " autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Final Price </label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="finalRent" value="${listingsform.finalRent}" id="finalRent"
-						placeholder="Final Rent " autocomplete="on">
+						placeholder="Final Price " autocomplete="on">
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Agent Name</label> <input type="text"
@@ -609,12 +644,22 @@
 						class="form-control form-control-sm listtext"
 						name="agCompany" value="${listingsform.agCompany}" id="" placeholder="Agent Company" autocomplete="on">
 				</div>
+				<div class="listholder">
+					<label class="listlabel"></label> <input type="text" style="display:none"
+						class="form-control form-control-sm listtext"
+						name="" id="" placeholder="Agent Company" autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel"></label> <input type="text" style="display:none"
+						class="form-control form-control-sm listtext"
+						name="" id="" placeholder="Agent Company" autocomplete="on">
+				</div>
 				<input type="hidden" id="listingsId"" name="listingsId"
 				value="${listingsform.listingsId}"/>
 				<div class="form-group" style="width: 100%">
-					<button type="submit" style="width: 7% !important;background: forestgreen;margin-right:5px;float:left;padding:4px;margin-top:3px">Update</button>
-					<button type="none" id="cancel" style="width: 7% !important;background: orange;margin-right:5px;padding:4px;margin-top:3px;float:left">Cancel</button>
-					<div type="none" style="cursor:pointer;border-radius: 5px;width: 7% !important;margin-top:3px;background: #ff6600;float:left;position: relative;">
+					<button type="submit" style="width: 7% !important;background: forestgreen;margin-right:5px;float:left;padding:4px;margin-top:10px">Update</button>
+					<button type="none" id="cancel" style="width: 7% !important;background: orange;margin-right:5px;padding:4px;margin-top:10px;float:left">Cancel</button>
+					<div type="none" style="cursor:pointer;border-radius: 5px;width: 7% !important;margin-top:10px;background: #ff6600;float:left;position: relative;">
 						<i class="material-icons" style="color: #fff;font-size: 17px;">delete</i>
 						<a id="delete" class="icon-name" style="color:#fff;top: -3px;position: relative;">Delete</a>
 					</div>

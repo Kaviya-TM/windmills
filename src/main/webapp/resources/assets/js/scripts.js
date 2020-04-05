@@ -3,7 +3,7 @@
 $(window).on("load", function () {
   $(".loader").fadeOut("slow");
   $(".select2").select2({
-	    placeholder: "Payments",
+	    placeholder: "Other Facilities",
 	    allowClear: true
 	});
 });

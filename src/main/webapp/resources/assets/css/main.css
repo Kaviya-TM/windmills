@@ -254,7 +254,7 @@ hr {
 }
 
 .select2-dropdown {
-	border-color: #000080 !important;
+	border-color: none !important;
 }
 
 .theme-white .navbar {
@@ -595,7 +595,7 @@ button {
 	.select2-container.select2-container--focus .select2-selection--single
 	{
 	font-size: 11px !important;
-	border-color: #000080 !important;
+	border-color: none !important;
 }
 
 ::placeholder {
@@ -604,7 +604,7 @@ button {
 
 .select2-container .select2-selection--multiple, .select2-container .select2-selection--single
 	{
-	border-color: #000080 !important;
+	border-color: none !important;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice,
@@ -624,7 +624,7 @@ body {
 }
 
 .select2-container--default {
-	width: 100% !important;
+	width: 62% !important;
 }
 
 .resName {

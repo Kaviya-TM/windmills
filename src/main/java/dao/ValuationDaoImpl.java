@@ -182,5 +182,12 @@ public class ValuationDaoImpl {
 		return rows;
 	}
 
+	public List<ValuationReport> getReference() {
+		Query query=sessionFactory.getCurrentSession().createQuery("from ValuationReport order by reportId DESc");
+		query.setMaxResults(20);
+		List<ValuationReport> rows=query.list();
+		return rows;
+	}
+
 	
 }

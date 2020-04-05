@@ -10,18 +10,26 @@
 	href="resources/assets/bundles/pretty-checkbox/pretty-checkbox.min.css">
 <link rel="stylesheet"
 	href="resources/assets/bundles/bootstrap-daterangepicker/daterangepicker.css">
+	 <link rel="stylesheet" href="resources/assets/bundles/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="resources/assets/bundles/jquery-selectric/selectric.css">
 <link
 	href="resources/assets/bundles/vendor/datepicker/daterangepicker.css"
 	rel="stylesheet" media="all">
 <div class="listings">
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
-	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important;padding-right: 0px !important; margin-top: 70px;padding-top:7px !important;width: 100%; min-height: 530px !important">
-		<form:form action="addlisitings" id="addlisitings" modelAttribute="listings">
+<div class="main-content"
+		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
+				<form:form action="addlisitings" id="addlisitings" modelAttribute="listings">
 				<div class="listholder">
 					<label class="listlabel">Windmills Reference</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="windmillsRef" id="" placeholder="Windmills Reference" autocomplete="on">
+					<select
+						class="form-control form-control-sm listtext"
+						name="windmillsRef" id="">
+						<c:forEach items="${referencelist}" var="item">
+							<option value="${item.windmillsRef}">${item.windmillsRef}</option>
+						</c:forEach>
+					</select>
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Listings Reference</label>
@@ -29,7 +37,22 @@
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Source</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="source" id="" placeholder="Source" autocomplete="on">
+					<select class="form-control form-control-sm listtext" name="source" id="">
+						<option value="Property Finder">Property Finder</option>
+						<option value="Dubizzle">Dubizzle</option>
+						<option value="Bayut">Bayut</option>
+						<option value="Waseet">Waseet</option>
+						<option value="Dubai-Rest">Dubai-Rest</option>
+						<option value="Simsari">Simsari</option>
+						<option value="Real Estate Agency">Real Estate Agency</option>
+						<option value="Reidin">Reidin</option>
+						<option value="Zoom Property">Zoom Property</option>
+						<option value="Property ePortal">Property ePortal</option>
+						<option value="Driven Properties">Driven Properties</option>
+						<option value="Just Property">Just Property</option>
+						<option value="Property Price">Property Price</option>
+						<option value="Index">Index</option>
+					</select>
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Listing Website Link</label>
@@ -197,6 +220,14 @@
 					</select> 
 				</div>
 				<div class="listholder">
+					<label class="listlabel">Plot Number</label>
+				    <input type="text" class="form-control form-control-sm listtext" name="plotNo" id="" placeholder="Plot Number" autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Makani</label>
+				    <input type="text" class="form-control form-control-sm listtext" name="makani" id="" placeholder="Makani" autocomplete="on">
+				</div>
+				<div class="listholder">
 					<label class="listlabel">Street Number</label>
 				    <input type="text" class="form-control form-control-sm listtext" name="streetNo" id="" placeholder="Street Number" autocomplete="on">
 				</div>
@@ -229,14 +260,6 @@
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
-				</div>
-				<div class="listholder">
-					<label class="listlabel">Plot Number</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="plotNo" id="" placeholder="Plot Number" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel">Makani</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="makani" id="" placeholder="Makani" autocomplete="on">
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Location</label> <select
@@ -284,10 +307,16 @@
 					</select>
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Property Type</label> <input type="text"
+					<label class="listlabel">Property Type</label>
+					 <select
 						class="form-control form-control-sm listtext"
-						name="propType" id=""
-						placeholder="Property Type" autocomplete="on">
+						name="propType" id="">
+						<option value="2M" selected>2M</option>
+						<option value="3M">3M</option>
+						<option value="1E">1E</option>
+						<option value="2E">2E</option>
+						<option value="3E">3E</option>
+					</select>
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Property Condition</label> <select
@@ -437,11 +466,15 @@
 					</select>
 				</div>
 				<div class="listholder">
-					<label class="listlabel" style="line-height: 16px">Other
-						Community Facilities</label> <input type="text"
-						class="form-control form-control-sm listtext"
-						name="otherComFacility" id=""
-						placeholder="Other Community Facilities" autocomplete="on">
+					<label class="listlabel" style="line-height: 16px">Other Community Facilities</label>
+					<select class="form-control  form-control-sm listtext select2" style="width:62% !important" multiple="" name="otherComFacility" id="">
+                        <option value="Park">Park</option>
+                        <option value="PartyHall">PartyHall</option>
+                        <option>Option 3</option>
+                        <option>Option 4</option>
+                        <option>Option 5</option>
+                        <option>Option 6</option>
+                      </select>
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Completion Status</label> <select
@@ -561,22 +594,28 @@
 					</select>
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Price </label> <input type="text"
+					<label class="listlabel">Listings Price </label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="price" id="price"
-						placeholder="Price " autocomplete="on">
+						placeholder="Listings Price " autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Rent </label> <input type="text"
+					<label class="listlabel">Listings Rent </label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="rent" id="rent"
-						placeholder="Rent" autocomplete="on">
+						placeholder="Listings Rent" autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Final Rent </label> <input type="text"
+					<label class="listlabel">Price/Sqt </label> <input type="text"
+						class="form-control form-control-sm listtext"
+						name="priceSqt" id="priceSqt"
+						placeholder="Price/Sqt " autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Final Price </label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="finalRent" id="finalRent"
-						placeholder="Final Rent " autocomplete="on">
+						placeholder="Final Price" autocomplete="on">
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Agent Name</label> <input type="text"
@@ -593,7 +632,17 @@
 						class="form-control form-control-sm listtext"
 						name="agCompany" id="" placeholder="Agent Company" autocomplete="on">
 				</div>
-				<div class="listholder" style="margin-top: -4px">
+				<div class="listholder">
+					<label class="listlabel"></label> <input type="text" style="display:none"
+						class="form-control form-control-sm listtext"
+						name="" id="" placeholder="Agent Company" autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel"></label> <input type="text" style="display:none"
+						class="form-control form-control-sm listtext"
+						name="" id="" placeholder="Agent Company" autocomplete="on">
+				</div>
+				<div class="listholder" style="margin-top: 3px;margin-bottom:20px;">
 					<button type="submit" id="" class="savebtn">Save</button>
 				</div>
 		</form:form>

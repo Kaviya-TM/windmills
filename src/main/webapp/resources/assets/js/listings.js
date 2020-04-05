@@ -25,10 +25,17 @@ function toComma(value){
 	result = result.toLocaleString();
 	return result;
 }
+$(".select2").select2({
+    placeholder: "Other Facilities",
+    allowClear: true
+});
 $('#addlisitings').submit(function(e) {
 	var price = $('#price').val();
 	price = toComma(price);
 	$('#price').val(price);
+	var priceSqt = $('#priceSqt').val();
+	priceSqt = toComma(priceSqt);
+	$('#priceSqt').val(priceSqt);
 	var landSize = $('#landSize').val();
 	if(landSize == ""){
 		$('#landSize').val("-");
@@ -37,12 +44,16 @@ $('#addlisitings').submit(function(e) {
 		landSize = toComma(landSize);
 		$('#landSize').val(landSize);
 	}
+	if(bua == ""){
+		$('#bua').val("-");
+	}
+	else{
+		bua = toComma(bua);
+		$('#bua').val(bua);
+	}
 	var rent = $('#rent').val();
 	rent = toComma(rent);
 	$('#rent').val(rent);
-	var bua = $('#bua').val();
-	bua = toComma(bua);
-	$('#bua').val(bua);
 	var finalRent = $('#finalRent').val();
 	finalRent = toComma(finalRent);
 	$('#finalRent').val(finalRent);

@@ -57,12 +57,14 @@ public class ListingTransactionController {
 	public ModelAndView listings() {
 		ModelAndView mv = new ModelAndView();
 		List<Property> propertylist = valuationService.getPropertyValued();
+		List<ValuationReport> referencelist = valuationService.getReference();
 		List<SoldTransactions> cityylist=soldTransactionService.getCity();
 		List<SoldTransactions> arealist=soldTransactionService.getArea();
 		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
 		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
 		mv.setViewName("listingTransactions");
 		mv.addObject("propertylist",propertylist);
+		mv.addObject("referencelist",referencelist);
 		mv.addObject("cityylist",cityylist);
 		mv.addObject("arealist",arealist);
 		mv.addObject("hoodlist",hoodlist);
@@ -93,7 +95,19 @@ public class ListingTransactionController {
 	public ModelAndView getListings(@RequestParam("listingsId")int listingsId)
 	{
 		Listings listings=listingsService.getListings(listingsId);
+		List<Property> propertylist = valuationService.getPropertyValued();
+		List<ValuationReport> referencelist = valuationService.getReference();
+		List<SoldTransactions> cityylist=soldTransactionService.getCity();
+		List<SoldTransactions> arealist=soldTransactionService.getArea();
+		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
+		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
 		ModelAndView mv=new ModelAndView();
+		mv.addObject("propertylist",propertylist);
+		mv.addObject("referencelist",referencelist);
+		mv.addObject("cityylist",cityylist);
+		mv.addObject("arealist",arealist);
+		mv.addObject("hoodlist",hoodlist);
+		mv.addObject("bullist",bullist);
 		mv.setViewName("listingseditform");
 		mv.addObject("listingsform",listings);
 		return mv;

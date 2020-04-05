@@ -324,6 +324,11 @@ public class ValuationService {
 		}
 		return city;
 	}
+	@Transactional
+	public List<ValuationReport> getReference() {
+		List<ValuationReport> list = valuationDaoImpl.getReference();
+		return list;
+	}
 
 
 }

@@ -74,6 +74,7 @@ public class Listings  implements java.io.Serializable {
 	private String furnished;
 	private String utilityConnected;
 	private String price;
+	private String priceSqt;
 	private String rent;
 	private String finalRent;
 	private String agName;
@@ -109,6 +110,13 @@ public class Listings  implements java.io.Serializable {
 	}
 	public void setSource(String source) {
 		this.source = source;
+	}
+	@Column(name = "priceSqt")
+	public String getPriceSqt() {
+		return priceSqt;
+	}
+	public void setPriceSqt(String priceSqt) {
+		this.priceSqt = priceSqt;
 	}
 	@Column(name = "listingWebsiteLink")
 	public String getListingWebsiteLink() {

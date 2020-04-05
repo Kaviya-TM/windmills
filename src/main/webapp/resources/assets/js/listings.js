@@ -19,16 +19,32 @@ $("#list-buildingname").change(function() {
 			},
 	});	
 });
-
+function toComma(value){
+	value = value.replace(/,/g , '');
+	var result = parseInt(value);
+	result = result.toLocaleString();
+	return result;
+}
 $('#addlisitings').submit(function(e) {
 	var price = $('#price').val();
-	price = price.toLocaleString();
+	price = toComma(price);
 	$('#price').val(price);
+	var landSize = $('#landSize').val();
+	if(landSize == ""){
+		$('#landSize').val("-");
+	}
+	else{
+		landSize = toComma(landSize);
+		$('#landSize').val(landSize);
+	}
 	var rent = $('#rent').val();
-	rent = rent.toLocaleString();
+	rent = toComma(rent);
 	$('#rent').val(rent);
+	var bua = $('#bua').val();
+	bua = toComma(bua);
+	$('#bua').val(bua);
 	var finalRent = $('#finalRent').val();
-	finalRent = finalRent.toLocaleString();
+	finalRent = toComma(finalRent);
 	$('#finalRent').val(finalRent);
 	if($('.err').is(':visible')){
 		  e.preventDefault();

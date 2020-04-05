@@ -12,23 +12,21 @@
 		style="background: rgb(229, 231, 233) !important;margin-top: 70px; width: 100%;padding-right:0px; min-height: 530px !important">
 		<div class="row">
 			<div class="column" style="background:#ff6600;color:#fff !important;width:100% !important;margin-bottom:5px;border: 1px solid #ff6600;border-radius:5px;">
-						<div class="head stylename" style="width:8
-						.6%;color:#fff !important;font-weight:700">Listings Date</div>
-						<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">City</div>
+						<div class="head stylename" style="width:6.6%;color:#fff !important;font-weight:700">ListingsDate</div>
+						<div class="head stylename" style="width:7%;color:#fff !important;font-weight:700">City</div>
 						<div class="head stylename" style="color:#fff !important;font-weight:700">Area</div>
-						<div class="head stylename" style="width:9%;color:#fff !important;font-weight:700">Neighbourhood</div>
+						<div class="head stylename" style="width:10%;color:#fff !important;font-weight:700">Neighbourhood</div>
 						<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Bulding Name</div>
 						<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Developer</div>
 						<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700">Property SubType</div>
 						<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">Room No Est</div>
 						<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">LandSize</div>
 						<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
-						<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
-						<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
+						<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">FinalRent</div>
+						<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">Price</div>
 			</div>
 			<c:forEach items="${listingslist}" var="listings">
-				<div id="${listings.listingsId}"
-					class="column" style="margin-bottom:5px;width:100% !important">
+				<form:form action="getListings" id="${listings.listingsId}"  class="column" style="margin-bottom:5px;width:100% !important"> 
 					<div id="${listings.listingsId}">
 						<div class="head stylename" style="width:6.6%">${listings.listingsDate}</div>
 						<div class="head stylename" style="width:7%">${listings.city}</div>
@@ -39,12 +37,12 @@
 						<div class="head stylename" style="width:12%">${listings.propertyListed}</div>
 						<div class="head stylename" style="width:7%">${listings.noOfBedrooms}</div>
 						<div class="head stylename" style="width:6%">${listings.landSize}</div>
-						<div class="head stylename" style="width:5%">${listings.price}</div>
-						<div class="head stylename" style="width:8%">${listings.rent}</div>
-						<div class="head stylename" style="width:0%">${listings.finalRent}</div>
+						<div class="head stylename" style="width:5%">${listings.bua}</div>
+						<div class="head stylename" style="width:10%">${listings.finalRent}</div>
+						<div class="head stylename" style="width:0%">${listings.price}</div>
 						<input type="hidden" id="listingsId" name="listingsId" value="${listings.listingsId}" />
 				   </div>
-				</div>
+				</form:form>
 			</c:forEach>
 <%-- 			<c:forEach items="${listingslist}" var="listings"> --%>
 <%-- 				<form:form action="getListings" id="${listings.listingsId}" --%>

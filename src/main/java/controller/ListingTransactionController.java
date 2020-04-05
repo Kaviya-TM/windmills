@@ -86,7 +86,6 @@ public class ListingTransactionController {
 		ModelAndView mv = new ModelAndView();
 		List<Object[]> list=listingsService.getListings();
 		mv.addObject("listingslist",list);
-		System.err.println("listings-list");
 		mv.setViewName("listingslist");
 		return mv;
 	}
@@ -105,8 +104,8 @@ public class ListingTransactionController {
 		listingsService.editListings(listings);
 		 ModelAndView mv = new ModelAndView();
 		 List<Object[]> list=listingsService.getListings();
-		 mv.addObject("listinglist",list);
-		 mv.setViewName("listinglist");
+		 mv.addObject("listingslist",list);
+		 mv.setViewName("listingslist");
 	     return mv;
 		
 	}
@@ -115,8 +114,8 @@ public class ListingTransactionController {
 		listingsService.deleteListings(listingsId);
 		ModelAndView mv = new ModelAndView();
 		List<Object[]> list=listingsService.getListings();
-		mv.addObject("listinglist",list);
-	    mv.setViewName("listinglist");
+		mv.addObject("listingslist",list);
+	    mv.setViewName("listingslist");
 	    return mv;
 
 	}

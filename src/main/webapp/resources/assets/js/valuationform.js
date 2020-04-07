@@ -650,10 +650,22 @@ $("#sfilter").click(function(){
 	 var buildingName=$('#s-buildingName').val(); 
 	 var bedfrom=$('#bedfrom').val(); 
 	 var bedto=$('#bedto').val(); 
+	 var landfrom=$('#landfrom').val(); 
+	 var landto=$('#landto').val(); 
+	 var buafrom=$('#buafrom').val(); 
+	 var buato=$('#buato').val(); 
+	 var pricefrom=$('#pricefrom').val(); 
+	 var priceto=$('#priceto').val(); 
+	 var pricesqtfrom=$('#pricesqtfrom').val(); 
+	 var pricesqtto=$('#pricesqtto').val(); 
+	 var datefrom=$('#datefrom').val(); 
+	 var dateto=$('#dateto').val(); 
 	 $.ajax({
 			url : 'filtered-transaction-list',
 			dataType: "text",
-			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName,bedfrom:bedfrom,bedto:bedto},
+			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName,bedfrom:bedfrom,bedto:bedto,
+				landfrom:landfrom,landto:landto,buafrom:buafrom,buato:buato,pricefrom:pricefrom,priceto:priceto,
+				pricesqtfrom:pricesqtfrom,pricesqtto:pricesqtto,datefrom:datefrom,dateto:dateto},
 			method : 'POST',
 			success : function(response) {
 				var obj = $.parseJSON(response);

@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -106,8 +107,12 @@ public class ValuationController {
 	@RequestMapping(value = "/filtered-transaction-list", method = RequestMethod.POST)
 	@ResponseBody
 	public List<SoldTransactions> getFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,
-			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName,@RequestParam("bedfrom")String bedfrom,@RequestParam("bedto")String bedto){
-		List<SoldTransactions> list = soldTransactionService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto);
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName,@RequestParam("landfrom")String landfrom,@RequestParam("buafrom")String buafrom,
+			@RequestParam("buato")String buato,@RequestParam("landto")String landto,@RequestParam("bedfrom")String bedfrom,@RequestParam("bedto")String bedto,
+			@RequestParam("pricefrom")String pricefrom,@RequestParam("priceto")String priceto,@RequestParam("pricesqtfrom")String pricesqtfrom,@RequestParam("pricesqtto")String pricesqtto,
+			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto) throws ParseException{
+		List<SoldTransactions> list = soldTransactionService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto);
+		System.err.println("test***");
 		return list;
 
 	}

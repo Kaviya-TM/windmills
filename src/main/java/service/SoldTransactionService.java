@@ -259,11 +259,121 @@ public class SoldTransactionService {
     	}
 		return filterlist;
 	}
+	public List<SoldTransactions> getLandList(List<SoldTransactions> list,String landfrom, String landto) {
+		ArrayList<SoldTransactions> filterlandlist = new ArrayList<SoldTransactions>();
+		int landf = Integer.parseInt(landfrom);
+		int landt = Integer.parseInt(landto);
+		for(SoldTransactions trans : list){
+			
+			String landSize = trans.getLandAreaSqf();
+			if(!landSize.equals("-")){
+				landSize =  landSize.replaceAll(",", "");
+				int lands = Integer.parseInt(landSize);
+				if(lands >= landf && lands<= landt){
+					filterlandlist.add(trans);
+				}
+			}
+			else{
+				//
+			}
+			
+		}
+		return filterlandlist;
+	}
+	public List<SoldTransactions> getBUAList(List<SoldTransactions> list,String buafrom, String buato) {
+		ArrayList<SoldTransactions> filterbualist = new ArrayList<SoldTransactions>();
+		int buaf = Integer.parseInt(buafrom);
+		int buat = Integer.parseInt(buato);
+		for(SoldTransactions trans : list){
+			String buaSize = trans.getSizeSqf();
+			buaSize =  buaSize.replaceAll(",", "");
+			int buas = Integer.parseInt(buaSize);
+			if(buas >= buaf && buas<= buat){
+				filterbualist.add(trans);
+			}
+		}
+		return filterbualist;
+	}
+	public List<SoldTransactions> getPriceList(List<SoldTransactions> list,String pricefrom, String priceto) {
+		ArrayList<SoldTransactions> filterpricelist = new ArrayList<SoldTransactions>();
+		int pricef = Integer.parseInt(pricefrom);
+		int pricet = Integer.parseInt(priceto);
+		for(SoldTransactions trans : list){
+			String price = trans.getPrice();
+			price =  price.replaceAll(",", "");
+			int prices = Integer.parseInt(price);
+			if(prices >= pricef && prices<= pricet){
+				filterpricelist.add(trans);
+			}
+		}
+		return filterpricelist;
+	}
+	public List<SoldTransactions> getPriceSqtList(List<SoldTransactions> list,String pricesqtfrom, String pricesqtto) {
+		ArrayList<SoldTransactions> filterpricesqtlist = new ArrayList<SoldTransactions>();
+		int pricesqf = Integer.parseInt(pricesqtfrom);
+		int pricesqt = Integer.parseInt(pricesqtto);
+		for(SoldTransactions trans : list){
+			String pricesq = trans.getPricePerSqFt();
+			pricesq =  pricesq.replaceAll(",", "");
+			int pricesqs = Integer.parseInt(pricesq);
+			if(pricesqs >= pricesqf && pricesqs<= pricesqt){
+				filterpricesqtlist.add(trans);
+			}
+		}
+		return filterpricesqtlist;
+	}
+	public List<SoldTransactions> getDateList(List<SoldTransactions> list,String datefrom, String dateto) throws ParseException {
+		ArrayList<SoldTransactions> filterdatelist = new ArrayList<SoldTransactions>();
+		System.err.println("datefrom"+datefrom);
+		Date min=new SimpleDateFormat("dd-MMM-yyyy").parse(datefrom);
+		Date max=new SimpleDateFormat("dd-MMM-yyyy").parse(dateto);
+		System.err.println("max"+max);
+		for(SoldTransactions trans : list){
+			String date = trans.getDate();
+			String year = date.substring(6);
+			String month = date.substring(3,5);
+			String day = date.substring(0,2);
+			if(month.equals("03")){
+				month = "Mar";
+			}
+			if(month.equals("02")){
+				month = "Feb";
+			}
+			String date1 = day+"-"+month+"-"+year;
+			System.err.println("date1"+ date1);
+			Date dd=new SimpleDateFormat("dd-MMM-yyyy").parse(date1);
+			System.err.println("dd"+dd);
+			if((dd.after(min) && dd.before(max)) || dd.equals(min) || dd.equals(max)){
+				filterdatelist.add(trans);
+			}
+		}
+		return filterdatelist;
+	}
 	@Transactional
 	public List<SoldTransactions> getFilterList(String city, String area, String neighbourhood, String buildingName,
-			String bedfrom, String bedto) {
+			String bedfrom, String bedto, String landfrom, String landto, String buafrom, String buato, String pricefrom, 
+			String priceto, String pricesqtfrom, String pricesqtto, String datefrom, String dateto) throws ParseException {
+		
 		List<SoldTransactions> list = soldTransactionDaoImpl.getFilter(city,area,neighbourhood,buildingName);
-		List<SoldTransactions> filterlist = getList(list,bedfrom,bedto);
-		return filterlist;
+		System.err.println("list.size"+list.size());
+		List<SoldTransactions> filterdatelist =  getDateList(list,datefrom,dateto);
+		System.err.println("filterdatelist.size"+filterdatelist.size());
+		List<SoldTransactions> filterbedlist =  getList(filterdatelist,bedfrom,bedto);
+		System.err.println("filterbedlist.size"+filterbedlist.size());
+		List<SoldTransactions> filterlandlist =  getLandList(filterbedlist,landfrom,landto);
+		System.err.println("filterlandlist.size"+filterlandlist.size());
+		List<SoldTransactions> filterbualist = new ArrayList<SoldTransactions>();
+		if(filterlandlist.size() > 0){
+			filterbualist =  getBUAList(filterlandlist,buafrom,buato);
+		}
+		else{
+			filterbualist =  getBUAList(filterbedlist,buafrom,buato);
+		}
+		System.err.println("filterbualist.size"+filterbualist.size());
+		List<SoldTransactions> filterpricelist =  getPriceList(filterbualist,pricefrom,priceto);
+		System.err.println("filterpricelist.size"+filterpricelist.size());
+		List<SoldTransactions> filterpricesqtlist =  getPriceSqtList(filterpricelist,pricesqtfrom,pricesqtto);
+		System.err.println("filterpricesqtlist.size"+filterpricesqtlist.size());
+		return filterpricesqtlist;
 	}	
 }

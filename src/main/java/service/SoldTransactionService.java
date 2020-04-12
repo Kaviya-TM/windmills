@@ -181,6 +181,21 @@ public class SoldTransactionService {
 				if(room.equals("5-Bedroom")){
 					bed = "5";
 				}
+				if(room.equals("6-Bedroom")){
+					bed = "6";
+				}
+				if(room.equals("7-Bedroom")){
+					bed = "7";
+				}
+				if(room.equals("8-Bedroom")){
+					bed = "8";
+				}
+				if(room.equals("9-Bedroom")){
+					bed = "9";
+				}
+				if(room.equals("10-Bedroom")){
+					bed = "10";
+				}
 				if(room == "Unknown"){
 					bed = "0";
 				}
@@ -196,7 +211,6 @@ public class SoldTransactionService {
 	public String getDateAvg(List<SoldTransactions> filterTransaction) {
 		String avg = null;
 		List<LocalDate> myList = new ArrayList<>();
-		System.err.println("Entering");
 		if(!filterTransaction.isEmpty()){
 			for(SoldTransactions st : filterTransaction){
 				String aed = st.getDate();
@@ -227,15 +241,14 @@ public class SoldTransactionService {
 					//
 				}
 				else{
-					int finaed = Integer.parseInt(aed);
+					String newStr = aed.replaceAll(",", "");
+					int finaed = Integer.parseInt(newStr);
 					avglist.add(finaed);
 				}
 			}
-			System.err.println(avglist.size());
 			if(!avglist.isEmpty()){
 				double finalValue =  calculateAverage(avglist);
 				avg = String.valueOf(df.format(finalValue));
-				System.err.println(avg);
 			}
 		}
 		return avg;
@@ -252,9 +265,7 @@ public class SoldTransactionService {
     		String roomno= roomNo.replaceAll("[^0-9]", "");
     		int room = Integer.parseInt(roomno);
     		if(room >= min && room<= max){
-    			System.err.println("***"+trans.getRoomNoEstimated());
     			filterlist.add(trans);
-    			System.err.println(filterlist.size());
     		}
     	}
 		return filterlist;
@@ -264,7 +275,6 @@ public class SoldTransactionService {
 		int landf = Integer.parseInt(landfrom);
 		int landt = Integer.parseInt(landto);
 		for(SoldTransactions trans : list){
-			
 			String landSize = trans.getLandAreaSqf();
 			if(!landSize.equals("-")){
 				landSize =  landSize.replaceAll(",", "");
@@ -276,7 +286,6 @@ public class SoldTransactionService {
 			else{
 				//
 			}
-			
 		}
 		return filterlandlist;
 	}
@@ -306,6 +315,7 @@ public class SoldTransactionService {
 				filterpricelist.add(trans);
 			}
 		}
+		System.err.println(filterpricelist.size());
 		return filterpricelist;
 	}
 	public List<SoldTransactions> getPriceSqtList(List<SoldTransactions> list,String pricesqtfrom, String pricesqtto) {
@@ -324,56 +334,142 @@ public class SoldTransactionService {
 	}
 	public List<SoldTransactions> getDateList(List<SoldTransactions> list,String datefrom, String dateto) throws ParseException {
 		ArrayList<SoldTransactions> filterdatelist = new ArrayList<SoldTransactions>();
-		System.err.println("datefrom"+datefrom);
 		Date min=new SimpleDateFormat("dd-MMM-yyyy").parse(datefrom);
 		Date max=new SimpleDateFormat("dd-MMM-yyyy").parse(dateto);
-		System.err.println("max"+max);
 		for(SoldTransactions trans : list){
 			String date = trans.getDate();
 			String year = date.substring(6);
 			String month = date.substring(3,5);
 			String day = date.substring(0,2);
-			if(month.equals("03")){
-				month = "Mar";
+			if(month.equals("01")){
+				month = "Jan";
 			}
 			if(month.equals("02")){
 				month = "Feb";
 			}
+			if(month.equals("03")){
+				month = "Mar";
+			}
+			if(month.equals("04")){
+				month = "Apr";
+			}
+			if(month.equals("05")){
+				month = "May";
+			}
+			if(month.equals("06")){
+				month = "Jun";
+			}
+			if(month.equals("07")){
+				month = "Jul";
+			}
+			if(month.equals("08")){
+				month = "Aug";
+			}
+			if(month.equals("09")){
+				month = "Sep";
+			}
+			if(month.equals("10")){
+				month = "Oct";
+			}
+			if(month.equals("11")){
+				month = "Nov";
+			}
+			if(month.equals("12")){
+				month = "Dec";
+			}
+			
 			String date1 = day+"-"+month+"-"+year;
-			System.err.println("date1"+ date1);
 			Date dd=new SimpleDateFormat("dd-MMM-yyyy").parse(date1);
-			System.err.println("dd"+dd);
 			if((dd.after(min) && dd.before(max)) || dd.equals(min) || dd.equals(max)){
 				filterdatelist.add(trans);
 			}
 		}
 		return filterdatelist;
 	}
+	private List<SoldTransactions> getBulList(List<SoldTransactions> filterdatelist, String buildingName) {
+		ArrayList<SoldTransactions> filterbullist = new ArrayList<SoldTransactions>();
+		for(SoldTransactions trans : filterdatelist){
+			String bulname = trans.getBuildingName();
+			if(bulname.equals(buildingName)){
+				filterbullist.add(trans);
+			}
+		}
+		return filterbullist;
+	}	
+	private List<SoldTransactions> getPropertyList(List<SoldTransactions> datelist, String propList) {
+		ArrayList<SoldTransactions> propertylist = new ArrayList<SoldTransactions>();
+		for(SoldTransactions trans : datelist){
+			String property = trans.getPropertySubType();
+			if(propList.contains(property)){
+				propertylist.add(trans);
+			}
+		}
+		return propertylist;
+	}
 	@Transactional
 	public List<SoldTransactions> getFilterList(String city, String area, String neighbourhood, String buildingName,
 			String bedfrom, String bedto, String landfrom, String landto, String buafrom, String buato, String pricefrom, 
-			String priceto, String pricesqtfrom, String pricesqtto, String datefrom, String dateto) throws ParseException {
+			String priceto, String pricesqtfrom, String pricesqtto, String datefrom, String dateto, String propList) throws ParseException {
 		
-		List<SoldTransactions> list = soldTransactionDaoImpl.getFilter(city,area,neighbourhood,buildingName);
-		System.err.println("list.size"+list.size());
-		List<SoldTransactions> filterdatelist =  getDateList(list,datefrom,dateto);
-		System.err.println("filterdatelist.size"+filterdatelist.size());
-		List<SoldTransactions> filterbedlist =  getList(filterdatelist,bedfrom,bedto);
-		System.err.println("filterbedlist.size"+filterbedlist.size());
-		List<SoldTransactions> filterlandlist =  getLandList(filterbedlist,landfrom,landto);
-		System.err.println("filterlandlist.size"+filterlandlist.size());
-		List<SoldTransactions> filterbualist = new ArrayList<SoldTransactions>();
-		if(filterlandlist.size() > 0){
-			filterbualist =  getBUAList(filterlandlist,buafrom,buato);
+		List<SoldTransactions> getlist = soldTransactionDaoImpl.getSoldTransactions();
+		List<SoldTransactions> datelist =  getDateList(getlist,datefrom,dateto);
+		List<SoldTransactions> propertylist = getPropertyList(datelist,propList);
+		List<SoldTransactions> bullist =  getBulList(propertylist,buildingName);
+		List<SoldTransactions> bedlist = new ArrayList<SoldTransactions>();
+		List<SoldTransactions> landlist = new ArrayList<SoldTransactions>();
+		List<SoldTransactions> bualist = new ArrayList<SoldTransactions>();
+		List<SoldTransactions> pricelist = new ArrayList<SoldTransactions>();
+		List<SoldTransactions> pricesqtlist = new ArrayList<SoldTransactions>();
+		if(bedfrom.equals("") && bedto.equals("")){
+			for(SoldTransactions trans : bullist){
+				bedlist.add(trans);
+			}
 		}
 		else{
-			filterbualist =  getBUAList(filterbedlist,buafrom,buato);
+			bedlist =  getList(bullist,bedfrom,bedto);
 		}
-		System.err.println("filterbualist.size"+filterbualist.size());
-		List<SoldTransactions> filterpricelist =  getPriceList(filterbualist,pricefrom,priceto);
-		System.err.println("filterpricelist.size"+filterpricelist.size());
-		List<SoldTransactions> filterpricesqtlist =  getPriceSqtList(filterpricelist,pricesqtfrom,pricesqtto);
-		System.err.println("filterpricesqtlist.size"+filterpricesqtlist.size());
-		return filterpricesqtlist;
-	}	
+		if(landfrom.equals("") && landto.equals("")){
+			for(SoldTransactions trans : bedlist){
+				landlist.add(trans);
+			}
+		}
+		else{
+			landlist =  getLandList(bedlist,landfrom,landto);
+			if(landlist.size() <= 0){
+				for(SoldTransactions trans : bedlist){
+					landlist.add(trans);
+				}
+			}
+		}
+		if(buafrom.equals("") && buato.equals("")){
+			for(SoldTransactions trans : landlist){
+				bualist.add(trans);
+			}
+		}
+		else{
+			bualist = getBUAList(landlist,buafrom,buato);
+		}
+		if(pricefrom.equals("") && priceto.equals("")){
+			for(SoldTransactions trans : bualist){
+				pricelist.add(trans);
+			}
+		}
+		else{
+			pricelist = getPriceList(bualist,pricefrom,priceto);
+		}
+		System.err.println("pricelist"+pricelist.size());
+		if(pricesqtfrom.equals("") && pricesqtto.equals("")){
+			for(SoldTransactions trans : pricelist){
+				pricesqtlist.add(trans);
+			}
+		}
+		else{
+			pricesqtlist = getPriceSqtList(pricelist,pricesqtfrom,pricesqtto);
+		}
+		System.err.println("pricesqtlist"+pricesqtlist.size());
+		
+		return pricesqtlist;
+	}
+	
+	
 }

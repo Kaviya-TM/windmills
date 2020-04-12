@@ -106,14 +106,36 @@ public class ValuationController {
 	}
 	@RequestMapping(value = "/filtered-transaction-list", method = RequestMethod.POST)
 	@ResponseBody
-	public List<SoldTransactions> getFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,
+	public JSONObject getFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,
 			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName,@RequestParam("landfrom")String landfrom,@RequestParam("buafrom")String buafrom,
 			@RequestParam("buato")String buato,@RequestParam("landto")String landto,@RequestParam("bedfrom")String bedfrom,@RequestParam("bedto")String bedto,
 			@RequestParam("pricefrom")String pricefrom,@RequestParam("priceto")String priceto,@RequestParam("pricesqtfrom")String pricesqtfrom,@RequestParam("pricesqtto")String pricesqtto,
-			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto) throws ParseException{
-		List<SoldTransactions> list = soldTransactionService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto);
-		System.err.println("test***");
-		return list;
+			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto,@RequestParam("propList")String propList) throws ParseException{
+		List<SoldTransactions> list = soldTransactionService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto,propList);
+		JSONObject json = new JSONObject();
+		if(list.size() > 0){
+			String dateAvg = soldTransactionService.getDateAvg(list);
+			String landAvg = soldTransactionService.getlandAvg(list);
+			String priceAvg = soldTransactionService.getpriceAvg(list);
+			String sizeAvg = soldTransactionService.getSizeAvg(list);
+			String pricePerAvg = soldTransactionService.getpricePerAvg(list);
+			String bedAvg = soldTransactionService.getBedAvg(list);
+			json.put("list", list);
+			json.put("dateAvg", dateAvg);
+			json.put("landAvg", landAvg);
+			json.put("priceAvg", priceAvg);
+			json.put("sizeAvg", sizeAvg);
+			json.put("bedAvg", bedAvg);
+			json.put("pricePerAvg", pricePerAvg);
+			json.put("empty","full");
+			
+		}
+		else{
+			json.put("empty","empty");
+		}
+		
+		System.err.println(json);
+		return json;
 
 	}
 	
@@ -130,12 +152,18 @@ public class ValuationController {
 	}
 	@RequestMapping(value = "/filter-transac", method = RequestMethod.POST)
 	@ResponseBody
+//	public JSONObject getFilterTransac(@RequestParam("city")String city,@RequestParam("area")String area,
+//			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName, @RequestParam("propertyType")String propertyType){
 	public JSONObject getFilterTransac(@RequestParam("city")String city,@RequestParam("area")String area,
-			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName, @RequestParam("propertyType")String propertyType){
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName,@RequestParam("landfrom")String landfrom,@RequestParam("buafrom")String buafrom,
+			@RequestParam("buato")String buato,@RequestParam("landto")String landto,@RequestParam("bedfrom")String bedfrom,@RequestParam("bedto")String bedto,
+			@RequestParam("pricefrom")String pricefrom,@RequestParam("priceto")String priceto,@RequestParam("pricesqtfrom")String pricesqtfrom,@RequestParam("pricesqtto")String pricesqtto,
+			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto,@RequestParam("propList")String propList) throws ParseException{
 		
 		ModelAndView mv = new ModelAndView();
-		List<SoldTransactions> filterTransaction=soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
-		List<Weightage> weightage = weightageService.getWeightage(city,propertyType);
+//		List<SoldTransactions> filterTransaction=soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
+		List<SoldTransactions> filterTransaction = soldTransactionService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto,propList);
+		List<Weightage> weightage = weightageService.getWeightage(city,propList);
 		String locWeight = weightageService.getLocWeight(weightage);
 		String viewWeight = weightageService.getViewWeight(weightage);
 		String dateWeight = weightageService.getDateWeight(weightage);

@@ -16,7 +16,7 @@
 	color: limegreen;
 }
 .valbtn {
-	width: 5.8%;
+	width: 4.8%;
     font-size: 11.5px;
     float: left;
     padding: 3px;
@@ -25,7 +25,26 @@
     background: #000080;
     cursor: pointer;
 }
-
+.selholder
+  { 
+   width: 20%;
+   float: left;
+   padding: 5px;
+}
+.seclabel{
+	font-size: 12px;
+    float: left;
+    width: 40%;
+    font-weight:700;
+    color: #000080;
+}
+.sectext{
+	font-size: 12px;
+    font-family: sans-serif;
+    float: left;
+    font-weight:700;
+    color: blue;
+}
 .vrholder {
 	width: 50%;
 	float: left;

@@ -24,24 +24,374 @@
 		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
 			<button class="valbtn" id="receive">Receive Valuation</button>
-			<button class="valbtn" id="conflict" style="width: 8.5%;">Check Conflict Of Interest</button>
-			<button class="valbtn" id="documents">Receive Documents</button>
-			<button class="valbtn" id="schedule">Schedule Inspection</button>
-			<button class="valbtn" id="inspect1">Inspect Property A</button>
-			<button class="valbtn" id="inspect2">Inspect Property B</button>
-			<button class="valbtn" id="splAssumption">Special Assumption</button>
-			<button class="valbtn" id="extent">Extent Of Investigation</button>
+			<button class="valbtn" id="conflict" style="width: 3.5%;">Check COI</button>
+			<button class="valbtn" id="documents" style="width: 5.6%;">Receive Documents</button>
+			<button class="valbtn" id="schedule" style="width: 5.5%;">Schedule Inspection</button>
+			<button class="valbtn" id="inspect1" style="width: 5.5%;">Inspect Property A</button>
+			<button class="valbtn" id="inspect2" style="width: 5.5%;">Inspect Property B</button>
+			<button class="valbtn" id="splAssumption" style="width: 5.8%;">Special Assumption</button>
+			<button class="valbtn" id="extent" style="width: 6.2%;">Extent Of Investigation</button>
 			<button class="valbtn" id="marketsum">Market Summary</button>
-			<button class="valbtn" id="senquiry">Sold-Trans Enquiry</button>
-			<button class="valbtn" id="filter">Sold-Trans List</button>
-			<button class="valbtn" id="average">Sold-Trans Calculation</button>
+			<button class="valbtn" id="senquiry" style="width: 5.6%;">Sold-Trans Enquiry</button>
+			<button class="valbtn" id="filter" style="width: 5.7%;">Sold-Trans List</button>
+			<button class="valbtn" id="average" style="width: 5.6%;">Sold-Trans Calculation</button>
+			<button class="valbtn" id="">Master Enquiry</button>
+			<button class="valbtn" id="" style="width: 3.5%;">Master List</button>
+			<button class="valbtn" id="">Master Calculation</button>
 			<button class="valbtn" id="lenquiry">Listings Enquiry</button>
-			<button class="valbtn" id="filter">Listing Transaction</button>
-			<button class="valbtn" id="marketsum">Listing Calculation</button>
+			<button class="valbtn" id="lfilter">Listing Transaction</button>
+			<button class="valbtn" id="laverage">Listing Calculation</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
 		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
 			<div class="errfilter">No Matching Found !!!</div>
+			<div class="form-group lenquiry">
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">Date From<b style="color:red"> *</b></label>
+					<div class="input-group textholder" style="width:55% !important">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker"
+							style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;" name="" id="l-datefrom">
+					</div>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">Date To<b style="color:red"> *</b></label>
+					<div class="input-group textholder" style="width:55% !important">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker"
+							style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"  name="" id="l-dateto">
+					</div>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Property Listing</label>
+					<select class="form-control form-control-sm textholder" style="width:39% !important"
+						name="valuationReport.propertyValued" id="l-propList">
+						<c:forEach items="${propertylist}" var="item">
+							<option value="${item.propertyValued}">${item.propertyValued}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Building Name</label> 
+					<select
+							class="form-control form-control-sm textholder"  
+							name="valuationReport.buildingName" id="l-buildingName" style="width:39% !important" >  
+							<c:forEach items="${bullist}" var="item"> 
+								<option value="" hidden>-- Select Building/Project Name ---</option> 
+								<option value="${item}">${item}</option>
+ 							</c:forEach> 
+					</select> 
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important;line-height:16px">Sub-Community Name</label>
+						<select
+ 							class="form-control form-control-sm textholder" 
+ 							name="" id="l-subcommunity" style="width:39% !important"> 
+ 							<c:forEach items="${hoodlist}" var="item">
+ 								<option value="" hidden>-- Select Sub Community ---</option>
+							<option value="${item}">${item}</option> 
+ 							</c:forEach> 
+ 						</select>
+				</div>	
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Community Name</label>
+					<select
+						class="form-control form-control-sm textholder"
+						name="" id="l-community" style="width:39% !important">
+							<c:forEach items="${arealist}" var="item"> 
+								<option value="" hidden>-- Select Community/Area---</option>
+								<option value="${item}">${item}</option>
+ 							</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">City</label> 
+					<select
+						class="form-control form-control-sm textholder"
+						name="" id="l-city" style="width:39% !important">
+						<c:forEach items="${citylist}" var="item">
+							<option value="${item}">${item}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">Bedroom From</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="l-bedfrom" style="width:55% !important">
+						<option value="" hidden>-- Select--</option>
+						<option value="1-Bedroom">1-Bedroom	</option>
+						<option value="2-Bedroom">2-Bedroom</option>
+						<option value="3-Bedroom">3-Bedroom</option>
+						<option value="4-Bedroom">4-Bedroom</option>
+						<option value="5-Bedroom">5-Bedroom</option>
+						<option value="6-Bedroom">6-Bedroom</option>
+						<option value="7-Bedroom">7-Bedroom	</option>
+						<option value="8-Bedroom">8-Bedroom</option>
+						<option value="9-Bedroom">9-Bedroom</option>
+						<option value="10-Bedroom">10-Bedroom</option>
+					</select>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">Bedroom To</label> <select
+						class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-bedto">
+						<option value="" hidden>-- Select--</option>
+						<option value="1-Bedroom">1-Bedroom	</option>
+						<option value="2-Bedroom">2-Bedroom</option>
+						<option value="3-Bedroom">3-Bedroom</option>
+						<option value="4-Bedroom">4-Bedroom</option>
+						<option value="5-Bedroom">5-Bedroom</option>
+						<option value="6-Bedroom">6-Bedroom</option>
+						<option value="7-Bedroom">7-Bedroom	</option>
+						<option value="8-Bedroom">8-Bedroom</option>
+						<option value="9-Bedroom">9-Bedroom</option>
+						<option value="10-Bedroom">10-Bedroom</option>
+					</select>
+				</div>
+				<div class="valuationholder" style="width:100% !important">
+					<div class="valuationholder landto" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">LandSize From</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-landfrom">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="1500">1500</option>
+							<option value="2000">2000</option>
+							<option value="2500">2500</option>
+							<option value="3000">3000</option>
+							<option value="3500">3500</option>
+							<option value="4000">4000</option>
+							<option value="4500">4500</option>
+							<option value="5000">5000</option>
+							<option value="5500">5500</option>
+							<option value="6000">6000</option>
+							<option value="6500">6500</option>
+							<option value="7000">7000</option>
+							<option value="7500">7500</option>
+							<option value="8000">8000</option>
+							<option value="8500">8500</option>
+							<option value="9000">9000</option>
+							<option value="9500">9500</option>
+							<option value="10000">10000</option>
+						</select>
+					</div>
+					<div class="valuationholder landto" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">LandSize To</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-landto">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="1500">1500</option>
+							<option value="2000">2000</option>
+							<option value="2500">2500</option>
+							<option value="3000">3000</option>
+							<option value="3500">3500</option>
+							<option value="4000">4000</option>
+							<option value="4500">4500</option>
+							<option value="5000">5000</option>
+							<option value="5500">5500</option>
+							<option value="6000">6000</option>
+							<option value="6500">6500</option>
+							<option value="7000">7000</option>
+							<option value="7500">7500</option>
+							<option value="8000">8000</option>
+							<option value="8500">8500</option>
+							<option value="9000">9000</option>
+							<option value="9500">9500</option>
+							<option value="10000">10000</option>
+						</select>
+					</div>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">BUA From</label>
+					 <select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-buafrom">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="1500">1500</option>
+							<option value="2000">2000</option>
+							<option value="2500">2500</option>
+							<option value="3000">3000</option>
+							<option value="3500">3500</option>
+							<option value="4000">4000</option>
+							<option value="4500">4500</option>
+							<option value="5000">5000</option>
+							<option value="5500">5500</option>
+							<option value="6000">6000</option>
+							<option value="6500">6500</option>
+							<option value="7000">7000</option>
+							<option value="7500">7500</option>
+							<option value="8000">8000</option>
+							<option value="8500">8500</option>
+							<option value="9000">9000</option>
+							<option value="9500">9500</option>
+							<option value="10000">10000</option>
+						</select>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">BUA To</label>
+					<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-buato">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="1500">1500</option>
+							<option value="2000">2000</option>
+							<option value="2500">2500</option>
+							<option value="3000">3000</option>
+							<option value="3500">3500</option>
+							<option value="4000">4000</option>
+							<option value="4500">4500</option>
+							<option value="5000">5000</option>
+							<option value="5500">5500</option>
+							<option value="6000">6000</option>
+							<option value="6500">6500</option>
+							<option value="7000">7000</option>
+							<option value="7500">7500</option>
+							<option value="8000">8000</option>
+							<option value="8500">8500</option>
+							<option value="9000">9000</option>
+							<option value="9500">9500</option>
+							<option value="10000">10000</option>
+						</select>
+				</div>
+				<div class="valuationholder" style="width:100% !important">
+					<div class="valuationholder" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">Price From</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-pricefrom">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500000">500000</option>
+							<option value="1000000">1000000</option>
+							<option value="1500000">1500000</option>
+							<option value="2000000">2000000</option>
+							<option value="2500000">2500000</option>
+							<option value="3000000">3000000</option>
+							<option value="3500000">3500000</option>
+							<option value="4000000">4000000</option>
+							<option value="4500000">4500000</option>
+							<option value="5000000">5000000</option>
+							<option value="5500000">5500000</option>
+							<option value="6000000">6000000</option>
+							<option value="6500000">6500000</option>
+							<option value="7000000">7000000</option>
+							<option value="7500000">7500000</option>
+							<option value="8000000">8000000</option>
+							<option value="8500000">8500000</option>
+							<option value="9000000">9000000</option>
+							<option value="9500000">9500000</option>
+							<option value="10000000">10000000</option>
+						</select>
+					</div>
+					<div class="valuationholder" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">Price To</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-priceto">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500000">500000</option>
+							<option value="1000000">1000000</option>
+							<option value="1500000">1500000</option>
+							<option value="2000000">2000000</option>
+							<option value="2500000">2500000</option>
+							<option value="3000000">3000000</option>
+							<option value="3500000">3500000</option>
+							<option value="4000000">4000000</option>
+							<option value="4500000">4500000</option>
+							<option value="5000000">5000000</option>
+							<option value="5500000">5500000</option>
+							<option value="6000000">6000000</option>
+							<option value="6500000">6500000</option>
+							<option value="7000000">7000000</option>
+							<option value="7500000">7500000</option>
+							<option value="8000000">8000000</option>
+							<option value="8500000">8500000</option>
+							<option value="9000000">9000000</option>
+							<option value="9500000">9500000</option>
+							<option value="10000000">10000000</option>
+						</select>
+					</div>
+				</div>
+				<div class="valuationholder" style="width:100% !important">
+					<div class="valuationholder" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">Price/Sqt From</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-pricesqtfrom">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="400">400</option>
+							<option value="500">500</option>
+							<option value="600">600</option>
+							<option value="700">700</option>
+							<option value="800">800</option>
+							<option value="900">900</option>
+							<option value="1000">1000</option>
+							<option value="1100">1100</option>
+							<option value="1200">1200</option>
+							<option value="1300">1300</option>
+							<option value="1400">1400</option>
+							<option value="1500">1500</option>
+							<option value="1600">1600</option>
+							<option value="1700">1700</option>
+							<option value="1800">1800</option>
+							<option value="1900">1900</option>
+							<option value="2000">2000</option>
+						</select>
+					</div>
+					<div class="valuationholder" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">Price/Sqt To</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-pricesqtto">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="400">400</option>
+							<option value="500">500</option>
+							<option value="600">600</option>
+							<option value="700">700</option>
+							<option value="800">800</option>
+							<option value="900">900</option>
+							<option value="1000">1000</option>
+							<option value="1100">1100</option>
+							<option value="1200">1200</option>
+							<option value="1300">1300</option>
+							<option value="1400">1400</option>
+							<option value="1500">1500</option>
+							<option value="1600">1600</option>
+							<option value="1700">1700</option>
+							<option value="1800">1800</option>
+							<option value="1900">1900</option>
+							<option value="2000">2000</option>
+						</select>
+					</div>
+				</div>
+				
+				
+				<div class="valuationholder" style="margin-top: 20px">
+					<div class="savebtn" id="listingfilter">Filter</div>
+				</div>
+			</div>
 			<div class="form-group senquiry">
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">Date From<b style="color:red"> *</b></label>
@@ -68,7 +418,7 @@
 					</div>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Property Listing<b style="color:red"> *</b></label>
+					<label class="labelholder" style="width:10% !important">Property Listing</label>
 					<select class="form-control form-control-sm textholder" style="width:39% !important"
 						name="valuationReport.propertyValued" id="s-propList">
 						<c:forEach items="${propertylist}" var="item">
@@ -77,7 +427,7 @@
 					</select>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Building Name<b style="color:red"> *</b></label> 
+					<label class="labelholder" style="width:10% !important">Building Name</label> 
 					<select
 							class="form-control form-control-sm textholder"  
 							name="valuationReport.buildingName" id="s-buildingName" style="width:39% !important" >  
@@ -88,7 +438,7 @@
 					</select> 
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important;line-height:16px">Sub-Community Name<b style="color:red"> *</b></label>
+					<label class="labelholder" style="width:10% !important;line-height:16px">Sub-Community Name</label>
 						<select
  							class="form-control form-control-sm textholder" 
  							name="" id="s-subcommunity" style="width:39% !important"> 
@@ -99,7 +449,7 @@
  						</select>
 				</div>	
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Community Name<b style="color:red"> *</b></label>
+					<label class="labelholder" style="width:10% !important">Community Name</label>
 					<select
 						class="form-control form-control-sm textholder"
 						name="" id="s-community" style="width:39% !important">
@@ -110,7 +460,7 @@
 					</select>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">City<b style="color:red"> *</b></label> 
+					<label class="labelholder" style="width:10% !important">City</label> 
 					<select
 						class="form-control form-control-sm textholder"
 						name="" id="s-city" style="width:39% !important">
@@ -120,7 +470,7 @@
 					</select>
 				</div>
 				<div class="valuationholder" style="width:25% !important">
-					<label class="labelholder" style="width:40% !important">Bedroom From<b style="color:red"> *</b></label> <select
+					<label class="labelholder" style="width:40% !important">Bedroom From</label> <select
 						class="form-control form-control-sm textholder"
 						name="" id="bedfrom" style="width:55% !important">
 						<option value="" hidden>-- Select--</option>
@@ -137,7 +487,7 @@
 					</select>
 				</div>
 				<div class="valuationholder" style="width:25% !important">
-					<label class="labelholder" style="width:40% !important">Bedroom To<b style="color:red"> *</b></label> <select
+					<label class="labelholder" style="width:40% !important">Bedroom To</label> <select
 						class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="bedto">
 						<option value="" hidden>-- Select--</option>
@@ -155,7 +505,7 @@
 				</div>
 				<div class="valuationholder" style="width:100% !important">
 					<div class="valuationholder" style="width:25% !important">
-						<label class="labelholder" style="width:40% !important">LandSize From<b style="color:red"> *</b></label>
+						<label class="labelholder" style="width:40% !important">LandSize From</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="landfrom">
 							<option value="" hidden>-- Select--</option>
@@ -183,7 +533,7 @@
 						</select>
 					</div>
 					<div class="valuationholder" style="width:25% !important">
-						<label class="labelholder" style="width:40% !important">LandSize To<b style="color:red"> *</b></label>
+						<label class="labelholder" style="width:40% !important">LandSize To</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="landto">
 							<option value="" hidden>-- Select--</option>
@@ -212,7 +562,7 @@
 					</div>
 				</div>
 				<div class="valuationholder" style="width:25% !important">
-					<label class="labelholder" style="width:40% !important">BUA From<b style="color:red"> *</b></label>
+					<label class="labelholder" style="width:40% !important">BUA From</label>
 					 <select class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="buafrom">
 							<option value="" hidden>-- Select--</option>
@@ -240,7 +590,7 @@
 						</select>
 				</div>
 				<div class="valuationholder" style="width:25% !important">
-					<label class="labelholder" style="width:40% !important">BUA To<b style="color:red"> *</b></label>
+					<label class="labelholder" style="width:40% !important">BUA To</label>
 					<select class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="buato">
 							<option value="" hidden>-- Select--</option>
@@ -269,7 +619,7 @@
 				</div>
 				<div class="valuationholder" style="width:100% !important">
 					<div class="valuationholder" style="width:25% !important">
-						<label class="labelholder" style="width:40% !important">Price From<b style="color:red"> *</b></label>
+						<label class="labelholder" style="width:40% !important">Price From</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="pricefrom">
 							<option value="" hidden>-- Select--</option>
@@ -297,7 +647,7 @@
 						</select>
 					</div>
 					<div class="valuationholder" style="width:25% !important">
-						<label class="labelholder" style="width:40% !important">Price To<b style="color:red"> *</b></label>
+						<label class="labelholder" style="width:40% !important">Price To</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="priceto">
 							<option value="" hidden>-- Select--</option>
@@ -327,7 +677,7 @@
 				</div>
 				<div class="valuationholder" style="width:100% !important">
 					<div class="valuationholder" style="width:25% !important">
-						<label class="labelholder" style="width:40% !important">Price/Sqt From<b style="color:red"> *</b></label>
+						<label class="labelholder" style="width:40% !important">Price/Sqt From</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="pricesqtfrom">
 							<option value="" hidden>-- Select--</option>
@@ -355,7 +705,7 @@
 						</select>
 					</div>
 					<div class="valuationholder" style="width:25% !important">
-						<label class="labelholder" style="width:40% !important">Price/Sqt To<b style="color:red"> *</b></label>
+						<label class="labelholder" style="width:40% !important">Price/Sqt To</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
 						name="" id="pricesqtto">
 							<option value="" hidden>-- Select--</option>
@@ -390,42 +740,183 @@
 				</div>
 			</div>
 			<div class="form-group filter">	
-				<div class="column" style="height:27px;background:limegreen;color:#fff !important;margin-bottom:5px;border: 1px solid limegreen;border-radius:5px;">
-					<div class="head stylename" style="width:5.6%;color:#fff !important;font-weight:700">Date</div>
-					<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Type</div>
-					<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">City</div>
-					<div class="head stylename" style="color:#fff !important;font-weight:700">Area</div>
-					<div class="head stylename" style="width:9%;color:#fff !important;font-weight:700">Neighbourhood</div>
-					<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Bulding Name</div>
-					<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Developer</div>
+					<div class="" style="width: 100%;height: 3%;">
+							<div class="wr" style="width:85%;float:left;">
+								<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
+								<div class="sectext" style="color:crimson" name="" id="v-wr"></div>
+							</div>
+							<div class="vd">
+								<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
+								<div class="sectext" style="color:crimson" name="" id="v-vd"></div>
+							</div>
+					</div>
+				<div class="secsec" style="background: gold;width: 99.5% !important;margin-bottom: 8px; height:10%;border-radius: 5px;">
+					<div class="selholder" style="width: 22%;">
+							<div class="seclabel" style="">Property Listing:</div>
+							<div class="sectext" style="" name="" id="v-property"></div>
+					</div>
+					<div class="selholder" style="width: 22%;">
+							<div class="seclabel" style="width: 37%;">BuildingName:</div>
+							<div class="sectext" style="" name="" id="v-buildingName"></div>
+					</div>
+					<div class="selholder" style="width: 24%;">
+							<div class="seclabel" style="width: 37%;">SubCommunity:</div>
+							<div class="sectext" style="" name="" id="v-subCommunity"></div>
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="">Community:</div>
+							<div class="sectext" style="" name="" id="v-community"></div>
+					</div>
+					<div class="selholder" style="width: 10%;">
+							<div class="seclabel" style="">City:</div>
+							<div class="sectext" style="" name="" id="v-city"></div>
+					</div>
+					<div class="selholder" style="width: 16%;">
+							<div class="seclabel" style="">Date From:</div>
+							<div class="sectext" style="" name="" id="v-datefrom"></div>
+					</div>
+					<div class="selholder" style="width: 17%;">
+							<div class="seclabel" style="width: 51%;">Bedroom From:</div>
+							<div class="sectext" style="" name="" id="v-bedfrom"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 57%;">LandSize From: </div>
+							<div class="sectext" style="" name="" id="v-landfrom"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 52%;">SizeSqt From: </div>
+							<div class="sectext" style="" name="" id="v-buafrom"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 45%;">Price From:</div>
+							<div class="sectext" style="" name="" id="v-pricefrom"></div>			
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="width: 50%;">PricePerSqt From: </div>
+							<div class="sectext" style="" name="" id="v-pricesqtfrom"></div>	
+					</div>
+					<div class="selholder" style="width: 16%;">
+							<div class="seclabel" style="width: 32%;">Date To:</div>
+							<div class="sectext" style="" name="" id="v-dateto"></div>
+					</div>
+					<div class="selholder" style="width: 17%;">
+							<div class="seclabel" style="width: 42%;">Bedroom To:</div>
+							<div class="sectext" style="" name="" id="v-bedto"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 50%;">LandSize To: </div>
+							<div class="sectext" style="" name="" id="v-landto"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 43%;">SizeSqt To: </div>
+							<div class="sectext" style="" name="" id="v-buato"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 32%;">Price To: </div>
+							<div class="sectext" style="" name="" id="v-priceto"></div>	
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="width: 43%;">PricePerSqt To: </div>
+							<div class="sectext" style="" name="" id="v-pricesqtto"></div>	
+					</div>
+				</div>
+				<div class="column" style="display:flex;background:limegreen;color:#fff !important;margin-bottom:5px;border: 1px solid limegreen;border-radius:5px;">
+					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Date</div>
+					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Area</div>
+					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Neighbourhood</div>
+					<div class="head stylename" style="width:15%;color:#fff !important;font-weight:700">Building Name</div>
+					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Developer</div>
 					<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700">Property SubType</div>
-					<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">Room No Est</div>
+					<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">RoomNo Est</div>
 					<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">LA-sqf</div>
 					<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
 					<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
 					<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
 				</div>
 			</div>
-			<div class="form-group lenquiry">	
-				<div class="valuationholder">
-					<label class="labelholder">Building Name</label> 
-					<select
-							class="form-control form-control-sm textholder"  
-							name="valuationReport.buildingName" id="l-buildingName">  
-							<c:forEach items="${bullist}" var="item"> 
-								<option value="" hidden>-- Select Building/Project Name ---</option> 
-								<option value="${item}">${item}</option>
- 							</c:forEach> 
-					</select> 
+			<div class="form-group lfilter">	
+				<div class="secsec" style="background: gold;width: 99.5% !important;margin-bottom: 8px; height:10%;border-radius: 5px;">
+					<div class="selholder" style="width: 16%;">
+							<div class="seclabel" style="">Date From:</div>
+							<div class="sectext" style="" name="" id="vv-datefrom"></div>
+					</div>
+					<div class="selholder" style="width: 14%;">
+							<div class="seclabel" style="">Date To:</div>
+							<div class="sectext" style="" name="" id="vv-dateto"></div>
+					</div>
+					<div class="selholder" style="width: 22%;">
+							<div class="seclabel" style="">Property Listing:</div>
+							<div class="sectext" style="" name="" id="vv-property"></div>
+					</div>
+					<div class="selholder" style="width: 22%;">
+							<div class="seclabel" style="width: 37%;">BuildingName:</div>
+							<div class="sectext" style="" name="" id="vv-buildingName"></div>
+					</div>
+					<div class="selholder" style="width: 24%;">
+							<div class="seclabel" style="width: 37%;">SubCommunity:</div>
+							<div class="sectext" style="" name="" id="vv-subCommunity"></div>
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="">Community:</div>
+							<div class="sectext" style="" name="" id="vv-community"></div>
+					</div>
+					<div class="selholder" style="width: 10%;">
+							<div class="seclabel" style="">City:</div>
+							<div class="sectext" style="" name="" id="vv-city"></div>
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="width: 47%;">Bedroom From:</div>
+							<div class="sectext" style="" name="" id="vv-bedfrom"></div>
+					</div>
+					<div class="selholder" >
+							<div class="seclabel" style="width: 40%;">Bedroom To:</div>
+							<div class="sectext" style="" name="" id="vv-bedto"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 55%;">LandSize From: </div>
+							<div class="sectext" style="" name="" id="vv-landfrom"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 50%;">LandSize To: </div>
+							<div class="sectext" style="" name="" id="vv-landto"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 50%;">SizeSqt From: </div>
+							<div class="sectext" style="" name="" id="vv-buafrom"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="">SizeSqt To: </div>
+							<div class="sectext" style="" name="" id="vv-buato"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 45%;">Price From:</div>
+							<div class="sectext" style="" name="" id="vv-pricefrom"></div>			
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="">Price To: </div>
+							<div class="sectext" style="" name="" id="vv-priceto"></div>	
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="width: 48%;">PricePerSqt From: </div>
+							<div class="sectext" style="" name="" id="vv-pricesqtfrom"></div>	
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="width: 45%;">PricePerSqt To: </div>
+							<div class="sectext" style="" name="" id="vv-pricesqtto"></div>	
+					</div>
 				</div>
-				<div class="valuationholder">
-					<label class="labelholder">Property Listing</label>
-					<select class="form-control form-control-sm textholder"
-						name="valuationReport.propertyValued" id="l-propList">
-						<c:forEach items="${propertylist}" var="item">
-							<option value="${item.propertyValued}">${item.propertyValued}</option>
-						</c:forEach>
-					</select>
+				<div class="column" style="display:flex;background:limegreen;color:#fff !important;margin-bottom:5px;border: 1px solid limegreen;border-radius:5px;">
+					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Date</div>
+					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Area</div>
+					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Neighbourhood</div>
+					<div class="head stylename" style="width:15%;color:#fff !important;font-weight:700">Building Name</div>
+					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Developer</div>
+					<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700">Property SubType</div>
+					<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">RoomNo Est</div>
+					<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">LA-sqf</div>
+					<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
+					<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
+					<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
 				</div>
 			</div>
 			<div class="form-group conflict">
@@ -876,7 +1367,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							name="valuationReport.valDate" id="" placeholder=""
+							name="valuationReport.valDate" id="valDate" placeholder=""
 							autocomplete="on">
 					</div>
 				</div>
@@ -1001,7 +1492,6 @@
 						<option value="Middle" selected>Middle</option>
 						<option value="Corner">Corner</option>
 						<option value="Semi-Corner">Semi-Corner</option>
-						<option value="Mulhaq">Mulhaq</option>
 						<option value="Not Applicable">Not Applicable</option>
 					</select>
 				</div>
@@ -1913,15 +2403,95 @@
 				</div>
 			</div>
 			<div class="form-group average">
-				<div class="avgholder" style="height: 17px">
-				<div class="sectionT" style="width: 11% !important;float: left;">Property Type</div>
-				<input type="text" style="width: 15% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="epropertyType">
-				<div class="sectionT" style="width: 5% !important;float: left;">Bedrooms</div>
-				<input type="text" style="width: 8% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebed">
-					<div class="sectionT" style="width: 9% !important;margin-right: 1% !important;float: left;">Building Name</div>
-						<input type="text" style="width: 14% !important;position: relative;padding-left: 18px;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebuidingName">
-						<div class="sectionT" style="float: left;width: 6% !important">Community</div>
-						<input type="text" style="width: 11% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ecommunity">
+				<div class="" style="width: 100%;height: 3%;">
+							<div class="wr" style="width:85%;float:left;">
+								<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
+								<div class="sectext" style="color:crimson" name="" id="vc-wr"></div>
+							</div>
+							<div class="vd">
+								<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
+								<div class="sectext" style="color:crimson" name="" id="vc-vd"></div>
+							</div>
+					</div>
+				<div class="secsec" style="background: gold;width: 99.5% !important;margin-bottom: 8px; height:10%;border-radius: 5px;">
+					<div class="selholder" style="width: 22%;">
+							<div class="seclabel" style="">Property Listing:</div>
+							<div class="sectext" style="" name="" id="vc-property"></div>
+					</div>
+					<div class="selholder" style="width: 22%;">
+							<div class="seclabel" style="width: 37%;">BuildingName:</div>
+							<div class="sectext" style="" name="" id="vc-buildingName"></div>
+					</div>
+					<div class="selholder" style="width: 24%;">
+							<div class="seclabel" style="width: 37%;">SubCommunity:</div>
+							<div class="sectext" style="" name="" id="vc-subCommunity"></div>
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="">Community:</div>
+							<div class="sectext" style="" name="" id="vc-community"></div>
+					</div>
+					<div class="selholder" style="width: 10%;">
+							<div class="seclabel" style="">City:</div>
+							<div class="sectext" style="" name="" id="vc-city"></div>
+					</div>
+					<div class="selholder" style="width: 16%;">
+							<div class="seclabel" style="">Date From:</div>
+							<div class="sectext" style="" name="" id="vc-datefrom"></div>
+					</div>
+					<div class="selholder" style="width: 17%;">
+							<div class="seclabel" style="width: 51%;">Bedroom From:</div>
+							<div class="sectext" style="" name="" id="vc-bedfrom"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 57%;">LandSize From: </div>
+							<div class="sectext" style="" name="" id="vc-landfrom"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 52%;">SizeSqt From: </div>
+							<div class="sectext" style="" name="" id="vc-buafrom"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 45%;">Price From:</div>
+							<div class="sectext" style="" name="" id="vc-pricefrom"></div>			
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="width: 50%;">PricePerSqt From: </div>
+							<div class="sectext" style="" name="" id="vc-pricesqtfrom"></div>	
+					</div>
+					<div class="selholder" style="width: 16%;">
+							<div class="seclabel" style="width: 32%;">Date To:</div>
+							<div class="sectext" style="" name="" id="vc-dateto"></div>
+					</div>
+					<div class="selholder" style="width: 17%;">
+							<div class="seclabel" style="width: 42%;">Bedroom To:</div>
+							<div class="sectext" style="" name="" id="vc-bedto"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 50%;">LandSize To: </div>
+							<div class="sectext" style="" name="" id="vc-landto"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 43%;">SizeSqt To: </div>
+							<div class="sectext" style="" name="" id="vc-buato"></div>
+					</div>
+					<div class="selholder" style="width: 15%;">
+							<div class="seclabel" style="width: 32%;">Price To: </div>
+							<div class="sectext" style="" name="" id="vc-priceto"></div>	
+					</div>
+					<div class="selholder">
+							<div class="seclabel" style="width: 43%;">PricePerSqt To: </div>
+							<div class="sectext" style="" name="" id="vc-pricesqtto"></div>	
+					</div>
+				</div><br>
+<!-- 				<div class="avgholder" style="height: 17px"> -->
+<!-- 				<div class="sectionT" style="width: 11% !important;float: left;">Property Type</div> -->
+<!-- 				<input type="text" style="width: 15% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="epropertyType"> -->
+<!-- 				<div class="sectionT" style="width: 5% !important;float: left;">Bedrooms</div> -->
+<!-- 				<input type="text" style="width: 8% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebed"> -->
+<!-- 					<div class="sectionT" style="width: 9% !important;margin-right: 1% !important;float: left;">Building Name</div> -->
+<!-- 						<input type="text" style="width: 14% !important;position: relative;padding-left: 18px;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebuidingName"> -->
+<!-- 						<div class="sectionT" style="float: left;width: 6% !important">Community</div> -->
+<!-- 						<input type="text" style="width: 11% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ecommunity"> -->
 <!-- 						<div class="sectionT" style="float: left;padding-left:54px" id="ecommunity"></div> -->
 <!-- 						<div class="sectionT" style="float: left;width:20% !important;padding-left:100px;margin-right: 0px !important;" id="ebuidingName">Building Name</div> -->
 <!-- 						<div class="sectionT" style="float: left;width: 6% !important;padding-left:62px">Beds</div> -->
@@ -1929,7 +2499,7 @@
 <!-- 						<div class="sectionT" style="float: left;width: 5% !important;padding-left:25px">BUA</div> -->
 <!-- 						<div class="sectionT" style="float: left;width: 11% !important;padding-left:47px">Sales Price</div> -->
 <!-- 						<div class="sectionT" style="float: left;padding-left:49px">PSF</div> -->
-				</div><br>
+<!-- 				</div><br> -->
 <!-- 				<div class="avgholder"> -->
 <!-- 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Average</div> -->
 <!-- 					<input type="text" class="form-control form-control-sm sectionTT" name="" id="edate"> -->
@@ -1970,7 +2540,7 @@
 					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaview"></div>
 				</div><br>
 				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Quality</div>
+					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Condition</div>
 					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly value ="3" id="avgqua">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subqua">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffqua">
@@ -1989,7 +2559,7 @@
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Property Exposure</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3"  readonly name="" id="avgexp">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="1.5"  readonly name="" id="avgexp">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subexp">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffexp">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weiexp">
@@ -1998,7 +2568,7 @@
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Property Placement</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3" readonly name="" id="avgpla">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="1.5" readonly name="" id="avgpla">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subpla">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffpla">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weipla">
@@ -2007,7 +2577,7 @@
 				</div><br>
 				<div class="avgholder">
 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Finishing Status</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="3" readonly name="" id="avgsta">
+					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="1.5" readonly name="" id="avgsta">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="substa">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffsta">
 					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weista">
@@ -2128,4 +2698,5 @@
 	src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 <script src="resources/assets/js/numbertoword.js"></script>
 <script src="resources/assets/js/valuationform.js"></script>
+<script src="resources/assets/js/listingfilter.js"></script>
 <script src="resources/assets/js/hideshow.js"></script>

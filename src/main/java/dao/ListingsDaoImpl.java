@@ -46,9 +46,9 @@ public class ListingsDaoImpl {
 	}
 
 
-	public List<Object[]> getListings() {
-		Query query = sessionFactory.getCurrentSession().createQuery(" from Listings");
-		List<Object[]> rows=query.list();
+	public List<Listings> getListings() {
+		Query query = sessionFactory.getCurrentSession().createQuery("from Listings");
+		List<Listings> rows=query.list();
 		return rows;
 	}
 

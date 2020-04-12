@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -75,10 +76,46 @@ public class ListingTransactionController {
 	public ModelAndView addListings(@ModelAttribute("listings") Listings listings,HttpSession session) throws IllegalStateException, IOException {
 		listingsService.addListings(listings);
 	    ModelAndView mv = new ModelAndView();
-	    List<Object[]> list=listingsService.getListings();
+	    List<Listings> list=listingsService.getListings();
 	    mv.addObject("listingslist",list);
 	    mv.setViewName("listingslist");
 		return mv;
+
+	}
+	
+	@RequestMapping(value = "/listings-filtered-transaction", method = RequestMethod.POST)
+	@ResponseBody
+	public JSONObject getFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName,@RequestParam("landfrom")String landfrom,@RequestParam("buafrom")String buafrom,
+			@RequestParam("buato")String buato,@RequestParam("landto")String landto,@RequestParam("bedfrom")String bedfrom,@RequestParam("bedto")String bedto,
+			@RequestParam("pricefrom")String pricefrom,@RequestParam("priceto")String priceto,@RequestParam("pricesqtfrom")String pricesqtfrom,@RequestParam("pricesqtto")String pricesqtto,
+			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto,@RequestParam("propList")String propList) throws ParseException{
+		List<Listings> list = listingsService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto,propList);
+		System.err.println("listfile"+list.size());
+		JSONObject json = new JSONObject();
+		if(list.size() > 0){
+			String dateAvg = listingsService.getDateAvg(list);
+			String landAvg = listingsService.getlandAvg(list);
+			String priceAvg = listingsService.getpriceAvg(list);
+			String sizeAvg = listingsService.getSizeAvg(list);
+			String pricePerAvg = listingsService.getpricePerAvg(list);
+			String bedAvg = listingsService.getBedAvg(list);
+			json.put("list", list);
+			json.put("dateAvg", dateAvg);
+			json.put("landAvg", landAvg);
+			json.put("priceAvg", priceAvg);
+			json.put("sizeAvg", sizeAvg);
+			json.put("bedAvg", bedAvg);
+			json.put("pricePerAvg", pricePerAvg);
+			json.put("empty","full");
+			
+		}
+		else{
+			json.put("empty","empty");
+		}
+		
+		System.err.println(json);
+		return json;
 
 	}
 	
@@ -86,7 +123,7 @@ public class ListingTransactionController {
 	public ModelAndView listingPage() {
 
 		ModelAndView mv = new ModelAndView();
-		List<Object[]> list=listingsService.getListings();
+		List<Listings> list=listingsService.getListings();
 		mv.addObject("listingslist",list);
 		mv.setViewName("listingslist");
 		return mv;
@@ -117,7 +154,7 @@ public class ListingTransactionController {
 	public ModelAndView editListings(@ModelAttribute("listings")Listings listings,HttpSession session) throws IllegalStateException, IOException {
 		listingsService.editListings(listings);
 		 ModelAndView mv = new ModelAndView();
-		 List<Object[]> list=listingsService.getListings();
+		 List<Listings> list=listingsService.getListings();
 		 mv.addObject("listingslist",list);
 		 mv.setViewName("listingslist");
 	     return mv;
@@ -127,7 +164,7 @@ public class ListingTransactionController {
 	public ModelAndView deleteListings(@RequestParam("listingsId") int listingsId, HttpServletRequest request) throws Exception {
 		listingsService.deleteListings(listingsId);
 		ModelAndView mv = new ModelAndView();
-		List<Object[]> list=listingsService.getListings();
+		List<Listings> list=listingsService.getListings();
 		mv.addObject("listingslist",list);
 	    mv.setViewName("listingslist");
 	    return mv;

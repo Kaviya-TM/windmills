@@ -617,16 +617,13 @@ function calAvg(value){
 function calPla(value){
 	var final = null;
 	if(value == "Middle"){
-		final = "3";
+		final = "1";
 	}
 	if(value == "Corner"){
-		final = "5";
+		final = "2";
 	}
 	if(value == "Semi-Corner"){
-		final = "4";
-	}
-	if(value == "Mulhaq"){
-		final = "2";
+		final = "1.5";
 	}
 	if(value == "Not Applicable"){
 		final = "0";
@@ -636,10 +633,10 @@ function calPla(value){
 function calSta(value){
 	var final = null;
 	if(value == "Shell & Core"){
-		final = "1";
+		final = "2";
 	}
 	if(value == "Fitted"){
-		final = "2";
+		final = "1";
 	}
 	return final;
 }
@@ -660,18 +657,92 @@ $("#sfilter").click(function(){
 	 var pricesqtto=$('#pricesqtto').val(); 
 	 var datefrom=$('#datefrom').val(); 
 	 var dateto=$('#dateto').val(); 
+	 var propList=$('#s-propList').val(); 
+	 $('#v-wr').text($('#reference').val());
+	 $('#v-vd').text($('#valDate').val());
+	 $('#v-property').text(propList);
+	 $('#v-datefrom').text(datefrom);
+	 $('#v-dateto').text(dateto);
+	 $('#v-buildingName').text(buildingName);
+	 $('#v-subCommunity').text(neighbourhood);
+	 $('#v-community').text(area);
+	 $('#v-city').text(city);
+	 if(bedfrom != ""){
+		 $('#v-bedfrom').text(bedfrom);
+	 }
+	 else{
+		 $('#v-bedfrom').text("---");
+	 }
+	 if(bedto !=""){
+		 $('#v-bedto').text(bedto);
+	 }
+	 else{
+		 $('#v-bedto').text("---");
+	 }
+	 if(landfrom !=""){
+		 $('#v-landfrom').text(landfrom);
+	 }
+	 else{
+		 $('#v-landfrom').text("---");
+	 }
+	 if(landto !=""){
+		 $('#v-landto').text(landto);
+	 }
+	 else{
+		 $('#v-landto').text("---");
+	 }
+	 if(buafrom !=""){
+		 $('#v-buafrom').text(buafrom);
+	 }
+	 else{
+		 $('#v-buafrom').text("---");
+	 }
+	 if(buato !=""){
+		 $('#v-buato').text(buato);
+	 }
+	 else{
+		 $('#v-buato').text("---");
+	 }
+	 if(pricefrom !=""){
+		 $('#v-pricefrom').text(pricefrom);
+	 }
+	 else{
+		 $('#v-pricefrom').text("---");
+	 }
+	 if(priceto !=""){
+		 $('#v-priceto').text(priceto);
+	 }
+	 else{
+		 $('#v-priceto').text("---");
+	 }
+	 if(pricesqtfrom !=""){
+		 $('#v-pricesqtfrom').text(pricesqtfrom);
+	 }
+	 else{
+		 $('#v-pricesqtfrom').text("---");
+	 }
+	 if(pricesqtto !=""){
+		 $('#v-pricesqtto').text(pricesqtto);
+	 }
+	 else{
+		 $('#v-pricesqtto').text("---");
+	 }
+	 
 	 $.ajax({
 			url : 'filtered-transaction-list',
 			dataType: "text",
 			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName,bedfrom:bedfrom,bedto:bedto,
 				landfrom:landfrom,landto:landto,buafrom:buafrom,buato:buato,pricefrom:pricefrom,priceto:priceto,
-				pricesqtfrom:pricesqtfrom,pricesqtto:pricesqtto,datefrom:datefrom,dateto:dateto},
+				pricesqtfrom:pricesqtfrom,pricesqtto:pricesqtto,datefrom:datefrom,dateto:dateto,propList:propList},
 			method : 'POST',
 			success : function(response) {
+				console.log(response);
 				var obj = $.parseJSON(response);
-				if((Object.keys(obj).length) === 0){
+				console.log(obj.list);
+				if(obj.empty === "empty"){
 					$('.errfilter').show();
 					$('.filter').hide();
+					$('.secsec').css("display","block !important");
 					$('#filter').css("background","#ff6600");
 					$('#senquiry').css("background","#000080");
 					$('.senquiry').hide();
@@ -683,27 +754,84 @@ $("#sfilter").click(function(){
 					$('div.boxlist').remove();
 					$('#filter').css("background","#ff6600");
 					$('#senquiry').css("background","#000080");
-					for (x in obj) {
-						console.log(obj[x].transactionId);
-						$('.filter').append("" +
-								"<div id="+obj[x].transactionId+" class='column boxlist' style='margin-bottom:5px;height:40px'>" +
-									" <div id="+ obj[x].transactionId +">" +
-									  	" <div class='head stylename' style='width:5.6%'>" + obj[x].date + "</div>" +
-									  	" <div class='head stylename' style='width:5%'>" + obj[x].type + "</div>" +
-									  	" <div class='head stylename' style='width:6%'>" + obj[x].city + "</div>" +
-									  	" <div class='head stylename' >" + obj[x].area + "</div>" +
-									  	" <div class='head stylename' style='width:9%'>" + obj[x].neighbourhood + "</div>" +
-									  	" <div class='head stylename' style='width:12%'>" + obj[x].buildingName + "</div>" +
-									  	" <div class='head stylename' style='width:12%'>" + obj[x].developer + "</div>" +
-									  	" <div class='head stylename' style='width:12%'>" + obj[x].propertySubType + "</div>" +
-									  	" <div class='head stylename' style='width:7%'>" + obj[x].roomNoEstimated + "</div>" +
-									  	" <div class='head stylename' style='width:6%'>" + obj[x].landAreaSqf + "</div>" +
-									  	" <div class='head stylename' style='width:5%'>" + obj[x].sizeSqf + "</div>" +
-									  	" <div class='head stylename' style='width:8%'>" + obj[x].price + "</div>" +
-									  	" <div class='head stylename' style='width:0%'>" + obj[x].pricePerSqFt + "</div>" +
-									  "</div>" +
-							    "</div>");
+					var pricePerAvg = toComma(obj.pricePerAvg);
+					var sizeAvg = toComma(obj.sizeAvg);
+					var priceAvg = toComma(obj.priceAvg);
+					var landAvg = toComma(obj.landAvg);
+					if(landAvg === "NaN"){
+						landAvg = "-";
 					}
+					var pricePerAvg = toComma(obj.pricePerAvg);
+					for (x in obj.list) {
+						var date = obj.list[x].date;
+						var formatdate = null;
+						if(date.includes("/01/")){
+							formatdate = date.replace("/01/", "-Jan-");
+						}
+						if(date.includes("/02/")){
+							formatdate = date.replace("/02/", "-Feb-");
+						}
+						if(date.includes("/03/")){
+							formatdate = date.replace("/03/", "-Mar-");
+						}
+						if(date.includes("/04/")){
+							formatdate = date.replace("/04/", "-Apr-");
+						}
+						if(date.includes("/05/")){
+							formatdate = date.replace("/05/", "-May-");
+						}
+						if(date.includes("/06/")){
+							formatdate = date.replace("/06/", "-Jun-");
+						}
+						if(date.includes("/07/")){
+							formatdate = date.replace("/07/", "-Jul-");
+						}
+						if(date.includes("/08/")){
+							formatdate = date.replace("/08/", "-Aug-");
+						}
+						if(date.includes("/09/")){
+							formatdate = date.replace("/09/", "-Sep-");
+						}
+						if(date.includes("/10/")){
+							formatdate = date.replace("/10/", "-Oct-");
+						}
+						if(date.includes("/11/")){
+							formatdate = date.replace("/11/", "-Nov-");
+						}
+						if(date.includes("/12/")){
+							formatdate = date.replace("/12/", "-Dec-");
+						}
+						
+						$('.filter').append("" +
+								"<div id="+obj.list[x].transactionId+" class='column boxlist' style='margin-bottom:5px;display:flex'>" +
+									" <div class='head stylename' style='width:7.6%'>" + formatdate + "</div>" +
+									  	" <div class='head stylename' style='width:7.6%'>" + obj.list[x].area + "</div>" +
+									  	" <div class='head stylename' style='width:14%'>" + obj.list[x].neighbourhood + "</div>" +
+									  	" <div class='head stylename' style='width:15%'>" + obj.list[x].buildingName + "</div>" +
+									  	" <div class='head stylename' style='width:15%'>" + obj.list[x].developer + "</div>" +
+									  	" <div class='head stylename' style='width:12%'>" + obj.list[x].propertySubType + "</div>" +
+									  	" <div class='head stylename' style='width:6%'>" + obj.list[x].roomNoEstimated + "</div>" +
+									  	" <div class='head stylename' style='width:6%'>" + obj.list[x].landAreaSqf + "</div>" +
+									  	" <div class='head stylename' style='width:5%'>" + obj.list[x].sizeSqf + "</div>" +
+									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].price + "</div>" +
+									  	" <div class='head stylename' style='width:0%'>" + obj.list[x].pricePerSqFt + "</div>" +
+									  
+							    "</div>");
+					}	
+					$('.filter').append("" +
+							"<div class='column boxlist' style='margin-bottom:5px;background:orange;display:flex'>" +
+							" <div class='head stylename' style='width:7.6%;color:#fff'>" + obj.dateAvg + "</div>" +
+						  	" <div class='head stylename' style='width:7.6%;color:orange'>" +formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:14%;color:orange'>" + formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:15%;color:orange'>" +formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:15%;color:orange'>" + formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:12%;color:orange'>" + formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:6%;color:#fff'>" + obj.bedAvg+ "</div>" +
+						  	" <div class='head stylename' style='width:6%;color:#fff'>" + landAvg + "</div>" +
+						  	" <div class='head stylename' style='width:5%;color:#fff'>" + sizeAvg+ "</div>" +
+						  	" <div class='head stylename' style='width:8%;color:#fff'>" + priceAvg + "</div>" +
+						  	" <div class='head stylename' style='width:0%;color:#fff'>" + pricePerAvg + "</div>" +
+				    "</div>");
 				}
 			}
 	 });	
@@ -1161,19 +1289,108 @@ $("#weidate").keyup(function(){
 	}
 });
 $("#average").click(function(){
-	   var city=$('#city').val(); 
-	   var area=$('#community').val();
-	   var buildingName=$('#buildingname').val(); 
-	   var neighbourhood=$('#subcommunity').val(); 
+//	   var city=$('#city').val(); 
+//	   var area=$('#community').val();
+//	   var buildingName=$('#buildingname').val(); 
+//	   var neighbourhood=$('#subcommunity').val(); 
 	   var propertyType=$('#propertyvalued').val();
+	   	 var city=$('#s-city').val(); 
+		 var area=$('#s-community').val(); 
+		 var neighbourhood=$('#s-subcommunity').val(); 
+		 var buildingName=$('#s-buildingName').val(); 
+		 var bedfrom=$('#bedfrom').val(); 
+		 var bedto=$('#bedto').val(); 
+		 var landfrom=$('#landfrom').val(); 
+		 var landto=$('#landto').val(); 
+		 var buafrom=$('#buafrom').val(); 
+		 var buato=$('#buato').val(); 
+		 var pricefrom=$('#pricefrom').val(); 
+		 var priceto=$('#priceto').val(); 
+		 var pricesqtfrom=$('#pricesqtfrom').val(); 
+		 var pricesqtto=$('#pricesqtto').val(); 
+		 var datefrom=$('#datefrom').val(); 
+		 var dateto=$('#dateto').val(); 
+		 var propList=$('#s-propList').val(); 
 	   $('#ecommunity').val(area);
 	   $('#ebuidingName').val(buildingName);
 	   $('#epropertyType').val(propertyType);
+	   $('#vc-wr').text($('#reference').val());
+		 $('#vc-vd').text($('#valDate').val());
+		 $('#vc-property').text(propList);
+		 $('#vc-datefrom').text(datefrom);
+		 $('#vc-dateto').text(dateto);
+		 $('#vc-buildingName').text(buildingName);
+		 $('#vc-subCommunity').text(neighbourhood);
+		 $('#vc-community').text(area);
+		 $('#vc-city').text(city);
+		 if(bedfrom != ""){
+			 $('#vc-bedfrom').text(bedfrom);
+		 }
+		 else{
+			 $('#vc-bedfrom').text("---");
+		 }
+		 if(bedto !=""){
+			 $('#vc-bedto').text(bedto);
+		 }
+		 else{
+			 $('#vc-bedto').text("---");
+		 }
+		 if(landfrom !=""){
+			 $('#vc-landfrom').text(landfrom);
+		 }
+		 else{
+			 $('#vc-landfrom').text("---");
+		 }
+		 if(landto !=""){
+			 $('#vc-landto').text(landto);
+		 }
+		 else{
+			 $('#vc-landto').text("---");
+		 }
+		 if(buafrom !=""){
+			 $('#vc-buafrom').text(buafrom);
+		 }
+		 else{
+			 $('#vc-buafrom').text("---");
+		 }
+		 if(buato !=""){
+			 $('#vc-buato').text(buato);
+		 }
+		 else{
+			 $('#vc-buato').text("---");
+		 }
+		 if(pricefrom !=""){
+			 $('#vc-pricefrom').text(pricefrom);
+		 }
+		 else{
+			 $('#vc-pricefrom').text("---");
+		 }
+		 if(priceto !=""){
+			 $('#vc-priceto').text(priceto);
+		 }
+		 else{
+			 $('#vc-priceto').text("---");
+		 }
+		 if(pricesqtfrom !=""){
+			 $('#vc-pricesqtfrom').text(pricesqtfrom);
+		 }
+		 else{
+			 $('#vc-pricesqtfrom').text("---");
+		 }
+		 if(pricesqtto !=""){
+			 $('#vc-pricesqtto').text(pricesqtto);
+		 }
+		 else{
+			 $('#vc-pricesqtto').text("---");
+		 }
 	   $.ajax({
 			url : 'filter-transac',
 			dataType: "text",
 			asyn: true,
-			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName,propertyType:propertyType},
+			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName,bedfrom:bedfrom,bedto:bedto,
+				landfrom:landfrom,landto:landto,buafrom:buafrom,buato:buato,pricefrom:pricefrom,priceto:priceto,
+				pricesqtfrom:pricesqtfrom,pricesqtto:pricesqtto,datefrom:datefrom,dateto:dateto,propList:propList},
+//			data : {city : city,area:area,neighbourhood:neighbourhood,buildingName:buildingName,propertyType:propertyType},
 			method : 'POST',
 			success : function(response) {	
 				var obj = $.parseJSON(response);
@@ -1235,34 +1452,34 @@ $("#average").click(function(){
 				var subloc = calAvg(location);
 				$('#subloc').val(subloc);
 			    var diffloc = parseInt($('#subloc').val()) - parseInt($('#avgloc').val());
-			    $('#diffloc').val(toComma(diffloc));
+			    $('#diffloc').val(diffloc);
 			     adjloc = parseInt(($('#diffloc').val()).replace(/,/g , '')) * parseFloat(locWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 			    $('#adjloc').val(toComma(adjloc));
 			    // quality//
 			    var subqua = calAvg(quality);
 			    $('#subqua').val(subqua);
 			    var diffqua = parseInt($('#subqua').val()) - parseInt($('#avgqua').val());
-			    $('#diffqua').val(toComma(diffqua));
+			    $('#diffqua').val(diffqua);
 			     adjqua = parseInt(($('#diffqua').val()).replace(/,/g , ''))  * parseFloat(quaWeight.replace(/%/g , ''))  * parseInt(priceAvg) / 100;
 			    $('#adjqua').val(toComma(adjqua));
 			    // view//
 			    var subview = calView(view);
 			    $('#subview').val(subview);
 			    var diffview = parseInt($('#subview').val()) - parseInt($('#avgview').val());
-			    $('#diffview').val(toComma(diffview));
+			    $('#diffview').val(diffview);
 			     adjview = parseInt(($('#diffview').val()).replace(/,/g , ''))  * parseFloat(viewWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 			    $('#adjview').val(toComma(adjview));
 			    //floor//
 				var suffix = fullBulFloors.match(/\d+/);
 				if(suffix){
-					suffix = parseInt(parseInt(suffix[0]) / 2);
+					suffix = parseFloat(parseFloat(suffix[0]) / 2);
 					suffix = suffix.toString();
 					$('#avgfloor').val(suffix);
 				}
 				$('#subfloor').val(floorNo);
-				var difffloor = parseInt($('#subfloor').val()) - parseInt($('#avgfloor').val());
-				$('#difffloor').val(toComma(difffloor));
-				 adjfloor = parseInt(($('#difffloor').val()).replace(/,/g , ''))  * parseFloat(floorWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+				var difffloor = parseFloat($('#subfloor').val() - $('#avgfloor').val());
+				$('#difffloor').val(difffloor);
+				 adjfloor = parseFloat(($('#difffloor').val()).replace(/,/g , ''))  * parseFloat(floorWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 				$('#adjfloor').val(toComma(adjfloor));
 				//LandSize//
 				if(landAvg != "-"){
@@ -1368,26 +1585,26 @@ $("#average").click(function(){
 				 $('#avgbed').val(bedAvg);
 				 $('#subbed').val($('#bedroom').val());
 				 var diffbed =  parseInt($('#subbed').val()) - parseInt(bedAvg);
-				 $('#diffbed').val(toComma(diffbed));
+				 $('#diffbed').val(diffbed);
 				  adjbed =  parseInt(($('#diffbed').val()).replace(/,/g , ''))  * parseFloat(bedWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 				 $('#adjbed').val(toComma(adjbed));
 				 //Property Placement//
 				 $('#subpla').val(calPla($('#placement').val()));
-				 var diffpla = parseInt(parseInt($('#subpla').val() - $('#avgpla').val()));
-				 $('#diffpla').val(toComma(diffpla));
-				  adjpla =  parseInt(($('#diffpla').val()).replace(/,/g , ''))  * parseFloat(plaWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+				 var diffpla = parseFloat($('#subpla').val() - $('#avgpla').val());
+				 $('#diffpla').val(diffpla);
+				  adjpla =  parseFloat(($('#diffpla').val()).replace(/,/g , ''))  * parseFloat(plaWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 				 $('#adjpla').val(toComma(adjpla));
 				 //Property Exposure//
 				 $('#subexp').val(calExp($('#exposure').val()));
-				 var diffexp = parseInt(parseInt($('#subexp').val() - $('#avgexp').val()));
-				 $('#diffexp').val(toComma(diffexp));
-				  adjexp =  parseInt(($('#diffexp').val()).replace(/,/g , ''))  * parseFloat(expWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+				 var diffexp = parseFloat($('#subexp').val() - $('#avgexp').val());
+				 $('#diffexp').val(diffexp);
+				  adjexp =  parseFloat(($('#diffexp').val()).replace(/,/g , ''))  * parseFloat(expWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 				 $('#adjexp').val(toComma(adjexp));
 				//Finishing Status//
 				 $('#substa').val(calSta($('#status').val()));
-				 var diffsta = parseInt(parseInt($('#substa').val() - $('#avgsta').val()));
-				 $('#diffsta').val(toComma(diffsta));
-				  adjsta =  parseInt(($('#diffsta').val()).replace(/,/g , ''))  * parseFloat(staWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+				 var diffsta = parseFloat($('#substa').val() - $('#avgsta').val());
+				 $('#diffsta').val(diffsta);
+				  adjsta =  parseFloat(($('#diffsta').val()).replace(/,/g , ''))  * parseFloat(staWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 				 $('#adjsta').val(toComma(adjsta));
 			     //Market Value//
 				 if(landAvg == "-"){

@@ -108,9 +108,9 @@
 				<ul class="dropdown-menu">
 					<li><a class="nav-link"
 						href="<c:url value="sold-transactions"/>">View</a></li>
-					<li><a class="nav-link"
-						href="<c:url value="enquiry"/>">Enquiry
-							</a></li>
+<!-- 					<li><a class="nav-link" -->
+<%-- 						href="<c:url value="enquiry"/>">Enquiry --%>
+<!-- 							</a></li> -->
 				</ul></li>
 				
 				<li class="dropdown"><a href="#"

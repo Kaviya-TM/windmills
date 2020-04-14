@@ -56,6 +56,9 @@ public class Weightage  implements java.io.Serializable {
 	private String lessThan10Month;
 	private String lessThan11Month;
 	private String lessThan12Month;
+	private String balsize;
+	private String furnished;
+	private String upgrade;
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -240,6 +243,27 @@ public class Weightage  implements java.io.Serializable {
 	}
 	public void setLandSize(String landSize) {
 		this.landSize = landSize;
+	}
+	@Column(name = "balsize")
+	public String getBalsize() {
+		return balsize;
+	}
+	public void setBalsize(String balsize) {
+		this.balsize = balsize;
+	}
+	@Column(name = "furnished")
+	public String getFurnished() {
+		return furnished;
+	}
+	public void setFurnished(String furnished) {
+		this.furnished = furnished;
+	}
+	@Column(name = "upgrade")
+	public String getUpgrade() {
+		return upgrade;
+	}
+	public void setUpgrade(String upgrade) {
+		this.upgrade = upgrade;
 	}
 	
 }

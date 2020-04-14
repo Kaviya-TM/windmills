@@ -29,7 +29,10 @@
   { 
    width: 20%;
    float: left;
-   padding: 5px;
+   padding: 2px;
+       position: relative;
+    top: -12px;
+    left: 4px;
 }
 .seclabel{
 	font-size: 12px;
@@ -39,16 +42,16 @@
     color: #000080;
 }
 .sectext{
-	font-size: 12px;
+	font-size: 11px;
     font-family: sans-serif;
     float: left;
     font-weight:700;
-    color: blue;
+    color: darkcyan;
 }
 .vrholder {
 	width: 50%;
 	float: left;
-	height: 34px;
+	height: 32px;
 }
 
 #valinstrdate, #insdate, #valdate {
@@ -149,8 +152,7 @@
 	margin-top: 50px;
 }
 .avgholder{
-	width:100% !important;
-	height:17px;
+	width:100% !imporheight:17px;
 }
 .sectionTT{
 	font-size:12px !important;
@@ -159,6 +161,7 @@
 	float:left;
 	font-family:sans-serif;
 	text-align:center;
+	height:3.5% !important;
 }
 .sectionT{
 	font-weight:800 !important;

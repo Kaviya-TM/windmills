@@ -160,10 +160,20 @@
 						type="text" class="form-control form-control-sm weightagetext"
 						name="bua" value="${weightageeditform.bua}" id="" placeholder="BUA">
 				</div>
+					<div class="weightageholder">
+					<label class="weightagelabel">Balcony size</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="balsize" value="${weightageeditform.balsize}" id="" placeholder="ex:10%">
+				</div>
 				<div class="weightageholder">
-					<label class="weightagelabel"></label> <input
-						type="text" style="display:none" class="form-control form-control-sm weightagetext"
-						name="" id="" placeholder="ex:10%">
+					<label class="weightagelabel">Furnished</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="furnished" value="${weightageeditform.furnished}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Upgrades</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="upgrade" value="${weightageeditform.upgrade}" id="" placeholder="ex:10%">
 				</div>
 				<input type="hidden" id="weightId"" name="weightId"
 				value="${weightageeditform.weightId}"/>

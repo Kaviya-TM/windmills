@@ -71,6 +71,8 @@ $("#listingfilter").click(function(){
 		 $(".landto").css("pointer-events","none");
 		 $(".landto").css("color","darkgrey");
 	 }
+	 $('#vv-wr').text($('#reference').val());
+	 $('#vv-vd').text($('#valDate').val());
 	 $('#vv-property').text(propList);
 	 $('#vv-datefrom').text(datefrom);
 	 $('#vv-dateto').text(dateto);

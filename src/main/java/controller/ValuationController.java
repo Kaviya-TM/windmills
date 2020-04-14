@@ -175,6 +175,9 @@ public class ValuationController {
 		String plaWeight = weightageService.getPlaWeight(weightage);
 		String staWeight = weightageService.getStaWeight(weightage);
 		String bedWeight = weightageService.getBedWeight(weightage);
+		String furWeight = weightageService.getFurWeight(weightage);
+		String balWeight = weightageService.getBalWeight(weightage);
+		String upgradeWeight = weightageService.getUpgradeWeight(weightage);
 		String lessThan1Month = weightageService.getLessThan1Month(weightage);
 		String lessThan2Month = weightageService.getLessThan2Month(weightage);
 		String lessThan3Month = weightageService.getLessThan3Month(weightage);
@@ -216,6 +219,10 @@ public class ValuationController {
 		json.put("dateWeight", dateWeight);
 		json.put("floorWeight", floorWeight);
 		json.put("landWeight", landWeight);
+		json.put("buaWeight", buaWeight);
+		json.put("balWeight", balWeight);
+		json.put("upgradeWeight", upgradeWeight);
+		json.put("furWeight", furWeight);
 		json.put("buaWeight", buaWeight);
 		json.put("dateAvg", dateAvg);
 		json.put("landAvg", landAvg);

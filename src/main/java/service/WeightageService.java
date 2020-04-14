@@ -322,5 +322,35 @@ public class WeightageService {
 		}
 		return lessThan12Month;
 	}
+	public String getFurWeight(List<Weightage> weightage) {
+		String furweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				furweight = wg.getFurnished();
+				break;
+			}
+		}
+		return furweight;
+	}
+	public String getBalWeight(List<Weightage> weightage) {
+		String balweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				balweight = wg.getBalsize();
+				break;
+			}
+		}
+		return balweight;
+	}
+	public String getUpgradeWeight(List<Weightage> weightage) {
+		String upgradeweight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				upgradeweight = wg.getUpgrade();
+				break;
+			}
+		}
+		return upgradeweight;
+	}
 	
 }

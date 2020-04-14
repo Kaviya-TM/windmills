@@ -159,9 +159,19 @@
 						name="bua" id="" placeholder="ex:10%">
 				</div>
 				<div class="weightageholder">
-					<label class="weightagelabel"></label> <input
-						type="text" style="display:none" class="form-control form-control-sm weightagetext"
-						name="" id="" placeholder="ex:10%">
+					<label class="weightagelabel">Balcony size</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="balsize" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Furnished</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="furnished" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Upgrades</label> <input
+						type="text" class="form-control form-control-sm weightagetext"
+						name="upgrade" id="" placeholder="ex:10%">
 				</div>
 				<br>
 				<div class="form-group" style="width: 100%">

@@ -21,7 +21,7 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
+		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important;padding-top: 10px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
 			<button class="valbtn" id="receive">Receive Valuation</button>
 			<button class="valbtn" id="conflict" style="width: 3.5%;">Check COI</button>
@@ -740,87 +740,88 @@
 				</div>
 			</div>
 			<div class="form-group filter">	
-					<div class="" style="width: 100%;height: 3%;">
-							<div class="wr" style="width:85%;float:left;">
-								<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
-								<div class="sectext" style="color:crimson" name="" id="v-wr"></div>
-							</div>
-							<div class="vd">
-								<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
-								<div class="sectext" style="color:crimson" name="" id="v-vd"></div>
-							</div>
-					</div>
-				<div class="secsec" style="background: gold;width: 99.5% !important;margin-bottom: 8px; height:10%;border-radius: 5px;">
-					<div class="selholder" style="width: 22%;">
-							<div class="seclabel" style="">Property Listing:</div>
-							<div class="sectext" style="" name="" id="v-property"></div>
-					</div>
-					<div class="selholder" style="width: 22%;">
-							<div class="seclabel" style="width: 37%;">BuildingName:</div>
-							<div class="sectext" style="" name="" id="v-buildingName"></div>
-					</div>
-					<div class="selholder" style="width: 24%;">
-							<div class="seclabel" style="width: 37%;">SubCommunity:</div>
-							<div class="sectext" style="" name="" id="v-subCommunity"></div>
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="">Community:</div>
-							<div class="sectext" style="" name="" id="v-community"></div>
-					</div>
-					<div class="selholder" style="width: 10%;">
-							<div class="seclabel" style="">City:</div>
-							<div class="sectext" style="" name="" id="v-city"></div>
-					</div>
-					<div class="selholder" style="width: 16%;">
-							<div class="seclabel" style="">Date From:</div>
-							<div class="sectext" style="" name="" id="v-datefrom"></div>
-					</div>
-					<div class="selholder" style="width: 17%;">
-							<div class="seclabel" style="width: 51%;">Bedroom From:</div>
-							<div class="sectext" style="" name="" id="v-bedfrom"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 57%;">LandSize From: </div>
-							<div class="sectext" style="" name="" id="v-landfrom"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 52%;">SizeSqt From: </div>
-							<div class="sectext" style="" name="" id="v-buafrom"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 45%;">Price From:</div>
-							<div class="sectext" style="" name="" id="v-pricefrom"></div>			
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="width: 50%;">PricePerSqt From: </div>
-							<div class="sectext" style="" name="" id="v-pricesqtfrom"></div>	
-					</div>
-					<div class="selholder" style="width: 16%;">
-							<div class="seclabel" style="width: 32%;">Date To:</div>
-							<div class="sectext" style="" name="" id="v-dateto"></div>
-					</div>
-					<div class="selholder" style="width: 17%;">
-							<div class="seclabel" style="width: 42%;">Bedroom To:</div>
-							<div class="sectext" style="" name="" id="v-bedto"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 50%;">LandSize To: </div>
-							<div class="sectext" style="" name="" id="v-landto"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 43%;">SizeSqt To: </div>
-							<div class="sectext" style="" name="" id="v-buato"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 32%;">Price To: </div>
-							<div class="sectext" style="" name="" id="v-priceto"></div>	
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="width: 43%;">PricePerSqt To: </div>
-							<div class="sectext" style="" name="" id="v-pricesqtto"></div>	
-					</div>
-				</div>
-				<div class="column" style="display:flex;background:limegreen;color:#fff !important;margin-bottom:5px;border: 1px solid limegreen;border-radius:5px;">
+					<div class="" style="position:relative;top:-15px;">
+			<div class="wr" style="width:85%;float:left;">
+				<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
+				<div class="sectext" style="color:crimson" name="" id="v-wr"></div>
+			</div>
+			<div class="vd">
+				<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
+				<div class="sectext" style="color:crimson" name="" id="v-vd"></div>
+			</div>
+		</div>
+		<div class="secsec" style="background: lightgoldenrodyellow;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Property:</div>
+					<div class="sectext" style="" name="" id="v-property"></div>
+			</div>
+			<div class="selholder" style="width: 31%;">
+					<div class="seclabel" style="width: 18%;">Building:</div>
+					<div class="sectext" style="" name="" id="v-buildingName"></div>
+			</div>
+			<div class="selholder" style="width: 29%;">
+					<div class="seclabel" style="width: 31%;">SubCommunity:</div>
+					<div class="sectext" style="" name="" id="v-subCommunity"></div>
+			</div>
+			<div class="selholder"  style="width: 20%;">
+					<div class="seclabel" style="width: 35%;">Community:</div>
+					<div class="sectext" style="" name="" id="v-community"></div>
+			</div>
+<!-- 			<div class="selholder" style="width: 10%;"> -->
+<!-- 					<div class="seclabel" style="">City:</div> -->
+<!-- 					<div class="sectext" style="" name="" id="vv-city"></div> -->
+<!-- 			</div> -->
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Date From:</div>
+					<div class="sectext" style="" name="" id="v-datefrom"></div>
+			</div>
+			<div class="selholder" style="width: 16%;">
+					<div class="seclabel" style="width: 53%;">Bedroom From:</div>
+					<div class="sectext" style="" name="" id="v-bedfrom"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 57%;">LandSize From: </div>
+					<div class="sectext" style="" name="" id="v-landfrom"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 52%;">SizeSqt From: </div>
+					<div class="sectext" style="" name="" id="v-buafrom"></div>
+			</div>
+			<div class="selholder" style="width: 14%;">
+					<div class="seclabel" style="width: 45%;">Price From:</div>
+					<div class="sectext" style="" name="" id="v-pricefrom"></div>			
+			</div>
+			<div class="selholder">
+					<div class="seclabel" style="width: 50%;">PricePerSqt From: </div>
+					<div class="sectext" style="" name="" id="v-pricesqtfrom"></div>	
+			</div>
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Date To:</div>
+					<div class="sectext" style="" name="" id="v-dateto"></div>
+			</div>
+			<div class="selholder" style="width: 16%;">
+					<div class="seclabel" style="width: 53%;">Bedroom To:</div>
+					<div class="sectext" style="" name="" id="v-bedto"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 57%;">LandSize To: </div>
+					<div class="sectext" style="" name="" id="v-landto"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 52%;">SizeSqt To: </div>
+					<div class="sectext" style="" name="" id="v-buato"></div>
+			</div>
+			<div class="selholder" style="width: 14%;">
+					<div class="seclabel" style="width: 45%;">Price To: </div>
+					<div class="sectext" style="" name="" id="v-priceto"></div>	
+			</div>
+			<div class="selholder">
+					<div class="seclabel" style="width: 50%;">PricePerSqt To: </div>
+					<div class="sectext" style="" name="" id="v-pricesqtto"></div>	
+			</div>
+		</div>
+				<div class="column" style="display:flex;    height: 3% !important;
+    line-height: 6px;background:lightseagreen;color:#fff !important;margin-bottom:5px;border: 1px solid lightseagreen;border-radius:5px;">
 					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Date</div>
 					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Area</div>
 					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Neighbourhood</div>
@@ -835,77 +836,88 @@
 				</div>
 			</div>
 			<div class="form-group lfilter">	
-				<div class="secsec" style="background: gold;width: 99.5% !important;margin-bottom: 8px; height:10%;border-radius: 5px;">
-					<div class="selholder" style="width: 16%;">
-							<div class="seclabel" style="">Date From:</div>
-							<div class="sectext" style="" name="" id="vv-datefrom"></div>
-					</div>
-					<div class="selholder" style="width: 14%;">
-							<div class="seclabel" style="">Date To:</div>
-							<div class="sectext" style="" name="" id="vv-dateto"></div>
-					</div>
-					<div class="selholder" style="width: 22%;">
-							<div class="seclabel" style="">Property Listing:</div>
-							<div class="sectext" style="" name="" id="vv-property"></div>
-					</div>
-					<div class="selholder" style="width: 22%;">
-							<div class="seclabel" style="width: 37%;">BuildingName:</div>
-							<div class="sectext" style="" name="" id="vv-buildingName"></div>
-					</div>
-					<div class="selholder" style="width: 24%;">
-							<div class="seclabel" style="width: 37%;">SubCommunity:</div>
-							<div class="sectext" style="" name="" id="vv-subCommunity"></div>
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="">Community:</div>
-							<div class="sectext" style="" name="" id="vv-community"></div>
-					</div>
-					<div class="selholder" style="width: 10%;">
-							<div class="seclabel" style="">City:</div>
-							<div class="sectext" style="" name="" id="vv-city"></div>
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="width: 47%;">Bedroom From:</div>
-							<div class="sectext" style="" name="" id="vv-bedfrom"></div>
-					</div>
-					<div class="selholder" >
-							<div class="seclabel" style="width: 40%;">Bedroom To:</div>
-							<div class="sectext" style="" name="" id="vv-bedto"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 55%;">LandSize From: </div>
-							<div class="sectext" style="" name="" id="vv-landfrom"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 50%;">LandSize To: </div>
-							<div class="sectext" style="" name="" id="vv-landto"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 50%;">SizeSqt From: </div>
-							<div class="sectext" style="" name="" id="vv-buafrom"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="">SizeSqt To: </div>
-							<div class="sectext" style="" name="" id="vv-buato"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 45%;">Price From:</div>
-							<div class="sectext" style="" name="" id="vv-pricefrom"></div>			
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="">Price To: </div>
-							<div class="sectext" style="" name="" id="vv-priceto"></div>	
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="width: 48%;">PricePerSqt From: </div>
-							<div class="sectext" style="" name="" id="vv-pricesqtfrom"></div>	
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="width: 45%;">PricePerSqt To: </div>
-							<div class="sectext" style="" name="" id="vv-pricesqtto"></div>	
-					</div>
-				</div>
-				<div class="column" style="display:flex;background:limegreen;color:#fff !important;margin-bottom:5px;border: 1px solid limegreen;border-radius:5px;">
+							<div class="" style="position:relative;top:-15px;">
+			<div class="wr" style="width:85%;float:left;">
+				<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
+				<div class="sectext" style="color:crimson" name="" id="vv-wr"></div>
+			</div>
+			<div class="vd">
+				<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
+				<div class="sectext" style="color:crimson" name="" id="vv-vd"></div>
+			</div>
+		</div>
+		<div class="secsec" style="background: lightgoldenrodyellow;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Property:</div>
+					<div class="sectext" style="" name="" id="vv-property"></div>
+			</div>
+			<div class="selholder" style="width: 31%;">
+					<div class="seclabel" style="width: 18%;">Building:</div>
+					<div class="sectext" style="" name="" id="vv-buildingName"></div>
+			</div>
+			<div class="selholder" style="width: 29%;">
+					<div class="seclabel" style="width: 31%;">SubCommunity:</div>
+					<div class="sectext" style="" name="" id="vv-subCommunity"></div>
+			</div>
+			<div class="selholder"  style="width: 20%;">
+					<div class="seclabel" style="width: 35%;">Community:</div>
+					<div class="sectext" style="" name="" id="vv-community"></div>
+			</div>
+<!-- 			<div class="selholder" style="width: 10%;"> -->
+<!-- 					<div class="seclabel" style="">City:</div> -->
+<!-- 					<div class="sectext" style="" name="" id="vv-city"></div> -->
+<!-- 			</div> -->
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Date From:</div>
+					<div class="sectext" style="" name="" id="vv-datefrom"></div>
+			</div>
+			<div class="selholder" style="width: 16%;">
+					<div class="seclabel" style="width: 53%;">Bedroom From:</div>
+					<div class="sectext" style="" name="" id="vv-bedfrom"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 57%;">LandSize From: </div>
+					<div class="sectext" style="" name="" id="vv-landfrom"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 52%;">SizeSqt From: </div>
+					<div class="sectext" style="" name="" id="vv-buafrom"></div>
+			</div>
+			<div class="selholder" style="width: 14%;">
+					<div class="seclabel" style="width: 45%;">Price From:</div>
+					<div class="sectext" style="" name="" id="vv-pricefrom"></div>			
+			</div>
+			<div class="selholder">
+					<div class="seclabel" style="width: 50%;">PricePerSqt From: </div>
+					<div class="sectext" style="" name="" id="vv-pricesqtfrom"></div>	
+			</div>
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Date To:</div>
+					<div class="sectext" style="" name="" id="vv-dateto"></div>
+			</div>
+			<div class="selholder" style="width: 16%;">
+					<div class="seclabel" style="width: 53%;">Bedroom To:</div>
+					<div class="sectext" style="" name="" id="vv-bedto"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 57%;">LandSize To: </div>
+					<div class="sectext" style="" name="" id="vv-landto"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 52%;">SizeSqt To: </div>
+					<div class="sectext" style="" name="" id="vv-buato"></div>
+			</div>
+			<div class="selholder" style="width: 14%;">
+					<div class="seclabel" style="width: 45%;">Price To: </div>
+					<div class="sectext" style="" name="" id="vv-priceto"></div>	
+			</div>
+			<div class="selholder">
+					<div class="seclabel" style="width: 50%;">PricePerSqt To: </div>
+					<div class="sectext" style="" name="" id="vv-pricesqtto"></div>	
+			</div>
+		</div>
+			<div class="column" style="display:flex;    height: 3% !important;
+    line-height: 6px;background:lightseagreen;color:#fff !important;margin-bottom:5px;border: 1px solid lightseagreen;border-radius:5px;">
 					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Date</div>
 					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Area</div>
 					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Neighbourhood</div>
@@ -1300,6 +1312,12 @@
 						placeholder="Land Size[Square Feet]" autocomplete="on">
 				</div>
 				<div class="vrholder">
+					<label class="rholder">Land Price</label> <input
+						type="number" class="form-control form-control-sm textholder"
+						name="valuationReport.plotSize" id="landPrice"
+						placeholder="Land Price" autocomplete="on">
+				</div>
+				<div class="vrholder">
 					<label class="rholder">Purpose Of Valuation</label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propOfVal" id="">
@@ -1651,7 +1669,7 @@
 				<div class="viholder">
 					<label class="rholder">Balcony / Terrace Size</label> <input type="text"
 						class="form-control form-control-sm textholder"
-						name="" id=""
+						name="" id="balsize"
 						placeholder="Balcony/Terrace Size" autocomplete="on">
 				</div>
 				<div class="viholder"> 
@@ -1856,7 +1874,7 @@
 				<div class="viholder">
 					<label class="rholder">Furnished</label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.furnished" id="">
+						name="valuationReport.furnished" id="furnished">
 						<option value="Yes" selected>Yes</option>
 						<option value="No">No</option>
 						<option value="Semi-Furnished">Semi-Furnished</option>
@@ -2299,6 +2317,22 @@
 							<option value="Upgraded">Upgraded</option>
 						</select>
 					</div>
+					<div class="valuationholder" style="position:relative;top:30px">
+						<label class="labelholder" style="width: 42%;"><b> OverAll Upgrades</b></label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important; text-align: center" id="overupg">
+							<option value="" hidden>--- Select ---</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+						</select>
+					</div>
 				</div>
 				<div class="valuationholder adjustTop">
 					<div class="savebtn" id="inspect2prv">Previous</div>
@@ -2402,239 +2436,7 @@
 					<div class="savebtn" id="mrtnxt">Next</div>
 				</div>
 			</div>
-			<div class="form-group average">
-				<div class="" style="width: 100%;height: 3%;">
-							<div class="wr" style="width:85%;float:left;">
-								<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
-								<div class="sectext" style="color:crimson" name="" id="vc-wr"></div>
-							</div>
-							<div class="vd">
-								<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
-								<div class="sectext" style="color:crimson" name="" id="vc-vd"></div>
-							</div>
-					</div>
-				<div class="secsec" style="background: gold;width: 99.5% !important;margin-bottom: 8px; height:10%;border-radius: 5px;">
-					<div class="selholder" style="width: 22%;">
-							<div class="seclabel" style="">Property Listing:</div>
-							<div class="sectext" style="" name="" id="vc-property"></div>
-					</div>
-					<div class="selholder" style="width: 22%;">
-							<div class="seclabel" style="width: 37%;">BuildingName:</div>
-							<div class="sectext" style="" name="" id="vc-buildingName"></div>
-					</div>
-					<div class="selholder" style="width: 24%;">
-							<div class="seclabel" style="width: 37%;">SubCommunity:</div>
-							<div class="sectext" style="" name="" id="vc-subCommunity"></div>
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="">Community:</div>
-							<div class="sectext" style="" name="" id="vc-community"></div>
-					</div>
-					<div class="selholder" style="width: 10%;">
-							<div class="seclabel" style="">City:</div>
-							<div class="sectext" style="" name="" id="vc-city"></div>
-					</div>
-					<div class="selholder" style="width: 16%;">
-							<div class="seclabel" style="">Date From:</div>
-							<div class="sectext" style="" name="" id="vc-datefrom"></div>
-					</div>
-					<div class="selholder" style="width: 17%;">
-							<div class="seclabel" style="width: 51%;">Bedroom From:</div>
-							<div class="sectext" style="" name="" id="vc-bedfrom"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 57%;">LandSize From: </div>
-							<div class="sectext" style="" name="" id="vc-landfrom"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 52%;">SizeSqt From: </div>
-							<div class="sectext" style="" name="" id="vc-buafrom"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 45%;">Price From:</div>
-							<div class="sectext" style="" name="" id="vc-pricefrom"></div>			
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="width: 50%;">PricePerSqt From: </div>
-							<div class="sectext" style="" name="" id="vc-pricesqtfrom"></div>	
-					</div>
-					<div class="selholder" style="width: 16%;">
-							<div class="seclabel" style="width: 32%;">Date To:</div>
-							<div class="sectext" style="" name="" id="vc-dateto"></div>
-					</div>
-					<div class="selholder" style="width: 17%;">
-							<div class="seclabel" style="width: 42%;">Bedroom To:</div>
-							<div class="sectext" style="" name="" id="vc-bedto"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 50%;">LandSize To: </div>
-							<div class="sectext" style="" name="" id="vc-landto"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 43%;">SizeSqt To: </div>
-							<div class="sectext" style="" name="" id="vc-buato"></div>
-					</div>
-					<div class="selholder" style="width: 15%;">
-							<div class="seclabel" style="width: 32%;">Price To: </div>
-							<div class="sectext" style="" name="" id="vc-priceto"></div>	
-					</div>
-					<div class="selholder">
-							<div class="seclabel" style="width: 43%;">PricePerSqt To: </div>
-							<div class="sectext" style="" name="" id="vc-pricesqtto"></div>	
-					</div>
-				</div><br>
-<!-- 				<div class="avgholder" style="height: 17px"> -->
-<!-- 				<div class="sectionT" style="width: 11% !important;float: left;">Property Type</div> -->
-<!-- 				<input type="text" style="width: 15% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="epropertyType"> -->
-<!-- 				<div class="sectionT" style="width: 5% !important;float: left;">Bedrooms</div> -->
-<!-- 				<input type="text" style="width: 8% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebed"> -->
-<!-- 					<div class="sectionT" style="width: 9% !important;margin-right: 1% !important;float: left;">Building Name</div> -->
-<!-- 						<input type="text" style="width: 14% !important;position: relative;padding-left: 18px;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ebuidingName"> -->
-<!-- 						<div class="sectionT" style="float: left;width: 6% !important">Community</div> -->
-<!-- 						<input type="text" style="width: 11% !important;position: relative;top: -6px;" class="form-control form-control-sm sectionTT" name="" id="ecommunity"> -->
-<!-- 						<div class="sectionT" style="float: left;padding-left:54px" id="ecommunity"></div> -->
-<!-- 						<div class="sectionT" style="float: left;width:20% !important;padding-left:100px;margin-right: 0px !important;" id="ebuidingName">Building Name</div> -->
-<!-- 						<div class="sectionT" style="float: left;width: 6% !important;padding-left:62px">Beds</div> -->
-<!-- 						<div class="sectionT" style="float: left;width: 11% !important;padding-left:49px">Land Size</div> -->
-<!-- 						<div class="sectionT" style="float: left;width: 5% !important;padding-left:25px">BUA</div> -->
-<!-- 						<div class="sectionT" style="float: left;width: 11% !important;padding-left:47px">Sales Price</div> -->
-<!-- 						<div class="sectionT" style="float: left;padding-left:49px">PSF</div> -->
-<!-- 				</div><br> -->
-<!-- 				<div class="avgholder"> -->
-<!-- 					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Average</div> -->
-<!-- 					<input type="text" class="form-control form-control-sm sectionTT" name="" id="edate"> -->
-<!-- 					<input type="text" class="form-control form-control-sm sectionTT" style="width:12% !important" name="" id="ecommunity"> -->
-<!-- 					<input type="text" class="form-control form-control-sm sectionTT" style="width:14% !important" name="" id="ebuidingName"> -->
-<!-- 					<input type="text" class="form-control form-control-sm sectionTT" style="width:7% !important;text-align:center" name="" id="ebed"> -->
-<!-- 					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:8% !important"  name="" id="elandavg"> -->
-<!-- 					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:8% !important"  name="" id="esizeavg"> -->
-<!-- 				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12% !important"  name="" id=""> -->
-<!-- 				    <input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:8% !important"  name="" id=""> -->
-<!-- 				</div> -->
-<!-- 				<br><br> -->
-				<div class="avgholder" style="height: 17px;color:limegreen !important">
-					<div class="mainhead"
-						style="width: 11%; color: transparent; float: left;">test</div>
-						<div class="sectionT" style="float: left;padding-left:34px;width: 19% !important">Average Sold Property</div>
-						<div class="sectionT" style="float: left;width: 14% !important">Subject Property</div>
-						<div class="sectionT" style="float: left;width: 13% !important;">Difference</div>
-						<div class="sectionT" style="float: left;width: 13% !important;">Weightage</div>
-						<div class="sectionT" style="float: left;width: 8% !important;padding-left:4px;">Adjustments</div>
-				</div>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Location</div>
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name="" readonly value ="3" id="avgloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weiloc">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjloc">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaloc"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">View</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly value ="3"  id="avgview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""  id="weiview">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjview">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaview"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Condition</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly value ="3" id="avgqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffqua">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""  id="weiqua">
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:12% !important"  name="" readonly id="adjqua">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaqua"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Floor</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly id="avgfloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subfloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="difffloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weifloor">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjfloor">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chafloor"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Property Exposure</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="1.5"  readonly name="" id="avgexp">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subexp">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffexp">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weiexp">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjexp">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaexp"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Property Placement</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="1.5" readonly name="" id="avgpla">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subpla">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffpla">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weipla">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjpla">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chapla"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Finishing Status</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" value ="1.5" readonly name="" id="avgsta">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="substa">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffsta">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weista">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjsta">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chasta"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Beds</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly id="avgbed">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="subbed">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffbed">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weibed">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjbed">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chabed"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Land Size</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="width:15% !important" name="" readonly id="avgland">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonlyname="" id="subland">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" readonly name="" id="diffland">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:15% !important" name=""   id="weiland">
-					<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" name="" readonly id="adjland">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chaland"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">BUA</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" readonly id="avgbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" readonly id="subbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" readonly id="diffbua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important"   id="weibua">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:12% !important" readonly id="adjbua">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chabua"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Date</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" readonly id="avgdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" readonly id="subdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important" readonly id="diffdate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:15% !important"  id="weidate">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:12% !important" readonly id="adjdate">
-					<div style="line-height: 26px;color: #ff6600;font-size: 13px;font-family: sans-serif;" id="chadate"></div>
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">Sales Price</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" readonly  id="epriceavg">
-					<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:17% !important;background:none !important" id="">
-					<div class="mainhead" style="width: 30%; font-weight: 800; float: left; line-height: 28px;color:#ff6600">Estimated Market Value as per Sold Transactions</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12% !important"  name="" readonly id="marketvalue">
-				</div><br>
-				<div class="avgholder">
-					<div class="mainhead" style="width: 13%; font-weight: 800; float: left; line-height: 24px">PSF</div>
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:15% !important" readonly id="epriceavgper">
-					<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:17% !important;background:none !important" id="">
-					<div class="mainhead" style="width: 30%; font-weight: 800; float: left; line-height: 28px;color:#ff6600;text-align:right;padding-right:10px">PSF</div>
-					<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12% !important"  readonly name="" id="finalvalue">
-				</div><br>
-			</div>
+			<%@include file="soldcalcs.jsp"%>
 			<div class="form-group submitting">
 				<div class="valuationholder">
 					<label class="labelholder">Valuation Adjustments</label> <input
@@ -2698,5 +2500,6 @@
 	src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 <script src="resources/assets/js/numbertoword.js"></script>
 <script src="resources/assets/js/valuationform.js"></script>
+<script src="resources/assets/js/soldcalcs.js"></script>
 <script src="resources/assets/js/listingfilter.js"></script>
 <script src="resources/assets/js/hideshow.js"></script>

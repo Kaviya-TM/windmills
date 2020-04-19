@@ -228,11 +228,7 @@
 				    <input type="text" class="form-control form-control-sm listtext" name="makani" id="" placeholder="Makani" autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Street Number</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="streetNo" id="" placeholder="Street Number" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel">Street Name</label>
+					<label class="listlabel">Street Number/Name</label>
 				    <input type="text" class="form-control form-control-sm listtext" name="streetName" id="" placeholder="Street Name" autocomplete="on">
 				</div>
 				<div class="listholder">
@@ -283,8 +279,12 @@
 				    <input type="text" class="form-control form-control-sm listtext" name="landSize" id="landSize" placeholder="Land Size" autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">BUA</label>
+					<label class="listlabel" style="line-height: 13px;">Built Up Area Size (sq.ft)</label>
 				    <input type="text" class="form-control form-control-sm listtext" name="bua" id="bua" placeholder="BUA" autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Balcony Size</label>
+				    <input type="text" class="form-control form-control-sm listtext" name="balcony" id="" placeholder="Balcony Size" autocomplete="on">
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Property Placement</label> <select
@@ -335,6 +335,14 @@
 						name="development" id="">
 						<option value="Standard" selected>Standard</option>
 						<option value="Non-Standard">Non-Standard</option>
+					</select>
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Finished Status</label> <select
+						class="form-control form-control-sm listtext"
+						name="finishStatus" id="">
+						<option value="Shell & Core" selected>Shell & Core</option>
+						<option value="Fitted">Fitted</option>
 					</select>
 				</div>
 				<div class="listholder">
@@ -502,6 +510,23 @@
 					</select>
 				</div>
 				<div class="listholder">
+					<label class="listlabel">Upgrades</label> <select
+						class="form-control form-control-sm listtext"
+						name="upgrades" id="">
+						<option value="" hidden>--- Select ---</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+				<div class="listholder">
 					<label class="listlabel">Full Building Floors</label> <select
 						class="form-control form-control-sm listtext"
 						name="fullBulFloors" id="">
@@ -631,16 +656,6 @@
 					<label class="listlabel">Agent Company</label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="agCompany" id="" placeholder="Agent Company" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel"></label> <input type="text" style="display:none"
-						class="form-control form-control-sm listtext"
-						name="" id="" placeholder="Agent Company" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel"></label> <input type="text" style="display:none"
-						class="form-control form-control-sm listtext"
-						name="" id="" placeholder="Agent Company" autocomplete="on">
 				</div>
 				<div class="listholder" style="margin-top: 3px;margin-bottom:20px;">
 					<button type="submit" id="" class="savebtn">Save</button>

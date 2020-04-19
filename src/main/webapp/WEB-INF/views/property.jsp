@@ -39,6 +39,36 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="approachReasoning" id="" placeholder="Approach Reasoning">
 				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Maximum Age</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="maxage" id="" placeholder="Maximum Age">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Parking Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="parkingprice" id="" placeholder="Parking Price">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Pool Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="poolprice" id="" placeholder="Pool Price">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Landscape Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="landscapeprice" id="" placeholder="Landscape Price">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">WhiteGoods Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="whitegoodsprice" id="" placeholder="WhiteGoods Price">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Utilities Connected Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="utilityprice" id="" placeholder="Utilities Connected Price">
+				</div>
 				<div class="errMsg">Property Valued Already Exists</div>
 				<div class="form-group" style="width: 100%">
 					<button type="submit">Save</button>

@@ -921,7 +921,35 @@ var latitude = geoplugin_latitude();
 var longitude = geoplugin_longitude()
 $('#locationCoord').val(latitude+","+longitude);
 console.log(latitude+","+longitude);
-
+var propertyValued = $('#propertyvalued').val();
+$.ajax({
+	url : 'getValuationApproach',
+	dataType: "text",
+	data : {propertyValued : propertyValued},
+	method : 'POST',
+	success : function(response) {	
+		var obj = $.parseJSON(response);
+		var valApproach = obj.valApproach;
+		var apprreason = obj.appReasoning;
+		var maxAge = obj.maxAge;
+		var parkingPrice = obj.parkingPrice;
+		var poolPrice = obj.poolPrice;
+		var landscapePrice = obj.landscapePrice;
+		var whitegoodsPrice = obj.whitegoodsPrice;
+		var utiliesPrice = obj.utiliesPrice;
+		 $('#valApproach').val(valApproach);
+		 $("#valApproach option[value='+valApproach+']").attr("selected",true);
+		$('#apprreason').val(apprreason);
+		 $("#apprreason option[value='+apprreason+']").attr("selected",true);
+		 $('#maxAge').val(maxAge);
+		 $('#parkingPrice').val(parkingPrice);
+		 $('#poolPrice').val(poolPrice);
+		 $('#landscapePrice').val(landscapePrice);
+		 $('#whitegoodsPrice').val(whitegoodsPrice);
+		 $('#utiliesPrice').val(utiliesPrice);
+		return;
+		},
+});	
 $("#propertyvalued").change(function() {
 	var propertyValued = $('#propertyvalued').val();
 	$.ajax({
@@ -933,10 +961,22 @@ $("#propertyvalued").change(function() {
 			var obj = $.parseJSON(response);
 			var valApproach = obj.valApproach;
 			var apprreason = obj.appReasoning;
+			var maxAge = obj.maxAge;
+			var parkingPrice = obj.parkingPrice;
+			var poolPrice = obj.poolPrice;
+			var landscapePrice = obj.landscapePrice;
+			var whitegoodsPrice = obj.whitegoodsPrice;
+			var utiliesPrice = obj.utiliesPrice;
 			 $('#valApproach').val(valApproach);
 			 $("#valApproach option[value='+valApproach+']").attr("selected",true);
 			$('#apprreason').val(apprreason);
 			 $("#apprreason option[value='+apprreason+']").attr("selected",true);
+			 $('#maxAge').val(maxAge);
+			 $('#parkingPrice').val(parkingPrice);
+			 $('#poolPrice').val(poolPrice);
+			 $('#landscapePrice').val(landscapePrice);
+			 $('#whitegoodsPrice').val(whitegoodsPrice);
+			 $('#utiliesPrice').val(utiliesPrice);
 			return;
 			},
 	});	

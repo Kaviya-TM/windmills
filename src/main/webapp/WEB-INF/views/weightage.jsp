@@ -172,6 +172,41 @@
 					<label class="weightagelabel">Upgrades</label> <input
 						type="text" class="form-control form-control-sm weightagetext"
 						name="upgrade" id="" placeholder="ex:10%">
+				</div><div class="weightageholder">
+					<label class="weightagelabel">Parking </label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="" id=""
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Pool </label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="" id=""
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Landscape </label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="" id=""
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">WhiteGoods </label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="" id=""
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel" style="">Utilities Connected </label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="" id=""
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel" style="display:none;">Utilities Connected </label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="" style="display:none;" id=""
+						placeholder="ex:5%" autocomplete="on">
 				</div>
 				<br>
 				<div class="form-group" style="width: 100%">

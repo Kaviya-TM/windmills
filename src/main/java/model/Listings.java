@@ -29,7 +29,6 @@ import org.springframework.web.multipart.MultipartFile;
 @Table(name = "listings")
 @Component
 public class Listings  implements java.io.Serializable {
-
 	private int listingsId;
 	private String windmillsRef;
 	private String listingsRef;
@@ -77,6 +76,9 @@ public class Listings  implements java.io.Serializable {
 	private String priceSqt;
 	private String rent;
 	private String finalRent;
+	private String balcony;
+	private String upgrades;
+	private String finishStatus;
 	private String agName;
 	private String agPhoneNo;
 	private String agCompany;
@@ -173,6 +175,27 @@ public class Listings  implements java.io.Serializable {
 	}
 	public void setBuildingName(String buildingName) {
 		this.buildingName = buildingName;
+	}
+	@Column(name = "balcony")
+	public String getBalcony() {
+		return balcony;
+	}
+	public void setBalcony(String balcony) {
+		this.balcony = balcony;
+	}
+	@Column(name = "upgrades")
+	public String getUpgrades() {
+		return upgrades;
+	}
+	public void setUpgrades(String upgrades) {
+		this.upgrades = upgrades;
+	}
+	@Column(name = "finishStatus")
+	public String getFinishStatus() {
+		return finishStatus;
+	}
+	public void setFinishStatus(String finishStatus) {
+		this.finishStatus = finishStatus;
 	}
 	@Column(name = "streetNo")
 	public String getStreetNo() {

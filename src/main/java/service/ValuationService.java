@@ -329,6 +329,60 @@ public class ValuationService {
 		List<ValuationReport> list = valuationDaoImpl.getReference();
 		return list;
 	}
+	@Transactional
+	public String getMaximumAge(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String maxAge = null;
+		for(Property r1 : rows){
+			maxAge = r1.getMaxage();
+		}
+		return maxAge;
+	}
+	@Transactional
+	public String getParkingPrice(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String parkingPrice = null;
+		for(Property r1 : rows){
+			parkingPrice = r1.getParkingprice();
+		}
+		return parkingPrice;
+	}
+	@Transactional
+	public String getPoolPrice(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String poolPrice = null;
+		for(Property r1 : rows){
+			poolPrice = r1.getPoolprice();
+		}
+		return poolPrice;
+	}
+	@Transactional
+	public String getLandScapePrice(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String landscapePrice = null;
+		for(Property r1 : rows){
+			landscapePrice = r1.getLandscapeprice();
+		}
+		return landscapePrice;
+	}
+	@Transactional
+	public String getWhiteGoodsPrice(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String whitegoodsPrice = null;
+		for(Property r1 : rows){
+			whitegoodsPrice = r1.getWhitegoodsprice();
+		}
+		return whitegoodsPrice;
+	}
+	@Transactional
+	public String getUtiliesPrice(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String utiliesPrice = null;
+		for(Property r1 : rows){
+			utiliesPrice = r1.getUtilityprice();
+		}
+		return utiliesPrice;
+	}
 
 
 }

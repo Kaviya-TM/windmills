@@ -68,7 +68,7 @@ $("#weiloc").keyup(function(){
 $("#avgbal").keyup(function(){
 	var diffbal = parseInt($('#subbal').val()) - parseInt($(this).val());
     $('#diffbal').val(diffbal);
-		adjbal =  parseInt(($('#diffbal').val()).replace(/,/g , ''))  * parseFloat(($("#weibal").val()).replace(/%/g , '')) * parseInt(priceAvg) / 100;
+		adjbal =  parseInt(($('#diffbal').val()).replace(/,/g , ''))  * parseFloat(($("#weibal").val()).replace(/%/g , '')) * parseInt(pricePerAvg) / 100;
 		$('#adjbal').val(toComma(adjbal));
 		if(landAvg == "-"){
 			   var marketValue = parseInt(priceAvg)+ parseInt(adjbal.toString().replace(/,/g , ''))  +parseInt(adjupg.toString().replace(/,/g , '')) +  parseInt(adjdate.toString().replace(/,/g , '')) +parseInt(adjbua.toString().replace(/,/g , '')) +parseInt(adjqua.toString().replace(/,/g , '')) +parseInt(adjfloor.toString().replace(/,/g , ''))+
@@ -600,6 +600,7 @@ $("#average").click(function(){
 		 var datefrom=$('#datefrom').val(); 
 		 var dateto=$('#dateto').val(); 
 		 var propList=$('#s-propList').val(); 
+		 $('#avgage').val($('#age').val());
 		 $('#ecommunity').val(area);
 		 $('#ebuidingName').val(buildingName);
 		 $('#epropertyType').val(propertyType);
@@ -754,6 +755,10 @@ $("#average").click(function(){
 			    $('#diffloc').val(diffloc);
 			     adjloc = parseInt(($('#diffloc').val()).replace(/,/g , '')) * parseFloat(locWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 			    $('#adjloc').val(toComma(adjloc));
+			    // age//
+				$('#subage').val($('#age').val());
+			    var diffage = parseInt($('#subage').val()) - parseInt($('#avgage').val());
+			    $('#diffage').val(diffage);
 			    // quality//
 			    var subqua = calAvg(quality);
 			    $('#subqua').val(subqua);
@@ -779,7 +784,7 @@ $("#average").click(function(){
 			    $('#subbal').val($('#balsize').val());
 			    var diffbal = parseInt($('#subbal').val()) - parseInt($('#avgbal').val());
 			    $('#diffbal').val(diffbal);
-			    adjbal = parseInt(($('#diffbal').val()).replace(/,/g , ''))  * parseFloat(balWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+			    adjbal = parseInt(($('#diffbal').val()).replace(/,/g , ''))  * parseFloat(balWeight.replace(/%/g , '')) * parseInt(pricePerAvg) / 100;
 			    $('#adjbal').val(toComma(adjbal));
 			    //floor//
 				var suffix = fullBulFloors.match(/\d+/);
@@ -799,7 +804,13 @@ $("#average").click(function(){
 					 $('#subland').val(toComma($('#landSize').val()));
 					 var diffland = parseInt($('#landSize').val()) - parseInt(landAvg);
 					 $('#diffland').val(toComma(diffland));
-					 var adjland = parseInt(($('#diffland').val()).replace(/,/g , ''))  * parseFloat(landWeight.replace(/%/g , '')) * parseInt(pricePerAvg) / 100;
+					 var adjland = null;
+					 if($('#clandprice').val() != "-"){
+						 adjland = parseInt(($('#diffland').val()).replace(/,/g , ''))  * parseFloat(landWeight.replace(/%/g , '')) * parseInt($('#landPrice').val()) / 100;
+					 }
+					 else{
+						 adjland = parseInt(($('#diffland').val()).replace(/,/g , ''))  * parseFloat(landWeight.replace(/%/g , '')) * parseInt(pricePerAvg) / 100;
+					 }
 					 $('#adjland').val(toComma(adjland));
 				}else{
 					$('#avgland').val(landAvg);

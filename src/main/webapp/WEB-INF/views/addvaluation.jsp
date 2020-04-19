@@ -740,7 +740,7 @@
 				</div>
 			</div>
 			<div class="form-group filter">	
-					<div class="" style="position:relative;top:-15px;">
+					<div class="" style="position:relative;top:-3px;clear:both">
 			<div class="wr" style="width:85%;float:left;">
 				<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
 				<div class="sectext" style="color:crimson" name="" id="v-wr"></div>
@@ -750,7 +750,7 @@
 				<div class="sectext" style="color:crimson" name="" id="v-vd"></div>
 			</div>
 		</div>
-		<div class="secsec" style="background: lightgoldenrodyellow;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
+		<div class="secsec" style="background: lightgoldenrodyellow;clear:both;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
 			<div class="selholder" style="width: 20%;">
 					<div class="seclabel" style="width: 31%;">Property:</div>
 					<div class="sectext" style="" name="" id="v-property"></div>
@@ -1785,7 +1785,7 @@
 					</select>
 				</div>
 				<div class="viholder">
-					<label class="rholder">Parking Bays</label> <select
+					<label class="rholder">Parking</label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.parkingBays" id="">
 						<option value="" hidden>--- Select ---</option>
@@ -1889,7 +1889,43 @@
 						<option value="No" selected>No</option>
 					</select>
 				</div>
-
+				<div class="viholder">
+					<label class="rholder">Maximum Age</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="maxAge"
+						placeholder="Maximum Age" autocomplete="on">
+				</div>
+				<div class="viholder">
+					<label class="rholder">Parking Price</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="parkingPrice"
+						placeholder="Parking Price" autocomplete="on">
+				</div>
+				<div class="viholder">
+					<label class="rholder">Pool Price</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="poolPrice"
+						placeholder="Pool Price" autocomplete="on">
+				</div>
+				<div class="viholder">
+					<label class="rholder">Landscape Price</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="landscapePrice"
+						placeholder="Landscape Price" autocomplete="on">
+				</div>
+				<div class="viholder">
+					<label class="rholder">WhiteGoods Price</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="whitegoodsPrice"
+						placeholder="WhiteGoods Price" autocomplete="on">
+				</div>
+				<div class="viholder">
+					<label class="rholder" style="line-height:16px">Utilities Connected Price</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="utiliesPrice"
+						placeholder="Utilities Connected Price" autocomplete="on">
+				</div>
+				
 				<div class="valuationholder adjustTop">
 					<div class="savebtn" id="inspect1prv">Previous</div>
 					<div class="savebtn" id="inspect1nxt">Next</div>
@@ -2437,6 +2473,7 @@
 				</div>
 			</div>
 			<%@include file="soldcalcs.jsp"%>
+			<%@include file="listingscalcs.jsp"%>
 			<div class="form-group submitting">
 				<div class="valuationholder">
 					<label class="labelholder">Valuation Adjustments</label> <input

@@ -41,6 +41,36 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="approachReasoning" value="${propertyform.approachReasoning}" id="" placeholder="Approach Reasoning">
 				</div>
+								<div class="propertyholder">
+					<label class="propertylabel">Maximum Age</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="maxage" id="" value="${propertyform.maxage}" placeholder="Maximum Age">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Parking Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="parkingprice" id="" value="${propertyform.parkingprice}"  placeholder="Parking Price">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Pool Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="poolprice" id="" value="${propertyform.poolprice}" placeholder="Pool Price">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Landscape Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="landscapeprice" value="${propertyform.parkingprice}"  id="" placeholder="Landscape Price">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">WhiteGoods Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="whitegoodsprice" value="${propertyform.whitegoodsprice}" id="" placeholder="WhiteGoods Price">
+				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Utilities Connected Price</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="utilityprice" id="" value="${propertyform.utilityprice}" placeholder="Utilities Connected Price">
+				</div>
 				<input type="hidden" id="propertyId"" name="propertyId"
 				value="${propertyform.propertyId}"/>
 				<div class="form-group" style="width: 100%">

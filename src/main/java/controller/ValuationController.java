@@ -144,9 +144,21 @@ public class ValuationController {
 	public JSONObject getValuationApproach(@RequestParam("propertyValued") String propertyValued) {
 		String valApproach = valuationService.getValuationApproach(propertyValued);
 		String appReasoning = valuationService.getApproachReasoning(propertyValued);
+		String maxAge = valuationService.getMaximumAge(propertyValued);
+		String parkingPrice = valuationService.getParkingPrice(propertyValued);
+		String poolPrice = valuationService.getPoolPrice(propertyValued);
+		String landscapePrice = valuationService.getLandScapePrice(propertyValued);
+		String whitegoodsPrice = valuationService.getWhiteGoodsPrice(propertyValued);
+		String utiliesPrice = valuationService.getUtiliesPrice(propertyValued);
 		JSONObject json = new JSONObject();
 		json.put("valApproach", valApproach);
 		json.put("appReasoning", appReasoning);
+		json.put("maxAge", maxAge);
+		json.put("parkingPrice", parkingPrice);
+		json.put("poolPrice", poolPrice);
+		json.put("landscapePrice", landscapePrice);
+		json.put("whitegoodsPrice", whitegoodsPrice);
+		json.put("utiliesPrice", utiliesPrice);
 		return json;
 
 	}

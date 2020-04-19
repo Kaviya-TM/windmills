@@ -43,15 +43,12 @@ public class PropertyController {
 
 	@RequestMapping(value = {"/property-valued" }, method = RequestMethod.GET)
 	public ModelAndView propertyValuedPage() {
-
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("property");
-
 		return mv;
 	}
 	@RequestMapping(value = {"/property-valued-list" }, method = RequestMethod.GET)
 	public ModelAndView propertyValuedListPage() {
-
 		ModelAndView mv = new ModelAndView();
 		List<Object[]> list=propertyService.getPropertyValued();
 		mv.addObject("propertylist",list);
@@ -94,8 +91,5 @@ public class PropertyController {
 		mv.addObject("propertylist",list);
 	    mv.setViewName("propertylist");
 	    return mv;
-
 	}
-
-	
 }

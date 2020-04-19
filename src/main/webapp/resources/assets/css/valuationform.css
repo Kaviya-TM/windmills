@@ -30,9 +30,9 @@
    width: 20%;
    float: left;
    padding: 2px;
-       position: relative;
-    top: -12px;
-    left: 4px;
+/*        position: relative; */
+/*     top: -12px; */
+/*     left: 4px; */
 }
 .seclabel{
 	font-size: 12px;
@@ -152,7 +152,9 @@
 	margin-top: 50px;
 }
 .avgholder{
-	width:100% !imporheight:17px;
+	
+	height:15px;
+	clear:both;
 }
 .sectionTT{
 	font-size:12px !important;
@@ -161,7 +163,7 @@
 	float:left;
 	font-family:sans-serif;
 	text-align:center;
-	height:3.5% !important;
+/* 	height:3.5% !important; */
 }
 .sectionT{
 	font-weight:800 !important;

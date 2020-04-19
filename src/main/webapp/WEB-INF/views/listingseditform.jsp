@@ -227,11 +227,7 @@
 				    <input type="text" class="form-control form-control-sm listtext" value="${listingsform.makani}"  name="makani" id="" placeholder="Makani" autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Street Number</label>
-				    <input type="text" class="form-control form-control-sm listtext" value="${listingsform.streetNo}" name="streetNo" id="" placeholder="Street Number" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel">Street Name</label>
+					<label class="listlabel">Street Number/Name</label>
 				    <input type="text" class="form-control form-control-sm listtext" value="${listingsform.streetName}"  name="streetName" id="" placeholder="Street Name" autocomplete="on">
 				</div>
 				<div class="listholder">
@@ -284,8 +280,12 @@
 				    <input type="text" value="${listingsform.landSize}" class="form-control form-control-sm listtext" name="landSize" id="" placeholder="Land Size" autocomplete="on">
 				</div>
 				<div class="listholder">
-					<label class="listlabel">BUA</label>
+					<label class="listlabel" style="line-height: 13px;">Built Up Area Size (sq.ft)</label>
 				    <input type="text" class="form-control form-control-sm listtext" name="bua" value="${listingsform.bua}"  id="" placeholder="BUA" autocomplete="on">
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Balcony Size</label>
+				    <input type="text" class="form-control form-control-sm listtext" name="balcony" id="" value="${listingsform.balcony}" placeholder="Balcony Size" autocomplete="on">
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Property Placement</label> <select
@@ -341,6 +341,14 @@
 						<option value="${listingsform.development}" hidden selected>${listingsform.development}</option>
 						<option value="Standard">Standard</option>
 						<option value="Non-Standard">Non-Standard</option>
+					</select>
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Finished Status</label> <select
+						class="form-control form-control-sm listtext"
+						name="finishStatus" value="${listingsform.finishStatus}" id="">
+						<option value="Shell & Core" selected>Shell & Core</option>
+						<option value="Fitted">Fitted</option>
 					</select>
 				</div>
 				<div class="listholder">
@@ -509,6 +517,23 @@
 					</select>
 				</div>
 				<div class="listholder">
+					<label class="listlabel">Upgrades</label> <select
+						class="form-control form-control-sm listtext"
+						name="upgrades" id="">
+						<option value="${listingsform.upgrades}" selected hidden>${listingsform.upgrades}</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+				<div class="listholder">
 					<label class="listlabel">Full Building Floors</label> <select
 						class="form-control form-control-sm listtext"
 						name="fullBulFloors" id="">
@@ -643,16 +668,6 @@
 					<label class="listlabel">Agent Company</label> <input type="text"
 						class="form-control form-control-sm listtext"
 						name="agCompany" value="${listingsform.agCompany}" id="" placeholder="Agent Company" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel"></label> <input type="text" style="display:none"
-						class="form-control form-control-sm listtext"
-						name="" id="" placeholder="Agent Company" autocomplete="on">
-				</div>
-				<div class="listholder">
-					<label class="listlabel"></label> <input type="text" style="display:none"
-						class="form-control form-control-sm listtext"
-						name="" id="" placeholder="Agent Company" autocomplete="on">
 				</div>
 				<input type="hidden" id="listingsId"" name="listingsId"
 				value="${listingsform.listingsId}"/>

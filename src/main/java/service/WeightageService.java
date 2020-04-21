@@ -352,5 +352,75 @@ public class WeightageService {
 		}
 		return upgradeweight;
 	}
+	public String getParkWeight(List<Weightage> weightage) {
+		String parkWeight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				parkWeight = wg.getParking();
+				break;
+			}
+		}
+		return parkWeight;
+	}
+	public String getPoolWeight(List<Weightage> weightage) {
+		String poolWeight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				poolWeight = wg.getPool();
+				break;
+			}
+		}
+		return poolWeight;
+	}
+	public String getLandScapeWeight(List<Weightage> weightage) {
+		String landScapeWeight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				landScapeWeight = wg.getLandscape();
+				break;
+			}
+		}
+		return landScapeWeight;
+	}
+	public String getWhiteGoodsWeight(List<Weightage> weightage) {
+		String whiteGoodsWeight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				whiteGoodsWeight = wg.getWhitegoods();
+				break;
+			}
+		}
+		return whiteGoodsWeight;
+	}
+	public String getUtilitiesWeight(List<Weightage> weightage) {
+		String utilitiesWeight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				utilitiesWeight = wg.getUtilities();
+				break;
+			}
+		}
+		return utilitiesWeight;
+	}
+	public String getTenureWeight(List<Weightage> weightage) {
+		String tenWeight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				tenWeight = wg.getTenure();
+				break;
+			}
+		}
+		return tenWeight;
+	}
+	public String getAgeWeight(List<Weightage> weightage) {
+		String ageWeight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				ageWeight = wg.getAge();
+				break;
+			}
+		}
+		return ageWeight;
+	}
 	
 }

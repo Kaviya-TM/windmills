@@ -916,8 +916,7 @@
 					<div class="sectext" style="" name="" id="vv-pricesqtto"></div>	
 			</div>
 		</div>
-			<div class="column" style="display:flex;    height: 3% !important;
-    line-height: 6px;background:lightseagreen;color:#fff !important;margin-bottom:5px;border: 1px solid lightseagreen;border-radius:5px;">
+			<div class="column" style="display:flex;height: 3% !important;line-height: 6px;background:lightseagreen;color:#fff !important;margin-bottom:5px;border: 1px solid lightseagreen;border-radius:5px;">
 					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Date</div>
 					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Area</div>
 					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Neighbourhood</div>
@@ -1085,7 +1084,7 @@
 				<div class="vrholder">
 					<label class="rholder">Tenure</label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.tenure" id="">
+						name="valuationReport.tenure" id="tenure">
 						<option value="Freehold" selected>Freehold</option>
 						<option value="Freehold(Emiratis)">Freehold(Emiratis)</option>
 						<option value="Freehold(Emiratis & GCC Citizens)">Freehold(Emiratis
@@ -1361,7 +1360,13 @@
 						</c:forEach>
 					</select>
 				</div>
-				<div class="valuationholder" style="margin-top: 5px">
+				<div class="vrholder">
+					<label class="rholder">Transaction Price</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="" placeholder="Transaction Price"
+						autocomplete="on">
+				</div>
+				<div class="valuationholder" style="margin-top: 5px;height:45px">
 					<div class="savebtn" id="receivenxt">Next</div>
 				</div>
 			</div>
@@ -1556,102 +1561,110 @@
 					</select>
 				</div>
 				<div class="viholder">
-					<label class="rholder">Developer</label> <select
+					<label class="rholder">Developer</label> 
+					<select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.developer" id="">
-						<option value="Al Ain Holding">Al Ain Holding</option>
-						<option value="Akshara Global Real Estate Development LLC">Akshara
-							Global Real Estate Development LLC</option>
-						<option value="Al Mada Marble">Al Mada Marble</option>
-						<option value="Al Masarat Real Estate">Al Masarat Real
-							Estate</option>
-						<option value="Al Mazaya Real Estate FZ LLC">Al Mazaya
-							Real Estate FZ LLC</option>
-						<option value="Al Mizan Group">Al Mizan Group</option>
-						<option value="Al Shafar Development">Al Shafar
-							Development</option>
-						<option value="Arabian Gulf Properties">Arabian Gulf
-							Properties</option>
-						<option value="Aurora Real Estate Development">Aurora
-							Real Estate Development</option>
-						<option value="AYS Developments Limited">AYS Developments
-							Limited</option>
-						<option value="Azizi">Azizi</option>
-						<option value="B&M Riviera Properties Development">B&M
-							Riviera Properties Development</option>
-						<option value="Binghatti">Binghatti</option>
-						<option value="Bloom Properties">Bloom Properties</option>
-						<option value="Bolton Real Estate Development LLC">Bolton
-							Real Estate Development LLC</option>
-						<option value="Cayan Group">Cayan Group</option>
-						<option value="Chapal">Chapal</option>
-						<option value="Damac Properties">Damac Properties</option>
-						<option value="Danube Properties">Danube Properties</option>
-						<option value="Dar Al Arkan">Dar Al Arkan</option>
-						<option value="Deyaar">Deyaar</option>
-						<option value="Dubai Investments Park Development Company">Dubai
-							Investments Park Development Company</option>
-						<option value="Dubai Investments Real Estate Company">Dubai
-							Investments Real Estate Company</option>
-						<option value="Dubai Properties">Dubai Properties</option>
-						<option value="Dubai South">Dubai South</option>
-						<option value="Dubai Sports City LLC">Dubai Sports City
-							LLC</option>
-						<option value="Ellington Properties">Ellington Properties</option>
-						<option value="Emaar">Emaar</option>
-						<option value="Emaar/DP World">Emaar/DP World</option>
-						<option value="Empire Arabia Real Estate Developers LLC">Empire
-							Arabia Real Estate Developers LLC</option>
-						<option value="Five Holdings">Five Holdings</option>
-						<option value="GGICO">GGICO</option>
-						<option value="HMG Properties">HMG Properties</option>
-						<option value="IFA">IFA</option>
-						<option value="Iman Developers">Iman Developers</option>
-						<option value="Innovation SEZ Developer LTD">Innovation
-							SEZ Developer LTD</option>
-						<option value="Jumeirah Golf Estates LLC">Jumeirah Golf
-							Estates LLC</option>
-						<option value="Kerzer International">Kerzer International</option>
-						<option value="Kleindienst Group">Kleindienst Group</option>
-						<option value="Liv Developers">Liv Developers</option>
-						<option value="Lokhandwala Builders">Lokhandwala Builders</option>
-						<option value="Lootah Group">Lootah Group</option>
-						<option value="MAG Group">MAG Group</option>
-						<option value="Meraas">Meraas</option>
-						<option value="Meraki">Meraki</option>
-						<option value="Meydan Group">Meydan Group</option>
-						<option value="Nakheel">Nakheel</option>
-						<option value="Naseria Contracting">Naseria Contracting</option>
-						<option value="Nshama">Nshama</option>
-						<option value="Omniyat">Omniyat</option>
-						<option value="Pacific Investment">Pacific Investment</option>
-						<option value="Pal Developments L.L.C.">Pal Developments
-							L.L.C.</option>
-						<option value="Pantheon Properties Limited">Pantheon
-							Properties Limited</option>
-						<option value="Private Developer">Private Developer</option>
-						<option value="Realty One">Realty One</option>
-						<option value="RKMDurar Properties">RKMDurar Properties</option>
-						<option value="Samana Developers">Samana Developers</option>
-						<option value="Select Group">Select Group</option>
-						<option value="Seven Tides">Seven Tides</option>
-						<option value="Shapoorji Pallonji Group">Shapoorji
-							Pallonji Group</option>
-						<option value="Sobha Group">Sobha Group</option>
-						<option value="Tanmiyat">Tanmiyat</option>
-						<option value="Texture Holdings">Texture Holdings</option>
-						<option value="The First Group">The First Group</option>
-						<option value="Tiger Properties">Tiger Properties</option>
-						<option value="Time Properties">Time Properties</option>
-						<option value="Titan Developers">Titan Developers</option>
-						<option value="Trident">Trident</option>
-						<option value="Vascon Trading Ltd.">Vascon Trading Ltd.</option>
-						<option value="Vincitore Real Estate Development LLC">Vincitore
-							Real Estate Development LLC</option>
-						<option value="Wasl">Wasl</option>
-						<option value="Zaya Real Estate Development">Zaya Real
-							Estate Development</option>
+						name="valuationReport.developer" id="developer">
+						<c:forEach items="${devlist}" var="item">
+							<option value="${item}">${item}</option>
+						</c:forEach>
 					</select>
+<!-- 					<select -->
+<!-- 						class="form-control form-control-sm textholder" -->
+<!-- 						name="" id=""> -->
+<!-- 						<option value="Al Ain Holding">Al Ain Holding</option> -->
+<!-- 						<option value="Akshara Global Real Estate Development LLC">Akshara -->
+<!-- 							Global Real Estate Development LLC</option> -->
+<!-- 						<option value="Al Mada Marble">Al Mada Marble</option> -->
+<!-- 						<option value="Al Masarat Real Estate">Al Masarat Real -->
+<!-- 							Estate</option> -->
+<!-- 						<option value="Al Mazaya Real Estate FZ LLC">Al Mazaya -->
+<!-- 							Real Estate FZ LLC</option> -->
+<!-- 						<option value="Al Mizan Group">Al Mizan Group</option> -->
+<!-- 						<option value="Al Shafar Development">Al Shafar -->
+<!-- 							Development</option> -->
+<!-- 						<option value="Arabian Gulf Properties">Arabian Gulf -->
+<!-- 							Properties</option> -->
+<!-- 						<option value="Aurora Real Estate Development">Aurora -->
+<!-- 							Real Estate Development</option> -->
+<!-- 						<option value="AYS Developments Limited">AYS Developments -->
+<!-- 							Limited</option> -->
+<!-- 						<option value="Azizi">Azizi</option> -->
+<!-- 						<option value="B&M Riviera Properties Development">B&M -->
+<!-- 							Riviera Properties Development</option> -->
+<!-- 						<option value="Binghatti">Binghatti</option> -->
+<!-- 						<option value="Bloom Properties">Bloom Properties</option> -->
+<!-- 						<option value="Bolton Real Estate Development LLC">Bolton -->
+<!-- 							Real Estate Development LLC</option> -->
+<!-- 						<option value="Cayan Group">Cayan Group</option> -->
+<!-- 						<option value="Chapal">Chapal</option> -->
+<!-- 						<option value="Damac Properties">Damac Properties</option> -->
+<!-- 						<option value="Danube Properties">Danube Properties</option> -->
+<!-- 						<option value="Dar Al Arkan">Dar Al Arkan</option> -->
+<!-- 						<option value="Deyaar">Deyaar</option> -->
+<!-- 						<option value="Dubai Investments Park Development Company">Dubai -->
+<!-- 							Investments Park Development Company</option> -->
+<!-- 						<option value="Dubai Investments Real Estate Company">Dubai -->
+<!-- 							Investments Real Estate Company</option> -->
+<!-- 						<option value="Dubai Properties">Dubai Properties</option> -->
+<!-- 						<option value="Dubai South">Dubai South</option> -->
+<!-- 						<option value="Dubai Sports City LLC">Dubai Sports City -->
+<!-- 							LLC</option> -->
+<!-- 						<option value="Ellington Properties">Ellington Properties</option> -->
+<!-- 						<option value="Emaar">Emaar</option> -->
+<!-- 						<option value="Emaar/DP World">Emaar/DP World</option> -->
+<!-- 						<option value="Empire Arabia Real Estate Developers LLC">Empire -->
+<!-- 							Arabia Real Estate Developers LLC</option> -->
+<!-- 						<option value="Five Holdings">Five Holdings</option> -->
+<!-- 						<option value="GGICO">GGICO</option> -->
+<!-- 						<option value="HMG Properties">HMG Properties</option> -->
+<!-- 						<option value="IFA">IFA</option> -->
+<!-- 						<option value="Iman Developers">Iman Developers</option> -->
+<!-- 						<option value="Innovation SEZ Developer LTD">Innovation -->
+<!-- 							SEZ Developer LTD</option> -->
+<!-- 						<option value="Jumeirah Golf Estates LLC">Jumeirah Golf -->
+<!-- 							Estates LLC</option> -->
+<!-- 						<option value="Kerzer International">Kerzer International</option> -->
+<!-- 						<option value="Kleindienst Group">Kleindienst Group</option> -->
+<!-- 						<option value="Liv Developers">Liv Developers</option> -->
+<!-- 						<option value="Lokhandwala Builders">Lokhandwala Builders</option> -->
+<!-- 						<option value="Lootah Group">Lootah Group</option> -->
+<!-- 						<option value="MAG Group">MAG Group</option> -->
+<!-- 						<option value="Meraas">Meraas</option> -->
+<!-- 						<option value="Meraki">Meraki</option> -->
+<!-- 						<option value="Meydan Group">Meydan Group</option> -->
+<!-- 						<option value="Nakheel">Nakheel</option> -->
+<!-- 						<option value="Naseria Contracting">Naseria Contracting</option> -->
+<!-- 						<option value="Nshama">Nshama</option> -->
+<!-- 						<option value="Omniyat">Omniyat</option> -->
+<!-- 						<option value="Pacific Investment">Pacific Investment</option> -->
+<!-- 						<option value="Pal Developments L.L.C.">Pal Developments -->
+<!-- 							L.L.C.</option> -->
+<!-- 						<option value="Pantheon Properties Limited">Pantheon -->
+<!-- 							Properties Limited</option> -->
+<!-- 						<option value="Private Developer">Private Developer</option> -->
+<!-- 						<option value="Realty One">Realty One</option> -->
+<!-- 						<option value="RKMDurar Properties">RKMDurar Properties</option> -->
+<!-- 						<option value="Samana Developers">Samana Developers</option> -->
+<!-- 						<option value="Select Group">Select Group</option> -->
+<!-- 						<option value="Seven Tides">Seven Tides</option> -->
+<!-- 						<option value="Shapoorji Pallonji Group">Shapoorji -->
+<!-- 							Pallonji Group</option> -->
+<!-- 						<option value="Sobha Group">Sobha Group</option> -->
+<!-- 						<option value="Tanmiyat">Tanmiyat</option> -->
+<!-- 						<option value="Texture Holdings">Texture Holdings</option> -->
+<!-- 						<option value="The First Group">The First Group</option> -->
+<!-- 						<option value="Tiger Properties">Tiger Properties</option> -->
+<!-- 						<option value="Time Properties">Time Properties</option> -->
+<!-- 						<option value="Titan Developers">Titan Developers</option> -->
+<!-- 						<option value="Trident">Trident</option> -->
+<!-- 						<option value="Vascon Trading Ltd.">Vascon Trading Ltd.</option> -->
+<!-- 						<option value="Vincitore Real Estate Development LLC">Vincitore -->
+<!-- 							Real Estate Development LLC</option> -->
+<!-- 						<option value="Wasl">Wasl</option> -->
+<!-- 						<option value="Zaya Real Estate Development">Zaya Real -->
+<!-- 							Estate Development</option> -->
+<!-- 					</select> -->
 				</div>
 				<div class="viholder">
 					<label class="rholder">Estimated Age(Years)</label> <input
@@ -1787,7 +1800,7 @@
 				<div class="viholder">
 					<label class="rholder">Parking</label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.parkingBays" id="">
+						name="valuationReport.parkingBays" id="parking">
 						<option value="" hidden>--- Select ---</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -1823,7 +1836,7 @@
 				<div class="viholder">
 					<label class="rholder">Landscaping</label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.landScaping" id="">
+						name="valuationReport.landScaping" id="landscape">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
 						<option value="Semi-Landscape">Semi-Landscape</option>
@@ -1880,11 +1893,18 @@
 						<option value="Semi-Furnished">Semi-Furnished</option>
 					</select>
 				</div>
-
+				<div class="viholder">
+					<label class="rholder">White Goods</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="whitegoods">
+						<option value="Yes">Yes</option>
+						<option value="No" selected>No</option>
+					</select>
+				</div>
 				<div class="viholder">
 					<label class="rholder">Utilities Connected</label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.utilityConnected" id="">
+						name="valuationReport.utilityConnected" id="utilities">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
 					</select>
@@ -1914,19 +1934,18 @@
 						placeholder="Landscape Price" autocomplete="on">
 				</div>
 				<div class="viholder">
-					<label class="rholder">WhiteGoods Price</label> <input type="text"
-						class="form-control form-control-sm textholder"
-						name="" id="whitegoodsPrice"
-						placeholder="WhiteGoods Price" autocomplete="on">
-				</div>
-				<div class="viholder">
 					<label class="rholder" style="line-height:16px">Utilities Connected Price</label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="" id="utiliesPrice"
 						placeholder="Utilities Connected Price" autocomplete="on">
 				</div>
-				
-				<div class="valuationholder adjustTop">
+				<div class="viholder">
+					<label class="rholder">WhiteGoods Price</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="whitegoodsPrice"
+						placeholder="WhiteGoods Price" autocomplete="on">
+				</div>
+				<div class="valuationholder adjustTop" style="height:45px">
 					<div class="savebtn" id="inspect1prv">Previous</div>
 					<div class="savebtn" id="inspect1nxt">Next</div>
 				</div>

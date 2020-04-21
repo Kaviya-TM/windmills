@@ -383,6 +383,16 @@ public class ValuationService {
 		}
 		return utiliesPrice;
 	}
+	@Transactional
+	public String getDeveloper(String buildingName) {
+		List<SoldTransactions> list = valuationDaoImpl.getEverything(buildingName);
+		String developer = null;
+		for(SoldTransactions r1 : list){
+			developer = r1.getDeveloper();
+			break;
+		}
+		return developer;
+	}
 
 
 }

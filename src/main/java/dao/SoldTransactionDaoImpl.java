@@ -65,5 +65,11 @@ public class SoldTransactionDaoImpl {
 		return rows;
 	}
 
+	public List<SoldTransactions> getDevelopers() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct developer from  SoldTransactions");
+		List<SoldTransactions> rows=query.list();
+		return rows;
+	}
+
 
 }

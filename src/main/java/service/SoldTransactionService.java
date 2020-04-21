@@ -470,6 +470,11 @@ public class SoldTransactionService {
 		
 		return pricesqtlist;
 	}
+	@Transactional
+	public List<SoldTransactions> getDevelopers() {
+		List<SoldTransactions> list = soldTransactionDaoImpl.getDevelopers();
+		return list;
+	}
 	
 	
 }

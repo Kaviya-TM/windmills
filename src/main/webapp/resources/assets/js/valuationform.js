@@ -26,9 +26,11 @@ $("#buildingname").change(function() {
 			var community = obj.city;
 			var subcommunity = obj.subcommunity;
 			var city = obj.community;
+			var developer = obj.developer;
 			console.log("communitty",community);
 			 $('#city').val(community);
 			 $('#community').val(city);
+			 $('#developer').val(developer);
 			 $('#subcommunity').val(subcommunity);
 			return;
 			},

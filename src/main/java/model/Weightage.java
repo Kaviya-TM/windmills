@@ -59,6 +59,13 @@ public class Weightage  implements java.io.Serializable {
 	private String balsize;
 	private String furnished;
 	private String upgrade;
+	private String parking;
+	private String pool;
+	private String landscape;
+	private String whitegoods;
+	private String utilities;
+	private String tenure;
+	
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -265,5 +272,48 @@ public class Weightage  implements java.io.Serializable {
 	public void setUpgrade(String upgrade) {
 		this.upgrade = upgrade;
 	}
+	@Column(name = "parking")
+	public String getParking() {
+		return parking;
+	}
+	public void setParking(String parking) {
+		this.parking = parking;
+	}
+	@Column(name = "pool")
+	public String getPool() {
+		return pool;
+	}
+	public void setPool(String pool) {
+		this.pool = pool;
+	}
+	@Column(name = "landscape")
+	public String getLandscape() {
+		return landscape;
+	}
+	public void setLandscape(String landscape) {
+		this.landscape = landscape;
+	}
+	@Column(name = "whitegoods")
+	public String getWhitegoods() {
+		return whitegoods;
+	}
+	public void setWhitegoods(String whitegoods) {
+		this.whitegoods = whitegoods;
+	}
+	@Column(name = "utilities")
+	public String getUtilities() {
+		return utilities;
+	}
+	public void setUtilities(String utilities) {
+		this.utilities = utilities;
+	}
+	@Column(name = "tenure")
+	public String getTenure() {
+		return tenure;
+	}
+	public void setTenure(String tenure) {
+		this.tenure = tenure;
+	}
+	
 	
 }

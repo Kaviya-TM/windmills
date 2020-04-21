@@ -172,40 +172,41 @@
 					<label class="weightagelabel">Upgrades</label> <input
 						type="text" class="form-control form-control-sm weightagetext"
 						name="upgrade" id="" placeholder="ex:10%">
-				</div><div class="weightageholder">
+				</div>
+				<div class="weightageholder">
 					<label class="weightagelabel">Parking </label> <input type="text"
 						class="form-control form-control-sm weightagetext"
-						name="" id=""
+						name="parking" id=""
 						placeholder="ex:5%" autocomplete="on">
 				</div>
 				<div class="weightageholder">
 					<label class="weightagelabel">Pool </label> <input type="text"
 						class="form-control form-control-sm weightagetext"
-						name="" id=""
+						name="pool" id=""
 						placeholder="ex:5%" autocomplete="on">
 				</div>
 				<div class="weightageholder">
 					<label class="weightagelabel">Landscape </label> <input type="text"
 						class="form-control form-control-sm weightagetext"
-						name="" id=""
+						name="landscape" id=""
 						placeholder="ex:5%" autocomplete="on">
 				</div>
 				<div class="weightageholder">
 					<label class="weightagelabel">WhiteGoods </label> <input type="text"
 						class="form-control form-control-sm weightagetext"
-						name="" id=""
+						name="whitegoods" id=""
 						placeholder="ex:5%" autocomplete="on">
 				</div>
 				<div class="weightageholder">
 					<label class="weightagelabel" style="">Utilities Connected </label> <input type="text"
 						class="form-control form-control-sm weightagetext"
-						name="" id=""
+						name="utilities" id=""
 						placeholder="ex:5%" autocomplete="on">
 				</div>
 				<div class="weightageholder">
-					<label class="weightagelabel" style="display:none;">Utilities Connected </label> <input type="text"
+					<label class="weightagelabel" >Tenure</label> <input type="text"
 						class="form-control form-control-sm weightagetext"
-						name="" style="display:none;" id=""
+						name="tenure"  id=""
 						placeholder="ex:5%" autocomplete="on">
 				</div>
 				<br>

@@ -77,6 +77,7 @@ public class ValuationController {
 		List<SoldTransactions> arealist=soldTransactionService.getArea();
 		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
 		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
+		List<SoldTransactions> devlist=soldTransactionService.getDevelopers();
 		mv.addObject("cityylist",cityylist);
 		mv.addObject("arealist",arealist);
 		mv.addObject("hoodlist",hoodlist);
@@ -85,6 +86,7 @@ public class ValuationController {
 		mv.addObject("arealist",arealist);
 		mv.addObject("hoodlist",hoodlist);
 		mv.addObject("bullist",bullist);
+		mv.addObject("devlist",devlist);
 		mv.addObject("clientlist", clientlist);
 		mv.addObject("citylist", citylist);
 		mv.addObject("propertylist", propertylist);
@@ -189,6 +191,13 @@ public class ValuationController {
 		String bedWeight = weightageService.getBedWeight(weightage);
 		String furWeight = weightageService.getFurWeight(weightage);
 		String balWeight = weightageService.getBalWeight(weightage);
+		String parkWeight = weightageService.getParkWeight(weightage);
+		String poolWeight = weightageService.getPoolWeight(weightage);
+		String landScapeWeight = weightageService.getLandScapeWeight(weightage);
+		String whiteGoodsWeight = weightageService.getWhiteGoodsWeight(weightage);
+		String utilitiesWeight = weightageService.getUtilitiesWeight(weightage);
+		String tenWeight = weightageService.getTenureWeight(weightage);
+		String ageWeight = weightageService.getAgeWeight(weightage);
 		String upgradeWeight = weightageService.getUpgradeWeight(weightage);
 		String lessThan1Month = weightageService.getLessThan1Month(weightage);
 		String lessThan2Month = weightageService.getLessThan2Month(weightage);
@@ -235,7 +244,13 @@ public class ValuationController {
 		json.put("balWeight", balWeight);
 		json.put("upgradeWeight", upgradeWeight);
 		json.put("furWeight", furWeight);
-		json.put("buaWeight", buaWeight);
+		json.put("parkWeight", parkWeight);
+		json.put("poolWeight", poolWeight);
+		json.put("landScapeWeight", landScapeWeight);
+		json.put("whiteGoodsWeight", whiteGoodsWeight);
+		json.put("utilitiesWeight", utilitiesWeight);
+		json.put("tenWeight", tenWeight);
+		json.put("ageWeight", ageWeight);
 		json.put("dateAvg", dateAvg);
 		json.put("landAvg", landAvg);
 		json.put("priceAvg", priceAvg);
@@ -300,8 +315,10 @@ public class ValuationController {
 			String community = valuationService.getCommunity(buildingName);
 			String subcommunity = valuationService.getSubCommunity(buildingName);
 			String city = valuationService.getCityy(buildingName);
+			String developer = valuationService.getDeveloper(buildingName);
 			JSONObject json = new JSONObject();
 			json.put("city", city);
+			json.put("developer", developer);
 			json.put("subcommunity", subcommunity);
 			json.put("community", community);
 			return json;

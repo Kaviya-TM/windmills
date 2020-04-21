@@ -16,9 +16,9 @@
 	width: 50%;
     float: left;
 }
-.column:hover {
-	background: rgba(163, 163, 163, 0.2);
-}
+/* .column:hover { */
+/* 	background: rgba(163, 163, 163, 0.2); */
+/* } */
 
 .column {
 	loat: left;

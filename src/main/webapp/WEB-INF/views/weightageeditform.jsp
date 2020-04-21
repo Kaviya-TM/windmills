@@ -19,8 +19,8 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important;overflow: scroll; overflow-x: hidden; margin-top: 70px; width: 100%; min-height: 530px !important">
-		<form:form action="editWeightage" id="" modelAttribute="weightage">
+		style="background: rgb(229, 231, 233) !important;overflow: scroll;overflow-x: hidden;padding-top:10px !important;margin-top: 70px; width: 100%; min-height: 530px !important">
+		<form:form action="editWeightage" id="" style="margin-top:-15px !important;" modelAttribute="weightage">
 			<div class="form-group">
 				<div class="weightageholder">
 					<label class="weightagelabel">Emirates</label>
@@ -174,6 +174,42 @@
 					<label class="weightagelabel">Upgrades</label> <input
 						type="text" class="form-control form-control-sm weightagetext"
 						name="upgrade" value="${weightageeditform.upgrade}" id="" placeholder="ex:10%">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Parking</label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="parking" id="" value="${weightageeditform.parking}"
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Pool</label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="pool" id="" value="${weightageeditform.pool}"
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Landscape</label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="landscape" id="" value="${weightageeditform.landscape}"
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">WhiteGoods</label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="whitegoods" id="" value="${weightageeditform.whitegoods}"
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel" style="">Utilities Connected </label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="utilities" id="" value="${weightageeditform.utilities}"
+						placeholder="ex:5%" autocomplete="on">
+				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel">Tenure</label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="tenure" id="" value="${weightageeditform.tenure}"
+						placeholder="ex:5%" autocomplete="on">
 				</div>
 				<input type="hidden" id="weightId"" name="weightId"
 				value="${weightageeditform.weightId}"/>

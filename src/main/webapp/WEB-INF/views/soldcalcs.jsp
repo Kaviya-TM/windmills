@@ -291,14 +291,14 @@
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Sales Price</div>
 			<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:12.5% !important" readonly  id="epriceavg">
 			<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:17% !important;background:none !important" id="">
-			<div class="mainhead" style="width: 35%; font-weight: 800; float: left; line-height: 16px;color:#ff6600;text-align:right;padding-right:10px">Estimated Market Value as per Sold Transactions</div>
+			<div class="mainhead" style="width: 35%; font-weight: 800; float: left; line-height: 30px;color:#ff6600;text-align:right;padding-right:10px">Estimated Market Value as per Sold Transactions</div>
 			<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12.5% !important"  name="" readonly id="soldmarketvalue">
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">PSF</div>
 			<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:12.5% !important" readonly id="epriceavgper">
 			<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:17% !important;background:none !important" id="">
-			<div class="mainhead" style="width: 35%; font-weight: 800; float: left; line-height: 16px;color:#ff6600;text-align:right;padding-right:10px">PSF</div>
+			<div class="mainhead" style="width: 35%; font-weight: 800; float: left; line-height:30px;color:#ff6600;text-align:right;padding-right:10px">PSF</div>
 			<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12.5% !important"  readonly name="" id="soldfinalvalue">
 		</div><br>
 </div>

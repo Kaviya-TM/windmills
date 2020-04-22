@@ -69,6 +69,11 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="utilityprice" id="" placeholder="Utilities Connected Price">
 				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Developer Margin</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="devmargin" id="" placeholder="Developer Margin">
+				</div>
 				<div class="errMsg">Property Valued Already Exists</div>
 				<div class="form-group" style="width: 100%">
 					<button type="submit">Save</button>

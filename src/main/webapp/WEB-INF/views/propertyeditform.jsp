@@ -71,6 +71,11 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="utilityprice" id="" value="${propertyform.utilityprice}" placeholder="Utilities Connected Price">
 				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Developer Margin</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="devmargin" value="${propertyform.devmargin}" id="" placeholder="Developer Margin">
+				</div>
 				<input type="hidden" id="propertyId"" name="propertyId"
 				value="${propertyform.propertyId}"/>
 				<div class="form-group" style="width: 100%">

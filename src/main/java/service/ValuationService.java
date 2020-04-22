@@ -393,6 +393,15 @@ public class ValuationService {
 		}
 		return developer;
 	}
+	@Transactional
+	public String getDevMargin(String propList) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propList);
+		String devmargin = null;
+		for(Property r1 : rows){
+			devmargin = r1.getDevmargin();
+		}
+		return devmargin;
+	}
 
 
 }

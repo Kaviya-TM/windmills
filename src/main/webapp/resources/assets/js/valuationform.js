@@ -852,6 +852,22 @@ $('#marketValue').keydown(function(e) {
 		
 	}
 });
+$("#vsummary").click(function() {
+	$("#soldTransac").val($('#soldmarketvalue').val());
+});
+
+$("#buitUpAreaSize").keyup(function() {
+	var buitUpAreaSize = $('#buitUpAreaSize').val();
+	var balsize = $('#balsize').val();
+	var final = parseInt(buitUpAreaSize) - parseInt(balsize);
+	$("#netbuitUpAreaSize").val(final);
+});
+$("#balsize").keyup(function() {
+	var buitUpAreaSize = $('#buitUpAreaSize').val();
+	var balsize = $('#balsize').val();
+	var final = parseInt(buitUpAreaSize) - parseInt(balsize);
+	$("#netbuitUpAreaSize").val(final);
+});
 $("#marketValue").keyup(function() {
 	var get_num = $(this).val();
 	get_num =get_num.replace(/,/g , '');

@@ -37,9 +37,10 @@ public class Property  implements java.io.Serializable {
 	private String maxage;
 	private String parkingprice;
 	private String poolprice;
-		private String landscapeprice;
+	private String landscapeprice;
 	private String whitegoodsprice;
 	private String utilityprice;
+	private String devmargin;
 
 
 	@Id
@@ -123,6 +124,13 @@ public class Property  implements java.io.Serializable {
 
 	public void setUtilityprice(String utilityprice) {
 		this.utilityprice = utilityprice;
+	}
+	@Column(name = "devmargin")
+	public String getDevmargin() {
+		return devmargin;
+	}
+	public void setDevmargin(String devmargin) {
+		this.devmargin = devmargin;
 	}
 
 

@@ -21,26 +21,26 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important;padding-top: 10px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
+		style="background: rgb(229, 231, 233) !important;padding-left: 212px !important;padding-top: 10px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
-			<button class="valbtn" id="receive">Receive Valuation</button>
-			<button class="valbtn" id="conflict" style="width: 3.5%;">Check COI</button>
+			<button class="valbtn" id="receive" style="width: 4.8%;">Receive Valuation</button>
+			<button class="valbtn" id="conflict" style="width: 3.3%;">Check COI</button>
 			<button class="valbtn" id="documents" style="width: 5.6%;">Receive Documents</button>
 			<button class="valbtn" id="schedule" style="width: 5.5%;">Schedule Inspection</button>
 			<button class="valbtn" id="inspect1" style="width: 5.5%;">Inspect Property A</button>
 			<button class="valbtn" id="inspect2" style="width: 5.5%;">Inspect Property B</button>
 			<button class="valbtn" id="splAssumption" style="width: 5.8%;">Special Assumption</button>
 			<button class="valbtn" id="extent" style="width: 6.2%;">Extent Of Investigation</button>
-			<button class="valbtn" id="marketsum">Market Summary</button>
-			<button class="valbtn" id="senquiry" style="width: 5.6%;">Sold-Trans Enquiry</button>
-			<button class="valbtn" id="filter" style="width: 5.7%;">Sold-Trans List</button>
-			<button class="valbtn" id="average" style="width: 5.6%;">Sold-Trans Calculation</button>
-			<button class="valbtn" id="">Master Enquiry</button>
+			<button class="valbtn" id="marketsum" style="width: 4.8%;">Market Summary</button>
+			<button class="valbtn" id="senquiry" style="width: 5%;">SoldTrans Enquiry</button>
+			<button class="valbtn" id="filter" style="width: 5%;">SoldTrans List</button>
+			<button class="valbtn" id="average" style="width: 5.6%;">SoldTrans Calculation</button>
+			<button class="valbtn" id="" style="width: 3.8%;">Master Enquiry</button>
 			<button class="valbtn" id="" style="width: 3.5%;">Master List</button>
-			<button class="valbtn" id="">Master Calculation</button>
-			<button class="valbtn" id="lenquiry">Listings Enquiry</button>
-			<button class="valbtn" id="lfilter">Listing Transaction</button>
-			<button class="valbtn" id="laverage">Listing Calculation</button>
+ 			<button class="valbtn" id="lenquiry" style="width: 4%;">Listings Enquiry</button>
+			<button class="valbtn" id="lfilter" style="width: 5.7%;">Listing Transaction</button>
+			<button class="valbtn" id="laverage" style="width: 5.7%;">Listing Calculation</button>
+			<button class="valbtn" id="vsummary">Valuation Summary</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
 		</div>
 		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
@@ -1056,7 +1056,7 @@
 								<i class="fas fa-calendar"></i>
 							</div>
 						</div>
-						<input type="text" class="form-control form-control-sm datepicker"
+						<input type="text" class="form-control form-control-sm datepicker" style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"
 							name="valuationReport.valInstrDate" id="valinsdate">
 					</div>
 				</div>
@@ -1068,7 +1068,7 @@
 								<i class="fas fa-calendar"></i>
 							</div>
 						</div>
-						<input type="text" class="form-control form-control-sm datepicker"
+						<input type="text" class="form-control form-control-sm datepicker" style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"
 							name="valuationReport.intTargetDate" id="">
 					</div>
 				</div>
@@ -1086,8 +1086,8 @@
 						class="form-control form-control-sm textholder"
 						name="valuationReport.tenure" id="tenure">
 						<option value="Freehold" selected>Freehold</option>
-						<option value="Freehold(Emiratis)">Freehold(Emiratis)</option>
-						<option value="Freehold(Emiratis & GCC Citizens)">Freehold(Emiratis
+						<option value="Freehold(Emiratis)">Non-Freehold(Emiratis)</option>
+						<option value="Freehold(Emiratis & GCC Citizens)">Non-Freehold(Emiratis
 							& GCC Citizens)</option>
 						<option value="Leasehold">Leasehold</option>
 
@@ -1361,11 +1361,17 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Transaction Price</label> <input type="text"
-						class="form-control form-control-sm textholder"
-						name="" id="" placeholder="Transaction Price"
-						autocomplete="on">
-				</div>
+					  <label class="rholder">Developer Margin</label>
+	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:8px">
+							<input type="checkbox" id="devmargin" name="" value="">
+							<div class="state p-success" style="background: #fff; width: 33%;  overflow: hidden;">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div>
+				  </div>
 				<div class="valuationholder" style="margin-top: 5px;height:45px">
 					<div class="savebtn" id="receivenxt">Next</div>
 				</div>
@@ -1692,6 +1698,12 @@
 						name="valuationReport.buitUpAreaSize" id="buitUpAreaSize"
 						placeholder="Built Up Area Size(sq.ft)" autocomplete="on">
 				</div>
+				<div class="viholder"> 
+					<label class="rholder">Net Built Up Area Size</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="netbuitUpAreaSize"
+						placeholder="Net Built Up Area Size" autocomplete="on">
+				</div>
 				<div class="viholder">
 					<label class="rholder">Pool</label> <select
 						class="form-control form-control-sm textholder"
@@ -1831,6 +1843,8 @@
 						<option value="Partial Pool View">Partial Pool View</option>
 						<option value="Partial Mountain View">Partial Mountain View</option>
 						<option value="Partial Lake View">Partial Lake View</option>
+						<option value="Substandard View">Substandard View</option>
+						<option value="Poor View">Poor View</option>
 					</select>
 				</div>
 				<div class="viholder">
@@ -2493,6 +2507,37 @@
 			</div>
 			<%@include file="soldcalcs.jsp"%>
 			<%@include file="listingscalcs.jsp"%>
+			<div class="form-group vsummary">
+				<div class="valuationholder">
+					<label class="labelholder" style="width:28%">Transaction Price</label> <input
+						type="text" class="form-control form-control-sm textholder"
+						name="" id=""
+						placeholder="Transaction Price" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:28%">Estimated Market Value as per Sold Transactions</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="soldTransac"
+						placeholder="Estimated Market Value as per Sold Transactions" autocomplete="off">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:28%">Estimated Market Value as per Previous Valuations</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id=""
+						placeholder="Estimated Market Value as per Previous Valuations" autocomplete="off">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:28%">Estimated Market Value as per Listings Transactions</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id=""
+						placeholder="Estimated Market Value as per Listings Transactions" autocomplete="off">
+				</div>
+<!-- 				<div class="valuationholder" style="margin-top: 20px"> -->
+<!-- 					<div class="savebtn" id="vsumprev">Previous</div> -->
+<!-- 					<div class="savebtn" id="vsumnext">Next</div> -->
+<!-- 				</div> -->
+			</div>
+			<br>
 			<div class="form-group submitting">
 				<div class="valuationholder">
 					<label class="labelholder">Valuation Adjustments</label> <input

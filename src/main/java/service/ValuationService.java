@@ -91,7 +91,6 @@ public class ValuationService {
 				System.out.println("check" + files.get(i).getName());
 			}
 		}
-		log.info("beginning of save report");
 		valuationDaoImpl.saveValuationReport(valuationreport);
 		reportId=valuationreportform.getValuationReport().getReportId();
 		if (documentList.size() != 0) {
@@ -107,7 +106,6 @@ public class ValuationService {
 		
 		WindmillsUtils.fileupload(files, docmap);
 		
-		log.info("End of save report");
 	}
 	@Transactional
 	public int getNumberOfRows() {

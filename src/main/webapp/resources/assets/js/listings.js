@@ -11,10 +11,12 @@ $("#list-buildingname").change(function() {
 			var community = obj.city;
 			var subcommunity = obj.subcommunity;
 			var city = obj.community;
+			var developer = obj.developer;
 			console.log("communitty",community);
 			 $('#list-city').val(community);
 			 $('#list-community').val(city);
 			 $('#list-subcommunity').val(subcommunity);
+			 $('#list-developer').val(developer);
 			return;
 			},
 	});	
@@ -44,13 +46,9 @@ $('#addlisitings').submit(function(e) {
 		landSize = toComma(landSize);
 		$('#landSize').val(landSize);
 	}
-	if(bua == ""){
-		$('#bua').val("-");
-	}
-	else{
-		bua = toComma(bua);
-		$('#bua').val(bua);
-	}
+	var bua = $('#libuiltUpAreaSize').val();
+	bua = toComma(bua);
+	$('#libuiltUpAreaSize').val(bua);
 	var rent = $('#rent').val();
 	rent = toComma(rent);
 	$('#rent').val(rent);

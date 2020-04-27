@@ -63,6 +63,7 @@ public class ListingTransactionController {
 		List<SoldTransactions> arealist=soldTransactionService.getArea();
 		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
 		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
+		List<SoldTransactions> devlist=soldTransactionService.getDevelopers();
 		mv.setViewName("listingTransactions");
 		mv.addObject("propertylist",propertylist);
 		mv.addObject("referencelist",referencelist);
@@ -70,6 +71,7 @@ public class ListingTransactionController {
 		mv.addObject("arealist",arealist);
 		mv.addObject("hoodlist",hoodlist);
 		mv.addObject("bullist",bullist);
+		mv.addObject("devlist",devlist);
 		return mv;
 	}
 	@RequestMapping(value = {"/addlisitings" }, method = RequestMethod.POST)
@@ -91,10 +93,16 @@ public class ListingTransactionController {
 			@RequestParam("pricefrom")String pricefrom,@RequestParam("priceto")String priceto,@RequestParam("pricesqtfrom")String pricesqtfrom,@RequestParam("pricesqtto")String pricesqtto,
 			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto,@RequestParam("propList")String propList) throws ParseException{
 		List<Listings> list = listingsService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto,propList);
-		System.err.println("listfile"+list.size());
 		JSONObject json = new JSONObject();
 		if(list.size() > 0){
 			String dateAvg = listingsService.getDateAvg(list);
+			String locAvg = listingsService.getLocationAvg(list);
+			String ageAvg = listingsService.getAgeAvg(list);
+			String viewAvg = listingsService.getViewAvg(list);
+			String staAvg = listingsService.getStatusAvg(list);
+			String expAvg = listingsService.getExposureAvg(list);
+			String plaAvg = listingsService.getPlacementAvg(list);
+			String floorAvg = listingsService.getFloorAvg(list);
 			String landAvg = listingsService.getlandAvg(list);
 			String priceAvg = listingsService.getpriceAvg(list);
 			String sizeAvg = listingsService.getSizeAvg(list);
@@ -102,6 +110,13 @@ public class ListingTransactionController {
 			String bedAvg = listingsService.getBedAvg(list);
 			json.put("list", list);
 			json.put("dateAvg", dateAvg);
+			json.put("locAvg", locAvg);
+			json.put("ageAvg", ageAvg);
+			json.put("viewAvg", viewAvg);
+			json.put("expAvg", expAvg);
+			json.put("staAvg", staAvg);
+			json.put("plaAvg", plaAvg);
+			json.put("floorAvg", floorAvg);
 			json.put("landAvg", landAvg);
 			json.put("priceAvg", priceAvg);
 			json.put("sizeAvg", sizeAvg);
@@ -114,7 +129,7 @@ public class ListingTransactionController {
 			json.put("empty","empty");
 		}
 		
-		System.err.println(json);
+		System.err.println("json"+json);
 		return json;
 
 	}
@@ -155,7 +170,19 @@ public class ListingTransactionController {
 		listingsService.editListings(listings);
 		 ModelAndView mv = new ModelAndView();
 		 List<Listings> list=listingsService.getListings();
-		 mv.addObject("listingslist",list);
+		 List<Property> propertylist = valuationService.getPropertyValued();
+		List<ValuationReport> referencelist = valuationService.getReference();
+		List<SoldTransactions> cityylist=soldTransactionService.getCity();
+		List<SoldTransactions> arealist=soldTransactionService.getArea();
+		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
+		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
+		mv.addObject("propertylist",propertylist);
+		mv.addObject("referencelist",referencelist);
+		mv.addObject("cityylist",cityylist);
+		mv.addObject("arealist",arealist);
+		mv.addObject("hoodlist",hoodlist);
+		mv.addObject("bullist",bullist);
+		mv.addObject("listingslist",list);
 		 mv.setViewName("listingslist");
 	     return mv;
 		

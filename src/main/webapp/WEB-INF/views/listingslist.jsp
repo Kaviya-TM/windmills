@@ -30,7 +30,7 @@
 			<c:forEach items="${listingslist}" var="listings">
 				<form:form action="getListings" id="${listings.listingsId}"  class="column" style="margin-bottom:5px;width:100% !important"> 
 					<div id="${listings.listingsId}">
-						<div class="head stylename" style="width:6.6%">${listings.listingsDate}</div>
+						<div class="head stylename" style="width:6.6%;padding:0px;line-height:30px">${listings.listingsDate}</div>
 						<div class="head stylename" style="width:7%">${listings.source}</div>
 						<div class="head stylename">${listings.community}</div>
 						<div class="head stylename" style="width:10%">${listings.subCommunity}</div>

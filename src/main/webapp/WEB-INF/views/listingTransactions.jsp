@@ -86,8 +86,8 @@
 						class="form-control form-control-sm listtext"
 						name="tenure" id="">
 						<option value="Freehold" selected>Freehold</option>
-						<option value="Freehold(Emiratis)">Freehold(Emiratis)</option>
-						<option value="Freehold(Emiratis & GCC Citizens)">Freehold(Emiratis
+						<option value="Non-Freehold(Emiratis)">Non-Freehold(Emiratis)</option>
+						<option value="Non-Freehold(Emiratis & GCC Citizens)">Non-Freehold(Emiratis
 							& GCC Citizens)</option>
 						<option value="Leasehold">Leasehold</option>
 
@@ -260,7 +260,7 @@
 				<div class="listholder">
 					<label class="listlabel">Location</label> <select
 						class="form-control form-control-sm listtext"
-						name="location" id="">
+						name="location" id="lilocation">
 						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average" selected>Average</option>
@@ -280,7 +280,7 @@
 				</div>
 				<div class="listholder">
 					<label class="listlabel" style="line-height: 13px;">Built Up Area Size (sq.ft)</label>
-				    <input type="text" class="form-control form-control-sm listtext" name="bua" id="bua" placeholder="BUA" autocomplete="on">
+				    <input type="text" class="form-control form-control-sm listtext" name="bua" id="libuiltUpAreaSize" placeholder="BUA" autocomplete="on">
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Balcony Size</label>
@@ -346,102 +346,13 @@
 					</select>
 				</div>
 				<div class="listholder">
-					<label class="listlabel">Developer</label> <select
-						class="form-control form-control-sm listtext"
-						name="developer" id="">
-						<option value="Al Ain Holding">Al Ain Holding</option>
-						<option value="Akshara Global Real Estate Development LLC">Akshara
-							Global Real Estate Development LLC</option>
-						<option value="Al Mada Marble">Al Mada Marble</option>
-						<option value="Al Masarat Real Estate">Al Masarat Real
-							Estate</option>
-						<option value="Al Mazaya Real Estate FZ LLC">Al Mazaya
-							Real Estate FZ LLC</option>
-						<option value="Al Mizan Group">Al Mizan Group</option>
-						<option value="Al Shafar Development">Al Shafar
-							Development</option>
-						<option value="Arabian Gulf Properties">Arabian Gulf
-							Properties</option>
-						<option value="Aurora Real Estate Development">Aurora
-							Real Estate Development</option>
-						<option value="AYS Developments Limited">AYS Developments
-							Limited</option>
-						<option value="Azizi">Azizi</option>
-						<option value="B&M Riviera Properties Development">B&M
-							Riviera Properties Development</option>
-						<option value="Binghatti">Binghatti</option>
-						<option value="Bloom Properties">Bloom Properties</option>
-						<option value="Bolton Real Estate Development LLC">Bolton
-							Real Estate Development LLC</option>
-						<option value="Cayan Group">Cayan Group</option>
-						<option value="Chapal">Chapal</option>
-						<option value="Damac Properties">Damac Properties</option>
-						<option value="Danube Properties">Danube Properties</option>
-						<option value="Dar Al Arkan">Dar Al Arkan</option>
-						<option value="Deyaar">Deyaar</option>
-						<option value="Dubai Investments Park Development Company">Dubai
-							Investments Park Development Company</option>
-						<option value="Dubai Investments Real Estate Company">Dubai
-							Investments Real Estate Company</option>
-						<option value="Dubai Properties">Dubai Properties</option>
-						<option value="Dubai South">Dubai South</option>
-						<option value="Dubai Sports City LLC">Dubai Sports City
-							LLC</option>
-						<option value="Ellington Properties">Ellington Properties</option>
-						<option value="Emaar">Emaar</option>
-						<option value="Emaar/DP World">Emaar/DP World</option>
-						<option value="Empire Arabia Real Estate Developers LLC">Empire
-							Arabia Real Estate Developers LLC</option>
-						<option value="Five Holdings">Five Holdings</option>
-						<option value="GGICO">GGICO</option>
-						<option value="HMG Properties">HMG Properties</option>
-						<option value="IFA">IFA</option>
-						<option value="Iman Developers">Iman Developers</option>
-						<option value="Innovation SEZ Developer LTD">Innovation
-							SEZ Developer LTD</option>
-						<option value="Jumeirah Golf Estates LLC">Jumeirah Golf
-							Estates LLC</option>
-						<option value="Kerzer International">Kerzer International</option>
-						<option value="Kleindienst Group">Kleindienst Group</option>
-						<option value="Liv Developers">Liv Developers</option>
-						<option value="Lokhandwala Builders">Lokhandwala Builders</option>
-						<option value="Lootah Group">Lootah Group</option>
-						<option value="MAG Group">MAG Group</option>
-						<option value="Meraas">Meraas</option>
-						<option value="Meraki">Meraki</option>
-						<option value="Meydan Group">Meydan Group</option>
-						<option value="Nakheel">Nakheel</option>
-						<option value="Naseria Contracting">Naseria Contracting</option>
-						<option value="Nshama">Nshama</option>
-						<option value="Omniyat">Omniyat</option>
-						<option value="Pacific Investment">Pacific Investment</option>
-						<option value="Pal Developments L.L.C.">Pal Developments
-							L.L.C.</option>
-						<option value="Pantheon Properties Limited">Pantheon
-							Properties Limited</option>
-						<option value="Private Developer">Private Developer</option>
-						<option value="Realty One">Realty One</option>
-						<option value="RKMDurar Properties">RKMDurar Properties</option>
-						<option value="Samana Developers">Samana Developers</option>
-						<option value="Select Group">Select Group</option>
-						<option value="Seven Tides">Seven Tides</option>
-						<option value="Shapoorji Pallonji Group">Shapoorji
-							Pallonji Group</option>
-						<option value="Sobha Group">Sobha Group</option>
-						<option value="Tanmiyat">Tanmiyat</option>
-						<option value="Texture Holdings">Texture Holdings</option>
-						<option value="The First Group">The First Group</option>
-						<option value="Tiger Properties">Tiger Properties</option>
-						<option value="Time Properties">Time Properties</option>
-						<option value="Titan Developers">Titan Developers</option>
-						<option value="Trident">Trident</option>
-						<option value="Vascon Trading Ltd.">Vascon Trading Ltd.</option>
-						<option value="Vincitore Real Estate Development LLC">Vincitore
-							Real Estate Development LLC</option>
-						<option value="Wasl">Wasl</option>
-						<option value="Zaya Real Estate Development">Zaya Real
-							Estate Development</option>
-					</select>
+					<label class="listlabel">Developer</label> 
+					<select class="form-control form-control-sm listtext" name="developer" id="list-developer">  
+						<c:forEach items="${devlist}" var="item"> 
+							<option value="" hidden>-- Select Building/Project Name ---</option> 
+							<option value="${item}">${item}</option>
+						</c:forEach> 
+					</select> 
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Estimated Age(Years)</label> <input
@@ -582,6 +493,8 @@
 						<option value="Partial Pool View">Partial Pool View</option>
 						<option value="Partial Mountain View">Partial Mountain View</option>
 						<option value="Partial Lake View">Partial Lake View</option>
+						<option value="Substandard View">Substandard View</option>
+						<option value="Poor View">Poor View</option>
 					</select>
 				</div>
 				<div class="listholder">
@@ -618,6 +531,15 @@
 						<option value="No" selected>No</option>
 					</select>
 				</div>
+				<div class="listholder">
+					  <label class="listlabel">Developer Margin</label>
+	               	 <select
+						class="form-control form-control-sm listtext"
+						name="devmargin" id="lidevmargin">
+						<option value="Yes">Yes</option>
+						<option value="No" selected>No</option>
+					</select>
+				  </div>
 				<div class="listholder">
 					<label class="listlabel">Listings Price </label> <input type="text"
 						class="form-control form-control-sm listtext"
@@ -657,7 +579,7 @@
 						class="form-control form-control-sm listtext"
 						name="agCompany" id="" placeholder="Agent Company" autocomplete="on">
 				</div>
-				<div class="listholder" style="margin-top: 3px;margin-bottom:20px;">
+				<div class="listholder" style="margin-top: -6px;margin-bottom:20px;">
 					<button type="submit" id="" class="savebtn">Save</button>
 				</div>
 		</form:form>

@@ -734,18 +734,18 @@ $("#sfilter").click(function(){
 							    "</div>");
 					}	
 					$('.filter').append("" +
-							"<div class='column boxlist' style='margin-bottom:5px;background:orange;display:flex'>" +
-							" <div class='head stylename' style='width:7.6%;color:#fff'>" + obj.dateAvg + "</div>" +
-						  	" <div class='head stylename' style='width:7.6%;color:orange'>" +formatdate + "</div>" +
-						  	" <div class='head stylename' style='width:14%;color:orange'>" + formatdate + "</div>" +
-						  	" <div class='head stylename' style='width:15%;color:orange'>" +formatdate + "</div>" +
-						  	" <div class='head stylename' style='width:15%;color:orange'>" + formatdate + "</div>" +
-						  	" <div class='head stylename' style='width:12%;color:orange'>" + formatdate + "</div>" +
-						  	" <div class='head stylename' style='width:6%;color:#fff'>" + obj.bedAvg+ "</div>" +
-						  	" <div class='head stylename' style='width:6%;color:#fff'>" + landAvg + "</div>" +
-						  	" <div class='head stylename' style='width:5%;color:#fff'>" + sizeAvg+ "</div>" +
-						  	" <div class='head stylename' style='width:8%;color:#fff'>" + priceAvg + "</div>" +
-						  	" <div class='head stylename' style='width:0%;color:#fff'>" + pricePerAvg + "</div>" +
+							"<div class='column boxlist' style='margin-bottom:5px;background:bisque;border: 1px solid bisque;display:flex'>" +
+							" <div class='head stylename' style='width:7.6%;color:black'>" + obj.dateAvg + "</div>" +
+						  	" <div class='head stylename' style='width:7.6%;color:bisque'>" +formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:14%;color:bisque'>" + formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:15%;color:bisque'>" +formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:15%;color:bisque'>" + formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:12%;color:bisque'>" + formatdate + "</div>" +
+						  	" <div class='head stylename' style='width:6%;color:black'>" + obj.bedAvg+ "</div>" +
+						  	" <div class='head stylename' style='width:6%;color:black'>" + landAvg + "</div>" +
+						  	" <div class='head stylename' style='width:5%;color:black'>" + sizeAvg+ "</div>" +
+						  	" <div class='head stylename' style='width:8%;color:black'>" + priceAvg + "</div>" +
+						  	" <div class='head stylename' style='width:0%;color:black'>" + pricePerAvg + "</div>" +
 				    "</div>");
 				}
 			}
@@ -854,6 +854,7 @@ $('#marketValue').keydown(function(e) {
 });
 $("#vsummary").click(function() {
 	$("#soldTransac").val($('#soldmarketvalue').val());
+	$("#listingsTransac").val($('#listingmarketvalue').val());
 });
 
 $("#buitUpAreaSize").keyup(function() {

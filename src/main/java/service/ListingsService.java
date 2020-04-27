@@ -103,13 +103,9 @@ public class ListingsService {
 			String pricefrom, String priceto, String pricesqtfrom, String pricesqtto, String datefrom, String dateto,
 			String propList) throws ParseException {
 		List<Listings> getlist = listingsDaoImpl.getListings();
-		System.err.println("getlist"+getlist.size());
 		List<Listings> datelist =  getDateList(getlist,datefrom,dateto);
-		System.err.println("datelist"+datelist.size());
 		List<Listings> propertylist = getPropertyList(datelist,propList);
-		System.err.println("propertylist"+propertylist.size());
 		List<Listings> bullist =  getBulList(propertylist,buildingName);
-		System.err.println("bullist"+bullist.size());
 		List<Listings> bedlist = new ArrayList<Listings>();
 		List<Listings> landlist = new ArrayList<Listings>();
 		List<Listings> bualist = new ArrayList<Listings>();
@@ -130,11 +126,6 @@ public class ListingsService {
 		}
 		else{
 			landlist =  getLandList(bedlist,landfrom,landto);
-//			if(landlist.size() <= 0){
-//				for(Listings trans : bedlist){
-//					landlist.add(trans);
-//				}
-//			}
 		}
 		if(buafrom.equals("") && buato.equals("")){
 			for(Listings trans : landlist){
@@ -208,16 +199,13 @@ public class ListingsService {
 	private List<Listings> getLandList(List<Listings> bedlist, String landfrom, String landto) {
 		ArrayList<Listings> filterlandlist = new ArrayList<Listings>();
 		int landf = Integer.parseInt(landfrom);
-		System.err.println("landf"+landf);
 		int landt = Integer.parseInt(landto);
-		System.err.println("landt"+landt);
 		for(Listings trans : bedlist){
 			String landSize = trans.getLandSize();
 			if(!landSize.equals("-")){
 				landSize =  landSize.replaceAll(",", "");
 				int lands = Integer.parseInt(landSize);
 				if(lands >= landf && lands<= landt){
-					System.err.println("lands"+lands);
 					filterlandlist.add(trans);
 				}
 			}
@@ -225,7 +213,6 @@ public class ListingsService {
 				//
 			}
 		}
-		System.err.println("filterlandlist"+filterlandlist.size());
 		return filterlandlist;
 	}
 	private List<Listings> getList(List<Listings> bullist, String bedfrom, String bedto) {
@@ -271,47 +258,6 @@ public class ListingsService {
 		Date max=new SimpleDateFormat("dd-MMM-yyyy").parse(dateto);
 		for(Listings trans : list){
 			String date = trans.getListingsDate();
-//			String year = date.substring(6);
-//			String month = date.substring(3,5);
-//			String day = date.substring(0,2);
-//			if(month.equals("01")){
-//				month = "Jan";
-//			}
-//			if(month.equals("02")){
-//				month = "Feb";
-//			}
-//			if(month.equals("03")){
-//				month = "Mar";
-//			}
-//			if(month.equals("04")){
-//				month = "Apr";
-//			}
-//			if(month.equals("05")){
-//				month = "May";
-//			}
-//			if(month.equals("06")){
-//				month = "Jun";
-//			}
-//			if(month.equals("07")){
-//				month = "Jul";
-//			}
-//			if(month.equals("08")){
-//				month = "Aug";
-//			}
-//			if(month.equals("09")){
-//				month = "Sep";
-//			}
-//			if(month.equals("10")){
-//				month = "Oct";
-//			}
-//			if(month.equals("11")){
-//				month = "Nov";
-//			}
-//			if(month.equals("12")){
-//				month = "Dec";
-//			}
-//			
-//			String date1 = day+"-"+month+"-"+year;
 			Date dd=new SimpleDateFormat("dd-MMM-yyyy").parse(date);
 			if((dd.after(min) && dd.before(max)) || dd.equals(min) || dd.equals(max)){
 				filterdatelist.add(trans);
@@ -365,7 +311,6 @@ public class ListingsService {
 				}
 				int b = Integer.parseInt(month);
 				int c = Integer.parseInt(aed.substring(0,2));
-				System.err.println(LocalDate.of(a, b, c));
 				myList.add(LocalDate.of(a, b, c));
 			}
 		}
@@ -463,50 +408,411 @@ public class ListingsService {
 		if(!filterTransaction.isEmpty()){
 			for(Listings st : filterTransaction){
 				String bed = st.getNoOfBedrooms();
-//				String bed = null;
-//				System.err.println("room=="+room);
-//				if(room.equals("Studio")){
-//					bed = "0";
-//				}
-//				if(room.equals("1-Bedroom")){
-//					bed = "1";
-//				}
-//				if(room.equals("2-Bedroom")){
-//					bed = "2";
-//				}
-//				if(room.equals("3-Bedroom")){
-//					bed = "3";
-//				}
-//				if(room.equals("4-Bedroom")){
-//					bed = "4";
-//				}
-//				if(room.equals("5-Bedroom")){
-//					bed = "5";
-//				}
-//				if(room.equals("6-Bedroom")){
-//					bed = "6";
-//				}
-//				if(room.equals("7-Bedroom")){
-//					bed = "7";
-//				}
-//				if(room.equals("8-Bedroom")){
-//					bed = "8";
-//				}
-//				if(room.equals("9-Bedroom")){
-//					bed = "9";
-//				}
-//				if(room.equals("10-Bedroom")){
-//					bed = "10";
-//				}
-//				if(room == "Unknown"){
-//					bed = "0";
-//				}
-				System.err.println("bed-->"+bed);
 				int finaed = Integer.parseInt(bed);
 				avglist.add(finaed);
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getLocationAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				int finallocation = 0;
+				String location = st.getLocation();
+				if(location.equals("Very Good")){
+					finallocation = 5;
+				}
+				if(location.equals("Good")){
+					finallocation = 4;
+				}
+				if(location.equals("Average")){
+					finallocation = 3;
+				}
+				if(location.equals("Substandard")){
+					finallocation = 2;
+				}
+				if(location.equals("Poor")){
+					finallocation = 1;
+				}
+				avglist.add(finallocation);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getTenureAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<String> avglist = new ArrayList<String>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String finall = null;
+				String tenure = st.getTenure();
+				System.err.println("tenure"+tenure);
+				if(tenure.equals("Freehold")){
+					finall = "2";
+				}
+				if(tenure.equals("Non-Freehold(Emiratis)")){
+					finall = "1";
+				}
+				if(tenure.equals("Non-Freehold(Emiratis & GCC Citizens)")){
+					finall = "1.5";
+				}
+				if(tenure.equals("Leasehold")){
+					finall = "3";
+				}
+				avglist.add(finall);
+			}
+		}
+		double finalValue =  calculateAvg(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	private double calculateAvg(ArrayList<String> avglist) {
+		double sum = 0;
+		 if(!avglist.isEmpty()) {
+			for(String arg : avglist){
+				   sum += Double.valueOf( arg );
+			}
+			double average = sum/avglist.size();
+			return average;
+		 }
+		return sum;
+	}
+	public String getAgeAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String age = st.getAge();
+				int finage = Integer.parseInt(age);
+				avglist.add(finage);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getViewAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String view = st.getView();
+				String finalview = null;
+				if(view.equals("Park View") || view.equals("Pool View") || view.equals("Mountain View")){
+					finalview = "5";
+				}
+				if(view.equals("Sea View") || view.equals("Marina View") || view.equals("Lake View")){
+					finalview = "5";
+				}
+				if(view.equals("Partial Park View") || view.equals("Partial Pool View") || view.equals("Partial Mountain View")){
+					finalview = "4";
+				}
+				if(view.equals("Partial Sea View") || view.equals("Partial Marina View") || view.equals("Partial Lake View")){
+					finalview = "4";
+				}
+				if(view.equals("Community View")){
+					finalview = "3";
+				}
+				if(view.equals("Substandard View")){
+					finalview = "2";
+				}
+				if(view.equals("Poor View")){
+					finalview = "1";
+				}
+				int finage = Integer.parseInt(finalview);
+				avglist.add(finage);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getStatusAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String status = st.getFinishStatus();
+				String finalstatus = null;
+				if(status.equals("Shell & Core")){
+					finalstatus = "1";
+				}
+				if(status.equals("Fitted")){
+					finalstatus = "2";
+				}
+				int finage = Integer.parseInt(finalstatus);
+				avglist.add(finage);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getExposureAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String exp = st.getPropExposure();
+				String finalexp = null;
+				if(exp.equals("Single Row")){
+					finalexp = "2";
+				}
+				if(exp.equals("Back To Back")){
+					finalexp = "1";
+				}
+				if(exp.equals("Not Applicable")){
+					finalexp = "0";
+				}
+				int finage = Integer.parseInt(finalexp);
+				avglist.add(finage);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getPlacementAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<String> avglist = new ArrayList<String>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String finall = null;
+				String pla = st.getPropPlacement();
+				if(pla.equals("Middle")){
+					finall = "1";
+				}
+				if(pla.equals("Corner")){
+					finall = "2";
+				}
+				if(pla.equals("Semi-Corner")){
+					finall = "1.5";
+				}
+				if(pla.equals("Not Applicable")){
+					finall = "0";
+				}
+				avglist.add(finall);
+			}
+		}
+		double finalValue =  calculateAvg(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getFloorAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String age = st.getFloorNo();
+				int finage = Integer.parseInt(age);
+				avglist.add(finage);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getQualityAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				int finallocation = 0;
+				String location = st.getPropCondition();
+				if(location.equals("Very Good")){
+					finallocation = 5;
+				}
+				if(location.equals("Good")){
+					finallocation = 4;
+				}
+				if(location.equals("Average")){
+					finallocation = 3;
+				}
+				if(location.equals("Substandard")){
+					finallocation = 2;
+				}
+				if(location.equals("Poor")){
+					finallocation = 1;
+				}
+				avglist.add(finallocation);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getUpgradeAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String age = st.getUpgrades();
+				int finage = Integer.parseInt(age);
+				avglist.add(finage);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getFurnishedAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<String> avglist = new ArrayList<String>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String finall = null;
+				String pla = st.getFurnished();
+				if(pla.equals("Yes")){
+					finall = "2";
+				}
+				if(pla.equals("No")){
+					finall = "1";
+				}
+				if(pla.equals("Semi-Furnished")){
+					finall = "1.5";
+				}
+				avglist.add(finall);
+			}
+		}
+		double finalValue =  calculateAvg(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getParkAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String age = st.getParkingSpace();
+				int finage = Integer.parseInt(age);
+				avglist.add(finage);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getPoolAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<String> avglist = new ArrayList<String>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String finall = null;
+				String pla = st.getPool();
+				if(pla.equals("Yes")){
+					finall = "2";
+				}
+				if(pla.equals("No")){
+					finall = "1";
+				}
+				avglist.add(finall);
+			}
+		}
+		double finalValue =  calculateAvg(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getLandScapeAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<String> avglist = new ArrayList<String>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String finall = null;
+				String pla = st.getLandScape();
+				if(pla.equals("Yes")){
+					finall = "2";
+				}
+				if(pla.equals("No")){
+					finall = "1";
+				}
+				if(pla.equals("Semi-Landscape")){
+					finall = "1.5";
+				}
+				avglist.add(finall);
+			}
+		}
+		double finalValue =  calculateAvg(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getGoodAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<String> avglist = new ArrayList<String>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String finall = null;
+				String pla = st.getWhiteGoods();
+				if(pla.equals("Yes")){
+					finall = "2";
+				}
+				if(pla.equals("No")){
+					finall = "1";
+				}
+				avglist.add(finall);
+			}
+		}
+		double finalValue =  calculateAvg(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getUtilitiesAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<String> avglist = new ArrayList<String>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String finall = null;
+				String pla = st.getUtilityConnected();
+				if(pla.equals("Yes")){
+					finall = "2";
+				}
+				if(pla.equals("No")){
+					finall = "1";
+				}
+				avglist.add(finall);
+			}
+		}
+		double finalValue =  calculateAvg(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getBalconyAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String aed = st.getBalcony();
+				String newStr = aed.replaceAll(",", "");
+				int finaed = Integer.parseInt(newStr);
+				avglist.add(finaed);
+			}
+		}
+		double finalValue =  calculateAverage(avglist);
+		avg = String.valueOf(df.format(finalValue));
+		return avg;
+	}
+	public String getDevmarginAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		ArrayList<String> avglist = new ArrayList<String>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String finall = null;
+				String pla = st.getDevmargin();
+				if(pla.equals("No")){
+					finall = "2";
+				}
+				if(pla.equals("Yes")){
+					finall = "1";
+				}
+				avglist.add(finall);
+			}
+		}
+		double finalValue =  calculateAvg(avglist);
 		avg = String.valueOf(df.format(finalValue));
 		return avg;
 	}

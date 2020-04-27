@@ -65,12 +65,6 @@ $("#listingfilter").click(function(){
 	 var datefrom=$('#l-datefrom').val(); 
 	 var dateto=$('#l-dateto').val(); 
 	 var propList=$('#l-propList').val(); 
-	 if(propList == "Residential Apartment"){
-		 $(".landfrom").css("pointer-events","none");
-		 $(".landfrom").css("color","darkgrey");
-		 $(".landto").css("pointer-events","none");
-		 $(".landto").css("color","darkgrey");
-	 }
 	 $('#vv-wr').text($('#reference').val());
 	 $('#vv-vd').text($('#valDate').val());
 	 $('#vv-property').text(propList);
@@ -84,61 +78,61 @@ $("#listingfilter").click(function(){
 		 $('#vv-bedfrom').text(bedfrom);
 	 }
 	 else{
-		 $('#vv-bedfrom').text("---");
+		 $('#vv-bedfrom').text("-");
 	 }
 	 if(bedto !=""){
 		 $('#vv-bedto').text(bedto);
 	 }
 	 else{
-		 $('#vv-bedto').text("---");
+		 $('#vv-bedto').text("-");
 	 }
 	 if(landfrom !=""){
 		 $('#vv-landfrom').text(landfrom);
 	 }
 	 else{
-		 $('#vv-landfrom').text("---");
+		 $('#vv-landfrom').text("-");
 	 }
 	 if(landto !=""){
 		 $('#vv-landto').text(landto);
 	 }
 	 else{
-		 $('#vv-landto').text("---");
+		 $('#vv-landto').text("-");
 	 }
 	 if(buafrom !=""){
 		 $('#vv-buafrom').text(buafrom);
 	 }
 	 else{
-		 $('#vv-buafrom').text("---");
+		 $('#vv-buafrom').text("-");
 	 }
 	 if(buato !=""){
 		 $('#vv-buato').text(buato);
 	 }
 	 else{
-		 $('#vv-buato').text("---");
+		 $('#vv-buato').text("-");
 	 }
 	 if(pricefrom !=""){
 		 $('#vv-pricefrom').text(pricefrom);
 	 }
 	 else{
-		 $('#vv-pricefrom').text("---");
+		 $('#vv-pricefrom').text("-");
 	 }
 	 if(priceto !=""){
 		 $('#vv-priceto').text(priceto);
 	 }
 	 else{
-		 $('#vv-priceto').text("---");
+		 $('#vv-priceto').text("-");
 	 }
 	 if(pricesqtfrom !=""){
 		 $('#vv-pricesqtfrom').text(pricesqtfrom);
 	 }
 	 else{
-		 $('#vv-pricesqtfrom').text("---");
+		 $('#vv-pricesqtfrom').text("-");
 	 }
 	 if(pricesqtto !=""){
 		 $('#vv-pricesqtto').text(pricesqtto);
 	 }
 	 else{
-		 $('#vv-pricesqtto').text("---");
+		 $('#vv-pricesqtto').text("-");
 	 }
 	 
 	 $.ajax({
@@ -174,14 +168,18 @@ $("#listingfilter").click(function(){
 					var pricePerAvg = toComma(obj.pricePerAvg);
 					for (x in obj.list) {
 						$('.lfilter').append("" +
-								"<div id="+obj.list[x].transactionId+" class='column boxlist' style='margin-bottom:5px;display:flex'>" +
+								"<div id="+obj.list[x].transactionId+" class='column boxlist' style='width:99.5%;margin-bottom:5px;display:flex'>" +
 									" <div class='head stylename' style='width:7.6%'>" + obj.list[x].listingsDate + "</div>" +
-									  	" <div class='head stylename' style='width:7.6%'>" + obj.list[x].community + "</div>" +
-									  	" <div class='head stylename' style='width:14%'>" + obj.list[x].subCommunity + "</div>" +
-									  	" <div class='head stylename' style='width:15%'>" + obj.list[x].buildingName + "</div>" +
-									  	" <div class='head stylename' style='width:15%'>" + obj.list[x].developer + "</div>" +
-									  	" <div class='head stylename' style='width:12%'>" + obj.list[x].propertyListed + "</div>" +
-									  	" <div class='head stylename' style='width:6%'>" + obj.list[x].noOfBedrooms + "</div>" +
+									" <div class='head stylename' style='width:7%'>" + obj.list[x].source + "</div>" +
+									" <div class='head stylename' style='width:7.8%'>" + obj.list[x].listingsRef + "</div>" +
+									" <div class='head stylename' style='width:8%'>" + obj.list[x].location + "</div>" +
+									  	" <div class='head stylename' style='width:3%'>" + obj.list[x].age + "</div>" +
+									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].view + "</div>" +
+									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].finishStatus + "</div>" +
+									  	" <div class='head stylename' style='width:9%'>" + obj.list[x].propExposure + "</div>" +
+									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].propPlacement + "</div>" +
+									  	" <div class='head stylename' style='width:5%'>" + obj.list[x].floorNo + "</div>" +
+									  	" <div class='head stylename' style='width:5%'>" + obj.list[x].noOfBedrooms + "</div>" +
 									  	" <div class='head stylename' style='width:6%'>" + obj.list[x].landSize + "</div>" +
 									  	" <div class='head stylename' style='width:5%'>" + obj.list[x].bua + "</div>" +
 									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].price + "</div>" +
@@ -190,18 +188,22 @@ $("#listingfilter").click(function(){
 							    "</div>");
 					}	
 					$('.lfilter').append("" +
-							"<div class='column boxlist' style='margin-bottom:5px;background:orange;display:flex'>" +
-							" <div class='head stylename' style='width:7.6%;color:#fff'>" + obj.dateAvg + "</div>" +
-						  	" <div class='head stylename' style='width:7.6%;color:orange'>"+ obj.dateAvg + "</div>" +
-						  	" <div class='head stylename' style='width:14%;color:orange'>" + obj.dateAvg + "</div>" +
-						  	" <div class='head stylename' style='width:15%;color:orange'>" + obj.dateAvg + "</div>" +
-						  	" <div class='head stylename' style='width:15%;color:orange'>" + obj.dateAvg + "</div>" +
-						  	" <div class='head stylename' style='width:12%;color:orange'>" + obj.dateAvg + "</div>" +
-						  	" <div class='head stylename' style='width:6%;color:#fff'>" + obj.bedAvg+ "</div>" +
-						  	" <div class='head stylename' style='width:6%;color:#fff'>" + landAvg + "</div>" +
-						  	" <div class='head stylename' style='width:5%;color:#fff'>" + sizeAvg+ "</div>" +
-						  	" <div class='head stylename' style='width:8%;color:#fff'>" + priceAvg + "</div>" +
-						  	" <div class='head stylename' style='width:0%;color:#fff'>" + pricePerAvg + "</div>" +
+							"<div class='column boxlist' style='margin-bottom:5px;background:bisque;width:99.5%;border: 1px solid bisque;display:flex'>" +
+							" <div class='head stylename' style='width:7.6%;color:black'>" + obj.dateAvg + "</div>" +
+							" <div class='head stylename' style='width:7%;color:bisque'>" + obj.list[x].dateAvg + "</div>" +
+							" <div class='head stylename' style='width:7.8%;color:bisque'>" + obj.list[x].dateAvg + "</div>" +
+							" <div class='head stylename' style='width:8%;color:black'>" + obj.locAvg + "</div>" +
+						  	" <div class='head stylename' style='width:3%;color:black'>"+ obj.ageAvg + "</div>" +
+						  	" <div class='head stylename' style='width:8%;color:black'>" + obj.viewAvg + "</div>" +
+						  	" <div class='head stylename' style='width:8%;color:black'>" + obj.staAvg + "</div>" +
+						  	" <div class='head stylename' style='width:9%;color:black'>" + obj.expAvg + "</div>" +
+						  	" <div class='head stylename' style='width:8%;color:black'>" + obj.plaAvg + "</div>" +
+							" <div class='head stylename' style='width:5%;color:black'>" + obj.floorAvg + "</div>" +
+						  	" <div class='head stylename' style='width:5%;color:black'>" + obj.bedAvg+ "</div>" +
+						  	" <div class='head stylename' style='width:6%;color:black'>" + landAvg + "</div>" +
+						  	" <div class='head stylename' style='width:5%;color:black'>" + sizeAvg+ "</div>" +
+						  	" <div class='head stylename' style='width:8%;color:black'>" + priceAvg + "</div>" +
+						  	" <div class='head stylename' style='width:0%;color:black'>" + pricePerAvg + "</div>" +
 				    "</div>");
 				}
 			}

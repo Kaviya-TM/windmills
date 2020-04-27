@@ -740,17 +740,17 @@
 				</div>
 			</div>
 			<div class="form-group filter">	
-					<div class="" style="position:relative;top:-3px;clear:both">
-			<div class="wr" style="width:85%;float:left;">
-				<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
-				<div class="sectext" style="color:crimson" name="" id="v-wr"></div>
+				<div class="" style="position:relative;top:-3px;clear:both">
+					<div class="wr" style="width:85%;float:left;">
+						<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
+						<div class="sectext" style="color:crimson" name="" id="v-wr"></div>
+					</div>
+					<div class="vd">
+						<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
+						<div class="sectext" style="color:crimson" name="" id="v-vd"></div>
+					</div>
 			</div>
-			<div class="vd">
-				<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
-				<div class="sectext" style="color:crimson" name="" id="v-vd"></div>
-			</div>
-		</div>
-		<div class="secsec" style="background: lightgoldenrodyellow;clear:both;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
+			<div class="secsec" style="background: lightgoldenrodyellow;clear:both;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
 			<div class="selholder" style="width: 20%;">
 					<div class="seclabel" style="width: 31%;">Property:</div>
 					<div class="sectext" style="" name="" id="v-property"></div>
@@ -821,32 +821,32 @@
 			</div>
 		</div>
 				<div class="column" style="display:flex;    height: 3% !important;
-    line-height: 6px;background:lightseagreen;color:#fff !important;margin-bottom:5px;border: 1px solid lightseagreen;border-radius:5px;">
-					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Date</div>
-					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Area</div>
-					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Neighbourhood</div>
-					<div class="head stylename" style="width:15%;color:#fff !important;font-weight:700">Building Name</div>
-					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Developer</div>
-					<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700">Property SubType</div>
-					<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">RoomNo Est</div>
-					<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">LA-sqf</div>
-					<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
-					<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
-					<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
+    line-height: 6px;background:lightcyan;color:#fff !important;margin-bottom:5px;border: 1px solid lightcyan;border-radius:5px;">
+					<div class="head stylename" style="width:7.6%;color:darkblue !important;font-weight:700">Date</div>
+					<div class="head stylename" style="width:7.6%;color:darkblue !important;font-weight:700">Area</div>
+					<div class="head stylename" style="width:14%;color:darkblue !important;font-weight:700">Neighbourhood</div>
+					<div class="head stylename" style="width:15%;color:darkblue !important;font-weight:700">Building Name</div>
+					<div class="head stylename" style="width:14%;color:darkblue !important;font-weight:700">Developer</div>
+					<div class="head stylename" style="width:11%;color:darkblue !important;font-weight:700">Property SubType</div>
+					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">RoomNo Est</div>
+					<div class="head stylename" style="width:6%;color:darkblue !important;font-weight:700">LA-sqf</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Size-sqf</div>
+					<div class="head stylename" style="color:darkblue !important;font-weight:700">Price AED</div>
+					<div class="head stylename" style="width:0%;color:darkblue !important;font-weight:700">AED/sqf</div>
 				</div>
 			</div>
 			<div class="form-group lfilter">	
-							<div class="" style="position:relative;top:-15px;">
-			<div class="wr" style="width:85%;float:left;">
-				<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
-				<div class="sectext" style="color:crimson" name="" id="vv-wr"></div>
+			<div class="" style="position:relative;top:-3px;clear:both">
+					<div class="wr" style="width:85%;float:left;">
+						<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
+						<div class="sectext" style="color:crimson" name="" id="vv-wr"></div>
+					</div>
+					<div class="vd">
+						<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
+						<div class="sectext" style="color:crimson" name="" id="vv-vd"></div>
+					</div>
 			</div>
-			<div class="vd">
-				<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
-				<div class="sectext" style="color:crimson" name="" id="vv-vd"></div>
-			</div>
-		</div>
-		<div class="secsec" style="background: lightgoldenrodyellow;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
+			<div class="secsec" style="background: lightgoldenrodyellow;clear:both;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
 			<div class="selholder" style="width: 20%;">
 					<div class="seclabel" style="width: 31%;">Property:</div>
 					<div class="sectext" style="" name="" id="vv-property"></div>
@@ -916,18 +916,22 @@
 					<div class="sectext" style="" name="" id="vv-pricesqtto"></div>	
 			</div>
 		</div>
-			<div class="column" style="display:flex;height: 3% !important;line-height: 6px;background:lightseagreen;color:#fff !important;margin-bottom:5px;border: 1px solid lightseagreen;border-radius:5px;">
-					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Date</div>
-					<div class="head stylename" style="width:7.6%;color:#fff !important;font-weight:700">Area</div>
-					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Neighbourhood</div>
-					<div class="head stylename" style="width:15%;color:#fff !important;font-weight:700">Building Name</div>
-					<div class="head stylename" style="width:14%;color:#fff !important;font-weight:700">Developer</div>
-					<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700">Property SubType</div>
-					<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">RoomNo Est</div>
-					<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">LA-sqf</div>
-					<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
-					<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
-					<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
+			<div class="column" style="display:flex;height: 3% !important;width:99.5%;line-height: 6px;background:lightcyan;color:#fff !important;margin-bottom:5px;border: 1px solid lightcyan;border-radius:5px;">
+					<div class="head stylename" style="width:7.6%;color:darkblue !important;font-weight:700">Date</div>
+					<div class="head stylename" style="width:7%;color:darkblue !important;font-weight:700">Source</div>
+					<div class="head stylename" style="width:7.8%;color:darkblue !important;font-weight:700">ListingsRef</div>
+					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">Location</div>
+					<div class="head stylename" style="width:3%;color:darkblue !important;font-weight:700">Age</div>
+					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">View</div>
+					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">FinishingStatus</div>
+					<div class="head stylename" style="width:9%;color:darkblue !important;font-weight:700">PropExposure</div>
+					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">PropPlacement</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Floors</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Beds</div>
+					<div class="head stylename" style="width:6%;color:darkblue !important;font-weight:700">LA-sqf</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Size-sqf</div>
+					<div class="head stylename" style="color:darkblue !important;font-weight:700">Price AED</div>
+					<div class="head stylename" style="width:0%;color:darkblue !important;font-weight:700">AED/sqf</div>
 				</div>
 			</div>
 			<div class="form-group conflict">
@@ -1086,8 +1090,8 @@
 						class="form-control form-control-sm textholder"
 						name="valuationReport.tenure" id="tenure">
 						<option value="Freehold" selected>Freehold</option>
-						<option value="Freehold(Emiratis)">Non-Freehold(Emiratis)</option>
-						<option value="Freehold(Emiratis & GCC Citizens)">Non-Freehold(Emiratis
+						<option value="Non-Freehold(Emiratis)">Non-Freehold(Emiratis)</option>
+						<option value="Non-Freehold(Emiratis & GCC Citizens)">Non-Freehold(Emiratis
 							& GCC Citizens)</option>
 						<option value="Leasehold">Leasehold</option>
 
@@ -1362,15 +1366,12 @@
 				</div>
 				<div class="vrholder">
 					  <label class="rholder">Developer Margin</label>
-	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:8px">
-							<input type="checkbox" id="devmargin" name="" value="">
-							<div class="state p-success" style="background: #fff; width: 33%;  overflow: hidden;">
-								<svg class="svg svg-icon" viewBox="0 0 20 20">
-					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z" style="stroke: white;fill:white;"></path>
-					            </svg>
-								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
-							</div>
-					  </div>
+	               	 <select
+						class="form-control form-control-sm textholder"
+						name="" id="devmargin">
+						<option value="Yes">Yes</option>
+						<option value="No" selected>No</option>
+					</select>
 				  </div>
 				<div class="valuationholder" style="margin-top: 5px;height:45px">
 					<div class="savebtn" id="receivenxt">Next</div>
@@ -2529,7 +2530,7 @@
 				<div class="valuationholder">
 					<label class="labelholder" style="width:28%">Estimated Market Value as per Listings Transactions</label> <input type="text"
 						class="form-control form-control-sm textholder"
-						name="" id=""
+						name="" id="listingsTransac"
 						placeholder="Estimated Market Value as per Listings Transactions" autocomplete="off">
 				</div>
 <!-- 				<div class="valuationholder" style="margin-top: 20px"> -->
@@ -2602,5 +2603,6 @@
 <script src="resources/assets/js/numbertoword.js"></script>
 <script src="resources/assets/js/valuationform.js"></script>
 <script src="resources/assets/js/soldcalcs.js"></script>
+<script src="resources/assets/js/listingscalcs.js"></script>
 <script src="resources/assets/js/listingfilter.js"></script>
 <script src="resources/assets/js/hideshow.js"></script>

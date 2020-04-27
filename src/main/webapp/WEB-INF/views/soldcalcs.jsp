@@ -244,7 +244,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Developer Margin</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" name="" readonly id="avgdev">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;" name="" value="2"  id="avgdev">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="subdev">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="diffdev">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="weidev">

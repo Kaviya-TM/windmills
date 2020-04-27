@@ -35,6 +35,8 @@ $("#vsummary").click(function(){
 	$('.senquiry').hide();
 	$('.lenquiry').hide();
 	$('.lfilter').hide();
+	$('.laverage').hide();
+	$("#laverage").css("background", "#000080");
 	$('.vsummary').show();
 	$("#vsummary").css("background", "#ff6600");
 	$("#lfilter").css("background", "#000080");
@@ -71,6 +73,8 @@ $("#receive").click(function(){
 	$('.lenquiry').hide();
 	$('.lfilter').hide();
 	$('.vsummary').hide();
+	$('.laverage').hide();
+	$("#laverage").css("background", "#000080");
 	$("#vsummary").css("background", "#000080");
 	$("#lfilter").css("background", "#000080");
 	$("#lenquiry").css("background", "#000080");

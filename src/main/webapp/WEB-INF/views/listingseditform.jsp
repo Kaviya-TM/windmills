@@ -87,8 +87,8 @@
 					 <select class="form-control form-control-sm listtext" name="tenure" id="">
 						<option value="${listingsform.tenure}" selected hidden>${listingsform.tenure}</option>
 						<option value="Freehold">Freehold</option>
-						<option value="Freehold(Emiratis)">Freehold(Emiratis)</option>
-						<option value="Freehold(Emiratis & GCC Citizens)">Freehold(Emiratis & GCC Citizens)</option>
+						<option value="Non-Freehold(Emiratis)">Non-Freehold(Emiratis)</option>
+						<option value="Non-Freehold(Emiratis & GCC Citizens)">Non-Freehold(Emiratis & GCC Citizens)</option>
 						<option value="Leasehold">Leasehold</option>
 					</select>
 				</div>
@@ -590,6 +590,8 @@
 						<option value="Partial Pool View">Partial Pool View</option>
 						<option value="Partial Mountain View">Partial Mountain View</option>
 						<option value="Partial Lake View">Partial Lake View</option>
+						<option value="Substandard View">Substandard View</option>
+						<option value="Poor View">Poor View</option>
 					</select>
 				</div>
 				<div class="listholder">
@@ -630,6 +632,16 @@
 						<option value="No">No</option>
 					</select>
 				</div>
+				<div class="listholder">
+					  <label class="listlabel">Developer Margin</label>
+	               	 <select
+						class="form-control form-control-sm listtext"
+						name="devmargin" id="lidevmargin">
+						<option value="${listingsform.devmargin}" selected hidden>${listingsform.devmargin}</option>
+						<option value="Yes">Yes</option>
+						<option value="No" selected>No</option>
+					</select>
+				  </div>
 				<div class="listholder">
 					<label class="listlabel">Listings Price </label> <input type="text"
 						class="form-control form-control-sm listtext"

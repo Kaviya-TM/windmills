@@ -50,6 +50,7 @@ public class Listings  implements java.io.Serializable {
 	private String makani;
 	private String location;
 	private String locationCoord;
+	private String devmargin;
 	private String landSize;
 	private String bua;
 	private String propPlacement;
@@ -455,6 +456,13 @@ public class Listings  implements java.io.Serializable {
 	}
 	public void setAgCompany(String agCompany) {
 		this.agCompany = agCompany;
+	}
+	@Column(name = "devmargin")
+	public String getDevmargin() {
+		return devmargin;
+	}
+	public void setDevmargin(String devmargin) {
+		this.devmargin = devmargin;
 	}
 	
 }

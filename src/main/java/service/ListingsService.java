@@ -66,6 +66,7 @@ public class ListingsService {
 	@Autowired
 	private SessionFactory status;
 	private static DecimalFormat df = new DecimalFormat("0");
+	private static DecimalFormat dd = new DecimalFormat("0.00");
 	static Logger log = Logger.getLogger(ListingsService.class);
 	
 	@Transactional
@@ -413,7 +414,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getLocationAvg(List<Listings> filterTransaction) {
@@ -442,7 +443,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getTenureAvg(List<Listings> filterTransaction) {
@@ -469,7 +470,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAvg(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	private double calculateAvg(ArrayList<String> avglist) {
@@ -494,7 +495,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getViewAvg(List<Listings> filterTransaction) {
@@ -530,7 +531,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getStatusAvg(List<Listings> filterTransaction) {
@@ -551,7 +552,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getExposureAvg(List<Listings> filterTransaction) {
@@ -575,7 +576,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getPlacementAvg(List<Listings> filterTransaction) {
@@ -601,7 +602,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAvg(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getFloorAvg(List<Listings> filterTransaction) {
@@ -615,7 +616,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getQualityAvg(List<Listings> filterTransaction) {
@@ -644,7 +645,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getUpgradeAvg(List<Listings> filterTransaction) {
@@ -658,7 +659,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getFurnishedAvg(List<Listings> filterTransaction) {
@@ -681,7 +682,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAvg(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getParkAvg(List<Listings> filterTransaction) {
@@ -695,7 +696,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getPoolAvg(List<Listings> filterTransaction) {
@@ -715,7 +716,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAvg(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getLandScapeAvg(List<Listings> filterTransaction) {
@@ -738,7 +739,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAvg(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getGoodAvg(List<Listings> filterTransaction) {
@@ -758,7 +759,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAvg(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getUtilitiesAvg(List<Listings> filterTransaction) {
@@ -778,7 +779,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAvg(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	public String getBalconyAvg(List<Listings> filterTransaction) {
@@ -813,7 +814,7 @@ public class ListingsService {
 			}
 		}
 		double finalValue =  calculateAvg(avglist);
-		avg = String.valueOf(df.format(finalValue));
+		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
 	

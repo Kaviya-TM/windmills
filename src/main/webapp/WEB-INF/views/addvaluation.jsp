@@ -918,8 +918,8 @@
 		</div>
 			<div class="column" style="display:flex;height: 3% !important;width:99.5%;line-height: 6px;background:lightcyan;color:#fff !important;margin-bottom:5px;border: 1px solid lightcyan;border-radius:5px;">
 					<div class="head stylename" style="width:7.6%;color:darkblue !important;font-weight:700">Date</div>
-					<div class="head stylename" style="width:7%;color:darkblue !important;font-weight:700">Source</div>
-					<div class="head stylename" style="width:7.8%;color:darkblue !important;font-weight:700">ListingsRef</div>
+					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">Source</div>
+					<div class="head stylename" style="width:6.8%;color:darkblue !important;font-weight:700">ListingsRef</div>
 					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">Location</div>
 					<div class="head stylename" style="width:3%;color:darkblue !important;font-weight:700">Age</div>
 					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">View</div>

@@ -793,7 +793,7 @@ $("#average").click(function(){
 				$('#subage').val($('#age').val());
 			    var diffage = parseInt($('#subage').val()) - parseInt($('#avgage').val());
 			    $('#diffage').val(diffage);
-			    adjage = parseInt(($('#diffage').val()).replace(/,/g , '')) * parseFloat(ageWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+			    adjage = parseInt(($('#diffage').val()).replace(/,/g , '')) * parseFloat($('#cweiage').val().replace(/%/g , '')) * parseInt(priceAvg) / 100;
 			    $('#adjage').val(toComma(adjage));
 			    
 			    // tenure//

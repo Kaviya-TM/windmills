@@ -70,9 +70,9 @@ $("#liavgbal").keyup(function(){
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
 });
 $("#liavgdev").keyup(function(){
-	var lidiffdev = parseInt($('#lisubdev').val()) - parseInt($(this).val());
-    $('#lidiffdev').val(lidiffdev);
-	liadjdev =  parseInt(($('#lidiffdev').val()).replace(/,/g , ''))  * parseFloat(($("#cliweidev").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+	var lidiffdev = parseFloat($('#lisubdev').val()) - parseFloat($(this).val());
+    $('#lidiffdev').val(lidiffdev.toFixed(2));
+	liadjdev =  parseFloat(($('#lidiffdev').val()).replace(/,/g , ''))  * parseFloat(($("#cliweidev").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 	$('#liadjdev').val(toComma(liadjdev));
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
@@ -102,9 +102,9 @@ $("#liavgbua").keyup(function(){
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
 });
 $("#liavgpark").keyup(function(){
-	var lidiffpark = parseInt($('#lisubpark').val()) - parseInt($(this).val());
-    $('#lidiffpark').val(lidiffpark);
-	liadjpark =  parseInt(($('#lidiffpark').val()).replace(/,/g , ''))  * parseFloat(($("#cliweipark").val()).replace(/%/g , '')) * parseInt($('#parkingPrice').val()) / 100;
+	var lidiffpark = parseFloat($('#lisubpark').val()) - parseFloat($(this).val());
+    $('#lidiffpark').val(lidiffpark.toFixed(2));
+	liadjpark =  parseFloat(($('#lidiffpark').val()).replace(/,/g , ''))  * parseFloat(($("#cliweipark").val()).replace(/%/g , '')) * parseInt($('#parkingPrice').val()) / 100;
 	$('#liadjpark').val(toComma(liadjpark));
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
@@ -118,9 +118,9 @@ $("#liavgpark").keyup(function(){
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
 });
 $("#liavgage").keyup(function(){
-	var lidiffage = parseInt($('#lisubage').val()) - parseInt($(this).val());
-    $('#lidiffage').val(lidiffage);
-	liadjage =  parseInt(($('#lidiffage').val()).replace(/,/g , ''))  * parseFloat(($("#cliweiage").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+	var lidiffage = parseFloat($('#lisubage').val()) - parseFloat($(this).val());
+    $('#lidiffage').val(lidiffage.toFixed(2));
+	liadjage =  parseFloat(($('#lidiffage').val()).replace(/,/g , ''))  * parseFloat(($("#cliweiage").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 	$('#liadjage').val(toComma(liadjage));
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
@@ -818,21 +818,22 @@ $("#laverage").click(function(){
 				$('#cliweiage').val(finalAge);
 				$('#cliweidev').val(lidevmargin);
 				
+				
 				// location//
 				$('#liavgloc').val(lilocAvg);
 				var lisubloc = calAvg(location);
 				$('#lisubloc').val(lisubloc);
-			    var lidiffloc = parseInt($('#lisubloc').val()) - parseInt($('#liavgloc').val());
-			    $('#lidiffloc').val(lidiffloc);
-			     liadjloc = parseInt(($('#lidiffloc').val()).replace(/,/g , '')) * parseFloat(lilocWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+			    var lidiffloc = parseFloat($('#lisubloc').val()) - parseFloat($('#liavgloc').val());
+			    $('#lidiffloc').val(lidiffloc.toFixed(2));
+			     liadjloc = parseFloat(($('#lidiffloc').val()).replace(/,/g , '')) * parseFloat(lilocWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 			    $('#liadjloc').val(toComma(liadjloc));
 			    
 			    // age//
 			    $('#liavgage').val(liageAvg);
 				$('#lisubage').val($('#age').val());
-			    var lidiffage = parseInt($('#lisubage').val()) - parseInt($('#liavgage').val());
-			    $('#lidiffage').val(lidiffage);
-			    liadjage = parseInt(($('#lidiffage').val()).replace(/,/g , '')) * parseFloat(liageWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+			    var lidiffage = parseFloat($('#lisubage').val()) - parseFloat($('#liavgage').val());
+			    $('#lidiffage').val(lidiffage.toFixed(2));
+			    liadjage = parseFloat(($('#lidiffage').val()).replace(/,/g , '')) * parseFloat($('#cliweiage').val().replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 			    $('#liadjage').val(toComma(liadjage));
 			    
 			    // tenure//
@@ -840,7 +841,7 @@ $("#laverage").click(function(){
 				var lisubten = calTenure(tenure);
 				$('#lisubten').val(lisubten);
 			    var lidifften = parseFloat($('#lisubten').val()) - parseFloat($('#liavgten').val());
-			    $('#lidifften').val(lidifften);
+			    $('#lidifften').val(lidifften.toFixed(2));
 			     liadjten= parseFloat(($('#lidifften').val()).replace(/,/g , '')) * parseFloat(litenureWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 			    $('#liadjten').val(toComma(liadjten));
 			    
@@ -848,16 +849,16 @@ $("#laverage").click(function(){
 			    $('#liavgview').val(liviewAvg);
 			    var lisubview = calView(view);
 			    $('#lisubview').val(lisubview);
-			    var lidiffview = parseInt($('#lisubview').val()) - parseInt($('#liavgview').val());
-			    $('#lidiffview').val(lidiffview);
-			     liadjview = parseInt(($('#lidiffview').val()).replace(/,/g , ''))  * parseFloat(liviewWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+			    var lidiffview = parseFloat($('#lisubview').val()) - parseFloat($('#liavgview').val());
+			    $('#lidiffview').val(lidiffview.toFixed(2));
+			     liadjview = parseFloat(($('#lidiffview').val()).replace(/,/g , ''))  * parseFloat(liviewWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 			    $('#liadjview').val(toComma(liadjview));
 			    
 			    //Finishing Status//
 			    $('#liavgsta').val(listaAvg);
 				 $('#lisubsta').val(calSta($('#status').val()));
-				 var lidiffsta = parseFloat($('#lisubsta').val() - $('#liavgsta').val());
-				 $('#lidiffsta').val(lidiffsta);
+				 var lidiffsta = parseFloat($('#lisubsta').val())- parseFloat($('#liavgsta').val());
+				 $('#lidiffsta').val(lidiffsta.toFixed(2));
 				  liadjsta =  parseFloat(($('#lidiffsta').val()).replace(/,/g , ''))  * parseFloat(listaWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 				 $('#liadjsta').val(toComma(liadjsta));
 				 
@@ -865,24 +866,24 @@ $("#laverage").click(function(){
 			    $('#liavgqua').val(liquaAvg);
 			    var lisubqua = calAvg(quality);
 			    $('#lisubqua').val(lisubqua);
-			    var lidiffqua = parseInt($('#lisubqua').val()) - parseInt($('#liavgqua').val());
-			    $('#lidiffqua').val(lidiffqua);
-			     liadjqua = parseInt(($('#lidiffqua').val()).replace(/,/g , ''))  * parseFloat(liquaWeight.replace(/%/g , ''))  * parseInt(lipriceAvg) / 100;
+			    var lidiffqua = parseFloat($('#lisubqua').val()) - parseFloat($('#liavgqua').val());
+			    $('#lidiffqua').val(lidiffqua.toFixed(2));
+			     liadjqua = parseFloat(($('#lidiffqua').val()).replace(/,/g , ''))  * parseFloat(liquaWeight.replace(/%/g , ''))  * parseInt(lipriceAvg) / 100;
 			    $('#liadjqua').val(toComma(liadjqua));
 			   
 			    // upgrades//
 			    $('#liavgupg').val(liupgAvg);
 			    $('#lisubupg').val($('#overupg').val());
-			    var lidiffupg = parseInt($('#lisubupg').val()) - parseInt($('#liavgupg').val());
-			    $('#lidiffupg').val(lidiffupg);
-			    liadjupg = parseInt(($('#lidiffupg').val()).replace(/,/g , ''))  * parseFloat(liupgradeWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+			    var lidiffupg = parseFloat($('#lisubupg').val()) - parseFloat($('#liavgupg').val());
+			    $('#lidiffupg').val(lidiffupg.toFixed(2));
+			    liadjupg = parseFloat(($('#lidiffupg').val()).replace(/,/g , ''))  * parseFloat(liupgradeWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 			    $('#liadjupg').val(toComma(liadjupg));
 			    
 			    //Furnished//
 			    $('#liavgfur').val(lifurAvg);
 				 $('#lisubfur').val(calFur($('#furnished').val()));
 				 var lidifffur = parseFloat($('#lisubfur').val() - $('#liavgfur').val());
-				 $('#lidifffur').val(lidifffur);
+				 $('#lidifffur').val(lidifffur.toFixed(2));
 				  liadjfur =  parseFloat(($('#lidifffur').val()).replace(/,/g , ''))  * parseFloat(lifurWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 				 $('#liadjfur').val(toComma(liadjfur));
 				 
@@ -890,7 +891,7 @@ $("#laverage").click(function(){
 				 $('#liavgexp').val(liexpAvg);
 				 $('#lisubexp').val(calExp($('#exposure').val()));
 				 var lidiffexp = parseFloat($('#lisubexp').val() - $('#liavgexp').val());
-				 $('#lidiffexp').val(lidiffexp);
+				 $('#lidiffexp').val(lidiffexp.toFixed(2));
 				  liadjexp =  parseFloat(($('#lidiffexp').val()).replace(/,/g , ''))  * parseFloat(liexpWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 				 $('#liadjexp').val(toComma(liadjexp));
 				 
@@ -898,7 +899,7 @@ $("#laverage").click(function(){
 				 $('#liavgpla').val(liplaAvg);
 				 $('#lisubpla').val(calPla($('#placement').val()));
 				 var lidiffpla = parseFloat($('#lisubpla').val() - $('#liavgpla').val());
-				 $('#lidiffpla').val(lidiffpla);
+				 $('#lidiffpla').val(lidiffpla.toFixed(2));
 				  liadjpla =  parseFloat(($('#lidiffpla').val()).replace(/,/g , ''))  * parseFloat(liplaWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 				 $('#liadjpla').val(toComma(liadjpla));
 				
@@ -906,23 +907,23 @@ $("#laverage").click(function(){
 				 $('#liavgfloor').val(lifloorAvg);
 				$('#lisubfloor').val(floorNo);
 				var lidifffloor = parseFloat($('#lisubfloor').val() - $('#liavgfloor').val());
-				$('#lidifffloor').val(lidifffloor);
+				$('#lidifffloor').val(lidifffloor.toFixed(2));
 				 liadjfloor = parseFloat(($('#lidifffloor').val()).replace(/,/g , ''))  * parseFloat(lifloorWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 				$('#liadjfloor').val(toComma(liadjfloor));
 				
 				//beds//
 				 $('#liavgbed').val(libedAvg);
 				 $('#lisubbed').val($('#bedroom').val());
-				 var lidiffbed =  parseInt($('#lisubbed').val()) - parseInt(libedAvg);
-				 $('#lidiffbed').val(lidiffbed);
-				  liadjbed =  parseInt(($('#lidiffbed').val()).replace(/,/g , ''))  * parseFloat(libedWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+				 var lidiffbed =  parseFloat($('#lisubbed').val()) - parseFloat(libedAvg);
+				 $('#lidiffbed').val(lidiffbed.toFixed(2));
+				  liadjbed =  parseFloat(($('#lidiffbed').val()).replace(/,/g , ''))  * parseFloat(libedWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 				 $('#liadjbed').val(toComma(liadjbed));
 				 
 				 // parking//
 			    $('#liavgpark').val(liparkAvg);
 			    $('#lisubpark').val($('#parking').val());
 			    var lidiffpark = parseFloat($('#lisubpark').val()) - parseFloat($('#liavgpark').val());
-			    $('#lidiffpark').val(lidiffpark);
+			    $('#lidiffpark').val(lidiffpark.toFixed(2));
 			     liadjpark = parseFloat(($('#lidiffpark').val()).replace(/,/g , '')) * parseFloat(liparkWeight.replace(/%/g , '')) * parseInt($('#parkingPrice').val()) / 100;
 			    $('#liadjpark').val(toComma(liadjpark));
 				    
@@ -931,7 +932,7 @@ $("#laverage").click(function(){
 				var lisubpool = calPool(pool);
 				$('#lisubpool').val(lisubpool);
 			    var lidiffpool = parseFloat($('#lisubpool').val()) - parseFloat($('#liavgpool').val());
-			    $('#lidiffpool').val(lidiffpool);
+			    $('#lidiffpool').val(lidiffpool.toFixed(2));
 			     liadjpool = parseFloat(($('#lidiffpool').val()).replace(/,/g , '')) * parseFloat(lipoolWeight.replace(/%/g , '')) * parseInt($('#poolPrice').val()) / 100;
 			    $('#liadjpool').val(toComma(liadjpool));
 			    	
@@ -940,7 +941,7 @@ $("#laverage").click(function(){
 				var lisublandscape = calLandScape(landscape);
 				$('#lisublandscape').val(lisublandscape);
 			    var lidifflandscape = parseFloat($('#lisublandscape').val()) - parseFloat($('#liavglandscape').val());
-			    $('#lidifflandscape').val(lidifflandscape);
+			    $('#lidifflandscape').val(lidifflandscape.toFixed(2));
 			     liadjlandscape= parseFloat(($('#lidifflandscape').val()).replace(/,/g , '')) * parseFloat(lilandScapeWeight.replace(/%/g , '')) * parseInt($('#landscapePrice').val()) / 100;
 			    $('#liadjlandscape').val(toComma(liadjlandscape));
 			   
@@ -949,7 +950,7 @@ $("#laverage").click(function(){
 				var lisubgood= calPool(whitegoods);
 				$('#lisubgood').val(lisubgood);
 			    var lidiffgood = parseFloat($('#lisubgood').val()) - parseFloat($('#liavggood').val());
-			    $('#lidiffgood').val(lidiffgood);
+			    $('#lidiffgood').val(lidiffgood.toFixed(2));
 			    liadjgood= parseFloat(($('#lidiffgood').val()).replace(/,/g , '')) * parseFloat(liwhiteGoodsWeight.replace(/%/g , '')) * parseInt($('#whitegoodsPrice').val()) / 100;
 			    $('#liadjgood').val(toComma(liadjgood));
 			    
@@ -958,7 +959,7 @@ $("#laverage").click(function(){
 				var lisubuti= calPool(utilities);
 				$('#lisubuti').val(lisubuti);
 			    var lidiffuti = parseFloat($('#lisubuti').val()) - parseFloat($('#liavguti').val());
-			    $('#lidiffuti').val(lidiffuti);
+			    $('#lidiffuti').val(lidiffuti.toFixed(2));
 			    liadjuti= parseFloat(($('#lidiffuti').val()).replace(/,/g , '')) * parseFloat(liutilitiesWeight.replace(/%/g , '')) * parseInt($('#utiliesPrice').val()) / 100;
 			    $('#liadjuti').val(toComma(liadjuti));
 			    
@@ -968,7 +969,7 @@ $("#laverage").click(function(){
 			    var lisubdev = calMargin($('#devmargin').val());
 			    $('#lisubdev').val(lisubdev);
 			    var lidiffdev = parseFloat($('#lisubdev').val()) - parseFloat($('#liavgdev').val());
-			    $('#lidiffdev').val(lidiffdev);
+			    $('#lidiffdev').val(lidiffdev.toFixed(2));
 			    liadjdev= parseFloat(($('#lidiffdev').val()).replace(/,/g , '')) * parseFloat(lidevmargin.replace(/%/g , '')) *  parseInt(lipriceAvg) / 100;
 			    $('#liadjdev').val(toComma(liadjdev));
 			   

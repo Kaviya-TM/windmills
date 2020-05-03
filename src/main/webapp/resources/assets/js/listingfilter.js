@@ -166,18 +166,86 @@ $("#listingfilter").click(function(){
 						landAvg = "-";
 					}
 					var pricePerAvg = toComma(obj.pricePerAvg);
+					var locvalue = null;
+					var viewvalue = null;
+					var stavalue = null;
+					var expvalue = null;
+					var plavalue = null;
 					for (x in obj.list) {
+						if(obj.list[x].location === "Very Good"){
+							locvalue = "5"; 
+						}
+						if(obj.list[x].location === "Good"){
+							locvalue = "4"; 
+						}
+						if(obj.list[x].location === "Average"){
+							locvalue = "3"; 
+						}
+						if(obj.list[x].location === "Substandard"){
+							locvalue = "2"; 
+						}
+						if(obj.list[x].location === "Poor"){
+							locvalue = "1"; 
+						}
+						if(obj.list[x].view == "Park View" || obj.list[x].view == "Pool View" || obj.list[x].view == "Mountain View"){
+							viewvalue = "5";
+						}
+						if(obj.list[x].view == "Sea View" || obj.list[x].view == "Marina View" || obj.list[x].view == "Lake View"){
+							viewvalue = "5";
+						}
+						if(obj.list[x].view == "Partial Park View" || obj.list[x].view == "Partial Pool View" || obj.list[x].view == "Partial Mountain View"){
+							viewvalue = "4";
+						}
+						if(obj.list[x].view == "Partial Sea View" || obj.list[x].view == "Partial Marina View" || obj.list[x].view == "Partial Lake View"){
+							viewvalue = "4";
+						}
+						if(obj.list[x].view == "Community View"){
+							viewvalue = "3";
+						}
+						if(obj.list[x].view == "Substandard View"){
+							viewvalue = "2";
+						}
+						if(obj.list[x].view == "Poor View"){
+							viewvalue = "1";
+						}
+						if(obj.list[x].finishStatus == "Shell & Core"){
+							stavalue = "1";
+						}
+						if(obj.list[x].finishStatus == "Fitted"){
+							stavalue = "2";
+						}
+						if(obj.list[x].propExposure == "Single Row"){
+							expvalue = "2";
+						}
+						if(obj.list[x].propExposure == "Back To Back"){
+							expvalue = "1";
+						}
+						if(obj.list[x].propExposure == "Not Applicable"){
+							expvalue = "0";
+						}
+						if(obj.list[x].propPlacement == "Middle"){
+							plavalue = "1";
+						}
+						if(obj.list[x].propPlacement == "Corner"){
+							plavalue = "2";
+						}
+						if(obj.list[x].propPlacement == "Semi-Corner"){
+							plavalue = "1.5";
+						}
+						if(obj.list[x].propPlacement == "Not Applicable"){
+							plavalue = "0";
+						}
 						$('.lfilter').append("" +
 								"<div id="+obj.list[x].transactionId+" class='column boxlist' style='width:99.5%;margin-bottom:5px;display:flex'>" +
 									" <div class='head stylename' style='width:7.6%'>" + obj.list[x].listingsDate + "</div>" +
-									" <div class='head stylename' style='width:7%'>" + obj.list[x].source + "</div>" +
-									" <div class='head stylename' style='width:7.8%'>" + obj.list[x].listingsRef + "</div>" +
-									" <div class='head stylename' style='width:8%'>" + obj.list[x].location + "</div>" +
+									" <div class='head stylename' style='width:8%'>" + obj.list[x].source + "</div>" +
+									" <div class='head stylename' style='width:6.8%'>" + obj.list[x].listingsRef + "</div>" +
+									" <div class='head stylename' style='width:8%'>" + obj.list[x].location +"("+locvalue+")"+"</div>" +
 									  	" <div class='head stylename' style='width:3%'>" + obj.list[x].age + "</div>" +
-									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].view + "</div>" +
-									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].finishStatus + "</div>" +
-									  	" <div class='head stylename' style='width:9%'>" + obj.list[x].propExposure + "</div>" +
-									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].propPlacement + "</div>" +
+									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].view +"("+viewvalue+")"+"</div>" +
+									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].finishStatus +"("+stavalue+")"+"</div>" +
+									  	" <div class='head stylename' style='width:9%'>" + obj.list[x].propExposure +"("+expvalue+")"+"</div>" +
+									  	" <div class='head stylename' style='width:8%'>" + obj.list[x].propPlacement  +"("+plavalue+")"+"</div>" +
 									  	" <div class='head stylename' style='width:5%'>" + obj.list[x].floorNo + "</div>" +
 									  	" <div class='head stylename' style='width:5%'>" + obj.list[x].noOfBedrooms + "</div>" +
 									  	" <div class='head stylename' style='width:6%'>" + obj.list[x].landSize + "</div>" +

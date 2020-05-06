@@ -23,25 +23,27 @@
 	<div class="main-content"
 		style="background: rgb(229, 231, 233) !important;padding-left: 212px !important;padding-top: 10px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
-			<button class="valbtn" id="receive" style="width: 4.8%;">Receive Valuation</button>
-			<button class="valbtn" id="conflict" style="width: 3.3%;">Check COI</button>
-			<button class="valbtn" id="documents" style="width: 5.6%;">Receive Documents</button>
+			<button class="valbtn" id="receive" style="width: 4.6%;">Receive Valuation</button>
+			<button class="valbtn" id="conflict" style="width: 3.4%;">Check COI</button>
+			<button class="valbtn" id="documents" style="width: 4.1%;">Receive Doc</button>
 			<button class="valbtn" id="schedule" style="width: 5.5%;">Schedule Inspection</button>
-			<button class="valbtn" id="inspect1" style="width: 5.5%;">Inspect Property A</button>
-			<button class="valbtn" id="inspect2" style="width: 5.5%;">Inspect Property B</button>
+			<button class="valbtn" id="inspect1" style="width: 5%;">Inspect PropertyA</button>
+			<button class="valbtn" id="inspect2" style="width: 5%;">Inspect PropertyB</button>
 			<button class="valbtn" id="splAssumption" style="width: 5.8%;">Special Assumption</button>
 			<button class="valbtn" id="extent" style="width: 6.2%;">Extent Of Investigation</button>
-			<button class="valbtn" id="marketsum" style="width: 4.8%;">Market Summary</button>
-			<button class="valbtn" id="senquiry" style="width: 5%;">SoldTrans Enquiry</button>
+			<button class="valbtn" id="marketsum" style="width: 4.7%;">Market Summary</button>
+			<button class="valbtn" id="senquiry" style="width: 4.8%;">SoldTrans Enquiry</button>
 			<button class="valbtn" id="filter" style="width: 5%;">SoldTrans List</button>
-			<button class="valbtn" id="average" style="width: 5.6%;">SoldTrans Calculation</button>
+			<button class="valbtn" id="average" style="width: 4.8%;">SoldTrans Calcs</button>
 			<button class="valbtn" id="" style="width: 3.8%;">Master Enquiry</button>
 			<button class="valbtn" id="" style="width: 3.5%;">Master List</button>
+			<button class="valbtn" id="" style="width: 3.5%;">Master Calcs</button>
  			<button class="valbtn" id="lenquiry" style="width: 4%;">Listings Enquiry</button>
-			<button class="valbtn" id="lfilter" style="width: 5.7%;">Listing Transaction</button>
-			<button class="valbtn" id="laverage" style="width: 5.7%;">Listing Calculation</button>
+			<button class="valbtn" id="lfilter" style="width: 3.7%;">Listing Trans</button>
+			<button class="valbtn" id="laverage" style="width: 3.5%;">Listing Calcs</button>
 			<button class="valbtn" id="vsummary">Valuation Summary</button>
 			<button class="valbtn" id="submit">Finalize Valuation</button>
+			<button class="valbtn" id="payment">Payment Section</button>
 		</div>
 		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
 			<div class="errfilter">No Matching Found !!!</div>
@@ -1453,6 +1455,12 @@
 							autocomplete="on">
 					</div>
 				</div>
+				<div class="valuationholder startkms">
+					<label class="ilholder">Fee(AED)</label> <input
+						type="text" class="form-control form-control-sm itholder"
+						name="" id=""
+						placeholder="Fee(AED)" autocomplete="on">
+				</div>
 				<div class="valuationholder insOfficer">
 					<label class="ilholder">Inspection Officer</label> <select
 						class="form-control form-control-sm itholder"
@@ -2539,12 +2547,79 @@
 <!-- 				</div> -->
 			</div>
 			<br>
-			<div class="form-group submitting">
+			<div class="form-group payment" style="margin-top: -15px;">
+				<div class="valuationholder">
+					<label class="labelholder">Invoice Number</label> <input
+						type="text" class="form-control form-control-sm textholder"
+						name="" id=""
+						placeholder="Invoice Number" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Invoice Date</label>
+					<div class="input-group textholder">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker" style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"
+							name="" id="">
+					</div>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Payment Date</label>
+					<div class="input-group textholder">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker" style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"
+							name="" id="">
+					</div>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Payment Receive Date</label>
+					<div class="input-group textholder">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker" style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"
+							name="" id="">
+					</div>
+				</div>
+				<div class="valuationholder" style="margin-top: 20px">
+					<div class="savebtn" id="submitprv">Previous</div>
+					<button type="submit" id="submitnxt" class="savebtn">Save</button>
+				</div>
+			</div>
+			<br>
+			<div class="form-group submitting" style="margin-top: -30px;">
 				<div class="valuationholder">
 					<label class="labelholder">Valuation Adjustments</label> <input
 						type="text" class="form-control form-control-sm textholder"
 						name="valuationReport.valAdjustment" id="valadjustments"
 						placeholder="Valuation Adjustments" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">MV Of Land/Sq</label> <input
+						type="text" class="form-control form-control-sm textholder"
+						name="" id=""
+						placeholder="MV Of Land/Sq" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder">Report Acceptance Date</label>
+					<div class="input-group textholder">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker" style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"
+							name="" id="">
+					</div>
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder">Market Value</label> <input type="text"
@@ -2571,7 +2646,7 @@
 				</div>
 				<div class="valuationholder" style="margin-top: 20px">
 					<div class="savebtn" id="submitprv">Previous</div>
-					<button type="submit" id="submitnxt" class="savebtn">Save</button>
+					<button type="submit" id="submitnxt" class="savebtn">Next</button>
 				</div>
 			</div>
 			<br>

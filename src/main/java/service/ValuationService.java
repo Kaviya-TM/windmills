@@ -400,6 +400,18 @@ public class ValuationService {
 		}
 		return devmargin;
 	}
-
-
+	@Transactional
+	public List<Property> getCategory() {
+		List<Property> list = valuationDaoImpl.getCategory();
+		return list;
+	}
+	@Transactional
+	public String getCategory(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String category = null;
+		for(Property r1 : rows){
+			category = r1.getPropertyCategory();
+		}
+		return category;
+	}
 }

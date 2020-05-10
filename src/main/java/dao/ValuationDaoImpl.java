@@ -189,5 +189,11 @@ public class ValuationDaoImpl {
 		return rows;
 	}
 
+	public List<Property> getCategory() {
+		Query query = sessionFactory.getCurrentSession().createQuery("select distinct propertyCategory from  Property");
+		List<Property> rows=query.list();
+		return rows;
+	}
+
 	
 }

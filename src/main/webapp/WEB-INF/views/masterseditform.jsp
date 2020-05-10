@@ -21,7 +21,7 @@
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
 		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important;padding-top: 3px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
-		<form:form action="editMasters" style="margin-top:-18px !important;" id="listingseditform" modelAttribute="listings">
+		<form:form action="editMasters" style="margin-top:-18px !important;" id="listingseditform" modelAttribute="masters">
 				<div class="listholder" style="height:28.5px ">
 					<label class="listlabel">Instruction Date</label>
 					<input type="text" class="form-control form-control-sm listtext"  value="${mastersform.instructionDate}" name="instructionDate" placeholder="ex: 20-Apr-2020" id="">

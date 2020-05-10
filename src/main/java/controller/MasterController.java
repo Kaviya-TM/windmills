@@ -66,42 +66,24 @@ public class MasterController {
 		return mv;
 	}
 	
-//	@RequestMapping(value = {"/enquiry" }, method = RequestMethod.GET)
-//	public ModelAndView enquiry() {
-//		ModelAndView mv = new ModelAndView();
-//		List<SoldTransactions> citylist=soldTransactionService.getCity();
-//		List<SoldTransactions> arealist=soldTransactionService.getArea();
-//		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
-//		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
-//		mv.addObject("citylist",citylist);
-//		mv.addObject("arealist",arealist);
-//		mv.addObject("hoodlist",hoodlist);
-//		mv.addObject("bullist",bullist);
-//		mv.setViewName("enquiry");
-//		return mv;
-//	}
-//	@RequestMapping(value="/filter-transactions",method=RequestMethod.POST)
-//	public ModelAndView filter(@RequestParam("city")String city,@RequestParam("area")String area,
-//			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName){
-//		
-//		ModelAndView mv = new ModelAndView();
-//		List<SoldTransactions> filterTransaction=soldTransactionService.getFilter(city,area,neighbourhood,buildingName);
-//		String dateAvg = soldTransactionService.getDateAvg(filterTransaction);
-//		String priceAvg = soldTransactionService.getpriceAvg(filterTransaction);
-//		String sizeAvg = soldTransactionService.getSizeAvg(filterTransaction);
-//		String pricePerAvg = soldTransactionService.getpricePerAvg(filterTransaction);
-//		String bedAvg = soldTransactionService.getBedAvg(filterTransaction);
-//		String landAvg = soldTransactionService.getlandAvg(filterTransaction);
-//		mv.addObject("pricePerAvg",pricePerAvg);
-//		mv.addObject("sizeAvg",sizeAvg);
-//		mv.addObject("bedAvg",bedAvg);
-//		mv.addObject("priceAvg",priceAvg);
-//		mv.addObject("dateAvg",dateAvg);
-//		mv.addObject("landAvg",landAvg);
-//		mv.addObject("filterTransaction",filterTransaction);
-//		mv.setViewName("filterTransaction");
-//		return mv;
-//	
-//	}
+	@RequestMapping(value="/editMasters",method=RequestMethod.POST)
+	public ModelAndView editMasters(@ModelAttribute("masters")MasterValuation masters,HttpSession session) throws IllegalStateException, IOException {
+		masterService.updateMasters(masters);
+		ModelAndView mv = new ModelAndView();
+		List<MasterValuation> list=masterService.getMasterList();
+		mv.addObject("masterValuation",list);
+		mv.setViewName("masterValuation");
+		return mv;
+	}
+	@RequestMapping(value = "/delete-masters")
+	public ModelAndView deleteMasters(@RequestParam("masterId") int masterId, HttpServletRequest request) throws Exception {
+		masterService.deleteMasters(masterId);
+		ModelAndView mv = new ModelAndView();
+		List<MasterValuation> list=masterService.getMasterList();
+		mv.addObject("masterValuation",list);
+		mv.setViewName("masterValuation");
+		return mv;
+
+	}
 	
 }

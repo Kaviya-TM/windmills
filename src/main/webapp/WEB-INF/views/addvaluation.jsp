@@ -35,7 +35,7 @@
 			<button class="valbtn" id="senquiry" style="width: 4.8%;">SoldTrans Enquiry</button>
 			<button class="valbtn" id="filter" style="width: 5%;">SoldTrans List</button>
 			<button class="valbtn" id="average" style="width: 4.8%;">SoldTrans Calcs</button>
-			<button class="valbtn" id="" style="width: 3.8%;">Master Enquiry</button>
+			<button class="valbtn" id="menquiry" style="width: 3.8%;">Master Enquiry</button>
 			<button class="valbtn" id="" style="width: 3.5%;">Master List</button>
 			<button class="valbtn" id="" style="width: 3.5%;">Master Calcs</button>
  			<button class="valbtn" id="lenquiry" style="width: 4%;">Listings Enquiry</button>
@@ -48,6 +48,353 @@
 		<form:form action="saveValuation" id="valuationform" enctype="multipart/form-data" modelAttribute="valuationreportform">
 			<div class="errfilter">No Matching Found !!!</div>
 			<div class="form-group lenquiry">
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">Date From<b style="color:red"> *</b></label>
+					<div class="input-group textholder" style="width:55% !important">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker"
+							style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;" name="" id="l-datefrom">
+					</div>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">Date To<b style="color:red"> *</b></label>
+					<div class="input-group textholder" style="width:55% !important">
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<i class="fas fa-calendar"></i>
+							</div>
+						</div>
+						<input type="text" class="form-control form-control-sm datepicker"
+							style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"  name="" id="l-dateto">
+					</div>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Property Listing</label>
+					<select class="form-control form-control-sm textholder" style="width:39% !important"
+						name="valuationReport.propertyValued" id="l-propList">
+						<c:forEach items="${propertylist}" var="item">
+							<option value="${item.propertyValued}">${item.propertyValued}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Building Name</label> 
+					<select
+							class="form-control form-control-sm textholder"  
+							name="valuationReport.buildingName" id="l-buildingName" style="width:39% !important" >  
+							<c:forEach items="${bullist}" var="item"> 
+								<option value="" hidden>-- Select Building/Project Name ---</option> 
+								<option value="${item}">${item}</option>
+ 							</c:forEach> 
+					</select> 
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important;line-height:16px">Sub-Community Name</label>
+						<select
+ 							class="form-control form-control-sm textholder" 
+ 							name="" id="l-subcommunity" style="width:39% !important"> 
+ 							<c:forEach items="${hoodlist}" var="item">
+ 								<option value="" hidden>-- Select Sub Community ---</option>
+							<option value="${item}">${item}</option> 
+ 							</c:forEach> 
+ 						</select>
+				</div>	
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Community Name</label>
+					<select
+						class="form-control form-control-sm textholder"
+						name="" id="l-community" style="width:39% !important">
+							<c:forEach items="${arealist}" var="item"> 
+								<option value="" hidden>-- Select Community/Area---</option>
+								<option value="${item}">${item}</option>
+ 							</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">City</label> 
+					<select
+						class="form-control form-control-sm textholder"
+						name="" id="l-city" style="width:39% !important">
+						<c:forEach items="${citylist}" var="item">
+							<option value="${item}">${item}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">Bedroom From</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="l-bedfrom" style="width:55% !important">
+						<option value="" hidden>-- Select--</option>
+						<option value="1-Bedroom">1-Bedroom	</option>
+						<option value="2-Bedroom">2-Bedroom</option>
+						<option value="3-Bedroom">3-Bedroom</option>
+						<option value="4-Bedroom">4-Bedroom</option>
+						<option value="5-Bedroom">5-Bedroom</option>
+						<option value="6-Bedroom">6-Bedroom</option>
+						<option value="7-Bedroom">7-Bedroom	</option>
+						<option value="8-Bedroom">8-Bedroom</option>
+						<option value="9-Bedroom">9-Bedroom</option>
+						<option value="10-Bedroom">10-Bedroom</option>
+					</select>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">Bedroom To</label> <select
+						class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-bedto">
+						<option value="" hidden>-- Select--</option>
+						<option value="1-Bedroom">1-Bedroom	</option>
+						<option value="2-Bedroom">2-Bedroom</option>
+						<option value="3-Bedroom">3-Bedroom</option>
+						<option value="4-Bedroom">4-Bedroom</option>
+						<option value="5-Bedroom">5-Bedroom</option>
+						<option value="6-Bedroom">6-Bedroom</option>
+						<option value="7-Bedroom">7-Bedroom	</option>
+						<option value="8-Bedroom">8-Bedroom</option>
+						<option value="9-Bedroom">9-Bedroom</option>
+						<option value="10-Bedroom">10-Bedroom</option>
+					</select>
+				</div>
+				<div class="valuationholder" style="width:100% !important">
+					<div class="valuationholder landto" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">LandSize From</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-landfrom">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="1500">1500</option>
+							<option value="2000">2000</option>
+							<option value="2500">2500</option>
+							<option value="3000">3000</option>
+							<option value="3500">3500</option>
+							<option value="4000">4000</option>
+							<option value="4500">4500</option>
+							<option value="5000">5000</option>
+							<option value="5500">5500</option>
+							<option value="6000">6000</option>
+							<option value="6500">6500</option>
+							<option value="7000">7000</option>
+							<option value="7500">7500</option>
+							<option value="8000">8000</option>
+							<option value="8500">8500</option>
+							<option value="9000">9000</option>
+							<option value="9500">9500</option>
+							<option value="10000">10000</option>
+						</select>
+					</div>
+					<div class="valuationholder landto" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">LandSize To</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-landto">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="1500">1500</option>
+							<option value="2000">2000</option>
+							<option value="2500">2500</option>
+							<option value="3000">3000</option>
+							<option value="3500">3500</option>
+							<option value="4000">4000</option>
+							<option value="4500">4500</option>
+							<option value="5000">5000</option>
+							<option value="5500">5500</option>
+							<option value="6000">6000</option>
+							<option value="6500">6500</option>
+							<option value="7000">7000</option>
+							<option value="7500">7500</option>
+							<option value="8000">8000</option>
+							<option value="8500">8500</option>
+							<option value="9000">9000</option>
+							<option value="9500">9500</option>
+							<option value="10000">10000</option>
+						</select>
+					</div>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">BUA From</label>
+					 <select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-buafrom">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="1500">1500</option>
+							<option value="2000">2000</option>
+							<option value="2500">2500</option>
+							<option value="3000">3000</option>
+							<option value="3500">3500</option>
+							<option value="4000">4000</option>
+							<option value="4500">4500</option>
+							<option value="5000">5000</option>
+							<option value="5500">5500</option>
+							<option value="6000">6000</option>
+							<option value="6500">6500</option>
+							<option value="7000">7000</option>
+							<option value="7500">7500</option>
+							<option value="8000">8000</option>
+							<option value="8500">8500</option>
+							<option value="9000">9000</option>
+							<option value="9500">9500</option>
+							<option value="10000">10000</option>
+						</select>
+				</div>
+				<div class="valuationholder" style="width:25% !important">
+					<label class="labelholder" style="width:40% !important">BUA To</label>
+					<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-buato">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500">500</option>
+							<option value="1000">1000</option>
+							<option value="1500">1500</option>
+							<option value="2000">2000</option>
+							<option value="2500">2500</option>
+							<option value="3000">3000</option>
+							<option value="3500">3500</option>
+							<option value="4000">4000</option>
+							<option value="4500">4500</option>
+							<option value="5000">5000</option>
+							<option value="5500">5500</option>
+							<option value="6000">6000</option>
+							<option value="6500">6500</option>
+							<option value="7000">7000</option>
+							<option value="7500">7500</option>
+							<option value="8000">8000</option>
+							<option value="8500">8500</option>
+							<option value="9000">9000</option>
+							<option value="9500">9500</option>
+							<option value="10000">10000</option>
+						</select>
+				</div>
+				<div class="valuationholder" style="width:100% !important">
+					<div class="valuationholder" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">Price From</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-pricefrom">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500000">500000</option>
+							<option value="1000000">1000000</option>
+							<option value="1500000">1500000</option>
+							<option value="2000000">2000000</option>
+							<option value="2500000">2500000</option>
+							<option value="3000000">3000000</option>
+							<option value="3500000">3500000</option>
+							<option value="4000000">4000000</option>
+							<option value="4500000">4500000</option>
+							<option value="5000000">5000000</option>
+							<option value="5500000">5500000</option>
+							<option value="6000000">6000000</option>
+							<option value="6500000">6500000</option>
+							<option value="7000000">7000000</option>
+							<option value="7500000">7500000</option>
+							<option value="8000000">8000000</option>
+							<option value="8500000">8500000</option>
+							<option value="9000000">9000000</option>
+							<option value="9500000">9500000</option>
+							<option value="10000000">10000000</option>
+						</select>
+					</div>
+					<div class="valuationholder" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">Price To</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-priceto">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="500000">500000</option>
+							<option value="1000000">1000000</option>
+							<option value="1500000">1500000</option>
+							<option value="2000000">2000000</option>
+							<option value="2500000">2500000</option>
+							<option value="3000000">3000000</option>
+							<option value="3500000">3500000</option>
+							<option value="4000000">4000000</option>
+							<option value="4500000">4500000</option>
+							<option value="5000000">5000000</option>
+							<option value="5500000">5500000</option>
+							<option value="6000000">6000000</option>
+							<option value="6500000">6500000</option>
+							<option value="7000000">7000000</option>
+							<option value="7500000">7500000</option>
+							<option value="8000000">8000000</option>
+							<option value="8500000">8500000</option>
+							<option value="9000000">9000000</option>
+							<option value="9500000">9500000</option>
+							<option value="10000000">10000000</option>
+						</select>
+					</div>
+				</div>
+				<div class="valuationholder" style="width:100% !important">
+					<div class="valuationholder" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">Price/Sqt From</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-pricesqtfrom">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="400">400</option>
+							<option value="500">500</option>
+							<option value="600">600</option>
+							<option value="700">700</option>
+							<option value="800">800</option>
+							<option value="900">900</option>
+							<option value="1000">1000</option>
+							<option value="1100">1100</option>
+							<option value="1200">1200</option>
+							<option value="1300">1300</option>
+							<option value="1400">1400</option>
+							<option value="1500">1500</option>
+							<option value="1600">1600</option>
+							<option value="1700">1700</option>
+							<option value="1800">1800</option>
+							<option value="1900">1900</option>
+							<option value="2000">2000</option>
+						</select>
+					</div>
+					<div class="valuationholder" style="width:25% !important">
+						<label class="labelholder" style="width:40% !important">Price/Sqt To</label>
+						<select class="form-control form-control-sm textholder" style="width:55% !important"
+						name="" id="l-pricesqtto">
+							<option value="" hidden>-- Select--</option>
+							<option value="0">0</option>
+							<option value="100">100</option>
+							<option value="200">200</option>
+							<option value="300">300</option>
+							<option value="400">400</option>
+							<option value="500">500</option>
+							<option value="600">600</option>
+							<option value="700">700</option>
+							<option value="800">800</option>
+							<option value="900">900</option>
+							<option value="1000">1000</option>
+							<option value="1100">1100</option>
+							<option value="1200">1200</option>
+							<option value="1300">1300</option>
+							<option value="1400">1400</option>
+							<option value="1500">1500</option>
+							<option value="1600">1600</option>
+							<option value="1700">1700</option>
+							<option value="1800">1800</option>
+							<option value="1900">1900</option>
+							<option value="2000">2000</option>
+						</select>
+					</div>
+				</div>
+				
+				
+				<div class="valuationholder" style="margin-top: 20px">
+					<div class="savebtn" id="listingfilter">Filter</div>
+				</div>
+			</div>
+			<div class="form-group menquiry">
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">Date From<b style="color:red"> *</b></label>
 					<div class="input-group textholder" style="width:55% !important">
@@ -1088,6 +1435,15 @@
 					</select>
 				</div>
 				<div class="vrholder">
+					<label class="rholder">Property Category</label> <select
+						class="form-control form-control-sm textholder"
+						name="valuationReport.propertyValued" id="propertyCategory">
+						<c:forEach items="${categorylist}" var="item">
+							<option value="${item}">${item}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="vrholder">
 					<label class="rholder">Tenure</label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.tenure" id="tenure">
@@ -1282,12 +1638,12 @@
  							</c:forEach>
 					</select>
 				</div>
-				<div class="vrholder">
-					<label class="rholder">Town</label> <input type="text"
-						class="form-control form-control-sm textholder"
-						name="valuationReport.town" id="town" placeholder="Town"
-						autocomplete="on">
-				</div>
+<!-- 				<div class="vrholder"> -->
+<!-- 					<label class="rholder">Town</label> <input type="text" -->
+<!-- 						class="form-control form-control-sm textholder" -->
+<!-- 						name="valuationReport.town" id="town" placeholder="Town" -->
+<!-- 						autocomplete="on"> -->
+<!-- 				</div> -->
 				<div class="vrholder">
 					<label class="rholder">City</label> <select
 						class="form-control form-control-sm textholder"

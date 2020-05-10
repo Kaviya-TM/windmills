@@ -32,6 +32,11 @@
 						name="propertyValued" value="${propertyform.propertyValued}" id="" placeholder="Property Valued">
 				</div>
 				<div class="propertyholder">
+					<label class="propertylabel">Property Category</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="propertyCategory" value="${propertyform.propertyCategory}" id="" placeholder="Property Category">
+				</div>
+				<div class="propertyholder">
 					<label class="propertylabel">Valuation Approach</label> <input
 						type="text" class="form-control form-control-sm propertytext"
 						name="valuationApproach" value="${propertyform.valuationApproach}" id="" placeholder="Valuation Approach">

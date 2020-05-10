@@ -15,7 +15,7 @@
 						<div class="head stylename" style="width:5.6%;color:#fff !important;font-weight:700">Date</div>
 						<div class="head stylename" style="width:7%;padding-left:29px;color:#fff !important;font-weight:700">WM-Ref</div>
 						<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700;padding-left:40px">Valuer</div>
-						<div class="head stylename" style="width:7%;color:#fff !important;font-weight:700;padding-left: 31px;">Type</div>
+						<div class="head stylename" style="width:7%;color:#fff !important;font-weight:700;padding-left: 31px;">Category</div>
 						<div class="head stylename" style="width:8.2%;color:#fff !important;font-weight:700;padding-left: 20px;">Property</div>
 						<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Rooms</div>
 						<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700;padding-left: 31px;'">Community</div>
@@ -36,12 +36,12 @@
 						<div class="head stylename" style="width:6%;">${master.valuer}</div>
 						<div class="head stylename" style="width:6%">${master.type}</div>
 						<div class="head stylename" style="width:8.2%">${master.propValued}</div>
+						<div class="head stylename" style="width:5%;text-align:center">${master.noOfRooms}</div>
 						<div class="head stylename" style="width:11%">${master.community}</div>
 						<div class="head stylename" style="width:11%">${master.subCommunity}</div>
 						<div class="head stylename" style="width:12%">${master.building}</div>
 						<div class="head stylename" style="width:2%">${master.bldgAge}</div>
 						<div class="head stylename" style="width:4%">${master.viewRating}</div>
-						<div class="head stylename" style="width:5%;text-align:center">${master.noOfRooms}</div>
 						<div class="head stylename" style="width:4%">${master.landsizepersqf}</div>
 						<div class="head stylename" style="width:5%">${master.BUApersqf}</div>
 						<div class="head stylename" style="width:6%">${master.mv}</div>

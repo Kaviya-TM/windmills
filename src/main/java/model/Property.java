@@ -32,6 +32,7 @@ public class Property  implements java.io.Serializable {
 
 	private int propertyId;
 	private String propertyValued;
+	private String propertyCategory;
 	private String valuationApproach;
 	private String approachReasoning;
 	private String maxage;
@@ -61,6 +62,15 @@ public class Property  implements java.io.Serializable {
 	public void setPropertyValued(String propertyValued) {
 		this.propertyValued = propertyValued;
 	}
+	@Column(name = "propertyCategory")
+	public String getPropertyCategory() {
+		return propertyCategory;
+	}
+
+	public void setPropertyCategory(String propertyCategory) {
+		this.propertyCategory = propertyCategory;
+	}
+
 	@Column(name = "valuationApproach")
 	public String getValuationApproach() {
 		return valuationApproach;

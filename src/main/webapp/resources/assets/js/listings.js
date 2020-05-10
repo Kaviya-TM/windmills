@@ -21,6 +21,36 @@ $("#list-buildingname").change(function() {
 			},
 	});	
 });
+var propertyValued = $('#propertyListed').val();
+$.ajax({
+	url : 'getValuationApproach',
+	dataType: "text",
+	data : {propertyValued : propertyValued},
+	method : 'POST',
+	success : function(response) {	
+		var obj = $.parseJSON(response);
+		var propertyCategory = obj.propertyCategory;
+		 $('#propertyCategory').val(propertyCategory);
+		 $("#propertyCategory option[value='+propertyCategory+']").attr("selected",true);
+		return;
+		},
+});	
+$("#propertyListed").change(function() {
+	var propertyValued = $('#propertyListed').val();
+	$.ajax({
+		url : 'getValuationApproach',
+		dataType: "text",
+		data : {propertyValued : propertyValued},
+		method : 'POST',
+		success : function(response) {	
+			var obj = $.parseJSON(response);
+			var propertyCategory = obj.propertyCategory;
+			 $('#propertyCategory').val(propertyCategory);
+			 $("#propertyCategory option[value='+propertyCategory+']").attr("selected",true);
+			return;
+			},
+	});	
+});
 function toComma(value){
 	value = value.replace(/,/g , '');
 	var result = parseInt(value);

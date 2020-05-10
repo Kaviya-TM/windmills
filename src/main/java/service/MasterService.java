@@ -90,16 +90,16 @@ public class MasterService {
 		}
 		return masters;
 	}
-//	@Transactional
-//	public void editListings(Listings listings) {
-//		listingsDaoImpl.updateListings(listings);
-//		
-//	}
-//	@Transactional
-//	public void deleteListings(int listingsId) {
-//		listingsDaoImpl.deleteListings(listingsId);
-//		
-//	}
+	@Transactional
+	public void updateMasters(MasterValuation masters) {
+		masterDaoImpl.updateMasters(masters);
+		
+	}
+	@Transactional
+	public void deleteMasters(int masterId) {
+		masterDaoImpl.deleteMasters(masterId);
+		
+	}
 //	@Transactional
 //	public List<Listings> getFilterList(String city, String area, String neighbourhood, String buildingName,
 //			String bedfrom, String bedto, String landfrom, String landto, String buafrom, String buato,

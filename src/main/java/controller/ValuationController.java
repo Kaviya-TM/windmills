@@ -69,6 +69,7 @@ public class ValuationController {
 		mv.setViewName("addvaluation");
 		List<ClientDetails> clientlist = valuationService.getClients();
 		List<Property> propertylist = valuationService.getPropertyValued();
+		List<Property> categorylist = valuationService.getCategory();
 		List<Community> communitylist = valuationService.getCommunity();
 		List<Community> citylist = valuationService.getCity();
 		List<Property> appreasonlist = valuationService.getApproachReasoningList();
@@ -90,6 +91,7 @@ public class ValuationController {
 		mv.addObject("citylist",citylist);
 		mv.addObject("arealist",arealist);
 		mv.addObject("hoodlist",hoodlist);
+		mv.addObject("categorylist",categorylist);
 		mv.addObject("bullist",bullist);
 		mv.addObject("devlist",devlist);
 		mv.addObject("clientlist", clientlist);
@@ -146,12 +148,14 @@ public class ValuationController {
 
 	}
 	
+	@SuppressWarnings("unused")
 	@RequestMapping(value = "/getValuationApproach", method = RequestMethod.POST)
 	@ResponseBody
 	public JSONObject getValuationApproach(@RequestParam("propertyValued") String propertyValued) {
 		String valApproach = valuationService.getValuationApproach(propertyValued);
 		String appReasoning = valuationService.getApproachReasoning(propertyValued);
 		String maxAge = valuationService.getMaximumAge(propertyValued);
+		String propertyCategory = valuationService.getCategory(propertyValued);
 		String parkingPrice = valuationService.getParkingPrice(propertyValued);
 		String poolPrice = valuationService.getPoolPrice(propertyValued);
 		String landscapePrice = valuationService.getLandScapePrice(propertyValued);
@@ -160,6 +164,7 @@ public class ValuationController {
 		JSONObject json = new JSONObject();
 		json.put("valApproach", valApproach);
 		json.put("appReasoning", appReasoning);
+		json.put("propertyCategory", propertyCategory);
 		json.put("maxAge", maxAge);
 		json.put("parkingPrice", parkingPrice);
 		json.put("poolPrice", poolPrice);

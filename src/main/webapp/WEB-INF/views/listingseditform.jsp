@@ -75,10 +75,21 @@
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Property Listed</label>
-					<select class="form-control form-control-sm listtext" name="propertyListed" id="">
+					<select class="form-control form-control-sm listtext" name="propertyListed" id="propertyListed">
 					    <option value="${listingsform.propertyListed}" selected hidden>${listingsform.propertyListed}</option>
 						<c:forEach items="${propertylist}" var="item">
 							<option value="${item.propertyValued}">${item.propertyValued}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Property Category</label>
+					<select
+						class="form-control form-control-sm listtext"
+						name="propertyCategory" id="propertyCategory">
+					  <option value="${listingsform.propertyCategory}" selected hidden>${listingsform.propertyCategory}</option>
+						<c:forEach items="${categorylist}" var="item">
+							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
 				</div>

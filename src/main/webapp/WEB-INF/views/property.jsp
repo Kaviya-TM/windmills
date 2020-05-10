@@ -30,6 +30,11 @@
 						name="propertyValued" id="" placeholder="Property Valued">
 				</div>
 				<div class="propertyholder">
+					<label class="propertylabel">Property Category</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="propertyCategory" id="" placeholder="Property Category">
+				</div>
+				<div class="propertyholder">
 					<label class="propertylabel">Valuation Approach</label> <input
 						type="text" class="form-control form-control-sm propertytext"
 						name="valuationApproach" id="" placeholder="Valuation Approach">

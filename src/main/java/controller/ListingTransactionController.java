@@ -58,6 +58,7 @@ public class ListingTransactionController {
 	public ModelAndView listings() {
 		ModelAndView mv = new ModelAndView();
 		List<Property> propertylist = valuationService.getPropertyValued();
+		List<Property> categorylist = valuationService.getCategory();
 		List<ValuationReport> referencelist = valuationService.getReference();
 		List<SoldTransactions> cityylist=soldTransactionService.getCity();
 		List<SoldTransactions> arealist=soldTransactionService.getArea();
@@ -68,6 +69,7 @@ public class ListingTransactionController {
 		mv.addObject("propertylist",propertylist);
 		mv.addObject("referencelist",referencelist);
 		mv.addObject("cityylist",cityylist);
+		mv.addObject("categorylist",categorylist);
 		mv.addObject("arealist",arealist);
 		mv.addObject("hoodlist",hoodlist);
 		mv.addObject("bullist",bullist);
@@ -176,6 +178,10 @@ public class ListingTransactionController {
 		List<SoldTransactions> arealist=soldTransactionService.getArea();
 		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
 		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
+		List<Property> categorylist = valuationService.getCategory();
+		
+		System.err.println("categorylist"+categorylist.size());
+		mv.addObject("categorylist",categorylist);
 		mv.addObject("propertylist",propertylist);
 		mv.addObject("referencelist",referencelist);
 		mv.addObject("cityylist",cityylist);

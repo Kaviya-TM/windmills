@@ -36,6 +36,7 @@ public class Listings  implements java.io.Serializable {
 	private String listingWebsiteLink;
 	private String listingsDate;
 	private String propertyListed;
+	private String propertyCategory;
 	private String tenure;
 	private String unitNo;
 	private String floorNo;
@@ -141,6 +142,13 @@ public class Listings  implements java.io.Serializable {
 	}
 	public void setPropertyListed(String propertyListed) {
 		this.propertyListed = propertyListed;
+	}
+	@Column(name = "propertyCategory")
+	public String getPropertyCategory() {
+		return propertyCategory;
+	}
+	public void setPropertyCategory(String propertyCategory) {
+		this.propertyCategory = propertyCategory;
 	}
 	@Column(name = "tenure")
 	public String getTenure() {

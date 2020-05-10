@@ -950,6 +950,7 @@ $.ajax({
 		var obj = $.parseJSON(response);
 		var valApproach = obj.valApproach;
 		var apprreason = obj.appReasoning;
+		var propertyCategory = obj.propertyCategory;
 		var maxAge = obj.maxAge;
 		var parkingPrice = obj.parkingPrice;
 		var poolPrice = obj.poolPrice;
@@ -960,6 +961,8 @@ $.ajax({
 		 $("#valApproach option[value='+valApproach+']").attr("selected",true);
 		$('#apprreason').val(apprreason);
 		 $("#apprreason option[value='+apprreason+']").attr("selected",true);
+		 $('#propertyCategory').val(propertyCategory);
+		 $("#propertyCategory option[value='+propertyCategory+']").attr("selected",true);
 		 $('#maxAge').val(maxAge);
 		 $('#parkingPrice').val(parkingPrice);
 		 $('#poolPrice').val(poolPrice);
@@ -983,11 +986,14 @@ $("#propertyvalued").change(function() {
 			var maxAge = obj.maxAge;
 			var parkingPrice = obj.parkingPrice;
 			var poolPrice = obj.poolPrice;
+			var propertyCategory = obj.propertyCategory;
 			var landscapePrice = obj.landscapePrice;
 			var whitegoodsPrice = obj.whitegoodsPrice;
 			var utiliesPrice = obj.utiliesPrice;
 			 $('#valApproach').val(valApproach);
 			 $("#valApproach option[value='+valApproach+']").attr("selected",true);
+			 $('#propertyCategory').val(propertyCategory);
+			 $("#propertyCategory option[value='+propertyCategory+']").attr("selected",true);
 			$('#apprreason').val(apprreason);
 			 $("#apprreason option[value='+apprreason+']").attr("selected",true);
 			 $('#maxAge').val(maxAge);

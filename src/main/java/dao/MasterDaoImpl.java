@@ -42,8 +42,8 @@ public class MasterDaoImpl {
 	}
 
 
-	public void updateListings(Listings listings) {
-		sessionFactory.getCurrentSession().update(listings);
+	public void updateMasters(MasterValuation masters) {
+		sessionFactory.getCurrentSession().update(masters);
 	}
 
 
@@ -54,9 +54,9 @@ public class MasterDaoImpl {
 	}
 
 
-	public void deleteListings(int listingsId) {
-		Query query=sessionFactory.getCurrentSession().createQuery("delete from Listings s where s.listingsId=:listingsId");
-		query.setParameter("listingsId",listingsId);
+	public void deleteMasters(int masterId) {
+		Query query=sessionFactory.getCurrentSession().createQuery("delete from MasterValuation s where s.masterId=:masterId");
+		query.setParameter("masterId",masterId);
 		query.executeUpdate();
 	}
 

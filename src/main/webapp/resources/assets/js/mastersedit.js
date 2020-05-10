@@ -43,15 +43,15 @@ $('.masterseditform .sub-header').text('Edit Previous Valuation');
 //	}
 //});
 //
-//$('#cancel').click(function(e){
-//	e.preventDefault();
-//	window.location.replace("listings-list");
-//});
+$('#cancel').click(function(e){
+	e.preventDefault();
+	window.location.replace("previous-valuation-list");
+});
 //
-//$("#delete").click(function(){
-//	 var listingsId=$('#listingsId').val();     
-//        var getUrl = window.location;
-//        var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];    
-//        var finalurl=baseUrl+"/delete-listings?listingsId="+listingsId;   
-//       $("#delete").attr("href",finalurl);
-//});
+$("#delete").click(function(){
+	 var masterId=$('#masterId').val();     
+        var getUrl = window.location;
+        var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];    
+        var finalurl=baseUrl+"/delete-masters?masterId="+masterId;   
+       $("#delete").attr("href",finalurl);
+});

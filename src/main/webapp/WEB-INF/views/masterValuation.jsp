@@ -43,7 +43,7 @@
 						<div class="head stylename" style="width:2%">${master.bldgAge}</div>
 						<div class="head stylename" style="width:4%">${master.viewRating}</div>
 						<div class="head stylename" style="width:4%">${master.landsizepersqf}</div>
-						<div class="head stylename" style="width:5%">${master.BUApersqf}</div>
+						<div class="head stylename" style="width:5%">${master.buapersqf}</div>
 						<div class="head stylename" style="width:6%">${master.mv}</div>
 						<div class="head stylename" style="width:5%">${master.mvpersqf}</div>
 						<input type="hidden" id="masterId" name="masterId" value="${master.masterId}" />

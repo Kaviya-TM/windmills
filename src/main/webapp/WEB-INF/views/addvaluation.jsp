@@ -36,8 +36,8 @@
 			<button class="valbtn" id="filter" style="width: 5%;">SoldTrans List</button>
 			<button class="valbtn" id="average" style="width: 4.8%;">SoldTrans Calcs</button>
 			<button class="valbtn" id="menquiry" style="width: 3.8%;">Master Enquiry</button>
-			<button class="valbtn" id="" style="width: 3.5%;">Master List</button>
-			<button class="valbtn" id="" style="width: 3.5%;">Master Calcs</button>
+			<button class="valbtn" id="mfilter" style="width: 3.5%;">Master List</button>
+			<button class="valbtn" id="maverage" style="width: 3.5%;">Master Calcs</button>
  			<button class="valbtn" id="lenquiry" style="width: 4%;">Listings Enquiry</button>
 			<button class="valbtn" id="lfilter" style="width: 3.7%;">Listing Trans</button>
 			<button class="valbtn" id="laverage" style="width: 3.5%;">Listing Calcs</button>
@@ -404,7 +404,7 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;" name="" id="l-datefrom">
+							style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;" name="" id="m-datefrom">
 					</div>
 				</div>
 				<div class="valuationholder" style="width:25% !important">
@@ -416,13 +416,13 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker"
-							style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"  name="" id="l-dateto">
+							style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"  name="" id="m-dateto">
 					</div>
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder" style="width:10% !important">Property Listing</label>
 					<select class="form-control form-control-sm textholder" style="width:39% !important"
-						name="valuationReport.propertyValued" id="l-propList">
+						name="valuationReport.propertyValued" id="m-propList">
 						<c:forEach items="${propertylist}" var="item">
 							<option value="${item.propertyValued}">${item.propertyValued}</option>
 						</c:forEach>
@@ -432,8 +432,8 @@
 					<label class="labelholder" style="width:10% !important">Building Name</label> 
 					<select
 							class="form-control form-control-sm textholder"  
-							name="valuationReport.buildingName" id="l-buildingName" style="width:39% !important" >  
-							<c:forEach items="${bullist}" var="item"> 
+							name="valuationReport.buildingName" id="m-buildingName" style="width:39% !important" >  
+							<c:forEach items="${mbullist}" var="item"> 
 								<option value="" hidden>-- Select Building/Project Name ---</option> 
 								<option value="${item}">${item}</option>
  							</c:forEach> 
@@ -443,8 +443,8 @@
 					<label class="labelholder" style="width:10% !important;line-height:16px">Sub-Community Name</label>
 						<select
  							class="form-control form-control-sm textholder" 
- 							name="" id="l-subcommunity" style="width:39% !important"> 
- 							<c:forEach items="${hoodlist}" var="item">
+ 							name="" id="m-subcommunity" style="width:39% !important"> 
+ 							<c:forEach items="${msublist}" var="item">
  								<option value="" hidden>-- Select Sub Community ---</option>
 							<option value="${item}">${item}</option> 
  							</c:forEach> 
@@ -454,8 +454,8 @@
 					<label class="labelholder" style="width:10% !important">Community Name</label>
 					<select
 						class="form-control form-control-sm textholder"
-						name="" id="l-community" style="width:39% !important">
-							<c:forEach items="${arealist}" var="item"> 
+						name="" id="m-community" style="width:39% !important">
+							<c:forEach items="${mcomlist}" var="item"> 
 								<option value="" hidden>-- Select Community/Area---</option>
 								<option value="${item}">${item}</option>
  							</c:forEach>
@@ -465,8 +465,8 @@
 					<label class="labelholder" style="width:10% !important">City</label> 
 					<select
 						class="form-control form-control-sm textholder"
-						name="" id="l-city" style="width:39% !important">
-						<c:forEach items="${citylist}" var="item">
+						name="" id="m-city" style="width:39% !important">
+						<c:forEach items="${mcitylist}" var="item">
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
@@ -474,7 +474,7 @@
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">Bedroom From</label> <select
 						class="form-control form-control-sm textholder"
-						name="" id="l-bedfrom" style="width:55% !important">
+						name="" id="m-bedfrom" style="width:55% !important">
 						<option value="" hidden>-- Select--</option>
 						<option value="1-Bedroom">1-Bedroom	</option>
 						<option value="2-Bedroom">2-Bedroom</option>
@@ -491,7 +491,7 @@
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">Bedroom To</label> <select
 						class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-bedto">
+						name="" id="m-bedto">
 						<option value="" hidden>-- Select--</option>
 						<option value="1-Bedroom">1-Bedroom	</option>
 						<option value="2-Bedroom">2-Bedroom</option>
@@ -509,7 +509,7 @@
 					<div class="valuationholder landto" style="width:25% !important">
 						<label class="labelholder" style="width:40% !important">LandSize From</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-landfrom">
+						name="" id="m-landfrom">
 							<option value="" hidden>-- Select--</option>
 							<option value="0">0</option>
 							<option value="500">500</option>
@@ -537,7 +537,7 @@
 					<div class="valuationholder landto" style="width:25% !important">
 						<label class="labelholder" style="width:40% !important">LandSize To</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-landto">
+						name="" id="m-landto">
 							<option value="" hidden>-- Select--</option>
 							<option value="0">0</option>
 							<option value="500">500</option>
@@ -566,7 +566,7 @@
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">BUA From</label>
 					 <select class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-buafrom">
+						name="" id="m-buafrom">
 							<option value="" hidden>-- Select--</option>
 							<option value="0">0</option>
 							<option value="500">500</option>
@@ -594,7 +594,7 @@
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">BUA To</label>
 					<select class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-buato">
+						name="" id="m-buato">
 							<option value="" hidden>-- Select--</option>
 							<option value="0">0</option>
 							<option value="500">500</option>
@@ -623,7 +623,7 @@
 					<div class="valuationholder" style="width:25% !important">
 						<label class="labelholder" style="width:40% !important">Price From</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-pricefrom">
+						name="" id="m-pricefrom">
 							<option value="" hidden>-- Select--</option>
 							<option value="0">0</option>
 							<option value="500000">500000</option>
@@ -651,7 +651,7 @@
 					<div class="valuationholder" style="width:25% !important">
 						<label class="labelholder" style="width:40% !important">Price To</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-priceto">
+						name="" id="m-priceto">
 							<option value="" hidden>-- Select--</option>
 							<option value="0">0</option>
 							<option value="500000">500000</option>
@@ -681,7 +681,7 @@
 					<div class="valuationholder" style="width:25% !important">
 						<label class="labelholder" style="width:40% !important">Price/Sqt From</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-pricesqtfrom">
+						name="" id="m-pricesqtfrom">
 							<option value="" hidden>-- Select--</option>
 							<option value="0">0</option>
 							<option value="100">100</option>
@@ -709,7 +709,7 @@
 					<div class="valuationholder" style="width:25% !important">
 						<label class="labelholder" style="width:40% !important">Price/Sqt To</label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important"
-						name="" id="l-pricesqtto">
+						name="" id="m-pricesqtto">
 							<option value="" hidden>-- Select--</option>
 							<option value="0">0</option>
 							<option value="100">100</option>
@@ -738,7 +738,7 @@
 				
 				
 				<div class="valuationholder" style="margin-top: 20px">
-					<div class="savebtn" id="listingfilter">Filter</div>
+					<div class="savebtn" id="masterfilter">Filter</div>
 				</div>
 			</div>
 			<div class="form-group senquiry">
@@ -1281,6 +1281,106 @@
 					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Size-sqf</div>
 					<div class="head stylename" style="color:darkblue !important;font-weight:700">Price AED</div>
 					<div class="head stylename" style="width:0%;color:darkblue !important;font-weight:700">AED/sqf</div>
+				</div>
+			</div>
+			<div class="form-group mfilter">	
+			<div class="" style="position:relative;top:-3px;clear:both">
+					<div class="wr" style="width:85%;float:left;">
+						<div class="seclabel" style="width:13%;color:crimson">Windmills Reference:</div>
+						<div class="sectext" style="color:crimson" name="" id="vvv-wr"></div>
+					</div>
+					<div class="vd">
+						<div class="seclabel" style="width:8%;color:crimson">Valuation Date:</div>
+						<div class="sectext" style="color:crimson" name="" id="vvv-vd"></div>
+					</div>
+			</div>
+			<div class="secsec" style="background: lightgoldenrodyellow;clear:both;width: 99.5% !important;margin-bottom: 8px; height:8%;border-radius: 5px;">
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Property:</div>
+					<div class="sectext" style="" name="" id="vvv-property"></div>
+			</div>
+			<div class="selholder" style="width: 31%;">
+					<div class="seclabel" style="width: 18%;">Building:</div>
+					<div class="sectext" style="" name="" id="vvv-buildingName"></div>
+			</div>
+			<div class="selholder" style="width: 29%;">
+					<div class="seclabel" style="width: 31%;">SubCommunity:</div>
+					<div class="sectext" style="" name="" id="vvv-subCommunity"></div>
+			</div>
+			<div class="selholder"  style="width: 20%;">
+					<div class="seclabel" style="width: 35%;">Community:</div>
+					<div class="sectext" style="" name="" id="vvv-community"></div>
+			</div>
+<!-- 			<div class="selholder" style="width: 10%;"> -->
+<!-- 					<div class="seclabel" style="">City:</div> -->
+<!-- 					<div class="sectext" style="" name="" id="vv-city"></div> -->
+<!-- 			</div> -->
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Date From:</div>
+					<div class="sectext" style="" name="" id="vvv-datefrom"></div>
+			</div>
+			<div class="selholder" style="width: 16%;">
+					<div class="seclabel" style="width: 53%;">Bedroom From:</div>
+					<div class="sectext" style="" name="" id="vvv-bedfrom"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 57%;">LandSize From: </div>
+					<div class="sectext" style="" name="" id="vvv-landfrom"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 52%;">SizeSqt From: </div>
+					<div class="sectext" style="" name="" id="vvv-buafrom"></div>
+			</div>
+			<div class="selholder" style="width: 14%;">
+					<div class="seclabel" style="width: 45%;">Price From:</div>
+					<div class="sectext" style="" name="" id="vvv-pricefrom"></div>			
+			</div>
+			<div class="selholder">
+					<div class="seclabel" style="width: 50%;">PricePerSqt From: </div>
+					<div class="sectext" style="" name="" id="vvv-pricesqtfrom"></div>	
+			</div>
+			<div class="selholder" style="width: 20%;">
+					<div class="seclabel" style="width: 31%;">Date To:</div>
+					<div class="sectext" style="" name="" id="vvv-dateto"></div>
+			</div>
+			<div class="selholder" style="width: 16%;">
+					<div class="seclabel" style="width: 53%;">Bedroom To:</div>
+					<div class="sectext" style="" name="" id="vvv-bedto"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 57%;">LandSize To: </div>
+					<div class="sectext" style="" name="" id="vvv-landto"></div>
+			</div>
+			<div class="selholder" style="width: 15%;">
+					<div class="seclabel" style="width: 52%;">SizeSqt To: </div>
+					<div class="sectext" style="" name="" id="vvv-buato"></div>
+			</div>
+			<div class="selholder" style="width: 14%;">
+					<div class="seclabel" style="width: 45%;">Price To: </div>
+					<div class="sectext" style="" name="" id="vvv-priceto"></div>	
+			</div>
+			<div class="selholder">
+					<div class="seclabel" style="width: 50%;">PricePerSqt To: </div>
+					<div class="sectext" style="" name="" id="vvv-pricesqtto"></div>	
+			</div>
+		</div>
+			<div class="column" style="display:flex;height: 3% !important;width:99.5%;line-height: 6px;background:lightcyan;color:#fff !important;margin-bottom:5px;border: 1px solid lightcyan;border-radius:5px;">
+					<div class="head stylename" style="width:7.6%;color:darkblue !important;font-weight:700">Date</div>
+					<div class="head stylename" style="width:8.8%;color:darkblue !important;font-weight:700">WM-Ref</div>
+					<div class="head stylename" style="width:7%;color:darkblue !important;font-weight:700">Tenure</div>
+					<div class="head stylename" style="width:7%;color:darkblue !important;font-weight:700">Location</div>
+					<div class="head stylename" style="width:3%;color:darkblue !important;font-weight:700">Age</div>
+					<div class="head stylename" style="width:7%;color:darkblue !important;font-weight:700">View</div>
+					<div class="head stylename" style="width:7%;color:darkblue !important;font-weight:700">Condition</div>
+					<div class="head stylename" style="width:7%;color:darkblue !important;font-weight:700">Finishing</div>
+					<div class="head stylename" style="width:6%;color:darkblue !important;font-weight:700">Exposure</div>
+					<div class="head stylename" style="width:7%;color:darkblue !important;font-weight:700">Placement</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Floors</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Beds</div>
+					<div class="head stylename" style="width:6%;color:darkblue !important;font-weight:700">Land</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">BUA</div>
+					<div class="head stylename" style="color:darkblue !important;font-weight:700">MV</div>
+					<div class="head stylename" style="width:0%;color:darkblue !important;font-weight:700">MV/sqf</div>
 				</div>
 			</div>
 			<div class="form-group conflict">
@@ -1886,7 +1986,6 @@
 						<option value="Middle" selected>Middle</option>
 						<option value="Corner">Corner</option>
 						<option value="Semi-Corner">Semi-Corner</option>
-						<option value="Not Applicable">Not Applicable</option>
 					</select>
 				</div>
 				<div class="viholder">
@@ -1895,7 +1994,6 @@
 						name="valuationReport.propertyExposure" id="exposure">
 						<option value="Single Row">Single Row</option>
 						<option value="Back To Back" selected>Back To Back</option>
-						<option value="Not Applicable">Not Applicable</option>
 					</select>
 				</div>
 				<div class="viholder">
@@ -2872,6 +2970,7 @@
 			</div>
 			<%@include file="soldcalcs.jsp"%>
 			<%@include file="listingscalcs.jsp"%>
+						<%@include file="mastercalcs.jsp"%>
 			<div class="form-group vsummary">
 				<div class="valuationholder">
 					<label class="labelholder" style="width:28%">Transaction Price</label> <input
@@ -3035,5 +3134,7 @@
 <script src="resources/assets/js/valuationform.js"></script>
 <script src="resources/assets/js/soldcalcs.js"></script>
 <script src="resources/assets/js/listingscalcs.js"></script>
+<script src="resources/assets/js/mastercalcs.js"></script>
+<script src="resources/assets/js/masterfilter.js"></script>
 <script src="resources/assets/js/listingfilter.js"></script>
 <script src="resources/assets/js/hideshow.js"></script>

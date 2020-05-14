@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -85,5 +86,69 @@ public class MasterController {
 		return mv;
 
 	}
-	
+	@RequestMapping(value = "/getmEverything", method = RequestMethod.POST)
+	@ResponseBody
+	public JSONObject getEverything(@RequestParam("buildingName") String buildingName) {
+			String community = masterService.getCommunity(buildingName);
+			String subcommunity = masterService.getSubCommunity(buildingName);
+			String city = masterService.getCityy(buildingName);
+			JSONObject json = new JSONObject();
+			json.put("city", city);
+			json.put("subcommunity", subcommunity);
+			json.put("community", community);
+			return json;
+	}
+	@RequestMapping(value = "/masters-filtered-transaction", method = RequestMethod.POST)
+	@ResponseBody
+	public JSONObject getFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName,@RequestParam("landfrom")String landfrom,@RequestParam("buafrom")String buafrom,
+			@RequestParam("buato")String buato,@RequestParam("landto")String landto,@RequestParam("bedfrom")String bedfrom,@RequestParam("bedto")String bedto,
+			@RequestParam("pricefrom")String pricefrom,@RequestParam("priceto")String priceto,@RequestParam("pricesqtfrom")String pricesqtfrom,@RequestParam("pricesqtto")String pricesqtto,
+			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto,@RequestParam("propList")String propList) throws ParseException{
+		List<MasterValuation> list = masterService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto,propList);
+		
+		JSONObject json = new JSONObject();
+		if(list.size() > 0){
+			String dateAvg = masterService.getDateAvg(list);
+			String locAvg =  masterService.getLocationAvg(list);
+			String ageAvg = masterService.getAgeAvg(list);
+			String viewAvg = masterService.getViewAvg(list);
+			String staAvg = masterService.getStatusAvg(list);
+			String expAvg = masterService.getExposureAvg(list);
+			String plaAvg = masterService.getPlacementAvg(list);
+			String floorAvg = masterService.getFloorAvg(list);
+			String qualityAvg = masterService.getQualityAvg(list);
+			String landAvg = masterService.getlandAvg(list);
+			String priceAvg = masterService.getpriceAvg(list);
+			String sizeAvg = masterService.getSizeAvg(list);
+			String pricePerAvg = masterService.getpricePerAvg(list);
+			String bedAvg = masterService.getBedAvg(list);
+			String tenureAvg = masterService.getTenureAvg(list);
+			json.put("list", list);
+			json.put("dateAvg", dateAvg);
+			json.put("locAvg", locAvg);
+			json.put("ageAvg", ageAvg);
+			json.put("viewAvg", viewAvg);
+			json.put("expAvg", expAvg);
+			json.put("staAvg", staAvg);
+			json.put("plaAvg", plaAvg);
+			json.put("floorAvg", floorAvg);
+			json.put("qualityAvg", qualityAvg);
+			json.put("tenureAvg", tenureAvg);
+			json.put("landAvg", landAvg);
+			json.put("priceAvg", priceAvg);
+			json.put("sizeAvg", sizeAvg);
+			json.put("bedAvg", bedAvg);
+			json.put("pricePerAvg", pricePerAvg);
+			json.put("empty","full");
+			
+		}
+		else{
+			json.put("empty","empty");
+		}
+		
+		System.err.println("json"+json);
+		return json;
+
+	}
 }

@@ -70,8 +70,8 @@ public class MasterValuation  implements java.io.Serializable {
 	private String noOfRooms;
 	private String landsizepersqf;
 	private String mvoflandpersqf;
-	private String BUApersqf;
-	private String BUApersm;
+	private String buapersqf;
+	private String buapersm;
 	private String bldgAge;
 	private String statusOfValuer;
 	private String mv;
@@ -372,18 +372,18 @@ public class MasterValuation  implements java.io.Serializable {
 		this.mvoflandpersqf = mvoflandpersqf;
 	}
 	@Column(name = "BUApersqf")
-	public String getBUApersqf() {
-		return BUApersqf;
+	public String getBuapersqf() {
+		return buapersqf;
 	}
-	public void setBUApersqf(String bUApersqf) {
-		BUApersqf = bUApersqf;
+	public void setBuapersqf(String buapersqf) {
+		this.buapersqf = buapersqf;
 	}
 	@Column(name = "BUApersm")
-	public String getBUApersm() {
-		return BUApersm;
+	public String getBuapersm() {
+		return buapersm;
 	}
-	public void setBUApersm(String bUApersm) {
-		BUApersm = bUApersm;
+	public void setBuapersm(String buapersm) {
+		this.buapersm = buapersm;
 	}
 	@Column(name = "bldgAge")
 	public String getBldgAge() {

@@ -31,6 +31,7 @@ import model.ClientDetails;
 import model.Community;
 import model.Documents;
 import model.Listings;
+import model.MasterValuation;
 import model.Property;
 import model.ServiceOfficer;
 import model.SoldTransactions;
@@ -39,6 +40,7 @@ import model.ValuationReportForm;
 import model.Weightage;
 import service.ClientService;
 import service.ListingsService;
+import service.MasterService;
 import service.ServiceOfficerService;
 import service.SoldTransactionService;
 import service.ValuationService;
@@ -60,6 +62,8 @@ public class ValuationController {
 	@Autowired
 	private ListingsService listingsService;
 	
+	@Autowired
+	private MasterService masterService;
 	
 	static Logger log = Logger.getLogger(ValuationController.class);
 
@@ -84,6 +88,14 @@ public class ValuationController {
 		List<SoldTransactions> hoodlist=soldTransactionService.getNeighbourhood();
 		List<SoldTransactions> bullist=soldTransactionService.getBuildings();
 		List<SoldTransactions> devlist=soldTransactionService.getDevelopers();
+		List<MasterValuation> mbullist=masterService.getBuildingName();
+		List<MasterValuation> msublist=masterService.getSubCommunity();
+		List<MasterValuation> mcomlist=masterService.getCommunity();
+		List<MasterValuation> mcitylist=masterService.getCity();
+		mv.addObject("mbullist",mbullist);
+		mv.addObject("msublist",msublist);
+		mv.addObject("mcomlist",mcomlist);
+		mv.addObject("mcitylist",mcitylist);
 		mv.addObject("cityylist",cityylist);
 		mv.addObject("arealist",arealist);
 		mv.addObject("hoodlist",hoodlist);
@@ -397,6 +409,136 @@ public class ValuationController {
 		json.put("liplaAvg", liplaAvg);
 		json.put("lifloorAvg", lifloorAvg);
 		json.put("lipricePerAvg", lipricePerAvg);
+		return json;
+
+	}
+	@RequestMapping(value = "/master-filter-transac", method = RequestMethod.POST)
+	@ResponseBody
+	public JSONObject getMasterFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,
+			@RequestParam("neighbourhood")String neighbourhood,@RequestParam("buildingName")String buildingName,@RequestParam("landfrom")String landfrom,@RequestParam("buafrom")String buafrom,
+			@RequestParam("buato")String buato,@RequestParam("landto")String landto,@RequestParam("bedfrom")String bedfrom,@RequestParam("bedto")String bedto,
+			@RequestParam("pricefrom")String pricefrom,@RequestParam("priceto")String priceto,@RequestParam("pricesqtfrom")String pricesqtfrom,@RequestParam("pricesqtto")String pricesqtto,
+			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto,@RequestParam("propList")String propList) throws ParseException{
+		List<MasterValuation> list = masterService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto,propList);
+		
+		JSONObject json = new JSONObject();
+		List<Weightage> weightage = weightageService.getWeightage(city,propList);
+		String locWeight = weightageService.getLocWeight(weightage);
+		String viewWeight = weightageService.getViewWeight(weightage);
+		String dateWeight = weightageService.getDateWeight(weightage);
+		String quaWeight = weightageService.getQuaWeight(weightage);
+		String floorWeight = weightageService.getFloorWeight(weightage);
+		String landWeight = weightageService.getLandWeight(weightage);
+		String buaWeight = weightageService.getBuaWeight(weightage);
+		String expWeight = weightageService.getExpWeight(weightage);
+		String plaWeight = weightageService.getPlaWeight(weightage);
+		String staWeight = weightageService.getStaWeight(weightage);
+		String bedWeight = weightageService.getBedWeight(weightage);
+		String furWeight = weightageService.getFurWeight(weightage);
+		String balWeight = weightageService.getBalWeight(weightage);
+		String parkWeight = weightageService.getParkWeight(weightage);
+		String poolWeight = weightageService.getPoolWeight(weightage);
+		String landScapeWeight = weightageService.getLandScapeWeight(weightage);
+		String whiteGoodsWeight = weightageService.getWhiteGoodsWeight(weightage);
+		String utilitiesWeight = weightageService.getUtilitiesWeight(weightage);
+		String tenWeight = weightageService.getTenureWeight(weightage);
+		String ageWeight = weightageService.getAgeWeight(weightage);
+		String devmargin = valuationService.getDevMargin(propList);
+		String upgradeWeight = weightageService.getUpgradeWeight(weightage);
+		String lessThan1Month = weightageService.getLessThan1Month(weightage);
+		String lessThan2Month = weightageService.getLessThan2Month(weightage);
+		String lessThan3Month = weightageService.getLessThan3Month(weightage);
+		String lessThan4Month = weightageService.getLessThan4Month(weightage);
+		String lessThan5Month = weightageService.getLessThan5Month(weightage);
+		String lessThan6Month = weightageService.getLessThan6Month(weightage);
+		String lessThan7Month = weightageService.getLessThan7Month(weightage);
+		String lessThan8Month = weightageService.getLessThan8Month(weightage);
+		String lessThan9Month = weightageService.getLessThan9Month(weightage);
+		String lessThan10Month = weightageService.getLessThan10Month(weightage);
+		String lessThan11Month = weightageService.getLessThan11Month(weightage);
+		String lessThan12Month = weightageService.getLessThan12Month(weightage);
+		String mlocAvg = masterService.getLocationAvg(list);
+		String mageAvg = masterService.getAgeAvg(list);
+		String mtenAvg = masterService.getTenureAvg(list);
+		String mviewAvg = masterService.getViewAvg(list);
+		String mstaAvg = masterService.getStatusAvg(list);
+		String mquaAvg = masterService.getQualityAvg(list);
+	//	String mupgAvg = masterService.getUpgradeAvg(list);
+	//	String mfurAvg = masterService.getStatusAvg(list);
+	//	String mparkAvg = masterService.getParkAvg(list);
+	//	String mpoolAvg = masterService.getPoolAvg(list);
+	//	String mlandscapeAvg = masterService.getLandScapeAvg(list);
+	//	String mgoodAvg = masterService.getGoodAvg(list);
+	//	String mutiAvg = masterService.getUtilitiesAvg(list);
+		String mexpAvg = masterService.getExposureAvg(list);
+		String mplaAvg = masterService.getPlacementAvg(list);
+		String mfloorAvg = masterService.getFloorAvg(list);
+	//	String mbalAvg = masterService.getBalconyAvg(list);
+	//	String mdevAvg = masterService.getDevmarginAvg(list);
+		String mdateAvg = masterService.getDateAvg(list);
+		String mlandAvg = masterService.getlandAvg(list);
+		String mpriceAvg = masterService.getpriceAvg(list);
+		String msizeAvg = masterService.getSizeAvg(list);
+		String mpricePerAvg = masterService.getpricePerAvg(list);
+		String mbedAvg = masterService.getBedAvg(list);
+		json.put("mlessThan1Month", lessThan1Month);
+		json.put("mlessThan2Month", lessThan2Month);
+		json.put("mlessThan3Month", lessThan3Month);
+		json.put("mlessThan4Month", lessThan4Month);
+		json.put("mlessThan5Month", lessThan5Month);
+		json.put("mlessThan6Month", lessThan6Month);
+		json.put("mlessThan7Month", lessThan7Month);
+		json.put("mlessThan8Month", lessThan8Month);
+		json.put("mlessThan9Month", lessThan9Month);
+		json.put("mlessThan10Month", lessThan10Month);
+		json.put("mlessThan11Month", lessThan11Month);
+		json.put("mlessThan12Month", lessThan12Month);
+		json.put("mexpWeight", expWeight);
+		json.put("mplaWeight", plaWeight);
+		json.put("mstaWeight", staWeight);
+		json.put("mbedWeight", bedWeight);
+		json.put("mlocWeight", locWeight);
+		json.put("mviewWeight", viewWeight);
+		json.put("mquaWeight", quaWeight);
+		json.put("mdateWeight", dateWeight);
+		json.put("mfloorWeight", floorWeight);
+		json.put("mlandWeight", landWeight);
+		json.put("mbuaWeight", buaWeight);
+		json.put("mbalWeight", balWeight);
+		json.put("mupgradeWeight", upgradeWeight);
+		json.put("mfurWeight", furWeight);
+		json.put("mparkWeight", parkWeight);
+		json.put("mpoolWeight", poolWeight);
+		json.put("mlandScapeWeight", landScapeWeight);
+		json.put("mwhiteGoodsWeight", whiteGoodsWeight);
+		json.put("mutilitiesWeight", utilitiesWeight);
+		json.put("mdevmargin", devmargin);
+		json.put("mtenWeight", tenWeight);
+		json.put("mageWeight", ageWeight);
+		json.put("mdateAvg", mdateAvg);
+		json.put("mlandAvg", mlandAvg);
+		json.put("mpriceAvg", mpriceAvg);
+		json.put("msizeAvg", msizeAvg);
+		json.put("mbedAvg", mbedAvg);
+		json.put("mlocAvg", mlocAvg);
+		json.put("mageAvg", mageAvg);
+		json.put("mtenAvg", mtenAvg);
+		json.put("mviewAvg", mviewAvg);
+		json.put("mstaAvg", mstaAvg);
+		json.put("mquaAvg", mquaAvg);
+//		json.put("mupgAvg", mupgAvg);
+//		json.put("mfurAvg", mfurAvg);
+//		json.put("mparkAvg", mparkAvg);
+//		json.put("mpoolAvg", mpoolAvg);
+//		json.put("mbalAvg", mbalAvg);
+//		json.put("mdevAvg", mdevAvg);
+//		json.put("mlandscapeAvg", mlandscapeAvg);
+//		json.put("mgoodAvg", mgoodAvg);
+//		json.put("mutiAvg", mutiAvg);
+		json.put("mexpAvg", mexpAvg);
+		json.put("mplaAvg", mplaAvg);
+		json.put("mfloorAvg", mfloorAvg);
+		json.put("mpricePerAvg", mpricePerAvg);
 		return json;
 
 	}

@@ -768,7 +768,7 @@ $("#laverage").click(function(){
 				var fullBulFloors =  $('#fullBulFloors').val();
 				var maxAge = $('#maxAge').val();
 				var finalAge = (parseFloat(liageWeight.replace(/%/g , '') / maxAge * 100)) + "" +"%";
-				$('#liliavgdate').val(lidateAvg);
+				$('#liavgdate').val(lidateAvg);
 				$('#ebed').val(libedAvg);
 				$('#liliavgbua').val(toComma(lisizeAvg));
 				$('#elipriceAvg').val(toComma(lipriceAvg));

@@ -53,6 +53,151 @@ var madjdate = null;
 var madjland = null;
 var madjdev = null;
 var mfinalValue = null;
+$("#mavgpool").keyup(function(){
+	var mdiffpool =  parseFloat($('#msubpool').val()) - parseFloat($(this).val());
+	 $('#mdiffpool').val(toComma(mdiffpool));
+	madjpool = parseFloat(($('#mdiffpool').val()).replace(/,/g , '')) * parseFloat(($("#cmweipool").val()).replace(/%/g , '')) * parseInt($('#poolPrice').val()) / 100;
+    $('#madjpool').val(toComma(madjpool));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+$("#mavglandscape").keyup(function(){
+	var mdifflandscape =  parseFloat($('#msublandscape').val()) - parseFloat($(this).val());
+	 $('#mdifflandscape').val(toComma(mdifflandscape));
+	madjlandscape= parseFloat(($('#mdifflandscape').val()).replace(/,/g , '')) * parseFloat(($("#cmweilandscape").val()).replace(/%/g , '')) * parseInt($('#landscapePrice').val()) / 100;
+    $('#madjlandscape').val(toComma(madjlandscape));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+$("#mavggood").keyup(function(){
+	var mdiffgood=  parseFloat($('#msubgood').val()) - parseFloat($(this).val());
+	 $('#mdiffgood').val(toComma(mdiffgood));
+	madjgood= parseFloat(($('#mdiffgood').val()).replace(/,/g , '')) * parseFloat(($("#cmweigood").val()).replace(/%/g , '')) * parseInt($('#whitegoodsPrice').val()) / 100;
+    $('#madjgood').val(toComma(madjgood));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+$("#mavguti").keyup(function(){
+	var mdiffuti=  parseFloat($('#msubuti').val()) - parseFloat($(this).val());
+	 $('#mdiffuti').val(toComma(mdiffuti));
+	madjuti= parseFloat(($('#mdiffuti').val()).replace(/,/g , '')) * parseFloat(($("#cmweiuti").val()).replace(/%/g , '')) * parseInt($('#utiliesPrice').val()) / 100;
+    $('#madjuti').val(toComma(madjuti));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+$("#mavgten").keyup(function(){
+	var mdifften = parseFloat($('#msubten').val()) - parseFloat($(this).val());
+    $('#mdifften').val(mdifften);
+	madjten =  parseFloat(($('#mdifften').val()).replace(/,/g , ''))  * parseFloat(($("#cmweiten").val()).replace(/%/g , '')) * parseInt(mpriceAvg) / 100;
+	$('#madjten').val(toComma(madjten));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+$("#mavgsta").keyup(function(){
+	var mdiffsta = parseFloat($('#msubsta').val()) - parseFloat($(this).val());
+    $('#mdiffsta').val(mdiffsta);
+	madjsta=  parseFloat(($('#mdiffsta').val()).replace(/,/g , ''))  * parseFloat(($("#cmweista").val()).replace(/%/g , '')) * parseInt(mpriceAvg) / 100;
+	$('#madjsta').val(toComma(madjsta));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+$("#mavgfur").keyup(function(){
+	var mdifffur = parseFloat($('#msubfur').val()) - parseFloat($(this).val());
+    $('#mdifffur').val(mdifffur);
+	madjfur=  parseFloat(($('#mdifffur').val()).replace(/,/g , ''))  * parseFloat(($("#cmweifur").val()).replace(/%/g , '')) * parseInt(mpriceAvg) / 100;
+	$('#madjfur').val(toComma(madjfur));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+$("#mavgexp").keyup(function(){
+	var mdiffexp = parseFloat($('#msubexp').val()) - parseFloat($(this).val());
+    $('#mdiffexp').val(mdiffexp);
+	madjexp=  parseFloat(($('#mdiffexp').val()).replace(/,/g , ''))  * parseFloat(($("#cmweiexp").val()).replace(/%/g , '')) * parseInt(mpriceAvg) / 100;
+	$('#madjexp').val(toComma(madjexp));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+$("#mavgpla").keyup(function(){
+	var mdiffpla = parseFloat($('#msubpla').val()) - parseFloat($(this).val());
+    $('#mdiffpla').val(mdiffpla);
+	madjpla=  parseFloat(($('#mdiffpla').val()).replace(/,/g , ''))  * parseFloat(($("#cmweipla").val()).replace(/%/g , '')) * parseInt(mpriceAvg) / 100;
+	$('#madjpla').val(toComma(madjpla));
+	 //Market Value//
+	 var marketValue = parseInt(mpriceAvg) + parseInt(madjloc.toString().replace(/,/g , '')) + parseInt(madjage.toString().replace(/,/g , '')) + parseInt(madjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjview.toString().replace(/,/g , '')) + parseInt(madjsta.toString().replace(/,/g , '')) + parseInt(madjqua.toString().replace(/,/g , '')) + parseInt(madjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjfur.toString().replace(/,/g , '')) + parseInt(madjexp.toString().replace(/,/g , '')) + parseInt(madjpla.toString().replace(/,/g , '')) + parseInt(madjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(madjbed.toString().replace(/,/g , '')) + parseInt(madjpark.toString().replace(/,/g , '')) + parseInt(madjpool.toString().replace(/,/g , '')) + parseInt(madjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjgood.toString().replace(/,/g , '')) + parseInt(madjuti.toString().replace(/,/g , '')) + parseInt(madjbal.toString().replace(/,/g , '')) + parseInt(madjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(madjbua.toString().replace(/,/g , '')) + parseInt(madjdev.toString().replace(/,/g , '')) + parseInt(madjdate.toString().replace(/,/g , ''));
+	 $('#mastermarketvalue').val(toComma(marketValue));
+	 mfinalValue = parseInt(parseInt(($('#mastermarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#masterfinalvalue').val(toComma(mfinalValue));
+});
+
 $("#mavgbal").keyup(function(){
 	var mdiffbal = parseInt($('#msubbal').val()) - parseInt($(this).val());
     $('#mdiffbal').val(mdiffbal);

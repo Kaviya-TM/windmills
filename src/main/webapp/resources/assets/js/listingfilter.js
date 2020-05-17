@@ -209,31 +209,25 @@ $("#listingfilter").click(function(){
 							viewvalue = "1";
 						}
 						if(obj.list[x].finishStatus == "Shell & Core"){
-							stavalue = "1";
+							stavalue = "0";
 						}
 						if(obj.list[x].finishStatus == "Fitted"){
-							stavalue = "2";
+							stavalue = "1";
 						}
 						if(obj.list[x].propExposure == "Single Row"){
-							expvalue = "2";
-						}
-						if(obj.list[x].propExposure == "Back To Back"){
 							expvalue = "1";
 						}
-						if(obj.list[x].propExposure == "Not Applicable"){
+						if(obj.list[x].propExposure == "Back To Back"){
 							expvalue = "0";
 						}
 						if(obj.list[x].propPlacement == "Middle"){
-							plavalue = "1";
+							plavalue = "0";
 						}
 						if(obj.list[x].propPlacement == "Corner"){
-							plavalue = "2";
+							plavalue = "1";
 						}
 						if(obj.list[x].propPlacement == "Semi-Corner"){
 							plavalue = "1.5";
-						}
-						if(obj.list[x].propPlacement == "Not Applicable"){
-							plavalue = "0";
 						}
 						$('.lfilter').append("" +
 								"<div id="+obj.list[x].transactionId+" class='column boxlist' style='width:99.5%;margin-bottom:5px;display:flex'>" +

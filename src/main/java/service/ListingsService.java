@@ -455,16 +455,19 @@ public class ListingsService {
 				String tenure = st.getTenure();
 				System.err.println("tenure"+tenure);
 				if(tenure.equals("Freehold")){
-					finall = "2";
+					finall = "5";
 				}
 				if(tenure.equals("Non-Freehold(Emiratis)")){
-					finall = "1";
+					finall = "3";
 				}
 				if(tenure.equals("Non-Freehold(Emiratis & GCC Citizens)")){
-					finall = "1.5";
+					finall = "4";
 				}
 				if(tenure.equals("Leasehold")){
-					finall = "3";
+					finall = "2";
+				}
+				if(tenure.equals("Granted")){
+					finall = "1";
 				}
 				avglist.add(finall);
 			}
@@ -542,10 +545,10 @@ public class ListingsService {
 				String status = st.getFinishStatus();
 				String finalstatus = null;
 				if(status.equals("Shell & Core")){
-					finalstatus = "1";
+					finalstatus = "0";
 				}
 				if(status.equals("Fitted")){
-					finalstatus = "2";
+					finalstatus = "1";
 				}
 				int finage = Integer.parseInt(finalstatus);
 				avglist.add(finage);
@@ -563,12 +566,9 @@ public class ListingsService {
 				String exp = st.getPropExposure();
 				String finalexp = null;
 				if(exp.equals("Single Row")){
-					finalexp = "2";
-				}
-				if(exp.equals("Back To Back")){
 					finalexp = "1";
 				}
-				if(exp.equals("Not Applicable")){
+				if(exp.equals("Back To Back")){
 					finalexp = "0";
 				}
 				int finage = Integer.parseInt(finalexp);
@@ -587,16 +587,13 @@ public class ListingsService {
 				String finall = null;
 				String pla = st.getPropPlacement();
 				if(pla.equals("Middle")){
-					finall = "1";
+					finall = "0";
 				}
 				if(pla.equals("Corner")){
-					finall = "2";
+					finall = "1";
 				}
 				if(pla.equals("Semi-Corner")){
 					finall = "1.5";
-				}
-				if(pla.equals("Not Applicable")){
-					finall = "0";
 				}
 				avglist.add(finall);
 			}
@@ -670,10 +667,10 @@ public class ListingsService {
 				String finall = null;
 				String pla = st.getFurnished();
 				if(pla.equals("Yes")){
-					finall = "2";
+					finall = "1";
 				}
 				if(pla.equals("No")){
-					finall = "1";
+					finall = "0";
 				}
 				if(pla.equals("Semi-Furnished")){
 					finall = "1.5";
@@ -707,10 +704,10 @@ public class ListingsService {
 				String finall = null;
 				String pla = st.getPool();
 				if(pla.equals("Yes")){
-					finall = "2";
+					finall = "1";
 				}
 				if(pla.equals("No")){
-					finall = "1";
+					finall = "0";
 				}
 				avglist.add(finall);
 			}
@@ -727,10 +724,10 @@ public class ListingsService {
 				String finall = null;
 				String pla = st.getLandScape();
 				if(pla.equals("Yes")){
-					finall = "2";
+					finall = "1";
 				}
 				if(pla.equals("No")){
-					finall = "1";
+					finall = "0";
 				}
 				if(pla.equals("Semi-Landscape")){
 					finall = "1.5";
@@ -750,10 +747,10 @@ public class ListingsService {
 				String finall = null;
 				String pla = st.getWhiteGoods();
 				if(pla.equals("Yes")){
-					finall = "2";
+					finall = "1";
 				}
 				if(pla.equals("No")){
-					finall = "1";
+					finall = "0";
 				}
 				avglist.add(finall);
 			}
@@ -770,10 +767,10 @@ public class ListingsService {
 				String finall = null;
 				String pla = st.getUtilityConnected();
 				if(pla.equals("Yes")){
-					finall = "2";
+					finall = "1";
 				}
 				if(pla.equals("No")){
-					finall = "1";
+					finall = "0";
 				}
 				avglist.add(finall);
 			}
@@ -805,10 +802,10 @@ public class ListingsService {
 				String finall = null;
 				String pla = st.getDevmargin();
 				if(pla.equals("No")){
-					finall = "2";
+					finall = "1";
 				}
 				if(pla.equals("Yes")){
-					finall = "1";
+					finall = "0";
 				}
 				avglist.add(finall);
 			}

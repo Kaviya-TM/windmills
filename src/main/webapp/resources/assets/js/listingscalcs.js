@@ -1130,7 +1130,7 @@ function calAvg(value){
 	if(value == "Average"){
 		final = "3";
 	}
-	if(value == "lisubstandard"){
+	if(value == "Substandard"){
 		final = "2";
 	}
 	if(value == "Poor"){
@@ -1141,42 +1141,42 @@ function calAvg(value){
 function calTenure(value){
 	var final = null;
 	if(value == "Freehold"){
-		final = "2";
+		final = "5";
 	}
 	if(value == "Non-Freehold(Emiratis)"){
-		final = "1";
+		final = "3";
 	}
 	if(value == "Non-Freehold(Emiratis & GCC Citizens)"){
-		final = "1.5";
+		final = "4";
 	}
 	if(value == "Leasehold"){
-		final = "3";
+		final = "2";
+	}
+	if(value == "Granted"){
+		final = "1";
 	}
 	return final;
 }
 function calPla(value){
 	var final = null;
 	if(value == "Middle"){
-		final = "1";
+		final = "0";
 	}
 	if(value == "Corner"){
-		final = "2";
+		final = "1";
 	}
 	if(value == "Semi-Corner"){
 		final = "1.5";
-	}
-	if(value == "Not Applicable"){
-		final = "0";
 	}
 	return final;
 }
 function calSta(value){
 	var final = null;
 	if(value == "Shell & Core"){
-		final = "1";
+		final = "0";
 	}
 	if(value == "Fitted"){
-		final = "2";
+		final = "1";
 	}
 	return final;
 }
@@ -1195,10 +1195,10 @@ function calDate(startD,endD){
 function calFur(value){
 	var final = null;
 	if(value == "Yes"){
-		final = "2";
+		final = "1";
 	}
 	if(value == "No"){
-		final = "1";
+		final = "0";
 	}
 	if(value == "Semi-Furnished"){
 		final = "1.5";
@@ -1208,10 +1208,10 @@ function calFur(value){
 function calLandScape(value){
 	var final = null;
 	if(value == "Yes"){
-		final = "2";
+		final = "1";
 	}
 	if(value == "No"){
-		final = "1";
+		final = "0";
 	}
 	if(value == "Semi-Landscape"){
 		final = "1.5";
@@ -1221,20 +1221,20 @@ function calLandScape(value){
 function calMargin(value){
 	var final = null;
 	if(value == "Yes"){
-		final = "1";
+		final = "0";
 	}
 	if(value == "No"){
-		final = "2";
+		final = "1";
 	}
 	return final;
 }
 function calPool(value){
 	var final = null;
 	if(value == "Yes"){
-		final = "2";
+		final = "1";
 	}
 	if(value == "No"){
-		final = "1";
+		final = "0";
 	}
 	return final;
 }
@@ -1266,12 +1266,9 @@ function calView(value){
 function calExp(value){
 	var final = null;
 	if(value == "Single Row"){
-		final = "2";
-	}
-	if(value == "Back To Back"){
 		final = "1";
 	}
-	if(value == "Not Applicable"){
+	if(value == "Back To Back"){
 		final = "0";
 	}
 	return final;

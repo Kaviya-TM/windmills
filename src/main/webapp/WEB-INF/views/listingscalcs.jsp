@@ -109,7 +109,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Tenure(G-1,FH-5)</div>
-			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important;" readonly "name="" id="liavgten">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important;border: 1px solid seagreen;" name="" id="liavgten">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisubten">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidifften">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweiten">
@@ -127,7 +127,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Shell & Core(0)/ Fitted(1)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important"  readonly name="" id="liavgsta">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;" name="" id="liavgsta">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisubsta">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidiffsta">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweista">
@@ -154,7 +154,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">UnFurnished(0)/Furnished(1)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" readonly name="" id="liavgfur">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;"  name="" id="liavgfur">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisubfur">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidifffur">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweifur">
@@ -163,7 +163,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Back To Back(0)/Single Row(1)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" readonly name="" id="liavgexp">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;"  name="" id="liavgexp">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisubexp">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidiffexp">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweiexp">
@@ -172,7 +172,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Middle(0)/Corner(1)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" readonly name="" id="liavgpla">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;"  name="" id="liavgpla">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisubpla">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidiffpla">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweipla">
@@ -208,7 +208,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Pool(Price: <span id="licpoolPrice"></span>)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" readonly  name="" id="liavgpool">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;"  name="" id="liavgpool">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisubpool">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidiffpool">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweipool">
@@ -217,7 +217,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">LandScape(Price: <span id="liclandscapePrice"></span>)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" readonly  name="" id="liavglandscape">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;"  name="" id="liavglandscape">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisublandscape">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidifflandscape">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweilandscape">
@@ -226,7 +226,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">WhiteGoods(Price: <span id="licwhitegoodsPrice"></span>)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" readonly  name="" id="liavggood">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;"  name="" id="liavggood">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisubgood">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidiffgood">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweigood">
@@ -235,7 +235,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Utilities-Connected(Price: <span id="licutiliesPrice"></span>)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important"  readonly name="" id="liavguti">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;" name="" id="liavguti">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lisubuti">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="lidiffuti">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="liweiuti">

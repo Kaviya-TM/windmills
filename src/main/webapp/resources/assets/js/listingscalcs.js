@@ -53,11 +53,171 @@ var liadjdate = null;
 var liadjland = null;
 var liadjdev = null;
 var lifinalValue = null;
+$("#liavgten").keyup(function(){
+	var lidifften = parseFloat($('#lisubten').val()) - parseFloat($(this).val());
+    $('#lidifften').val(lidifften.toFixed(2));
+	liadjten =  parseFloat(($('#lidifften').val()).replace(/,/g , ''))  * parseFloat(($("#cliweiten").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+	$('#liadjten').val(toComma(liadjten));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavgsta").keyup(function(){
+	var lidiffsta = parseFloat($('#lisubsta').val()) - parseFloat($(this).val());
+    $('#lidiffsta').val(lidiffsta.toFixed(2));
+	liadjsta =  parseFloat(($('#lidiffsta').val()).replace(/,/g , ''))  * parseFloat(($("#cliweista").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+	$('#liadjsta').val(toComma(liadjsta));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavgfur").keyup(function(){
+	var lidifffur = parseFloat($('#lisubfur').val()) - parseFloat($(this).val());
+    $('#lidifffur').val(lidifffur.toFixed(2));
+	liadjfur =  parseFloat(($('#lidifffur').val()).replace(/,/g , ''))  * parseFloat(($("#cliweifur").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+	$('#liadjfur').val(toComma(liadjfur));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavgexp").keyup(function(){
+	var lidiffexp = parseFloat($('#lisubexp').val()) - parseFloat($(this).val());
+    $('#lidiffexp').val(lidiffexp.toFixed(2));
+	liadjexp=  parseFloat(($('#lidiffexp').val()).replace(/,/g , ''))  * parseFloat(($("#cliweiexp").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+	$('#liadjexp').val(toComma(liadjexp));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavgpla").keyup(function(){
+	var lidiffpla = parseFloat($('#lisubpla').val()) - parseFloat($(this).val());
+    $('#lidiffpla').val(lidiffpla.toFixed(2));
+	liadjpla=  parseFloat(($('#lidiffpla').val()).replace(/,/g , ''))  * parseFloat(($("#cliweipla").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+	$('#liadjpla').val(toComma(liadjpla));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
 $("#liavgbal").keyup(function(){
 	var lidiffbal = parseInt($('#lisubbal').val()) - parseInt($(this).val());
     $('#lidiffbal').val(lidiffbal);
 	liadjbal =  parseInt(($('#lidiffbal').val()).replace(/,/g , ''))  * parseFloat(($("#cliweibal").val()).replace(/%/g , '')) * parseInt(lipricePerAvg) / 100;
 	$('#liadjbal').val(toComma(liadjbal));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavgpark").keyup(function(){
+	var lidiffpark = parseInt($('#lisubpark').val()) - parseInt($(this).val());
+    $('#lidiffpark').val(lidiffpark);
+	liadjpark =  parseInt(($('#lidiffpark').val()).replace(/,/g , ''))  * parseFloat(($("#cliweipark").val()).replace(/%/g , '')) * parseInt($('#parkingPrice').val()) / 100;
+	$('#liadjpark').val(toComma(liadjpark));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavgpool").keyup(function(){
+	var lidiffpool = parseInt($('#lisubpool').val()) - parseInt($(this).val());
+    $('#lidiffpool').val(lidiffpool);
+	liadjpool =  parseInt(($('#lidiffpool').val()).replace(/,/g , ''))   * parseFloat(($("#cliweipool").val()).replace(/%/g , '')) * parseInt($('#poolPrice').val()) / 100;
+	$('#liadjpool').val(toComma(liadjpool));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavglandscape").keyup(function(){
+	var lidifflandscape = parseInt($('#lisublandscape').val()) - parseInt($(this).val());
+    $('#lidifflandscape').val(lidifflandscape);
+	liadjlandscape =  parseInt(($('#lidifflandscape').val()).replace(/,/g , ''))   * parseFloat(($("#cliweilandscape").val()).replace(/%/g , '')) * parseInt($('#landscapePrice').val()) / 100;
+	$('#liadjlandscape').val(toComma(liadjlandscape));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavggood").keyup(function(){
+	var lidiffgood= parseInt($('#lisubgood').val()) - parseInt($(this).val());
+    $('#lidiffgood').val(lidiffgood);
+	liadjgood =  parseInt(($('#lidiffgood').val()).replace(/,/g , ''))   * parseFloat(($("#cliweigood").val()).replace(/%/g , ''))  * parseInt($('#whitegoodsPrice').val()) / 100;
+	$('#liadjgood').val(toComma(liadjgood));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#liavguti").keyup(function(){
+	var lidiffuti = parseInt($('#lisubuti').val()) - parseInt($(this).val());
+    $('#lidiffuti').val(lidiffuti);
+	liadjuti =  parseInt(($('#lidiffuti').val()).replace(/,/g , ''))   * parseFloat(($("#cliweiuti").val()).replace(/%/g , ''))  * parseInt($('#utiliesPrice').val()) / 100;
+	$('#liadjuti').val(toComma(liadjuti));
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 

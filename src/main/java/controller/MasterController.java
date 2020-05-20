@@ -124,7 +124,17 @@ public class MasterController {
 			String pricePerAvg = masterService.getpricePerAvg(list);
 			String bedAvg = masterService.getBedAvg(list);
 			String tenureAvg = masterService.getTenureAvg(list);
+			int count = list.size();
+			int lowprice = masterService.getLowPrice(list);
+			int highprice = masterService.getHighPrice(list);
+			int lowpricepersq = masterService.getLowPricePerSq(list);
+			int highpricepersq = masterService.getHighPricePerSq(list);
 			json.put("list", list);
+			json.put("count", count);
+			json.put("lowprice", lowprice);
+			json.put("highprice", highprice);
+			json.put("lowpricepersq", lowpricepersq);
+			json.put("highpricepersq", highpricepersq);
 			json.put("dateAvg", dateAvg);
 			json.put("locAvg", locAvg);
 			json.put("ageAvg", ageAvg);

@@ -163,6 +163,11 @@ $("#masterfilter").click(function(){
 					var sizeAvg = toComma(obj.sizeAvg);
 					var priceAvg = toComma(obj.priceAvg);
 					var landAvg = toComma(obj.landAvg);
+					var count = toComma(obj.count);
+					var lowprice = toComma(obj.lowprice);
+					var highprice = toComma(obj.highprice);
+					var lowpricepersq = toComma(obj.lowpricepersq);
+					var highpricepersq = toComma(obj.highpricepersq);
 					if(landAvg === "NaN"){
 						landAvg = "-";
 					}
@@ -191,7 +196,7 @@ $("#masterfilter").click(function(){
 							    "</div>");
 					}	
 					$('.mfilter').append("" +
-							"<div class='column boxlist' style='margin-bottom:5px;background:bisque;width:99.5%;border: 1px solid bisque;display:flex'>" +
+							"<div class='column boxlist' style='display:flex;height: 3% !important;line-height: 6px;background:bisque;color:#fff !important;margin-bottom:5px;border: 1px solid bisque;width: 99.5%;border-radius:5px;'>" +
 							" <div class='head stylename' style='width:7.6%;color:black'>" + obj.dateAvg + "</div>" +
 							" <div class='head stylename' style='width:8.8%;color:bisque'>" + obj.list[x].dateAvg + "</div>" +
 							" <div class='head stylename' style='width:7%;color:black'>" + obj.tenureAvg + "</div>" +
@@ -209,6 +214,14 @@ $("#masterfilter").click(function(){
 						  	"ss='head stylename' style='width:5%;color:black'>" + sizeAvg+ "</div>" +
 						  	" <div class='head stylename' style='width:8%;color:black'>" + priceAvg + "</div>" +
 						  	" <div class='head stylename' style='width:0%;color:black'>" + pricePerAvg + "</div>" +
+				    "</div>");
+					$('.mfilter').append("" +
+							"<div class='column boxlist' style='display:flex;height: 3% !important;line-height: 6px;background:lightgoldenrodyellow;color:#fff !important;margin-bottom:5px;border: 1px solid lightgoldenrodyellow;width: 99.5%;border-radius:5px;'>" +
+							" <div class='head stylename' style='width:18%;color:black'>" + "Count - "+ count + "</div>" +
+							" <div class='head stylename' style='width:18%;color:black'>" + "Lowest Price - "+ lowprice + "</div>" +
+						  	" <div class='head stylename' style='width:18%;color:black'>"+ "Highest Price - "+ highprice + "</div>" +
+						  	" <div class='head stylename' style='width:18%;color:black'>" + "Lowest Price/Sqf - "+ lowpricepersq + "</div>" +
+						  	" <div class='head stylename' style='width:18%;color:black'>" + "Highest Price/Sqf - "+ highpricepersq + "</div>" +
 				    "</div>");
 				}
 			}

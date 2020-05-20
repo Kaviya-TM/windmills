@@ -814,6 +814,94 @@ public class ListingsService {
 		avg = String.valueOf(dd.format(finalValue));
 		return avg;
 	}
+	public int getLowPrice(List<Listings> filterTransaction) {
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String aed = st.getPrice();
+				String finall = aed.replaceAll(",", "");
+				int finaed = Integer.parseInt(finall);
+				avglist.add(finaed);
+			}	
+		}
+		int largest = Integer.MIN_VALUE; 
+		int smallest = Integer.MAX_VALUE;
+		for (int number : avglist) { 
+			if (number > largest) {
+				largest = number;
+				} 
+			else if (number < smallest) { 
+				smallest = number; } 
+		}
+
+		return smallest;
+	}
+	public int getHighPrice(List<Listings> filterTransaction) {
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String aed = st.getPrice();
+				String finall = aed.replaceAll(",", "");
+				int finaed = Integer.parseInt(finall);
+				avglist.add(finaed);
+			}	
+		}
+		int largest = Integer.MIN_VALUE; 
+		int smallest = Integer.MAX_VALUE;
+		for (int number : avglist) { 
+			if (number > largest) {
+				largest = number;
+				} 
+			else if (number < smallest) { 
+				smallest = number; } 
+		}
+
+		return largest;
+	}
+	public int getLowPricePerSq(List<Listings> filterTransaction) {
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String aed = st.getPriceSqt();
+				String finall = aed.replaceAll(",", "");
+				int finaed = Integer.parseInt(finall);
+				avglist.add(finaed);
+			}	
+		}
+		int largest = Integer.MIN_VALUE; 
+		int smallest = Integer.MAX_VALUE;
+		for (int number : avglist) { 
+			if (number > largest) {
+				largest = number;
+				} 
+			else if (number < smallest) { 
+				smallest = number; } 
+		}
+
+		return smallest;
+	}
+	public int getHighPricePerSq(List<Listings> filterTransaction) {
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				String aed = st.getPriceSqt();
+				String finall = aed.replaceAll(",", "");
+				int finaed = Integer.parseInt(finall);
+				avglist.add(finaed);
+			}	
+		}
+		int largest = Integer.MIN_VALUE; 
+		int smallest = Integer.MAX_VALUE;
+		for (int number : avglist) { 
+			if (number > largest) {
+				largest = number;
+				} 
+			else if (number < smallest) { 
+				smallest = number; } 
+		}
+
+		return largest;
+	}
 	
 	
 	

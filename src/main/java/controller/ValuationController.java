@@ -141,7 +141,17 @@ public class ValuationController {
 			String sizeAvg = soldTransactionService.getSizeAvg(list);
 			String pricePerAvg = soldTransactionService.getpricePerAvg(list);
 			String bedAvg = soldTransactionService.getBedAvg(list);
+			int count = list.size();
+			int lowprice = soldTransactionService.getLowPrice(list);
+			int highprice = soldTransactionService.getHighPrice(list);
+			int lowpricepersq = soldTransactionService.getLowPricePerSq(list);
+			int highpricepersq = soldTransactionService.getHighPricePerSq(list);
 			json.put("list", list);
+			json.put("count", count);
+			json.put("lowprice", lowprice);
+			json.put("highprice", highprice);
+			json.put("lowpricepersq", lowpricepersq);
+			json.put("highpricepersq", highpricepersq);
 			json.put("dateAvg", dateAvg);
 			json.put("landAvg", landAvg);
 			json.put("priceAvg", priceAvg);

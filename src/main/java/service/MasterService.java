@@ -50,6 +50,7 @@ import dao.ServiceOfficerDaoImpl;
 import dao.WeightageDaoImpl;
 import model.ClientDetails;
 import model.Community;
+import model.Listings;
 import model.MasterValuation;
 import model.MasterValuation;
 import model.Property;
@@ -950,6 +951,103 @@ public class MasterService {
 			break;
 		}
 		return city;
+	}
+
+	public int getLowPrice(List<MasterValuation> filterTransaction) {
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(MasterValuation st : filterTransaction){
+				String aed = st.getMv();
+				String pricesq = aed.replaceAll(",", "");
+				String ffinal = pricesq.replaceAll("\\s+","");
+				int finaed = Integer.parseInt(ffinal);
+				avglist.add(finaed);
+			}	
+		}
+		int largest = Integer.MIN_VALUE; 
+		int smallest = Integer.MAX_VALUE;
+		for (int number : avglist) { 
+			if (number > largest) {
+				largest = number;
+				} 
+			else if (number < smallest) { 
+				smallest = number; } 
+		}
+
+		return smallest;
+	}
+
+	public int getHighPrice(List<MasterValuation> filterTransaction) {
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(MasterValuation st : filterTransaction){
+				String aed = st.getMv();
+				String pricesq = aed.replaceAll(",", "");
+				String ffinal = pricesq.replaceAll("\\s+","");
+				int finaed = Integer.parseInt(ffinal);
+				avglist.add(finaed);
+			}	
+		}
+		int largest = Integer.MIN_VALUE; 
+		int smallest = Integer.MAX_VALUE;
+		for (int number : avglist) { 
+			if (number > largest) {
+				largest = number;
+				} 
+			else if (number < smallest) { 
+				smallest = number; } 
+		}
+
+		return largest;
+	}
+
+	public int getLowPricePerSq(List<MasterValuation> filterTransaction) {
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(MasterValuation st : filterTransaction){
+				String aed = st.getMvpersqf();
+				String pricesq = aed.replaceAll(",", "");
+				String ffinal = pricesq.replaceAll("\\s+","");
+				int finaed = Integer.parseInt(ffinal);
+				avglist.add(finaed);
+			}	
+		}
+		int largest = Integer.MIN_VALUE; 
+		int smallest = Integer.MAX_VALUE;
+		for (int number : avglist) { 
+			if (number > largest) {
+				largest = number;
+				} 
+			else if (number < smallest) { 
+				smallest = number; } 
+		}
+
+		return smallest;
+	}
+
+	public int getHighPricePerSq(List<MasterValuation> filterTransaction) {
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(MasterValuation st : filterTransaction){
+				String aed = st.getMvpersqf();
+				String pricesq = aed.replaceAll(",", "");
+				String ffinal = pricesq.replaceAll("\\s+","");
+				int finaed = Integer.parseInt(ffinal);
+				avglist.add(finaed);
+			}	
+		}
+		int largest = Integer.MIN_VALUE; 
+		int smallest = Integer.MAX_VALUE;
+		for (int number : avglist) { 
+			if (number > largest) {
+				largest = number;
+				} 
+			else if (number < smallest) { 
+				smallest = number; } 
+		}
+
+		return largest;
+
 	}
 	
 }

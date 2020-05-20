@@ -110,7 +110,13 @@ public class ListingTransactionController {
 			String sizeAvg = listingsService.getSizeAvg(list);
 			String pricePerAvg = listingsService.getpricePerAvg(list);
 			String bedAvg = listingsService.getBedAvg(list);
+			int count = list.size();
+			int lowprice = listingsService.getLowPrice(list);
+			int highprice = listingsService.getHighPrice(list);
+			int lowpricepersq = listingsService.getLowPricePerSq(list);
+			int highpricepersq = listingsService.getHighPricePerSq(list);
 			json.put("list", list);
+			json.put("count", count);
 			json.put("dateAvg", dateAvg);
 			json.put("locAvg", locAvg);
 			json.put("ageAvg", ageAvg);
@@ -124,6 +130,10 @@ public class ListingTransactionController {
 			json.put("sizeAvg", sizeAvg);
 			json.put("bedAvg", bedAvg);
 			json.put("pricePerAvg", pricePerAvg);
+			json.put("lowprice", lowprice);
+			json.put("highprice", highprice);
+			json.put("lowpricepersq", lowpricepersq);
+			json.put("highpricepersq", highpricepersq);
 			json.put("empty","full");
 			
 		}

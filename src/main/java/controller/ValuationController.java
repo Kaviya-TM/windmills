@@ -561,7 +561,7 @@ public class ValuationController {
 		mv.setViewName("valuationlist");
 		return mv;
 	}
-
+	
 	@RequestMapping(value="/getValuation",method=RequestMethod.POST)
 	public ModelAndView getValuation(@RequestParam("reportId")int reportId)
 	{

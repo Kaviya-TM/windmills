@@ -42,6 +42,8 @@ public class Property  implements java.io.Serializable {
 	private String whitegoodsprice;
 	private String utilityprice;
 	private String devmargin;
+	private String interestRate;
+	private String noOfYears;
 
 
 	@Id
@@ -141,6 +143,22 @@ public class Property  implements java.io.Serializable {
 	}
 	public void setDevmargin(String devmargin) {
 		this.devmargin = devmargin;
+	}
+	@Column(name = "interestRate")
+	public String getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(String interestRate) {
+		this.interestRate = interestRate;
+	}
+	@Column(name = "noOfYears")
+	public String getNoOfYears() {
+		return noOfYears;
+	}
+
+	public void setNoOfYears(String noOfYears) {
+		this.noOfYears = noOfYears;
 	}
 
 

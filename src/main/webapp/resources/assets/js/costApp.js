@@ -10,7 +10,9 @@ var landcost;
 var concost;
 var fconcost;
 var effcostfinal;
+var sumlandcon;
 var finaldec;
+var devProfit;
 $('#costApp').click(function(){
 	$('#costland').val($('#landSize').val());
 	$('#costbua').val($('#buitUpAreaSize').val());
@@ -33,6 +35,7 @@ $('#costApp').click(function(){
 				star5 = obj.list[0].star5;
 				conMargin = obj.list[0].conMargin;
 				obsolence = obj.list[0].obsolence;
+				devProfit = obj.list[0].devProfit;
 				noOfYears = obj.proplist[0].noOfYears;
 				interestRate = obj.proplist[0].interestRate;
 				$("#costprof").val(profCharges);
@@ -83,7 +86,9 @@ $('#costApp').click(function(){
 				$('#costdec').val(toComma(costdec));
 				var netdevcost = concost +  effcostfinal - finaldec;
 				$('#netdevcost').val(toComma(netdevcost));
-				
+				$('#devProfit').val(devProfit);
+				var fdevprof = devProfit.replace(/%/g , '') * netdevcost / 100;
+				$('#fdevProfit').val(toComma(fdevprof));
 			}
 	});
 	 
@@ -95,10 +100,27 @@ $('#costlandprice').keyup(function(){
 	landcost = parseInt(a) * parseInt(b)
 	$('#costfinalland').val(toComma(landcost)); 
 	var efffinal = landcost + concost;
+	sumlandcon = efffinal;
+	var efffinal = landcost + concost;
+	var resfinal = ($("#costeffectiverate").val()).replace(/%/g , '') * efffinal / 100;
+	effcostfinal = resfinal;
+	$('#costeffectivefinal').val(toComma(resfinal));	
 	var resfinal = ($("#costeffectiverate").val()).replace(/%/g , '') * efffinal / 100;
 	$('#costeffectivefinal').val(toComma(resfinal));
 	var netdevcost = concost +  effcostfinal - finaldec;
 	$('#netdevcost').val(toComma(netdevcost));
+	$('#devProfit').val(devProfit);
+	var fdevprof = devProfit.replace(/%/g , '') * netdevcost / 100;
+	$('#fdevProfit').val(toComma(fdevprof));
+	var ress = landcost + netdevcost + fdevprof;
+	$('#estmv').val(toComma(ress));
+	var bua = $('#buitUpAreaSize').val();
+	bua = ress / bua;
+	$('#estbua').val(toComma(bua));
+	var nbua = $('#netbuitUpAreaSize').val();
+	nbua = ress / nbua;
+	$('#estnbua').val(toComma(nbua));
+	
 });
 
 

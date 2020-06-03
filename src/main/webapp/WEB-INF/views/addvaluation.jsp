@@ -2959,6 +2959,7 @@
 		    <%@include file="mastercalcs.jsp"%>
 		    <%@include file="valsummary.jsp"%>
 		    <%@include file="costapproach.jsp"%>
+		    <%@include file="incomeapproach.jsp"%>
 			<div class="form-group payment" style="margin-top: -15px;">
 				<div class="valuationholder">
 					<label class="labelholder">Invoice Number</label> <input
@@ -3086,4 +3087,5 @@
 <script src="resources/assets/js/listingfilter.js"></script>
 <script src="resources/assets/js/valsum.js"></script>
 <script src="resources/assets/js/costApp.js"></script>
+<script src="resources/assets/js/incomeApp.js"></script>
 <script src="resources/assets/js/hideshow.js"></script>

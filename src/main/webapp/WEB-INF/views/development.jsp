@@ -71,6 +71,11 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="obsolence" id="" placeholder="Obsolescence">
 				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Developer Profit</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="devProfit" id="" placeholder="Developer Profit">
+				</div>
 				<div class="form-group" style="width: 100%">
 					<button type="submit">Save</button>
 				</div>

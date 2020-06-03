@@ -121,11 +121,11 @@
 <!-- 				</div> -->
 				<div class="valuationholder" style="height:20px;margin-bottom:5px">
 					 <label class="labelholder"> Developers Profit</label>
+					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="devProfit" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="" placeholder="" autocomplete="on">
-					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="" placeholder="" autocomplete="on">
-					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="" placeholder="" autocomplete="on">
+					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="fdevProfit" placeholder="" autocomplete="on">
 				</div>
 <!-- 				<div class="valuationholder" style="height:20px;margin-bottom:5px"> -->
 <!-- 					 <label class="labelholder" style="color:seagreen;font-weight:700;">Final Market Value</label> -->
@@ -136,7 +136,7 @@
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
-					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="" placeholder="" autocomplete="on">
+					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="estmv" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder" style="height:20px;margin-bottom:5px">
 					 <label class="labelholder">Estimated Total Cost / Built up Area</label>
@@ -144,7 +144,7 @@
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
-					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="" placeholder="" autocomplete="on">
+					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="estbua" placeholder="" autocomplete="on">
 				</div>
 				<div class="valuationholder" style="height:20px;margin-bottom:5px">
 					 <label class="labelholder">Estimated Total Cost / Net Built up Area</label>
@@ -152,6 +152,6 @@
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
 					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;background:none !important"  name="" id="" placeholder="" autocomplete="on">
-					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="" placeholder="" autocomplete="on">
+					 <input type="text" class="form-control form-control-sm textholder" style=" width: 15% !important;text-align:center;margin-right:0.5%;height:22px;"  name="" id="estnbua" placeholder="" autocomplete="on">
 				</div>
 			</div>

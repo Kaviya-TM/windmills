@@ -38,6 +38,7 @@ public class Development implements java.io.Serializable {
 	private String profCharges;
 	private String conMargin;
 	private String obsolence;
+	private String devProfit;
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -96,6 +97,13 @@ public class Development implements java.io.Serializable {
 	}
 	public void setObsolence(String obsolence) {
 		this.obsolence = obsolence;
+	}
+	@Column(name = "devProfit")
+	public String getDevProfit() {
+		return devProfit;
+	}
+	public void setDevProfit(String devProfit) {
+		this.devProfit = devProfit;
 	}
 	
 }

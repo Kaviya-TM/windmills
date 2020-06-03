@@ -73,6 +73,11 @@
 						type="text" class="form-control form-control-sm propertytext"
 						name="obsolence"  value="${devform.obsolence}" id="" placeholder="Obsolescence">
 				</div>
+				<div class="propertyholder">
+					<label class="propertylabel">Developer Profit</label> <input
+						type="text" class="form-control form-control-sm propertytext"
+						name="devProfit"  value="${devform.devProfit}" id="" placeholder="Developer Profit">
+				</div>
 				<input type="hidden" id="developmentId"" name="developmentId"
 				value="${devform.developmentId}"/>
 				<div class="form-group" style="width: 100%">

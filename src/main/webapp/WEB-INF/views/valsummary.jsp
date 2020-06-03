@@ -1,15 +1,16 @@
 <div class="form-group vsummary">
-				<div class="valuationholder" style="height: 12px;top: -13px;position: relative;right: -52px;">
-					<label class="labelholder" style="width:28%;color:transparent">Original Purchase Price</label>
-					<label class="labelholder" style="width:12%;margin-right:2.5%;color:seagreen;font-weight:700;font-size: 11px !important;">Market Value</label>
-					<label class="labelholder" style="width:12%;margin-right:2.5%;color:seagreen;font-weight:700;font-size: 11px !important;position:relative;left:26px">MV / BUA</label>
-					<label class="labelholder" style="width:12%;margin-right:2.5%;color:seagreen;font-weight:700;font-size: 11px !important;position:relative;left:40px">MV / NetBUA</label>
-				</div>
+				
 				<div class="valuationholder">
 					 <label class="labelholder" style="width:28%">Original Purchase Price</label>
 					 <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center" name="" id="omv" placeholder="MV" autocomplete="on">
 					  <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center;" name="" id="osqf" placeholder="MV/sqf" autocomplete="on">
 					   <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center"  name="" id="onsqf" placeholder="MV/sqf" autocomplete="on">
+				</div>
+				<div class="valuationholder" style="height: 12px;top: -13px;position: relative;right: -52px;">
+					<label class="labelholder" style="width:28%;color:transparent">Original Purchase Price</label>
+					<label class="labelholder" style="width:12%;margin-right:2.5%;color:seagreen;font-weight:700;font-size: 11px !important;">Market Value</label>
+					<label class="labelholder" style="width:12%;margin-right:2.5%;color:seagreen;font-weight:700;font-size: 11px !important;position:relative;left:26px">MV / BUA</label>
+					<label class="labelholder" style="width:12%;margin-right:2.5%;color:seagreen;font-weight:700;font-size: 11px !important;position:relative;left:40px">MV / NetBUA</label>
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder" style="width:28%">Transaction Price</label>
@@ -34,6 +35,18 @@
 					  <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center" name="" id="lmv" placeholder="MV" autocomplete="on">
 					  <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center" name="" id="lsqf" placeholder="MV/sqf" autocomplete="on">
 					   <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center" name="" id="lnsqf" placeholder="MV/sqf" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:28%">Estimated Market Value as per Cost Approach</label>
+					 <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center" name="" id="costmv" placeholder="MV" autocomplete="on">
+					  <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center;" name="" id="costsqf" placeholder="MV/sqf" autocomplete="on">
+					   <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center"  name="" id="costnsqf" placeholder="MV/sqf" autocomplete="on">
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:28%">Estimated Market Value as per Income Approach</label>
+					 <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center" name="" id="incomemv" placeholder="MV" autocomplete="on">
+					  <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center;" name="" id="incomesqf" placeholder="MV/sqf" autocomplete="on">
+					   <input type="text" class="form-control form-control-sm textholder" style="width:14% !important;margin-right:2.5%;text-align:center"  name="" id="incomensqf" placeholder="MV/sqf" autocomplete="on">
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder" style="width:28%;color:seagreen;font-weight:700">Average</label>

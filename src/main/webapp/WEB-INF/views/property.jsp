@@ -50,41 +50,6 @@
 						name="maxage" id="" placeholder="Maximum Age">
 				</div>
 				<div class="propertyholder">
-					<label class="propertylabel" style="width:21%">Parking Price</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="parkingprice" id="" placeholder="Parking Price">
-				</div>
-				<div class="propertyholder">
-					<label class="propertylabel" style="width:21%">Pool Price</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="poolprice" id="" placeholder="Pool Price">
-				</div>
-				<div class="propertyholder">
-					<label class="propertylabel" style="width:21%">Landscape Price</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="landscapeprice" id="" placeholder="Landscape Price">
-				</div>
-				<div class="propertyholder">
-					<label class="propertylabel" style="width:21%">WhiteGoods Price</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="whitegoodsprice" id="" placeholder="WhiteGoods Price">
-				</div>
-				<div class="propertyholder">
-					<label class="propertylabel" style="width:21%">Utilities Connected Price</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="utilityprice" id="" placeholder="Utilities Connected Price">
-				</div>
-				<div class="propertyholder">
-					<label class="propertylabel" style="width:21%">Developer Margin</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="devmargin" id="" placeholder="Developer Margin">
-				</div>
-				<div class="propertyholder">
-					<label class="propertylabel" style="width:21%">Interest Rate</label> <input
-						type="text" class="form-control form-control-sm propertytext"
-						name="interestRate" id="" placeholder="Interest Rate">
-				</div>
-				<div class="propertyholder">
 					<label class="propertylabel" style="width:21%">Number of years to complete the building</label> <input
 						type="text" class="form-control form-control-sm propertytext"
 						name="noOfYears" id="" placeholder="Number of years to complete the building">

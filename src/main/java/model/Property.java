@@ -36,13 +36,6 @@ public class Property  implements java.io.Serializable {
 	private String valuationApproach;
 	private String approachReasoning;
 	private String maxage;
-	private String parkingprice;
-	private String poolprice;
-	private String landscapeprice;
-	private String whitegoodsprice;
-	private String utilityprice;
-	private String devmargin;
-	private String interestRate;
 	private String noOfYears;
 
 
@@ -96,61 +89,6 @@ public class Property  implements java.io.Serializable {
 
 	public void setMaxage(String maxage) {
 		this.maxage = maxage;
-	}
-	@Column(name = "parkingprice")
-	public String getParkingprice() {
-		return parkingprice;
-	}
-
-	public void setParkingprice(String parkingprice) {
-		this.parkingprice = parkingprice;
-	}
-	@Column(name = "poolprice")
-	public String getPoolprice() {
-		return poolprice;
-	}
-
-	public void setPoolprice(String poolprice) {
-		this.poolprice = poolprice;
-	}
-	@Column(name = "landscapeprice")
-	public String getLandscapeprice() {
-		return landscapeprice;
-	}
-
-	public void setLandscapeprice(String landscapeprice) {
-		this.landscapeprice = landscapeprice;
-	}
-	@Column(name = "whitegoodsprice")
-	public String getWhitegoodsprice() {
-		return whitegoodsprice;
-	}
-
-	public void setWhitegoodsprice(String whitegoodsprice) {
-		this.whitegoodsprice = whitegoodsprice;
-	}
-	@Column(name = "utilityprice")
-	public String getUtilityprice() {
-		return utilityprice;
-	}
-
-	public void setUtilityprice(String utilityprice) {
-		this.utilityprice = utilityprice;
-	}
-	@Column(name = "devmargin")
-	public String getDevmargin() {
-		return devmargin;
-	}
-	public void setDevmargin(String devmargin) {
-		this.devmargin = devmargin;
-	}
-	@Column(name = "interestRate")
-	public String getInterestRate() {
-		return interestRate;
-	}
-
-	public void setInterestRate(String interestRate) {
-		this.interestRate = interestRate;
 	}
 	@Column(name = "noOfYears")
 	public String getNoOfYears() {

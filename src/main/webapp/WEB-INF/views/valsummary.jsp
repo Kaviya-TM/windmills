@@ -63,12 +63,24 @@
 				<div class="valuationholder">
 					<label class="labelholder" style="width:28%">MV Of Land</label> <input
 						type="text" class="form-control form-control-sm textholder"
-						name="" id="" style=" width: 47% !important"   placeholder="MV Of Land" autocomplete="on">
+						name="" id="mvOfLand" style=" width: 47% !important"   placeholder="MV Of Land" autocomplete="on">
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder"  style="width:28%">MV Of Land/Sq</label> <input
 						type="text" class="form-control form-control-sm textholder"
-						name="" id="" style=" width: 47% !important"  placeholder="MV Of Land/Sq" autocomplete="on">
+						name="" id="mvOfLandPerSq" style=" width: 47% !important"  placeholder="MV Of Land/Sq" autocomplete="on">
+				</div>
+				<div class="valuationholder" >
+					<label class="labelholder" style="width:28%">Market Rent</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="valuationReport.marketRent" id="marketrent" style=" width: 47% !important;"
+						placeholder="Market Rent" autocomplete="off">
+				</div>
+				<div class="valuationholder" style="height: 19px;position: relative;top: -8px;">
+					<label class="labelholder" style="width:28%;color:seagreen;font-weight:700">Approvals</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="" style=" width: 47% !important;background: none!important"
+						>
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder" style="width:28%">Market Value</label> <input type="text"
@@ -86,12 +98,6 @@
 						class="form-control form-control-sm textholder"
 						name="valuationReport.marketValueRate" id="marketValueRate" style=" width: 47% !important;"
 						placeholder="Market Value Rate" autocomplete="off">
-				</div>
-				<div class="valuationholder" >
-					<label class="labelholder" style="width:28%">Market Rent</label> <input type="text"
-						class="form-control form-control-sm textholder"
-						name="valuationReport.marketRent" id="marketrent" style=" width: 47% !important;"
-						placeholder="Market Rent" autocomplete="off">
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder"  style="width:28%">Report Acceptance Date</label>

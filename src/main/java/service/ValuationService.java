@@ -35,9 +35,11 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import dao.ClientDaoImpl;
+import dao.DevelopmentDaoImpl;
 import dao.ValuationDaoImpl;
 import model.ClientDetails;
 import model.Community;
+import model.Development;
 import model.Documents;
 import model.Property;
 import model.ServiceOfficer;
@@ -50,6 +52,8 @@ import utils.WindmillsUtils;
 public class ValuationService {
 	@Autowired
 	private ValuationDaoImpl valuationDaoImpl;
+	@Autowired
+	private DevelopmentDaoImpl developmentDaoImpl;
 	@Autowired
 	private ValuationReport valuationReport;
 	
@@ -337,46 +341,46 @@ public class ValuationService {
 		return maxAge;
 	}
 	@Transactional
-	public String getParkingPrice(String propertyValued) {
-		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+	public String getParkingPrice(String emirates) {
+		List<Development> rows=developmentDaoImpl.getDevelopment(emirates);
 		String parkingPrice = null;
-		for(Property r1 : rows){
+		for(Development r1 : rows){
 			parkingPrice = r1.getParkingprice();
 		}
 		return parkingPrice;
 	}
 	@Transactional
-	public String getPoolPrice(String propertyValued) {
-		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+	public String getPoolPrice(String emirates) {
+		List<Development> rows=developmentDaoImpl.getDevelopment(emirates);
 		String poolPrice = null;
-		for(Property r1 : rows){
+		for(Development r1 : rows){
 			poolPrice = r1.getPoolprice();
 		}
 		return poolPrice;
 	}
 	@Transactional
-	public String getLandScapePrice(String propertyValued) {
-		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+	public String getLandScapePrice(String emirates) {
+		List<Development> rows=developmentDaoImpl.getDevelopment(emirates);
 		String landscapePrice = null;
-		for(Property r1 : rows){
+		for(Development r1 : rows){
 			landscapePrice = r1.getLandscapeprice();
 		}
 		return landscapePrice;
 	}
 	@Transactional
-	public String getWhiteGoodsPrice(String propertyValued) {
-		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+	public String getWhiteGoodsPrice(String emirates) {
+		List<Development> rows=developmentDaoImpl.getDevelopment(emirates);
 		String whitegoodsPrice = null;
-		for(Property r1 : rows){
+		for(Development r1 : rows){
 			whitegoodsPrice = r1.getWhitegoodsprice();
 		}
 		return whitegoodsPrice;
 	}
 	@Transactional
-	public String getUtiliesPrice(String propertyValued) {
-		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+	public String getUtiliesPrice(String emirates) {
+		List<Development> rows=developmentDaoImpl.getDevelopment(emirates);
 		String utiliesPrice = null;
-		for(Property r1 : rows){
+		for(Development r1 : rows){
 			utiliesPrice = r1.getUtilityprice();
 		}
 		return utiliesPrice;
@@ -392,10 +396,10 @@ public class ValuationService {
 		return developer;
 	}
 	@Transactional
-	public String getDevMargin(String propList) {
-		List<Property> rows=valuationDaoImpl.getValuationApproach(propList);
+	public String getDevMargin(String emirates) {
+		List<Development> rows=developmentDaoImpl.getDevelopment(emirates);
 		String devmargin = null;
-		for(Property r1 : rows){
+		for(Development r1 : rows){
 			devmargin = r1.getDevmargin();
 		}
 		return devmargin;

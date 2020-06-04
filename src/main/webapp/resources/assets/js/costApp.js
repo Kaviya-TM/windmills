@@ -1,4 +1,6 @@
 var profCharges;
+var star1;
+var star2;
 var star3;
 var star4;
 var star5;
@@ -30,6 +32,8 @@ $('#costApp').click(function(){
 			success : function(response) {
 				var obj = $.parseJSON(response);
 				profCharges = obj.list[0].profCharges;
+				star1 = obj.list[0].star1;
+				star2 = obj.list[0].star2;
 				star3 = obj.list[0].star3;
 				star4 = obj.list[0].star4;
 				star5 = obj.list[0].star5;
@@ -37,7 +41,7 @@ $('#costApp').click(function(){
 				obsolence = obj.list[0].obsolence;
 				devProfit = obj.list[0].devProfit;
 				noOfYears = obj.proplist[0].noOfYears;
-				interestRate = obj.proplist[0].interestRate;
+				interestRate = obj.list[0].interestRate;
 				$("#costprof").val(profCharges);
 				$("#costcon").val(conMargin);
 				$("#costnoofyrs").val(noOfYears);

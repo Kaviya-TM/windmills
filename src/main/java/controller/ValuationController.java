@@ -173,16 +173,16 @@ public class ValuationController {
 	@SuppressWarnings("unused")
 	@RequestMapping(value = "/getValuationApproach", method = RequestMethod.POST)
 	@ResponseBody
-	public JSONObject getValuationApproach(@RequestParam("propertyValued") String propertyValued) {
+	public JSONObject getValuationApproach(@RequestParam("propertyValued") String propertyValued,@RequestParam("city") String city) {
 		String valApproach = valuationService.getValuationApproach(propertyValued);
 		String appReasoning = valuationService.getApproachReasoning(propertyValued);
 		String maxAge = valuationService.getMaximumAge(propertyValued);
 		String propertyCategory = valuationService.getCategory(propertyValued);
-		String parkingPrice = valuationService.getParkingPrice(propertyValued);
-		String poolPrice = valuationService.getPoolPrice(propertyValued);
-		String landscapePrice = valuationService.getLandScapePrice(propertyValued);
-		String whitegoodsPrice = valuationService.getWhiteGoodsPrice(propertyValued);
-		String utiliesPrice = valuationService.getUtiliesPrice(propertyValued);
+		String parkingPrice = valuationService.getParkingPrice(city);
+		String poolPrice = valuationService.getPoolPrice(city);
+		String landscapePrice = valuationService.getLandScapePrice(city);
+		String whitegoodsPrice = valuationService.getWhiteGoodsPrice(city);
+		String utiliesPrice = valuationService.getUtiliesPrice(city);
 		JSONObject json = new JSONObject();
 		json.put("valApproach", valApproach);
 		json.put("appReasoning", appReasoning);
@@ -227,7 +227,7 @@ public class ValuationController {
 		String utilitiesWeight = weightageService.getUtilitiesWeight(weightage);
 		String tenWeight = weightageService.getTenureWeight(weightage);
 		String ageWeight = weightageService.getAgeWeight(weightage);
-		String devmargin = valuationService.getDevMargin(propList);
+		String devmargin = valuationService.getDevMargin(city);
 		String upgradeWeight = weightageService.getUpgradeWeight(weightage);
 		String lessThan1Month = weightageService.getLessThan1Month(weightage);
 		String lessThan2Month = weightageService.getLessThan2Month(weightage);
@@ -322,7 +322,7 @@ public class ValuationController {
 		String utilitiesWeight = weightageService.getUtilitiesWeight(weightage);
 		String tenWeight = weightageService.getTenureWeight(weightage);
 		String ageWeight = weightageService.getAgeWeight(weightage);
-		String devmargin = valuationService.getDevMargin(propList);
+		String devmargin = valuationService.getDevMargin(city);
 		String upgradeWeight = weightageService.getUpgradeWeight(weightage);
 		String lessThan1Month = weightageService.getLessThan1Month(weightage);
 		String lessThan2Month = weightageService.getLessThan2Month(weightage);
@@ -453,7 +453,7 @@ public class ValuationController {
 		String utilitiesWeight = weightageService.getUtilitiesWeight(weightage);
 		String tenWeight = weightageService.getTenureWeight(weightage);
 		String ageWeight = weightageService.getAgeWeight(weightage);
-		String devmargin = valuationService.getDevMargin(propList);
+		String devmargin = valuationService.getDevMargin(city);
 		String upgradeWeight = weightageService.getUpgradeWeight(weightage);
 		String lessThan1Month = weightageService.getLessThan1Month(weightage);
 		String lessThan2Month = weightageService.getLessThan2Month(weightage);

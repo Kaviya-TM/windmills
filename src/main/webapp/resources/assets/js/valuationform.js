@@ -954,10 +954,11 @@ var longitude = geoplugin_longitude()
 $('#locationCoord').val(latitude+","+longitude);
 console.log(latitude+","+longitude);
 var propertyValued = $('#propertyvalued').val();
+var city = $('#city').val();
 $.ajax({
 	url : 'getValuationApproach',
 	dataType: "text",
-	data : {propertyValued : propertyValued},
+	data : {propertyValued : propertyValued,city:city},
 	method : 'POST',
 	success : function(response) {	
 		var obj = $.parseJSON(response);

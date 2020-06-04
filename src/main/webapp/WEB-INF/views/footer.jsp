@@ -1,7 +1,6 @@
 
 <footer class="main-footer" style="">
 	<div class="footer-left">
-		<!--           			Copyright &copy; 2019   -->
 		App Version 1.0.0
 		<div class="bullet"></div>
 		Build 1

@@ -1676,7 +1676,7 @@
 					<label class="rholder">Number Of Floors</label> 
 					<select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.floorNo" id="floorno">
+						name="" id="vnooffloor">
 						<option value="" hidden>--- Select Floor Number---</option>
 						<option value="Ground Floor">Ground Floor</option>
 						<option value="Ground + 1 Floor">Ground + 1 Floor</option>
@@ -2857,61 +2857,7 @@
 					<div class="savebtn" id="inspect2nxt">Next</div>
 				</div>
 			</div>
-			<div class="form-group documents">
-				<div class="valuationholder">
-					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 15%; border: none; background: none"
-						id="tdl" name="documents[0].description" value="Title Deed">
-					<label for="titledeed" class="custom-file-upload"> <i
-						class="fa fa-cloud-upload"></i>Upload
-					</label> <input id="titledeed" name='files[0]' type="file"
-						style="display: none;">
-
-				</div>
-				<div class="valuationholder" style="margin-top: 10px">
-					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 15%; border: none; background: none"
-						id="fpl" name="documents[1].description" value="Floor Plan">
-					<label for="floorplan" class="custom-file-upload"> <i
-						class="fa fa-cloud-upload"></i>Upload
-					</label> <input id="floorplan" name='files[1]' type="file"
-						style="display: none;">
-				</div>
-				<div class="valuationholder" style="margin-top: 10px">
-					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 15%; border: none; background: none"
-						id="apl" name="documents[2].description" value="Affection Plan">
-					<label for="affectionplan" class="custom-file-upload"> <i
-						class="fa fa-cloud-upload"></i>Upload
-					</label> <input id="affectionplan" name='files[2]' type="file"
-						style="display: none;">
-				</div>
-				<div class="valuationholder" style="margin-top: 10px">
-					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 15%; border: none; background: none"
-						id="lll" name="documents[3].description"
-						value="Land Lease Agreement"> <label for="landleaseag"
-						class="custom-file-upload"> <i class="fa fa-cloud-upload"></i>Upload
-					</label> <input id="landleaseag" name='files[3]' type="file"
-						style="display: none;">
-				</div>
-				<div class="valuationholder" style="margin-top: 10px">
-					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 15%; border: none; background: none"
-						id="sl" name="documents[4].description" value="SPA"> <label
-						for="spa" class="custom-file-upload"> <i
-						class="fa fa-cloud-upload"></i>Upload
-					</label> <input id="spa" name='files[4]' type="file" style="display: none;">
-				</div>
-				<div class="valuationholder adjustTop" style="margin-top: 20px">
-					<div class="savebtn" id="docprv">Previous</div>
-					<div class="savebtn" id="docnxt">Next</div>
-				</div>
-				<div class="valuationholder" style="margin-top: 20px">
-					<div style="color: red">(Note: If neccessary documents are
-						not received , please ask the client formally by email)</div>
-				</div>
-			</div>
+			
 			<div class="form-group spl-assumption">
 				<div class="valuationholder">
 					<label class="labelholder" style="width: 120px !important">Special
@@ -2960,6 +2906,7 @@
 		    <%@include file="valsummary.jsp"%>
 		    <%@include file="costapproach.jsp"%>
 		    <%@include file="incomeapproach.jsp"%>
+		    <%@include file="documents.jsp"%>
 			<div class="form-group payment" style="margin-top: -15px;">
 				<div class="valuationholder">
 					<label class="labelholder">Invoice Number</label> <input
@@ -3087,5 +3034,6 @@
 <script src="resources/assets/js/listingfilter.js"></script>
 <script src="resources/assets/js/valsum.js"></script>
 <script src="resources/assets/js/costApp.js"></script>
+<script src="resources/assets/js/documents.js"></script>
 <script src="resources/assets/js/incomeApp.js"></script>
 <script src="resources/assets/js/hideshow.js"></script>

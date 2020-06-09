@@ -872,6 +872,7 @@ $("#average").click(function(){
 				var quality = $('#quality').val();
 				var view = $('#view').val();
 				var floorNo =  $('#floorno').val();
+				var vnooffloor =  $('#vnooffloor').val();
 				var fullBulFloors =  $('#fullBulFloors').val();
 				var maxAge = $('#maxAge').val();
 				var finalAge = (parseFloat(ageWeight.replace(/%/g , '') / maxAge * 100)) + "" +"%";
@@ -1000,13 +1001,28 @@ $("#average").click(function(){
 				 $('#adjpla').val(toComma(adjpla));
 				
 				//floor//
+				var propertyvalued = $('#propertyvalued').val();
 				var suffix = fullBulFloors.match(/\d+/);
 				if(suffix){
 					suffix = parseFloat(parseFloat(suffix[0]) / 2);
 					suffix = suffix.toString();
 					$('#avgfloor').val(suffix);
 				}
-				$('#subfloor').val(floorNo);
+				if(propertyvalued === "Residential Villa"){
+					var suffix = vnooffloor.match(/\d+/);
+					if(suffix){
+						suffix = parseFloat(parseFloat(suffix[0]));
+						suffix = suffix + 1;
+						suffix = suffix.toString();
+						$('#subfloor').val(suffix);
+					}
+					else{
+						$('#subfloor').val(0);
+					}
+				}
+				else{
+					$('#subfloor').val(floorNo);
+				}
 				var difffloor = parseFloat($('#subfloor').val() - $('#avgfloor').val());
 				$('#difffloor').val(difffloor);
 				 adjfloor = parseFloat(($('#difffloor').val()).replace(/,/g , ''))  * parseFloat(floorWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;

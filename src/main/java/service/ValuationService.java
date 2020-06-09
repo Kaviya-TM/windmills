@@ -418,4 +418,94 @@ public class ValuationService {
 		}
 		return category;
 	}
+	@Transactional
+	public String getDoc1(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document1 = null;
+		for(Property r1 : rows){
+			document1 = r1.getDocument1();
+		}
+		return document1;
+	}
+	@Transactional
+	public String getDoc2(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document2 = null;
+		for(Property r1 : rows){
+			document2 = r1.getDocument2();
+		}
+		return document2;
+	}
+	@Transactional
+	public String getDoc3(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document3 = null;
+		for(Property r1 : rows){
+			document3 = r1.getDocument3();
+		}
+		return document3;
+	}
+	@Transactional
+	public String getDoc4(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document4 = null;
+		for(Property r1 : rows){
+			document4 = r1.getDocument4();
+		}
+		return document4;
+	}
+	@Transactional
+	public String getDoc5(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document5 = null;
+		for(Property r1 : rows){
+			document5 = r1.getDocument5();
+		}
+		return document5;
+	}
+	@Transactional
+	public String getDoc6(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document6 = null;
+		for(Property r1 : rows){
+			document6 = r1.getDocument6();
+		}
+		return document6;
+	}
+	@Transactional
+	public String getDoc7(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document7 = null;
+		for(Property r1 : rows){
+			document7 = r1.getDocument7();
+		}
+		return document7;
+	}
+	@Transactional
+	public String getDoc8(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document8 = null;
+		for(Property r1 : rows){
+			document8 = r1.getDocument8();
+		}
+		return document8;
+	}
+	@Transactional
+	public String getDoc9(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document9 = null;
+		for(Property r1 : rows){
+			document9 = r1.getDocument9();
+		}
+		return document9;
+	}
+	@Transactional
+	public String getDoc10(String propertyValued) {
+		List<Property> rows=valuationDaoImpl.getValuationApproach(propertyValued);
+		String document10 = null;
+		for(Property r1 : rows){
+			document10 = r1.getDocument10();
+		}
+		return document10;
+	}
 }

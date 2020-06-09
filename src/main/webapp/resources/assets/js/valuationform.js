@@ -64,9 +64,9 @@ $("#s-buildingName").change(function() {
 			},
 	});
 });
-$("#titledeed").change(function() {	
+$("#document1").change(function() {	
 	  var i = $(this).prev('label').clone();	
-	  var file = $("#titledeed")[0].files[0].name;	
+	  var file = $("#document1")[0].files[0].name;	
 	  var filename = file.split(".");
 	  $(this).prev('label').text(file);	
 });
@@ -435,8 +435,8 @@ $('#valuationform').submit(function(e) {
 			 $(this).attr("disabled","true");
 		 }
 	 });
-	if($('#titledeed').val() === ''){
-		$('#tdl').attr("disabled","true");
+	if($('#document1').val() === ''){
+		$('#doc1').attr("disabled","true");
 	}
 	if($('#floorplan').val() === ''){
 		$('#fpl').attr("disabled","true");
@@ -955,6 +955,17 @@ $('#locationCoord').val(latitude+","+longitude);
 console.log(latitude+","+longitude);
 var propertyValued = $('#propertyvalued').val();
 var city = $('#city').val();
+var document1;
+var document2;
+var document3;
+var document4;
+var document5;
+var document6;
+var document7;
+var document8;
+var document9;
+var document10;
+
 $.ajax({
 	url : 'getValuationApproach',
 	dataType: "text",
@@ -971,6 +982,16 @@ $.ajax({
 		var landscapePrice = obj.landscapePrice;
 		var whitegoodsPrice = obj.whitegoodsPrice;
 		var utiliesPrice = obj.utiliesPrice;
+		document1 = obj.document1;
+		document2 = obj.document2;
+		document3 = obj.document3;
+		document4 = obj.document4;
+		document5 = obj.document5;
+		document6 = obj.document6;
+		document7 = obj.document7;
+		document8 = obj.document8;
+		document9 = obj.document9;
+		document10 = obj.document10;
 		 $('#valApproach').val(valApproach);
 		 $("#valApproach option[value='+valApproach+']").attr("selected",true);
 		$('#apprreason').val(apprreason);
@@ -988,10 +1009,11 @@ $.ajax({
 });	
 $("#propertyvalued").change(function() {
 	var propertyValued = $('#propertyvalued').val();
+	var city = $('#city').val();
 	$.ajax({
 		url : 'getValuationApproach',
 		dataType: "text",
-		data : {propertyValued : propertyValued},
+		data : {propertyValued : propertyValued,city:city},
 		method : 'POST',
 		success : function(response) {	
 			var obj = $.parseJSON(response);
@@ -1004,6 +1026,16 @@ $("#propertyvalued").change(function() {
 			var landscapePrice = obj.landscapePrice;
 			var whitegoodsPrice = obj.whitegoodsPrice;
 			var utiliesPrice = obj.utiliesPrice;
+			document1 = obj.document1;
+			document2 = obj.document2;
+			document3 = obj.document3;
+			document4 = obj.document4;
+			document5 = obj.document5;
+			document6 = obj.document6;
+			document7 = obj.document7;
+			document8 = obj.document8;
+			document9 = obj.document9;
+			document10 = obj.document10;
 			 $('#valApproach').val(valApproach);
 			 $("#valApproach option[value='+valApproach+']").attr("selected",true);
 			 $('#propertyCategory').val(propertyCategory);

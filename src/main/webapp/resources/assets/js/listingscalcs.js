@@ -925,6 +925,7 @@ $("#laverage").click(function(){
 				var quality = $('#quality').val();
 				var view = $('#view').val();
 				var floorNo =  $('#floorno').val();
+				var vnooffloor =  $('#vnooffloor').val();
 				var fullBulFloors =  $('#fullBulFloors').val();
 				var maxAge = $('#maxAge').val();
 				var finalAge = (parseFloat(liageWeight.replace(/%/g , '') / maxAge * 100)) + "" +"%";
@@ -1064,8 +1065,23 @@ $("#laverage").click(function(){
 				 $('#liadjpla').val(toComma(liadjpla));
 				
 				//floor//
+				 var propertyvalued = $('#propertyvalued').val();
 				 $('#liavgfloor').val(lifloorAvg);
-				$('#lisubfloor').val(floorNo);
+				 if(propertyvalued === "Residential Villa"){
+						var suffix = vnooffloor.match(/\d+/);
+						if(suffix){
+							suffix = parseFloat(parseFloat(suffix[0]));
+							suffix = suffix + 1;
+							suffix = suffix.toString();
+							$('#lisubfloor').val(suffix);
+						}
+						else{
+							$('#lisubfloor').val(0);
+						}
+					}
+				else{
+					$('#lisubfloor').val(floorNo);
+				}
 				var lidifffloor = parseFloat($('#lisubfloor').val() - $('#liavgfloor').val());
 				$('#lidifffloor').val(lidifffloor.toFixed(2));
 				 liadjfloor = parseFloat(($('#lidifffloor').val()).replace(/,/g , ''))  * parseFloat(lifloorWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;

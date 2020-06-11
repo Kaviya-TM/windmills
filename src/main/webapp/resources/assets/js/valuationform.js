@@ -64,12 +64,7 @@ $("#s-buildingName").change(function() {
 			},
 	});
 });
-$("#document1").change(function() {	
-	  var i = $(this).prev('label').clone();	
-	  var file = $("#document1")[0].files[0].name;	
-	  var filename = file.split(".");
-	  $(this).prev('label').text(file);	
-});
+
 $("#floorplan").change(function() {	
 	  var i = $(this).prev('label').clone();	
 	  var file = $("#floorplan")[0].files[0].name;	

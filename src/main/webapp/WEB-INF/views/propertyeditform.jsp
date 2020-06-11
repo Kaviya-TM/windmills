@@ -114,6 +114,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 				<div class="propertyholder">
@@ -154,6 +155,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 				<div class="propertyholder">
@@ -194,6 +196,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 				<div class="propertyholder">
@@ -234,6 +237,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 				<div class="propertyholder">
@@ -274,6 +278,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 				<div class="propertyholder">
@@ -314,6 +319,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 					<div class="propertyholder">
@@ -354,6 +360,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 				<div class="propertyholder">
@@ -394,6 +401,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 				<div class="propertyholder">
@@ -434,6 +442,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 				<div class="propertyholder">
@@ -474,6 +483,7 @@ esheet"
 							<option value="Average Daily Rate Projections Statement">Average Daily Rate Projections Statement</option>
 							<option value="Average Occupancy Rate Performance Statement">Average Occupancy Rate Performance Statement</option>
 							<option value="Average Occupancy Rate Projections Statement">Average Occupancy Rate Projections Statement</option>
+							<option value="None">None</option>
 					</select>
 				</div>
 			</div>

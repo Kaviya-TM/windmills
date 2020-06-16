@@ -2592,5 +2592,6 @@
 <script src="resources/assets/js/valsum.js"></script>
 <script src="resources/assets/js/costApp.js"></script>
 <script src="resources/assets/js/documents.js"></script>
+<script src="resources/assets/js/inspecting.js"></script>
 <script src="resources/assets/js/incomeApp.js"></script>
 <script src="resources/assets/js/hideshow.js"></script>

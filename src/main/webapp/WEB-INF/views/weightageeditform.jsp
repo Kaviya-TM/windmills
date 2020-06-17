@@ -211,6 +211,12 @@
 						name="tenure" id="" value="${weightageeditform.tenure}"
 						placeholder="ex:5%" autocomplete="on">
 				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel" >Number Of Levels</label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="level"  id=""  value="${weightageeditform.level}"
+						placeholder="ex:5%" autocomplete="on">
+				</div>
 				<input type="hidden" id="weightId"" name="weightId"
 				value="${weightageeditform.weightId}"/>
 				<div class="form-group" style="width: 100%">

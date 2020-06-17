@@ -91,7 +91,7 @@
 		</div>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Location(Worst-1,Best-5)</div>
-			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" name="" readonly value ="3" id="avgloc">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important;border: 1px solid seagreen;" name=""  value ="3" id="avgloc">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="subloc">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="diffloc">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="weiloc">
@@ -109,7 +109,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Tenure(G-1,FH-5)</div>
-			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important;border: 1px solid seagreen;"  "name=""  value ="3" id="avgten">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important;border: 1px solid seagreen;"  name=""  value ="3" id="avgten">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="subten">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="difften">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="weiten">
@@ -118,7 +118,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">View(Worst-1,Best-5)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" name="" readonly value ="3"  id="avgview">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;" name=""  value ="3"  id="avgview">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="subview">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="diffview">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""  id="weiview">
@@ -136,7 +136,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Condition/Quality(Worst-1,Best-5)</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" name="" readonly value ="3" id="avgqua">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;"  name="" value ="3" id="avgqua">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="subqua">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="diffqua">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""  id="weiqua">
@@ -145,7 +145,7 @@
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Upgrades</div>
-			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" value ="3" readonly name="" id="avgupg">
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;" value ="3"  name="" id="avgupg">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="subupg">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="diffupg">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="weiupg">
@@ -187,6 +187,15 @@
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="weifloor">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important;border: 1px solid seagreen;" name=""   id="cweifloor">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" name="" readonly id="adjfloor">
+		</div><br>
+		<div class="avgholder">
+			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Number of Levels</div>
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important;border: 1px solid seagreen;"  name="" value="2"  id="avglevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="sublevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="difflevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="weilevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important;border: 1px solid seagreen;" name=""   id="cweilevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" name="" readonly id="adjlevel">
 		</div><br>
 		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Beds</div>

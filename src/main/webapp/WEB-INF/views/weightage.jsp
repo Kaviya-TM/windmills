@@ -209,6 +209,12 @@
 						name="tenure"  id=""
 						placeholder="ex:5%" autocomplete="on">
 				</div>
+				<div class="weightageholder">
+					<label class="weightagelabel" >Number Of Levels</label> <input type="text"
+						class="form-control form-control-sm weightagetext"
+						name="level"  id=""
+						placeholder="ex:5%" autocomplete="on">
+				</div>
 				<br>
 				<div class="form-group" style="width: 100%">
 					<button type="submit">Save</button>

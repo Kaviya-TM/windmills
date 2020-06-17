@@ -11,7 +11,9 @@
     font-family: sans-serif;
 	line-height:30px;
 }
-
+.select2-container--default{
+	 width: 62% !important;
+}
 .listtext{
 	width:62% !important;
 	float:left;

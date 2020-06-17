@@ -764,7 +764,10 @@ function toComma(value){
 	result = result.toLocaleString();
 	return result;
 }
-
+$(".select2").select2({
+    placeholder: "Select",
+    allowClear: true
+});
 $("#bedroom").change(function() {
 	var value = $(this).val();
 	if(value.includes("1")){

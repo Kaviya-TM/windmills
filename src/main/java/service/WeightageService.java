@@ -422,5 +422,15 @@ public class WeightageService {
 		}
 		return ageWeight;
 	}
+	public String getLevelWeight(List<Weightage> weightage) {
+		String levelWeight = null;
+		if(weightage.size() == 1){
+			for(Weightage wg : weightage){
+				levelWeight = wg.getLevel();
+				break;
+			}
+		}
+		return levelWeight;
+	}
 	
 }

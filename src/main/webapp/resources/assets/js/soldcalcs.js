@@ -2,6 +2,7 @@ var locWeight = null;
 var viewWeight = null; 
 var quaWeight = null;
 var floorWeight = null;
+var levelWeight = null;
 var landWeight = null;
 var buaWeight = null;
 var dateWeight = null;
@@ -35,6 +36,86 @@ var adjdate = null;
 var adjland = null;
 var adjdev = null;
 var finalValue = null;
+$("#avgloc").keyup(function(){
+	var diffloc = parseFloat($('#subloc').val()) - parseFloat($(this).val());
+    $('#diffloc').val(diffloc);
+	adjloc =  parseFloat(($('#diffloc').val()).replace(/,/g , ''))  * parseFloat(($("#cweiloc").val()).replace(/%/g , '')) * parseInt(priceAvg) / 100;
+	$('#adjloc').val(toComma(adjloc));
+	 //Market Value//
+	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
+	 $('#soldmarketvalue').val(toComma(marketValue));
+	 finalValue = parseInt(parseInt(($('#soldmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#soldfinalvalue').val(toComma(finalValue));
+});
+$("#avgview").keyup(function(){
+	var diffview = parseFloat($('#subview').val()) - parseFloat($(this).val());
+    $('#diffview').val(diffloc);
+    adjview =  parseFloat(($('#diffview').val()).replace(/,/g , ''))  * parseFloat(($("#cweiview").val()).replace(/%/g , '')) * parseInt(priceAvg) / 100;
+	$('#adjview').val(toComma(adjview));
+	 //Market Value//
+	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
+	 $('#soldmarketvalue').val(toComma(marketValue));
+	 finalValue = parseInt(parseInt(($('#soldmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#soldfinalvalue').val(toComma(finalValue));
+});
+$("#avgqua").keyup(function(){
+	var diffqua = parseFloat($('#subqua').val()) - parseFloat($(this).val());
+    $('#diffqua').val(diffqua);
+    adjqua =  parseFloat(($('#diffqua').val()).replace(/,/g , ''))  * parseFloat(($("#cweiqua").val()).replace(/%/g , '')) * parseInt(priceAvg) / 100;
+	$('#adjqua').val(toComma(adjqua));
+	 //Market Value//
+	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjfur.toString().avgbedreplace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
+	 $('#soldmarketvalue').val(toComma(marketValue));
+	 finalValue = parseInt(parseInt(($('#soldmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#soldfinalvalue').val(toComma(finalValue));
+});
+$("#avglevel").keyup(function(){
+	var difflevel = parseFloat($('#sublevel').val()) - parseFloat($(this).val());
+    $('#difflevel').val(difflevel);
+    adjlevel =  parseFloat(($('#difflevel').val()).replace(/,/g , ''))  * parseFloat(($("#cweilevel").val()).replace(/%/g , '')) * parseInt(priceAvg) / 100;
+	$('#adjlevel').val(toComma(adjlevel));
+	 //Market Value//
+	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
+	 $('#soldmarketvalue').val(toComma(marketValue));
+	 finalValue = parseInt(parseInt(($('#soldmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#soldfinalvalue').val(toComma(finalValue));
+});
+$("#avgupg").keyup(function(){
+	var diffupg = parseFloat($('#subupg').val()) - parseFloat($(this).val());
+    $('#diffupg').val(diffupg);
+    adjupg =  parseFloat(($('#diffupg').val()).replace(/,/g , ''))  * parseFloat(($("#cweiupg").val()).replace(/%/g , '')) * parseInt(priceAvg) / 100;
+	$('#adjupg').val(toComma(adjupg));
+	 //Market Value//
+	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
+	 $('#soldmarketvalue').val(toComma(marketValue));
+	 finalValue = parseInt(parseInt(($('#soldmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#soldfinalvalue').val(toComma(finalValue));
+});
 $("#avgten").keyup(function(){
 	var difften = parseFloat($('#subten').val()) - parseFloat($(this).val());
     $('#difften').val(difften);
@@ -499,6 +580,26 @@ $("#cweifloor").keyup(function(){
 	 finalValue = parseInt(parseInt(($('#soldmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#soldfinalvalue').val(toComma(finalValue));
 });
+$("#cweilevel").keyup(function(){
+	if($("#cweilevel").val() != $("#weilevel").val()){
+		$("#cweilevel").css("color","crimson");
+	}
+	else{
+		$("#cweilevel").css("color","#6c757d");
+	}
+	adjlevel =  parseFloat(($('#difflevel').val()).replace(/,/g , ''))  * parseFloat(($("#cweilevel").val()).replace(/%/g , '')) * parseInt(priceAvg) / 100;
+	$('#adjlevel').val(toComma(adjlevel));
+	 //Market Value//
+	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(adjbua.toString().replace(/,/g , ''))+ parseInt(adjdev.toString().replace(/,/g , ''))  + parseInt(adjdate.toString().replace(/,/g , ''));
+	 $('#soldmarketvalue').val(toComma(marketValue));
+	 finalValue = parseInt(parseInt(($('#soldmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#soldfinalvalue').val(toComma(finalValue));
+});
 $("#cweibed").keyup(function(){
 	if($("#cweibed").val() != $("#weibed").val()){
 		$("#cweibed").css("color","crimson");
@@ -851,6 +952,7 @@ $("#average").click(function(){
 				viewWeight = obj.viewWeight;
 				quaWeight = obj.quaWeight;
 				floorWeight = obj.floorWeight;
+				levelWeight = obj.levelWeight;
 				landWeight = obj.landWeight;
 				buaWeight = obj.buaWeight;
 				upgradeWeight = obj.upgradeWeight;
@@ -872,7 +974,6 @@ $("#average").click(function(){
 				var quality = $('#quality').val();
 				var view = $('#view').val();
 				var floorNo =  $('#floorno').val();
-				var vnooffloor =  $('#vnooffloor').val();
 				var fullBulFloors =  $('#fullBulFloors').val();
 				var maxAge = $('#maxAge').val();
 				var finalAge = (parseFloat(ageWeight.replace(/%/g , '') / maxAge * 100)) + "" +"%";
@@ -887,6 +988,7 @@ $("#average").click(function(){
 				$('#weiview').val(viewWeight);
 				$('#weiqua').val(quaWeight);
 				$('#weifloor').val(floorWeight);
+				$('#weilevel').val(levelWeight);
 				$('#weiland').val(landWeight);
 				$('#weibua').val(buaWeight);
 				$('#weibed').val(bedWeight);
@@ -909,6 +1011,7 @@ $("#average").click(function(){
 				$('#cweiview').val(viewWeight);
 				$('#cweiqua').val(quaWeight);
 				$('#cweifloor').val(floorWeight);
+				$('#cweilevel').val(levelWeight);
 				$('#cweiland').val(landWeight);
 				$('#cweibua').val(buaWeight);
 				$('#cweibed').val(bedWeight);
@@ -1001,32 +1104,41 @@ $("#average").click(function(){
 				 $('#adjpla').val(toComma(adjpla));
 				
 				//floor//
-				var propertyvalued = $('#propertyvalued').val();
-				var suffix = fullBulFloors.match(/\d+/);
-				if(suffix){
-					suffix = parseFloat(parseFloat(suffix[0]) / 2);
-					suffix = suffix.toString();
-					$('#avgfloor').val(suffix);
-				}
-				if(propertyvalued === "Residential Villa"){
-					var suffix = vnooffloor.match(/\d+/);
-					if(suffix){
-						suffix = parseFloat(parseFloat(suffix[0]));
-						suffix = suffix + 1;
-						suffix = suffix.toString();
-						$('#subfloor').val(suffix);
-					}
-					else{
-						$('#subfloor').val(0);
-					}
+				var propvalued = $('#propertyvalued').val();
+				if(propvalued === "Residential Villa"){
+					$('#avgfloor').val(0);
+					$('#subfloor').val(0);
 				}
 				else{
+					var suffix = fullBulFloors.match(/\d+/);
+					if(suffix){
+						suffix = parseFloat(parseFloat(suffix[0]) / 2);
+						suffix = suffix.toString();
+						$('#avgfloor').val(suffix);
+					}
 					$('#subfloor').val(floorNo);
 				}
 				var difffloor = parseFloat($('#subfloor').val() - $('#avgfloor').val());
 				$('#difffloor').val(difffloor);
 				 adjfloor = parseFloat(($('#difffloor').val()).replace(/,/g , ''))  * parseFloat(floorWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
 				$('#adjfloor').val(toComma(adjfloor));
+				
+				//level//
+				var propValued = $('#propertyvalued').val();
+				if(propValued === "Residential Apartment"){
+					$('#avglevel').val(0);
+					$('#sublevel').val(0);
+				}
+				else{
+					var vnooffloor = $('#vnooffloor').val();
+					var split = vnooffloor.length;
+					$('#sublevel').val(split);
+				}
+				var difflevel = parseFloat($('#sublevel').val() - $('#avglevel').val());
+				$('#difflevel').val(difflevel);
+				 adjlevel = parseFloat(($('#difflevel').val()).replace(/,/g , ''))  * parseFloat(levelWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;
+				$('#adjlevel').val(toComma(adjlevel));
+				
 				
 				//beds//
 				 $('#avgbed').val(bedAvg);

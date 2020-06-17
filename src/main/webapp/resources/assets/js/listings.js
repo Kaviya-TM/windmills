@@ -58,7 +58,7 @@ function toComma(value){
 	return result;
 }
 $(".select2").select2({
-    placeholder: "Other Facilities",
+    placeholder: "Select",
     allowClear: true
 });
 $('#addlisitings').submit(function(e) {

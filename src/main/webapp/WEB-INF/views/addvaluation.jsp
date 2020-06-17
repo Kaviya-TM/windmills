@@ -1673,23 +1673,23 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Number Of Floors</label> 
-					<select
-						class="form-control form-control-sm textholder"
-						name="" id="vnooffloor">
+					<label class="rholder">Number Of Levels</label> 
+					<select class="form-control form-control-sm textholder select2" multiple="" name="" id="vnooffloor">
 						<option value="" hidden>--- Select Floor Number---</option>
-						<option value="Ground Floor">Ground Floor</option>
-						<option value="Ground + 1 Floor">Ground + 1 Floor</option>
-						<option value="Ground + 2 Floor">Ground + 2 Floor</option>
-						<option value="Ground + 3 Floor">Ground + 3 Floor</option>
-						<option value="Ground + 4 Floor">Ground + 4 Floor</option>
-						<option value="Ground + 5 Floor">Ground + 5 Floor</option>
-						<option value="Ground + 6 Floor">Ground + 6 Floor</option>
-						<option value="Ground + 7 Floor">Ground + 7 Floor</option>
-						<option value="Ground + 8 Floor">Ground + 8 Floor</option>
-						<option value="Ground + 9 Floor">Ground + 9 Floor</option>
-						<option value="Ground + 10 Floor">Ground + 10 Floor</option>
-					</select>
+                        <option value="Basement">Basement</option>
+                        <option value="Ground">Ground</option>
+                        <option value="1st Floor">1st Floor</option>
+                        <option value="2nd Floor">2nd Floor</option>
+                        <option value="3rd Floor">3rd Floor</option>
+                        <option value="4th Floor">4th Floor</option>
+                        <option value="5th Floor">5th Floor</option>
+                        <option value="6th Floor">6th Floor</option>
+                        <option value="7th Floor">7th Floor</option>
+                        <option value="8th Floor">8th Floor</option>
+                        <option value="9th Floor">9th Floor</option>
+                        <option value="10th Floor">10th Floor</option>
+                      </select>
+					
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Street Number</label> <input type="text"

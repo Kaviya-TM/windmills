@@ -232,6 +232,7 @@ public class ValuationController {
 		String dateWeight = weightageService.getDateWeight(weightage);
 		String quaWeight = weightageService.getQuaWeight(weightage);
 		String floorWeight = weightageService.getFloorWeight(weightage);
+		String levelWeight = weightageService.getLevelWeight(weightage);
 		String landWeight = weightageService.getLandWeight(weightage);
 		String buaWeight = weightageService.getBuaWeight(weightage);
 		String expWeight = weightageService.getExpWeight(weightage);
@@ -289,6 +290,7 @@ public class ValuationController {
 		json.put("quaWeight", quaWeight);
 		json.put("dateWeight", dateWeight);
 		json.put("floorWeight", floorWeight);
+		json.put("levelWeight", levelWeight);
 		json.put("landWeight", landWeight);
 		json.put("buaWeight", buaWeight);
 		json.put("balWeight", balWeight);

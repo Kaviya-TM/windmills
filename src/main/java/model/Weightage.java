@@ -41,6 +41,7 @@ public class Weightage  implements java.io.Serializable {
 	private String view;
 	private String quality;
 	private String floor;
+	private String level;
 	private String bua;
 	private String age;
 	private String landSize;
@@ -236,6 +237,13 @@ public class Weightage  implements java.io.Serializable {
 	}
 	public void setFloor(String floor) {
 		this.floor = floor;
+	}
+	@Column(name = "level")
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
 	}
 	@Column(name = "bua")
 	public String getBua() {

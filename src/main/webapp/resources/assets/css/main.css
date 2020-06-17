@@ -624,9 +624,9 @@ body {
 	line-height: unset !important;
 }
 
-.select2-container--default {
-	width: 62% !important;
-}
+/* .select2-container--default { */
+/* 	width: 62% !important; */
+/* } */
 
 .resName {
 	pointer-events: none;

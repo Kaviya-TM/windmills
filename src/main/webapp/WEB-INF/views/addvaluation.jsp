@@ -1689,7 +1689,6 @@
                         <option value="9th Floor">9th Floor</option>
                         <option value="10th Floor">10th Floor</option>
                       </select>
-					
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Street Number</label> <input type="text"

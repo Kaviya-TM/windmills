@@ -604,16 +604,25 @@ public class ListingsService {
 	}
 	public String getFloorAvg(List<Listings> filterTransaction) {
 		String avg = null;
+		String propValued = null;
 		ArrayList<Integer> avglist = new ArrayList<Integer>();
 		if(!filterTransaction.isEmpty()){
 			for(Listings st : filterTransaction){
-				String age = st.getFloorNo();
-				int finage = Integer.parseInt(age);
-				avglist.add(finage);
+				propValued = st.getPropertyListed();
+				if(propValued.equals("Residential Apartment")){
+					String age = st.getFloorNo();
+					int finage = Integer.parseInt(age);
+					avglist.add(finage);
+				}
 			}
 		}
-		double finalValue =  calculateAverage(avglist);
-		avg = String.valueOf(dd.format(finalValue));
+		if(propValued.equals("Residential Apartment")){
+			double finalValue =  calculateAverage(avglist);
+			avg = String.valueOf(dd.format(finalValue));
+		}
+		else{
+			avg = "0";
+		}
 		return avg;
 	}
 	public String getQualityAvg(List<Listings> filterTransaction) {
@@ -901,6 +910,32 @@ public class ListingsService {
 		}
 
 		return largest;
+	}
+	public String getLevelAvg(List<Listings> filterTransaction) {
+		String avg = null;
+		String propValued = null;
+		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		if(!filterTransaction.isEmpty()){
+			for(Listings st : filterTransaction){
+				propValued = st.getPropertyListed();
+				if(propValued.equals("Residential Villa")){
+					String level = st.getLevel();
+					String[] levell = level.split(",");
+					int count = levell.length;
+					System.err.println("level"+level.split(","));
+					avglist.add(count);
+				}
+				
+			}
+		}
+		if(propValued.equals("Residential Villa")){
+			double finalValue =  calculateAverage(avglist);
+			avg = String.valueOf(dd.format(finalValue));
+		}
+		else{
+			avg = "0" ;
+		}
+		return avg;
 	}
 	
 	

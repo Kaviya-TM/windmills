@@ -117,6 +117,7 @@ public class MasterController {
 			String expAvg = masterService.getExposureAvg(list);
 			String plaAvg = masterService.getPlacementAvg(list);
 			String floorAvg = masterService.getFloorAvg(list);
+			String levelAvg = masterService.getLevelAvg(list);
 			String qualityAvg = masterService.getQualityAvg(list);
 			String landAvg = masterService.getlandAvg(list);
 			String priceAvg = masterService.getpriceAvg(list);
@@ -143,6 +144,7 @@ public class MasterController {
 			json.put("staAvg", staAvg);
 			json.put("plaAvg", plaAvg);
 			json.put("floorAvg", floorAvg);
+			json.put("levelAvg", levelAvg);
 			json.put("qualityAvg", qualityAvg);
 			json.put("tenureAvg", tenureAvg);
 			json.put("landAvg", landAvg);

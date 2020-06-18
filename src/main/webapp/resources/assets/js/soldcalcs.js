@@ -27,6 +27,7 @@ var adjloc = null;
 var adjview = null;
 var adjqua = null;
 var adjfloor = null;
+var adjlevel = null;
 var adjbua = null;
 var adjbed = null;
 var adjexp= null;
@@ -44,7 +45,7 @@ $("#avgloc").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) + parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -60,7 +61,7 @@ $("#avgview").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -76,7 +77,7 @@ $("#avgqua").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().avgbedreplace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().avgbedreplace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -92,7 +93,7 @@ $("#avglevel").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -108,7 +109,7 @@ $("#avgupg").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -124,7 +125,7 @@ $("#avgten").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -140,7 +141,7 @@ $("#avgsta").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -156,7 +157,7 @@ $("#avgfur").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -172,7 +173,7 @@ $("#avgexp").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -188,7 +189,7 @@ $("#avgpla").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -204,7 +205,7 @@ $("#avgpool").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -220,7 +221,7 @@ $("#avglandscape").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -236,7 +237,7 @@ $("#avggood").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -252,7 +253,7 @@ $("#avguti").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -268,7 +269,7 @@ $("#avgbal").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -284,7 +285,7 @@ $("#avgdev").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -300,7 +301,7 @@ $("#avgbua").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -316,7 +317,7 @@ $("#avgpark").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -332,7 +333,7 @@ $("#avgage").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , ''))+ parseInt(adjdev.toString().replace(/,/g , ''))  + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -352,7 +353,7 @@ $("#cweiloc").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -372,7 +373,7 @@ $("#cweiage").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -392,7 +393,7 @@ $("#cweidev").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -412,7 +413,7 @@ $("#cweiten").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -432,7 +433,7 @@ $("#cweiview").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -452,7 +453,7 @@ $("#cweista").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -472,7 +473,7 @@ $("#cweiqua").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -492,7 +493,7 @@ $("#cweiupg").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , ''))+ parseInt(adjdev.toString().replace(/,/g , ''))  + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -512,7 +513,7 @@ $("#cweifur").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -532,7 +533,7 @@ $("#cweiexp").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -552,7 +553,7 @@ $("#cweipla").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -572,7 +573,7 @@ $("#cweifloor").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , ''))+ parseInt(adjdev.toString().replace(/,/g , ''))  + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -592,7 +593,7 @@ $("#cweilevel").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , ''))+ parseInt(adjdev.toString().replace(/,/g , ''))  + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -612,7 +613,7 @@ $("#cweibed").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -632,7 +633,7 @@ $("#cweipark").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -652,7 +653,7 @@ $("#cweipool").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -672,7 +673,7 @@ $("#cweilandscape").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -692,7 +693,7 @@ $("#cweigood").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -712,7 +713,7 @@ $("#cweiuti").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -732,7 +733,7 @@ $("#cweibal").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -757,7 +758,7 @@ $("#cweiland").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +  parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -777,7 +778,7 @@ $("#cweibua").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) + parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , ''))+ parseInt(adjdev.toString().replace(/,/g , ''))  + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -798,7 +799,7 @@ $("#cweidate").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) + parseInt(adjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));
@@ -1325,7 +1326,7 @@ $("#average").click(function(){
 			     //Market Value//
 				 var marketValue = parseInt(priceAvg) + parseInt(adjloc.toString().replace(/,/g , '')) + parseInt(adjage.toString().replace(/,/g , '')) + parseInt(adjten.toString().replace(/,/g , '')) + 
 				 				   parseInt(adjview.toString().replace(/,/g , '')) + parseInt(adjsta.toString().replace(/,/g , '')) + parseInt(adjqua.toString().replace(/,/g , '')) + parseInt(adjupg.toString().replace(/,/g , '')) + 
-				 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) +
+				 				   parseInt(adjfur.toString().replace(/,/g , '')) + parseInt(adjexp.toString().replace(/,/g , '')) + parseInt(adjpla.toString().replace(/,/g , '')) + parseInt(adjfloor.toString().replace(/,/g , '')) + parseInt(adjlevel.toString().replace(/,/g , '')) +
 				 				   parseInt(adjbed.toString().replace(/,/g , '')) + parseInt(adjpark.toString().replace(/,/g , '')) + parseInt(adjpool.toString().replace(/,/g , '')) + parseInt(adjlandscape.toString().replace(/,/g , '')) + 
 				 				   parseInt(adjgood.toString().replace(/,/g , '')) + parseInt(adjuti.toString().replace(/,/g , '')) + parseInt(adjbal.toString().replace(/,/g , '')) + parseInt(adjland.toString().replace(/,/g , '')) + 
 				 				   parseInt(adjbua.toString().replace(/,/g , '')) + parseInt(adjdev.toString().replace(/,/g , '')) + parseInt(adjdate.toString().replace(/,/g , ''));

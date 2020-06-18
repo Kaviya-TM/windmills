@@ -20,7 +20,7 @@
 	<%@include file="header.jsp"%>
 	<%@include file="sidebar.jsp"%>
 	<div class="main-content"
-		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important;padding-top: 10px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
+		style="background: rgb(229, 231, 233) !important;padding-left: 220px !important;padding-top: 0px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<form:form action="editListings" style="margin-top:-18px !important;" id="listingseditform" modelAttribute="listings">
 				<div class="listholder">
 					<label class="listlabel">Windmills Reference</label>
@@ -215,6 +215,24 @@
 						<option value="99">99 Floor</option>
 						<option value="100">100 Floor</option>
 					</select>
+				</div>
+				<div class="listholder">
+					<label class="listlabel">Number Of Levels</label> 
+					<select class="form-control form-control-sm listtext select2" multiple="" name="level" id="level">
+						<option value="${listingsform.level}" selected hidden>${listingsform.level}</option>
+                        <option value="Basement">Basement</option>
+                        <option value="Ground">Ground</option>
+                        <option value="1st Floor">1st Floor</option>
+                        <option value="2nd Floor">2nd Floor</option>
+                        <option value="3rd Floor">3rd Floor</option>
+                        <option value="4th Floor">4th Floor</option>
+                        <option value="5th Floor">5th Floor</option>
+                        <option value="6th Floor">6th Floor</option>
+                        <option value="7th Floor">7th Floor</option>
+                        <option value="8th Floor">8th Floor</option>
+                        <option value="9th Floor">9th Floor</option>
+                        <option value="10th Floor">10th Floor</option>
+                      </select>
 				</div>
 				<div class="listholder">
 					<label class="listlabel">Building Number</label>

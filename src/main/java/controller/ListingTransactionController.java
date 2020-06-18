@@ -105,6 +105,7 @@ public class ListingTransactionController {
 			String expAvg = listingsService.getExposureAvg(list);
 			String plaAvg = listingsService.getPlacementAvg(list);
 			String floorAvg = listingsService.getFloorAvg(list);
+			String levelAvg = listingsService.getLevelAvg(list);
 			String landAvg = listingsService.getlandAvg(list);
 			String priceAvg = listingsService.getpriceAvg(list);
 			String sizeAvg = listingsService.getSizeAvg(list);
@@ -125,6 +126,7 @@ public class ListingTransactionController {
 			json.put("staAvg", staAvg);
 			json.put("plaAvg", plaAvg);
 			json.put("floorAvg", floorAvg);
+			json.put("levelAvg", levelAvg);
 			json.put("landAvg", landAvg);
 			json.put("priceAvg", priceAvg);
 			json.put("sizeAvg", sizeAvg);

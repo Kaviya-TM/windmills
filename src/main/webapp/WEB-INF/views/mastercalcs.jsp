@@ -189,6 +189,15 @@
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" name="" readonly id="madjfloor">
 		</div><br>
 		<div class="avgholder">
+			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Number of Levels</div>
+			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" name="" readonly id="mavglevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="msublevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="mdifflevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important" readonly name=""   id="mweilevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12% !important;border: 1px solid seagreen;" name=""   id="cmweilevel">
+			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" name="" readonly id="madjlevel">
+		</div><br>
+		<div class="avgholder">
 			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px">Beds</div>
 			<input type="text" class="form-control form-control-sm sectionTT" style="width:12.5% !important" name="" readonly id="mavgbed">
 			<input type="text" class="form-control form-control-sm sectionTT"  style="width:12.5% !important" readonly name="" id="msubbed">

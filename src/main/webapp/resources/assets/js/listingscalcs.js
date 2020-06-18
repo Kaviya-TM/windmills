@@ -2,6 +2,7 @@ var lilocWeight = null;
 var liviewWeight = null; 
 var liquaWeight = null;
 var lifloorWeight = null;
+var lilevelWeight = null;
 var lilandWeight = null;
 var libuaWeight = null;
 var lidateWeight = null;
@@ -40,10 +41,12 @@ var liutiAvg = null;
 var liexpAvg = null;
 var liplaAvg = null;
 var lifloorAvg = null;
+var lilevelAvg = null;
 var liadjloc = null;
 var liadjview = null;
 var liadjqua = null;
 var liadjfloor = null;
+var liadjlevel = null;
 var liadjbua = null;
 var liadjbed = null;
 var liadjexp= null;
@@ -61,7 +64,7 @@ $("#liavgten").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -77,7 +80,7 @@ $("#liavgsta").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -93,7 +96,7 @@ $("#liavgfur").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -109,7 +112,7 @@ $("#liavgexp").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -125,7 +128,7 @@ $("#liavgpla").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -141,7 +144,7 @@ $("#liavgbal").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -157,7 +160,7 @@ $("#liavgpark").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -189,7 +192,7 @@ $("#liavglandscape").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -205,7 +208,7 @@ $("#liavggood").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -221,7 +224,7 @@ $("#liavguti").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -237,7 +240,7 @@ $("#liavgdev").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -253,7 +256,7 @@ $("#liavgbua").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -269,7 +272,7 @@ $("#liavgpark").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -285,7 +288,7 @@ $("#liavgage").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -305,7 +308,7 @@ $("#cliweiloc").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -325,7 +328,7 @@ $("#cliweiage").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -345,7 +348,7 @@ $("#cliweiten").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -365,7 +368,7 @@ $("#cliweiview").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -385,7 +388,27 @@ $("#cliweista").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 $('#listingmarketvalue').val(toComma(marketValue));
+	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
+	 $('#listingfinalvalue').val(toComma(lifinalValue));
+});
+$("#cliweilevel").keyup(function(){
+	if($("#cliweilevel").val() != $("#liweilevel").val()){
+		$("#cliweilevel").css("color","crimson");
+	}
+	else{
+		$("#cliweilevel").css("color","#6c757d");
+	}
+	liadjlevel =  parseFloat(($('#lidifflevel').val()).replace(/,/g , ''))  * parseFloat(($("#cliweilevel").val()).replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+	$('#liadjlevel').val(toComma(liadjlevel));
+	 //Market Value//
+	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -405,7 +428,7 @@ $("#cliweidev").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -425,7 +448,7 @@ $("#cliweiqua").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -445,7 +468,7 @@ $("#cliweiupg").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -465,7 +488,7 @@ $("#cliweifur").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -485,7 +508,7 @@ $("#cliweiexp").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -505,7 +528,7 @@ $("#cliweipla").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -525,7 +548,7 @@ $("#cliweifloor").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -545,7 +568,7 @@ $("#cliweibed").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -566,7 +589,7 @@ $("#cliweipark").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -586,7 +609,7 @@ $("#cliweipool").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -606,7 +629,7 @@ $("#cliweilandscape").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -626,7 +649,7 @@ $("#cliweigood").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -646,7 +669,7 @@ $("#cliweiuti").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -666,7 +689,7 @@ $("#cliweibal").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -691,7 +714,7 @@ $("#cliweiland").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -711,7 +734,7 @@ $("#cliweibua").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -732,7 +755,7 @@ $("#cliweidate").keyup(function(){
 	 //Market Value//
 	 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
@@ -877,6 +900,7 @@ $("#laverage").click(function(){
 				liexpAvg = obj.liexpAvg;
 				liplaAvg = obj.liplaAvg;
 				lifloorAvg = obj.lifloorAvg;
+				lilevelAvg = obj.lilevelAvg;
 				lilandAvg = obj.lilandAvg;
 				if(lilandAvg == "-"){
 					lilandAvg = 0;
@@ -904,6 +928,7 @@ $("#laverage").click(function(){
 				liviewWeight = obj.liviewWeight;
 				liquaWeight = obj.liquaWeight;
 				lifloorWeight = obj.lifloorWeight;
+				lilevelWeight = obj.lilevelWeight;
 				lilandWeight = obj.lilandWeight;
 				libuaWeight = obj.libuaWeight;
 				liupgradeWeight = obj.liupgradeWeight;
@@ -925,7 +950,6 @@ $("#laverage").click(function(){
 				var quality = $('#quality').val();
 				var view = $('#view').val();
 				var floorNo =  $('#floorno').val();
-				var vnooffloor =  $('#vnooffloor').val();
 				var fullBulFloors =  $('#fullBulFloors').val();
 				var maxAge = $('#maxAge').val();
 				var finalAge = (parseFloat(liageWeight.replace(/%/g , '') / maxAge * 100)) + "" +"%";
@@ -939,6 +963,7 @@ $("#laverage").click(function(){
 				$('#liweiview').val(liviewWeight);
 				$('#liweiqua').val(liquaWeight);
 				$('#liweifloor').val(lifloorWeight);
+				$('#liweilevel').val(lilevelWeight);
 				$('#liweiland').val(lilandWeight);
 				$('#liweibua').val(libuaWeight);
 				$('#liweibed').val(libedWeight);
@@ -961,6 +986,7 @@ $("#laverage").click(function(){
 				$('#cliweiview').val(liviewWeight);
 				$('#cliweiqua').val(liquaWeight);
 				$('#cliweifloor').val(lifloorWeight);
+				$('#cliweilevel').val(lilevelWeight);
 				$('#cliweiland').val(lilandWeight);
 				$('#cliweibua').val(libuaWeight);
 				$('#cliweibed').val(libedWeight);
@@ -1065,27 +1091,42 @@ $("#laverage").click(function(){
 				 $('#liadjpla').val(toComma(liadjpla));
 				
 				//floor//
-				 var propertyvalued = $('#propertyvalued').val();
-				 $('#liavgfloor').val(lifloorAvg);
-				 if(propertyvalued === "Residential Villa"){
-						var suffix = vnooffloor.match(/\d+/);
-						if(suffix){
-							suffix = parseFloat(parseFloat(suffix[0]));
-							suffix = suffix + 1;
-							suffix = suffix.toString();
-							$('#lisubfloor').val(suffix);
-						}
-						else{
-							$('#lisubfloor').val(0);
-						}
-					}
-				else{
-					$('#lisubfloor').val(floorNo);
-				}
+				 var propvalued = $('#propertyvalued').val();
+				 if(propvalued === "Residential Villa"){
+						$('#liavgfloor').val(0);
+						$('#lisubfloor').val(0);
+				 }
+				 else{
+//					 var suffix = fullBulFloors.match(/\d+/);
+//						if(suffix){
+//							suffix = parseFloat(parseFloat(suffix[0]) / 2);
+//							suffix = suffix.toString();
+//							$('#liavgfloor').val(suffix);lilevelAvg
+//						}
+						$('#liavgfloor').val(lifloorAvg);
+						$('#lisubfloor').val(floorNo);
+				 }
 				var lidifffloor = parseFloat($('#lisubfloor').val() - $('#liavgfloor').val());
 				$('#lidifffloor').val(lidifffloor.toFixed(2));
 				 liadjfloor = parseFloat(($('#lidifffloor').val()).replace(/,/g , ''))  * parseFloat(lifloorWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
 				$('#liadjfloor').val(toComma(liadjfloor));
+				
+				//level//
+				 var propValued = $('#propertyvalued').val();
+				 if(propValued === "Residential Apartment"){
+						$('#liavglevel').val(0);
+						$('#lisublevel').val(0);
+				 }
+				 else{
+					 var vnooffloor = $('#vnooffloor').val();
+					 var split = vnooffloor.length;
+					 $('#liavglevel').val(lilevelAvg);
+					 $('#lisublevel').val(split);
+				 }
+				var lidifflevel = parseFloat($('#lisublevel').val() - $('#liavglevel').val());
+				$('#lidifflevel').val(lidifflevel.toFixed(2));
+				 liadjlevel = parseFloat(($('#lidifflevel').val()).replace(/,/g , ''))  * parseFloat(lilevelWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;
+				$('#liadjlevel').val(toComma(liadjlevel));
 				
 				//beds//
 				 $('#liavgbed').val(libedAvg);
@@ -1278,7 +1319,7 @@ $("#laverage").click(function(){
 			     //Market Value//
 				 var marketValue = parseInt(lipriceAvg) + parseInt(liadjloc.toString().replace(/,/g , '')) + parseInt(liadjage.toString().replace(/,/g , '')) + parseInt(liadjten.toString().replace(/,/g , '')) + 
 				 				   parseInt(liadjview.toString().replace(/,/g , '')) + parseInt(liadjsta.toString().replace(/,/g , '')) + parseInt(liadjqua.toString().replace(/,/g , '')) + parseInt(liadjupg.toString().replace(/,/g , '')) + 
-				 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
+				 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 				 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 				 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
 				 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));

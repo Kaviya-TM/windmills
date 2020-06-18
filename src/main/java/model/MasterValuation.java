@@ -67,6 +67,7 @@ public class MasterValuation  implements java.io.Serializable {
 	private String finishingStatus;
 	private String propExposure ;
 	private String floorNo ;
+	private String level;
 	private String noOfRooms;
 	private String landsizepersqf;
 	private String mvoflandpersqf;
@@ -349,6 +350,13 @@ public class MasterValuation  implements java.io.Serializable {
 	}
 	public void setFloorNo(String floorNo) {
 		this.floorNo = floorNo;
+	}
+	@Column(name = "level")
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
 	}
 	@Column(name = "noOfRooms")
 	public String getNoOfRooms() {

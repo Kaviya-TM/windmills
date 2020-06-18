@@ -1049,5 +1049,21 @@ public class MasterService {
 		return largest;
 
 	}
+
+	public String getLevelAvg(List<MasterValuation> filterTransaction) {
+		String avg = null;
+//		ArrayList<Integer> avglist = new ArrayList<Integer>();
+//		if(!filterTransaction.isEmpty()){
+//			for(MasterValuation st : filterTransaction){
+//				String level = st.getLevel();
+//			}
+//		}
+//		if(avglist.size() > 0){
+//		double finalValue =  calculateAverage(avglist);
+//		avg = String.valueOf(dd.format(finalValue));
+//		}
+		avg = "0";
+		return avg;
+	}
 	
 }

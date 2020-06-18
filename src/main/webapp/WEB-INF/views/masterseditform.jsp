@@ -166,6 +166,24 @@
 					<label class="listlabel">Floor Number</label>
 				    <input type="text" class="form-control form-control-sm listtext" value="${mastersform.floorNo}"  placeholder="Floor Number" name="floorNo" id=""  autocomplete="on">
 				</div>
+				<div class="listholder"  style="height:28.5px ">
+					<label class="listlabel">Number Of Levels</label> 
+					<select class="form-control form-control-sm listtext select2" multiple="" name="level" id="level">
+						<option value="${mastersform.level}" selected hidden>${mastersform.level}</option>
+                        <option value="Basement">Basement</option>
+                        <option value="Ground">Ground</option>
+                        <option value="1st Floor">1st Floor</option>
+                        <option value="2nd Floor">2nd Floor</option>
+                        <option value="3rd Floor">3rd Floor</option>
+                        <option value="4th Floor">4th Floor</option>
+                        <option value="5th Floor">5th Floor</option>
+                        <option value="6th Floor">6th Floor</option>
+                        <option value="7th Floor">7th Floor</option>
+                        <option value="8th Floor">8th Floor</option>
+                        <option value="9th Floor">9th Floor</option>
+                        <option value="10th Floor">10th Floor</option>
+                      </select>
+				</div>
 				<div class="listholder" style="height:28.5px ">
 					<label class="listlabel">Number Of Rooms</label>
 				    <input type="text" class="form-control form-control-sm listtext" value="${mastersform.noOfRooms}"  placeholder="Number Of Rooms" name="noOfRooms" id=""  autocomplete="on">
@@ -180,11 +198,11 @@
 				</div>
 				<div class="listholder" style="height:28.5px ">
 					<label class="listlabel">BUA/sqf</label>
-				    <input type="text" class="form-control form-control-sm listtext" value="${mastersform.BUApersqf}"  placeholder="BUA/sqf" name="BUApersqf" id=""  autocomplete="on">
+				    <input type="text" class="form-control form-control-sm listtext" value="${mastersform.buapersqf}"  placeholder="BUA/sqf" name="buapersqf" id=""  autocomplete="on">
 				</div>
 				<div class="listholder" style="height:28.5px ">
 					<label class="listlabel">BUA/sm</label>
-				    <input type="text" class="form-control form-control-sm listtext" value="${mastersform.BUApersm}"  placeholder="BUA/sm" name="BUApersm" id=""  autocomplete="on">
+				    <input type="text" class="form-control form-control-sm listtext" value="${mastersform.buapersm}"  placeholder="BUA/sm" name="buapersm" id=""  autocomplete="on">
 				</div>
 				<div class="listholder" style="height:28.5px ">
 					<label class="listlabel">BldgAge</label>

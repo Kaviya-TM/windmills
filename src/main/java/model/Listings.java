@@ -40,6 +40,7 @@ public class Listings  implements java.io.Serializable {
 	private String tenure;
 	private String unitNo;
 	private String floorNo;
+	private String level;
 	private String buildingNo;
 	private String buildingName;
 	private String streetNo;
@@ -170,6 +171,13 @@ public class Listings  implements java.io.Serializable {
 	}
 	public void setFloorNo(String floorNo) {
 		this.floorNo = floorNo;
+	}
+	@Column(name = "level")
+	public String getLevel() {
+		return level;
+	}
+	public void setLevel(String level) {
+		this.level = level;
 	}
 	@Column(name = "buildingNo")
 	public String getBuildingNo() {

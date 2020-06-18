@@ -329,6 +329,7 @@ public class ValuationController {
 		String dateWeight = weightageService.getDateWeight(weightage);
 		String quaWeight = weightageService.getQuaWeight(weightage);
 		String floorWeight = weightageService.getFloorWeight(weightage);
+		String levelWeight = weightageService.getLevelWeight(weightage);
 		String landWeight = weightageService.getLandWeight(weightage);
 		String buaWeight = weightageService.getBuaWeight(weightage);
 		String expWeight = weightageService.getExpWeight(weightage);
@@ -374,6 +375,7 @@ public class ValuationController {
 		String liexpAvg = listingsService.getExposureAvg(list);
 		String liplaAvg = listingsService.getPlacementAvg(list);
 		String lifloorAvg = listingsService.getFloorAvg(list);
+		String lilevelAvg = listingsService.getLevelAvg(list);
 		String libalAvg = listingsService.getBalconyAvg(list);
 		String lidevAvg = listingsService.getDevmarginAvg(list);
 		String lidateAvg = listingsService.getDateAvg(list);
@@ -404,6 +406,7 @@ public class ValuationController {
 		json.put("liquaWeight", quaWeight);
 		json.put("lidateWeight", dateWeight);
 		json.put("lifloorWeight", floorWeight);
+		json.put("lilevelWeight", levelWeight);
 		json.put("lilandWeight", landWeight);
 		json.put("libuaWeight", buaWeight);
 		json.put("libalWeight", balWeight);
@@ -440,6 +443,7 @@ public class ValuationController {
 		json.put("liexpAvg", liexpAvg);
 		json.put("liplaAvg", liplaAvg);
 		json.put("lifloorAvg", lifloorAvg);
+		json.put("lilevelAvg", lilevelAvg);
 		json.put("lipricePerAvg", lipricePerAvg);
 		return json;
 

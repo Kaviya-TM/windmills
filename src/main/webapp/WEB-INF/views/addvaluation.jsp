@@ -1459,19 +1459,19 @@
             </div> 
 			<div class="form-group receiving">
 				<div class="vrholder">
-					<label class="rholder">Windmills Reference</label> <input
+					<label class="rholder">Windmills Reference<b style="color:red"> *</b></label> <input
 						type="text" class="form-control form-control-sm textholder"
 						name="valuationReport.windmillsRef" id="reference"
 						placeholder="Windmills Reference" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Client Reference</label> <input type="text"
+					<label class="rholder">Client Reference<b style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
-						name="valuationReport.clientRef" id=""
+						name="valuationReport.clientRef" id="clientRef"
 						placeholder="Client Reference" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Client's Name</label> <select
+					<label class="rholder">Client's Name<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.clientName" id="clientname">
 						<c:forEach items="${clientlist}" var="item">
@@ -1481,19 +1481,25 @@
 					</select>
 				</div>
 				<div class="vrholder">
+					<label class="rholder">Intended User<b style="color:red"> *</b></label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id="intendedUser"
+						placeholder="Intended User" autocomplete="on">
+				</div>
+				<div class="vrholder">
 					<label class="rholder">Client Customer Name</label> <input
 						type="text" class="form-control form-control-sm textholder"
 						name="valuationReport.clientCustomerName" id="cusname"
 						placeholder="Client Customer Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Owner Name</label> <input type="text"
+					<label class="rholder">Owner Name<b style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="valuationReport.ownerName" id="ownername"
 						placeholder="Owner Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Service Officer Name</label> <select
+					<label class="rholder">Service Officer Name<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.serviceOffName" id="">
 						<c:forEach items="${serviceofficerlist}" var="item">
@@ -1505,7 +1511,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Valuation Instructions Date</label>
+					<label class="rholder">Valuation Instructions Date<b style="color:red"> *</b></label>
 					<div class="input-group textholder">
 						<div class="input-group-prepend">
 							<div class="input-group-text">
@@ -1517,7 +1523,7 @@
 					</div>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Internal Target Date</label>
+					<label class="rholder">Internal Target Date<b style="color:red"> *</b></label>
 					<div class="input-group textholder">
 						<div class="input-group-prepend">
 							<div class="input-group-text">
@@ -1529,7 +1535,7 @@
 					</div>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Property Valued</label> <select
+					<label class="rholder">Property Valued<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propertyValued" id="propertyvalued">
 						<c:forEach items="${propertylist}" var="item">
@@ -1538,7 +1544,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Property Category</label> <select
+					<label class="rholder">Property Category<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propertyValued" id="propertyCategory">
 						<c:forEach items="${categorylist}" var="item">
@@ -1547,7 +1553,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Tenure</label> <select
+					<label class="rholder">Tenure<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.tenure" id="tenure">
 						<option value="Freehold" selected>Freehold</option>
@@ -1559,13 +1565,13 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Unit Number</label> <input type="text"
+					<label class="rholder">Unit Number<b style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="valuationReport.unitNo" id="unitno"
 						placeholder="Unit Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Floor Number</label> <select
+					<label class="rholder">Floor Number<b id="fm" style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.floorNo" id="floorno">
 						<option value="" hidden>--- Select Floor Number---</option>
@@ -1673,7 +1679,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Number Of Levels</label> 
+					<label class="rholder">Number Of Floor Levels<b id="lm" style="color:red"> *</b></label> 
 					<select class="form-control form-control-sm textholder select2" multiple="" name="" id="vnooffloor">
 						<option value="" hidden>--- Select Floor Number---</option>
                         <option value="Basement">Basement</option>
@@ -1691,25 +1697,25 @@
                       </select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Street Number</label> <input type="text"
+					<label class="rholder">Street Number<b style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="valuationReport.streetNo" id="streetno"
 						placeholder="Street Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Street Name</label> <input type="text"
+					<label class="rholder">Street Name<b style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="valuationReport.streetName" id="streetname"
 						placeholder="Street Name" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Building Number</label> <input type="text"
+					<label class="rholder">Building Number<b style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="valuationReport.buildingNo" id="buildingno"
 						placeholder="Building Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Building/Project Name</label>
+					<label class="rholder">Building/Project Name<b style="color:red"> *</b></label>
 <!-- 					 <input -->
 <!-- 						type="text" class="form-control form-control-sm textholder" -->
 <!-- 						name="valuationReport.buildingName" id="buildingname" -->
@@ -1725,13 +1731,13 @@
 						
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Plot Number</label> <input type="text"
+					<label class="rholder">Plot Number<b id="pn" style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="valuationReport.plotNo" id="plotno"
 						placeholder="Plot Number" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Sub Community Name</label> 
+					<label class="rholder">Sub Community Name<b style="color:red"> *</b></label> 
 <!-- 					<input -->
 <!-- 						type="text" class="form-control form-control-sm textholder" -->
 <!-- 						name="valuationReport.subCommunity" id="subcommunity" -->
@@ -1746,7 +1752,7 @@
  						</select> 
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Community/Area Name</label> <select
+					<label class="rholder">Community/Area Name<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.community" id="community">
 <%-- 						<c:forEach items="${communitylist}" var="item"> --%>
@@ -1766,7 +1772,7 @@
 <!-- 						autocomplete="on"> -->
 <!-- 				</div> -->
 				<div class="vrholder">
-					<label class="rholder">City</label> <select
+					<label class="rholder">City<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.city" id="city">
 						<c:forEach items="${citylist}" var="item">
@@ -1775,26 +1781,26 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Country</label> <input type="text"
+					<label class="rholder">Country<b style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="valuationReport.country" id="country" placeholder="Country"
 						autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Valuation Instructing Person</label> <select
+					<label class="rholder">Valuation Instructing Person<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.valuationInstrPerson" id="contactPerson">
 						<option value="" hidden>--- Select ---</option>
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Land Size[Square Feet]</label> <input
-						type="number" class="form-control form-control-sm textholder"
+					<label class="rholder">Land Size[Square Feet]<b id="ls" style="color:red"> *</b></label> <input
+						type="text" class="form-control form-control-sm textholder"
 						name="valuationReport.plotSize" id="landSize"
 						placeholder="Land Size[Square Feet]" autocomplete="on">
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Purpose Of Valuation</label> <select
+					<label class="rholder">Purpose Of Valuation<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propOfVal" id="">
 						<option value="Buying">Buying</option>
@@ -1806,7 +1812,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Valuation Approach</label> <select
+					<label class="rholder">Valuation Approach<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.valApproach" id="valApproach">
 						<c:forEach items="${valapproachlist}" var="item">
@@ -1815,7 +1821,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Bases Of Value</label> <select
+					<label class="rholder">Bases Of Value<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.basesOfValue" id="">
 						<option value="Market Value" selected>Market Value</option>
@@ -1829,7 +1835,7 @@
 				</div>
 
 				<div class="vrholder">
-					<label class="rholder">Approach Reasoning</label> <select
+					<label class="rholder">Approach Reasoning<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.approachReasoning" id="apprreason">
 						<c:forEach items="${appreasonlist}" var="item">
@@ -1838,7 +1844,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					  <label class="rholder">Developer Margin</label>
+					  <label class="rholder">Developer Margin<b style="color:red"> *</b></label>
 	               	 <select
 						class="form-control form-control-sm textholder"
 						name="" id="devmargin">
@@ -1847,7 +1853,7 @@
 					</select>
 				  </div>
 				<div class="valuationholder" style="margin-top: 5px;height:45px">
-					<div class="savebtn" id="receivenxt">Next</div>
+<!-- 					<div class="savebtn" id="receivenxt">Next</div> -->
 				</div>
 			</div>
 			<div class="form-group scheduling">

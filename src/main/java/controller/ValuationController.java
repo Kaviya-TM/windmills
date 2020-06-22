@@ -464,6 +464,7 @@ public class ValuationController {
 		String dateWeight = weightageService.getDateWeight(weightage);
 		String quaWeight = weightageService.getQuaWeight(weightage);
 		String floorWeight = weightageService.getFloorWeight(weightage);
+		String levelWeight = weightageService.getLevelWeight(weightage);
 		String landWeight = weightageService.getLandWeight(weightage);
 		String buaWeight = weightageService.getBuaWeight(weightage);
 		String expWeight = weightageService.getExpWeight(weightage);
@@ -509,6 +510,7 @@ public class ValuationController {
 		String mexpAvg = masterService.getExposureAvg(list);
 		String mplaAvg = masterService.getPlacementAvg(list);
 		String mfloorAvg = masterService.getFloorAvg(list);
+		String mlevelAvg = masterService.getLevelAvg(list);
 	//	String mbalAvg = masterService.getBalconyAvg(list);
 	//	String mdevAvg = masterService.getDevmarginAvg(list);
 		String mdateAvg = masterService.getDateAvg(list);
@@ -538,6 +540,7 @@ public class ValuationController {
 		json.put("mquaWeight", quaWeight);
 		json.put("mdateWeight", dateWeight);
 		json.put("mfloorWeight", floorWeight);
+		json.put("mlevelWeight", levelWeight);
 		json.put("mlandWeight", landWeight);
 		json.put("mbuaWeight", buaWeight);
 		json.put("mbalWeight", balWeight);
@@ -574,6 +577,7 @@ public class ValuationController {
 		json.put("mexpAvg", mexpAvg);
 		json.put("mplaAvg", mplaAvg);
 		json.put("mfloorAvg", mfloorAvg);
+		json.put("mlevelAvg", mlevelAvg);
 		json.put("mpricePerAvg", mpricePerAvg);
 		return json;
 

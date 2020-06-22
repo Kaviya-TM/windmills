@@ -14,6 +14,9 @@ $('#age').keyup(function(){
 		$('#remlife').val(40);
 	}
 });
+$('#clientRef').val("Not Available");
+$('#intendedUser').val("Not Available");
+
 $("#buildingname").change(function() {
 	var buildingName = $('#buildingname').val();
 	$.ajax({
@@ -1004,9 +1007,32 @@ $.ajax({
 		 $('#utiliesPrice').val(utiliesPrice);
 		return;
 		},
-});	
+});
+$('#lm').css("color","transparent");
+$('#landSize').val("Not Applicable");
+
 $("#propertyvalued").change(function() {
 	var propertyValued = $('#propertyvalued').val();
+	if(propertyValued != "Residential Apartment" && propertyValued != "Office"){
+		$('#fm').css("color","transparent");
+		$('#pn').css("color","transparent");
+		$('#plotno').val("Not Applicable");
+	}
+	else{
+		$('#fm').css("color","red");
+		$('#pn').css("color","red");
+		$('#plotno').val("");
+	}
+	if(propertyValued === "Residential Villa" || propertyValued === "Warehouse"){
+		$('#lm').css("color","red");
+		$('#ls').css("color","red");
+		$('#landSize').val("");
+	}
+	else{
+		$('#lm').css("color","transparent");
+		$('#ls').css("color","transparent");
+		$('#landSize').val("Not Applicable");
+	}
 	var city = $('#city').val();
 	$.ajax({
 		url : 'getValuationApproach',

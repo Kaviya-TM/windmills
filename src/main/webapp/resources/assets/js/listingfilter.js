@@ -186,7 +186,7 @@ $("#listingfilter").click(function(){
 						if(obj.list[x].location === "Average"){
 							locvalue = "3"; 
 						}
-						if(obj.list[x].location === "Substandard"){
+						if(obj.list[x].location === "Not Good"){
 							locvalue = "2"; 
 						}
 						if(obj.list[x].location === "Poor"){
@@ -225,6 +225,9 @@ $("#listingfilter").click(function(){
 						if(obj.list[x].propExposure == "Back To Back"){
 							expvalue = "0";
 						}
+						if(obj.list[x].propExposure == "Not Applicable"){
+							expvalue = "0";
+						}
 						if(obj.list[x].propPlacement == "Middle"){
 							plavalue = "0";
 						}
@@ -233,6 +236,9 @@ $("#listingfilter").click(function(){
 						}
 						if(obj.list[x].propPlacement == "Semi-Corner"){
 							plavalue = "1.5";
+						}
+						if(obj.list[x].propPlacement == "Not Applicable"){
+							plavalue = "0";
 						}
 						$('.lfilter').append("" +
 								"<div id="+obj.list[x].transactionId+" class='column boxlist' style='width:99.5%;margin-bottom:5px;display:flex'>" +

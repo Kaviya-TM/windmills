@@ -1,13 +1,13 @@
 <div class="form-group documents">
+				<div class="lefthalf" style="width:50%;float:left;">
 				<div class="valuationholder" style="position:relative;top:-18px;height:10px">
-					<label style="width:21.5%;font-weight:700;color:seagreen">Documents Title</label>
-					<label style="width:13.5%;font-weight:700;color:seagreen">Available</label>
+					<label style="width:42.5%;font-weight:700;color:seagreen">Documents Title</label>
+					<label style="width:26.5%;font-weight:700;color:seagreen">Available</label>
 					<label style="width:14%;font-weight:700;color:seagreen">Upload File</label>
 				</div>
-				
 				<div class="valuationholder d1">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc1" name="documents[0].description">
 	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes1" name="" value="">
@@ -37,7 +37,7 @@
 				
 				<div class="valuationholder d2">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc2" name="documents[1].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes2" name="" value="">
@@ -67,7 +67,7 @@
 				
 				<div class="valuationholder d3">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc3" name="documents[2].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes3" name="" value="">
@@ -97,7 +97,7 @@
 				
 				<div class="valuationholder d4">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc4" name="documents[3].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes4" name="" value="">
@@ -127,7 +127,7 @@
 				
 				<div class="valuationholder d5">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc5" name="documents[4].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes5" name="" value="">
@@ -157,7 +157,7 @@
 				
 				<div class="valuationholder d6">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc6" name="documents[5].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes6" name="" value="">
@@ -187,7 +187,7 @@
 				
 				<div class="valuationholder d7">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc7" name="documents[6].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes7" name="" value="">
@@ -217,7 +217,7 @@
 				
 				<div class="valuationholder d8">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc8" name="documents[7].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes8" name="" value="">
@@ -247,7 +247,7 @@
 				
 				<div class="valuationholder d9">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc9" name="documents[8].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes9" name="" value="">
@@ -274,10 +274,9 @@
 					</label> <input id="document9" name='files[1]' type="file"
 						style="display: none;">
 				</div>
-				
 				<div class="valuationholder d10">
 					<input type="text" class="labelholder"
-						style="line-height: 25px !important; width: 20%; border: none; background: none"
+						style="line-height: 25px !important; width: 40%; border: none; background: none"
 						id="doc10" name="documents[9].description">
 					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px">
 							<input type="checkbox" id="yes10" name="" value="">
@@ -304,9 +303,136 @@
 					</label> <input id="document10" name='files[1]' type="file"
 						style="display: none;">
 				</div>
+				</div>
+				<div class="righthalf" style="width:50%;float:left;padding-left:20px">
+					<div class="valuationholder" style="position:relative;top:-18px;height:10px">
+						<label style="width:42.5%;font-weight:700;color:seagreen">Nature and Source Of Information</label>
+					</div>
+					<div class="valuationholder">
+					<input type="text" class="labelholder"
+						style="width: 45%; border: none; background: none"
+						id="" name="" value="DLD Data Enquiry"> 
+					<div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:10px">
+							<input type="checkbox" id="dlddatay" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-top:10px;margin-right:60px;">
+							<input type="checkbox" id="dlddatan" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>
+				</div>
 				
-<!-- 				<div class="valuationholder" style="margin-top: 20px"> -->
-<!-- 					<div style="color: red">(Note: If neccessary documents are -->
-<!-- 						not received , please ask the client formally by email)</div> -->
-<!-- 				</div> -->
+				<div class="valuationholder">
+					<input type="text" class="labelholder"
+						style="width: 45%; border: none; background: none"
+						id="" name="" value="Kharetati Application Enquiry"> 
+					<div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:10px">
+							<input type="checkbox" id="kay" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-top:10px;margin-right:60px;">
+							<input type="checkbox" id="kayn" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>
+				</div>
+				<div class="valuationholder">
+					<input type="text" class="labelholder"
+						style="width: 45%; border: none; background: none"
+						id="" name="" value="DLD Sold Transaction Enquiry"> 
+					<div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:10px">
+							<input type="checkbox" id="dldsoldy" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-top:10px;margin-right:60px;">
+							<input type="checkbox" id=dldsoldn" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>
+				</div>
+				<div class="valuationholder">
+					<input type="text" class="labelholder"
+						style="width: 45%; border: none; background: none"
+						id="" name="" value="DLD Valuations Enquiry"> 
+					<div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:10px">
+							<input type="checkbox" id="dldvaly" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-top:10px;margin-right:60px;">
+							<input type="checkbox" id=dldvaln" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>
+				</div>
+				<div class="valuationholder">
+					<input type="text" class="labelholder"
+						style="width: 45%; border: none; background: none"
+						id="" name="" value="Discussions with Real Estate Agencies"> 
+					<div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:10px">
+							<input type="checkbox" id="rey" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-top:10px;margin-right:60px;">
+							<input type="checkbox" id=rsn" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>
+				</div>
+				</div>
 			</div>

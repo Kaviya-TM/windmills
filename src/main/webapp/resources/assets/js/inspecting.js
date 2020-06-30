@@ -1,4 +1,4 @@
-
+$(".bed0").hide();
 $(".bed1").hide();
 $(".bed2").hide();
 $(".bed3").hide();
@@ -30,6 +30,16 @@ $(".gar1").hide();
 $(".bal1").hide();
 $(".flo1").hide();
 $(".cei1").hide();
+$(".view1").hide();
+//zero//
+$("#0bed").click(function() {	
+	if($(this). is(":checked")){
+		$(".bed0").show();
+	}
+	else{
+		$(".bed0").hide();
+	}
+});
 //one//
 $("#1bed").click(function() {	
 	if($(this). is(":checked")){
@@ -303,7 +313,23 @@ $("#1cei").click(function() {
 	}
 });
 
+//view//
+$("#1view").click(function() {	
+	if($(this). is(":checked")){
+		$(".view1").show();
+	}
+	else{
+		$(".view1").hide();
+	}
+});
+
 // buttons//
+$("#bedpic0").change(function() {	
+	  var i = $(this).prev('label').clone();	
+	  var file = $("#bedpic0")[0].files[0].name;	
+	  var filename = file.substring(0,6);
+	  $(this).prev('label').text(filename);	
+});
 $("#bedpic1").change(function() {	
 	  var i = $(this).prev('label').clone();	
 	  var file = $("#bedpic1")[0].files[0].name;	
@@ -490,6 +516,12 @@ $("#floor1").change(function() {
 $("#ceiling1").change(function() {	
 	  var i = $(this).prev('label').clone();	
 	  var file = $("#ceiling1")[0].files[0].name;	
+	  var filename = file.substring(0,6);
+	  $(this).prev('label').text(filename);	
+});
+$("#viewinspect1").change(function() {	
+	  var i = $(this).prev('label').clone();	
+	  var file = $("#viewinspect1")[0].files[0].name;	
 	  var filename = file.substring(0,6);
 	  $(this).prev('label').text(filename);	
 });

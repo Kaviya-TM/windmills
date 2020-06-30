@@ -33,7 +33,7 @@ $("#vsummary").click(function(){
 	$('#psqf').val(toComma(psqf));
 	var pnsqf = parseInt($('#mastermarketvalue').val().replace(/,/g , '')) / parseInt($('#netbuitUpAreaSize').val().replace(/,/g , ''));
 	$('#pnsqf').val(toComma(pnsqf));
-	if(pv === 'Residential Villa'){
+	if(pv === 'Residential Villa' || pv === "Warehouse" || pv.includes("Land")){
 		$('#mvOfLand').val($('#costfinalland').val());
 		var x = parseInt($('#costfinalland').val().replace(/,/g , '')) / parseInt($('#landSize').val().replace(/,/g , ''));
 		$('#mvOfLandPerSq').val(toComma(x));

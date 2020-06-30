@@ -24,7 +24,7 @@
 		style="background: rgb(229, 231, 233) !important;padding-left: 212px !important;padding-top: 10px !important; overflow: scroll; overflow-x: hidden; padding-right: 0px; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="form-group">
 			<button class="valbtn" id="receive" style="width: 4.6%;">Receive Valuation</button>
-			<button class="valbtn" id="documents" style="width: 4.1%;">Receive Doc</button>
+			<button class="valbtn" id="documents" style="width: 4.1%;">Receive Information</button>
 			<button class="valbtn" id="conflict" style="width: 3.4%;">Check COI</button>
 			<button class="valbtn" id="schedule" style="width: 4.5%;">Schedule Inspection</button>
 			<button class="valbtn" id="inspect1" style="width: 5%;">Inspect PropertyA</button>
@@ -1501,7 +1501,7 @@
 				<div class="vrholder">
 					<label class="rholder">Service Officer Name<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.serviceOffName" id="">
+						name="valuationReport.serviceOffName" id="servicername">
 						<c:forEach items="${serviceofficerlist}" var="item">
 							<option value="${item.name}">${item.name}</option>
 						</c:forEach>
@@ -1531,11 +1531,11 @@
 							</div>
 						</div>
 						<input type="text" class="form-control form-control-sm datepicker" style="height: 27px !important;font-size: 12px !important; font-family: sans-serif;"
-							name="valuationReport.intTargetDate" id="">
+							name="valuationReport.intTargetDate" id="intTargetDate">
 					</div>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Property Valued<b style="color:red"> *</b></label> <select
+					<label class="rholder">Property Description<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propertyValued" id="propertyvalued">
 						<c:forEach items="${propertylist}" var="item">
@@ -1681,8 +1681,7 @@
 				<div class="vrholder">
 					<label class="rholder">Number Of Floor Levels<b id="lm" style="color:red"> *</b></label> 
 					<select class="form-control form-control-sm textholder select2" multiple="" name="" id="vnooffloor">
-						<option value="" hidden>--- Select Floor Number---</option>
-                        <option value="Basement">Basement</option>
+                        <option value="Basement" >Basement</option>
                         <option value="Ground">Ground</option>
                         <option value="1st Floor">1st Floor</option>
                         <option value="2nd Floor">2nd Floor</option>
@@ -1802,7 +1801,7 @@
 				<div class="vrholder">
 					<label class="rholder">Purpose Of Valuation<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.propOfVal" id="">
+						name="valuationReport.propOfVal" id="propOfVal">
 						<option value="Buying">Buying</option>
 						<option value="Selling">Selling</option>
 						<option value="Court Proceeding">Court Proceeding</option>
@@ -1823,7 +1822,7 @@
 				<div class="vrholder">
 					<label class="rholder">Bases Of Value<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.basesOfValue" id="">
+						name="valuationReport.basesOfValue" id="basesOfValue">
 						<option value="Market Value" selected>Market Value</option>
 						<option value="Market Rent">Market Rent</option>
 						<option value="Investment Value">Investment Value</option>
@@ -1844,7 +1843,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					  <label class="rholder">Developer Margin<b style="color:red"> *</b></label>
+					  <label class="rholder">Payment Plan<b style="color:red"> *</b></label>
 	               	 <select
 						class="form-control form-control-sm textholder"
 						name="" id="devmargin">
@@ -1856,165 +1855,48 @@
 <!-- 					<div class="savebtn" id="receivenxt">Next</div> -->
 				</div>
 			</div>
-			<div class="form-group scheduling">
-				<div class="valuationholder">
-					<label class="ilholder">Inspection Type</label> <select
-						class="form-control form-control-sm itholder"
-						name="valuationReport.insType" id="insType">
-						<option value="Physical Inspection" selected>Physical
-							Inspection</option>
-						<option value="Desktop">Desktop</option>
-						<option value="Drive By">Drive By</option>
-					</select>
-				</div>
-				<div class="valuationholder">
-					<label class="ilholder">Valuation Date</label>
-					<div class="input-group itholder">
-						<div class="input-group-prepend">
-							<div class="input-group-text">
-								<i class="fas fa-calendar"></i>
-							</div>
-						</div>
-						<input type="text" class="form-control form-control-sm datepicker"
-							name="valuationReport.valDate" id="valDate" placeholder=""
-							autocomplete="on">
-					</div>
-				</div>
-				<div class="valuationholder insDate">
-					<label class="ilholder">Inspection Date</label>
-					<div class="input-group itholder">
-						<div class="input-group-prepend">
-							<div class="input-group-text">
-								<i class="fas fa-calendar"></i>
-							</div>
-						</div>
-						<input type="text" class="form-control form-control-sm datepicker"
-							name="valuationReport.insDate" id="insdate" placeholder=""
-							autocomplete="on">
-					</div>
-				</div>
-				<div class="valuationholder insday">
-					<label class="ilholder">Inspection Day</label>
-					<div class="input-group itholder">
-						<div class="input-group-prepend">
-							<div class="input-group-text">
-								<i class="fas fa-fire"></i>
-							</div>
-						</div>
-						<input type="text" class="form-control form-control-sm "
-							name="valuationReport.insDay" id="insday" placeholder="" readonly
-							autocomplete="on">
-					</div>
-				</div>
-				<div class="valuationholder instime">
-					<label class="ilholder">Inspection Time</label>
-					<div class="input-group itholder">
-						<div class="input-group-prepend">
-							<div class="input-group-text">
-								<i class="fas fa-clock"></i>
-							</div>
-						</div>
-						<input type="text" class="form-control form-control-sm timepicker"
-							name="valuationReport.insTime" id="instime"
-							placeholder="Inspection Time" autocomplete="on">
-					</div>
-				</div>
-				<div class="valuationholder">
-					<label class="ilholder">Client's Deadline</label>
-					<div class="input-group itholder">
-						<div class="input-group-prepend">
-							<div class="input-group-text">
-								<i class="fas fa-calendar"></i>
-							</div>
-						</div>
-						<input type="text" class="form-control form-control-sm datepicker"
-							name="valuationReport.clientDeadline" id="" placeholder=""
-							autocomplete="on">
-					</div>
-				</div>
-				<div class="valuationholder startkms">
-					<label class="ilholder">Fee(AED)</label> <input
-						type="text" class="form-control form-control-sm itholder"
-						name="" id=""
-						placeholder="Fee(AED)" autocomplete="on">
-				</div>
-				<div class="valuationholder insOfficer">
-					<label class="ilholder">Inspection Officer</label> <select
-						class="form-control form-control-sm itholder"
-						name="valuationReport.insOfficer" id="insOfficer">
-						<c:forEach items="${serviceofficerlist}" var="item">
-							<option value="${item.name}">${item.name}</option>
-						</c:forEach>
-						<c:forEach items="${dfservicer}" var="item1">
-							<option selected="true" value="${item1.name}">${item1.name}</option>
-						</c:forEach>
-					</select>
-				</div>
-				<div class="valuationholder mode">
-					<label class="ilholder">Mode Of Transport</label> <select
-						class="form-control form-control-sm itholder"
-						name="valuationReport.modeOfTransport" id="mode">
-						<option value="Company Car">Company Car</option>
-						<option value="Personal Car">Personal Car</option>
-						<option value="External Transport">External Transport</option>
-					</select>
-				</div>
-				<div class="valuationholder startkms">
-					<label class="ilholder"> Start Kilometres</label> <input
-						type="text" class="form-control form-control-sm itholder"
-						name="valuationReport.startkms" id="startkms"
-						placeholder="Start Kilometres" autocomplete="on">
-				</div>
-				<div class="valuationholder endkms">
-					<label class="ilholder"> End Kilometres</label> <input type="text"
-						class="form-control form-control-sm itholder"
-						name="valuationReport.endkms" id="endkms"
-						placeholder="End Kilometres" autocomplete="on">
-				</div>
-				<div class="valuationholder adjustTop">
-					<div class="savebtn" id="scheduleprv">Previous</div>
-					<div class="savebtn" id="schedulenxt">Next</div>
-				</div>
-			</div>
+			
 			<div class="form-group inspecting1">
 				<div class="viholder">
-					<label class="rholder">Makani Number</label> <input type="text"
+					<label class="rholder">Makani Number<b style="color:red"> *</b></label> <input type="text"
 						class="form-control form-control-sm textholder"
-						name="valuationReport.makaniNo" id="" placeholder="Makani Number"
+						name="valuationReport.makaniNo" id="makaniNo" placeholder="Makani Number"
 						autocomplete="on">
 				</div>
 				<div class="viholder">
-					<label class="rholder">Location</label> <select
+					<label class="rholder">Location<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.location" id="location">
 						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average" selected>Average</option>
-						<option value="Substandard">Substandard</option>
+						<option value="Not Good">Not Good</option>
 						<option value="Poor">Poor</option>
 					</select>
 				</div>
 				<div class="viholder">
-					<label class="rholder">Location Coordinates</label> <input
+					<label class="rholder">Location Coordinates<b style="color:red"> *</b></label> <input
 						type="text" class="form-control form-control-sm textholder"
 						name="valuationReport.locationCoord" id="locationCoord"
 						placeholder="Location Coordinates" autocomplete="on">
 				</div>
 				<div class="viholder">
-					<label class="rholder">Property Placement</label> <select
+					<label class="rholder">Property Placement<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propertyPlacement" id="placement">
 						<option value="Middle" selected>Middle</option>
 						<option value="Corner">Corner</option>
 						<option value="Semi-Corner">Semi-Corner</option>
+						<option value="Not Applicable">Not Applicable</option>
 					</select>
 				</div>
 				<div class="viholder">
-					<label class="rholder">Property Exposure</label> <select
+					<label class="rholder">Property Exposure<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propertyExposure" id="exposure">
 						<option value="Single Row">Single Row</option>
 						<option value="Back To Back" selected>Back To Back</option>
+						<option value="Not Applicable">Not Applicable</option>
 					</select>
 				</div>
 				<div class="viholder">
@@ -2030,7 +1912,7 @@
 						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average" selected>Average</option>
-						<option value="Substandard">Substandard</option>
+						<option value="Not Good">Not Good</option>
 						<option value="Poor">Poor</option>
 					</select>
 				</div>
@@ -2048,6 +1930,7 @@
 						name="valuationReport.devType" id="status">
 						<option value="Shell & Core" selected>Shell & Core</option>
 						<option value="Fitted">Fitted</option>
+						<option value="Not Applicable">Not Applicable</option>
 					</select>
 				</div>
 				<div class="viholder">
@@ -2177,7 +2060,7 @@
 				</div>
 				<div class="viholder"> 
 					<label class="rholder" style="line-height: 16px">Built Up
-						Area Size (sq.ft)</label> <input type="text"
+						Area Size<br>  (sq.ft)</label> <input type="text"
 						class="form-control form-control-sm textholder"
 						name="valuationReport.buitUpAreaSize" id="buitUpAreaSize"
 						placeholder="Built Up Area Size(sq.ft)" autocomplete="on">
@@ -2242,6 +2125,7 @@
 						class="form-control form-control-sm textholder"
 						name="valuationReport.noOfbedrooms" id="bedroom">
 						<option value="" hidden>--- Select ---</option>
+						<option value="0">0(Studio)</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -2291,6 +2175,94 @@
 						<option value="Ground + 13 Floor">Ground + 13 Floor</option>
 						<option value="Ground + 14 Floor">Ground + 14 Floor</option>
 						<option value="Ground + 15 Floor">Ground + 15 Floor</option>
+						<option value="Ground + 16 Floor">Ground + 16 Floor</option>
+						<option value="Ground + 17 Floor">Ground + 17 Floor</option>
+						<option value="Ground + 18 Floor">Ground + 18 Floor</option>
+						<option value="Ground + 19 Floor">Ground + 19 Floor</option>
+						<option value="Ground + 20 Floor">Ground + 20 Floor</option>
+						<option value="Ground + 21 Floor">Ground + 21 Floor</option>
+						<option value="Ground + 22 Floor">Ground + 22 Floor</option>
+						<option value="Ground + 23 Floor">Ground + 23 Floor</option>
+						<option value="Ground + 24 Floor">Ground + 24 Floor</option>
+						<option value="Ground + 25 Floor">Ground + 25 Floor</option>
+						<option value="Ground + 26 Floor">Ground + 26 Floor</option>
+						<option value="Ground + 27 Floor">Ground + 27 Floor</option>
+						<option value="Ground + 28 Floor">Ground + 28 Floor</option>
+						<option value="Ground + 29 Floor">Ground + 29 Floor</option>
+						<option value="Ground + 30 Floor">Ground + 30 Floor</option>
+						<option value="Ground + 31 Floor">Ground + 31 Floor</option>
+						<option value="Ground + 32 Floor">Ground + 32 Floor</option>
+						<option value="Ground + 33 Floor">Ground + 33 Floor</option>
+						<option value="Ground + 34 Floor">Ground + 34 Floor</option>
+						<option value="Ground + 35 Floor">Ground + 35 Floor</option>
+						<option value="Ground + 36 Floor">Ground + 36 Floor</option>
+						<option value="Ground + 37 Floor">Ground + 37 Floor</option>
+						<option value="Ground + 38 Floor">Ground + 38 Floor</option>
+						<option value="Ground + 39 Floor">Ground + 39 Floor</option>
+						<option value="Ground + 40 Floor">Ground + 40 Floor</option>
+						<option value="Ground + 41 Floor">Ground + 41 Floor</option>
+						<option value="Ground + 42 Floor">Ground + 42 Floor</option>
+						<option value="Ground + 43 Floor">Ground + 43 Floor</option>
+						<option value="Ground + 44 Floor">Ground + 44 Floor</option>
+						<option value="Ground + 45 Floor">Ground + 45 Floor</option>
+						<option value="Ground + 46 Floor">Ground + 46 Floor</option>
+						<option value="Ground + 47 Floor">Ground + 47 Floor</option>
+						<option value="Ground + 48 Floor">Ground + 48 Floor</option>
+						<option value="Ground + 49 Floor">Ground + 49 Floor</option>
+						<option value="Ground + 50 Floor">Ground + 50 Floor</option>
+						<option value="Ground + 51 Floor">Ground + 51 Floor</option>
+						<option value="Ground + 52 Floor">Ground + 52 Floor</option>
+						<option value="Ground + 53 Floor">Ground + 53 Floor</option>
+						<option value="Ground + 54 Floor">Ground + 54 Floor</option>
+						<option value="Ground + 55 Floor">Ground + 55 Floor</option>
+						<option value="Ground + 56 Floor">Ground + 56 Floor</option>
+						<option value="Ground + 57 Floor">Ground + 57 Floor</option>
+						<option value="Ground + 58 Floor">Ground + 58 Floor</option>
+						<option value="Ground + 59 Floor">Ground + 59 Floor</option>
+						<option value="Ground + 60 Floor">Ground + 60 Floor</option>
+						<option value="Ground + 61 Floor">Ground + 61 Floor</option>
+						<option value="Ground + 62 Floor">Ground + 62 Floor</option>
+						<option value="Ground + 63 Floor">Ground + 63 Floor</option>
+						<option value="Ground + 64 Floor">Ground + 64 Floor</option>
+						<option value="Ground + 65 Floor">Ground + 65 Floor</option>
+						<option value="Ground + 66 Floor">Ground + 66 Floor</option>
+						<option value="Ground + 67 Floor">Ground + 67 Floor</option>
+						<option value="Ground + 68 Floor">Ground + 68 Floor</option>
+						<option value="Ground + 69 Floor">Ground + 69 Floor</option>
+						<option value="Ground + 70 Floor">Ground + 70 Floor</option>
+						<option value="Ground + 71 Floor">Ground + 71 Floor</option>
+						<option value="Ground + 72 Floor">Ground + 72 Floor</option>
+						<option value="Ground + 73 Floor">Ground + 73 Floor</option>
+						<option value="Ground + 74 Floor">Ground + 74 Floor</option>
+						<option value="Ground + 75 Floor">Ground + 75 Floor</option>
+						<option value="Ground + 76 Floor">Ground + 76 Floor</option>
+						<option value="Ground + 77 Floor">Ground + 77 Floor</option>
+						<option value="Ground + 78 Floor">Ground + 78 Floor</option>
+						<option value="Ground + 79 Floor">Ground + 79 Floor</option>
+						<option value="Ground + 80 Floor">Ground + 80 Floor</option>
+						<option value="Ground + 81 Floor">Ground + 81 Floor</option>
+						<option value="Ground + 82 Floor">Ground + 82 Floor</option>
+						<option value="Ground + 83 Floor">Ground + 83 Floor</option>
+						<option value="Ground + 84 Floor">Ground + 84 Floor</option>
+						<option value="Ground + 85 Floor">Ground + 85 Floor</option>
+						<option value="Ground + 86 Floor">Ground + 86 Floor</option>
+						<option value="Ground + 87 Floor">Ground + 87 Floor</option>
+						<option value="Ground + 88 Floor">Ground + 88 Floor</option>
+						<option value="Ground + 89 Floor">Ground + 89 Floor</option>
+						<option value="Ground + 90 Floor">Ground + 90 Floor</option>
+						<option value="Ground + 91 Floor">Ground + 91 Floor</option>
+						<option value="Ground + 92 Floor">Ground + 92 Floor</option>
+						<option value="Ground + 93 Floor">Ground + 93 Floor</option>
+						<option value="Ground + 94 Floor">Ground + 94 Floor</option>
+						<option value="Ground + 95 Floor">Ground + 95 Floor</option>
+						<option value="Ground + 96 Floor">Ground + 96 Floor</option>
+						<option value="Ground + 97 Floor">Ground + 97 Floor</option>
+						<option value="Ground + 98 Floor">Ground + 98 Floor</option>
+						<option value="Ground + 99 Floor">Ground + 99 Floor</option>
+						<option value="Ground + 100 Floor">Ground + 100 Floor</option>
+						
+						
+						
 					</select>
 				</div>
 				<div class="viholder">
@@ -2462,6 +2434,7 @@
 				</div>
 			</div>
 			<%@include file="inspecting.jsp"%>
+			<%@include file="scheduling.jsp"%>
 			<%@include file="soldcalcs.jsp"%>
 			<%@include file="listingscalcs.jsp"%>
 		    <%@include file="mastercalcs.jsp"%>
@@ -2600,3 +2573,4 @@
 <script src="resources/assets/js/inspecting.js"></script>
 <script src="resources/assets/js/incomeApp.js"></script>
 <script src="resources/assets/js/hideshow.js"></script>
+<script src="resources/assets/js/openclose.js"></script>

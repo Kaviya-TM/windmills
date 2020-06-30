@@ -536,7 +536,7 @@ public class MasterService {
 			for(MasterValuation st : filterTransaction){
 				String loc = st.getNoOfRooms();
 				String bed = loc.replaceAll("\\s+","");
-				if(!bed.equals(" - ") && !bed.equals("")){
+				if(!bed.equals(" - ") && !bed.equals("") && !bed.equals("studio")){
 					int finaed = Integer.parseInt(bed);
 					avglist.add(finaed);
 				}

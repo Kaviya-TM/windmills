@@ -773,44 +773,49 @@ $(".select2").select2({
 });
 $("#bedroom").change(function() {
 	var value = $(this).val();
+	if(value.includes("0")){
+		$('#0').show();
+		$('#1,#2,#3,#4,#5,#6,#7,#8,#9,#10').hide();
+	}
 	if(value.includes("1")){
 		$('#1').show();
-		$('#2,#3,#4,#5,#6,#7,#8,#9,#10').hide();
+		$('#0,#2,#3,#4,#5,#6,#7,#8,#9,#10').hide();
 	}
 	if(value.includes("2")){
 		$('#1,#2').show();
-		$('#3,#4,#5,#6,#7,#8,#9,#10').hide();
+		$('#0,#3,#4,#5,#6,#7,#8,#9,#10').hide();
 	}
 	if(value.includes("3")){
 		$('#1,#2,#3').show();
-		$('#4,#5,#6,#7,#8,#9,#10').hide();
+		$('#0,#4,#5,#6,#7,#8,#9,#10').hide();
 	}
 	if(value.includes("4")){
 		$('#1,#2,#3,#4').show();
-		$('#5,#6,#7,#8,#9,#10').hide();
+		$('#0,#5,#6,#7,#8,#9,#10').hide();
 	}
 	if(value.includes("5")){
 		$('#1,#2,#3,#4,#5').show();
-		$('#6,#7,#8,#9,#10').hide();
+		$('#0,#6,#7,#8,#9,#10').hide();
 	}
 	if(value.includes("6")){
 		$('#1,#2,#3,#4,#5,#6').show();
-		$('#7,#8,#9,#10').hide();
+		$('#0,#7,#8,#9,#10').hide();
 	}
 	if(value.includes("7")){
 		$('#1,#2,#3,#4,#5,#6,#7').show();
-		$('#8,#9,#10').hide();
+		$('#0,#8,#9,#10').hide();
 	}
 	if(value.includes("8")){
 		$('#1,#2,#3,#4,#5,#6,#7,#8').show();
-		$('#9,#10').hide();
+		$('#0,#9,#10').hide();
 	}
 	if(value.includes("9")){
-		$('#10').hide();
+		$('#0,#10').hide();
 		$('#1,#2,#3,#4,#5,#6,#7,#8,#9').show();
 	}
 	if(value.includes("10")){
 		$('#1,#2,#3,#4,#5,#6,#7,#8,#9,#10').show();
+		$('#0').hide();
 	}
 });
 $("#bathroom").change(function() {
@@ -1010,20 +1015,34 @@ $.ajax({
 });
 $('#lm').css("color","transparent");
 $('#landSize').val("Not Applicable");
-
+$('#plotno').val("Not Applicable");
+$('#makaniNo').val("Not Applicable");
+$('#placement').val("Not Applicable");
+$('#exposure').val("Not Applicable");
+$('#status').val("Not Applicable");
 $("#propertyvalued").change(function() {
 	var propertyValued = $('#propertyvalued').val();
 	if(propertyValued != "Residential Apartment" && propertyValued != "Office"){
 		$('#fm').css("color","transparent");
-		$('#pn').css("color","transparent");
-		$('#plotno').val("Not Applicable");
+		$('#pn').css("color","red");
+		$('#plotno').val("");
+		$('#placement').val("Middle");
+		$('#exposure').val("Back To Back");
 	}
 	else{
 		$('#fm').css("color","red");
-		$('#pn').css("color","red");
-		$('#plotno').val("");
+		$('#pn').css("color","transparent");
+		$('#plotno').val("Not Applicable");
+		$('#placement').val("Not Applicable");
+		$('#exposure').val("Not Applicable");
 	}
-	if(propertyValued === "Residential Villa" || propertyValued === "Warehouse"){
+	if(propertyValued === "Office"){
+		$('#status').val("Shell & Core");
+	}
+	else{
+		$('#status').val("Not Applicable");
+	}
+	if(propertyValued === "Residential Villa" || propertyValued === "Warehouse" || propertyValued.includes("Land")){
 		$('#lm').css("color","red");
 		$('#ls').css("color","red");
 		$('#landSize').val("");

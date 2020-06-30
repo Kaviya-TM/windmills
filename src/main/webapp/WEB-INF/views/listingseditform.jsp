@@ -294,7 +294,7 @@
 						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average">Average</option>
-						<option value="Substandard">Substandard</option>
+						<option value="Not Good">Not Good</option>
 						<option value="Poor">Poor</option>
 					</select>
 				</div>
@@ -359,7 +359,7 @@
 						<option value="Very Good">Very Good</option>
 						<option value="Good">Good</option>
 						<option value="Average">Average</option>
-						<option value="Substandard">Substandard</option>
+						<option value="Not Good">Not Good</option>
 						<option value="Poor">Poor</option>
 					</select>
 				</div>

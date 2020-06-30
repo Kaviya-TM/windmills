@@ -104,9 +104,13 @@ public class ListingsService {
 			String pricefrom, String priceto, String pricesqtfrom, String pricesqtto, String datefrom, String dateto,
 			String propList) throws ParseException {
 		List<Listings> getlist = listingsDaoImpl.getListings();
+		System.err.println("getlist"+getlist.size());
 		List<Listings> datelist =  getDateList(getlist,datefrom,dateto);
+		System.err.println("datelist"+datelist.size());
 		List<Listings> propertylist = getPropertyList(datelist,propList);
+		System.err.println("propertylist"+propertylist.size());
 		List<Listings> bullist =  getBulList(propertylist,buildingName);
+		System.err.println("bullist"+bullist.size());
 		List<Listings> bedlist = new ArrayList<Listings>();
 		List<Listings> landlist = new ArrayList<Listings>();
 		List<Listings> bualist = new ArrayList<Listings>();
@@ -153,6 +157,7 @@ public class ListingsService {
 			pricesqtlist = getPriceSqtList(pricelist,pricesqtfrom,pricesqtto);
 		}
 		
+		System.err.println("pricesqtlist"+pricesqtlist.size());
 		return pricesqtlist;
 	}
 	private List<Listings> getPriceSqtList(List<Listings> pricelist, String pricesqtfrom, String pricesqtto) {
@@ -433,7 +438,7 @@ public class ListingsService {
 				if(location.equals("Average")){
 					finallocation = 3;
 				}
-				if(location.equals("Substandard")){
+				if(location.equals("Not Good")){
 					finallocation = 2;
 				}
 				if(location.equals("Poor")){
@@ -571,6 +576,9 @@ public class ListingsService {
 				if(exp.equals("Back To Back")){
 					finalexp = "0";
 				}
+				if(exp.equals("Not Applicable")){
+					finalexp = "0";
+				}
 				int finage = Integer.parseInt(finalexp);
 				avglist.add(finage);
 			}
@@ -595,6 +603,9 @@ public class ListingsService {
 				if(pla.equals("Semi-Corner")){
 					finall = "1.5";
 				}
+				if(pla.equals("Not Applicable")){
+					finall = "0";
+				}
 				avglist.add(finall);
 			}
 		}
@@ -609,14 +620,14 @@ public class ListingsService {
 		if(!filterTransaction.isEmpty()){
 			for(Listings st : filterTransaction){
 				propValued = st.getPropertyListed();
-				if(propValued.equals("Residential Apartment")){
+				if(propValued.equals("Residential Apartment") || propValued.equals("Office")){
 					String age = st.getFloorNo();
 					int finage = Integer.parseInt(age);
 					avglist.add(finage);
 				}
 			}
 		}
-		if(propValued.equals("Residential Apartment")){
+		if(propValued.equals("Residential Apartment") || propValued.equals("Office")){
 			double finalValue =  calculateAverage(avglist);
 			avg = String.valueOf(dd.format(finalValue));
 		}
@@ -641,7 +652,7 @@ public class ListingsService {
 				if(location.equals("Average")){
 					finallocation = 3;
 				}
-				if(location.equals("Substandard")){
+				if(location.equals("Not Good")){
 					finallocation = 2;
 				}
 				if(location.equals("Poor")){
@@ -918,7 +929,7 @@ public class ListingsService {
 		if(!filterTransaction.isEmpty()){
 			for(Listings st : filterTransaction){
 				propValued = st.getPropertyListed();
-				if(propValued.equals("Residential Villa")){
+				if(propValued.equals("Residential Villa") || propValued.equals("Warehouse") || propValued.contains("Land") ){
 					String level = st.getLevel();
 					String[] levell = level.split(",");
 					int count = levell.length;
@@ -928,7 +939,7 @@ public class ListingsService {
 				
 			}
 		}
-		if(propValued.equals("Residential Villa")){
+		if(propValued.equals("Residential Villa") || propValued.equals("Warehouse") || propValued.contains("Land")){
 			double finalValue =  calculateAverage(avglist);
 			avg = String.valueOf(dd.format(finalValue));
 		}

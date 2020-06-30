@@ -12,6 +12,36 @@
 						<label class="labelholder"
 							style="width:16%; color: forestgreen; text-align: right"><b>Upload</b></label>
 					</div>
+					<div class="valuationholder" id="0">
+						<input type="number"
+							style="width: 15% !important; text-align: center;"
+							class="form-control form-control-sm textholder" name="" id=""
+							value="0" readonly autocomplete="on"> <select
+							class="form-control form-control-sm textholder"
+							style="width: 15% !important; margin-left: 10px" name="" id="">
+							<option value="Ground">G</option>
+							<option value="First">F</option>
+							<option value="Second">S</option>
+						</select> <select class="form-control form-control-sm textholder"
+							style="width: 15% !important; margin-left: 11px" name="" id="">
+							<option value="Standard">S</option>
+							<option value="Upgraded">U</option>
+						</select>
+						 <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px;margin-left:20px">
+							<input type="checkbox" id="0bed" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;color:transparent;font-size:13px">Y</label>
+							</div>
+					 	 </div> 
+					 	 <label for="bedpic0" class="custom-file-upload bed0" style="padding:2px 10px;line-height: 23px;"> <i
+						class="fa fa-cloud-upload"></i>Upload
+						</label> <input id="bedpic0" name='files[0]' type="file" accept="image/*"
+						style="display: none;">
+					</div>
 					<div class="valuationholder" id="1">
 						<input type="number"
 							style="width: 15% !important; text-align: center;"
@@ -974,20 +1004,37 @@
 						</label> <input id="ceiling1" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>	
+					<div class="valuationholder">
+						<label class="labelholder" style="width: 67%;"><b>View</b></label>
+						<select class="form-control form-control-sm textholder"
+							style="width: 13% !important;background: none !important;display:none !important; margin-left: 125px" name="" id="viewinspect">
+							<option value="Standard">S</option>
+							<option value="Upgraded">U</option>
+						</select>
+						<div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px;margin-top:4px;margin-left:20px">
+							<input type="checkbox" id="1view" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;color:transparent;font-size:13px">Y</label>
+							</div>
+					 	 </div> 
+					 	 <label for="viewinspect1" class="custom-file-upload view1" style="padding:2px 10px;line-height: 23px;"> <i
+						class="fa fa-cloud-upload"></i>Upload
+						</label> <input id="viewinspect1" name='files[0]' type="file" accept="image/*"
+						style="display: none;">
+					</div>
 					<div class="valuationholder" style="position:relative;top:2px">
 						<label class="labelholder" style="width: 30%;"><b> OverAll Upgrades</b></label>
 						<select class="form-control form-control-sm textholder" style="width:55% !important; text-align: center" id="overupg">
 							<option value="" hidden>--- Select ---</option>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
+							<option value="1">1(Poor)</option>
+							<option value="2">2(Not Good)</option>
+							<option value="3">3(Average)</option>
+							<option value="4">4(Good)</option>
+							<option value="5">5(Very Good)</option>
 						</select>
 					</div>
 				</div>

@@ -55,7 +55,7 @@ $("#avgloc").keyup(function(){
 });
 $("#avgview").keyup(function(){
 	var diffview = parseFloat($('#subview').val()) - parseFloat($(this).val());
-    $('#diffview').val(diffloc);
+    $('#diffview').val(diffview);
     adjview =  parseFloat(($('#diffview').val()).replace(/,/g , ''))  * parseFloat(($("#cweiview").val()).replace(/%/g , '')) * parseInt(priceAvg) / 100;
 	$('#adjview').val(toComma(adjview));
 	 //Market Value//
@@ -1106,7 +1106,7 @@ $("#average").click(function(){
 				
 				//floor//
 				var propvalued = $('#propertyvalued').val();
-				if(propvalued === "Residential Villa"){
+				if(propvalued === "Residential Villa" || propvalued === "Warehouse" || propvalued.includes("Land")){
 					$('#avgfloor').val(0);
 					$('#subfloor').val(0);
 				}
@@ -1126,7 +1126,7 @@ $("#average").click(function(){
 				
 				//level//
 				var propValued = $('#propertyvalued').val();
-				if(propValued === "Residential Apartment"){
+				if(propValued === "Residential Apartment" || propValued === "Office"){
 					$('#avglevel').val(0);
 					$('#sublevel').val(0);
 				}
@@ -1208,7 +1208,7 @@ $("#average").click(function(){
 				//LandSize//
 				 $('#avgland').val(toComma(landAvg));
 				 var subland = null;
-				 if($('#landSize').val() !=""){
+			 if($('#landSize').val() !="" && $('#landSize').val() != "Not Applicable"){
 					 subland = $('#landSize').val();
 				 }
 				 else{
@@ -1354,7 +1354,7 @@ function calAvg(value){
 	if(value == "Average"){
 		final = "3";
 	}
-	if(value == "Substandard"){
+	if(value == "Not Good"){
 		final = "2";
 	}
 	if(value == "Poor"){
@@ -1390,7 +1390,10 @@ function calPla(value){
 		final = "1";
 	}
 	if(value == "Semi-Corner"){
-		final = "1.5";
+		final = "0.5";
+	}
+	if(value == "Not Applicable"){
+		final = "0";
 	}
 	return final;
 }
@@ -1438,7 +1441,7 @@ function calLandScape(value){
 		final = "0";
 	}
 	if(value == "Semi-Landscape"){
-		final = "1.5";
+		final = "0.5";
 	}
 	return final;
 }
@@ -1493,6 +1496,9 @@ function calExp(value){
 		final = "1";
 	}
 	if(value == "Back To Back"){
+		final = "0";
+	}
+	if(value == "Not Applicable"){
 		final = "0";
 	}
 	return final;

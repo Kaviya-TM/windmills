@@ -1077,7 +1077,7 @@ $("#maverage").click(function(){
 				//floor//
 				 var propertyvalued = $('#propertyvalued').val();
 				 var propvalued = $('#propertyvalued').val();
-				 if(propvalued === "Residential Villa"){
+				 if(propvalued === "Residential Villa" || propvalued === "Warehouse" || propvalued.includes("Land")){
 						$('#mavgfloor').val(0);
 						$('#msubfloor').val(0);
 				 }
@@ -1092,7 +1092,7 @@ $("#maverage").click(function(){
 				
 				//level//
 				 var propertyValued = $('#propertyvalued').val();
-				 if(propertyValued === "Residential Apartment"){
+				 if(propertyValued === "Residential Apartment"  || propertyValued === "Office"){
 						$('#mavglevel').val(0);
 						$('#msublevel').val(0);
 				 }
@@ -1174,7 +1174,7 @@ $("#maverage").click(function(){
 				//LandSize//
 				 $('#mavgland').val(toComma(mlandAvg));
 				 var msubland = null;
-				 if($('#landSize').val() !=""){
+				 if($('#landSize').val() !="" && $('#landSize').val() != "Not Applicable"){
 					 msubland = $('#landSize').val();
 				 }
 				 else{
@@ -1320,7 +1320,7 @@ function calAvg(value){
 	if(value == "Average"){
 		final = "3";
 	}
-	if(value == "Substandard"){
+	if(value == "Not Good"){
 		final = "2";
 	}
 	if(value == "Poor"){
@@ -1356,7 +1356,10 @@ function calPla(value){
 		final = "1";
 	}
 	if(value == "Semi-Corner"){
-		final = "1.5";
+		final = "0.5";
+	}
+	if(value == "Not Applicable"){
+		final = "0";
 	}
 	return final;
 }
@@ -1404,7 +1407,7 @@ function calLandScape(value){
 		final = "0";
 	}
 	if(value == "Semi-Landscape"){
-		final = "1.5";
+		final = "0.5";
 	}
 	return final;
 }
@@ -1459,6 +1462,9 @@ function calExp(value){
 		final = "1";
 	}
 	if(value == "Back To Back"){
+		final = "0";
+	}
+	if(value == "Not Applicable"){
 		final = "0";
 	}
 	return final;

@@ -68,7 +68,7 @@
 					<label class="rholder">Service Officer Name</label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.serviceOffName" id="">
-						<c:forEach items="${serviceofficerlist}" var="item">
+						<c:forEach items="${serviceOfficerlist}" var="item">
 							<option value="${item.name}">${item.name}</option>
 						</c:forEach>
 						<c:forEach items="${dfservicer}" var="item1">
@@ -439,7 +439,7 @@
 					<label class="ilholder">Inspection Officer</label> <select
 						class="form-control form-control-sm itholder" name="valuationReport.insOfficer"
 						id="insOfficer">
-						<c:forEach items="${serviceofficerlist}" var="item">
+						<c:forEach items="${serviceOfficerlist}" var="item">
 							<option value="${item.name}">${item.name}</option>
 						</c:forEach>
 						<c:forEach items="${dfservicer}" var="item1">

@@ -86,7 +86,27 @@ public class ListingTransactionController {
 		return mv;
 
 	}
-	
+	@RequestMapping(value = "/getCommunityList", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Listings> getCommunityList(@RequestParam("city") String city) {
+		List<Listings> list = valuationService.getCommunityList(city);
+		return list;
+
+	}
+	@RequestMapping(value = "/getSubCommunityList", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Listings> getSubCommunityList(@RequestParam("community") String community) {
+		List<Listings> list = valuationService.getSubCommunityList(community);
+		return list;
+
+	}
+	@RequestMapping(value = "/getBuildingLiist", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Listings> getBuildingLiist(@RequestParam("subCommunity") String subCommunity) {
+		List<Listings> list = valuationService.getBuildingLiist(subCommunity);
+		return list;
+
+	}
 	@RequestMapping(value = "/listings-filtered-transaction", method = RequestMethod.POST)
 	@ResponseBody
 	public JSONObject getFilterTransacList(@RequestParam("city")String city,@RequestParam("area")String area,

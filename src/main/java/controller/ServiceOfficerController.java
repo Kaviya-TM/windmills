@@ -37,7 +37,7 @@ public class ServiceOfficerController {
 	private ServiceOfficerService serviceOfficerService;
 	static Logger log = Logger.getLogger(ClientController.class);
 
-	@RequestMapping(value = {"/service-officer-form" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"/service-Officer-form" }, method = RequestMethod.GET)
 	public ModelAndView servicePage() {
 
 		ModelAndView mv = new ModelAndView();
@@ -46,12 +46,12 @@ public class ServiceOfficerController {
 		return mv;
 	}
 	
-	@RequestMapping(value = {"/service-officer-list" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"/service-Officer-list" }, method = RequestMethod.GET)
 	public ModelAndView serviceOfficerPage() {
 
 		ModelAndView mv = new ModelAndView();
 		List<Object[]> list=serviceOfficerService.getOfficerlist();
-		mv.addObject("officerlist",list);
+		mv.addObject("Officerlist",list);
 		mv.setViewName("servicelist");
 		return mv;
 	}
@@ -70,9 +70,9 @@ public class ServiceOfficerController {
 		
 	}
 	@RequestMapping(value = "/addServiceOfficer", method = RequestMethod.POST)
-	public ModelAndView addServiceOfficer(@ModelAttribute("serviceofficer") ServiceOfficer serviceofficer,HttpSession session) throws IllegalStateException, IOException {
+	public ModelAndView addServiceOfficer(@ModelAttribute("serviceOfficer") ServiceOfficer serviceOfficer,HttpSession session) throws IllegalStateException, IOException {
    
-    serviceOfficerService.addServiceOfficer(serviceofficer);
+    serviceOfficerService.addServiceOfficer(serviceOfficer);
     ModelAndView mv = new ModelAndView();
     mv.setViewName("main");
 
@@ -91,9 +91,9 @@ public class ServiceOfficerController {
 	}
 	
 	@RequestMapping(value="/editServiceOfficer",method=RequestMethod.POST)
-	public ModelAndView editSupplier(@ModelAttribute("ServiceOfficer")ServiceOfficer serviceofficer,HttpSession session) throws IllegalStateException, IOException {
+	public ModelAndView editSupplier(@ModelAttribute("ServiceOfficer")ServiceOfficer serviceOfficer,HttpSession session) throws IllegalStateException, IOException {
 	
-		serviceOfficerService.editServiceOfficer(serviceofficer);
+		serviceOfficerService.editServiceOfficer(serviceOfficer);
 		 ModelAndView mv = new ModelAndView();
 		    mv.setViewName("main");
 			return mv;

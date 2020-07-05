@@ -44,10 +44,10 @@
 						Officer</span></a>
 				<ul class="dropdown-menu">
 					<li><a class="nav-link"
-						href="<c:url value="service-officer-form"/>">Add Service
+						href="<c:url value="service-Officer-form"/>">Add Service
 							Officer</a></li>
 					<li><a class="nav-link"
-						href="<c:url value="service-officer-list"/>">View Service
+						href="<c:url value="service-Officer-list"/>">View Service
 							Officer</a></li>
 				</ul></li>
 				<li class="dropdown"><a href="#"

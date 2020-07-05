@@ -25,8 +25,8 @@ public class ServiceOfficerDaoImpl {
 	
 
 
-	public void addServiceOfficer(ServiceOfficer serviceofficer) {
-		sessionFactory.getCurrentSession().saveOrUpdate(serviceofficer);
+	public void addServiceOfficer(ServiceOfficer serviceOfficer) {
+		sessionFactory.getCurrentSession().saveOrUpdate(serviceOfficer);
 		
 	}
 
@@ -71,19 +71,19 @@ public class ServiceOfficerDaoImpl {
 	}
 
 
-	public void updateServiceOfficer(ServiceOfficer serviceofficer) {
+	public void updateServiceOfficer(ServiceOfficer serviceOfficer) {
 		log.info("Updating");
 		
-	 sessionFactory.getCurrentSession().update(serviceofficer);
+	 sessionFactory.getCurrentSession().update(serviceOfficer);
 
-//		String hql = "UPDATE ServiceOfficer SET name = :name, email = :email, phone = :phone, position = :position, modifiedDate = :modifiedDate WHERE serviceofficer_id = :serviceId";
+//		String hql = "UPDATE ServiceOfficer SET name = :name, email = :email, phone = :phone, position = :position, modifiedDate = :modifiedDate WHERE serviceOfficer_id = :serviceId";
 //		Query query=sessionFactory.getCurrentSession().createQuery(hql);
-//		query.setParameter("serviceId", serviceofficer.getServiceId());
-//		query.setParameter("name", serviceofficer.getName());
-//		query.setParameter("phone", serviceofficer.getPhone());
-//		query.setParameter("email", serviceofficer.getEmail());
-//		query.setParameter("position", serviceofficer.getPosition());
-//		query.setParameter("modifiedDate", serviceofficer.getModifiedDate());
+//		query.setParameter("serviceId", serviceOfficer.getServiceId());
+//		query.setParameter("name", serviceOfficer.getName());
+//		query.setParameter("phone", serviceOfficer.getPhone());
+//		query.setParameter("email", serviceOfficer.getEmail());
+//		query.setParameter("position", serviceOfficer.getPosition());
+//		query.setParameter("modifiedDate", serviceOfficer.getModifiedDate());
 //		query.executeUpdate();
 		
 	}

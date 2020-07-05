@@ -85,16 +85,28 @@
 					</select>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Building Name</label> 
+					<label class="labelholder" style="width:10% !important">City</label> 
 					<select
-							class="form-control form-control-sm textholder"  
-							name="valuationReport.buildingName" id="l-buildingName" style="width:39% !important" >  
-							<c:forEach items="${bullist}" var="item"> 
-								<option value="" hidden>-- Select Building/Project Name ---</option> 
-								<option value="${item}">${item}</option>
- 							</c:forEach> 
-					</select> 
+						class="form-control form-control-sm textholder"
+						name="" id="l-city" style="width:39% !important">
+						<c:forEach items="${citylist}" var="item">
+							<option value="" hidden>-- Select City---</option>
+							<option value="${item}">${item}</option>
+						</c:forEach>
+					</select>
 				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Community Name</label>
+					<select
+						class="form-control form-control-sm textholder"
+						name="" id="l-community" style="width:39% !important">
+							<c:forEach items="${arealist}" var="item"> 
+								<option value="" hidden>-- Select Community/Area---</option>
+								<option value="${item}">${item}</option>
+ 							</c:forEach>
+					</select>
+				</div>
+				
 				<div class="valuationholder">
 					<label class="labelholder" style="width:10% !important;line-height:16px">Sub-Community Name</label>
 						<select
@@ -107,26 +119,18 @@
  						</select>
 				</div>	
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Community Name</label>
+					<label class="labelholder" style="width:10% !important">Building Name</label> 
 					<select
-						class="form-control form-control-sm textholder"
-						name="" id="l-community" style="width:39% !important">
-							<c:forEach items="${arealist}" var="item"> 
-								<option value="" hidden>-- Select Community/Area---</option>
+							class="form-control form-control-sm textholder"  
+							name="valuationReport.buildingName" id="l-buildingName" style="width:39% !important" >  
+							<c:forEach items="${bullist}" var="item"> 
+								<option value="" hidden>-- Select Building/Project Name ---</option> 
 								<option value="${item}">${item}</option>
- 							</c:forEach>
-					</select>
+ 							</c:forEach> 
+					</select> 
 				</div>
-				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">City</label> 
-					<select
-						class="form-control form-control-sm textholder"
-						name="" id="l-city" style="width:39% !important">
-						<c:forEach items="${citylist}" var="item">
-							<option value="${item}">${item}</option>
-						</c:forEach>
-					</select>
-				</div>
+				
+				
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">Bedroom From</label> <select
 						class="form-control form-control-sm textholder"
@@ -432,15 +436,26 @@
 					</select>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Building Name</label> 
+					<label class="labelholder" style="width:10% !important">City</label> 
 					<select
-							class="form-control form-control-sm textholder"  
-							name="valuationReport.buildingName" id="m-buildingName" style="width:39% !important" >  
-							<c:forEach items="${mbullist}" var="item"> 
-								<option value="" hidden>-- Select Building/Project Name ---</option> 
+						class="form-control form-control-sm textholder"
+						name="" id="m-city" style="width:39% !important">
+						<c:forEach items="${mcitylist}" var="item">
+						<option value="" hidden>-- Select City---</option>
+							<option value="${item}">${item}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Community Name</label>
+					<select
+						class="form-control form-control-sm textholder"
+						name="" id="m-community" style="width:39% !important">
+							<c:forEach items="${mcomlist}" var="item"> 
+								<option value="" hidden>-- Select Community/Area---</option>
 								<option value="${item}">${item}</option>
- 							</c:forEach> 
-					</select> 
+ 							</c:forEach>
+					</select>
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder" style="width:10% !important;line-height:16px">Sub-Community Name</label>
@@ -454,26 +469,18 @@
  						</select>
 				</div>	
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Community Name</label>
+					<label class="labelholder" style="width:10% !important">Building Name</label> 
 					<select
-						class="form-control form-control-sm textholder"
-						name="" id="m-community" style="width:39% !important">
-							<c:forEach items="${mcomlist}" var="item"> 
-								<option value="" hidden>-- Select Community/Area---</option>
+							class="form-control form-control-sm textholder"  
+							name="valuationReport.buildingName" id="m-buildingName" style="width:39% !important" >  
+							<c:forEach items="${mbullist}" var="item"> 
+								<option value="" hidden>-- Select Building/Project Name ---</option> 
 								<option value="${item}">${item}</option>
- 							</c:forEach>
-					</select>
+ 							</c:forEach> 
+					</select> 
 				</div>
-				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">City</label> 
-					<select
-						class="form-control form-control-sm textholder"
-						name="" id="m-city" style="width:39% !important">
-						<c:forEach items="${mcitylist}" var="item">
-							<option value="${item}">${item}</option>
-						</c:forEach>
-					</select>
-				</div>
+				
+				
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">Bedroom From</label> <select
 						class="form-control form-control-sm textholder"
@@ -779,15 +786,26 @@
 					</select>
 				</div>
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Building Name</label> 
+					<label class="labelholder" style="width:10% !important">City</label> 
 					<select
-							class="form-control form-control-sm textholder"  
-							name="valuationReport.buildingName" id="s-buildingName" style="width:39% !important" >  
-							<c:forEach items="${bullist}" var="item"> 
-								<option value="" hidden>-- Select Building/Project Name ---</option> 
+						class="form-control form-control-sm textholder"
+						name="" id="s-city" style="width:39% !important">
+						<c:forEach items="${citylist}" var="item">
+							<option value="" hidden>-- Select City ---</option>
+							<option value="${item}">${item}</option>
+						</c:forEach>
+					</select>
+				</div>
+				<div class="valuationholder">
+					<label class="labelholder" style="width:10% !important">Community Name</label>
+					<select
+						class="form-control form-control-sm textholder"
+						name="" id="s-community" style="width:39% !important">
+							<c:forEach items="${arealist}" var="item"> 
+								<option value="" hidden>-- Select Community/Area---</option>
 								<option value="${item}">${item}</option>
- 							</c:forEach> 
-					</select> 
+ 							</c:forEach>
+					</select>
 				</div>
 				<div class="valuationholder">
 					<label class="labelholder" style="width:10% !important;line-height:16px">Sub-Community Name</label>
@@ -801,25 +819,15 @@
  						</select>
 				</div>	
 				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">Community Name</label>
+					<label class="labelholder" style="width:10% !important">Building Name</label> 
 					<select
-						class="form-control form-control-sm textholder"
-						name="" id="s-community" style="width:39% !important">
-							<c:forEach items="${arealist}" var="item"> 
-								<option value="" hidden>-- Select Community/Area---</option>
+							class="form-control form-control-sm textholder"  
+							name="valuationReport.buildingName" id="s-buildingName" style="width:39% !important" >  
+							<c:forEach items="${bullist}" var="item"> 
+								<option value="" hidden>-- Select Building/Project Name ---</option> 
 								<option value="${item}">${item}</option>
- 							</c:forEach>
-					</select>
-				</div>
-				<div class="valuationholder">
-					<label class="labelholder" style="width:10% !important">City</label> 
-					<select
-						class="form-control form-control-sm textholder"
-						name="" id="s-city" style="width:39% !important">
-						<c:forEach items="${citylist}" var="item">
-							<option value="${item}">${item}</option>
-						</c:forEach>
-					</select>
+ 							</c:forEach> 
+					</select> 
 				</div>
 				<div class="valuationholder" style="width:25% !important">
 					<label class="labelholder" style="width:40% !important">Bedroom From</label> <select
@@ -1502,7 +1510,7 @@
 					<label class="rholder">Service Officer Name<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.serviceOffName" id="servicername">
-						<c:forEach items="${serviceofficerlist}" var="item">
+						<c:forEach items="${serviceOfficerlist}" var="item">
 							<option value="${item.name}">${item.name}</option>
 						</c:forEach>
 						<c:forEach items="${dfservicer}" var="item1">
@@ -1715,10 +1723,6 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Building/Project Name<b style="color:red"> *</b></label>
-<!-- 					 <input -->
-<!-- 						type="text" class="form-control form-control-sm textholder" -->
-<!-- 						name="valuationReport.buildingName" id="buildingname" -->
-<!-- 						placeholder="Building/Project Name" autocomplete="on"> -->
 						<select
  							class="form-control form-control-sm textholder"  
  							name="valuationReport.buildingName" id="buildingname">  
@@ -1737,10 +1741,6 @@
 				</div>
 				<div class="vrholder">
 					<label class="rholder">Sub Community Name<b style="color:red"> *</b></label> 
-<!-- 					<input -->
-<!-- 						type="text" class="form-control form-control-sm textholder" -->
-<!-- 						name="valuationReport.subCommunity" id="subcommunity" -->
-<!-- 						placeholder="Sub Community Name" autocomplete="on"> -->
 						 <select
  							class="form-control form-control-sm textholder" 
  							name="valuationReport.subCommunity" id="subcommunity"> 
@@ -1754,10 +1754,6 @@
 					<label class="rholder">Community/Area Name<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.community" id="community">
-<%-- 						<c:forEach items="${communitylist}" var="item"> --%>
-<!-- 							<option value="" hidden>Select Community</option> -->
-<%-- 							<option value="${item.community}">${item.community}</option> --%>
-<%-- 						</c:forEach> --%>
 							<c:forEach items="${arealist}" var="item"> 
 								<option value="" hidden>-- Select Community/Area---</option>
 								<option value="${item}">${item}</option>

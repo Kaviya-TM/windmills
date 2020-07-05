@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name = "serviceofficer")
+@Table(name = "serviceOfficer")
 @Component
 public class ServiceOfficer implements java.io.Serializable {
 
@@ -43,7 +43,7 @@ public class ServiceOfficer implements java.io.Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "serviceofficer_id", unique = true, nullable = false)
+	@Column(name = "serviceOfficer_id", unique = true, nullable = false)
 	public int getServiceId() {
 		return serviceId;
 	}

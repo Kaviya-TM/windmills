@@ -44,11 +44,13 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import dao.ClientDaoImpl;
+import dao.DiscountDaoImpl;
 import dao.ListingsDaoImpl;
 import dao.PropertyDaoImpl;
 import dao.ServiceOfficerDaoImpl;
 import dao.WeightageDaoImpl;
 import model.ClientDetails;
+import model.Discount;
 import model.Listings;
 import model.Property;
 import model.ServiceOfficer;
@@ -61,6 +63,8 @@ public class ListingsService {
 	
 	@Autowired
 	private ListingsDaoImpl listingsDaoImpl;
+	@Autowired
+	private DiscountDaoImpl discountDaoImpl;
 	@Autowired
 	private Listings listings;
 	@Autowired
@@ -104,18 +108,52 @@ public class ListingsService {
 			String pricefrom, String priceto, String pricesqtfrom, String pricesqtto, String datefrom, String dateto,
 			String propList) throws ParseException {
 		List<Listings> getlist = listingsDaoImpl.getListings();
-		System.err.println("getlist"+getlist.size());
+
 		List<Listings> datelist =  getDateList(getlist,datefrom,dateto);
-		System.err.println("datelist"+datelist.size());
+
 		List<Listings> propertylist = getPropertyList(datelist,propList);
-		System.err.println("propertylist"+propertylist.size());
-		List<Listings> bullist =  getBulList(propertylist,buildingName);
-		System.err.println("bullist"+bullist.size());
+		
+		List<Listings> citylist = new ArrayList<Listings>();
+		if(city.equals("")){
+			for(Listings trans : propertylist){
+				citylist.add(trans);
+			}
+		}
+		else{
+			citylist =  getCityList(propertylist,city);
+		}
+
+		List<Listings> comlist = new ArrayList<Listings>();
+		if(area.equals("")){
+			for(Listings trans : citylist){
+				comlist.add(trans);
+			}
+		}
+		else{
+			comlist =  getComList(citylist,area);
+		}
+		
+		List<Listings> subcomlist = new ArrayList<Listings>();
+		if(neighbourhood.equals("")){
+			for(Listings trans : comlist){
+				subcomlist.add(trans);
+			}
+		}
+		else{
+			subcomlist =  getSubComList(comlist,neighbourhood);
+		}
+		
+		List<Listings> bullist = new ArrayList<Listings>();
+		if(buildingName.equals("")){
+			for(Listings trans : subcomlist){
+				bullist.add(trans);
+			}
+		}
+		else{
+			bullist =  getBulList(subcomlist,buildingName);
+		}
+		
 		List<Listings> bedlist = new ArrayList<Listings>();
-		List<Listings> landlist = new ArrayList<Listings>();
-		List<Listings> bualist = new ArrayList<Listings>();
-		List<Listings> pricelist = new ArrayList<Listings>();
-		List<Listings> pricesqtlist = new ArrayList<Listings>();
 		if(bedfrom.equals("") && bedto.equals("")){
 			for(Listings trans : bullist){
 				bedlist.add(trans);
@@ -124,6 +162,8 @@ public class ListingsService {
 		else{
 			bedlist =  getList(bullist,bedfrom,bedto);
 		}
+		
+		List<Listings> landlist = new ArrayList<Listings>();
 		if(landfrom.equals("") && landto.equals("")){
 			for(Listings trans : bedlist){
 				landlist.add(trans);
@@ -132,6 +172,8 @@ public class ListingsService {
 		else{
 			landlist =  getLandList(bedlist,landfrom,landto);
 		}
+		
+		List<Listings> bualist = new ArrayList<Listings>();
 		if(buafrom.equals("") && buato.equals("")){
 			for(Listings trans : landlist){
 				bualist.add(trans);
@@ -140,6 +182,8 @@ public class ListingsService {
 		else{
 			bualist = getBUAList(landlist,buafrom,buato);
 		}
+		
+		List<Listings> pricelist = new ArrayList<Listings>();
 		if(pricefrom.equals("") && priceto.equals("")){
 			for(Listings trans : bualist){
 				pricelist.add(trans);
@@ -148,6 +192,8 @@ public class ListingsService {
 		else{
 			pricelist = getPriceList(bualist,pricefrom,priceto);
 		}
+		
+		List<Listings> pricesqtlist = new ArrayList<Listings>();
 		if(pricesqtfrom.equals("") && pricesqtto.equals("")){
 			for(Listings trans : pricelist){
 				pricesqtlist.add(trans);
@@ -159,6 +205,36 @@ public class ListingsService {
 		
 		System.err.println("pricesqtlist"+pricesqtlist.size());
 		return pricesqtlist;
+	}
+	private List<Listings> getCityList(List<Listings> propertylist, String city) {
+		ArrayList<Listings> filtercitylist = new ArrayList<Listings>();
+		for(Listings trans : propertylist){
+			String subcomname = trans.getCity();
+			if(subcomname.equals(city)){
+				filtercitylist.add(trans);
+			}
+		}
+		return filtercitylist;
+	}
+	private List<Listings> getComList(List<Listings> citylist, String area) {
+		ArrayList<Listings> filtercomlist = new ArrayList<Listings>();
+		for(Listings trans : citylist){
+			String subcomname = trans.getCommunity();
+			if(subcomname.equals(area)){
+				filtercomlist.add(trans);
+			}
+		}
+		return filtercomlist;
+	}
+	private List<Listings> getSubComList(List<Listings> comlist, String neighbourhood) {
+		ArrayList<Listings> filtersubcomlist = new ArrayList<Listings>();
+		for(Listings trans : comlist){
+			String subcomname = trans.getSubCommunity();
+			if(subcomname.equals(neighbourhood)){
+				filtersubcomlist.add(trans);
+			}
+		}
+		return filtersubcomlist;
 	}
 	private List<Listings> getPriceSqtList(List<Listings> pricelist, String pricesqtfrom, String pricesqtto) {
 		ArrayList<Listings> filterpricesqtlist = new ArrayList<Listings>();
@@ -238,9 +314,9 @@ public class ListingsService {
     	}
 		return filterlist;
 	}
-	private List<Listings> getBulList(List<Listings> propertylist, String buildingName) {
+	private List<Listings> getBulList(List<Listings> subcomlist, String buildingName) {
 		ArrayList<Listings> filterbullist = new ArrayList<Listings>();
-		for(Listings trans : propertylist){
+		for(Listings trans : subcomlist){
 			String bulname = trans.getBuildingName();
 			if(bulname.equals(buildingName)){
 				filterbullist.add(trans);
@@ -555,6 +631,9 @@ public class ListingsService {
 				if(status.equals("Fitted")){
 					finalstatus = "1";
 				}
+				if(status.equals("Not Applicable")){
+					finalstatus = "0";
+				}
 				int finage = Integer.parseInt(finalstatus);
 				avglist.add(finage);
 			}
@@ -845,15 +924,18 @@ public class ListingsService {
 			}	
 		}
 		int largest = Integer.MIN_VALUE; 
+		System.err.println("largest"+largest);
 		int smallest = Integer.MAX_VALUE;
+		System.err.println("smallest"+smallest);
 		for (int number : avglist) { 
+			System.err.println("number"+number);
 			if (number > largest) {
 				largest = number;
 				} 
 			else if (number < smallest) { 
 				smallest = number; } 
 		}
-
+		System.err.println("smallestvvvv"+smallest);
 		return smallest;
 	}
 	public int getHighPrice(List<Listings> filterTransaction) {
@@ -948,6 +1030,79 @@ public class ListingsService {
 		}
 		return avg;
 	}
+	@Transactional
+	public String getOnemillion(int discountId) {
+		String million1 = null;
+		List<Discount> list=discountDaoImpl.getDiscount(discountId);
+		for(Discount st : list){
+			million1 = st.getMillion1();
+		}
+		return million1;
+	}
+	@Transactional
+	public String getTwomillion(int discountId) {
+		String million2 = null;
+		List<Discount> list=discountDaoImpl.getDiscount(discountId);
+		for(Discount st : list){
+			million2 = st.getMillion2();
+		}
+		return million2;
+	}
+	@Transactional
+	public String getThreemillion(int discountId) {
+		String million3 = null;
+		List<Discount> list=discountDaoImpl.getDiscount(discountId);
+		for(Discount st : list){
+			million3 = st.getMillion3();
+		}
+		return million3;
+	}
+	@Transactional
+	public String getFourmillion(int discountId) {
+		String million4 = null;
+		List<Discount> list=discountDaoImpl.getDiscount(discountId);
+		for(Discount st : list){
+			million4 = st.getMillion4();
+		}
+		return million4;
+	}
+	@Transactional
+	public String getFivemillion(int discountId) {
+		String million5 = null;
+		List<Discount> list=discountDaoImpl.getDiscount(discountId);
+		for(Discount st : list){
+			million5= st.getMillion5();
+		}
+		return million5;
+	}
+	@Transactional
+	public String getTwentymillion(int discountId) {
+		String million20 = null;
+		List<Discount> list=discountDaoImpl.getDiscount(discountId);
+		for(Discount st : list){
+			million20= st.getMillion20();
+		}
+		return million20;
+	}
+	@Transactional
+	public String getfiftymillion(int discountId) {
+		String million50 = null;
+		List<Discount> list=discountDaoImpl.getDiscount(discountId);
+		for(Discount st : list){
+			million50 = st.getmillion50();
+		}
+		return million50;
+	}
+	@Transactional
+	public String getHundredmillion(int discountId) {
+		String million100 = null;
+		List<Discount> list=discountDaoImpl.getDiscount(discountId);
+		for(Discount st : list){
+			million100 = st.getMillion100();
+		}
+		return million100;
+	}
+	
 	
 	
 	

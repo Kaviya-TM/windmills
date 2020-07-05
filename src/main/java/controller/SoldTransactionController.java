@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.ClientDetails;
+import model.Listings;
 import model.Property;
 import model.ServiceOfficer;
 import model.SoldTransactions;
@@ -65,6 +66,27 @@ public class SoldTransactionController {
 		mv.addObject("bullist",bullist);
 		mv.setViewName("enquiry");
 		return mv;
+	}
+	@RequestMapping(value = "/getSoldCommunityList", method = RequestMethod.POST)
+	@ResponseBody
+	public List<SoldTransactions> getCommunityList(@RequestParam("city") String city) {
+		List<SoldTransactions> list = soldTransactionService.getCommunityList(city);
+		return list;
+
+	}
+	@RequestMapping(value = "/getSoldSubCommunityList", method = RequestMethod.POST)
+	@ResponseBody
+	public List<SoldTransactions> getSubCommunityList(@RequestParam("community") String community) {
+		List<SoldTransactions> list = soldTransactionService.getSubCommunityList(community);
+		return list;
+
+	}
+	@RequestMapping(value = "/getSoldBuildingLiist", method = RequestMethod.POST)
+	@ResponseBody
+	public List<SoldTransactions> getBuildingLiist(@RequestParam("subCommunity") String subCommunity) {
+		List<SoldTransactions> list = soldTransactionService.getBuildingLiist(subCommunity);
+		return list;
+
 	}
 	@RequestMapping(value="/filter-transactions",method=RequestMethod.POST)
 	public ModelAndView filter(@RequestParam("city")String city,@RequestParam("area")String area,

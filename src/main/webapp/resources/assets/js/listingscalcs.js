@@ -56,6 +56,16 @@ var liadjdate = null;
 var liadjland = null;
 var liadjdev = null;
 var lifinalValue = null;
+var lisalesdisc = null;
+var million1;
+var million2;
+var million3;
+var million4;
+var million5;
+var million20;
+var million50;
+var million100;
+
 $("#liavgten").keyup(function(){
 	var lidifften = parseFloat($('#lisubten').val()) - parseFloat($(this).val());
     $('#lidifften').val(lidifften.toFixed(2));
@@ -67,11 +77,81 @@ $("#liavgten").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgsta").keyup(function(){
 	var lidiffsta = parseFloat($('#lisubsta').val()) - parseFloat($(this).val());
     $('#lidiffsta').val(lidiffsta.toFixed(2));
@@ -83,11 +163,81 @@ $("#liavgsta").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgfur").keyup(function(){
 	var lidifffur = parseFloat($('#lisubfur').val()) - parseFloat($(this).val());
     $('#lidifffur').val(lidifffur.toFixed(2));
@@ -99,11 +249,81 @@ $("#liavgfur").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgexp").keyup(function(){
 	var lidiffexp = parseFloat($('#lisubexp').val()) - parseFloat($(this).val());
     $('#lidiffexp').val(lidiffexp.toFixed(2));
@@ -115,11 +335,12 @@ $("#liavgexp").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
 });
+
 $("#liavgpla").keyup(function(){
 	var lidiffpla = parseFloat($('#lisubpla').val()) - parseFloat($(this).val());
     $('#lidiffpla').val(lidiffpla.toFixed(2));
@@ -131,11 +352,81 @@ $("#liavgpla").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgbal").keyup(function(){
 	var lidiffbal = parseInt($('#lisubbal').val()) - parseInt($(this).val());
     $('#lidiffbal').val(lidiffbal);
@@ -147,11 +438,81 @@ $("#liavgbal").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgpark").keyup(function(){
 	var lidiffpark = parseInt($('#lisubpark').val()) - parseInt($(this).val());
     $('#lidiffpark').val(lidiffpark);
@@ -163,11 +524,81 @@ $("#liavgpark").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgpool").keyup(function(){
 	var lidiffpool = parseInt($('#lisubpool').val()) - parseInt($(this).val());
     $('#lidiffpool').val(lidiffpool);
@@ -179,11 +610,81 @@ $("#liavgpool").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavglandscape").keyup(function(){
 	var lidifflandscape = parseInt($('#lisublandscape').val()) - parseInt($(this).val());
     $('#lidifflandscape').val(lidifflandscape);
@@ -195,11 +696,81 @@ $("#liavglandscape").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavggood").keyup(function(){
 	var lidiffgood= parseInt($('#lisubgood').val()) - parseInt($(this).val());
     $('#lidiffgood').val(lidiffgood);
@@ -211,11 +782,81 @@ $("#liavggood").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavguti").keyup(function(){
 	var lidiffuti = parseInt($('#lisubuti').val()) - parseInt($(this).val());
     $('#lidiffuti').val(lidiffuti);
@@ -227,11 +868,81 @@ $("#liavguti").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgdev").keyup(function(){
 	var lidiffdev = parseFloat($('#lisubdev').val()) - parseFloat($(this).val());
     $('#lidiffdev').val(lidiffdev.toFixed(2));
@@ -243,11 +954,81 @@ $("#liavgdev").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgbua").keyup(function(){
 	 var lidiffbua =  parseInt($('#buitUpAreaSize').val()) - parseInt(($("#liavgbua").val()).toString().replace(/,/g , ''));
 	 $('#lidiffbua').val(toComma(lidiffbua));
@@ -259,11 +1040,81 @@ $("#liavgbua").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgpark").keyup(function(){
 	var lidiffpark = parseFloat($('#lisubpark').val()) - parseFloat($(this).val());
     $('#lidiffpark').val(lidiffpark.toFixed(2));
@@ -275,11 +1126,81 @@ $("#liavgpark").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#liavgage").keyup(function(){
 	var lidiffage = parseFloat($('#lisubage').val()) - parseFloat($(this).val());
     $('#lidiffage').val(lidiffage.toFixed(2));
@@ -291,11 +1212,81 @@ $("#liavgage").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweiloc").keyup(function(){
 	if($("#cliweiloc").val() != $("#liweiloc").val()){
 		$("#cliweiloc").css("color","crimson");
@@ -311,11 +1302,81 @@ $("#cliweiloc").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweiage").keyup(function(){
 	if($("#cliweiage").val() != $("#liweiage").val()){
 		$("#cliweiage").css("color","crimson");
@@ -331,11 +1392,81 @@ $("#cliweiage").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweiten").keyup(function(){
 	if($("#cliweiten").val() != $("#liweiten").val()){
 		$("#cliweiten").css("color","crimson");
@@ -351,11 +1482,81 @@ $("#cliweiten").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweiview").keyup(function(){
 	if($("#cliweiview").val() != $("#liweiview").val()){
 		$("#cliweiview").css("color","crimson");
@@ -371,11 +1572,81 @@ $("#cliweiview").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweista").keyup(function(){
 	if($("#cliweista").val() != $("#liweista").val()){
 		$("#cliweista").css("color","crimson");
@@ -391,11 +1662,81 @@ $("#cliweista").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweilevel").keyup(function(){
 	if($("#cliweilevel").val() != $("#liweilevel").val()){
 		$("#cliweilevel").css("color","crimson");
@@ -411,11 +1752,81 @@ $("#cliweilevel").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweidev").keyup(function(){
 	if($("#cliweidev").val() != $("#liweidev").val()){
 		$("#cliweidev").css("color","crimson");
@@ -431,11 +1842,81 @@ $("#cliweidev").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweiqua").keyup(function(){
 	if($("#cliweiqua").val() != $("#liweiqua").val()){
 		$("#cliweiqua").css("color","crimson");
@@ -451,11 +1932,81 @@ $("#cliweiqua").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweiupg").keyup(function(){
 	if($("#cliweiupg").val() != $("#liweiupg").val()){
 		$("#cliweiupg").css("color","crimson");
@@ -471,11 +2022,81 @@ $("#cliweiupg").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweifur").keyup(function(){
 	if($("#cliweifur").val() != $("#liweifur").val()){
 		$("#cliweifur").css("color","crimson");
@@ -491,11 +2112,81 @@ $("#cliweifur").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweiexp").keyup(function(){
 	if($("#cliweiexp").val() != $("#liweiexp").val()){
 		$("#cliweiexp").css("color","crimson");
@@ -511,11 +2202,81 @@ $("#cliweiexp").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweipla").keyup(function(){
 	if($("#cliweipla").val() != $("#liweipla").val()){
 		$("#cliweipla").css("color","crimson");
@@ -531,11 +2292,81 @@ $("#cliweipla").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweifloor").keyup(function(){
 	if($("#cliweifloor").val() != $("#liweifloor").val()){
 		$("#cliweifloor").css("color","crimson");
@@ -551,11 +2382,81 @@ $("#cliweifloor").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweibed").keyup(function(){
 	if($("#cliweibed").val() != $("#liweibed").val()){
 		$("#cliweibed").css("color","crimson");
@@ -571,10 +2472,79 @@ $("#cliweibed").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
 
 $("#cliweipark").keyup(function(){
@@ -592,11 +2562,81 @@ $("#cliweipark").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweipool").keyup(function(){
 	if($("#cliweipool").val() != $("#liweipool").val()){
 		$("#cliweipool").css("color","crimson");
@@ -612,11 +2652,81 @@ $("#cliweipool").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweilandscape").keyup(function(){
 	if($("#cliweilandscape").val() != $("#liweilandscape").val()){
 		$("#cliweilandscape").css("color","crimson");
@@ -632,11 +2742,81 @@ $("#cliweilandscape").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
+
 $("#cliweigood").keyup(function(){
 	if($("#cliweigood").val() != $("#liweigood").val()){
 		$("#cliweigood").css("color","crimson");
@@ -652,10 +2832,79 @@ $("#cliweigood").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
 $("#cliweiuti").keyup(function(){
 	if($("#cliweiuti").val() != $("#liweiuti").val()){
@@ -672,10 +2921,79 @@ $("#cliweiuti").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
 $("#cliweibal").keyup(function(){
 	if($("#cliweibal").val() != $("#liweibal").val()){
@@ -692,10 +3010,79 @@ $("#cliweibal").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
 $("#cliweiland").keyup(function(){
 	if($("#cliweiland").val() != $("#liweiland").val()){
@@ -717,10 +3104,79 @@ $("#cliweiland").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
 $("#cliweibua").keyup(function(){
 	if($("#cliweibua").val() != $("#liweibua").val()){
@@ -737,10 +3193,79 @@ $("#cliweibua").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , ''))+ parseInt(liadjdev.toString().replace(/,/g , ''))  +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
 $("#cliweidate").keyup(function(){
 	if($("#cliweidate").val() != $("#liweidate").val()){
@@ -758,10 +3283,79 @@ $("#cliweidate").keyup(function(){
 	 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +  parseInt(liadjlevel.toString().replace(/,/g , '')) +
 	 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 	 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+	 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 	 $('#listingmarketvalue').val(toComma(marketValue));
 	 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 	 $('#listingfinalvalue').val(toComma(lifinalValue));
+	 if(marketValue <= 1000000){
+		 $('#elisalesdiscount').val(million1);
+		 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+		 $('#elisalesdiscount').val(million2);
+		 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+		 $('#elisalesdiscount').val(million3);
+		 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+		 $('#elisalesdiscount').val(million4);
+		 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+		 $('#elisalesdiscount').val(million5);
+		 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+		 
+	 }
+	 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+		 $('#elisalesdiscount').val(million20);
+		 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+		 $('#elisalesdiscount').val(million50);
+		 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+		 $('#elisalesdiscount').val(million100);
+		 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+		 var xx = parseInt(marketValue) - parseInt(vv);
+		 $('#finallistingvalue').val(toComma(xx));
+		 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+		 $('#finallistingpsf').val(toComma(finallistingpsf));
+	 }
+	 else{
+		 //
+	 }
+	 
 });
 
 $("#laverage").click(function(){
@@ -882,6 +3476,14 @@ $("#laverage").click(function(){
 				var lisizeAvg = obj.lisizeAvg;
 				var lidateAvg = obj.lidateAvg;
 				var libedAvg = obj.libedAvg;
+				million1 = obj.million1;
+				million2 = obj.million2;
+				million3 = obj.million3;
+				million4 = obj.million4;
+				million5 = obj.million5;
+				million20 = obj.million20;
+				million50 = obj.million50;
+				million100 = million100;
 				lilocAvg = obj.lilocAvg;
 				liageAvg = obj.liageAvg;
 				litenAvg = obj.litenAvg;
@@ -1322,10 +3924,78 @@ $("#laverage").click(function(){
 				 				   parseInt(liadjfur.toString().replace(/,/g , '')) + parseInt(liadjexp.toString().replace(/,/g , '')) + parseInt(liadjpla.toString().replace(/,/g , '')) + parseInt(liadjfloor.toString().replace(/,/g , '')) +   parseInt(liadjlevel.toString().replace(/,/g , '')) +
 				 				   parseInt(liadjbed.toString().replace(/,/g , '')) + parseInt(liadjpark.toString().replace(/,/g , '')) + parseInt(liadjpool.toString().replace(/,/g , '')) + parseInt(liadjlandscape.toString().replace(/,/g , '')) + 
 				 				   parseInt(liadjgood.toString().replace(/,/g , '')) + parseInt(liadjuti.toString().replace(/,/g , '')) + parseInt(liadjbal.toString().replace(/,/g , '')) + parseInt(liadjland.toString().replace(/,/g , '')) + 
-				 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) + parseInt(liadjdate.toString().replace(/,/g , ''));
+				 				   parseInt(liadjbua.toString().replace(/,/g , '')) + parseInt(liadjdev.toString().replace(/,/g , '')) +  parseInt(liadjdate.toString().replace(/,/g , ''));
 				 $('#listingmarketvalue').val(toComma(marketValue));
 				 lifinalValue = parseInt(parseInt(($('#listingmarketvalue').val()).replace(/,/g , '')) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , '')));
 				 $('#listingfinalvalue').val(toComma(lifinalValue));
+				 if(marketValue <= 1000000){
+					 $('#elisalesdiscount').val(million1);
+					 var vv = parseInt(marketValue) * parseFloat(million1.toString().replace(/%/g , '')) / 100;
+					 var xx = parseInt(marketValue) - parseInt(vv);
+					 $('#finallistingvalue').val(toComma(xx));
+					 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+					 $('#finallistingpsf').val(toComma(finallistingpsf));
+				 }
+				 else if(marketValue > 1000000 || marketValue <= 2000000 ){
+					 $('#elisalesdiscount').val(million2);
+					 var vv = parseInt(marketValue) * parseFloat(million2.toString().replace(/%/g , '')) / 100;
+					 var xx = parseInt(marketValue) - parseInt(vv);
+					 $('#finallistingvalue').val(toComma(xx));
+					 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+					 $('#finallistingpsf').val(toComma(finallistingpsf));
+				 }
+				 else if(marketValue > 2000000 || marketValue <= 3000000 ){
+					 $('#elisalesdiscount').val(million3);
+					 var vv = parseInt(marketValue) * parseFloat(million3.toString().replace(/%/g , '')) / 100;
+					 var xx = parseInt(marketValue) - parseInt(vv);
+					 $('#finallistingvalue').val(toComma(xx));
+					 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+					 $('#finallistingpsf').val(toComma(finallistingpsf));
+				 }
+				 else if(marketValue > 3000000 || marketValue <= 4000000 ){
+					 $('#elisalesdiscount').val(million4);
+					 var vv = parseInt(marketValue) * parseFloat(million4.toString().replace(/%/g , '')) / 100;
+					 var xx = parseInt(marketValue) - parseInt(vv);
+					 $('#finallistingvalue').val(toComma(xx));
+					 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+					 $('#finallistingpsf').val(toComma(finallistingpsf));
+				 }
+				 else if(marketValue > 4000000 || marketValue <= 5000000 ){
+					 $('#elisalesdiscount').val(million5);
+					 var vv = parseInt(marketValue) * parseFloat(million5.toString().replace(/%/g , '')) / 100;
+					 var xx = parseInt(marketValue) - parseInt(vv);
+					 $('#finallistingvalue').val(toComma(xx));
+					 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+					 $('#finallistingpsf').val(toComma(finallistingpsf));
+					 
+				 }
+				 else if(marketValue > 5000000 || marketValue <= 20000000 ){
+					 $('#elisalesdiscount').val(million20);
+					 var vv = parseInt(marketValue) * parseFloat(million20.toString().replace(/%/g , '')) / 100;
+					 var xx = parseInt(marketValue) - parseInt(vv);
+					 $('#finallistingvalue').val(toComma(xx));
+					 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+					 $('#finallistingpsf').val(toComma(finallistingpsf));
+				 }
+				 else if(marketValue > 20000000 || marketValue <= 50000000 ){
+					 $('#elisalesdiscount').val(million50);
+					 var vv = parseInt(marketValue) * parseFloat(million50.toString().replace(/%/g , '')) / 100;
+					 var xx = parseInt(marketValue) - parseInt(vv);
+					 $('#finallistingvalue').val(toComma(xx));
+					 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+					 $('#finallistingpsf').val(toComma(finallistingpsf));
+				 }
+				 else if(marketValue > 50000000 || marketValue <= 100000000 ){
+					 $('#elisalesdiscount').val(million100);
+					 var vv = parseInt(marketValue) * parseFloat(million100.toString().replace(/%/g , '')) / 100;
+					 var xx = parseInt(marketValue) - parseInt(vv);
+					 $('#finallistingvalue').val(toComma(xx));
+					 var  finallistingpsf = parseInt(xx) / parseInt(($('#buitUpAreaSize').val()).replace(/,/g , ''));
+					 $('#finallistingpsf').val(toComma(finallistingpsf));
+				 }
+				 else{
+					 //
+				 }
 				 
 			},
 
@@ -1397,6 +4067,9 @@ function calSta(value){
 	}
 	if(value == "Fitted"){
 		final = "1";
+	}
+	if(value == "Not Applicable"){
+		final = "0";
 	}
 	return final;
 }

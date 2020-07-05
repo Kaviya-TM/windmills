@@ -85,7 +85,7 @@
 					<label class="ilholder" style="width:30%">Inspection Officer<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm itholder" style="width: 60% !important;"
 						name="valuationReport.insOfficer" id="insOfficer">
-						<c:forEach items="${serviceofficerlist}" var="item">
+						<c:forEach items="${serviceOfficerlist}" var="item">
 							<option value="${item.name}">${item.name}</option>
 						</c:forEach>
 						<c:forEach items="${dfservicer}" var="item1">

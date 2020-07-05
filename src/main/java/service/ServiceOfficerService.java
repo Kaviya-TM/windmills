@@ -56,17 +56,17 @@ public class ServiceOfficerService {
 
 
 	@Transactional
-	public void addServiceOfficer(ServiceOfficer serviceofficer) {
-		log.info("beginning of add service officer");
-		serviceofficer.setCreateDate(new Date());
-		serviceofficer.setModifiedDate(new Date());
-		serviceOfficerDaoImpl.addServiceOfficer(serviceofficer);
+	public void addServiceOfficer(ServiceOfficer serviceOfficer) {
+		log.info("beginning of add service Officer");
+		serviceOfficer.setCreateDate(new Date());
+		serviceOfficer.setModifiedDate(new Date());
+		serviceOfficerDaoImpl.addServiceOfficer(serviceOfficer);
 		
 	}
 
 	@Transactional
 	public boolean checkServiceOfficer(HttpSession session, String email) {
-		log.info("beginning of check service officer");
+		log.info("beginning of check service Officer");
 		boolean status = false;
 		status = serviceOfficerDaoImpl.checkServiceOfficer(email);
 		return status;
@@ -76,13 +76,13 @@ public class ServiceOfficerService {
 
     @Transactional
 	public String findNamebyEmail(String email) {
-    	log.info("beginning of get service officer");
+    	log.info("beginning of get service Officer");
     	List<ServiceOfficer>  list = serviceOfficerDaoImpl.findNamebyEmail(email);
     	log.info("list"+list);
     	String name = null;
     	if (list.size() != 0) {
-    		ServiceOfficer serviceofficer = list.get(0);
-    		name = serviceofficer.getName();
+    		ServiceOfficer serviceOfficer = list.get(0);
+    		name = serviceOfficer.getName();
 		}
     	else{
     		name = email;
@@ -92,7 +92,7 @@ public class ServiceOfficerService {
     
     @Transactional
 	public List<Object[]> getOfficerlist() {
-		log.info("beginning of get list of  service officer");
+		log.info("beginning of get list of  service Officer");
 		List<Object[]> list=serviceOfficerDaoImpl.getOfficerlist();
 		log.info("list"+list);
 		return list;
@@ -110,11 +110,11 @@ public class ServiceOfficerService {
 	}
 	
 	@Transactional
-	public void editServiceOfficer(ServiceOfficer serviceofficer)
+	public void editServiceOfficer(ServiceOfficer serviceOfficer)
 	{
-	serviceofficer.setCreateDate(new Date());
-	serviceofficer.setModifiedDate(new Date());
-	serviceOfficerDaoImpl.updateServiceOfficer(serviceofficer);
+	serviceOfficer.setCreateDate(new Date());
+	serviceOfficer.setModifiedDate(new Date());
+	serviceOfficerDaoImpl.updateServiceOfficer(serviceOfficer);
 
 
 	}

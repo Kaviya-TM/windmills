@@ -41,6 +41,7 @@ import model.ClientDetails;
 import model.Community;
 import model.Development;
 import model.Documents;
+import model.Listings;
 import model.Property;
 import model.ServiceOfficer;
 import model.SoldTransactions;
@@ -507,5 +508,20 @@ public class ValuationService {
 			document10 = r1.getDocument10();
 		}
 		return document10;
+	}
+	@Transactional
+	public List<Listings> getCommunityList(String city) {
+		List<Listings> list=valuationDaoImpl.getCommunityListingList(city);
+		return list;
+	}
+	@Transactional
+	public List<Listings> getSubCommunityList(String community) {
+		List<Listings> list=valuationDaoImpl.getSubCommunityListingList(community);
+		return list;
+	}
+	@Transactional
+	public List<Listings> getBuildingLiist(String subCommunity) {
+		List<Listings> list=valuationDaoImpl.getBuildingLiist(subCommunity);
+		return list;
 	}
 }

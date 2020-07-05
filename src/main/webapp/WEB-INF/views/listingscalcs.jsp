@@ -310,4 +310,25 @@
 			<div class="mainhead" style="width: 35%; font-weight: 800; float: left; line-height:30px;color:#ff6600;text-align:right;padding-right:10px">PSF</div>
 			<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12.5% !important"  readonly name="" id="listingfinalvalue">
 		</div><br>
+		<div class="avgholder">
+			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px;color:transparent">PSF</div>
+			<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:12.5% !important;background:none !important" readonly id="">
+			<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:17% !important;background:none !important" id="">
+			<div class="mainhead" style="width: 35%; font-weight: 800; float: left; line-height:30px;color:#ff6600;text-align:right;padding-right:10px">Sales Discount</div>
+			<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12.5% !important"  readonly name="" id="elisalesdiscount">
+		</div><br>
+		<div class="avgholder">
+			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px;color:transparent">Sales Discount</div>
+			<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:12.5% !important;background:none !important" readonly  id="">
+			<input type="text" class="form-control form-control-sm sectionTT"  name="" style="width:17% !important;background:none !important" id="">
+			<div class="mainhead" style="width: 35%; font-weight: 800; float: left; line-height: 30px;color:#ff6600;text-align:right;padding-right:10px">Estimated Market Value After Discount</div>
+			<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12.5% !important"  name="" readonly id="finallistingvalue">
+		</div><br>
+		<div class="avgholder">
+			<div class="mainhead" style="width: 20%; font-weight: 800; float: left; line-height: 26px;color:transparent">PSF</div>
+			<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:12.5% !important;background:none !important" readonly id="">
+			<input type="text" class="form-control form-control-sm sectionTT" name="" style="width:17% !important;background:none !important" id="">
+			<div class="mainhead" style="width: 35%; font-weight: 800; float: left; line-height:30px;color:#ff6600;text-align:right;padding-right:10px">PSF</div>
+			<input type="text" class="form-control form-control-sm sectionTT" style="text-align:center;width:12.5% !important"  readonly name="" id="finallistingpsf">
+		</div><br>
 </div>

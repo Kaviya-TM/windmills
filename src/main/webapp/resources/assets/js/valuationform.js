@@ -39,35 +39,82 @@ $("#buildingname").change(function() {
 			},
 	});	
 });
-$("#senquiry").click(function() {
-	$('#s-buildingName').val($('#buildingname').val());
-	$('#s-city').val($('#city').val());
-	$('#s-community').val($('#community').val());
-	$('#s-subcommunity').val($('#subcommunity').val());
-	$('#s-propList').val($('#propertyvalued').val());
-});
+//$("#senquiry").click(function() {
+//	$('#s-buildingName').val($('#buildingname').val());
+//	$('#s-city').val($('#city').val());
+//	$('#s-community').val($('#community').val());
+//	$('#s-subcommunity').val($('#subcommunity').val());
+//	$('#s-propList').val($('#propertyvalued').val());
+//});
 
-$("#s-buildingName").change(function() {	
-	var buildingName = $('#s-buildingName').val();
+//$("#s-buildingName").change(function() {	
+//	var buildingName = $('#s-buildingName').val();
+//	$.ajax({
+//		url : 'getEverything',
+//		dataType: "text",
+//		data : {buildingName : buildingName},
+//		method : 'POST',
+//		success : function(response) {	
+//			var obj = $.parseJSON(response);
+//			var community = obj.city;
+//			var subcommunity = obj.subcommunity;
+//			var city = obj.community;
+//			console.log("communitty",community);
+//			 $('#s-city').val(community);
+//			 $('#s-community').val(city);
+//			 $('#s-subcommunity').val(subcommunity);
+//			return;
+//			},
+//	});
+//});
+$("#s-city").change(function() {
+	var city = $('#s-city').val();
+	var dropdown = $('#s-community');
+	$(dropdown).find("option").remove();
 	$.ajax({
-		url : 'getEverything',
-		dataType: "text",
-		data : {buildingName : buildingName},
+		url : 'getSoldCommunityList',
+		data : {city : city},
 		method : 'POST',
 		success : function(response) {	
-			var obj = $.parseJSON(response);
-			var community = obj.city;
-			var subcommunity = obj.subcommunity;
-			var city = obj.community;
-			console.log("communitty",community);
-			 $('#s-city').val(community);
-			 $('#s-community').val(city);
-			 $('#s-subcommunity').val(subcommunity);
-			return;
+			$.each(response, function (key, entry) {
+			    dropdown.append($('<option></option>').attr('value', entry).text(entry));
+			})
+		 return;
 			},
-	});
+	});	
 });
-
+$("#s-community").change(function() {
+	var community = $('#s-community').val();
+	var dropdown = $('#s-subcommunity');
+	$(dropdown).find("option").remove();
+	$.ajax({
+		url : 'getSoldSubCommunityList',
+		data : {community : community},
+		method : 'POST',
+		success : function(response) {	
+			$.each(response, function (key, entry) {
+			    dropdown.append($('<option></option>').attr('value', entry).text(entry));
+			})
+		 return;
+			},
+	});	
+});
+$("#s-subcommunity").change(function() {
+	var subCommunity = $('#s-subcommunity').val();
+	var dropdown = $('#s-buildingName');
+	$(dropdown).find("option").remove();
+	$.ajax({
+		url : 'getSoldBuildingLiist',
+		data : {subCommunity : subCommunity},
+		method : 'POST',
+		success : function(response) {	
+			$.each(response, function (key, entry) {
+			    dropdown.append($('<option></option>').attr('value', entry).text(entry));
+			})
+		 return;
+			},
+	});	
+});
 $("#floorplan").change(function() {	
 	  var i = $(this).prev('label').clone();	
 	  var file = $("#floorplan")[0].files[0].name;	

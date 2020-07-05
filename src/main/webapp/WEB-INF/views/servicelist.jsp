@@ -11,20 +11,20 @@
 	<div class="main-content"
 		style="background: rgb(229, 231, 233) !important; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<div class="row">
-			<c:forEach items="${officerlist}" var="officers">
-				<form:form action="getServiceOfficer" id="${officers.serviceId}"
+			<c:forEach items="${Officerlist}" var="Officers">
+				<form:form action="getServiceOfficer" id="${Officers.serviceId}"
 					class="column" style="border:1px solid #000080;">
-					<div id="${officers.serviceId}">
+					<div id="${Officers.serviceId}">
 						<div class="imgPart">
 							<img style="margin-top: 3px;"
 								src="resources\assets\img\icon1.jpg">
 						</div>
 						<div class="contentPart">
 							<div class="name">
-								<b style="color: #000080">${officers.name}</b>
+								<b style="color: #000080">${Officers.name}</b>
 							</div>
 							<input type="hidden" id="serviceId" name="serviceId"
-								value="${officers.serviceId}" />
+								value="${Officers.serviceId}" />
 						</div>
 					</div>
 				</form:form>

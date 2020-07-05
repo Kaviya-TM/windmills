@@ -34,19 +34,20 @@ $("#m-propList").change(function() {
 		 $(".landto").css("color","darkgrey");
 	}
 });
-$("#menquiry").click(function() {
-	$('#m-buildingName').val($('#buildingname').val());
-	$('#m-city').val($('#city').val());
-	$('#m-community').val($('#community').val());
-	$('#m-subcommunity').val($('#subcommunity').val());
-	$('#m-propList').val($('#propertyvalued').val());
-	if($('#m-propList').val() == "Residential Apartment"){
-		 $(".landfrom").css("pointer-events","none");
-		 $(".landfrom").css("color","darkgrey");
-		 $(".landto").css("pointer-events","none");
-		 $(".landto").css("color","darkgrey");
-	 }
-});
+
+//$("#menquiry").click(function() {
+//	$('#m-buildingName').val($('#buildingname').val());
+//	$('#m-city').val($('#city').val());
+//	$('#m-community').val($('#community').val());
+//	$('#m-subcommunity').val($('#subcommunity').val());
+//	$('#m-propList').val($('#propertyvalued').val());
+//	if($('#m-propList').val() == "Residential Apartment"){
+//		 $(".landfrom").css("pointer-events","none");
+//		 $(".landfrom").css("color","darkgrey");
+//		 $(".landto").css("pointer-events","none");
+//		 $(".landto").css("color","darkgrey");
+//	 }
+//});
 
 $("#masterfilter").click(function(){
 	 var city=$('#m-city').val(); 

@@ -197,7 +197,7 @@ public class SoldTransactionService {
 				if(room.equals("10-Bedroom")){
 					bed = "10";
 				}
-				if(room == "Unknown"){
+				if(room.equals("Unknown")){
 					bed = "0";
 				}
 				System.err.println("bed-->"+bed);
@@ -415,7 +415,42 @@ public class SoldTransactionService {
 		List<SoldTransactions> getlist = soldTransactionDaoImpl.getSoldTransactions();
 		List<SoldTransactions> datelist =  getDateList(getlist,datefrom,dateto);
 		List<SoldTransactions> propertylist = getPropertyList(datelist,propList);
-		List<SoldTransactions> bullist =  getBulList(propertylist,buildingName);
+		List<SoldTransactions> citylist = new ArrayList<SoldTransactions>();
+		if(city.equals("")){
+			for(SoldTransactions trans : propertylist){
+				citylist.add(trans);
+			}
+		}
+		else{
+			citylist =  getCityList(propertylist,city);
+		}
+		List<SoldTransactions> commlist = new ArrayList<SoldTransactions>();
+		if(area.equals("")){
+			for(SoldTransactions trans : citylist){
+				commlist.add(trans);
+			}
+		}
+		else{
+			commlist =  getCommmunityList(citylist,area);
+		}
+		List<SoldTransactions> subcommlist = new ArrayList<SoldTransactions>();
+		if(neighbourhood.equals("")){
+			for(SoldTransactions trans : commlist){
+				subcommlist.add(trans);
+			}
+		}
+		else{
+			subcommlist =  getSubCommmunityList(commlist,neighbourhood);
+		}
+		List<SoldTransactions> bullist =  new ArrayList<SoldTransactions>();
+		if(buildingName.equals("")){
+			for(SoldTransactions trans : subcommlist){
+				bullist.add(trans);
+			}
+		}
+		else{
+			bullist =  getBulList(subcommlist,buildingName);
+		}
 		List<SoldTransactions> bedlist = new ArrayList<SoldTransactions>();
 		List<SoldTransactions> landlist = new ArrayList<SoldTransactions>();
 		List<SoldTransactions> bualist = new ArrayList<SoldTransactions>();
@@ -470,6 +505,36 @@ public class SoldTransactionService {
 		System.err.println("pricesqtlist"+pricesqtlist.size());
 		
 		return pricesqtlist;
+	}
+	private List<SoldTransactions> getSubCommmunityList(List<SoldTransactions> commlist, String neighbourhood) {
+		ArrayList<SoldTransactions> subcommlist = new ArrayList<SoldTransactions>();
+		for(SoldTransactions trans : commlist){
+			String neighbourhoodd = trans.getNeighbourhood();
+			if(neighbourhoodd.equals(neighbourhood)){
+				subcommlist.add(trans);
+			}
+		}
+		return subcommlist;
+	}
+	private List<SoldTransactions> getCommmunityList(List<SoldTransactions> citylist, String area) {
+		ArrayList<SoldTransactions> commlist = new ArrayList<SoldTransactions>();
+		for(SoldTransactions trans : citylist){
+			String areaa = trans.getArea();
+			if(areaa.equals(area)){
+				commlist.add(trans);
+			}
+		}
+		return commlist;
+	}
+	private List<SoldTransactions> getCityList(List<SoldTransactions> propertylist, String city) {
+		ArrayList<SoldTransactions> citylist = new ArrayList<SoldTransactions>();
+		for(SoldTransactions trans : propertylist){
+			String cityy = trans.getCity();
+			if(cityy.equals(city)){
+				citylist.add(trans);
+			}
+		}
+		return citylist;
 	}
 	@Transactional
 	public List<SoldTransactions> getDevelopers() {
@@ -564,6 +629,20 @@ public class SoldTransactionService {
 
 		return largest;
 	}
-	
+	@Transactional
+	public List<SoldTransactions> getCommunityList(String city) {
+		List<SoldTransactions> list=soldTransactionDaoImpl.getCommunitySoldList(city);
+		return list;
+	}
+	@Transactional
+	public List<SoldTransactions> getSubCommunityList(String area) {
+		List<SoldTransactions> list=soldTransactionDaoImpl.getSubCommunitySoldList(area);
+		return list;
+	}
+	@Transactional
+	public List<SoldTransactions> getBuildingLiist(String neighbourhood) {
+		List<SoldTransactions> list=soldTransactionDaoImpl.getBuildingLiist(neighbourhood);
+		return list;
+	}
 	
 }

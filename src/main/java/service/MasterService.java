@@ -122,22 +122,26 @@ public class MasterService {
 		else{
 			citylist =  getCityList(propertylist,city);
 		}
-		if(neighbourhood.equals("")){
-			for(MasterValuation trans : citylist){
-				subcomlist.add(trans);
-			}
-		}
-		else{
-			subcomlist =  getSubCommunityList(citylist,neighbourhood);
-		}
+		System.err.println("citylist"+citylist.size());
 		if(area.equals("")){
-			for(MasterValuation trans : subcomlist){
+			for(MasterValuation trans : citylist){
 				comlist.add(trans);
 			}
 		}
 		else{
-			comlist =  getCommunityList(subcomlist,area);
+			comlist =  getCommunityList(citylist,area);
 		}
+		System.err.println("comlist"+comlist.size());
+		if(neighbourhood.equals("")){
+			for(MasterValuation trans : comlist){
+				subcomlist.add(trans);
+			}
+		}
+		else{
+			subcomlist =  getSubCommunityList(comlist,neighbourhood);
+		}
+		
+		System.err.println("subcomlist"+subcomlist.size());
 		if(buildingName.equals("")){
 			for(MasterValuation trans : comlist){
 				bullist.add(trans);
@@ -354,7 +358,7 @@ public class MasterService {
 		return filterdatelist;
 	}
 	public String getDateAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		List<LocalDate> myList = new ArrayList<>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
@@ -448,7 +452,7 @@ public class MasterService {
 			for(MasterValuation st : filterTransaction){
 				String aed = st.getLandsizepersqf();
 				
-				if(aed.equals(" - ") || aed.equals("")){
+				if(aed.equals(" - ") || aed.equals("") || aed.equals("-") || aed.equals(" ")){
 					//
 				}
 				else{
@@ -470,13 +474,13 @@ public class MasterService {
 		return avg;
 	}
 	public String getpriceAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<Integer> avglist = new ArrayList<Integer>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String ffinal = st.getMv();
 				String aed = ffinal.replaceAll("\\s+","");
-				if(!aed.equals("") && !aed.equals(" - ")){
+				if(!aed.equals("") && !aed.equals(" - ") && !aed.equals("-") && !aed.equals(" ")){
 					String newStr = aed.replaceAll(",", "");
 					int finaed = Integer.parseInt(newStr);
 					avglist.add(finaed);
@@ -490,13 +494,13 @@ public class MasterService {
 		return avg;
 	}
 	public String getSizeAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<Integer> avglist = new ArrayList<Integer>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String ffinal = st.getBuapersqf();
 				String aed = ffinal.replaceAll("\\s+","");
-				if(!aed.equals("") && !aed.equals(" - ") ){
+				if(!aed.equals("") && !aed.equals(" - ") && !aed.equals("-") && !aed.equals(" ") ){
 					String newStr = aed.replaceAll(",", "");
 					int finaed = Integer.parseInt(newStr);
 					avglist.add(finaed);
@@ -510,13 +514,13 @@ public class MasterService {
 		return avg;
 	}
 	public String getpricePerAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<Integer> avglist = new ArrayList<Integer>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String ffinal = st.getMvpersqf();
 				String aed = ffinal.replaceAll("\\s+","");
-				if(!aed.equals(" - ") && !aed.equals("") && !aed.equals("#DIV/0!") && !aed.equals("#VALUE!")){
+				if(!aed.equals(" - ") && !aed.equals("") && !aed.equals("#DIV/0!") && !aed.equals("#VALUE!") && !aed.equals("-") && !aed.equals(" ")){
 					String newStr = aed.replaceAll(",", "");
 					int finaed = Integer.parseInt(newStr);
 					avglist.add(finaed);
@@ -530,15 +534,21 @@ public class MasterService {
 		return avg;
 	}
 	public String getBedAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<Integer> avglist = new ArrayList<Integer>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String loc = st.getNoOfRooms();
 				String bed = loc.replaceAll("\\s+","");
-				if(!bed.equals(" - ") && !bed.equals("") && !bed.equals("studio")){
+				if(!bed.equals(" - ") && !bed.equals("") && !bed.equals("studio") && !bed.equals("Studio") && !bed.equals("-") && !bed.equals(" ")){
 					int finaed = Integer.parseInt(bed);
 					avglist.add(finaed);
+				}
+				else if(bed.equals("studio") || bed.equals("Studio") ){
+					avglist.add(0);
+				}
+				else{
+					//
 				}
 			}
 		}
@@ -549,12 +559,13 @@ public class MasterService {
 		return avg;
 	}
 	public String getLocationAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String location = st.getLocationRating();
-				if(!location.equals(" - ") && !location.equals("")){
+				System.err.println(location);
+				if(!location.equals(" - ") && !location.equals("") && !location.equals("-") && !location.equals(" ")){
 					avglist.add(location);
 				}
 			}
@@ -566,7 +577,7 @@ public class MasterService {
 		return avg;
 	}
 	public String getTenureAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
@@ -574,7 +585,16 @@ public class MasterService {
 				String finall = null;
 				if(!tenure.equals(" - ") && !tenure.equals("")){
 					if(tenure.equals("FH")){
+						finall = "5";
+					}
+					if(tenure.equals("NFH")){
+						finall = "4";
+					}
+					if(tenure.equals("LH")){
 						finall = "2";
+					}
+					if(tenure.equals("private")){
+						finall = "1";
 					}
 					avglist.add(finall);
 				}
@@ -598,12 +618,12 @@ public class MasterService {
 		return sum;
 	}
 	public String getAgeAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String age = st.getBldgAge();
-				if(!age.equals("?") && !age.equals(" - ") && !age.equals("")){
+				if(!age.equals("?") && !age.equals(" - ") && !age.equals("") && !age.equals("-") && !age.equals(" ")){
 					avglist.add(age);
 				}
 			}
@@ -615,12 +635,12 @@ public class MasterService {
 		return avg;
 	}
 	public String getViewAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String view = st.getViewRating();
-				if(!view.equals(" - ") && !view.equals("")){
+				if(!view.equals(" - ") && !view.equals("") && !view.equals("-") && !view.equals(" ")){
 					avglist.add(view);
 				}
 			}
@@ -632,13 +652,13 @@ public class MasterService {
 		return avg;
 	}
 	public String getStatusAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String status = st.getFinishingStatus();
-				if(!status.equals(" - ") && !status.equals("")){
-					System.err.println("ENENE");
+				if(!status.equals(" - ") && !status.equals("") && !status.equals("-") && !status.equals(" ")){
+					System.err.println("status"+status);
 					avglist.add(status);
 				}
 				else{
@@ -656,12 +676,12 @@ public class MasterService {
 		return avg;
 	}
 	public String getExposureAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String exp = st.getPropExposure();
-				if(!exp.equals(" - ") && !exp.equals("")){
+				if(!exp.equals(" - ") && !exp.equals("") && !exp.equals("-") && !exp.equals(" ")){
 					avglist.add(exp);
 				}
 			}
@@ -676,12 +696,12 @@ public class MasterService {
 		return avg;
 	}
 	public String getPlacementAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String pla = st.getPropplacement();
-				if(!pla.equals(" - ") && !pla.equals("")){
+				if(!pla.equals(" - ") && !pla.equals("") && !pla.equals("-") && !pla.equals(" ")){
 					avglist.add(pla);
 				}
 			}
@@ -696,14 +716,14 @@ public class MasterService {
 		return avg;
 	}
 	public String getFloorAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<Integer> avglist = new ArrayList<Integer>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String age = st.getFloorNo();
 				String fage = age.replaceAll("\\D+","");
 				String ffage = fage.replaceAll("\\s+","");
-				if(!ffage.equals(" - ") && !ffage.equals("")){
+				if(!ffage.equals(" - ") && !ffage.equals("") && !ffage.equals("-") && !ffage.equals(" ")) {
 					int finage = Integer.parseInt(ffage);
 					avglist.add(finage);
 				}
@@ -716,13 +736,13 @@ public class MasterService {
 		return avg;
 	}
 	public String getQualityAvg(List<MasterValuation> filterTransaction) {
-		String avg = null;
+		String avg = "0.00";
 		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String qua = st.getQualityRating();
 				String location = qua.replaceAll("\\s+","");
-				if(!location.equals(" - ") && !location.equals("")){
+				if(!location.equals(" - ") && !location.equals("") && !location.equals("-") && !location.equals(" ")){
 					avglist.add(location);
 				}
 			}
@@ -958,14 +978,22 @@ public class MasterService {
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String aed = st.getMv();
-				String pricesq = aed.replaceAll(",", "");
-				String ffinal = pricesq.replaceAll("\\s+","");
-				int finaed = Integer.parseInt(ffinal);
-				avglist.add(finaed);
+				if(aed.equals("")){
+					avglist.add(0);
+				}
+				else{
+					String pricesq = aed.replaceAll(",", "");
+					String ffinal = pricesq.replaceAll("\\s+","");
+					int finaed = Integer.parseInt(ffinal);
+					avglist.add(finaed);
+				}
+				
 			}	
 		}
 		int largest = Integer.MIN_VALUE; 
+		System.err.println("largest"+largest);
 		int smallest = Integer.MAX_VALUE;
+		System.err.println("smallest"+smallest);
 		for (int number : avglist) { 
 			if (number > largest) {
 				largest = number;
@@ -973,7 +1001,7 @@ public class MasterService {
 			else if (number < smallest) { 
 				smallest = number; } 
 		}
-
+		System.err.println("smallestvvvv"+smallest);
 		return smallest;
 	}
 
@@ -982,10 +1010,16 @@ public class MasterService {
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String aed = st.getMv();
-				String pricesq = aed.replaceAll(",", "");
-				String ffinal = pricesq.replaceAll("\\s+","");
-				int finaed = Integer.parseInt(ffinal);
-				avglist.add(finaed);
+				if(aed.equals("")){
+					avglist.add(0);
+				}
+				else{
+					String pricesq = aed.replaceAll(",", "");
+					String ffinal = pricesq.replaceAll("\\s+","");
+					int finaed = Integer.parseInt(ffinal);
+					avglist.add(finaed);
+				}
+				
 			}	
 		}
 		int largest = Integer.MIN_VALUE; 
@@ -1006,10 +1040,16 @@ public class MasterService {
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String aed = st.getMvpersqf();
-				String pricesq = aed.replaceAll(",", "");
-				String ffinal = pricesq.replaceAll("\\s+","");
-				int finaed = Integer.parseInt(ffinal);
-				avglist.add(finaed);
+				if(aed.equals("")|| aed.equals("#DIV/0!")){
+					avglist.add(0);
+				}
+				else{
+					String pricesq = aed.replaceAll(",", "");
+					String ffinal = pricesq.replaceAll("\\s+","");
+					int finaed = Integer.parseInt(ffinal);
+					avglist.add(finaed);
+				}
+				
 			}	
 		}
 		int largest = Integer.MIN_VALUE; 
@@ -1030,10 +1070,16 @@ public class MasterService {
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String aed = st.getMvpersqf();
-				String pricesq = aed.replaceAll(",", "");
-				String ffinal = pricesq.replaceAll("\\s+","");
-				int finaed = Integer.parseInt(ffinal);
-				avglist.add(finaed);
+				if(aed.equals("") || aed.equals("#DIV/0!")){
+					avglist.add(0);
+				}
+				else{
+					String pricesq = aed.replaceAll(",", "");
+					String ffinal = pricesq.replaceAll("\\s+","");
+					int finaed = Integer.parseInt(ffinal);
+					avglist.add(finaed);
+				}
+				
 			}	
 		}
 		int largest = Integer.MIN_VALUE; 
@@ -1062,7 +1108,7 @@ public class MasterService {
 //		double finalValue =  calculateAverage(avglist);
 //		avg = String.valueOf(dd.format(finalValue));
 //		}
-		avg = "0";
+		avg = "0.00";
 		return avg;
 	}
 	

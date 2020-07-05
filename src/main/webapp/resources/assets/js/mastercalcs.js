@@ -1371,6 +1371,9 @@ function calSta(value){
 	if(value == "Fitted"){
 		final = "1";
 	}
+	if(value == "Not Applicable"){
+		final = "0";
+	}
 	return final;
 }
 function calDate(startD,endD){

@@ -1,7 +1,7 @@
 $('.serviceform .sub-header').text('Service Officer Form');
 $('.errMsg').hide();
 
-$('#officerEmail').keyup(function(e) {		
+$('#OfficerEmail').keyup(function(e) {		
 	var email = $(this).val();	
 	 $.ajax({
 			url : 'checkServiceOfficer',
@@ -10,11 +10,11 @@ $('#officerEmail').keyup(function(e) {
 			success : function(response) {	
 				console.log(response);
 				if(response){
-					$('#officerEmail').addClass('err');	
+					$('#OfficerEmail').addClass('err');	
 					$('.errMsg').show();
 				}
 				else{
-					$('#officerEmail').removeClass('err');	
+					$('#OfficerEmail').removeClass('err');	
 					$('.errMsg').hide();
 				}
 			},

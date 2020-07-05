@@ -18,6 +18,69 @@ $("#l-buildingName").change(function() {
 			},
 	});	
 });
+//var city = $('#l-city').val();
+//var dropdown = $('#l-community');
+//$(dropdown).find("option").remove();
+//$.ajax({
+//	url : 'getCommunityList',
+//	dataType: "text",
+//	data : {city : city},
+//	method : 'POST',
+//	success : function(response) {	
+//		$.each(response, function (key, entry) {
+//		    dropdown.append($('<option></option>').attr('value', entry).text(entry));
+//		})
+//	 return;
+//		},
+//});	
+$("#l-city").change(function() {
+	var city = $('#l-city').val();
+	var dropdown = $('#l-community');
+	$(dropdown).find("option").remove();
+	$.ajax({
+		url : 'getCommunityList',
+		data : {city : city},
+		method : 'POST',
+		success : function(response) {	
+			$.each(response, function (key, entry) {
+			    dropdown.append($('<option></option>').attr('value', entry).text(entry));
+			})
+		 return;
+			},
+	});	
+});
+$("#l-community").change(function() {
+	var community = $('#l-community').val();
+	var dropdown = $('#l-subcommunity');
+	$(dropdown).find("option").remove();
+	$.ajax({
+		url : 'getSubCommunityList',
+		data : {community : community},
+		method : 'POST',
+		success : function(response) {	
+			$.each(response, function (key, entry) {
+			    dropdown.append($('<option></option>').attr('value', entry).text(entry));
+			})
+		 return;
+			},
+	});	
+});
+$("#l-subcommunity").change(function() {
+	var subCommunity = $('#l-subcommunity').val();
+	var dropdown = $('#l-buildingName');
+	$(dropdown).find("option").remove();
+	$.ajax({
+		url : 'getBuildingLiist',
+		data : {subCommunity : subCommunity},
+		method : 'POST',
+		success : function(response) {	
+			$.each(response, function (key, entry) {
+			    dropdown.append($('<option></option>').attr('value', entry).text(entry));
+			})
+		 return;
+			},
+	});	
+});
 $("#l-propList").change(function() {
 	var propList = $('#l-propList').val();
 	if(propList != "Residential Apartment"){
@@ -33,19 +96,19 @@ $("#l-propList").change(function() {
 		 $(".landto").css("color","darkgrey");
 	}
 });
-$("#lenquiry").click(function() {
-	$('#l-buildingName').val($('#buildingname').val());
-	$('#l-city').val($('#city').val());
-	$('#l-community').val($('#community').val());
-	$('#l-subcommunity').val($('#subcommunity').val());
-	$('#l-propList').val($('#propertyvalued').val());
-	if($('#l-propList').val() == "Residential Apartment"){
-		 $(".landfrom").css("pointer-events","none");
-		 $(".landfrom").css("color","darkgrey");
-		 $(".landto").css("pointer-events","none");
-		 $(".landto").css("color","darkgrey");
-	 }
-});
+//$("#lenquiry").click(function() {
+//	$('#l-buildingName').val($('#buildingname').val());
+//	$('#l-city').val($('#city').val());
+//	$('#l-community').val($('#community').val());
+//	$('#l-subcommunity').val($('#subcommunity').val());
+//	$('#l-propList').val($('#propertyvalued').val());
+//	if($('#l-propList').val() == "Residential Apartment"){
+//		 $(".landfrom").css("pointer-events","none");
+//		 $(".landfrom").css("color","darkgrey");
+//		 $(".landto").css("pointer-events","none");
+//		 $(".landto").css("color","darkgrey");
+//	 }
+//});
 
 $("#listingfilter").click(function(){
 	 var city=$('#l-city').val(); 

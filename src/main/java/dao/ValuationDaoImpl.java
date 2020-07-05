@@ -14,6 +14,7 @@ import javassist.convert.Transformer;
 import model.ClientDetails;
 import model.Community;
 import model.Documents;
+import model.Listings;
 import model.Property;
 import model.ServiceOfficer;
 import model.SoldTransactions;
@@ -192,6 +193,27 @@ public class ValuationDaoImpl {
 	public List<Property> getCategory() {
 		Query query = sessionFactory.getCurrentSession().createQuery("select distinct propertyCategory from  Property");
 		List<Property> rows=query.list();
+		return rows;
+	}
+
+	public List<Listings> getCommunityListingList(String city) {
+		Query query=sessionFactory.getCurrentSession().createQuery("select distinct community from Listings s where s.city=:city");
+		query.setParameter("city",city);
+		List<Listings> rows=query.list();
+		return rows;
+	}
+	
+	public List<Listings> getSubCommunityListingList(String community) {
+		Query query=sessionFactory.getCurrentSession().createQuery("select distinct subCommunity from Listings s where s.community=:community");
+		query.setParameter("community",community);
+		List<Listings> rows=query.list();
+		return rows;
+	}
+	
+	public List<Listings> getBuildingLiist(String subCommunity) {
+		Query query=sessionFactory.getCurrentSession().createQuery("select distinct buildingName from Listings s where s.subCommunity=:subCommunity");
+		query.setParameter("subCommunity",subCommunity);
+		List<Listings> rows=query.list();
 		return rows;
 	}
 

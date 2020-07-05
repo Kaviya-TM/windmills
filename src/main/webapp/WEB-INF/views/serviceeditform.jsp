@@ -4,7 +4,7 @@
 <title>Windmills | Service Officer</title>
 <link rel='shortcut icon' type='image/x-icon'
 	href='resources/assets/img/favicon.ico' />
-<link rel="stylesheet" href="resources/assets/css/serviceofficer.css">
+<link rel="stylesheet" href="resources/assets/css/serviceOfficer.css">
 <link rel="stylesheet" href="resources/assets/css/main.css">
 <link rel="stylesheet"
 	href="resources/assets/bundles/pretty-checkbox/pretty-checkbox.min.css">
@@ -19,7 +19,7 @@
 	<div class="main-content"
 		style="background: rgb(229, 231, 233) !important; margin-top: 70px; width: 100%; min-height: 530px !important">
 		<form:form action="editServiceOfficer" id="serviceeditform"
-			modelAttribute="serviceofficer">
+			modelAttribute="serviceOfficer">
 			<div class="form-group"
 				style="color: #000080; width: 100%; height: unset; margin-bottom: 20px !important;">
 				<div class="client header">Service Officer Details</div>
@@ -28,7 +28,7 @@
 				<div class="serviceholder">
 					<label class="servicelabel">Email</label> <input type="text"
 						class="form-control form-control-sm servicetext" name="email"
-						value="${serviceform.email}" id="officerEmail" placeholder="Email">
+						value="${serviceform.email}" id="OfficerEmail" placeholder="Email">
 				</div>
 				<div class="errMsg">Service Officer Email Already Exists</div>
 				<div class="serviceholder">

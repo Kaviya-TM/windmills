@@ -1,7 +1,7 @@
 $('.serviceeditform .sub-header').text('Edit Service Officer');
 $('.errMsg').hide();
 
-$('#officerEmail').keyup(function(e) {		
+$('#OfficerEmail').keyup(function(e) {		
 	var email = $(this).val();	
 	 $.ajax({
 			url : 'checkServiceOfficer',
@@ -10,11 +10,11 @@ $('#officerEmail').keyup(function(e) {
 			success : function(response) {	
 				console.log(response);
 				if(response){
-					$('#officerEmail').addClass('err');	
+					$('#OfficerEmail').addClass('err');	
 					$('.errMsg').show();
 				}
 				else{
-					$('#officerEmail').removeClass('err');	
+					$('#OfficerEmail').removeClass('err');	
 					$('.errMsg').hide();
 				}
 			},
@@ -39,5 +39,5 @@ $('#useractive').click(function() {
 });
 $('#cancel').click(function(e){
 	e.preventDefault();
-	window.location.replace("service-officer-list");
+	window.location.replace("service-Officer-list");
 });

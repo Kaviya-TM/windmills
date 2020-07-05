@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import javassist.convert.Transformer;
 import model.ClientDetails;
+import model.Listings;
 import model.Property;
 import model.ServiceOfficer;
 import model.SoldTransactions;
@@ -70,6 +71,25 @@ public class SoldTransactionDaoImpl {
 		List<SoldTransactions> rows=query.list();
 		return rows;
 	}
-
+	public List<SoldTransactions> getCommunitySoldList(String city) {
+		Query query=sessionFactory.getCurrentSession().createQuery("select distinct area from SoldTransactions s where s.city=:city");
+		query.setParameter("city",city);
+		List<SoldTransactions> rows=query.list();
+		return rows;
+	}
+	
+	public List<SoldTransactions> getSubCommunitySoldList(String area) {
+		Query query=sessionFactory.getCurrentSession().createQuery("select distinct neighbourhood from SoldTransactions s where s.area=:area");
+		query.setParameter("area",area);
+		List<SoldTransactions> rows=query.list();
+		return rows;
+	}
+	
+	public List<SoldTransactions> getBuildingLiist(String neighbourhood) {
+		Query query=sessionFactory.getCurrentSession().createQuery("select distinct buildingName from SoldTransactions s where s.neighbourhood=:neighbourhood");
+		query.setParameter("neighbourhood",neighbourhood);
+		List<SoldTransactions> rows=query.list();
+		return rows;
+	}
 
 }

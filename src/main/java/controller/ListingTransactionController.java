@@ -115,27 +115,46 @@ public class ListingTransactionController {
 			@RequestParam("pricefrom")String pricefrom,@RequestParam("priceto")String priceto,@RequestParam("pricesqtfrom")String pricesqtfrom,@RequestParam("pricesqtto")String pricesqtto,
 			@RequestParam("datefrom")String datefrom,@RequestParam("dateto")String dateto,@RequestParam("propList")String propList) throws ParseException{
 		List<Listings> list = listingsService.getFilterList(city,area,neighbourhood,buildingName,bedfrom,bedto,landfrom,landto,buafrom,buato,pricefrom,priceto,pricesqtfrom,pricesqtto,datefrom,dateto,propList);
+		System.err.println("listinglist"+list.size());
 		JSONObject json = new JSONObject();
 		if(list.size() > 0){
 			String dateAvg = listingsService.getDateAvg(list);
+			System.err.println("listingdate");
 			String locAvg = listingsService.getLocationAvg(list);
+			System.err.println("listingloc");
 			String ageAvg = listingsService.getAgeAvg(list);
+			System.err.println("listingage");
 			String viewAvg = listingsService.getViewAvg(list);
+			System.err.println("listingview");
 			String staAvg = listingsService.getStatusAvg(list);
+			System.err.println("listingsta");
 			String expAvg = listingsService.getExposureAvg(list);
+			System.err.println("listingexp");
 			String plaAvg = listingsService.getPlacementAvg(list);
+			System.err.println("listingpla");
 			String floorAvg = listingsService.getFloorAvg(list);
+			System.err.println("listingfloor");
 			String levelAvg = listingsService.getLevelAvg(list);
+			System.err.println("listinglevel");
 			String landAvg = listingsService.getlandAvg(list);
+			System.err.println("listingland");
 			String priceAvg = listingsService.getpriceAvg(list);
+			System.err.println("listingprice");
 			String sizeAvg = listingsService.getSizeAvg(list);
+			System.err.println("listingsize");
 			String pricePerAvg = listingsService.getpricePerAvg(list);
+			System.err.println("listingpriceper");
 			String bedAvg = listingsService.getBedAvg(list);
+			System.err.println("listingbed");
 			int count = list.size();
 			int lowprice = listingsService.getLowPrice(list);
+			System.err.println("listinglow");
 			int highprice = listingsService.getHighPrice(list);
+			System.err.println("listinghigh");
 			int lowpricepersq = listingsService.getLowPricePerSq(list);
+			System.err.println("listinglowpr");
 			int highpricepersq = listingsService.getHighPricePerSq(list);
+			System.err.println("listinghighper");
 			json.put("list", list);
 			json.put("count", count);
 			json.put("dateAvg", dateAvg);

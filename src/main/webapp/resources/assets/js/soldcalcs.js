@@ -1143,7 +1143,12 @@ $("#average").click(function(){
 				
 				//beds//
 				 $('#avgbed').val(bedAvg);
-				 $('#subbed').val($('#bedroom').val());
+				 if($('#bedroom').val() === "Unknown"){
+					 $('#subbed').val(0);
+				 }
+				 else{
+					 $('#subbed').val($('#bedroom').val());
+				 }
 				 var diffbed =  parseInt($('#subbed').val()) - parseInt(bedAvg);
 				 $('#diffbed').val(diffbed);
 				  adjbed =  parseInt(($('#diffbed').val()).replace(/,/g , ''))  * parseFloat(bedWeight.replace(/%/g , '')) * parseInt(priceAvg) / 100;

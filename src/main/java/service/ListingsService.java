@@ -423,7 +423,7 @@ public class ListingsService {
 		if(!filterTransaction.isEmpty()){
 			for(Listings st : filterTransaction){
 				String aed = st.getLandSize();
-				if(aed.equals("-")){
+				if(aed.equals("-") || aed.equals("NaN")){
 					//
 				}
 				else{
@@ -490,6 +490,9 @@ public class ListingsService {
 		if(!filterTransaction.isEmpty()){
 			for(Listings st : filterTransaction){
 				String bed = st.getNoOfBedrooms();
+				if(bed.equals("Unknown")){
+					bed = "0";
+				}
 				int finaed = Integer.parseInt(bed);
 				avglist.add(finaed);
 			}

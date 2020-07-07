@@ -336,6 +336,12 @@ public class MasterService {
 			if(propList.equals(property)){
 				propertylist.add(trans);
 			}
+			else if(property.equals("Commercial Office") && propList.equals("Office")){
+				propertylist.add(trans);
+			}
+			else{
+				//
+			}
 		}
 		return propertylist;
 	}
@@ -717,20 +723,22 @@ public class MasterService {
 	}
 	public String getFloorAvg(List<MasterValuation> filterTransaction) {
 		String avg = "0.00";
-		ArrayList<Integer> avglist = new ArrayList<Integer>();
+		ArrayList<String> avglist = new ArrayList<String>();
 		if(!filterTransaction.isEmpty()){
 			for(MasterValuation st : filterTransaction){
 				String age = st.getFloorNo();
-				String fage = age.replaceAll("\\D+","");
-				String ffage = fage.replaceAll("\\s+","");
-				if(!ffage.equals(" - ") && !ffage.equals("") && !ffage.equals("-") && !ffage.equals(" ")) {
-					int finage = Integer.parseInt(ffage);
-					avglist.add(finage);
+				String ffage = age.replaceAll("\\s+","");
+				System.err.println("ffage"+ffage);
+				 if(!ffage.equals(" - ") && !ffage.equals("") && !ffage.equals("-") && !ffage.equals(" ")) {
+					 avglist.add(ffage);
 				}
+				 else{
+					 System.err.println("ffage2"+ffage);
+				 }
 			}
 		}
 		if(avglist.size() > 0){
-		double finalValue =  calculateAverage(avglist);
+		double finalValue =  calculateAvg(avglist);
 		avg = String.valueOf(dd.format(finalValue));
 		}
 		return avg;

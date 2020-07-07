@@ -533,6 +533,8 @@
 						class="form-control form-control-sm listtext"
 						name="noOfBedrooms" id="">
 						<option value="${listingsform.noOfBedrooms}" selected hidden>${listingsform.noOfBedrooms}</option>
+						<option value="Unknown">Unknown</option>
+						<option value="0">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>

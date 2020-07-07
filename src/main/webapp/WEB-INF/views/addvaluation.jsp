@@ -1188,11 +1188,11 @@
 					<div class="head stylename" style="width:15%;color:darkblue !important;font-weight:700">Building Name</div>
 					<div class="head stylename" style="width:14%;color:darkblue !important;font-weight:700">Developer</div>
 					<div class="head stylename" style="width:11%;color:darkblue !important;font-weight:700">Property SubType</div>
-					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">RoomNo Est</div>
-					<div class="head stylename" style="width:6%;color:darkblue !important;font-weight:700">LA-sqf</div>
-					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Size-sqf</div>
-					<div class="head stylename" style="color:darkblue !important;font-weight:700">Price AED</div>
-					<div class="head stylename" style="width:0%;color:darkblue !important;font-weight:700">AED/sqf</div>
+					<div class="head stylename" style="width:8%;color:darkblue !important;font-weLnadight:700">RoomNo Est</div>
+					<div class="head stylename" style="width:6%;color:darkblue !important;font-weight:700">Land</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">BUA</div>
+					<div class="head stylename" style="color:darkblue !important;font-weight:700">MV</div>
+					<div class="head stylename" style="width:0%;color:darkblue !important;font-weight:700">MV/BUA</div>
 				</div>
 			</div>
 			<div class="form-group lfilter">	
@@ -1288,10 +1288,10 @@
 					<div class="head stylename" style="width:8%;color:darkblue !important;font-weight:700">PropPlacement</div>
 					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Floors</div>
 					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Beds</div>
-					<div class="head stylename" style="width:6%;color:darkblue !important;font-weight:700">LA-sqf</div>
-					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">Size-sqf</div>
-					<div class="head stylename" style="color:darkblue !important;font-weight:700">Price AED</div>
-					<div class="head stylename" style="width:0%;color:darkblue !important;font-weight:700">AED/sqf</div>
+					<div class="head stylename" style="width:6%;color:darkblue !important;font-weight:700">Land</div>
+					<div class="head stylename" style="width:5%;color:darkblue !important;font-weight:700">BUA</div>
+					<div class="head stylename" style="color:darkblue !important;font-weight:700">MV</div>
+					<div class="head stylename" style="width:0%;color:darkblue !important;font-weight:700">MV/BUA</div>
 				</div>
 			</div>
 			<div class="form-group mfilter">	
@@ -1396,7 +1396,7 @@
 			</div>
 			<div class="form-group conflict">
 				<div class="coholder" style="color:black !important;margin-top:65px !important">
-	                  <div class="" style="float:left;margin-right:20px;color: black;">Do we have any conflict related to Buyer?</div>  
+	                  <div class="" style="float:left;margin-right:39px;color: black;">Do we have any conflict related to Buyer?</div>  
 	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px">
 							<input type="checkbox" id="" name="" value="">
 							<div class="state p-success">
@@ -1419,7 +1419,7 @@
 					  </div>   
 				  </div><br>
 				  	<div class="coholder" style="color:balck !important">
-	                  <div class="" style="float:left;margin-right:20px;color: black;">Do we have any conflict related to Seller?</div>  
+	                  <div class="" style="float:left;margin-right:39px;color: black;">Do we have any conflict related to Seller?</div>  
 	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px">
 							<input type="checkbox" id="" name="" value="">
 							<div class="state p-success">
@@ -1442,7 +1442,7 @@
 					  </div>   
 				  </div><br>
 				  	<div class="coholder" style="color:balck !important">
-	                  <div class="" style="float:left;margin-right:20px;color: black;">Do we have any conflict related to Client?</div>  
+	                  <div class="" style="float:left;margin-right:39px;color: black;">Do we have any conflict related to Client?</div>  
 	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px">
 							<input type="checkbox" id="" name="" value="">
 							<div class="state p-success">
@@ -1463,7 +1463,30 @@
 								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
 							</div>
 					  </div>   
-				  </div>
+				  </div><br>
+				  <div class="coholder" style="color:black !important;">
+	                  <div class="" style="float:left;margin-right:20px;color: black;">Do we have any conflict related to Property?</div>  
+	                  <div class="pretty p-svg p-curve" style="float:left;color: black;margin-right:10px">
+							<input type="checkbox" id="" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">Yes</label>
+							</div>
+					  </div> 
+					  <div class="pretty p-svg p-curve" style="float:left;color: black;">
+							<input type="checkbox" id="" name="" value="">
+							<div class="state p-success">
+								<svg class="svg svg-icon" viewBox="0 0 20 20">
+					                <path d="M7.629,14.566c0.125,0.125,0.291,0.188,0.456,0.188c0.164,0,0.329-0.062,0.456-0.188l8.219-8.221c0.252-0.252,0.252-0.659,0-0.911c-0.252-0.252-0.659-0.252-0.911,0l-7.764,7.763L4.152,9.267c-0.252-0.251-0.66-0.251-0.911,0c-0.252,0.252-0.252,0.66,0,0.911L7.629,14.566z"
+									style="stroke: white;fill:white;"></path>
+					            </svg>
+								<label style="margin-left: 5px; line-height: 11px;font-size:13px">No</label>
+							</div>
+					  </div>   
+				  </div><br>
             </div> 
 			<div class="form-group receiving">
 				<div class="vrholder">
@@ -1552,7 +1575,7 @@
 					</select>
 				</div>
 				<div class="vrholder">
-					<label class="rholder">Property Category<b style="color:red"> *</b></label> <select
+					<label class="rholder">Property Category/Use<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propertyValued" id="propertyCategory">
 						<c:forEach items="${categorylist}" var="item">
@@ -1913,6 +1936,17 @@
 					</select>
 				</div>
 				<div class="viholder">
+					<label class="rholder">Property Defect</label> <select
+						class="form-control form-control-sm textholder"
+						name="" id="">
+						<option value="Water Leakage">Water Leakage</option>
+						<option value="Broken Tiles">Broken Tiles</option>
+						<option value="Broken Windows">Broken Windows</option>
+						<option value="Nothing">Nothing</option>
+					</select>
+				</div>
+				
+				<div class="viholder">
 					<label class="rholder">Development Type</label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.devType" id="">
@@ -1938,102 +1972,6 @@
 							<option value="${item}">${item}</option>
 						</c:forEach>
 					</select>
-<!-- 					<select -->
-<!-- 						class="form-control form-control-sm textholder" -->
-<!-- 						name="" id=""> -->
-<!-- 						<option value="Al Ain Holding">Al Ain Holding</option> -->
-<!-- 						<option value="Akshara Global Real Estate Development LLC">Akshara -->
-<!-- 							Global Real Estate Development LLC</option> -->
-<!-- 						<option value="Al Mada Marble">Al Mada Marble</option> -->
-<!-- 						<option value="Al Masarat Real Estate">Al Masarat Real -->
-<!-- 							Estate</option> -->
-<!-- 						<option value="Al Mazaya Real Estate FZ LLC">Al Mazaya -->
-<!-- 							Real Estate FZ LLC</option> -->
-<!-- 						<option value="Al Mizan Group">Al Mizan Group</option> -->
-<!-- 						<option value="Al Shafar Development">Al Shafar -->
-<!-- 							Development</option> -->
-<!-- 						<option value="Arabian Gulf Properties">Arabian Gulf -->
-<!-- 							Properties</option> -->
-<!-- 						<option value="Aurora Real Estate Development">Aurora -->
-<!-- 							Real Estate Development</option> -->
-<!-- 						<option value="AYS Developments Limited">AYS Developments -->
-<!-- 							Limited</option> -->
-<!-- 						<option value="Azizi">Azizi</option> -->
-<!-- 						<option value="B&M Riviera Properties Development">B&M -->
-<!-- 							Riviera Properties Development</option> -->
-<!-- 						<option value="Binghatti">Binghatti</option> -->
-<!-- 						<option value="Bloom Properties">Bloom Properties</option> -->
-<!-- 						<option value="Bolton Real Estate Development LLC">Bolton -->
-<!-- 							Real Estate Development LLC</option> -->
-<!-- 						<option value="Cayan Group">Cayan Group</option> -->
-<!-- 						<option value="Chapal">Chapal</option> -->
-<!-- 						<option value="Damac Properties">Damac Properties</option> -->
-<!-- 						<option value="Danube Properties">Danube Properties</option> -->
-<!-- 						<option value="Dar Al Arkan">Dar Al Arkan</option> -->
-<!-- 						<option value="Deyaar">Deyaar</option> -->
-<!-- 						<option value="Dubai Investments Park Development Company">Dubai -->
-<!-- 							Investments Park Development Company</option> -->
-<!-- 						<option value="Dubai Investments Real Estate Company">Dubai -->
-<!-- 							Investments Real Estate Company</option> -->
-<!-- 						<option value="Dubai Properties">Dubai Properties</option> -->
-<!-- 						<option value="Dubai South">Dubai South</option> -->
-<!-- 						<option value="Dubai Sports City LLC">Dubai Sports City -->
-<!-- 							LLC</option> -->
-<!-- 						<option value="Ellington Properties">Ellington Properties</option> -->
-<!-- 						<option value="Emaar">Emaar</option> -->
-<!-- 						<option value="Emaar/DP World">Emaar/DP World</option> -->
-<!-- 						<option value="Empire Arabia Real Estate Developers LLC">Empire -->
-<!-- 							Arabia Real Estate Developers LLC</option> -->
-<!-- 						<option value="Five Holdings">Five Holdings</option> -->
-<!-- 						<option value="GGICO">GGICO</option> -->
-<!-- 						<option value="HMG Properties">HMG Properties</option> -->
-<!-- 						<option value="IFA">IFA</option> -->
-<!-- 						<option value="Iman Developers">Iman Developers</option> -->
-<!-- 						<option value="Innovation SEZ Developer LTD">Innovation -->
-<!-- 							SEZ Developer LTD</option> -->
-<!-- 						<option value="Jumeirah Golf Estates LLC">Jumeirah Golf -->
-<!-- 							Estates LLC</option> -->
-<!-- 						<option value="Kerzer International">Kerzer International</option> -->
-<!-- 						<option value="Kleindienst Group">Kleindienst Group</option> -->
-<!-- 						<option value="Liv Developers">Liv Developers</option> -->
-<!-- 						<option value="Lokhandwala Builders">Lokhandwala Builders</option> -->
-<!-- 						<option value="Lootah Group">Lootah Group</option> -->
-<!-- 						<option value="MAG Group">MAG Group</option> -->
-<!-- 						<option value="Meraas">Meraas</option> -->
-<!-- 						<option value="Meraki">Meraki</option> -->
-<!-- 						<option value="Meydan Group">Meydan Group</option> -->
-<!-- 						<option value="Nakheel">Nakheel</option> -->
-<!-- 						<option value="Naseria Contracting">Naseria Contracting</option> -->
-<!-- 						<option value="Nshama">Nshama</option> -->
-<!-- 						<option value="Omniyat">Omniyat</option> -->
-<!-- 						<option value="Pacific Investment">Pacific Investment</option> -->
-<!-- 						<option value="Pal Developments L.L.C.">Pal Developments -->
-<!-- 							L.L.C.</option> -->
-<!-- 						<option value="Pantheon Properties Limited">Pantheon -->
-<!-- 							Properties Limited</option> -->
-<!-- 						<option value="Private Developer">Private Developer</option> -->
-<!-- 						<option value="Realty One">Realty One</option> -->
-<!-- 						<option value="RKMDurar Properties">RKMDurar Properties</option> -->
-<!-- 						<option value="Samana Developers">Samana Developers</option> -->
-<!-- 						<option value="Select Group">Select Group</option> -->
-<!-- 						<option value="Seven Tides">Seven Tides</option> -->
-<!-- 						<option value="Shapoorji Pallonji Group">Shapoorji -->
-<!-- 							Pallonji Group</option> -->
-<!-- 						<option value="Sobha Group">Sobha Group</option> -->
-<!-- 						<option value="Tanmiyat">Tanmiyat</option> -->
-<!-- 						<option value="Texture Holdings">Texture Holdings</option> -->
-<!-- 						<option value="The First Group">The First Group</option> -->
-<!-- 						<option value="Tiger Properties">Tiger Properties</option> -->
-<!-- 						<option value="Time Properties">Time Properties</option> -->
-<!-- 						<option value="Titan Developers">Titan Developers</option> -->
-<!-- 						<option value="Trident">Trident</option> -->
-<!-- 						<option value="Vascon Trading Ltd.">Vascon Trading Ltd.</option> -->
-<!-- 						<option value="Vincitore Real Estate Development LLC">Vincitore -->
-<!-- 							Real Estate Development LLC</option> -->
-<!-- 						<option value="Wasl">Wasl</option> -->
-<!-- 						<option value="Zaya Real Estate Development">Zaya Real -->
-<!-- 							Estate Development</option> -->
-<!-- 					</select> -->
 				</div>
 				<div class="viholder">
 					<label class="rholder">Estimated Age(Years)</label> <input
@@ -2053,6 +1991,12 @@
 						class="form-control form-control-sm textholder"
 						name="" id="balsize"
 						placeholder="Balcony/Terrace Size" autocomplete="on">
+				</div>
+				<div class="viholder">
+					<label class="rholder">Service Area Size</label> <input type="text"
+						class="form-control form-control-sm textholder"
+						name="" id=""
+						placeholder="Service Area Size" autocomplete="on">
 				</div>
 				<div class="viholder"> 
 					<label class="rholder" style="line-height: 16px">Built Up
@@ -2121,6 +2065,7 @@
 						class="form-control form-control-sm textholder"
 						name="valuationReport.noOfbedrooms" id="bedroom">
 						<option value="" hidden>--- Select ---</option>
+						<option value="Unknown">Unknown</option>
 						<option value="0">0(Studio)</option>
 						<option value="1">1</option>
 						<option value="2">2</option>

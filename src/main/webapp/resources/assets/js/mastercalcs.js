@@ -1109,7 +1109,12 @@ $("#maverage").click(function(){
 				
 				//beds//
 				 $('#mavgbed').val(mbedAvg);
-				 $('#msubbed').val($('#bedroom').val());
+				 if($('#bedroom').val() === "Unknown"){
+					 $('#msubbed').val(0);
+				 }
+				 else{
+					 $('#msubbed').val($('#bedroom').val());
+				 }
 				 var mdiffbed =  parseFloat($('#msubbed').val()) - parseFloat(mbedAvg);
 				 $('#mdiffbed').val(mdiffbed.toFixed(2));
 				  madjbed =  parseFloat(($('#mdiffbed').val()).replace(/,/g , ''))  * parseFloat(mbedWeight.replace(/%/g , '')) * parseInt(mpriceAvg) / 100;
@@ -1281,7 +1286,7 @@ $("#maverage").click(function(){
 					  madjdate = parseFloat(mlessThan11Month.replace(/%/g , '')) * parseInt(mpriceAvg) * (16 / 30) / 100;
 					 $('#madjdate').val(toComma(madjdate));
 				 }
-				 if( mdiffdate <= 360 && mdiffdate > 330){
+				 if(mdiffdate > 330){
 					 mdateWeight = mlessThan12Month;
 					 $('#mweidate').val(mlessThan12Month);
 					 $('#cmweidate').val(mlessThan12Month);

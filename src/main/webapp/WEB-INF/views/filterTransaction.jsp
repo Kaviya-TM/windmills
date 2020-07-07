@@ -21,10 +21,10 @@
 						<div class="head stylename" style="width:12%;color:#fff !important;font-weight:700">Developer</div>
 						<div class="head stylename" style="width:11%;color:#fff !important;font-weight:700">Property SubType</div>
 						<div class="head stylename" style="width:8%;color:#fff !important;font-weight:700">Room No Est</div>
-						<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">LA-sqf</div>
-						<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">Size-sqf</div>
-						<div class="head stylename" style="color:#fff !important;font-weight:700">Price AED</div>
-						<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">AED/sqf</div>
+						<div class="head stylename" style="width:6%;color:#fff !important;font-weight:700">Land</div>
+						<div class="head stylename" style="width:5%;color:#fff !important;font-weight:700">BUA</div>
+						<div class="head stylename" style="color:#fff !important;font-weight:700">MV</div>
+						<div class="head stylename" style="width:0%;color:#fff !important;font-weight:700">MV/BUA</div>
 			</div>
 			<c:forEach items="${filterTransaction}" var="transaction">
 				<div id="${transaction.transactionId}"

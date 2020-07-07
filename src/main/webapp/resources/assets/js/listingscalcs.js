@@ -3732,7 +3732,12 @@ $("#laverage").click(function(){
 				
 				//beds//
 				 $('#liavgbed').val(libedAvg);
-				 $('#lisubbed').val($('#bedroom').val());
+				 if($('#bedroom').val() === "Unknown"){
+					 $('#lisubbed').val(0);
+				 }
+				 else{
+					 $('#lisubbed').val($('#bedroom').val());
+				 }
 				 var lidiffbed =  parseFloat($('#lisubbed').val()) - parseFloat(libedAvg);
 				 $('#lidiffbed').val(lidiffbed.toFixed(2));
 				  liadjbed =  parseFloat(($('#lidiffbed').val()).replace(/,/g , ''))  * parseFloat(libedWeight.replace(/%/g , '')) * parseInt(lipriceAvg) / 100;

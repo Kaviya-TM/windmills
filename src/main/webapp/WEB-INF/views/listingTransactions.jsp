@@ -436,6 +436,8 @@
 						class="form-control form-control-sm listtext"
 						name="noOfBedrooms" id="">
 						<option value="" hidden>--- Select ---</option>
+						<option value="Unknown">Unknown</option>
+						<option value="0">0(Studio)</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>

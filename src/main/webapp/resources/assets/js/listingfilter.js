@@ -341,13 +341,28 @@ $("#listingfilter").click(function(){
 						  	" <div class='head stylename' style='width:8%;color:black'>" + priceAvg + "</div>" +
 						  	" <div class='head stylename' style='width:0%;color:black'>" + pricePerAvg + "</div>" +
 				    "</div>");
+//					$('.lfilter').append("" +
+//							"<div class='column boxlist' style='display:flex;height: 3% !important;line-height: 6px;background:lightgoldenrodyellow;color:#fff !important;margin-bottom:5px;border: 1px solid lightgoldenrodyellow;width: 99.5%;border-radius:5px;'>" +
+//							" <div class='head stylename' style='width:18%;color:black'>" + "Count - "+ count + "</div><br>" +
+//							" <div class='head stylename' style='width:18%;color:black'>" + "Lowest Price - "+ lowprice + "</div><br>" +
+//						  	" <div class='head stylename' style='width:18%;color:black'>"+ "Highest Price - "+ highprice + "</div><br>" +
+//						  	" <div class='head stylename' style='width:18%;color:black'>" + "Lowest Price/Sqf - "+ lowpricepersq + "</div><br>" +
+//						  	" <div class='head stylename' style='width:18%;color:black'>" + "Highest Price/Sqf - "+ highpricepersq + "</div><br>" +
+//				    "</div>");
 					$('.lfilter').append("" +
-							"<div class='column boxlist' style='display:flex;height: 3% !important;line-height: 6px;background:lightgoldenrodyellow;color:#fff !important;margin-bottom:5px;border: 1px solid lightgoldenrodyellow;width: 99.5%;border-radius:5px;'>" +
-							" <div class='head stylename' style='width:18%;color:black'>" + "Count - "+ count + "</div>" +
-							" <div class='head stylename' style='width:18%;color:black'>" + "Lowest Price - "+ lowprice + "</div>" +
-						  	" <div class='head stylename' style='width:18%;color:black'>"+ "Highest Price - "+ highprice + "</div>" +
-						  	" <div class='head stylename' style='width:18%;color:black'>" + "Lowest Price/Sqf - "+ lowpricepersq + "</div>" +
-						  	" <div class='head stylename' style='width:18%;color:black'>" + "Highest Price/Sqf - "+ highpricepersq + "</div>" +
+							" <div class='head stylename' style='width:100%;text-align:left;color:black'>" + "Count - "+ count + "</div><br>" +
+				    "</div>");
+					$('.lfilter').append("" +
+							" <div class='head stylename' style='width:100%;text-align:left;color:black'>" + "Lowest Price - "+ lowprice + "</div><br>" +
+				    "</div>");
+					$('.lfilter').append("" +
+							" <div class='head stylename' style='width:100%;text-align:left;color:black'>" + "Highest Price - "+ highprice + "</div><br>" +
+				    "</div>");
+					$('.lfilter').append("" +
+							" <div class='head stylename' style='width:100%;text-align:left;color:black'>" + "Lowest Price/Sqf - "+ lowpricepersq + "</div><br>" +
+				    "</div>");
+					$('.lfilter').append("" +
+							" <div class='head stylename' style='width:100%;text-align:left;color:black'>" + "Highest Price/Sqf - "+ highpricepersq + "</div><br>" +
 				    "</div>");
 				}
 			}

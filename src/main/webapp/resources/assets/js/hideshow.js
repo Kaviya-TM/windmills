@@ -809,11 +809,20 @@ $("#documents").click(function(){
 //
 });
 $("#inspect2").click(function(){
+	
 	$('.inspecting1').hide();
 	$('.costing').hide();
 	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.inspecting2').show();
+	if($('#propertyvalued').val() === "Warehouse"){
+		$('.twosection').show();
+		$('.onesection').hide();
+	}
+	else{
+		$('.twosection').hide();
+		$('.onesection').show();
+	}
 	$('.market-summary').hide();
 	$('.spl-assumption').hide();
 	$('.documents').hide();

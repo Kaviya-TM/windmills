@@ -4,7 +4,7 @@
 <title>Windmills | Service Officer</title>
 <link rel='shortcut icon' type='image/x-icon'
 	href='resources/assets/img/favicon.ico' />
-<link rel="stylesheet" href="resources/assets/css/serviceOfficer.css">
+<link rel="stylesheet" href="resources/assets/css/serviceofficer.css">
 <link rel="stylesheet" href="resources/assets/css/main.css">
 <link rel="stylesheet"
 	href="resources/assets/bundles/pretty-checkbox/pretty-checkbox.min.css">

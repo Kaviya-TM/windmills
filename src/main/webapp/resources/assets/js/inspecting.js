@@ -536,6 +536,283 @@ var officesize = 0;
 var laboursize = 0;
 var roomsize = 0;
 var totalsize = 0;
+var avgcount = 0;
+var firstware = 0;
+var secware = 0;
+var thirdware = 0;
+var fourware = 0;
+var fiveware = 0;
+var oneoffice = 0;
+var totalupgrade = 0;
+//Average//
+
+$('#uw1').change(function(){
+	if($(this).val() != ""){
+		firstware = firstware + 1 ;
+	}
+	if($(this).val() != "" && firstware == 1 ){
+		avgcount = avgcount + 1; 
+	}
+	var a;
+	var b;
+	var c;
+	var d;
+	var e;
+	var f;
+	var g;
+	var h;
+	var i;
+	var j;
+	if($(this).val() === ""){
+		e = 0;
+	}
+	else{
+		e = $(this).val();
+	}
+	if($('#uw2').val() === ""){
+		a = 0;
+	}
+	else{
+		a= $('#uw2').val();
+	}
+	if($('#uw3').val() === ""){
+		b = 0;
+	}
+	else{
+		b= $('#uw3').val();
+	}
+	if($('#uw4').val() === ""){
+		c = 0;
+	}
+	else{
+		c= $('#uw4').val();
+	}
+	if($('#uw5').val() === ""){
+		d = 0;
+	}
+	else{
+		d= $('#uw5').val();
+	}
+//	if($('#uo1').val() === ""){
+//		 f = 0;
+//	}
+//	else{
+//		 f = $('#uo1').val();
+//	}
+//	if($('#uo2').val() === ""){
+//		 g = 0;
+//	}
+//	else{
+//		 g = $('#uo2').val();
+//	}
+//	if($('#uo3').val() === ""){
+//		 k = 0;
+//	}
+//	else{
+//		 k = $('#uo3').val();
+//	}
+//	if($('#uo4').val() === ""){
+//		 i = 0;
+//	}
+//	else{
+//		 i = $('#uo4').val();
+//	}
+//	if($('#uo5').val() === ""){
+//		 j = 0;
+//	}
+//	else{
+//		 j = $('#uo5').val();
+//	}
+	totalupgrade = parseInt(e) + parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d) ;
+//	parseInt(f) + parseInt(g) + parseInt(h) + parseInt(i) + parseInt(j);
+	var final = totalupgrade/avgcount;
+	$('#uf').val(final.toFixed(2));
+});
+$('#uw2').change(function(){
+	if($(this).val() != ""){
+		secware = secware + 1 ;
+	}
+	if($(this).val() != "" && secware == 1 ){
+		avgcount = avgcount + 1; 
+	}
+	var a;
+	var b;
+	var c;
+	var d;
+	var e;
+	if($(this).val() === ""){
+		e = 0;
+	}
+	else{
+		e = $(this).val();
+	}
+	if($('#uw1').val() === ""){
+		a = 0;
+	}
+	else{
+		a= $('#uw1').val();
+	}
+	if($('#uw3').val() === ""){
+		b = 0;
+	}
+	else{
+		b= $('#uw3').val();
+	}
+	if($('#uw4').val() === ""){
+		c = 0;
+	}
+	else{
+		c= $('#uw4').val();
+	}
+	if($('#uw5').val() === ""){
+		d = 0;
+	}
+	else{
+		d= $('#uw5').val();
+	}
+	totalupgrade = parseInt(e) + parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d);
+	var final = totalupgrade/avgcount;
+	$('#uf').val(final.toFixed(2));
+});
+
+$('#uw3').change(function(){
+	if($(this).val() != ""){
+		thirdware = thirdware + 1 ;
+	}
+	if($(this).val() != "" && thirdware == 1 ){
+		avgcount = avgcount + 1; 
+	}
+	var a;
+	var b;
+	var c;
+	var d;
+	var e;
+	if($(this).val() === ""){
+		e = 0;
+	}
+	else{
+		e = $(this).val();
+	}
+	if($('#uw2').val() === ""){
+		a = 0;
+	}
+	else{
+		a= $('#uw2').val();
+	}
+	if($('#uw1').val() === ""){
+		b = 0;
+	}
+	else{
+		b= $('#uw1').val();
+	}
+	if($('#uw4').val() === ""){
+		c = 0;
+	}
+	else{
+		c= $('#uw4').val();
+	}
+	if($('#uw5').val() === ""){
+		d = 0;
+	}
+	else{
+		d= $('#uw5').val();
+	}
+	totalupgrade = parseInt(e) + parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d);
+	var final = totalupgrade/avgcount;
+	$('#uf').val(final.toFixed(2));
+});
+$('#uw4').change(function(){
+	if($(this).val() != ""){
+		fourware = fourware + 1 ;
+	}
+	if($(this).val() != "" && fourware == 1 ){
+		avgcount = avgcount + 1; 
+	}
+	var a;
+	var b;
+	var c;
+	var d;
+	var e;
+	if($(this).val() === ""){
+		e = 0;
+	}
+	else{
+		e = $(this).val();
+	}
+	if($('#uw2').val() === ""){
+		a = 0;
+	}
+	else{
+		a= $('#uw2').val();
+	}
+	if($('#uw1').val() === ""){
+		b = 0;
+	}
+	else{
+		b= $('#uw1').val();
+	}
+	if($('#uw3').val() === ""){
+		c = 0;
+	}
+	else{
+		c= $('#uw3').val();
+	}
+	if($('#uw5').val() === ""){
+		d = 0;
+	}
+	else{
+		d= $('#uw5').val();
+	}
+	totalupgrade = parseInt(e) + parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d);
+	var final = totalupgrade/avgcount;
+	$('#uf').val(final.toFixed(2));
+});
+$('#uw5').change(function(){
+	if($(this).val() != ""){
+		fiveware = fiveware + 1 ;
+	}
+	if($(this).val() != "" && fiveware == 1 ){
+		avgcount = avgcount + 1; 
+	}
+	var a;
+	var b;
+	var c;
+	var d;
+	var e;
+	if($(this).val() === ""){
+		e = 0;
+	}
+	else{
+		e = $(this).val();
+	}
+	if($('#uw2').val() === ""){
+		a = 0;
+	}
+	else{
+		a= $('#uw2').val();
+	}
+	if($('#uw1').val() === ""){
+		b = 0;
+	}
+	else{
+		b= $('#uw1').val();
+	}
+	if($('#uw3').val() === ""){
+		c = 0;
+	}
+	else{
+		c= $('#uw3').val();
+	}
+	if($('#uw4').val() === ""){
+		d = 0;
+	}
+	else{
+		d= $('#uw4').val();
+	}
+	totalupgrade = parseInt(e) + parseInt(a) + parseInt(b) + parseInt(c) + parseInt(d);
+	var final = totalupgrade/avgcount;
+	$('#uf').val(final.toFixed(2));
+});
 //Calculations//
 $('#1w').keyup(function(){
 	var a;

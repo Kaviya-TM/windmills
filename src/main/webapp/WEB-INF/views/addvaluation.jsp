@@ -1575,6 +1575,15 @@
 					</select>
 				</div>
 				<div class="vrholder">
+					<label class="rholder">Property Sub Description<b style="color:red"> *</b></label>
+					<select class="form-control form-control-sm textholder select2" multiple="" name="" id="subdesc">
+                        <option value="Warehouse" >Warehouse</option>
+                        <option value="Office">Office</option>
+                        <option value="Labour Camp">Labour Camp</option>
+                      </select>
+				</div>
+				
+				<div class="vrholder">
 					<label class="rholder">Property Category/Use<b style="color:red"> *</b></label> <select
 						class="form-control form-control-sm textholder"
 						name="valuationReport.propertyValued" id="propertyCategory">
@@ -2022,6 +2031,7 @@
 				<div class="viholder">
 					<label class="rholder">Gym</label> <select
 						class="form-control form-control-sm textholder"
+						
 						name="valuationReport.gym" id="gym">
 						<option value="Yes">Yes</option>
 						<option value="No" selected>No</option>
@@ -2058,6 +2068,42 @@
 						<option value="Occupied">Owner Occupied</option>
 						<option value="Rented" selected>Rented</option>
 						<option value="Vacant">Vacant</option>
+					</select>
+				</div>
+				<div class="viholder">
+					<label class="rholder">No of Warehouse</label> <select
+						class="form-control form-control-sm textholder"
+						name="valuationReport.noOfbedrooms" id="bedroom">
+						<option value="" hidden>--- Select ---</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</div>
+				<div class="viholder">
+					<label class="rholder">No of Office</label> <select
+						class="form-control form-control-sm textholder"
+						name="valuationReport.noOfbedrooms" id="bedroom">
+						<option value="" hidden>--- Select ---</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+				</div>
+				<div class="viholder">
+					<label class="rholder">No of Labour Camps</label> <select
+						class="form-control form-control-sm textholder"
+						name="valuationReport.noOfbedrooms" id="bedroom">
+						<option value="" hidden>--- Select ---</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
 					</select>
 				</div>
 				<div class="viholder">
@@ -2342,10 +2388,10 @@
 						name="valuationReport.specialAssumption" id="assump"
 						autocomplete="on"></textarea>
 				</div>
-				<div class="valuationholder adjustTop" style="margin-top: 371px">
-					<div class="savebtn" id="splprv">Previous</div>
-					<div class="savebtn" id="splnxt">Next</div>
-				</div>
+<!-- 				<div class="valuationholder adjustTop" style="margin-top: 371px"> -->
+<!-- 					<div class="savebtn" id="splprv">Previous</div> -->
+<!-- 					<div class="savebtn" id="splnxt">Next</div> -->
+<!-- 				</div> -->
 			</div>
 			<div class="form-group extent">
 				<div class="valuationholder">

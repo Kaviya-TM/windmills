@@ -815,6 +815,31 @@ $("#inspect2").click(function(){
 	$('.receiving').hide();
 	$('.scheduling').hide();
 	$('.inspecting2').show();
+	var  a = $('#subdesc').val();
+	if($('#propertyvalued').val() === "Warehouse"){
+		$('.twosection').show();
+		$('.onesection').hide();
+	}
+	else{
+		$('.twosection').hide();
+		$('.onesection').show();
+	}
+	if(a[0] === "Warehouse" && a[1] === undefined && a[2] === undefined){
+		$('.offi').hide();
+		$('.labour').hide();
+		$('.ware').show();
+	}
+	else if(a[0] === "Warehouse" && a[1] === "Office" && a[2] === undefined){
+		$('.offi').show();
+		$('.ware').show();
+		$('.labour').hide();
+	}
+	else if(a[0] === "Warehouse" && a[1] === "Office" && a[2] === "Labour Camp"){
+		$('.offi').show();
+		$('.ware').show();
+		$('.labour').show();
+		
+	}
 	if($('#propertyvalued').val() === "Warehouse"){
 		$('.twosection').show();
 		$('.onesection').hide();

@@ -2073,7 +2073,7 @@
 				<div class="viholder">
 					<label class="rholder">No of Warehouse</label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.noOfbedrooms" id="bedroom">
+						name="" id="warecount">
 						<option value="" hidden>--- Select ---</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -2085,7 +2085,7 @@
 				<div class="viholder">
 					<label class="rholder">No of Office</label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.noOfbedrooms" id="bedroom">
+						name="" id="offcount">
 						<option value="" hidden>--- Select ---</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
@@ -2097,7 +2097,7 @@
 				<div class="viholder">
 					<label class="rholder">No of Labour Camps</label> <select
 						class="form-control form-control-sm textholder"
-						name="valuationReport.noOfbedrooms" id="bedroom">
+						name="valuationReport.noOfbedrooms" id="lapcount">
 						<option value="" hidden>--- Select ---</option>
 						<option value="1">1</option>
 						<option value="2">2</option>

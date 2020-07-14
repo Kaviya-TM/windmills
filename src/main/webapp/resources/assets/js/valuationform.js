@@ -818,6 +818,73 @@ $(".select2").select2({
     placeholder: "Select",
     allowClear: true
 });
+$("#warecount").change(function() {
+	var value = $(this).val();
+	if(value === "1"){
+		$('.w1').show();
+		$('.w2,.w3,.w4,.w5').hide();
+	}
+	if(value === "2"){
+		$('.w1,.w2').show();
+		$('.w3,.w4,.w5').hide();
+	}
+	if(value === "3"){
+		$('.w1,.w2,.w3').show();
+		$('.w4,.w5').hide();
+	}
+	if(value === "4"){
+		$('.w1,.w2,.w3,.w4').show();
+		$('.w5').hide();
+	}
+	if(value === "5"){
+		$('.w1,.w2,.w3,.w4,w5').show();
+	}
+});
+$("#offcount").change(function() {
+	var value = $(this).val();
+	if(value === "1"){
+		$('.o1').show();
+		$('.o2,.o3,.o4,.o5').hide();
+	}
+	if(value === "2"){
+		$('.o1,.o2').show();
+		$('.o3,.o4,.o5').hide();
+	}
+	if(value === "3"){
+		$('.o1,.o2,.o3').show();
+		$('.o4,.o5').hide();
+	}
+	if(value === "4"){
+		$('.o1,.o2,.o3,.o4').show();
+		$('.o5').hide();
+	}
+	if(value === "5"){
+		$('.o1,.o2,.o3,.o4,o5').show();
+	}
+});
+$("#lapcount").change(function() {
+	var value = $(this).val();
+	if(value === "1"){
+		$('.l1').show();
+		$('.l2,.l3,.l4,.l5').hide();
+	}
+	if(value === "2"){
+		$('.l1,.l2').show();
+		$('.l3,.l4,.l5').hide();
+	}
+	if(value === "3"){
+		$('.l1,.l2,.l3').show();
+		$('.l4,.l5').hide();
+	}
+	if(value === "4"){
+		$('.l1,.l2,.l3,.l4').show();
+		$('.l5').hide();
+	}
+	if(value === "5"){
+		$('.l1,.l2,.l3,.l4,l5').show();
+	}
+});
+
 $("#bedroom").change(function() {
 	var value = $(this).val();
 	if(value.includes("0")){

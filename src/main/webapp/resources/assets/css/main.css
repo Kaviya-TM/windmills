@@ -3,7 +3,9 @@
 	width: 100%;
 	display: flex;
 }
-
+body{
+	background: rgb(229, 231, 233) !important;
+}
 .namelabel {
 	width: 30% !important;
 	float: left;

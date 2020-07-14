@@ -1192,7 +1192,7 @@
 						<label class="labelholder"
 							style="width:13%; color: forestgreen; text-align: center"><b>Upload</b></label>
 					</div>
-					<div class="valuationholder" >
+					<div class="valuationholder w1" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1230,7 +1230,7 @@
 						</label> <input id="warepic1" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>
-					<div class="valuationholder" >
+					<div class="valuationholder w2" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1268,7 +1268,7 @@
 						</label> <input id="warepic2" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>
-					<div class="valuationholder" >
+					<div class="valuationholder w3" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1306,7 +1306,7 @@
 						</label> <input id="warepic3" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>
-					<div class="valuationholder" >
+					<div class="valuationholder w4" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1344,7 +1344,7 @@
 						</label> <input id="warepic4" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>
-					<div class="valuationholder" >
+					<div class="valuationholder w5" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1393,7 +1393,7 @@
 </div>
 		
 		<div class="offi" style="width: 33%; float: left;padding:5px;">
-					<div class="valuationholder">
+					<div class="valuationholder  o1">
 						<label class="labelholder"
 							style="width: 11%; color: forestgreen; text-align: center"><b>Off</b></label>
 						<label class="labelholder"
@@ -1407,7 +1407,7 @@
 						<label class="labelholder"
 							style="width:13%; color: forestgreen; text-align: center"><b>Upload</b></label>
 					</div>
-					<div class="valuationholder" >
+					<div class="valuationholder o2" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1445,7 +1445,7 @@
 						</label> <input id="offipic1" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>	
-					<div class="valuationholder" >
+					<div class="valuationholder o2" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1483,7 +1483,7 @@
 						</label> <input id="offipic2" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>	
-					<div class="valuationholder" >
+					<div class="valuationholder o3" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1521,7 +1521,7 @@
 						</label> <input id="offipic3" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>	
-					<div class="valuationholder" >
+					<div class="valuationholder o4" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1559,7 +1559,7 @@
 						</label> <input id="offipic4" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>	
-						<div class="valuationholder" >
+						<div class="valuationholder o5" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1622,7 +1622,7 @@
 						<label class="labelholder"
 							style="width:13%; color: forestgreen; text-align: center"><b>Upload</b></label>
 					</div>
-					<div class="valuationholder" >
+					<div class="valuationholder l1" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1660,7 +1660,7 @@
 						</label> <input id="labour1" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>	
-					<div class="valuationholder" >
+					<div class="valuationholder l2" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1698,7 +1698,7 @@
 						</label> <input id="labour2" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>	
-					<div class="valuationholder" >
+					<div class="valuationholder l3" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1736,7 +1736,7 @@
 						</label> <input id="labour3" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>
-					<div class="valuationholder" >
+					<div class="valuationholder l4" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""
@@ -1774,7 +1774,7 @@
 						</label> <input id="labour4" name='files[0]' type="file" accept="image/*"
 						style="display: none;">
 					</div>	
-					<div class="valuationholder" >
+					<div class="valuationholder l5" >
 						<input type="number"
 							style="width: 10% !important; text-align: center;"
 							class="form-control form-control-sm textholder" name="" id=""

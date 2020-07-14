@@ -1,5 +1,5 @@
 
-<footer class="main-footer" style="">
+<footer class="main-footer" style="background: rgb(229, 231, 233) !important;color:transparent !important">
 	<div class="footer-left">
 		App Version 1.0.0
 		<div class="bullet"></div>
